@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer className="border-t border-border py-6 text-center text-xs text-muted-foreground">
+  <footer className="border-t border-border py-6 text-center text-[11px] text-muted-foreground">
     <p className="mb-1">
       Les modèles utilisés sur ce site sont destinés à un usage pédagogique.
     </p>

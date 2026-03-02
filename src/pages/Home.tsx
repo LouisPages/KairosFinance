@@ -8,7 +8,6 @@ import { fetchStocks } from "@/lib/api";
 const STATS_DEFAULTS = [
   { label: "Actions supportées", value: "—" },
   { label: "Modèles de prédiction", value: "3" },
-  { label: "Optimisation Markowitz", value: "✓" },
 ];
 
 const features = [
@@ -65,7 +64,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="font-display font-bold leading-tight text-foreground"
-          style={{ fontSize: "clamp(1.75rem, 2.56vw, 3rem)" }}
+          style={{ fontSize: "clamp(1.5rem, 2.2vw, 2.5rem)" }}
         >
           Portfolio Manager
         </motion.h1>
@@ -73,12 +72,12 @@ const Home = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.5 }}
-          className="mt-4 max-w-xl text-lg text-muted-foreground"
+          className="mt-4 max-w-xl text-base text-muted-foreground"
         >
           Optimisation de portefeuille boursier par des modèles quantitatifs. Simulez, comparez et analysez vos stratégies d'investissement.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="mt-8">
-          <Button asChild size="lg" className="gap-2 rounded-xl px-8 text-base font-semibold">
+          <Button asChild size="lg" className="gap-2 rounded-xl px-8 text-sm font-semibold">
             <Link to="/portfolio">
               Commencer <ArrowRight className="h-4 w-4" />
             </Link>
@@ -88,13 +87,12 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-6 flex gap-8 text-base text-muted-foreground"
+          className="mt-6 text-xs text-muted-foreground"
         >
-          {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center gap-1">
-              <span className="font-display text-lg font-bold text-foreground">{s.value}</span>
-              <span>{s.label}</span>
-            </div>
+          {stats.map((s, i) => (
+            <span key={s.label} className={i > 0 ? "ml-8" : undefined}>
+              <span className="text-muted-foreground">{s.value} {s.label.toLowerCase()}</span>
+            </span>
           ))}
         </motion.div>
       </section>
@@ -105,14 +103,14 @@ const Home = () => {
         <h2 className="section-title mb-6">Optimiser un portefeuille est complexe</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {[
-            { icon: "⏱️", title: "Données massives", desc: "Des milliers de points de données historiques à analyser pour chaque action." },
+            { icon: "🤯", title: "Données massives", desc: "Des milliers de points de données historiques à analyser pour chaque action." },
             { icon: "🔍", title: "Corrélations", desc: "Les interdépendances entre actifs rendent l'optimisation manuelle quasi-impossible." },
             { icon: "⚠️", title: "Risque", desc: "Trouver le bon équilibre rendement/risque demande des outils quantitatifs avancés." },
           ].map((item) => (
             <div key={item.title} className="rounded-lg border border-border bg-background p-5 text-center">
               <span className="text-2xl">{item.icon}</span>
-              <h3 className="mt-2 font-display text-lg font-bold text-foreground">{item.title}</h3>
-              <p className="mt-1 text-base text-muted-foreground">{item.desc}</p>
+              <h3 className="mt-2 font-display text-base font-bold text-foreground">{item.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -134,8 +132,8 @@ const Home = () => {
               className="glass-card p-6"
             >
               <f.icon className="h-6 w-6 text-primary" />
-              <h3 className="mt-3 font-display text-lg font-bold text-foreground">{f.title}</h3>
-              <p className="mt-1 text-base text-muted-foreground">{f.desc}</p>
+              <h3 className="mt-3 font-display text-base font-bold text-foreground">{f.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{f.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -144,8 +142,8 @@ const Home = () => {
       {/* CTA */}
       <section className="mb-20 flex flex-col items-center rounded-xl bg-primary px-8 py-12 text-center text-primary-foreground">
         <BarChart3 className="mb-4 h-8 w-8" />
-        <h2 className="font-display text-2xl font-bold">Prêt à optimiser votre portefeuille ?</h2>
-        <p className="mt-2 max-w-md text-sm opacity-80">
+        <h2 className="font-display text-xl font-bold">Prêt à optimiser votre portefeuille ?</h2>
+        <p className="mt-2 max-w-md text-xs opacity-80">
           Construisez votre portefeuille, lancez une simulation et analysez les résultats.
         </p>
         <Button asChild variant="secondary" size="lg" className="mt-6 gap-2 rounded-xl font-semibold">

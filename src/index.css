@@ -106,11 +106,11 @@
 
 @layer components {
   .section-label {
-    @apply text-sm font-semibold uppercase tracking-widest text-primary;
+    @apply text-xs font-semibold uppercase tracking-widest text-primary;
   }
 
   .section-title {
-    @apply text-2xl md:text-3xl font-bold text-foreground;
+    @apply text-xl md:text-2xl font-bold text-foreground;
   }
 
   .glass-card {

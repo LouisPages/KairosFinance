@@ -48,14 +48,14 @@ const Architecture = () => {
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
         <p className="section-label mb-2">Architecture</p>
         <h1 className="section-title mb-1">Modèles d'optimisation</h1>
-        <p className="mb-10 text-base text-muted-foreground">
+        <p className="mb-10 text-sm text-muted-foreground">
           Trois approches basées sur la théorie moderne du portefeuille, connectées via FastAPI.
         </p>
       </motion.div>
 
       {/* Pipeline */}
       <div className="glass-card mb-12 p-6 md:p-8">
-        <h2 className="font-display text-lg font-bold text-foreground mb-6">Pipeline de bout en bout</h2>
+        <h2 className="font-display text-base font-bold text-foreground mb-6">Pipeline de bout en bout</h2>
         <div className="flex flex-col items-center gap-3">
           {[
             { icon: Database, label: "Données historiques (Yahoo Finance)" },
@@ -71,7 +71,7 @@ const Architecture = () => {
             ) : (
               <div key={i} className="flex items-center gap-3 rounded-lg border border-border bg-background px-5 py-3 w-full max-w-md">
                 <step.icon className="h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm font-medium text-foreground">{step.label}</span>
+                <span className="text-xs font-medium text-foreground">{step.label}</span>
               </div>
             )
           )}
@@ -91,11 +91,11 @@ const Architecture = () => {
             className="glass-card p-6"
           >
             <Brain className="h-6 w-6 text-primary" />
-            <h3 className="mt-3 font-display text-lg font-bold text-foreground">{model.name}</h3>
-            <p className="mt-1 text-base text-muted-foreground">{model.desc}</p>
+            <h3 className="mt-3 font-display text-base font-bold text-foreground">{model.name}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">{model.desc}</p>
             <ul className="mt-4 space-y-1.5">
               {model.details.map((d) => (
-                <li key={d} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <li key={d} className="flex items-start gap-2 text-xs text-muted-foreground">
                   <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   {d}
                 </li>
@@ -107,7 +107,7 @@ const Architecture = () => {
 
       {/* Tech stack note */}
       <div className="mt-12 glass-card p-6 text-center">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-xs text-muted-foreground">
           <span className="font-semibold text-foreground">Stack technique :</span> React + TypeScript (frontend) · FastAPI + Python (backend) · NumPy / SciPy / cvxpy (optimisation)
         </p>
       </div>

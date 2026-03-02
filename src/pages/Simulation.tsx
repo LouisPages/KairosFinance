@@ -5,6 +5,7 @@ import { Play, BarChart3, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from "recharts";
 import { runSimulation } from "@/lib/api";
+import { loadSavedSymbols } from "@/lib/portfolioStorage";
 
 const models = [
   {
@@ -35,7 +36,8 @@ interface SimResult {
 
 const Simulation = () => {
   const location = useLocation();
-  const symbols: string[] = (location.state as { symbols?: string[] } | null)?.symbols ?? [];
+  const symbolsFromState = (location.state as { symbols?: string[] } | null)?.symbols;
+  const symbols: string[] = symbolsFromState?.length ? symbolsFromState : loadSavedSymbols();
   const [selectedModel, setSelectedModel] = useState<string | null>(null);
   const [running, setRunning] = useState(false);
   const [result, setResult] = useState<SimResult | null>(null);
@@ -59,14 +61,14 @@ const Simulation = () => {
       <div>
         <p className="section-label mb-2">Simulation</p>
         <h1 className="section-title mb-1">Optimisez votre portefeuille</h1>
-        <p className="mb-8 text-base text-muted-foreground">
+        <p className="mb-8 text-sm text-muted-foreground">
           Choisissez un modèle puis lancez l'optimisation. Les résultats incluent un backtesting sur 20% des données historiques.
         </p>
       </div>
 
       {symbols.length < 2 && (
         <div className="mb-6 p-4 rounded-xl bg-muted/50 border border-border">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             Sélectionnez au moins 2 actions dans l'onglet{" "}
             <Link to="/portfolio" className="text-primary font-medium underline">
               Mon Portefeuille
@@ -85,8 +87,8 @@ const Simulation = () => {
               selectedModel === m.id ? "!ring-2 !ring-primary hover:!ring-2 hover:!ring-primary active:!ring-2 active:!ring-primary" : ""
             }`}
           >
-            <h3 className="font-display text-base font-bold text-foreground">{m.name}</h3>
-            <p className="mt-1 text-sm text-muted-foreground">{m.desc}</p>
+            <h3 className="font-display text-sm font-bold text-foreground">{m.name}</h3>
+            <p className="mt-1 text-xs text-muted-foreground">{m.desc}</p>
           </button>
         ))}
       </div>
@@ -109,7 +111,7 @@ const Simulation = () => {
       </Button>
 
       {apiError && (
-        <div className="mt-4 p-4 rounded-xl bg-destructive/10 text-destructive text-sm">
+        <div className="mt-4 p-4 rounded-xl bg-destructive/10 text-destructive text-xs">
           {apiError}
         </div>
       )}
@@ -131,14 +133,14 @@ const Simulation = () => {
               ].map((kpi) => (
                 <div key={kpi.label} className="glass-card p-5 text-center">
                   <kpi.icon className="mx-auto h-5 w-5 text-primary" />
-                  <p className="mt-2 font-display text-2xl font-bold text-foreground">{kpi.value}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{kpi.label}</p>
+                  <p className="mt-2 font-display text-xl font-bold text-foreground">{kpi.value}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{kpi.label}</p>
                 </div>
               ))}
             </div>
 
             <div className="glass-card p-6">
-              <h3 className="font-display text-base font-bold text-foreground mb-4">
+              <h3 className="font-display text-sm font-bold text-foreground mb-4">
                 Performance : Portefeuille optimisé vs Marché
               </h3>
               <div className="h-64">
@@ -164,13 +166,13 @@ const Simulation = () => {
             </div>
 
             <div className="glass-card p-6">
-              <h3 className="font-display text-base font-bold text-foreground mb-4">
+              <h3 className="font-display text-sm font-bold text-foreground mb-4">
                 Allocation optimale
               </h3>
               <div className="space-y-2">
                 {Object.entries(result.weights).map(([sym, w]) => (
                   <div key={sym} className="flex items-center gap-3">
-                    <span className="w-14 text-sm font-semibold text-foreground">{sym}</span>
+                    <span className="w-14 text-xs font-semibold text-foreground">{sym}</span>
                     <div className="flex-1 rounded-full bg-secondary h-3 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
@@ -179,7 +181,7 @@ const Simulation = () => {
                         className="h-full rounded-full bg-primary"
                       />
                     </div>
-                    <span className="w-12 text-right text-sm font-medium text-muted-foreground">{(w * 100).toFixed(1)}%</span>
+                    <span className="w-12 text-right text-xs font-medium text-muted-foreground">{(w * 100).toFixed(1)}%</span>
                   </div>
                 ))}
               </div>

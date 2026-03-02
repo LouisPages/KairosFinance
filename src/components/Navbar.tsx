@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-md px-6">
       <div className="flex h-14 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold text-foreground">
+        <Link to="/" className="flex items-center gap-2 font-display text-base font-bold text-foreground">
           <TrendingUp className="h-5 w-5 text-primary" />
           Portfolio Manager
         </Link>
@@ -23,7 +23,7 @@ const Navbar = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`rounded-lg px-3 py-1.5 text-[14.5px] font-medium transition-colors ${
+              className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
                 location.pathname === item.path
                   ? "text-primary"
                   : "text-muted-foreground hover:text-foreground"

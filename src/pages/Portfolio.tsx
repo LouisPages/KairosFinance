@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 import { fetchStocks, fetchHistory } from "@/lib/api";
+import { loadSavedSymbols, saveSymbols } from "@/lib/portfolioStorage";
 import type { StockItem } from "@/lib/api";
 
 const indices = ["NASDAQ", "DOW JONES", "S&P 500"] as const;
@@ -18,7 +19,7 @@ const Portfolio = () => {
   const [stocks, setStocks] = useState<StockItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedSymbols, setSelectedSymbols] = useState<string[]>([]);
+  const [selectedSymbols, setSelectedSymbols] = useState<string[]>(loadSavedSymbols);
   const [selectedStock, setSelectedStock] = useState<StockItem | null>(null);
   const [activeIndex, setActiveIndex] = useState<string>("NASDAQ");
   const [search, setSearch] = useState("");
@@ -34,6 +35,10 @@ const Portfolio = () => {
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    saveSymbols(selectedSymbols);
+  }, [selectedSymbols]);
 
   useEffect(() => {
     if (!selectedStock) {
@@ -127,7 +132,7 @@ const Portfolio = () => {
           <Tabs value={activeIndex} onValueChange={setActiveIndex} className="flex flex-col min-h-0 flex-1">
             <TabsList className="mb-3 w-full shrink-0">
               {indices.map((idx) => (
-                <TabsTrigger key={idx} value={idx} className="text-sm font-semibold flex-1">
+                <TabsTrigger key={idx} value={idx} className="text-xs font-semibold flex-1">
                   {idx}
                 </TabsTrigger>
               ))}
@@ -139,16 +144,16 @@ const Portfolio = () => {
                 placeholder="Rechercher…"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-9 h-9 text-sm"
+                className="pl-9 h-9 text-xs"
               />
             </div>
 
             {indices.map((idx) => (
               <TabsContent key={idx} value={idx} className="space-y-1.5 overflow-y-auto pr-1 min-h-0 flex-1">
                 {loading ? (
-                  <p className="text-sm text-muted-foreground">Chargement…</p>
+                  <p className="text-xs text-muted-foreground">Chargement…</p>
                 ) : error ? (
-                  <p className="text-sm text-destructive">{error}</p>
+                  <p className="text-xs text-destructive">{error}</p>
                 ) : (
                   displayStocks.map((stock) => {
                     const isSelected = selectedSymbols.includes(stock.symbol);
@@ -161,8 +166,8 @@ const Portfolio = () => {
                         onClick={() => setSelectedStock(stock)}
                       >
                         <div className="min-w-0">
-                          <span className="font-display text-sm font-bold text-foreground">{stock.symbol}</span>
-                          <p className="truncate text-xs text-muted-foreground">{stock.name}</p>
+                          <span className="font-display text-xs font-bold text-foreground">{stock.symbol}</span>
+                          <p className="truncate text-[11px] text-muted-foreground">{stock.name}</p>
                         </div>
                         <div className="flex items-center gap-2">
                           <button
@@ -185,12 +190,12 @@ const Portfolio = () => {
           </Tabs>
 
           <div className="glass-card mt-3 p-4 shrink-0">
-            <h3 className="font-display text-sm font-bold text-foreground mb-2">Composition</h3>
+            <h3 className="font-display text-xs font-bold text-foreground mb-2">Composition</h3>
             {selectedSymbols.length === 0 ? (
               <p className="text-[11px] text-muted-foreground">Aucune action sélectionnée</p>
             ) : (
               <>
-                <div className="flex items-center justify-between text-sm mb-2">
+                <div className="flex items-center justify-between text-xs mb-2">
                   <span className="text-muted-foreground">{selectedSymbols.length} action{selectedSymbols.length > 1 ? "s" : ""}</span>
                 </div>
                 <div className="mt-1 h-2 w-full rounded-full bg-secondary overflow-hidden">
@@ -218,7 +223,7 @@ const Portfolio = () => {
                 {kpiCards.map((kpi) => (
                   <div key={kpi.label} className="glass-card p-4 text-center">
                     <kpi.icon className="mx-auto h-4 w-4 text-primary mb-1" />
-                    <p className={`font-display text-lg font-bold ${kpi.color}`}>{kpi.value}</p>
+                    <p className={`font-display text-base font-bold ${kpi.color}`}>{kpi.value}</p>
                     <p className="text-[10px] text-muted-foreground mt-0.5">{kpi.label}</p>
                   </div>
                 ))}
@@ -227,8 +232,8 @@ const Portfolio = () => {
               <div className="glass-card p-6 flex-1 min-h-0 flex flex-col">
                 <div className="flex items-center justify-between mb-4 shrink-0 flex-wrap gap-2">
                   <div>
-                    <h3 className="font-display text-lg font-bold text-foreground">{selectedStock.symbol}</h3>
-                    <p className="text-base text-muted-foreground">{selectedStock.name}</p>
+                    <h3 className="font-display text-base font-bold text-foreground">{selectedStock.symbol}</h3>
+                    <p className="text-sm text-muted-foreground">{selectedStock.name}</p>
                   </div>
                   <div className="flex items-center gap-3 flex-wrap">
                     <label className="text-xs text-muted-foreground">
@@ -288,7 +293,7 @@ const Portfolio = () => {
             </>
           ) : (
             <div className="glass-card flex h-full items-center justify-center p-6">
-              <p className="text-base text-muted-foreground">Sélectionnez une action pour afficher ses données historiques.</p>
+              <p className="text-sm text-muted-foreground">Sélectionnez une action pour afficher ses données historiques.</p>
             </div>
           )}
         </div>
