@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Données actions (générées localement ; la version par défaut est stocks_data.default.json)
+server/stocks_data.json

@@ -1,25 +1,26 @@
 import { useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, CheckCircle2, BarChart3, TrendingUp } from "lucide-react";
+import { Play, BarChart3, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from "recharts";
-import { generateComparisonData } from "@/data/mockStocks";
+import { runSimulation } from "@/lib/api";
 
 const models = [
   {
     id: "markowitz-classic",
-    name: "Markowitz Classique",
+    name: "Markowitz classique",
     desc: "Optimisation moyenne-variance avec matrice de covariance historique.",
   },
   {
-    id: "markowitz-shrinkage",
-    name: "Markowitz Shrinkage",
-    desc: "Estimation de Ledoit-Wolf pour une matrice de covariance plus robuste.",
+    id: "markowitz-1factor",
+    name: "Un facteur de risque (CAPM)",
+    desc: "Rendements espérés via le modèle à un facteur (prime de marché).",
   },
   {
-    id: "markowitz-blacklitterman",
-    name: "Black-Litterman",
-    desc: "Intègre des vues subjectives de l'investisseur dans le cadre Markowitz.",
+    id: "markowitz-3factors",
+    name: "Trois facteurs (Fama & French)",
+    desc: "Rendements espérés avec Mkt-RF, SMB et HML.",
   },
 ];
 
@@ -32,35 +33,25 @@ interface SimResult {
   comparisonData: { date: string; portfolio: number; market: number }[];
 }
 
-function runMockSimulation(): SimResult {
-  const symbols = ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA"];
-  const raw = symbols.map(() => Math.random());
-  const total = raw.reduce((a, b) => a + b, 0);
-  const weights: Record<string, number> = {};
-  symbols.forEach((s, i) => (weights[s] = Math.round((raw[i] / total) * 1000) / 10));
-  return {
-    sharpe: Math.round((1.2 + Math.random() * 0.8) * 100) / 100,
-    expectedReturn: Math.round((8 + Math.random() * 7) * 100) / 100,
-    volatility: Math.round((10 + Math.random() * 8) * 100) / 100,
-    maxDrawdown: Math.round((5 + Math.random() * 10) * 100) / 100,
-    weights,
-    comparisonData: generateComparisonData(90),
-  };
-}
-
 const Simulation = () => {
+  const location = useLocation();
+  const symbols: string[] = (location.state as { symbols?: string[] } | null)?.symbols ?? [];
   const [selectedModel, setSelectedModel] = useState<string | null>(null);
   const [running, setRunning] = useState(false);
   const [result, setResult] = useState<SimResult | null>(null);
+  const [apiError, setApiError] = useState<string | null>(null);
+
+  const canRun = selectedModel != null && symbols.length >= 2;
 
   const handleRun = () => {
-    if (!selectedModel) return;
+    if (!canRun) return;
+    setApiError(null);
     setRunning(true);
     setResult(null);
-    setTimeout(() => {
-      setResult(runMockSimulation());
-      setRunning(false);
-    }, 1500);
+    runSimulation(selectedModel!, symbols)
+      .then(setResult)
+      .catch((e) => setApiError(e.message))
+      .finally(() => setRunning(false));
   };
 
   return (
@@ -69,16 +60,27 @@ const Simulation = () => {
         <p className="section-label mb-2">Simulation</p>
         <h1 className="section-title mb-1">Optimisez votre portefeuille</h1>
         <p className="mb-8 text-base text-muted-foreground">
-          Choisissez un modèle de prédiction puis lancez l'optimisation. Les résultats incluent un backtesting sur 20% des données historiques.
+          Choisissez un modèle puis lancez l'optimisation. Les résultats incluent un backtesting sur 20% des données historiques.
         </p>
       </div>
 
-      {/* Model selection */}
+      {symbols.length < 2 && (
+        <div className="mb-6 p-4 rounded-xl bg-muted/50 border border-border">
+          <p className="text-sm text-muted-foreground">
+            Sélectionnez au moins 2 actions dans l'onglet{" "}
+            <Link to="/portfolio" className="text-primary font-medium underline">
+              Mon Portefeuille
+            </Link>{" "}
+            pour lancer une simulation.
+          </p>
+        </div>
+      )}
+
       <div className="mb-8 grid gap-4 md:grid-cols-3">
         {models.map((m) => (
           <button
             key={m.id}
-            onClick={() => { setSelectedModel(m.id); setResult(null); }}
+            onClick={() => { setSelectedModel(m.id); setResult(null); setApiError(null); }}
             className={`glass-card p-5 text-left transition-shadow focus:outline-none focus:ring-0 active:ring-0 ${
               selectedModel === m.id ? "!ring-2 !ring-primary hover:!ring-2 hover:!ring-primary active:!ring-2 active:!ring-primary" : ""
             }`}
@@ -89,7 +91,11 @@ const Simulation = () => {
         ))}
       </div>
 
-      <Button onClick={handleRun} disabled={!selectedModel || running} className="gap-2 rounded-xl font-semibold">
+      <Button
+        onClick={handleRun}
+        disabled={!canRun || running}
+        className="gap-2 rounded-xl font-semibold"
+      >
         {running ? (
           <>
             <span className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" />
@@ -102,7 +108,12 @@ const Simulation = () => {
         )}
       </Button>
 
-      {/* Results */}
+      {apiError && (
+        <div className="mt-4 p-4 rounded-xl bg-destructive/10 text-destructive text-sm">
+          {apiError}
+        </div>
+      )}
+
       <AnimatePresence>
         {result && (
           <motion.div
@@ -111,7 +122,6 @@ const Simulation = () => {
             exit={{ opacity: 0 }}
             className="mt-10 space-y-8"
           >
-            {/* KPIs */}
             <div className="grid gap-4 md:grid-cols-4">
               {[
                 { label: "Ratio de Sharpe", value: result.sharpe.toFixed(2), icon: BarChart3 },
@@ -127,7 +137,6 @@ const Simulation = () => {
               ))}
             </div>
 
-            {/* Comparison chart */}
             <div className="glass-card p-6">
               <h3 className="font-display text-base font-bold text-foreground mb-4">
                 Performance : Portefeuille optimisé vs Marché
@@ -136,7 +145,7 @@ const Simulation = () => {
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={result.comparisonData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                    <XAxis dataKey="date" tick={{ fontSize: 10 }} stroke="hsl(var(--muted-foreground))" interval={14} />
+                    <XAxis dataKey="date" tick={{ fontSize: 10 }} stroke="hsl(var(--muted-foreground))" interval="preserveStartEnd" />
                     <YAxis tick={{ fontSize: 10 }} stroke="hsl(var(--muted-foreground))" />
                     <Tooltip
                       contentStyle={{
@@ -154,7 +163,6 @@ const Simulation = () => {
               </div>
             </div>
 
-            {/* Weights */}
             <div className="glass-card p-6">
               <h3 className="font-display text-base font-bold text-foreground mb-4">
                 Allocation optimale
@@ -166,12 +174,12 @@ const Simulation = () => {
                     <div className="flex-1 rounded-full bg-secondary h-3 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
-                        animate={{ width: `${w}%` }}
+                        animate={{ width: `${w * 100}%` }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="h-full rounded-full bg-primary"
                       />
                     </div>
-                    <span className="w-12 text-right text-sm font-medium text-muted-foreground">{w}%</span>
+                    <span className="w-12 text-right text-sm font-medium text-muted-foreground">{(w * 100).toFixed(1)}%</span>
                   </div>
                 ))}
               </div>

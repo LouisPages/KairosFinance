@@ -1,10 +1,12 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { TrendingUp, BarChart3, Brain, ArrowRight, PieChart, LineChart, Shield } from "lucide-react";
+import { BarChart3, Brain, ArrowRight, PieChart, LineChart, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { fetchStocks } from "@/lib/api";
 
-const stats = [
-  { label: "Actions supportées", value: "16" },
+const STATS_DEFAULTS = [
+  { label: "Actions supportées", value: "—" },
   { label: "Modèles de prédiction", value: "3" },
   { label: "Optimisation Markowitz", value: "✓" },
 ];
@@ -28,7 +30,7 @@ const features = [
   {
     icon: Shield,
     title: "Métriques de risque",
-    desc: "Ratio de Sharpe, volatilité, rendement attendu et bien plus pour évaluer la qualité de votre portefeuille.",
+    desc: "Ratio de Sharpe, volatilité, rendement attendu pour évaluer la qualité de votre portefeuille.",
   },
 ];
 
@@ -38,6 +40,19 @@ const fade = {
 };
 
 const Home = () => {
+  const [stocks, setStocks] = useState<Awaited<ReturnType<typeof fetchStocks>> | null>(null);
+
+  useEffect(() => {
+    fetchStocks()
+      .then(setStocks)
+      .catch(() => setStocks(null));
+  }, []);
+
+  const stats = [
+    { label: "Actions supportées", value: stocks !== null ? String(stocks.length) : "—" },
+    ...STATS_DEFAULTS.slice(1),
+  ];
+
   return (
     <div className="mx-auto max-w-5xl px-6">
       {/* Hero */}
@@ -72,8 +87,8 @@ const Home = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.45 }}
-          className="mt-8 flex gap-8 text-base text-muted-foreground"
+          transition={{ delay: 0.5 }}
+          className="mt-6 flex gap-8 text-base text-muted-foreground"
         >
           {stats.map((s) => (
             <div key={s.label} className="flex flex-col items-center gap-1">
