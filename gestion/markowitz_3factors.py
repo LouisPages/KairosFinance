@@ -129,14 +129,17 @@ def run(tickers: list[str], start: str, end: str, num_portfolios: int = 10000) -
     vol_pct = vol_arr * 100
     ret_pct = ret_arr * 100
     order = np.argsort(vol_pct)
-    frontier_vol, frontier_ret, frontier_sharpe = [], [], []
+    frontier_vol, frontier_ret, frontier_sharpe, frontier_backtest_ret = [], [], [], []
     max_ret_so_far = -np.inf
     for i in order:
         if ret_pct[i] >= max_ret_so_far:
             max_ret_so_far = ret_pct[i]
+            port_ret_test = (test_returns * all_weights[i]).sum(axis=1)
+            total_ret = ((1 + port_ret_test).prod() - 1) * 100
             frontier_vol.append(round(float(vol_pct[i]), 2))
             frontier_ret.append(round(float(ret_pct[i]), 2))
             frontier_sharpe.append(round(float(sharpe_arr[i]), 4))
+            frontier_backtest_ret.append(round(float(total_ret), 2))
     # Sortie pour l’API
     def _fmt(d):
         return d.to_timestamp().strftime("%Y-%m-%d") if hasattr(d, "to_timestamp") else d.strftime("%Y-%m-%d")
@@ -152,5 +155,5 @@ def run(tickers: list[str], start: str, end: str, num_portfolios: int = 10000) -
         "trainPeriodEnd": _fmt(train.index[-1]),
         "testPeriodStart": _fmt(test.index[0]),
         "testPeriodEnd": _fmt(test.index[-1]),
-        "efficientFrontier": [{"volatility": v, "expectedReturn": r, "sharpe": s} for v, r, s in zip(frontier_vol, frontier_ret, frontier_sharpe)],
+        "efficientFrontier": [{"volatility": v, "expectedReturn": r, "sharpe": s, "backtestReturn": b} for v, r, s, b in zip(frontier_vol, frontier_ret, frontier_sharpe, frontier_backtest_ret)],
     }

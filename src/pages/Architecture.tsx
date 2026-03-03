@@ -6,34 +6,16 @@ const models = [
     id: "markowitz-classic",
     name: "Markowitz Classique",
     desc: "L'approche fondamentale d'optimisation moyenne-variance proposée par Harry Markowitz en 1952.",
-    details: [
-      "Matrice de covariance historique des rendements",
-      "Frontière efficiente par optimisation quadratique",
-      "Contrainte de poids positifs (pas de vente à découvert)",
-      "Maximisation du ratio de Sharpe",
-    ],
   },
   {
     id: "markowitz-shrinkage",
     name: "Markowitz Shrinkage",
     desc: "Amélioration de l'estimation de la matrice de covariance par la méthode de Ledoit-Wolf.",
-    details: [
-      "Shrinkage de Ledoit-Wolf pour la covariance",
-      "Réduction du bruit d'estimation",
-      "Portefeuilles plus stables et diversifiés",
-      "Même optimisation quadratique que le classique",
-    ],
   },
   {
     id: "black-litterman",
     name: "Black-Litterman",
     desc: "Combine l'équilibre du marché avec des vues subjectives de l'investisseur.",
-    details: [
-      "Rendements d'équilibre via le CAPM",
-      "Intégration de vues (views) subjectives",
-      "Paramètre tau pour la confiance dans le prior",
-      "Allocation plus intuitive et robuste",
-    ],
   },
 ];
 
@@ -93,14 +75,6 @@ const Architecture = () => {
             <Brain className="h-6 w-6 text-primary" />
             <h3 className="mt-3 font-display text-base font-bold text-foreground">{model.name}</h3>
             <p className="mt-1 text-sm text-muted-foreground">{model.desc}</p>
-            <ul className="mt-4 space-y-1.5">
-              {model.details.map((d) => (
-                <li key={d} className="flex items-start gap-2 text-xs text-muted-foreground">
-                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  {d}
-                </li>
-              ))}
-            </ul>
           </motion.div>
         ))}
       </div>

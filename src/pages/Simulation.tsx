@@ -366,11 +366,12 @@ const Simulation = () => {
                         }}
                         content={({ active, payload }) => {
                           if (!active || payload == null || payload.length === 0) return null;
-                          const p = payload[0]?.payload as { volatility: number; expectedReturn: number; sharpe?: number };
+                          const p = payload[0]?.payload as { volatility: number; expectedReturn: number; sharpe?: number; backtestReturn?: number };
                           return (
                             <div className="rounded-lg border border-border bg-card px-3 py-2 text-xs shadow-sm">
                               <p>Volatilité : {p?.volatility?.toFixed(2) ?? "—"} %</p>
                               <p>Rendement attendu : {p?.expectedReturn?.toFixed(2) ?? "—"} %</p>
+                              <p>Rendement réel (backtest) : {p?.backtestReturn != null ? `${p.backtestReturn.toFixed(2)} %` : "—"}</p>
                               <p>Ratio de Sharpe : {p?.sharpe != null ? p.sharpe.toFixed(2) : "—"}</p>
                             </div>
                           );

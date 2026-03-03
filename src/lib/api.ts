@@ -33,6 +33,7 @@ export interface EfficientFrontierPoint {
   volatility: number;
   expectedReturn: number;
   sharpe?: number;
+  backtestReturn?: number;
 }
 
 export interface SimulateResult {
