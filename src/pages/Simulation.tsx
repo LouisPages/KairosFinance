@@ -124,6 +124,28 @@ const Simulation = () => {
             exit={{ opacity: 0 }}
             className="mt-10 space-y-8"
           >
+
+            <div className="glass-card p-6">
+              <h3 className="font-display text-sm font-bold text-foreground mb-4">
+                Allocation optimale
+              </h3>
+              <div className="space-y-2">
+                {Object.entries(result.weights).map(([sym, w]) => (
+                  <div key={sym} className="flex items-center gap-3">
+                    <span className="w-14 text-xs font-semibold text-foreground">{sym}</span>
+                    <div className="flex-1 rounded-full bg-secondary h-3 overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${w * 100}%` }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="h-full rounded-full bg-primary"
+                      />
+                    </div>
+                    <span className="w-12 text-right text-xs font-medium text-muted-foreground">{(w * 100).toFixed(1)}%</span>
+                  </div>
+                ))}
+              </div>
+            </div>
             <div className="grid gap-4 md:grid-cols-4">
               {[
                 { label: "Ratio de Sharpe", value: result.sharpe.toFixed(2), icon: BarChart3 },
@@ -162,28 +184,6 @@ const Simulation = () => {
                     <Line type="monotone" dataKey="market" name="Marché (S&P 500)" stroke="hsl(var(--muted-foreground))" strokeWidth={2} dot={false} strokeDasharray="5 5" />
                   </LineChart>
                 </ResponsiveContainer>
-              </div>
-            </div>
-
-            <div className="glass-card p-6">
-              <h3 className="font-display text-sm font-bold text-foreground mb-4">
-                Allocation optimale
-              </h3>
-              <div className="space-y-2">
-                {Object.entries(result.weights).map(([sym, w]) => (
-                  <div key={sym} className="flex items-center gap-3">
-                    <span className="w-14 text-xs font-semibold text-foreground">{sym}</span>
-                    <div className="flex-1 rounded-full bg-secondary h-3 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${w * 100}%` }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="h-full rounded-full bg-primary"
-                      />
-                    </div>
-                    <span className="w-12 text-right text-xs font-medium text-muted-foreground">{(w * 100).toFixed(1)}%</span>
-                  </div>
-                ))}
               </div>
             </div>
           </motion.div>

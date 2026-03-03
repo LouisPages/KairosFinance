@@ -1,3 +1,7 @@
+"""
+Markowitz 1 facteur : CAPM. Les espérances de rendement viennent d’une régression
+(Ri - Rf) = alpha + beta * (Rm - Rf). On utilise seulement le facteur marché (Mkt-RF).
+"""
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -22,9 +26,13 @@ def run(tickers: list[str], start: str, end: str, num_portfolios: int = 10000) -
     if len(valid) < 2:
         return {"error": "Données insuffisantes"}
     prices = prices[valid]
+
+    # Passage en mensuel pour matcher Fama-French
     monthly_prices = prices.resample("ME").last()
     stock_returns = monthly_prices.pct_change().dropna()
     stock_returns.index = stock_returns.index.to_period("M")
+
+    # Facteurs Fama-French (on n’utilise que Mkt-RF et RF ici)
     try:
         ff_data = web.DataReader("F-F_Research_Data_Factors", "famafrench", start=start, end=end)[0]
     except Exception:
@@ -35,12 +43,15 @@ def run(tickers: list[str], start: str, end: str, num_portfolios: int = 10000) -
     merged = pd.merge(stock_returns, ff_data, left_index=True, right_index=True, how="inner")
     if len(merged) < 24:
         return {"error": "Pas assez de données mensuelles"}
+
     n = len(merged)
     split = int(n * 0.8)
     train = merged.iloc[:split]
     stocks_train = train[valid]
     rf_train = train["RF"] / 100
     mkt_train = train["Mkt-RF"] / 100
+
+    # CAPM : E[Ri] = Rf + beta * E[Rm - Rf], une régression OLS par actif
     X = sm.add_constant(mkt_train)
     expected_returns = {}
     for t in valid:
@@ -58,6 +69,7 @@ def run(tickers: list[str], start: str, end: str, num_portfolios: int = 10000) -
     vol_arr = np.zeros(num_portfolios)
     sharpe_arr = np.zeros(num_portfolios)
     current_rf = rf_train.mean() * 12
+    # Même idée que le classique : Monte Carlo sur les poids, on garde le meilleur Sharpe
     for i in range(num_portfolios):
         weights = np.random.random(n_assets)
         weights /= np.sum(weights)
@@ -68,6 +80,7 @@ def run(tickers: list[str], start: str, end: str, num_portfolios: int = 10000) -
     max_idx = sharpe_arr.argmax()
     best_weights = all_weights[max_idx, :]
     weights_dict = {valid[i]: float(best_weights[i]) for i in range(n_assets)}
+    # Backtest sur la partie test
     test = merged.iloc[split:]
     test_returns = test[valid]
     portfolio_returns = (test_returns * best_weights).sum(axis=1)
@@ -90,6 +103,7 @@ def run(tickers: list[str], start: str, end: str, num_portfolios: int = 10000) -
     peak = cum.cummax()
     drawdown = (cum - peak) / peak
     max_drawdown = float(-drawdown.min() * 100) if len(drawdown) > 0 else 0
+    # Sortie pour l’API
     return {
         "weights": weights_dict,
         "sharpe": round(float(sharpe_arr[max_idx]), 4),
