@@ -80,13 +80,13 @@ def run(tickers: list[str], start: str, end: str, num_portfolios: int = 10000) -
     max_idx = sharpe_arr.argmax()
     best_weights = all_weights[max_idx, :]
     weights_dict = {valid[i]: float(best_weights[i]) for i in range(n_assets)}
-    # Backtest sur la partie test
+    # Série portefeuille et marché sur 100 % de la période (base 100 au premier jour du backtest)
     test = merged.iloc[split:]
-    test_returns = test[valid]
-    portfolio_returns = (test_returns * best_weights).sum(axis=1)
-    cum = (1 + portfolio_returns).cumprod()
-    portfolio_series = 100 * cum / cum.iloc[0]
-    spy = yf.download("SPY", start=test.index[0], end=test.index[-1], auto_adjust=False, progress=False, interval="1mo")
+    full_returns = merged[valid]
+    portfolio_returns_full = (full_returns * best_weights).sum(axis=1)
+    cum_full = (1 + portfolio_returns_full).cumprod()
+    portfolio_series = 100 * cum_full / cum_full.iloc[0]
+    spy = yf.download("SPY", start=merged.index[0], end=merged.index[-1], auto_adjust=False, progress=False, interval="1mo")
     if not spy.empty and "Adj Close" in spy.columns:
         spy_ret = spy["Adj Close"].pct_change().dropna()
         spy_cum = (1 + spy_ret).cumprod()
@@ -96,14 +96,46 @@ def run(tickers: list[str], start: str, end: str, num_portfolios: int = 10000) -
         market_series = market_series.reindex(common_idx).ffill().bfill()
     else:
         market_series = portfolio_series.copy()
+        common_idx = portfolio_series.index
+
+    # Renormaliser base 100 au premier jour de la période de backtest
+    test_start_date = test.index[0]
+    idx_at_or_after = common_idx[common_idx >= test_start_date]
+    base_date = idx_at_or_after[0] if len(idx_at_or_after) > 0 else common_idx[-1]
+    base_p = float(portfolio_series.loc[base_date])
+    base_m = float(market_series.loc[base_date])
+    if base_p > 1e-12 and base_m > 1e-12:
+        portfolio_series = 100 * portfolio_series / base_p
+        market_series = 100 * market_series / base_m
+    def _date_str(d):
+        return d.to_timestamp().strftime("%Y-%m-%d") if hasattr(d, "to_timestamp") else d.strftime("%Y-%m-%d")
     comparison_data = [
-        {"date": d.strftime("%Y-%m-%d"), "portfolio": round(float(portfolio_series.loc[d]), 2), "market": round(float(market_series.loc[d]), 2)}
+        {"date": _date_str(d), "portfolio": round(float(portfolio_series.loc[d]), 2), "market": round(float(market_series.loc[d]), 2)}
         for d in portfolio_series.index
     ]
-    peak = cum.cummax()
-    drawdown = (cum - peak) / peak
+    # Max drawdown sur période test
+    test_returns = test[valid]
+    portfolio_returns_test = (test_returns * best_weights).sum(axis=1)
+    cum_test = (1 + portfolio_returns_test).cumprod()
+    peak = cum_test.cummax()
+    drawdown = (cum_test - peak) / peak
     max_drawdown = float(-drawdown.min() * 100) if len(drawdown) > 0 else 0
+
+    # Frontière efficiente : points (vol, rendement) Pareto-optimaux
+    vol_pct = vol_arr * 100
+    ret_pct = ret_arr * 100
+    order = np.argsort(vol_pct)
+    frontier_vol, frontier_ret, frontier_sharpe = [], [], []
+    max_ret_so_far = -np.inf
+    for i in order:
+        if ret_pct[i] >= max_ret_so_far:
+            max_ret_so_far = ret_pct[i]
+            frontier_vol.append(round(float(vol_pct[i]), 2))
+            frontier_ret.append(round(float(ret_pct[i]), 2))
+            frontier_sharpe.append(round(float(sharpe_arr[i]), 4))
     # Sortie pour l’API
+    def _fmt(d):
+        return d.to_timestamp().strftime("%Y-%m-%d") if hasattr(d, "to_timestamp") else d.strftime("%Y-%m-%d")
     return {
         "weights": weights_dict,
         "sharpe": round(float(sharpe_arr[max_idx]), 4),
@@ -111,4 +143,10 @@ def run(tickers: list[str], start: str, end: str, num_portfolios: int = 10000) -
         "volatility": round(float(vol_arr[max_idx]) * 100, 2),
         "maxDrawdown": round(max_drawdown, 2),
         "comparisonData": comparison_data,
+        "numPortfolios": num_portfolios,
+        "trainPeriodStart": _fmt(train.index[0]),
+        "trainPeriodEnd": _fmt(train.index[-1]),
+        "testPeriodStart": _fmt(test.index[0]),
+        "testPeriodEnd": _fmt(test.index[-1]),
+        "efficientFrontier": [{"volatility": v, "expectedReturn": r, "sharpe": s} for v, r, s in zip(frontier_vol, frontier_ret, frontier_sharpe)],
     }

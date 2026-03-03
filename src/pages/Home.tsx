@@ -14,7 +14,7 @@ const features = [
   {
     icon: PieChart,
     title: "Gestion de portefeuille",
-    desc: "Composez votre portefeuille à partir des actions du NASDAQ, Dow Jones et S&P 500. Visualisez les performances historiques.",
+    desc: "Composez votre portefeuille à partir des actions du S&P 500. Visualisez les performances historiques.",
   },
   {
     icon: Brain,
@@ -47,8 +47,9 @@ const Home = () => {
       .catch(() => setStocks(null));
   }, []);
 
+  const sp500Count = stocks !== null ? stocks.filter((s) => s.index === "S&P 500").length : 0;
   const stats = [
-    { label: "Actions supportées", value: stocks !== null ? String(stocks.length) : "—" },
+    { label: "Actions supportées", value: stocks !== null ? String(sp500Count) : "—" },
     ...STATS_DEFAULTS.slice(1),
   ];
 

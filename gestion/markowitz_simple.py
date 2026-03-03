@@ -54,16 +54,15 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         sharpe_arr[i] = (ret_arr[i] - risk_free_rate) / vol_arr[i] if vol_arr[i] > 1e-10 else 0
     max_idx = sharpe_arr.argmax()
     best_weights = all_weights[max_idx, :]
-    weights_dict = {valid[i]: float(best_weights[i]) for i in range(n_assets)}
+    weights_dict = {valid[i]: float(np.asarray(best_weights)[i]) for i in range(n_assets)}
 
-    # Backtest sur la période test
-    test_returns = np.log(test_prices / test_prices.shift(1)).dropna()
-    portfolio_returns = (test_returns * best_weights).sum(axis=1)
-    cum = (1 + portfolio_returns).cumprod()
-    portfolio_series = 100 * cum / cum.iloc[0]
+    # Série portefeuille et marché sur 100 % de la période (base 100 au premier jour du backtest)
+    full_returns = np.log(prices / prices.shift(1)).dropna()
+    portfolio_returns_full = (full_returns * best_weights).sum(axis=1)
+    cum_full = (1 + portfolio_returns_full).cumprod()
+    portfolio_series = 100 * cum_full / cum_full.iloc[0]
 
-    # SPY pour comparer au marché
-    spy = yf.download("SPY", start=test_prices.index[0], end=test_prices.index[-1], auto_adjust=False, progress=False)
+    spy = yf.download("SPY", start=prices.index[0], end=prices.index[-1], auto_adjust=False, progress=False)
     if not spy.empty and "Adj Close" in spy.columns:
         spy_ret = np.log(spy["Adj Close"] / spy["Adj Close"].shift(1)).dropna()
         spy_cum = (1 + spy_ret).cumprod()
@@ -73,6 +72,20 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         market_series = market_series.reindex(common_idx).ffill().bfill()
     else:
         market_series = portfolio_series.copy()
+        common_idx = portfolio_series.index
+
+    # Renormaliser base 100 au premier jour de la période de backtest
+    test_start_date = test_prices.index[0]
+    idx_at_or_after = common_idx[common_idx >= test_start_date]
+    base_date = idx_at_or_after[0] if len(idx_at_or_after) > 0 else common_idx[-1]
+    _val_p = portfolio_series.loc[base_date]
+    _val_m = market_series.loc[base_date]
+    base_p = float(_val_p.iloc[0]) if isinstance(_val_p, pd.Series) else float(_val_p)
+    base_m = float(_val_m.iloc[0]) if isinstance(_val_m, pd.Series) else float(_val_m)
+    if base_p > 1e-12 and base_m > 1e-12:
+        portfolio_series = 100 * portfolio_series / base_p
+        market_series = 100 * market_series / base_m
+
     def _to_scalar(s, key):
         val = s.loc[key]
         return float(val.iloc[0]) if isinstance(val, pd.Series) else float(val)
@@ -81,10 +94,34 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         {"date": d.strftime("%Y-%m-%d"), "portfolio": round(_to_scalar(portfolio_series, d), 2), "market": round(_to_scalar(market_series, d), 2)}
         for d in portfolio_series.index
     ]
-    peak = cum.cummax()
-    drawdown = (cum - peak) / peak
-    max_drawdown = float(-drawdown.min() * 100) if len(drawdown) > 0 else 0
+
+    # Max drawdown sur période test pour cohérence avec les métriques
+    test_returns = np.log(test_prices / test_prices.shift(1)).dropna()
+    portfolio_returns_test = (test_returns * best_weights).sum(axis=1)
+    cum_test = (1 + portfolio_returns_test).cumprod()
+    peak = cum_test.cummax()
+    drawdown = (cum_test - peak) / peak
+    _dd_min = drawdown.min()
+    _dd_min = _dd_min.iloc[0] if isinstance(_dd_min, pd.Series) else _dd_min
+    max_drawdown = float(-_dd_min * 100) if len(drawdown) > 0 else 0
+
+    # Frontière efficiente : points (vol, rendement) Pareto-optimaux (pour chaque vol, rendement max)
+    vol_pct = vol_arr * 100
+    ret_pct = ret_arr * 100
+    order = np.argsort(vol_pct)
+    frontier_vol, frontier_ret, frontier_sharpe = [], [], []
+    max_ret_so_far = -np.inf
+    for i in order:
+        if ret_pct[i] >= max_ret_so_far:
+            max_ret_so_far = ret_pct[i]
+            frontier_vol.append(round(float(vol_pct[i]), 2))
+            frontier_ret.append(round(float(ret_pct[i]), 2))
+            frontier_sharpe.append(round(float(sharpe_arr[i]), 4))
     # Sortie pour l’API
+    train_start = train_prices.index[0].strftime("%Y-%m-%d")
+    train_end = train_prices.index[-1].strftime("%Y-%m-%d")
+    test_start = test_prices.index[0].strftime("%Y-%m-%d")
+    test_end = test_prices.index[-1].strftime("%Y-%m-%d")
     return {
         "weights": weights_dict,
         "sharpe": round(float(sharpe_arr[max_idx]), 4),
@@ -92,4 +129,10 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         "volatility": round(float(vol_arr[max_idx]) * 100, 2),
         "maxDrawdown": round(max_drawdown, 2),
         "comparisonData": comparison_data,
+        "numPortfolios": num_portfolios,
+        "trainPeriodStart": train_start,
+        "trainPeriodEnd": train_end,
+        "testPeriodStart": test_start,
+        "testPeriodEnd": test_end,
+        "efficientFrontier": [{"volatility": v, "expectedReturn": r, "sharpe": s} for v, r, s in zip(frontier_vol, frontier_ret, frontier_sharpe)],
     }

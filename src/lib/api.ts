@@ -29,6 +29,12 @@ export async function fetchHistory(
   return r.json();
 }
 
+export interface EfficientFrontierPoint {
+  volatility: number;
+  expectedReturn: number;
+  sharpe?: number;
+}
+
 export interface SimulateResult {
   weights: Record<string, number>;
   sharpe: number;
@@ -36,6 +42,12 @@ export interface SimulateResult {
   volatility: number;
   maxDrawdown: number;
   comparisonData: { date: string; portfolio: number; market: number }[];
+  numPortfolios?: number;
+  trainPeriodStart?: string;
+  trainPeriodEnd?: string;
+  testPeriodStart?: string;
+  testPeriodEnd?: string;
+  efficientFrontier?: EfficientFrontierPoint[];
 }
 
 export async function runSimulation(

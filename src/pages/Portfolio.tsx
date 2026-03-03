@@ -9,7 +9,8 @@ import { fetchStocks, fetchHistory } from "@/lib/api";
 import { loadSavedSymbols, saveSymbols } from "@/lib/portfolioStorage";
 import type { StockItem } from "@/lib/api";
 
-const indices = ["NASDAQ", "DOW JONES", "S&P 500"] as const;
+const indices = ["S&P 500", "NASDAQ", "DOW JONES"] as const;
+const enabledIndex = "S&P 500";
 
 const endDate = new Date();
 const startDate = new Date();
@@ -21,7 +22,7 @@ const Portfolio = () => {
   const [error, setError] = useState<string | null>(null);
   const [selectedSymbols, setSelectedSymbols] = useState<string[]>(loadSavedSymbols);
   const [selectedStock, setSelectedStock] = useState<StockItem | null>(null);
-  const [activeIndex, setActiveIndex] = useState<string>("NASDAQ");
+  const [activeIndex, setActiveIndex] = useState<string>(enabledIndex);
   const [search, setSearch] = useState("");
   const [chartStart, setChartStart] = useState(startDate.toISOString().slice(0, 10));
   const [chartEnd, setChartEnd] = useState(endDate.toISOString().slice(0, 10));
@@ -132,7 +133,12 @@ const Portfolio = () => {
           <Tabs value={activeIndex} onValueChange={setActiveIndex} className="flex flex-col min-h-0 flex-1">
             <TabsList className="mb-3 w-full shrink-0">
               {indices.map((idx) => (
-                <TabsTrigger key={idx} value={idx} className="text-xs font-semibold flex-1">
+                <TabsTrigger
+                  key={idx}
+                  value={idx}
+                  disabled={idx !== enabledIndex}
+                  className={`text-xs font-semibold flex-1 ${idx !== enabledIndex ? "cursor-not-allowed opacity-70" : ""}`}
+                >
                   {idx}
                 </TabsTrigger>
               ))}
@@ -275,7 +281,7 @@ const Portfolio = () => {
                       <LineChart data={chartData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                         <XAxis dataKey="date" tick={{ fontSize: 10 }} stroke="hsl(var(--muted-foreground))" interval="preserveStartEnd" />
-                        <YAxis tick={{ fontSize: 10 }} stroke="hsl(var(--muted-foreground))" domain={["auto", "auto"]} />
+                        <YAxis tick={{ fontSize: 11 }} stroke="hsl(var(--muted-foreground))" domain={["auto", "auto"]} tickFormatter={(v) => `$${Number(v).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} />
                         <Tooltip
                           contentStyle={{
                             backgroundColor: "hsl(var(--card))",
@@ -283,6 +289,7 @@ const Portfolio = () => {
                             borderRadius: 8,
                             fontSize: 12,
                           }}
+                          formatter={(value: number) => [`$${Number(value).toFixed(2)}`, "Cours"]}
                         />
                         <Line type="monotone" dataKey="price" stroke="hsl(var(--primary))" strokeWidth={2} dot={false} />
                       </LineChart>
