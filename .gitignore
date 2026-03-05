@@ -25,3 +25,9 @@ dist-ssr
 
 # Données actions (générées localement ; la version par défaut est stocks_data.default.json)
 server/stocks_data.json
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc

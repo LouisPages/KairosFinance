@@ -23,6 +23,18 @@ const models = [
     name: "Trois facteurs (Fama & French)",
     desc: "Rendements espérés avec Mkt-RF, SMB et HML.",
   },
+  {
+    id: "markowitz-5factors",
+    name: "Cinq facteurs (Fama & French)",
+    desc: "Rendements espérés avec Mkt-RF, SMB, HML, RMW et CMA.",
+    badge: "Bientôt",
+  },
+  {
+    id: "markowitz-dynamic",
+    name: "Choix dynamique des facteurs",
+    desc: "Sélection automatique des facteurs les plus pertinents selon le portefeuille.",
+    badge: "Bientôt",
+  },
 ];
 
 const Simulation = () => {
@@ -77,15 +89,21 @@ const Simulation = () => {
         </div>
       )}
 
-      <div className="mb-8 grid gap-4 md:grid-cols-3">
+      <div className="mb-8 grid gap-4 md:grid-cols-3 xl:grid-cols-5">
         {models.map((m) => (
           <button
             key={m.id}
-            onClick={() => { setSelectedModel(m.id); setResult(null); setApiError(null); }}
-            className={`glass-card p-5 text-left transition-shadow focus:outline-none focus:ring-0 active:ring-0 ${
+            onClick={() => { if (!m.badge) { setSelectedModel(m.id); setResult(null); setApiError(null); } }}
+            disabled={!!m.badge}
+            className={`glass-card relative p-5 text-left transition-shadow focus:outline-none focus:ring-0 active:ring-0 ${
               selectedModel === m.id ? "!ring-2 !ring-primary hover:!ring-2 hover:!ring-primary active:!ring-2 active:!ring-primary" : ""
-            }`}
+            } ${m.badge ? "opacity-60 cursor-not-allowed" : ""}`}
           >
+            {m.badge && (
+              <span className="absolute right-3 top-3 rounded-full bg-muted px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+                {m.badge}
+              </span>
+            )}
             <h3 className="font-display text-sm font-bold text-foreground">{m.name}</h3>
             <p className="mt-1 text-xs text-muted-foreground">{m.desc}</p>
           </button>

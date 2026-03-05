@@ -121,6 +121,19 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
             frontier_ret.append(round(float(ret_pct[i]), 2))
             frontier_sharpe.append(round(float(sharpe_arr[i]), 4))
             frontier_backtest_ret.append(round(float(total_ret), 2))
+
+    # Toujours inclure le portefeuille optimal pour que son backtestReturn corresponde à la courbe
+    opt_vol = round(float(vol_pct[max_idx]), 2)
+    opt_ret = round(float(ret_pct[max_idx]), 2)
+    opt_sharpe = round(float(sharpe_arr[max_idx]), 4)
+    port_ret_test_opt = (test_returns * np.asarray(best_weights)).sum(axis=1)
+    opt_backtest_ret = round(float((np.exp(port_ret_test_opt.sum()) - 1) * 100), 2)
+    if (opt_vol, opt_ret) not in list(zip(frontier_vol, frontier_ret)):
+        frontier_vol.append(opt_vol)
+        frontier_ret.append(opt_ret)
+        frontier_sharpe.append(opt_sharpe)
+        frontier_backtest_ret.append(opt_backtest_ret)
+
     # Sortie pour l’API
     train_start = train_prices.index[0].strftime("%Y-%m-%d")
     train_end = train_prices.index[-1].strftime("%Y-%m-%d")
