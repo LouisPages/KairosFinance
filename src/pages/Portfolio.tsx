@@ -13,8 +13,7 @@ const indices = ["S&P 500", "NASDAQ", "DOW JONES"] as const;
 const enabledIndex = "S&P 500";
 
 const endDate = new Date();
-const startDate = new Date();
-startDate.setFullYear(startDate.getFullYear() - 5);
+const startDate = new Date("2005-01-01");
 
 const Portfolio = () => {
   const [stocks, setStocks] = useState<StockItem[]>([]);

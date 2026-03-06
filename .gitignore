@@ -31,3 +31,9 @@ __pycache__/
 *.py[cod]
 *.pyo
 *.pyc
+
+# Cache LLM (news et sélection de facteurs)
+gestion/dynamic/llm_cache/
+
+# Variables d'environnement
+.env

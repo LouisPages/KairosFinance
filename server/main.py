@@ -50,12 +50,12 @@ def get_history(
         except ValueError:
             end_d = datetime.now()
     if start is None:
-        start_d = end_d - timedelta(days=365*5)
+        start_d = datetime(2005, 1, 1)
     else:
         try:
             start_d = datetime.fromisoformat(start.replace("Z", ""))
         except ValueError:
-            start_d = end_d - timedelta(days=365*5)
+            start_d = datetime(2005, 1, 1)
     interval_map = {"daily": "1d", "monthly": "1mo", "annual": "1y", "1d": "1d", "1mo": "1mo", "1y": "1y"}
     yf_interval = interval_map.get(interval, "1d")
     data = yf.download(tickers, start=start_d, end=end_d, auto_adjust=False, progress=False, group_by="column")
@@ -101,7 +101,7 @@ def simulate(req: SimulateRequest):
     if len(req.symbols) < 2:
         raise HTTPException(status_code=400, detail="Sélectionnez au moins 2 actions pour lancer une simulation.")
     end_d = datetime.now()
-    start_d = end_d - timedelta(days=365*5)
+    start_d = datetime(2005, 1, 1)
     start_s = start_d.strftime("%Y-%m-%d")
     end_s = end_d.strftime("%Y-%m-%d")
     try:
