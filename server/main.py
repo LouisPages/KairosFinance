@@ -3,8 +3,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from fastapi import FastAPI, HTTPException
+import json
+import asyncio
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from datetime import datetime, timedelta
 import yfinance as yf
@@ -50,7 +53,7 @@ def get_history(
         except ValueError:
             end_d = datetime.now()
     if start is None:
-        start_d = datetime(2005, 1, 1)
+        start_d = datetime(2020, 3, 1)
     else:
         try:
             start_d = datetime.fromisoformat(start.replace("Z", ""))
@@ -114,6 +117,9 @@ def simulate(req: SimulateRequest):
         elif req.model == "markowitz-3factors":
             import gestion.markowitz_3factors as markowitz_3factors
             result = markowitz_3factors.run(req.symbols, start_s, end_s)
+        elif req.model == "markowitz-llm":
+            import gestion.dynamic.markowitz_llm as markowitz_llm
+            result = markowitz_llm.run(req.symbols, start_s, end_s)
         else:
             raise HTTPException(status_code=400, detail="Modèle inconnu")
     except Exception as e:
@@ -121,3 +127,65 @@ def simulate(req: SimulateRequest):
     if "error" in result:
         raise HTTPException(status_code=400, detail=result["error"])
     return result
+
+
+@app.post("/api/simulate-llm-stream")
+async def simulate_llm_stream(req: SimulateRequest):
+    """SSE endpoint streaming la progression du backtest LLM mois par mois."""
+    if len(req.symbols) < 2:
+        raise HTTPException(status_code=400, detail="Sélectionnez au moins 2 actions.")
+
+    end_d = datetime.now()
+    start_d = datetime(2005, 1, 1)
+    start_s = start_d.strftime("%Y-%m-%d")
+    end_s = end_d.strftime("%Y-%m-%d")
+
+    async def event_generator():
+        import gestion.dynamic.markowitz_llm as markowitz_llm
+
+        loop = asyncio.get_running_loop()
+
+        def send(event: str, data: dict):
+            return f"event: {event}\ndata: {json.dumps(data)}\n\n"
+
+        try:
+            progress_queue: asyncio.Queue = asyncio.Queue()
+
+            import concurrent.futures
+            executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+            future = loop.run_in_executor(executor, lambda: markowitz_llm.run(
+                req.symbols,
+                start_s,
+                end_s,
+                progress_callback=lambda ev: asyncio.run_coroutine_threadsafe(
+                    progress_queue.put(ev), loop
+                ),
+            ))
+
+            while True:
+                try:
+                    evt = await asyncio.wait_for(progress_queue.get(), timeout=0.2)
+                    yield send(evt["type"], evt)
+                except asyncio.TimeoutError:
+                    if future.done():
+                        break
+                    yield ": keepalive\n\n"
+                    continue
+
+            result = future.result()
+            if "error" in result:
+                yield send("error", {"message": result["error"]})
+            else:
+                yield send("result", result)
+
+        except Exception as e:
+            yield send("error", {"message": str(e)})
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+        },
+    )
