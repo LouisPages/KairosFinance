@@ -114,7 +114,9 @@ Définitions des facteurs :
 
 
 Réponds UNIQUEMENT avec ce JSON compact (9 clés, valeurs booléennes true/false) :
-{{"Mkt-RF": _, "SMB": _, "HML": _, "RMW": _, "CMA": _, "UMD": _, "HY_SPREAD": _, "TERM_SPREAD": _, "VIX": _}}"""
+{{"Mkt-RF": _, "SMB": _, "HML": _, "RMW": _, "CMA": _, "UMD": _, "HY_SPREAD": _, "TERM_SPREAD": _, "VIX": _}}
+
+IMPORTANT : UN SEUL FACTEUR DOIT VALOIR TRUE UNIQUEMENT"""
 
 
 def _build_system_prompt(ticker: str) -> str:
@@ -134,7 +136,8 @@ def _build_user_message(ticker: str, year: int, month: int, news: dict[str, Any]
         f"Événements clés :\n{events_str}\n\n"
         f"Sentiment global : {sentiment}\n\n"
         "Pour chaque facteur, réponds true si l'actualité de ce mois le rend pertinent "
-        "pour ce titre, false sinon. Retourne UNIQUEMENT le JSON compact."
+        "pour ce titre, false sinon. Retourne UNIQUEMENT le JSON compact. "
+        "IMPORTANT : UN SEUL FACTEUR DOIT VALOIR TRUE UNIQUEMENT"
     )
 
 

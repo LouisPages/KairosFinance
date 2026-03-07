@@ -1,7 +1,7 @@
-- Utiliser un rendement sans risque adapté sur chaque mois
 - Au lieu de prendre N portefeuilles aléatoires, faire une descente de gradient ? Comparer les deux méthodes ?
 - Tester la sensibilité aux facteurs avec des tests de students
-- Tester le modèle dynamique avec un seul choix de facteurs
-- Ajouter une page Historique qui enregistre chaque simulation effectuée
-- Comparer le dynamique avec 5/8 facteurs et le Mkt-RF libre
+- Comparer le dynamique entre 5 et 8 facteurs et le Mkt-RF libre
 - Ne plus avoir un portefeuille contenant des actions fixés, mais adapter dynamiquement le portefeuille avec d'autres pipeline LLM
+
+- Ajouter des titres aux simulations effectués
+- 
