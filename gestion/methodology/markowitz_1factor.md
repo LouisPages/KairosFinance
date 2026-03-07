@@ -1,3 +1,13 @@
+## Fichiers concernés
+
+### À créer
+- `gestion/markowitz_1factor.py` — module principal exposant la fonction `run()` (hors `multifactor/`, car modèle CAPM à un seul facteur de marché)
+
+### À utiliser (sans modification)
+- `gestion/markowitz_simple.py` — référence structurelle : même pipeline Monte-Carlo, remplacer l'estimation de $\mu$ par la régression CAPM
+
+---
+
 ## Collecte et prétraitement des données
 
 Les prix de clôture ajustés sont récupérés via `yfinance` pour chaque ticker sur la période demandée. Contrairement à la version simple, les rendements sont calculés à fréquence **mensuelle** plutôt que journalière, afin de s'aligner sur la granularité du facteur de marché. Les prix sont donc rééchantillonnés au dernier jour de chaque mois avant le calcul des rendements arithmétiques. Les actifs dont l'historique est entièrement manquant sont écartés, et la série résultante est divisée en un **ensemble d'entraînement** (les 80 premiers pourcents des mois disponibles, avec un minimum de 24 observations) et un **ensemble de test** (les 20 derniers pourcents).

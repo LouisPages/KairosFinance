@@ -36,7 +36,6 @@ const models = [
     id: "markowitz-5factors",
     name: "Cinq facteurs (Fama & French)",
     desc: "Rendements espérés avec Mkt-RF, SMB, HML, RMW et CMA.",
-    badge: "Bientôt",
   },
   {
     id: "markowitz-llm",

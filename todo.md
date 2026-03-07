@@ -4,4 +4,4 @@
 - Ne plus avoir un portefeuille contenant des actions fixés, mais adapter dynamiquement le portefeuille avec d'autres pipeline LLM
 
 - Ajouter des titres aux simulations effectués
-- 
+- Demander une explication pour chaque résultat json du choix des facteurs par le LLM

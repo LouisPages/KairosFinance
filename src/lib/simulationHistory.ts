@@ -12,6 +12,7 @@ export const MODEL_LABELS: Record<string, string> = {
   "markowitz-classic": "Markowitz classique",
   "markowitz-1factor": "Un facteur de risque (CAPM)",
   "markowitz-3factors": "Trois facteurs (Fama & French)",
+  "markowitz-5factors": "Cinq facteurs (Fama & French)",
   "markowitz-llm": "Choix dynamique des facteurs (LLM)",
 };
 

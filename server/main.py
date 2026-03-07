@@ -183,8 +183,11 @@ def simulate(req: SimulateRequest):
             import gestion.markowitz_1factor as markowitz_1factor
             result = markowitz_1factor.run(req.symbols, start_s, end_s)
         elif req.model == "markowitz-3factors":
-            import gestion.markowitz_3factors as markowitz_3factors
+            import gestion.multifactor.markowitz_3factors as markowitz_3factors
             result = markowitz_3factors.run(req.symbols, start_s, end_s)
+        elif req.model == "markowitz-5factors":
+            import gestion.multifactor.markowitz_5factors as markowitz_5factors
+            result = markowitz_5factors.run(req.symbols, start_s, end_s)
         elif req.model == "markowitz-llm":
             import gestion.dynamic.markowitz_llm as markowitz_llm
             result = markowitz_llm.run(req.symbols, start_s, end_s)

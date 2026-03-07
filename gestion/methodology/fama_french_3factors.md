@@ -13,7 +13,7 @@ Ajout d'un modèle d'optimisation de portefeuille basé sur le modèle à trois 
 - `gestion/get_facteurs.py` — fonction `load_famafrench_factors(start, end)` qui retourne un `DataFrame` mensuel avec les colonnes `Mkt-RF`, `SMB`, `HML`, `RF`
 
 ### Référence structurelle
-- `gestion/markowitz_1factor.py` — architecture identique, à étendre avec deux facteurs supplémentaires (SMB, HML)
+- `gestion/markowitz_1factor.py` — architecture identique (script hors `multifactor/`, car modèle CAPM à un seul facteur de marché), à étendre avec deux facteurs supplémentaires (SMB, HML)
 
 ---
 

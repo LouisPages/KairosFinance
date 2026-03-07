@@ -1,5 +1,1976 @@
 [
   {
+    "id": "sim-1772894264650-hf2b2",
+    "date": "2026-03-07T14:37:44.650Z",
+    "modelId": "markowitz-5factors",
+    "symbols": [
+      "AOS",
+      "AMD",
+      "AMGN",
+      "BLK",
+      "TECH",
+      "CDW",
+      "COIN",
+      "COST",
+      "DOV",
+      "EQT",
+      "FSLR",
+      "GDDY",
+      "LH",
+      "NWSA",
+      "ON",
+      "PPL",
+      "SWKS",
+      "TRGP",
+      "UNP",
+      "WM"
+    ],
+    "result": {
+      "weights": {
+        "AOS": 0.12944669331404907,
+        "AMD": 0.05096644364348368,
+        "AMGN": 0.044416696414896886,
+        "BLK": 0.08813472802567851,
+        "TECH": 0.011573498449999732,
+        "CDW": 0.043457270904726654,
+        "COIN": 0.011759184459353858,
+        "COST": 0.003192841876882361,
+        "DOV": 0.14885441189125512,
+        "EQT": 0.040648812538497614,
+        "FSLR": 0.008674224646517641,
+        "GDDY": 0.011379922929736736,
+        "LH": 0.08724400609604491,
+        "NWSA": 0.0952866060165256,
+        "ON": 0.056622202175792724,
+        "PPL": 0.07640486419964443,
+        "SWKS": 0.01111068501070579,
+        "TRGP": 0.00970520142143799,
+        "UNP": 0.007151685018372679,
+        "WM": 0.06397002096639794
+      },
+      "sharpe": 0.4262,
+      "expectedReturn": 12.05,
+      "volatility": 20.84,
+      "maxDrawdown": 4.73,
+      "comparisonData": [
+        {
+          "date": "2021-05",
+          "portfolio": 73.77,
+          "market": 71.56
+        },
+        {
+          "date": "2021-06",
+          "portfolio": 74.94,
+          "market": 73.16
+        },
+        {
+          "date": "2021-07",
+          "portfolio": 76.52,
+          "market": 74.95
+        },
+        {
+          "date": "2021-08",
+          "portfolio": 78.9,
+          "market": 77.18
+        },
+        {
+          "date": "2021-09",
+          "portfolio": 74.23,
+          "market": 73.58
+        },
+        {
+          "date": "2021-10",
+          "portfolio": 80.01,
+          "market": 78.74
+        },
+        {
+          "date": "2021-11",
+          "portfolio": 81.7,
+          "market": 78.11
+        },
+        {
+          "date": "2021-12",
+          "portfolio": 87.18,
+          "market": 81.72
+        },
+        {
+          "date": "2022-01",
+          "portfolio": 80.07,
+          "market": 77.41
+        },
+        {
+          "date": "2022-02",
+          "portfolio": 77.4,
+          "market": 75.13
+        },
+        {
+          "date": "2022-03",
+          "portfolio": 79.56,
+          "market": 77.95
+        },
+        {
+          "date": "2022-04",
+          "portfolio": 71.97,
+          "market": 71.11
+        },
+        {
+          "date": "2022-05",
+          "portfolio": 74.31,
+          "market": 71.27
+        },
+        {
+          "date": "2022-06",
+          "portfolio": 66.46,
+          "market": 65.39
+        },
+        {
+          "date": "2022-07",
+          "portfolio": 75.69,
+          "market": 71.42
+        },
+        {
+          "date": "2022-08",
+          "portfolio": 72.83,
+          "market": 68.5
+        },
+        {
+          "date": "2022-09",
+          "portfolio": 64.82,
+          "market": 62.17
+        },
+        {
+          "date": "2022-10",
+          "portfolio": 70.52,
+          "market": 67.22
+        },
+        {
+          "date": "2022-11",
+          "portfolio": 78.15,
+          "market": 70.96
+        },
+        {
+          "date": "2022-12",
+          "portfolio": 73.16,
+          "market": 66.87
+        },
+        {
+          "date": "2023-01",
+          "portfolio": 80.33,
+          "market": 71.07
+        },
+        {
+          "date": "2023-02",
+          "portfolio": 77.33,
+          "market": 69.29
+        },
+        {
+          "date": "2023-03",
+          "portfolio": 79.83,
+          "market": 71.86
+        },
+        {
+          "date": "2023-04",
+          "portfolio": 78.24,
+          "market": 73
+        },
+        {
+          "date": "2023-05",
+          "portfolio": 77.66,
+          "market": 73.34
+        },
+        {
+          "date": "2023-06",
+          "portfolio": 84.16,
+          "market": 78.09
+        },
+        {
+          "date": "2023-07",
+          "portfolio": 86.6,
+          "market": 80.65
+        },
+        {
+          "date": "2023-08",
+          "portfolio": 85.91,
+          "market": 79.34
+        },
+        {
+          "date": "2023-09",
+          "portfolio": 81.46,
+          "market": 75.58
+        },
+        {
+          "date": "2023-10",
+          "portfolio": 79.64,
+          "market": 73.94
+        },
+        {
+          "date": "2023-11",
+          "portfolio": 88.04,
+          "market": 80.69
+        },
+        {
+          "date": "2023-12",
+          "portfolio": 96.13,
+          "market": 84.37
+        },
+        {
+          "date": "2024-01",
+          "portfolio": 93.83,
+          "market": 85.72
+        },
+        {
+          "date": "2024-02",
+          "portfolio": 100.23,
+          "market": 90.19
+        },
+        {
+          "date": "2024-03",
+          "portfolio": 103.39,
+          "market": 93.14
+        },
+        {
+          "date": "2024-04",
+          "portfolio": 98.65,
+          "market": 89.38
+        },
+        {
+          "date": "2024-05",
+          "portfolio": 102.85,
+          "market": 93.91
+        },
+        {
+          "date": "2024-06",
+          "portfolio": 101.95,
+          "market": 97.22
+        },
+        {
+          "date": "2024-07",
+          "portfolio": 105.17,
+          "market": 98.4
+        },
+        {
+          "date": "2024-08",
+          "portfolio": 107.49,
+          "market": 100.69
+        },
+        {
+          "date": "2024-09",
+          "portfolio": 109.32,
+          "market": 102.81
+        },
+        {
+          "date": "2024-10",
+          "portfolio": 105.8,
+          "market": 101.89
+        },
+        {
+          "date": "2024-11",
+          "portfolio": 111.27,
+          "market": 107.97
+        },
+        {
+          "date": "2024-12",
+          "portfolio": 103.85,
+          "market": 105.37
+        },
+        {
+          "date": "2025-01",
+          "portfolio": 108.23,
+          "market": 108.2
+        },
+        {
+          "date": "2025-02",
+          "portfolio": 105.08,
+          "market": 106.83
+        },
+        {
+          "date": "2025-03",
+          "portfolio": 100.85,
+          "market": 100.87
+        },
+        {
+          "date": "2025-04",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2025-05",
+          "portfolio": 103.69,
+          "market": 106.28
+        },
+        {
+          "date": "2025-06",
+          "portfolio": 109.51,
+          "market": 111.75
+        },
+        {
+          "date": "2025-07",
+          "portfolio": 112.83,
+          "market": 114.32
+        },
+        {
+          "date": "2025-08",
+          "portfolio": 112,
+          "market": 116.67
+        },
+        {
+          "date": "2025-09",
+          "portfolio": 112.78,
+          "market": 120.82
+        },
+        {
+          "date": "2025-10",
+          "portfolio": 112.59,
+          "market": 123.7
+        },
+        {
+          "date": "2025-11",
+          "portfolio": 113.61,
+          "market": 123.94
+        },
+        {
+          "date": "2025-12",
+          "portfolio": 113.12,
+          "market": 124.04
+        },
+        {
+          "date": "2026-01",
+          "portfolio": 118.19,
+          "market": 125.87
+        },
+        {
+          "date": "2026-02",
+          "portfolio": 122.27,
+          "market": 124.78
+        },
+        {
+          "date": "2026-03",
+          "portfolio": 116.49,
+          "market": 122.31
+        }
+      ],
+      "numPortfolios": 10000,
+      "trainPeriodStart": "2021-05",
+      "trainPeriodEnd": "2025-03",
+      "testPeriodStart": "2025-04",
+      "testPeriodEnd": "2026-03",
+      "efficientFrontier": [
+        {
+          "volatility": 18.32,
+          "expectedReturn": 10.5,
+          "sharpe": 0.4,
+          "backtestReturn": 3.79
+        },
+        {
+          "volatility": 18.96,
+          "expectedReturn": 10.53,
+          "sharpe": 0.3885,
+          "backtestReturn": 14.71
+        },
+        {
+          "volatility": 19.01,
+          "expectedReturn": 10.6,
+          "sharpe": 0.3911,
+          "backtestReturn": 13.63
+        },
+        {
+          "volatility": 19.18,
+          "expectedReturn": 11.02,
+          "sharpe": 0.4093,
+          "backtestReturn": 12.9
+        },
+        {
+          "volatility": 19.23,
+          "expectedReturn": 11.23,
+          "sharpe": 0.4194,
+          "backtestReturn": 14.84
+        },
+        {
+          "volatility": 20.1,
+          "expectedReturn": 11.6,
+          "sharpe": 0.4194,
+          "backtestReturn": 18.53
+        },
+        {
+          "volatility": 20.84,
+          "expectedReturn": 12.05,
+          "sharpe": 0.4262,
+          "backtestReturn": 15.5
+        }
+      ]
+    },
+    "llmResult": null,
+    "classicResult": null
+  },
+  {
+    "id": "sim-1772894205919-fp77i",
+    "date": "2026-03-07T14:36:45.919Z",
+    "modelId": "markowitz-3factors",
+    "symbols": [
+      "AOS",
+      "AMD",
+      "AMGN",
+      "BLK",
+      "TECH",
+      "CDW",
+      "COIN",
+      "COST",
+      "DOV",
+      "EQT",
+      "FSLR",
+      "GDDY",
+      "LH",
+      "NWSA",
+      "ON",
+      "PPL",
+      "SWKS",
+      "TRGP",
+      "UNP",
+      "WM"
+    ],
+    "result": {
+      "weights": {
+        "AOS": 0.0791777045733899,
+        "AMD": 0.09085232843716308,
+        "AMGN": 0.11381969737916894,
+        "BLK": 0.08311953914942165,
+        "TECH": 0.010259827519340117,
+        "CDW": 0.006833259926787926,
+        "COIN": 0.0026157293217495743,
+        "COST": 0.051577375571806985,
+        "DOV": 0.10578049348215302,
+        "EQT": 0.06457508630742544,
+        "FSLR": 0.004872556251978524,
+        "GDDY": 0.011723287483773204,
+        "LH": 0.04898497497986267,
+        "NWSA": 0.04937781616544127,
+        "ON": 0.03103365287250141,
+        "PPL": 0.023516100681460126,
+        "SWKS": 0.016196338020440154,
+        "TRGP": 0.11666991776019549,
+        "UNP": 0.08766581109364514,
+        "WM": 0.0013485030222952848
+      },
+      "sharpe": 0.3926,
+      "expectedReturn": 11.06,
+      "volatility": 20.1,
+      "maxDrawdown": 4.35,
+      "comparisonData": [
+        {
+          "date": "2021-05",
+          "portfolio": 59.72,
+          "market": 71.56
+        },
+        {
+          "date": "2021-06",
+          "portfolio": 62.27,
+          "market": 73.16
+        },
+        {
+          "date": "2021-07",
+          "portfolio": 62.84,
+          "market": 74.95
+        },
+        {
+          "date": "2021-08",
+          "portfolio": 64.21,
+          "market": 77.18
+        },
+        {
+          "date": "2021-09",
+          "portfolio": 61.78,
+          "market": 73.58
+        },
+        {
+          "date": "2021-10",
+          "portfolio": 67.34,
+          "market": 78.74
+        },
+        {
+          "date": "2021-11",
+          "portfolio": 68.84,
+          "market": 78.11
+        },
+        {
+          "date": "2021-12",
+          "portfolio": 72.97,
+          "market": 81.72
+        },
+        {
+          "date": "2022-01",
+          "portfolio": 69.1,
+          "market": 77.41
+        },
+        {
+          "date": "2022-02",
+          "portfolio": 69.44,
+          "market": 75.13
+        },
+        {
+          "date": "2022-03",
+          "portfolio": 73.69,
+          "market": 77.95
+        },
+        {
+          "date": "2022-04",
+          "portfolio": 66.94,
+          "market": 71.11
+        },
+        {
+          "date": "2022-05",
+          "portfolio": 69.51,
+          "market": 71.27
+        },
+        {
+          "date": "2022-06",
+          "portfolio": 61.68,
+          "market": 65.39
+        },
+        {
+          "date": "2022-07",
+          "portfolio": 70.11,
+          "market": 71.42
+        },
+        {
+          "date": "2022-08",
+          "portfolio": 67.79,
+          "market": 68.5
+        },
+        {
+          "date": "2022-09",
+          "portfolio": 59.52,
+          "market": 62.17
+        },
+        {
+          "date": "2022-10",
+          "portfolio": 64.99,
+          "market": 67.22
+        },
+        {
+          "date": "2022-11",
+          "portfolio": 72.17,
+          "market": 70.96
+        },
+        {
+          "date": "2022-12",
+          "portfolio": 66.94,
+          "market": 66.87
+        },
+        {
+          "date": "2023-01",
+          "portfolio": 71.74,
+          "market": 71.07
+        },
+        {
+          "date": "2023-02",
+          "portfolio": 69.76,
+          "market": 69.29
+        },
+        {
+          "date": "2023-03",
+          "portfolio": 71.85,
+          "market": 71.86
+        },
+        {
+          "date": "2023-04",
+          "portfolio": 71.11,
+          "market": 73
+        },
+        {
+          "date": "2023-05",
+          "portfolio": 70.9,
+          "market": 73.34
+        },
+        {
+          "date": "2023-06",
+          "portfolio": 76.2,
+          "market": 78.09
+        },
+        {
+          "date": "2023-07",
+          "portfolio": 79.77,
+          "market": 80.65
+        },
+        {
+          "date": "2023-08",
+          "portfolio": 79.9,
+          "market": 79.34
+        },
+        {
+          "date": "2023-09",
+          "portfolio": 76.92,
+          "market": 75.58
+        },
+        {
+          "date": "2023-10",
+          "portfolio": 74.81,
+          "market": 73.94
+        },
+        {
+          "date": "2023-11",
+          "portfolio": 82.6,
+          "market": 80.69
+        },
+        {
+          "date": "2023-12",
+          "portfolio": 89.42,
+          "market": 84.37
+        },
+        {
+          "date": "2024-01",
+          "portfolio": 89.15,
+          "market": 85.72
+        },
+        {
+          "date": "2024-02",
+          "portfolio": 94.56,
+          "market": 90.19
+        },
+        {
+          "date": "2024-03",
+          "portfolio": 97.28,
+          "market": 93.14
+        },
+        {
+          "date": "2024-04",
+          "portfolio": 93.92,
+          "market": 89.38
+        },
+        {
+          "date": "2024-05",
+          "portfolio": 98.5,
+          "market": 93.91
+        },
+        {
+          "date": "2024-06",
+          "portfolio": 98.81,
+          "market": 97.22
+        },
+        {
+          "date": "2024-07",
+          "portfolio": 102.03,
+          "market": 98.4
+        },
+        {
+          "date": "2024-08",
+          "portfolio": 105.08,
+          "market": 100.69
+        },
+        {
+          "date": "2024-09",
+          "portfolio": 106.8,
+          "market": 102.81
+        },
+        {
+          "date": "2024-10",
+          "portfolio": 105.02,
+          "market": 101.89
+        },
+        {
+          "date": "2024-11",
+          "portfolio": 111.43,
+          "market": 107.97
+        },
+        {
+          "date": "2024-12",
+          "portfolio": 103.71,
+          "market": 105.37
+        },
+        {
+          "date": "2025-01",
+          "portfolio": 109.28,
+          "market": 108.2
+        },
+        {
+          "date": "2025-02",
+          "portfolio": 107.03,
+          "market": 106.83
+        },
+        {
+          "date": "2025-03",
+          "portfolio": 104.24,
+          "market": 100.87
+        },
+        {
+          "date": "2025-04",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2025-05",
+          "portfolio": 103.1,
+          "market": 106.28
+        },
+        {
+          "date": "2025-06",
+          "portfolio": 109.83,
+          "market": 111.75
+        },
+        {
+          "date": "2025-07",
+          "portfolio": 112.48,
+          "market": 114.32
+        },
+        {
+          "date": "2025-08",
+          "portfolio": 111.73,
+          "market": 116.67
+        },
+        {
+          "date": "2025-09",
+          "portfolio": 112.59,
+          "market": 120.82
+        },
+        {
+          "date": "2025-10",
+          "portfolio": 115.82,
+          "market": 123.7
+        },
+        {
+          "date": "2025-11",
+          "portfolio": 119.67,
+          "market": 123.94
+        },
+        {
+          "date": "2025-12",
+          "portfolio": 118.89,
+          "market": 124.04
+        },
+        {
+          "date": "2026-01",
+          "portfolio": 125.58,
+          "market": 125.87
+        },
+        {
+          "date": "2026-02",
+          "portfolio": 132.79,
+          "market": 124.78
+        },
+        {
+          "date": "2026-03",
+          "portfolio": 127.01,
+          "market": 122.31
+        }
+      ],
+      "numPortfolios": 10000,
+      "trainPeriodStart": "2021-05",
+      "trainPeriodEnd": "2025-03",
+      "testPeriodStart": "2025-04",
+      "testPeriodEnd": "2026-03",
+      "efficientFrontier": [
+        {
+          "volatility": 18.19,
+          "expectedReturn": 10.11,
+          "sharpe": 0.3817,
+          "backtestReturn": 10.01
+        },
+        {
+          "volatility": 18.95,
+          "expectedReturn": 10.21,
+          "sharpe": 0.3718,
+          "backtestReturn": 13.8
+        },
+        {
+          "volatility": 19.56,
+          "expectedReturn": 10.24,
+          "sharpe": 0.3616,
+          "backtestReturn": 12.05
+        },
+        {
+          "volatility": 20.1,
+          "expectedReturn": 11.06,
+          "sharpe": 0.3926,
+          "backtestReturn": 21.85
+        }
+      ]
+    },
+    "llmResult": null,
+    "classicResult": null
+  },
+  {
+    "id": "sim-1772894160191-76aph",
+    "date": "2026-03-07T14:36:00.191Z",
+    "modelId": "markowitz-1factor",
+    "symbols": [
+      "AOS",
+      "AMD",
+      "AMGN",
+      "BLK",
+      "TECH",
+      "CDW",
+      "COIN",
+      "COST",
+      "DOV",
+      "EQT",
+      "FSLR",
+      "GDDY",
+      "LH",
+      "NWSA",
+      "ON",
+      "PPL",
+      "SWKS",
+      "TRGP",
+      "UNP",
+      "WM"
+    ],
+    "result": {
+      "weights": {
+        "AOS": 0.03926066390257831,
+        "AMD": 0.030837686611324414,
+        "AMGN": 0.015005831948801628,
+        "BLK": 0.09992339428623327,
+        "TECH": 0.05526750095701878,
+        "CDW": 0.012160202455434425,
+        "COIN": 0.00645795051339897,
+        "COST": 0.09224431979456219,
+        "DOV": 0.04973558619756977,
+        "EQT": 0.004350282143320826,
+        "FSLR": 0.025145443517915846,
+        "GDDY": 0.029276343652836337,
+        "LH": 0.09326124186138741,
+        "NWSA": 0.04746697735691946,
+        "ON": 0.027262795899548144,
+        "PPL": 0.07586544707467786,
+        "SWKS": 0.07763691674774209,
+        "TRGP": 0.09977965303039807,
+        "UNP": 0.048546300085939985,
+        "WM": 0.07051546196239213
+      },
+      "sharpe": 0.4035,
+      "expectedReturn": 11.46,
+      "volatility": 20.07,
+      "maxDrawdown": 3.91,
+      "comparisonData": [
+        {
+          "date": "2021-05-31",
+          "portfolio": 66.7,
+          "market": 71.56
+        },
+        {
+          "date": "2021-06-30",
+          "portfolio": 69.53,
+          "market": 73.16
+        },
+        {
+          "date": "2021-07-31",
+          "portfolio": 70.86,
+          "market": 74.95
+        },
+        {
+          "date": "2021-08-31",
+          "portfolio": 73.16,
+          "market": 77.18
+        },
+        {
+          "date": "2021-09-30",
+          "portfolio": 70.24,
+          "market": 73.58
+        },
+        {
+          "date": "2021-10-31",
+          "portfolio": 76.21,
+          "market": 78.74
+        },
+        {
+          "date": "2021-11-30",
+          "portfolio": 75.91,
+          "market": 78.11
+        },
+        {
+          "date": "2021-12-31",
+          "portfolio": 79.91,
+          "market": 81.72
+        },
+        {
+          "date": "2022-01-31",
+          "portfolio": 74.03,
+          "market": 77.41
+        },
+        {
+          "date": "2022-02-28",
+          "portfolio": 73.49,
+          "market": 75.13
+        },
+        {
+          "date": "2022-03-31",
+          "portfolio": 76.85,
+          "market": 77.95
+        },
+        {
+          "date": "2022-04-30",
+          "portfolio": 69.64,
+          "market": 71.11
+        },
+        {
+          "date": "2022-05-31",
+          "portfolio": 69.4,
+          "market": 71.27
+        },
+        {
+          "date": "2022-06-30",
+          "portfolio": 63.35,
+          "market": 65.39
+        },
+        {
+          "date": "2022-07-31",
+          "portfolio": 71.87,
+          "market": 71.42
+        },
+        {
+          "date": "2022-08-31",
+          "portfolio": 69.46,
+          "market": 68.5
+        },
+        {
+          "date": "2022-09-30",
+          "portfolio": 61.76,
+          "market": 62.17
+        },
+        {
+          "date": "2022-10-31",
+          "portfolio": 66.51,
+          "market": 67.22
+        },
+        {
+          "date": "2022-11-30",
+          "portfolio": 73.48,
+          "market": 70.96
+        },
+        {
+          "date": "2022-12-31",
+          "portfolio": 69.44,
+          "market": 66.87
+        },
+        {
+          "date": "2023-01-31",
+          "portfolio": 75.07,
+          "market": 71.07
+        },
+        {
+          "date": "2023-02-28",
+          "portfolio": 72.08,
+          "market": 69.29
+        },
+        {
+          "date": "2023-03-31",
+          "portfolio": 74.21,
+          "market": 71.86
+        },
+        {
+          "date": "2023-04-30",
+          "portfolio": 73.35,
+          "market": 73
+        },
+        {
+          "date": "2023-05-31",
+          "portfolio": 72.41,
+          "market": 73.34
+        },
+        {
+          "date": "2023-06-30",
+          "portfolio": 77.36,
+          "market": 78.09
+        },
+        {
+          "date": "2023-07-31",
+          "portfolio": 80.64,
+          "market": 80.65
+        },
+        {
+          "date": "2023-08-31",
+          "portfolio": 78.65,
+          "market": 79.34
+        },
+        {
+          "date": "2023-09-30",
+          "portfolio": 74.99,
+          "market": 75.58
+        },
+        {
+          "date": "2023-10-31",
+          "portfolio": 72.44,
+          "market": 73.94
+        },
+        {
+          "date": "2023-11-30",
+          "portfolio": 80.91,
+          "market": 80.69
+        },
+        {
+          "date": "2023-12-31",
+          "portfolio": 88.35,
+          "market": 84.37
+        },
+        {
+          "date": "2024-01-31",
+          "portfolio": 86.44,
+          "market": 85.72
+        },
+        {
+          "date": "2024-02-29",
+          "portfolio": 92.05,
+          "market": 90.19
+        },
+        {
+          "date": "2024-03-31",
+          "portfolio": 94.92,
+          "market": 93.14
+        },
+        {
+          "date": "2024-04-30",
+          "portfolio": 91.34,
+          "market": 89.38
+        },
+        {
+          "date": "2024-05-31",
+          "portfolio": 96.21,
+          "market": 93.91
+        },
+        {
+          "date": "2024-06-30",
+          "portfolio": 97.74,
+          "market": 97.22
+        },
+        {
+          "date": "2024-07-31",
+          "portfolio": 101.91,
+          "market": 98.4
+        },
+        {
+          "date": "2024-08-31",
+          "portfolio": 105.65,
+          "market": 100.69
+        },
+        {
+          "date": "2024-09-30",
+          "portfolio": 106.07,
+          "market": 102.81
+        },
+        {
+          "date": "2024-10-31",
+          "portfolio": 104.68,
+          "market": 101.89
+        },
+        {
+          "date": "2024-11-30",
+          "portfolio": 112.17,
+          "market": 107.97
+        },
+        {
+          "date": "2024-12-31",
+          "portfolio": 105.32,
+          "market": 105.37
+        },
+        {
+          "date": "2025-01-31",
+          "portfolio": 110.55,
+          "market": 108.2
+        },
+        {
+          "date": "2025-02-28",
+          "portfolio": 106.36,
+          "market": 106.83
+        },
+        {
+          "date": "2025-03-31",
+          "portfolio": 102.22,
+          "market": 100.87
+        },
+        {
+          "date": "2025-04-30",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2025-05-31",
+          "portfolio": 102.91,
+          "market": 106.28
+        },
+        {
+          "date": "2025-06-30",
+          "portfolio": 107.93,
+          "market": 111.75
+        },
+        {
+          "date": "2025-07-31",
+          "portfolio": 108.63,
+          "market": 114.32
+        },
+        {
+          "date": "2025-08-31",
+          "portfolio": 109.93,
+          "market": 116.67
+        },
+        {
+          "date": "2025-09-30",
+          "portfolio": 111.31,
+          "market": 120.82
+        },
+        {
+          "date": "2025-10-31",
+          "portfolio": 109.93,
+          "market": 123.7
+        },
+        {
+          "date": "2025-11-30",
+          "portfolio": 111.26,
+          "market": 123.94
+        },
+        {
+          "date": "2025-12-31",
+          "portfolio": 109.83,
+          "market": 124.04
+        },
+        {
+          "date": "2026-01-31",
+          "portfolio": 113.43,
+          "market": 125.87
+        },
+        {
+          "date": "2026-02-28",
+          "portfolio": 118.19,
+          "market": 124.78
+        },
+        {
+          "date": "2026-03-31",
+          "portfolio": 113.57,
+          "market": 122.31
+        }
+      ],
+      "numPortfolios": 10000,
+      "trainPeriodStart": "2021-05-31",
+      "trainPeriodEnd": "2025-03-31",
+      "testPeriodStart": "2025-04-30",
+      "testPeriodEnd": "2026-03-31",
+      "efficientFrontier": [
+        {
+          "volatility": 17.7,
+          "expectedReturn": 10.34,
+          "sharpe": 0.3948,
+          "backtestReturn": 12.57
+        },
+        {
+          "volatility": 18.48,
+          "expectedReturn": 10.52,
+          "sharpe": 0.3878,
+          "backtestReturn": 11.47
+        },
+        {
+          "volatility": 18.53,
+          "expectedReturn": 10.68,
+          "sharpe": 0.3949,
+          "backtestReturn": 10.36
+        },
+        {
+          "volatility": 18.6,
+          "expectedReturn": 10.78,
+          "sharpe": 0.399,
+          "backtestReturn": 12.06
+        },
+        {
+          "volatility": 18.77,
+          "expectedReturn": 10.79,
+          "sharpe": 0.3958,
+          "backtestReturn": 9.45
+        },
+        {
+          "volatility": 18.92,
+          "expectedReturn": 10.83,
+          "sharpe": 0.3951,
+          "backtestReturn": 2.73
+        },
+        {
+          "volatility": 18.95,
+          "expectedReturn": 10.97,
+          "sharpe": 0.402,
+          "backtestReturn": 12.61
+        },
+        {
+          "volatility": 19.14,
+          "expectedReturn": 10.98,
+          "sharpe": 0.3984,
+          "backtestReturn": 7.33
+        },
+        {
+          "volatility": 19.17,
+          "expectedReturn": 11,
+          "sharpe": 0.3988,
+          "backtestReturn": 8.17
+        },
+        {
+          "volatility": 19.19,
+          "expectedReturn": 11.07,
+          "sharpe": 0.4023,
+          "backtestReturn": 8.59
+        },
+        {
+          "volatility": 19.39,
+          "expectedReturn": 11.16,
+          "sharpe": 0.4023,
+          "backtestReturn": 7.33
+        },
+        {
+          "volatility": 19.44,
+          "expectedReturn": 11.16,
+          "sharpe": 0.4013,
+          "backtestReturn": 10.47
+        },
+        {
+          "volatility": 19.58,
+          "expectedReturn": 11.18,
+          "sharpe": 0.3993,
+          "backtestReturn": 7.84
+        },
+        {
+          "volatility": 19.59,
+          "expectedReturn": 11.21,
+          "sharpe": 0.4007,
+          "backtestReturn": 17.24
+        },
+        {
+          "volatility": 19.61,
+          "expectedReturn": 11.23,
+          "sharpe": 0.4014,
+          "backtestReturn": 14.63
+        },
+        {
+          "volatility": 19.63,
+          "expectedReturn": 11.25,
+          "sharpe": 0.4018,
+          "backtestReturn": 8.07
+        },
+        {
+          "volatility": 19.69,
+          "expectedReturn": 11.26,
+          "sharpe": 0.4014,
+          "backtestReturn": 12.28
+        },
+        {
+          "volatility": 19.75,
+          "expectedReturn": 11.32,
+          "sharpe": 0.403,
+          "backtestReturn": 10.68
+        },
+        {
+          "volatility": 19.89,
+          "expectedReturn": 11.35,
+          "sharpe": 0.402,
+          "backtestReturn": 8.16
+        },
+        {
+          "volatility": 19.9,
+          "expectedReturn": 11.37,
+          "sharpe": 0.4027,
+          "backtestReturn": 12.48
+        },
+        {
+          "volatility": 20.01,
+          "expectedReturn": 11.4,
+          "sharpe": 0.4021,
+          "backtestReturn": 15.47
+        },
+        {
+          "volatility": 20.05,
+          "expectedReturn": 11.41,
+          "sharpe": 0.4015,
+          "backtestReturn": 4.38
+        },
+        {
+          "volatility": 20.07,
+          "expectedReturn": 11.46,
+          "sharpe": 0.4035,
+          "backtestReturn": 11.1
+        },
+        {
+          "volatility": 20.17,
+          "expectedReturn": 11.46,
+          "sharpe": 0.4016,
+          "backtestReturn": 11.21
+        },
+        {
+          "volatility": 20.27,
+          "expectedReturn": 11.46,
+          "sharpe": 0.3998,
+          "backtestReturn": 8.05
+        },
+        {
+          "volatility": 20.27,
+          "expectedReturn": 11.46,
+          "sharpe": 0.3999,
+          "backtestReturn": 9.26
+        },
+        {
+          "volatility": 20.29,
+          "expectedReturn": 11.48,
+          "sharpe": 0.4002,
+          "backtestReturn": 12.78
+        },
+        {
+          "volatility": 20.3,
+          "expectedReturn": 11.51,
+          "sharpe": 0.4014,
+          "backtestReturn": 9.35
+        },
+        {
+          "volatility": 20.4,
+          "expectedReturn": 11.55,
+          "sharpe": 0.4016,
+          "backtestReturn": 13.7
+        },
+        {
+          "volatility": 20.48,
+          "expectedReturn": 11.56,
+          "sharpe": 0.4006,
+          "backtestReturn": 13.25
+        },
+        {
+          "volatility": 20.48,
+          "expectedReturn": 11.58,
+          "sharpe": 0.4015,
+          "backtestReturn": 13.11
+        },
+        {
+          "volatility": 20.52,
+          "expectedReturn": 11.6,
+          "sharpe": 0.4016,
+          "backtestReturn": 8.58
+        },
+        {
+          "volatility": 20.56,
+          "expectedReturn": 11.6,
+          "sharpe": 0.4011,
+          "backtestReturn": 13.49
+        },
+        {
+          "volatility": 20.6,
+          "expectedReturn": 11.64,
+          "sharpe": 0.402,
+          "backtestReturn": 16.81
+        },
+        {
+          "volatility": 20.63,
+          "expectedReturn": 11.68,
+          "sharpe": 0.4034,
+          "backtestReturn": 14.75
+        },
+        {
+          "volatility": 20.75,
+          "expectedReturn": 11.7,
+          "sharpe": 0.4023,
+          "backtestReturn": 9.12
+        },
+        {
+          "volatility": 20.83,
+          "expectedReturn": 11.73,
+          "sharpe": 0.4021,
+          "backtestReturn": 8.8
+        },
+        {
+          "volatility": 20.9,
+          "expectedReturn": 11.76,
+          "sharpe": 0.4023,
+          "backtestReturn": 16.31
+        },
+        {
+          "volatility": 20.98,
+          "expectedReturn": 11.82,
+          "sharpe": 0.4033,
+          "backtestReturn": 14.08
+        },
+        {
+          "volatility": 21.1,
+          "expectedReturn": 11.83,
+          "sharpe": 0.4015,
+          "backtestReturn": 16.99
+        },
+        {
+          "volatility": 21.22,
+          "expectedReturn": 11.86,
+          "sharpe": 0.4007,
+          "backtestReturn": 11.99
+        },
+        {
+          "volatility": 21.24,
+          "expectedReturn": 11.86,
+          "sharpe": 0.4004,
+          "backtestReturn": 11.26
+        },
+        {
+          "volatility": 21.28,
+          "expectedReturn": 11.86,
+          "sharpe": 0.3997,
+          "backtestReturn": 12.49
+        },
+        {
+          "volatility": 21.31,
+          "expectedReturn": 11.87,
+          "sharpe": 0.3993,
+          "backtestReturn": 11.61
+        },
+        {
+          "volatility": 21.31,
+          "expectedReturn": 11.89,
+          "sharpe": 0.4002,
+          "backtestReturn": 9.73
+        },
+        {
+          "volatility": 21.36,
+          "expectedReturn": 11.9,
+          "sharpe": 0.3997,
+          "backtestReturn": 11.42
+        },
+        {
+          "volatility": 21.37,
+          "expectedReturn": 11.96,
+          "sharpe": 0.4028,
+          "backtestReturn": 13.48
+        },
+        {
+          "volatility": 21.48,
+          "expectedReturn": 11.98,
+          "sharpe": 0.4012,
+          "backtestReturn": 8.06
+        },
+        {
+          "volatility": 21.59,
+          "expectedReturn": 12.02,
+          "sharpe": 0.4012,
+          "backtestReturn": 10.74
+        },
+        {
+          "volatility": 21.63,
+          "expectedReturn": 12.02,
+          "sharpe": 0.4006,
+          "backtestReturn": 17.33
+        },
+        {
+          "volatility": 21.71,
+          "expectedReturn": 12.06,
+          "sharpe": 0.4007,
+          "backtestReturn": 13.78
+        },
+        {
+          "volatility": 21.74,
+          "expectedReturn": 12.1,
+          "sharpe": 0.4021,
+          "backtestReturn": 9.94
+        },
+        {
+          "volatility": 21.92,
+          "expectedReturn": 12.13,
+          "sharpe": 0.4003,
+          "backtestReturn": 12.63
+        },
+        {
+          "volatility": 21.99,
+          "expectedReturn": 12.14,
+          "sharpe": 0.3994,
+          "backtestReturn": 17.08
+        },
+        {
+          "volatility": 22.03,
+          "expectedReturn": 12.19,
+          "sharpe": 0.4011,
+          "backtestReturn": 12.84
+        },
+        {
+          "volatility": 22.12,
+          "expectedReturn": 12.23,
+          "sharpe": 0.4012,
+          "backtestReturn": 13.26
+        },
+        {
+          "volatility": 22.22,
+          "expectedReturn": 12.27,
+          "sharpe": 0.4012,
+          "backtestReturn": 11.48
+        },
+        {
+          "volatility": 22.43,
+          "expectedReturn": 12.28,
+          "sharpe": 0.3978,
+          "backtestReturn": 16.55
+        },
+        {
+          "volatility": 22.43,
+          "expectedReturn": 12.29,
+          "sharpe": 0.3984,
+          "backtestReturn": 9.57
+        },
+        {
+          "volatility": 22.47,
+          "expectedReturn": 12.31,
+          "sharpe": 0.3983,
+          "backtestReturn": 13.92
+        },
+        {
+          "volatility": 22.47,
+          "expectedReturn": 12.31,
+          "sharpe": 0.3984,
+          "backtestReturn": 14.72
+        },
+        {
+          "volatility": 22.5,
+          "expectedReturn": 12.31,
+          "sharpe": 0.398,
+          "backtestReturn": 14.35
+        },
+        {
+          "volatility": 22.5,
+          "expectedReturn": 12.36,
+          "sharpe": 0.4,
+          "backtestReturn": 14.12
+        },
+        {
+          "volatility": 22.58,
+          "expectedReturn": 12.37,
+          "sharpe": 0.399,
+          "backtestReturn": 11.24
+        },
+        {
+          "volatility": 22.62,
+          "expectedReturn": 12.37,
+          "sharpe": 0.3985,
+          "backtestReturn": 18.27
+        },
+        {
+          "volatility": 22.72,
+          "expectedReturn": 12.39,
+          "sharpe": 0.3977,
+          "backtestReturn": 18.38
+        },
+        {
+          "volatility": 22.74,
+          "expectedReturn": 12.4,
+          "sharpe": 0.3977,
+          "backtestReturn": 14.97
+        },
+        {
+          "volatility": 22.76,
+          "expectedReturn": 12.43,
+          "sharpe": 0.3988,
+          "backtestReturn": 13.11
+        },
+        {
+          "volatility": 22.84,
+          "expectedReturn": 12.43,
+          "sharpe": 0.3975,
+          "backtestReturn": 11.11
+        },
+        {
+          "volatility": 22.86,
+          "expectedReturn": 12.46,
+          "sharpe": 0.3983,
+          "backtestReturn": 17
+        },
+        {
+          "volatility": 22.87,
+          "expectedReturn": 12.47,
+          "sharpe": 0.3983,
+          "backtestReturn": 19.12
+        },
+        {
+          "volatility": 22.88,
+          "expectedReturn": 12.49,
+          "sharpe": 0.3991,
+          "backtestReturn": 14.71
+        },
+        {
+          "volatility": 22.95,
+          "expectedReturn": 12.49,
+          "sharpe": 0.3979,
+          "backtestReturn": 15.51
+        },
+        {
+          "volatility": 23,
+          "expectedReturn": 12.49,
+          "sharpe": 0.3971,
+          "backtestReturn": 18.49
+        },
+        {
+          "volatility": 23.03,
+          "expectedReturn": 12.52,
+          "sharpe": 0.3979,
+          "backtestReturn": 16.15
+        },
+        {
+          "volatility": 23.15,
+          "expectedReturn": 12.55,
+          "sharpe": 0.3971,
+          "backtestReturn": 10.47
+        },
+        {
+          "volatility": 23.22,
+          "expectedReturn": 12.56,
+          "sharpe": 0.3962,
+          "backtestReturn": 7.2
+        },
+        {
+          "volatility": 23.26,
+          "expectedReturn": 12.57,
+          "sharpe": 0.3959,
+          "backtestReturn": 12.34
+        },
+        {
+          "volatility": 23.33,
+          "expectedReturn": 12.59,
+          "sharpe": 0.3955,
+          "backtestReturn": 15.99
+        },
+        {
+          "volatility": 23.36,
+          "expectedReturn": 12.61,
+          "sharpe": 0.3961,
+          "backtestReturn": 16.48
+        },
+        {
+          "volatility": 23.38,
+          "expectedReturn": 12.61,
+          "sharpe": 0.396,
+          "backtestReturn": 14.22
+        },
+        {
+          "volatility": 23.43,
+          "expectedReturn": 12.63,
+          "sharpe": 0.3958,
+          "backtestReturn": 14.06
+        },
+        {
+          "volatility": 23.51,
+          "expectedReturn": 12.63,
+          "sharpe": 0.3945,
+          "backtestReturn": 3.64
+        },
+        {
+          "volatility": 23.51,
+          "expectedReturn": 12.64,
+          "sharpe": 0.3947,
+          "backtestReturn": 12.38
+        },
+        {
+          "volatility": 23.52,
+          "expectedReturn": 12.64,
+          "sharpe": 0.3946,
+          "backtestReturn": 14.51
+        },
+        {
+          "volatility": 23.56,
+          "expectedReturn": 12.67,
+          "sharpe": 0.3953,
+          "backtestReturn": 13.85
+        },
+        {
+          "volatility": 23.58,
+          "expectedReturn": 12.7,
+          "sharpe": 0.3962,
+          "backtestReturn": 13.03
+        },
+        {
+          "volatility": 23.59,
+          "expectedReturn": 12.73,
+          "sharpe": 0.3971,
+          "backtestReturn": 14.85
+        },
+        {
+          "volatility": 23.76,
+          "expectedReturn": 12.74,
+          "sharpe": 0.3948,
+          "backtestReturn": 18.71
+        },
+        {
+          "volatility": 23.82,
+          "expectedReturn": 12.74,
+          "sharpe": 0.3939,
+          "backtestReturn": 13.5
+        },
+        {
+          "volatility": 23.84,
+          "expectedReturn": 12.77,
+          "sharpe": 0.3946,
+          "backtestReturn": 7.95
+        },
+        {
+          "volatility": 23.86,
+          "expectedReturn": 12.81,
+          "sharpe": 0.3963,
+          "backtestReturn": 20.01
+        },
+        {
+          "volatility": 24.06,
+          "expectedReturn": 12.86,
+          "sharpe": 0.3948,
+          "backtestReturn": 15.25
+        },
+        {
+          "volatility": 24.1,
+          "expectedReturn": 12.86,
+          "sharpe": 0.3944,
+          "backtestReturn": 8.76
+        },
+        {
+          "volatility": 24.16,
+          "expectedReturn": 12.88,
+          "sharpe": 0.3941,
+          "backtestReturn": 10.76
+        },
+        {
+          "volatility": 24.2,
+          "expectedReturn": 12.9,
+          "sharpe": 0.3944,
+          "backtestReturn": 14.87
+        },
+        {
+          "volatility": 24.26,
+          "expectedReturn": 12.93,
+          "sharpe": 0.3946,
+          "backtestReturn": 13.12
+        },
+        {
+          "volatility": 24.35,
+          "expectedReturn": 12.98,
+          "sharpe": 0.3952,
+          "backtestReturn": 23.76
+        },
+        {
+          "volatility": 24.5,
+          "expectedReturn": 13,
+          "sharpe": 0.3934,
+          "backtestReturn": 16.35
+        },
+        {
+          "volatility": 24.54,
+          "expectedReturn": 13.01,
+          "sharpe": 0.3935,
+          "backtestReturn": 17.19
+        },
+        {
+          "volatility": 24.59,
+          "expectedReturn": 13.04,
+          "sharpe": 0.3939,
+          "backtestReturn": 13.31
+        },
+        {
+          "volatility": 24.7,
+          "expectedReturn": 13.14,
+          "sharpe": 0.3959,
+          "backtestReturn": 18.02
+        },
+        {
+          "volatility": 24.94,
+          "expectedReturn": 13.15,
+          "sharpe": 0.3925,
+          "backtestReturn": 13
+        },
+        {
+          "volatility": 24.99,
+          "expectedReturn": 13.15,
+          "sharpe": 0.3919,
+          "backtestReturn": 16.98
+        },
+        {
+          "volatility": 25.05,
+          "expectedReturn": 13.2,
+          "sharpe": 0.393,
+          "backtestReturn": 11.24
+        },
+        {
+          "volatility": 25.22,
+          "expectedReturn": 13.23,
+          "sharpe": 0.3916,
+          "backtestReturn": 12.1
+        },
+        {
+          "volatility": 25.39,
+          "expectedReturn": 13.27,
+          "sharpe": 0.3903,
+          "backtestReturn": 15.61
+        },
+        {
+          "volatility": 25.41,
+          "expectedReturn": 13.27,
+          "sharpe": 0.3901,
+          "backtestReturn": 20.27
+        },
+        {
+          "volatility": 25.57,
+          "expectedReturn": 13.28,
+          "sharpe": 0.388,
+          "backtestReturn": 15.78
+        },
+        {
+          "volatility": 25.6,
+          "expectedReturn": 13.29,
+          "sharpe": 0.388,
+          "backtestReturn": 15.05
+        },
+        {
+          "volatility": 25.61,
+          "expectedReturn": 13.31,
+          "sharpe": 0.3887,
+          "backtestReturn": 9.19
+        },
+        {
+          "volatility": 25.7,
+          "expectedReturn": 13.35,
+          "sharpe": 0.3888,
+          "backtestReturn": 16.25
+        },
+        {
+          "volatility": 25.79,
+          "expectedReturn": 13.36,
+          "sharpe": 0.3877,
+          "backtestReturn": 15.3
+        },
+        {
+          "volatility": 25.89,
+          "expectedReturn": 13.37,
+          "sharpe": 0.3868,
+          "backtestReturn": 11.52
+        },
+        {
+          "volatility": 25.91,
+          "expectedReturn": 13.45,
+          "sharpe": 0.3895,
+          "backtestReturn": 20.49
+        },
+        {
+          "volatility": 26.21,
+          "expectedReturn": 13.48,
+          "sharpe": 0.3864,
+          "backtestReturn": 13.62
+        },
+        {
+          "volatility": 26.36,
+          "expectedReturn": 13.5,
+          "sharpe": 0.3849,
+          "backtestReturn": 21.91
+        },
+        {
+          "volatility": 26.4,
+          "expectedReturn": 13.54,
+          "sharpe": 0.3857,
+          "backtestReturn": 15.41
+        },
+        {
+          "volatility": 26.43,
+          "expectedReturn": 13.54,
+          "sharpe": 0.3853,
+          "backtestReturn": 17.56
+        },
+        {
+          "volatility": 26.51,
+          "expectedReturn": 13.56,
+          "sharpe": 0.3847,
+          "backtestReturn": 10.37
+        },
+        {
+          "volatility": 26.53,
+          "expectedReturn": 13.56,
+          "sharpe": 0.3847,
+          "backtestReturn": 22.49
+        },
+        {
+          "volatility": 26.59,
+          "expectedReturn": 13.57,
+          "sharpe": 0.3842,
+          "backtestReturn": 22.51
+        },
+        {
+          "volatility": 26.69,
+          "expectedReturn": 13.6,
+          "sharpe": 0.3838,
+          "backtestReturn": 15.76
+        },
+        {
+          "volatility": 26.75,
+          "expectedReturn": 13.61,
+          "sharpe": 0.3833,
+          "backtestReturn": 15.32
+        },
+        {
+          "volatility": 26.8,
+          "expectedReturn": 13.62,
+          "sharpe": 0.3829,
+          "backtestReturn": 14.43
+        },
+        {
+          "volatility": 26.86,
+          "expectedReturn": 13.62,
+          "sharpe": 0.3823,
+          "backtestReturn": 12.93
+        },
+        {
+          "volatility": 26.89,
+          "expectedReturn": 13.63,
+          "sharpe": 0.3823,
+          "backtestReturn": 21.31
+        },
+        {
+          "volatility": 27.03,
+          "expectedReturn": 13.66,
+          "sharpe": 0.3811,
+          "backtestReturn": 18.8
+        },
+        {
+          "volatility": 27.04,
+          "expectedReturn": 13.76,
+          "sharpe": 0.3848,
+          "backtestReturn": 20.25
+        },
+        {
+          "volatility": 27.21,
+          "expectedReturn": 13.8,
+          "sharpe": 0.3837,
+          "backtestReturn": 20.64
+        },
+        {
+          "volatility": 27.27,
+          "expectedReturn": 13.95,
+          "sharpe": 0.3884,
+          "backtestReturn": 15.89
+        },
+        {
+          "volatility": 27.83,
+          "expectedReturn": 13.95,
+          "sharpe": 0.3808,
+          "backtestReturn": 18.26
+        },
+        {
+          "volatility": 28.06,
+          "expectedReturn": 13.96,
+          "sharpe": 0.378,
+          "backtestReturn": 9.98
+        },
+        {
+          "volatility": 28.26,
+          "expectedReturn": 14.1,
+          "sharpe": 0.38,
+          "backtestReturn": 17.34
+        },
+        {
+          "volatility": 28.73,
+          "expectedReturn": 14.22,
+          "sharpe": 0.3783,
+          "backtestReturn": 15.4
+        },
+        {
+          "volatility": 28.95,
+          "expectedReturn": 14.27,
+          "sharpe": 0.377,
+          "backtestReturn": 20.25
+        },
+        {
+          "volatility": 30.07,
+          "expectedReturn": 14.36,
+          "sharpe": 0.366,
+          "backtestReturn": 22.25
+        }
+      ]
+    },
+    "llmResult": null,
+    "classicResult": null
+  },
+  {
     "id": "sim-1772882892101-p2cb5",
     "date": "2026-03-07T11:28:12.102Z",
     "modelId": "markowitz-llm",

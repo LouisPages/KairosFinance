@@ -7,13 +7,13 @@ Ajout d'un modèle d'optimisation de portefeuille basé sur le modèle à cinq f
 ## Fichiers concernés
 
 ### À créer
-- `gestion/markowitz_5factors.py` — module principal exposant la fonction `run()`
+- `gestion/multifactor/markowitz_5factors.py` — module principal exposant la fonction `run()`
 
 ### À utiliser (sans modification)
 - `gestion/get_facteurs.py` — fonction `load_famafrench_5factors(start, end)` qui retourne un `DataFrame` mensuel avec les colonnes `Mkt-RF`, `SMB`, `HML`, `RMW`, `CMA`, `RF`
 
 ### Référence structurelle
-- `gestion/markowitz_3factors.py` (à créer en parallèle) — identique à ce modèle, sans RMW et CMA
+- `gestion/multifactor/markowitz_3factors.py` (à créer en parallèle) — identique à ce modèle, sans RMW et CMA
 
 ---
 
