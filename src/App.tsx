@@ -10,6 +10,7 @@ import MobileBlock from "./components/MobileBlock";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Simulation from "./pages/Simulation";
+import History from "./pages/History";
 import Architecture from "./pages/Architecture";
 import NotFound from "./pages/NotFound";
 import { useIsMobile } from "./hooks/use-mobile";
@@ -36,6 +37,7 @@ const App = () => {
                   <Route path="/" element={<Home />} />
                   <Route path="/portfolio" element={<Portfolio />} />
                   <Route path="/simulation" element={<Simulation />} />
+                  <Route path="/history" element={<History />} />
                   <Route path="/architecture" element={<Architecture />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>

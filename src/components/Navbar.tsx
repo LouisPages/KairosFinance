@@ -5,6 +5,7 @@ const navItems = [
   { label: "Accueil", path: "/" },
   { label: "Mon Portefeuille", path: "/portfolio" },
   { label: "Simulation", path: "/simulation" },
+  { label: "Historique", path: "/history" },
   { label: "Architecture", path: "/architecture" },
 ];
 

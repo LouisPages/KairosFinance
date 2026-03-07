@@ -5,15 +5,34 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import json
 import asyncio
+import threading
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from datetime import datetime, timedelta
+from typing import Any, Optional
 import yfinance as yf
 import pandas as pd
 
 from .tickers_data import get_all_stocks
+
+HISTORY_FILE = Path(__file__).parent / "simulation_history.json"
+MAX_ENTRIES = 20
+_history_lock = threading.Lock()
+
+
+def _read_history() -> list:
+    if not HISTORY_FILE.exists():
+        return []
+    with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _write_history(entries: list) -> None:
+    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(entries, f, ensure_ascii=False, indent=2)
+
 
 app = FastAPI(title="PE25 Portfolio API")
 app.add_middleware(
@@ -32,6 +51,55 @@ def list_stocks():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
+# ── Simulation history endpoints ──────────────────────────────────────────────
+
+class SimulationEntry(BaseModel):
+    id: str
+    date: str
+    modelId: str
+    symbols: list[str]
+    result: Any = None
+    llmResult: Any = None
+    classicResult: Any = None
+
+
+@app.get("/api/history/list")
+def history_list():
+    with _history_lock:
+        return _read_history()
+
+
+@app.post("/api/history/save")
+def history_save(entry: SimulationEntry):
+    with _history_lock:
+        entries = _read_history()
+        entries.insert(0, entry.model_dump())
+        if len(entries) > MAX_ENTRIES:
+            entries = entries[:MAX_ENTRIES]
+        _write_history(entries)
+    return {"ok": True}
+
+
+@app.delete("/api/history/{entry_id}")
+def history_delete(entry_id: str):
+    with _history_lock:
+        entries = _read_history()
+        new_entries = [e for e in entries if e.get("id") != entry_id]
+        if len(new_entries) == len(entries):
+            raise HTTPException(status_code=404, detail="Entrée introuvable")
+        _write_history(new_entries)
+    return {"ok": True}
+
+
+@app.delete("/api/history")
+def history_clear():
+    with _history_lock:
+        _write_history([])
+    return {"ok": True}
+
+
+# ── Stock price history ───────────────────────────────────────────────────────
 
 @app.get("/api/history")
 def get_history(
