@@ -41,7 +41,6 @@ const models = [
     id: "markowitz-llm",
     name: "Choix dynamique des facteurs",
     desc: "Sélection mensuelle des facteurs par LLM selon l'actualité économique.",
-    badge: "IA",
   },
 ];
 
@@ -156,7 +155,6 @@ const Simulation = () => {
       <div className="mb-8 grid gap-4 md:grid-cols-3 xl:grid-cols-5">
         {models.map((m) => {
           const disabled = m.badge === "Bientôt";
-          const isAi = m.badge === "IA";
           return (
             <button
               key={m.id}
@@ -167,9 +165,7 @@ const Simulation = () => {
               } ${disabled ? "opacity-60 cursor-not-allowed" : ""}`}
             >
               {m.badge && (
-                <span className={`absolute right-3 top-3 rounded-full px-2 py-0.5 text-[10px] font-medium ${
-                  isAi ? "bg-primary/20 text-primary" : "bg-muted text-muted-foreground"
-                }`}>
+                <span className="absolute right-3 top-3 rounded-full px-2 py-0.5 text-[10px] font-medium bg-muted text-muted-foreground">
                   {m.badge}
                 </span>
               )}
@@ -193,7 +189,7 @@ const Simulation = () => {
 
       {isLlm && !running && !llmResult && (
         <p className="mt-2 text-[11px] text-muted-foreground/80">
-          Ce modèle interroge Mistral (news) + Claude Sonnet (sélection des facteurs via Anthropic) pour chaque mois de la période de test. Prévoyez 1–3 min selon le nombre d'actions et de mois.
+          Ce modèle interroge Mistral Le Chat (collecte des news AFP) + Gemini 2.0 Flash (sélection des facteurs) pour chaque mois de la période de test. Prévoyez 1–3 min selon le nombre d'actions et de mois.
         </p>
       )}
 

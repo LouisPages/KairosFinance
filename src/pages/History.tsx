@@ -1,10 +1,10 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Trash2, RotateCcw, History as HistoryIcon, Brain } from "lucide-react";
+import { Trash2, RotateCcw, History as HistoryIcon, Brain, PencilLine, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ClassicResult, LlmResult } from "@/components/SimulationResults";
 import {
-  loadHistory, deleteFromHistory, clearHistory,
+  loadHistory, deleteFromHistory, clearHistory, updateDescription,
   type SimulationEntry, MODEL_LABELS,
 } from "@/lib/simulationHistory";
 
@@ -29,14 +29,44 @@ function EntryCard({
   isSelected,
   onSelect,
   onDelete,
+  onDescriptionSave,
 }: {
   entry: SimulationEntry;
   isSelected: boolean;
   onSelect: () => void;
   onDelete: () => void;
+  onDescriptionSave: (id: string, description: string) => void;
 }) {
   const isLlm = entry.modelId === "markowitz-llm";
   const label = MODEL_LABELS[entry.modelId] ?? entry.modelId;
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(entry.description ?? "");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (editing) {
+      textareaRef.current?.focus();
+      textareaRef.current?.select();
+    }
+  }, [editing]);
+
+  const handleEditClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setDraft(entry.description ?? "");
+    setEditing(true);
+  };
+
+  const handleSave = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onDescriptionSave(entry.id, draft.trim());
+    setEditing(false);
+  };
+
+  const handleCancel = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setDraft(entry.description ?? "");
+    setEditing(false);
+  };
 
   const kpis: { label: string; value: string }[] = [];
   if (entry.result) {
@@ -60,22 +90,59 @@ function EntryCard({
         isSelected ? "!ring-2 !ring-primary" : ""
       }`}
     >
-      {isLlm && (
-        <span className="absolute right-10 top-3 rounded-full px-2 py-0.5 text-[10px] font-medium bg-primary/20 text-primary">
-          IA
-        </span>
-      )}
-      <button
-        onClick={(e) => { e.stopPropagation(); onDelete(); }}
-        className="absolute right-3 top-3 rounded-md p-1 text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
-        title="Supprimer"
-      >
-        <Trash2 className="h-3.5 w-3.5" />
-      </button>
+      <div className="absolute right-3 top-3 flex flex-col items-center gap-1">
+        <button
+          onClick={(e) => { e.stopPropagation(); onDelete(); }}
+          className="rounded-md p-1 text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
+          title="Supprimer"
+        >
+          <Trash2 className="h-3.5 w-3.5" />
+        </button>
+        <button
+          onClick={handleEditClick}
+          className="rounded-md p-1 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+          title="Ajouter une description"
+        >
+          <PencilLine className="h-3.5 w-3.5" />
+        </button>
+      </div>
 
       <div className="pr-6">
         <p className="font-display text-sm font-bold text-foreground leading-tight">{label}</p>
         <p className="mt-0.5 text-[10px] text-muted-foreground font-mono">{formatDate(entry.date)}</p>
+        {entry.description && !editing && (
+          <p className="mt-1 text-[10px] text-muted-foreground italic leading-snug">{entry.description}</p>
+        )}
+        {editing && (
+          <div className="mt-1.5" onClick={(e) => e.stopPropagation()}>
+            <textarea
+              ref={textareaRef}
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              placeholder="Ajouter une description…"
+              rows={2}
+              className="w-full resize-none rounded-md border border-border bg-background/60 px-2 py-1 text-[10px] text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-primary"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); onDescriptionSave(entry.id, draft.trim()); setEditing(false); }
+                if (e.key === "Escape") { setDraft(entry.description ?? ""); setEditing(false); }
+              }}
+            />
+            <div className="mt-1 flex gap-1">
+              <button
+                onClick={handleSave}
+                className="flex items-center gap-0.5 rounded px-1.5 py-0.5 text-[9px] font-semibold bg-primary/20 text-primary hover:bg-primary/30 transition-colors"
+              >
+                <Check className="h-2.5 w-2.5" /> Enregistrer
+              </button>
+              <button
+                onClick={handleCancel}
+                className="flex items-center gap-0.5 rounded px-1.5 py-0.5 text-[9px] font-semibold bg-muted text-muted-foreground hover:bg-muted/80 transition-colors"
+              >
+                <X className="h-2.5 w-2.5" /> Annuler
+              </button>
+            </div>
+          </div>
+        )}
         <div className="mt-2 flex flex-wrap gap-1">
           {entry.symbols.map((s) => (
             <span key={s} className="rounded px-1.5 py-0.5 text-[9px] font-semibold bg-secondary text-secondary-foreground">{s}</span>
@@ -134,6 +201,13 @@ const History = () => {
     setSelectedId(null);
   }, []);
 
+  const handleDescriptionSave = useCallback(async (id: string, description: string) => {
+    await updateDescription(id, description);
+    setHistory((prev) =>
+      prev.map((e) => (e.id === id ? { ...e, description: description || undefined } : e))
+    );
+  }, []);
+
   return (
     <div className="px-6 py-10">
       <div className="flex items-start justify-between mb-8">
@@ -181,6 +255,7 @@ const History = () => {
                 isSelected={selectedId === entry.id}
                 onSelect={() => handleSelect(entry)}
                 onDelete={() => handleDelete(entry.id)}
+                onDescriptionSave={handleDescriptionSave}
               />
             ))}
           </div>

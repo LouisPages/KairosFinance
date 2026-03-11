@@ -24,6 +24,7 @@ export interface SimulationEntry {
   result: SimulateResult | null;
   llmResult: LlmSimulateResult | null;
   classicResult: SimulateResult | null;
+  description?: string;
 }
 
 export async function loadHistory(): Promise<SimulationEntry[]> {
@@ -70,6 +71,18 @@ export async function deleteFromHistory(id: string): Promise<void> {
 export async function clearHistory(): Promise<void> {
   try {
     await fetch(`${API_BASE}/api/history`, { method: "DELETE" });
+  } catch {
+    // ignore
+  }
+}
+
+export async function updateDescription(id: string, description: string): Promise<void> {
+  try {
+    await fetch(`${API_BASE}/api/history/${encodeURIComponent(id)}/description`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ description }),
+    });
   } catch {
     // ignore
   }

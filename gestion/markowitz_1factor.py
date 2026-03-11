@@ -210,6 +210,7 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
         }
     elif method == "gradient_fixe":
         best_weights = opt_sharpe_gradient(mu, cov_matrix, rf_annual)
+        best_weights = np.asarray(best_weights).ravel()
 
         # Calcul des métriques optimales pour le retour API
         opt_ret_val = np.dot(best_weights, mu)
@@ -274,6 +275,7 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
         }
     else:  # gradient_optimal
         best_weights = opt_sharpe_gradient_optimal(mu, cov_matrix, rf_annual)
+        best_weights = np.asarray(best_weights).ravel()
 
         # Calcul des métriques optimales pour le retour API
         opt_ret_val = np.dot(best_weights, mu)

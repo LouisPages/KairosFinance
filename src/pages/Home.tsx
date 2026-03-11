@@ -7,7 +7,7 @@ import { fetchStocks } from "@/lib/api";
 
 const STATS_DEFAULTS = [
   { label: "Actions supportées", value: "—" },
-  { label: "Modèles de prédiction", value: "3" },
+  { label: "Modèles de prédiction", value: "5" },
 ];
 
 const features = [
@@ -19,7 +19,7 @@ const features = [
   {
     icon: Brain,
     title: "Modèles de prédiction",
-    desc: "Trois modèles d'optimisation basés sur la théorie de Markowitz pour trouver le portefeuille optimal.",
+    desc: "Cinq modèles d'optimisation basés sur la théorie de Markowitz, des facteurs Fama-French et un pipeline LLM dynamique.",
   },
   {
     icon: LineChart,

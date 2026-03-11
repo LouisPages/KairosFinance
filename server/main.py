@@ -1,7 +1,10 @@
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+_root = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_root))
+# Pour que les modules gestion.* trouvent Methodes_de_descente (sous-dossier de gestion)
+sys.path.insert(1, str(_root / "gestion"))
 
 import json
 import asyncio
@@ -62,6 +65,11 @@ class SimulationEntry(BaseModel):
     result: Any = None
     llmResult: Any = None
     classicResult: Any = None
+    description: Optional[str] = None
+
+
+class DescriptionUpdate(BaseModel):
+    description: str
 
 
 @app.get("/api/history/list")
@@ -77,6 +85,22 @@ def history_save(entry: SimulationEntry):
         entries.insert(0, entry.model_dump())
         if len(entries) > MAX_ENTRIES:
             entries = entries[:MAX_ENTRIES]
+        _write_history(entries)
+    return {"ok": True}
+
+
+@app.patch("/api/history/{entry_id}/description")
+def history_update_description(entry_id: str, body: DescriptionUpdate):
+    with _history_lock:
+        entries = _read_history()
+        found = False
+        for e in entries:
+            if e.get("id") == entry_id:
+                e["description"] = body.description
+                found = True
+                break
+        if not found:
+            raise HTTPException(status_code=404, detail="Entrée introuvable")
         _write_history(entries)
     return {"ok": True}
 
@@ -175,19 +199,20 @@ def simulate(req: SimulateRequest):
     start_d = datetime(2005, 1, 1)
     start_s = start_d.strftime("%Y-%m-%d")
     end_s = end_d.strftime("%Y-%m-%d")
+    from gestion.config import OPTIMIZATION_METHOD
     try:
         if req.model == "markowitz-classic":
             import gestion.markowitz_simple as markowitz_simple
-            result = markowitz_simple.run(req.symbols, start_s, end_s)
+            result = markowitz_simple.run(req.symbols, start_s, end_s, method=OPTIMIZATION_METHOD)
         elif req.model == "markowitz-1factor":
             import gestion.markowitz_1factor as markowitz_1factor
-            result = markowitz_1factor.run(req.symbols, start_s, end_s)
+            result = markowitz_1factor.run(req.symbols, start_s, end_s, method=OPTIMIZATION_METHOD)
         elif req.model == "markowitz-3factors":
             import gestion.multifactor.markowitz_3factors as markowitz_3factors
-            result = markowitz_3factors.run(req.symbols, start_s, end_s)
+            result = markowitz_3factors.run(req.symbols, start_s, end_s, method=OPTIMIZATION_METHOD)
         elif req.model == "markowitz-5factors":
             import gestion.multifactor.markowitz_5factors as markowitz_5factors
-            result = markowitz_5factors.run(req.symbols, start_s, end_s)
+            result = markowitz_5factors.run(req.symbols, start_s, end_s, method=OPTIMIZATION_METHOD)
         elif req.model == "markowitz-llm":
             import gestion.dynamic.markowitz_llm as markowitz_llm
             result = markowitz_llm.run(req.symbols, start_s, end_s)

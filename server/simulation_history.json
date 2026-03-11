@@ -13087,7 +13087,8 @@
           "backtestReturn": 16.95
         }
       ]
-    }
+    },
+    "description": "Choix effectués avec la contrainte suivante : choisir un unique facteur parmi les 9; \nPas d'explications des choix"
   },
   {
     "id": "sim-1772881283468-g2oom",
@@ -25342,7 +25343,8 @@
           "backtestReturn": 34.11
         }
       ]
-    }
+    },
+    "description": "Choix parmi 9 facteurs sans aucune contrainte; Pas d'explications des choix"
   },
   {
     "id": "sim-1772880512282-5fgo5",

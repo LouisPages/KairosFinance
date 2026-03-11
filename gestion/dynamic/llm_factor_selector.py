@@ -37,45 +37,6 @@ _FALLBACK_MASK: FactorMask = {
     "UMD": False, "HY_SPREAD": False, "TERM_SPREAD": False, "VIX": False,
 }
 
-# ---------------------------------------------------------------------------
-# Contexte structurel par type d'entreprise
-# ---------------------------------------------------------------------------
-
-_MEGA_CAP_GROWTH = {"AAPL", "MSFT", "NVDA", "AMZN", "META", "GOOGL", "GOOG", "TSLA", "AVGO"}
-
-
-def _structural_hints(ticker: str) -> str:
-    ticker_up = ticker.upper()
-    hints = []
-    if ticker_up in _MEGA_CAP_GROWTH:
-        hints.append(
-            f"- {ticker} est une méga-capitalisation boursière (top 10 mondial) : "
-            "le facteur SMB (prime de taille) est structurellement NON PERTINENT pour ce titre. "
-            "Réponds false pour SMB sauf événement exceptionnel justifié."
-        )
-        hints.append(
-            f"- {ticker} est une action de croissance (P/B élevé, P/E élevé) : "
-            "le facteur HML (prime de valeur) est structurellement NON PERTINENT. "
-            "Réponds false pour HML sauf si des annonces ce mois signalent un virage "
-            "vers le 'value' (ex: valorisation effondrée, spin-off)."
-        )
-    hints.append(
-        "- Les facteurs RMW (profitabilité) et CMA (investissement) sont les plus "
-        "sensibles aux annonces conjoncturelles : résultats trimestriels, plan d'économies, "
-        "acquisitions, capex. Décide leur pertinence selon l'actualité du mois."
-    )
-    hints.append(
-        "- UMD (momentum) est pertinent si le titre affiche une tendance directionnelle "
-        "claire et récente (hausse ou baisse soutenue). Non pertinent en phase de "
-        "retournement ou de consolidation."
-    )
-    hints.append(
-        "- HY_SPREAD, TERM_SPREAD et VIX sont des facteurs macro transversaux : "
-        "active-les uniquement si l'actualité du mois décrit un choc macro significatif "
-        "(crise de crédit, changement brutal de politique monétaire, spike de volatilité)."
-    )
-    return "\n".join(hints)
-
 
 # ---------------------------------------------------------------------------
 # Prompt
@@ -114,9 +75,9 @@ Définitions des facteurs :
 
 
 Réponds UNIQUEMENT avec ce JSON compact (9 clés, valeurs booléennes true/false) :
-{{"Mkt-RF": _, "SMB": _, "HML": _, "RMW": _, "CMA": _, "UMD": _, "HY_SPREAD": _, "TERM_SPREAD": _, "VIX": _}}
+{{"Mkt-RF": _, "SMB": _, "HML": _, "RMW": _, "CMA": _, "UMD": _, "HY_SPREAD": _, "TERM_SPREAD": _, "VIX": _, "explication": "<string>"}}
 
-IMPORTANT : UN SEUL FACTEUR DOIT VALOIR TRUE UNIQUEMENT"""
+IMPORTANT : EXACTEMENT DEUX FACTEURS DOIVENT VALOIR TRUE UNIQUEMENT ET TU DOIS AJOUTER UNE EXPLICATION DE TON CHOIX"""
 
 
 def _build_system_prompt(ticker: str) -> str:
@@ -137,7 +98,7 @@ def _build_user_message(ticker: str, year: int, month: int, news: dict[str, Any]
         f"Sentiment global : {sentiment}\n\n"
         "Pour chaque facteur, réponds true si l'actualité de ce mois le rend pertinent "
         "pour ce titre, false sinon. Retourne UNIQUEMENT le JSON compact. "
-        "IMPORTANT : UN SEUL FACTEUR DOIT VALOIR TRUE UNIQUEMENT"
+        "IMPORTANT : EXACTEMENT DEUX FACTEURS DOIVENT VALOIR TRUE UNIQUEMENT ET TU DOIS AJOUTER UNE EXPLICATION DE TON CHOIX"
     )
 
 

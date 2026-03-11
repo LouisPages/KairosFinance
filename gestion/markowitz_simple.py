@@ -162,6 +162,7 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         }
     elif method == "gradient_fixe":
         best_weights = opt_sharpe_gradient(mean_returns.values, cov_matrix.values, risk_free_rate)
+        best_weights = np.asarray(best_weights).ravel()
 
         # --- CALCUL DES MÉTRIQUES OPTIMALES ---
         opt_ret_val = np.sum(mean_returns * best_weights)
@@ -242,6 +243,7 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         },
     else: #method = "gradient_optimal"
         best_weights = opt_sharpe_gradient_optimal(mean_returns.values, cov_matrix.values, risk_free_rate)
+        best_weights = np.asarray(best_weights).ravel()
 
         # --- CALCUL DES MÉTRIQUES OPTIMALES ---
         opt_ret_val = np.sum(mean_returns * best_weights)
