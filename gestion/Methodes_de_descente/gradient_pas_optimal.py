@@ -46,6 +46,7 @@ def _line_search(weights, grad, mean_returns, cov_matrix, risk_free_rate, c=0.1,
     
     def sharpe_ratio(w):
         """Calcule le ratio de Sharpe pour des poids w"""
+        n = len(mean_returns)
         vol = np.sqrt((w.T @ cov_matrix @ w).item())
         mu = np.array(mean_returns).reshape(n, 1)
         mu_p = (w.T @ mu).item()
