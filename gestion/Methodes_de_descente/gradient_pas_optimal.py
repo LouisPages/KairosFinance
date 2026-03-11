@@ -8,13 +8,14 @@ def opt_sharpe_gradient_optimal(mean_returns, cov_matrix, risk_free_rate, max_it
     """
     n = len(mean_returns)
     weights = np.ones((n, 1)) / n
+    mu = np.array(mean_returns).reshape(n, 1)
     
     for i in range(max_iter):
         vol = np.sqrt((weights.T @ cov_matrix @ weights).item())
-        portfolio_return = (weights.T @ mean_returns).item()
+        portfolio_return = (weights.T @ mu).item()
         sharpe = (portfolio_return - risk_free_rate) / vol
         
-        grad = 1/vol * (mean_returns - (portfolio_return - risk_free_rate) * np.dot(cov_matrix, weights) / vol**2)
+        grad = 1/vol * (mu - (portfolio_return - risk_free_rate) * np.dot(cov_matrix, weights) / vol**2)
         
         rho = _line_search(weights, grad, mean_returns, cov_matrix, risk_free_rate)
         
@@ -46,7 +47,8 @@ def _line_search(weights, grad, mean_returns, cov_matrix, risk_free_rate, c=0.1,
     def sharpe_ratio(w):
         """Calcule le ratio de Sharpe pour des poids w"""
         vol = np.sqrt((w.T @ cov_matrix @ w).item())
-        mu_p = (w.T @ mean_returns).item()
+        mu = np.array(mean_returns).reshape(n, 1)
+        mu_p = (w.T @ mu).item()
         if vol < 1e-10:
             return -np.inf
         return (mu_p - risk_free_rate) / vol
@@ -73,4 +75,4 @@ def _line_search(weights, grad, mean_returns, cov_matrix, risk_free_rate, c=0.1,
         
         rho *= alpha  # Réduire le pas
     
-    return rho  # Retourner le dernier pas même s'il est petit
+    return rho 
