@@ -4,13 +4,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Play, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   runSimulation, runLlmSimulationStream,
   type SimulateResult, type LlmSimulateResult,
   type LlmProgressEvent,
 } from "@/lib/api";
 import { loadSavedSymbols } from "@/lib/portfolioStorage";
 import { saveToHistory } from "@/lib/simulationHistory";
-import { ClassicResult, LlmResult } from "@/components/SimulationResults";
+import { ClassicResult, LlmResult, ComparisonResult } from "@/components/SimulationResults";
 
 // ---------------------------------------------------------------------------
 // Config
@@ -44,6 +51,15 @@ const models = [
   },
 ];
 
+type OptimizationMethodId = "monte_carlo" | "gradient_fixe" | "gradient_optimal" | "comparison";
+const OPTIMIZATION_METHODS: { id: OptimizationMethodId; label: string }[] = [
+  { id: "monte_carlo", label: "Monte-Carlo" },
+  { id: "gradient_fixe", label: "Gradient à pas fixe" },
+  { id: "gradient_optimal", label: "Gradient à pas optimal" },
+  { id: "comparison", label: "Comparaison (Monte-Carlo vs Gradient à pas optimal)" },
+];
+const COMPARISON_GRADIENT_LABEL = "Gradient à pas optimal";
+
 // ---------------------------------------------------------------------------
 // Page principale
 // ---------------------------------------------------------------------------
@@ -54,10 +70,16 @@ const Simulation = () => {
   const symbols: string[] = symbolsFromState?.length ? symbolsFromState : loadSavedSymbols();
 
   const [selectedModel, setSelectedModel] = useState<string | null>(null);
+  const [optimizationMethod, setOptimizationMethod] = useState<OptimizationMethodId>("gradient_optimal");
   const [running, setRunning] = useState(false);
   const [result, setResult] = useState<SimulateResult | null>(null);
   const [llmResult, setLlmResult] = useState<LlmSimulateResult | null>(null);
   const [classicResult, setClassicResult] = useState<SimulateResult | null>(null);
+  const [comparisonData, setComparisonData] = useState<{
+    monteCarlo: SimulateResult;
+    bestGradient: SimulateResult;
+    bestGradientLabel: string;
+  } | null>(null);
   const [apiError, setApiError] = useState<string | null>(null);
   const [chartStart, setChartStart] = useState("");
   const [chartEnd, setChartEnd] = useState("");
@@ -75,6 +97,7 @@ const Simulation = () => {
     setResult(null);
     setLlmResult(null);
     setClassicResult(null);
+    setComparisonData(null);
     setLlmProgress(null);
     classicResultRef.current = null;
 
@@ -110,8 +133,42 @@ const Simulation = () => {
         },
       );
       cancelStreamRef.current = cancel;
+    } else if (optimizationMethod === "comparison") {
+      // Exécution séquentielle pour éviter tout mélange de réponses (même données, ordre garanti)
+      runSimulation(selectedModel!, symbols, "monte_carlo")
+        .then((monteCarlo) =>
+          runSimulation(selectedModel!, symbols, "gradient_optimal").then((gradientOptimal) => ({
+            monteCarlo,
+            gradientOptimal,
+          }))
+        )
+        .then(({ monteCarlo, gradientOptimal }) => {
+          setComparisonData({
+            monteCarlo,
+            bestGradient: gradientOptimal,
+            bestGradientLabel: COMPARISON_GRADIENT_LABEL,
+          });
+          if (monteCarlo.comparisonData.length > 0) {
+            setChartStart(monteCarlo.comparisonData[0].date);
+            setChartEnd(monteCarlo.comparisonData[monteCarlo.comparisonData.length - 1].date);
+          }
+          saveToHistory({
+            modelId: selectedModel!,
+            symbols,
+            result: monteCarlo,
+            llmResult: null,
+            classicResult: null,
+            comparisonData: {
+              monteCarlo,
+              bestGradient: gradientOptimal,
+              bestGradientLabel: COMPARISON_GRADIENT_LABEL,
+            },
+          });
+        })
+        .catch((e) => setApiError(e.message))
+        .finally(() => setRunning(false));
     } else {
-      runSimulation(selectedModel!, symbols)
+      runSimulation(selectedModel!, symbols, optimizationMethod)
         .then((res) => {
           setResult(res);
           if (res.comparisonData.length > 0) {
@@ -153,34 +210,59 @@ const Simulation = () => {
 
       {/* Sélection du modèle */}
       <div className="mb-8 grid gap-4 md:grid-cols-3 xl:grid-cols-5">
-        {models.map((m) => {
-          const disabled = m.badge === "Bientôt";
-          return (
-            <button
-              key={m.id}
-              onClick={() => { if (!disabled) { setSelectedModel(m.id); setResult(null); setLlmResult(null); setClassicResult(null); setApiError(null); } }}
-              disabled={disabled}
-              className={`glass-card relative p-5 text-left transition-shadow focus:outline-none focus:ring-0 active:ring-0 ${
-                selectedModel === m.id ? "!ring-2 !ring-primary" : ""
-              } ${disabled ? "opacity-60 cursor-not-allowed" : ""}`}
-            >
-              {m.badge && (
-                <span className="absolute right-3 top-3 rounded-full px-2 py-0.5 text-[10px] font-medium bg-muted text-muted-foreground">
-                  {m.badge}
-                </span>
-              )}
-              <h3 className="font-display text-sm font-bold text-foreground">{m.name}</h3>
-              <p className="mt-1 text-xs text-muted-foreground">{m.desc}</p>
-            </button>
-          );
-        })}
+        {models.map((m) => (
+          <button
+            key={m.id}
+            onClick={() => {
+              setSelectedModel(m.id);
+              setResult(null);
+              setLlmResult(null);
+              setClassicResult(null);
+              setComparisonData(null);
+              setApiError(null);
+            }}
+            className={`glass-card relative p-5 text-left cursor-pointer transition-shadow focus:outline-none focus:ring-0 active:ring-0 ${
+              selectedModel === m.id ? "!ring-2 !ring-primary" : ""
+            }`}
+          >
+            <h3 className="font-display text-sm font-bold text-foreground">{m.name}</h3>
+            <p className="mt-1 text-xs text-muted-foreground">{m.desc}</p>
+          </button>
+        ))}
+      </div>
+
+      {/* Méthode d'optimisation (toujours visible ; ignorée pour le modèle LLM) */}
+      <div className="mb-6 flex flex-wrap items-center gap-3">
+        <label className="text-sm font-medium text-foreground">Méthode d'optimisation</label>
+        <Select
+          value={optimizationMethod}
+          onValueChange={(v) => { setOptimizationMethod(v as OptimizationMethodId); setResult(null); setComparisonData(null); setApiError(null); }}
+        >
+          <SelectTrigger className="w-[320px] cursor-pointer rounded-xl border-border bg-background/80">
+            <SelectValue placeholder="Choisir une méthode" />
+          </SelectTrigger>
+          <SelectContent>
+            {OPTIMIZATION_METHODS.map((opt) => (
+              <SelectItem key={opt.id} value={opt.id}>
+                {opt.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        {isLlm && (
+          <span className="text-xs text-muted-foreground">(non utilisée pour ce modèle)</span>
+        )}
       </div>
 
       <Button onClick={handleRun} disabled={!canRun || running} className="gap-2 rounded-xl font-semibold">
         {running ? (
           <>
             <span className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" />
-            {isLlm ? "Backtest LLM en cours…" : "Optimisation en cours…"}
+            {isLlm
+              ? "Backtest LLM en cours…"
+              : optimizationMethod === "comparison"
+                ? "Comparaison (2 simulations) en cours…"
+                : "Optimisation en cours…"}
           </>
         ) : (
           <><Play className="h-4 w-4" /> Lancer la simulation</>
@@ -250,14 +332,25 @@ const Simulation = () => {
       )}
 
       <AnimatePresence>
-        {(result || llmResult) && (
+        {(result || llmResult || comparisonData) && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             className="mt-10"
           >
-            {result && (
+            {comparisonData && (
+              <ComparisonResult
+                monteCarlo={comparisonData.monteCarlo}
+                bestGradient={comparisonData.bestGradient}
+                bestGradientLabel={comparisonData.bestGradientLabel}
+                chartStart={chartStart}
+                chartEnd={chartEnd}
+                setChartStart={setChartStart}
+                setChartEnd={setChartEnd}
+              />
+            )}
+            {result && !comparisonData && (
               <ClassicResult
                 result={result}
                 chartStart={chartStart}

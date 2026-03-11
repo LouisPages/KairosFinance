@@ -209,18 +209,18 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
             for d in portfolio_series.index
         ]
 
-        # --- MAX DRAWDOWN ---
+        # --- MAX DRAWDOWN et métriques backtest ---
         test_returns = np.log(test_prices / test_prices.shift(1)).dropna()
         portfolio_returns_test = (test_returns * best_weights).sum(axis=1)
-        # On repasse en rendements arithmétiques pour le cumul réel
-        cum_test = np.exp(portfolio_returns_test.cumsum()) 
+        cum_test = np.exp(portfolio_returns_test.cumsum())
         peak = cum_test.cummax()
         drawdown = (cum_test - peak) / peak
         _dd_min = drawdown.min()
         max_drawdown = float(-_dd_min * 100) if not pd.isna(_dd_min) else 0
-
-        # --- RETOUR API ---
         opt_backtest_ret = round(float((cum_test.iloc[-1] - 1) * 100), 2) if len(cum_test) > 0 else 0
+        ann_mean = float(portfolio_returns_test.mean()) * 252
+        ann_vol = float(portfolio_returns_test.std()) * (252 ** 0.5) if portfolio_returns_test.std() > 1e-12 else 1e-10
+        backtest_sharpe = round((ann_mean - risk_free_rate) / ann_vol, 4) if ann_vol > 1e-10 else 0.0
 
         return {
             "weights": weights_dict,
@@ -228,6 +228,8 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
             "expectedReturn": round(float(opt_ret_val * 100), 2),
             "volatility": round(float(opt_vol_val * 100), 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "backtestReturn": opt_backtest_ret,
+            "backtestSharpe": backtest_sharpe,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": train_prices.index[0].strftime("%Y-%m-%d"),
@@ -240,7 +242,7 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
                 "sharpe": round(float(opt_sharpe_val), 4),
                 "backtestReturn": opt_backtest_ret
             }]
-        },
+        }
     else: #method = "gradient_optimal"
         best_weights = opt_sharpe_gradient_optimal(mean_returns.values, cov_matrix.values, risk_free_rate)
         best_weights = np.asarray(best_weights).ravel()
@@ -290,18 +292,18 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
             for d in portfolio_series.index
         ]
 
-        # --- MAX DRAWDOWN ---
+        # --- MAX DRAWDOWN et métriques backtest ---
         test_returns = np.log(test_prices / test_prices.shift(1)).dropna()
         portfolio_returns_test = (test_returns * best_weights).sum(axis=1)
-        # On repasse en rendements arithmétiques pour le cumul réel
-        cum_test = np.exp(portfolio_returns_test.cumsum()) 
+        cum_test = np.exp(portfolio_returns_test.cumsum())
         peak = cum_test.cummax()
         drawdown = (cum_test - peak) / peak
         _dd_min = drawdown.min()
         max_drawdown = float(-_dd_min * 100) if not pd.isna(_dd_min) else 0
-
-        # --- RETOUR API ---
         opt_backtest_ret = round(float((cum_test.iloc[-1] - 1) * 100), 2) if len(cum_test) > 0 else 0
+        ann_mean = float(portfolio_returns_test.mean()) * 252
+        ann_vol = float(portfolio_returns_test.std()) * (252 ** 0.5) if portfolio_returns_test.std() > 1e-12 else 1e-10
+        backtest_sharpe = round((ann_mean - risk_free_rate) / ann_vol, 4) if ann_vol > 1e-10 else 0.0
 
         return {
             "weights": weights_dict,
@@ -309,6 +311,8 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
             "expectedReturn": round(float(opt_ret_val * 100), 2),
             "volatility": round(float(opt_vol_val * 100), 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "backtestReturn": opt_backtest_ret,
+            "backtestSharpe": backtest_sharpe,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": train_prices.index[0].strftime("%Y-%m-%d"),
@@ -322,7 +326,5 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
                 "backtestReturn": opt_backtest_ret
             }]
         }
-
-
 
 

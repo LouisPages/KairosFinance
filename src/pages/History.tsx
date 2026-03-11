@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Trash2, RotateCcw, History as HistoryIcon, Brain, PencilLine, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ClassicResult, LlmResult } from "@/components/SimulationResults";
+import { ClassicResult, LlmResult, ComparisonResult } from "@/components/SimulationResults";
 import {
   loadHistory, deleteFromHistory, clearHistory, updateDescription,
   type SimulationEntry, MODEL_LABELS,
@@ -108,7 +108,14 @@ function EntryCard({
       </div>
 
       <div className="pr-6">
-        <p className="font-display text-sm font-bold text-foreground leading-tight">{label}</p>
+        <div className="flex items-center gap-2 flex-wrap">
+          <p className="font-display text-sm font-bold text-foreground leading-tight">{label}</p>
+          {entry.comparisonData && (
+            <span className="rounded px-1.5 py-0.5 text-[9px] font-semibold bg-primary/20 text-primary">
+              Comparaison
+            </span>
+          )}
+        </div>
         <p className="mt-0.5 text-[10px] text-muted-foreground font-mono">{formatDate(entry.date)}</p>
         {entry.description && !editing && (
           <p className="mt-1 text-[10px] text-muted-foreground italic leading-snug">{entry.description}</p>
@@ -177,9 +184,10 @@ const History = () => {
 
   const handleSelect = useCallback((entry: SimulationEntry) => {
     setSelectedId(entry.id);
-    if (entry.result?.comparisonData.length) {
-      setChartStart(entry.result.comparisonData[0].date);
-      setChartEnd(entry.result.comparisonData[entry.result.comparisonData.length - 1].date);
+    const cd = entry.comparisonData?.monteCarlo?.comparisonData ?? entry.result?.comparisonData;
+    if (cd?.length) {
+      setChartStart(cd[0].date);
+      setChartEnd(cd[cd.length - 1].date);
     } else {
       setChartStart("");
       setChartEnd("");
@@ -281,7 +289,18 @@ const History = () => {
                   <div className="h-px flex-1 bg-border" />
                 </div>
 
-                {selected.result && (
+                {selected.comparisonData && (
+                  <ComparisonResult
+                    monteCarlo={selected.comparisonData.monteCarlo}
+                    bestGradient={selected.comparisonData.bestGradient}
+                    bestGradientLabel={selected.comparisonData.bestGradientLabel}
+                    chartStart={chartStart}
+                    chartEnd={chartEnd}
+                    setChartStart={setChartStart}
+                    setChartEnd={setChartEnd}
+                  />
+                )}
+                {selected.result && !selected.comparisonData && (
                   <ClassicResult
                     result={selected.result}
                     chartStart={chartStart}

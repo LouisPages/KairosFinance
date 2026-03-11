@@ -122,4 +122,8 @@
   .glass-card:hover {
     box-shadow: var(--card-shadow-hover);
   }
+
+  button.glass-card {
+    cursor: pointer;
+  }
 }
