@@ -285,8 +285,8 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
 
       <div className="grid gap-4 md:grid-cols-4">
         {[
-          { label: "Ratio de Sharpe", value: result.sharpe.toFixed(2), icon: BarChart3 },
-          { label: "Rendement attendu", value: `${result.expectedReturn.toFixed(1)}%`, icon: TrendingUp },
+          { label: "Sharpe (entraînement)", value: result.sharpe.toFixed(2), icon: BarChart3 },
+          { label: "Rendement attendu (entraînement)", value: `${result.expectedReturn.toFixed(1)}%`, icon: TrendingUp },
           { label: "Volatilité", value: `${result.volatility.toFixed(1)}%`, icon: BarChart3 },
           { label: "Max Drawdown", value: `-${result.maxDrawdown.toFixed(1)}%`, icon: TrendingUp },
         ].map((kpi) => (
@@ -297,6 +297,29 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
           </div>
         ))}
       </div>
+      {(result.backtestReturn != null || result.backtestSharpe != null) && (
+        <div className="grid gap-4 md:grid-cols-2">
+          <p className="text-[11px] text-muted-foreground col-span-full">
+            Métriques réalisées sur la période de backtest (cohérentes avec la courbe ci‑dessous) :
+          </p>
+          {result.backtestReturn != null && (
+            <div className="glass-card p-5 text-center">
+              <TrendingUp className="mx-auto h-5 w-5 text-primary" />
+              <p className="mt-2 font-display text-xl font-bold text-foreground">
+                {result.backtestReturn >= 0 ? "+" : ""}{result.backtestReturn.toFixed(1)}%
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">Rendement backtest</p>
+            </div>
+          )}
+          {result.backtestSharpe != null && (
+            <div className="glass-card p-5 text-center">
+              <BarChart3 className="mx-auto h-5 w-5 text-primary" />
+              <p className="mt-2 font-display text-xl font-bold text-foreground">{result.backtestSharpe.toFixed(2)}</p>
+              <p className="mt-1 text-xs text-muted-foreground">Sharpe backtest</p>
+            </div>
+          )}
+        </div>
+      )}
 
       <div className="glass-card p-6">
         <h3 className="font-display text-sm font-bold text-foreground mb-4">Performance : Portefeuille vs Marché</h3>
@@ -356,6 +379,176 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Comparison (Monte-Carlo vs Gradient) — courbes et frontières superposées
+// ---------------------------------------------------------------------------
+
+export function ComparisonResult({
+  monteCarlo,
+  bestGradient,
+  bestGradientLabel,
+  chartStart,
+  chartEnd,
+  setChartStart,
+  setChartEnd,
+}: {
+  monteCarlo: SimulateResult;
+  bestGradient: SimulateResult;
+  bestGradientLabel: string;
+  chartStart: string;
+  chartEnd: string;
+  setChartStart: (v: string) => void;
+  setChartEnd: (v: string) => void;
+}) {
+  const mcMap = new Map(monteCarlo.comparisonData.map((d) => [d.date, d]));
+  const grMap = new Map(bestGradient.comparisonData.map((d) => [d.date, d]));
+  const allDates = [...new Set([...mcMap.keys(), ...grMap.keys()])].sort();
+  const performanceData = allDates.map((date) => {
+    const mc = mcMap.get(date);
+    const gr = grMap.get(date);
+    return {
+      date,
+      portfolioMC: mc?.portfolio,
+      portfolioGradient: gr?.portfolio,
+      market: mc?.market ?? gr?.market,
+    };
+  }).filter((d) => (!chartStart || d.date >= chartStart) && (!chartEnd || d.date <= chartEnd));
+
+  const perfVals = performanceData.flatMap((d) =>
+    [d.portfolioMC, d.portfolioGradient, d.market].filter((v): v is number => v != null)
+  );
+  const perfDomain = domainFromValues(perfVals);
+
+  // Frontière efficiente : uniquement celle de Monte-Carlo (celle du gradient n'apporte rien)
+  const mcFront = (monteCarlo.efficientFrontier ?? []).sort((a, b) => a.volatility - b.volatility);
+
+  return (
+    <div className="space-y-10">
+      <p className="text-sm text-muted-foreground">
+        Comparaison : Monte-Carlo vs {bestGradientLabel}. Courbes et frontières superposées.
+      </p>
+
+      {/* Tableau récapitulatif */}
+      <div className="glass-card p-6 overflow-x-auto">
+        <h3 className="font-display text-sm font-bold text-foreground mb-4">Métriques côte à côte</h3>
+        <table className="w-full text-xs">
+          <thead>
+            <tr className="border-b border-border">
+              <th className="pb-2 text-left text-muted-foreground font-semibold">Métrique</th>
+              <th className="pb-2 text-right text-muted-foreground font-semibold">Monte-Carlo</th>
+              <th className="pb-2 text-right text-muted-foreground font-semibold">{bestGradientLabel}</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-border/40">
+            <tr><td className="py-1.5 text-muted-foreground">Sharpe (entraînement)</td><td className="py-1.5 text-right font-medium">{monteCarlo.sharpe.toFixed(2)}</td><td className="py-1.5 text-right font-medium">{bestGradient.sharpe.toFixed(2)}</td></tr>
+            <tr><td className="py-1.5 text-muted-foreground">Rendement attendu (entraînement)</td><td className="py-1.5 text-right font-medium">{monteCarlo.expectedReturn.toFixed(1)}%</td><td className="py-1.5 text-right font-medium">{bestGradient.expectedReturn.toFixed(1)}%</td></tr>
+            {monteCarlo.backtestReturn != null && bestGradient.backtestReturn != null && (
+              <tr><td className="py-1.5 text-muted-foreground">Rendement backtest</td><td className="py-1.5 text-right font-medium">{(monteCarlo.backtestReturn >= 0 ? "+" : "") + monteCarlo.backtestReturn.toFixed(1)}%</td><td className="py-1.5 text-right font-medium">{(bestGradient.backtestReturn >= 0 ? "+" : "") + bestGradient.backtestReturn.toFixed(1)}%</td></tr>
+            )}
+            {monteCarlo.backtestSharpe != null && bestGradient.backtestSharpe != null && (
+              <tr><td className="py-1.5 text-muted-foreground">Sharpe backtest</td><td className="py-1.5 text-right font-medium">{monteCarlo.backtestSharpe.toFixed(2)}</td><td className="py-1.5 text-right font-medium">{bestGradient.backtestSharpe.toFixed(2)}</td></tr>
+            )}
+            <tr><td className="py-1.5 text-muted-foreground">Volatilité</td><td className="py-1.5 text-right font-medium">{monteCarlo.volatility.toFixed(1)}%</td><td className="py-1.5 text-right font-medium">{bestGradient.volatility.toFixed(1)}%</td></tr>
+            <tr><td className="py-1.5 text-muted-foreground">Max Drawdown</td><td className="py-1.5 text-right font-medium">-{monteCarlo.maxDrawdown.toFixed(1)}%</td><td className="py-1.5 text-right font-medium">-{bestGradient.maxDrawdown.toFixed(1)}%</td></tr>
+          </tbody>
+        </table>
+        <p className="mt-3 text-[10px] text-muted-foreground/80">
+          Les métriques d&apos;entraînement (Sharpe, rendement attendu) peuvent différer selon la méthode. Pour comparer les deux approches, privilégier le rendement backtest et le Sharpe backtest (réalisés sur la période de test).
+        </p>
+      </div>
+
+      {/* Performance : portefeuille Monte-Carlo vs Gradient vs Marché (superposé) */}
+      <div className="glass-card p-6">
+        <h3 className="font-display text-sm font-bold text-foreground mb-4">Performance : Monte-Carlo vs {bestGradientLabel} vs Marché</h3>
+        <div className="flex items-center justify-end gap-3 flex-wrap mb-4">
+          <label className="text-xs text-muted-foreground">Du <input type="date" value={chartStart} onChange={(e) => setChartStart(e.target.value)} className="bg-background border border-input rounded px-2 py-1.5 text-foreground text-xs" /></label>
+          <label className="text-xs text-muted-foreground">Au <input type="date" value={chartEnd} onChange={(e) => setChartEnd(e.target.value)} className="bg-background border border-input rounded px-2 py-1.5 text-foreground text-xs" /></label>
+        </div>
+        <div className="h-64">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={performanceData} margin={{ left: 8, right: 8 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis dataKey="date" tick={{ fontSize: 11 }} stroke="hsl(var(--muted-foreground))" interval="preserveStartEnd" />
+              <YAxis tick={{ fontSize: 12 }} stroke="hsl(var(--muted-foreground))" domain={perfDomain} tickFormatter={(v) => `${v}`} label={yAxisLabel("Indice (base 100)")} />
+              <Tooltip {...tooltipStyle()} formatter={(v: number, n: string) => [v != null ? Number(v).toFixed(1) : "—", n]} labelFormatter={(l) => `Date : ${l}`} />
+              <Legend />
+              <Line type="monotone" dataKey="portfolioMC" name="Monte-Carlo" stroke="#3b82f6" strokeWidth={2} dot={false} connectNulls />
+              <Line type="monotone" dataKey="portfolioGradient" name={bestGradientLabel} stroke="#ef4444" strokeWidth={2} dot={false} connectNulls />
+              <Line type="monotone" dataKey="market" name="Marché (S&P 500)" stroke="hsl(var(--muted-foreground))" strokeWidth={2} dot={false} strokeDasharray="5 5" />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+        <p className="mt-2 text-[10px] text-muted-foreground/70">Courbes normalisées à 100 au premier jour du backtest. Marché : ETF SPY.</p>
+      </div>
+
+      {/* Frontière efficiente (Monte-Carlo uniquement) + points optimaux des deux méthodes */}
+      {mcFront.length > 0 && (
+        <div className="glass-card p-6">
+          <h3 className="font-display text-sm font-bold text-foreground mb-4">Frontière efficiente (Monte-Carlo)</h3>
+          <div className="h-72">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={mcFront} margin={{ left: 20, right: 16, top: 8, bottom: 24 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="volatility" type="number" tick={{ fontSize: 11 }} stroke="hsl(var(--muted-foreground))" domain={["auto", "auto"]} tickFormatter={(v) => `${v} %`}
+                  label={{ value: "Volatilité (%)", position: "insideBottom", offset: -12, style: { fontSize: 11, fill: "hsl(var(--muted-foreground))" } }} />
+                <YAxis dataKey="expectedReturn" type="number" tick={{ fontSize: 11 }} stroke="hsl(var(--muted-foreground))" domain={["auto", "auto"]} tickFormatter={(v) => `${v} %`} label={yAxisLabel("Rendement attendu (%)")} />
+                <Tooltip {...tooltipStyle()} content={({ active, payload }) => {
+                  if (!active || !payload?.length) return null;
+                  const p = payload[0]?.payload as { volatility: number; expectedReturn: number; sharpe?: number; backtestReturn?: number };
+                  return (
+                    <div className="rounded-lg border border-border bg-card px-3 py-2 text-xs shadow-sm">
+                      <p>Volatilité : {p?.volatility?.toFixed(2) ?? "—"} %</p>
+                      <p>Rendement attendu : {p?.expectedReturn?.toFixed(2) ?? "—"} %</p>
+                      {p?.backtestReturn != null && <p>Rendement réel : {p.backtestReturn.toFixed(2)} %</p>}
+                      {p?.sharpe != null && <p>Sharpe : {p.sharpe.toFixed(2)}</p>}
+                    </div>
+                  );
+                }} />
+                <Legend />
+                <Line type="monotone" dataKey="expectedReturn" stroke="#3b82f6" strokeWidth={2} dot={{ fill: "#3b82f6", r: 3 }} name="Frontière efficiente" />
+                <ReferenceDot x={monteCarlo.volatility} y={monteCarlo.expectedReturn} r={5} fill="#3b82f6" stroke="#1e40af" strokeWidth={2} label={{ value: "Opt. Monte-Carlo", position: "top", fontSize: 9 }} />
+                <ReferenceDot x={bestGradient.volatility} y={bestGradient.expectedReturn} r={5} fill="#ef4444" stroke="#b91c1c" strokeWidth={2} label={{ value: `Opt. ${bestGradientLabel}`, position: "top", fontSize: 9 }} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      )}
+
+      {/* Allocations côte à côte (optionnel) */}
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="glass-card p-6">
+          <h3 className="font-display text-sm font-bold text-foreground mb-4">Allocation Monte-Carlo</h3>
+          <div className="space-y-2">
+            {Object.entries(monteCarlo.weights).map(([sym, w]) => (
+              <div key={sym} className="flex items-center gap-3">
+                <span className="w-14 text-xs font-semibold text-foreground">{sym}</span>
+                <div className="flex-1 rounded-full bg-secondary h-3 overflow-hidden">
+                  <div className="h-full rounded-full bg-[#3b82f6]" style={{ width: `${w * 100}%` }} />
+                </div>
+                <span className="w-12 text-right text-xs font-medium text-muted-foreground">{(w * 100).toFixed(1)}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="glass-card p-6">
+          <h3 className="font-display text-sm font-bold text-foreground mb-4">Allocation {bestGradientLabel}</h3>
+          <div className="space-y-2">
+            {Object.entries(bestGradient.weights).map(([sym, w]) => (
+              <div key={sym} className="flex items-center gap-3">
+                <span className="w-14 text-xs font-semibold text-foreground">{sym}</span>
+                <div className="flex-1 rounded-full bg-secondary h-3 overflow-hidden">
+                  <div className="h-full rounded-full bg-[#ef4444]" style={{ width: `${w * 100}%` }} />
+                </div>
+                <span className="w-12 text-right text-xs font-medium text-muted-foreground">{(w * 100).toFixed(1)}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

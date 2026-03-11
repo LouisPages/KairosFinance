@@ -65,6 +65,7 @@ class SimulationEntry(BaseModel):
     result: Any = None
     llmResult: Any = None
     classicResult: Any = None
+    comparisonData: Optional[Any] = None  # { monteCarlo, bestGradient, bestGradientLabel }
     description: Optional[str] = None
 
 
@@ -189,6 +190,7 @@ def get_history(
 class SimulateRequest(BaseModel):
     model: str
     symbols: list[str]
+    method: Optional[str] = None  # "monte_carlo" | "gradient_fixe" | "gradient_optimal" (ignoré pour markowitz-llm)
 
 
 @app.post("/api/simulate")
@@ -200,19 +202,20 @@ def simulate(req: SimulateRequest):
     start_s = start_d.strftime("%Y-%m-%d")
     end_s = end_d.strftime("%Y-%m-%d")
     from gestion.config import OPTIMIZATION_METHOD
+    method = req.method if req.method in ("monte_carlo", "gradient_fixe", "gradient_optimal") else OPTIMIZATION_METHOD
     try:
         if req.model == "markowitz-classic":
             import gestion.markowitz_simple as markowitz_simple
-            result = markowitz_simple.run(req.symbols, start_s, end_s, method=OPTIMIZATION_METHOD)
+            result = markowitz_simple.run(req.symbols, start_s, end_s, method=method)
         elif req.model == "markowitz-1factor":
             import gestion.markowitz_1factor as markowitz_1factor
-            result = markowitz_1factor.run(req.symbols, start_s, end_s, method=OPTIMIZATION_METHOD)
+            result = markowitz_1factor.run(req.symbols, start_s, end_s, method=method)
         elif req.model == "markowitz-3factors":
             import gestion.multifactor.markowitz_3factors as markowitz_3factors
-            result = markowitz_3factors.run(req.symbols, start_s, end_s, method=OPTIMIZATION_METHOD)
+            result = markowitz_3factors.run(req.symbols, start_s, end_s, method=method)
         elif req.model == "markowitz-5factors":
             import gestion.multifactor.markowitz_5factors as markowitz_5factors
-            result = markowitz_5factors.run(req.symbols, start_s, end_s, method=OPTIMIZATION_METHOD)
+            result = markowitz_5factors.run(req.symbols, start_s, end_s, method=method)
         elif req.model == "markowitz-llm":
             import gestion.dynamic.markowitz_llm as markowitz_llm
             result = markowitz_llm.run(req.symbols, start_s, end_s)

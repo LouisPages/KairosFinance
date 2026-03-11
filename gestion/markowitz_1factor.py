@@ -154,7 +154,7 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
             for d in portfolio_series.index
         ]
 
-        # --- Max drawdown sur période test ---
+        # --- Max drawdown et métriques backtest sur période test ---
         test_common = test_returns.index.intersection(full_common)
         test_ret_series = (returns_monthly.loc[test_common] * best_weights).sum(axis=1)
         cum_test = (1 + test_ret_series).cumprod()
@@ -163,6 +163,10 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
         dd_min = drawdown.min()
         dd_min = float(dd_min.iloc[0]) if isinstance(dd_min, pd.Series) else float(dd_min)
         max_drawdown = float(-dd_min * 100) if len(drawdown) > 0 else 0.0
+        opt_backtest_ret = round(float((np.prod(1 + test_ret_series) - 1) * 100), 2)
+        test_mean_ann = float(test_ret_series.mean()) * 12
+        test_vol_ann = float(test_ret_series.std()) * (12 ** 0.5) if test_ret_series.std() > 1e-12 else 1e-10
+        backtest_sharpe = round((test_mean_ann - rf_annual) / test_vol_ann, 4) if test_vol_ann > 1e-10 else 0.0
 
         # --- Frontière efficiente ---
         vol_pct = vol_arr * 100
@@ -183,8 +187,6 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
         opt_vol = round(float(vol_pct[max_idx]), 2)
         opt_ret = round(float(ret_pct[max_idx]), 2)
         opt_sharpe = round(float(sharpe_arr[max_idx]), 4)
-        opt_test = (returns_monthly.loc[test_common] * best_weights).sum(axis=1)
-        opt_backtest_ret = round(float((np.prod(1 + opt_test) - 1) * 100), 2)
         if (opt_vol, opt_ret) not in list(zip(frontier_vol, frontier_ret)):
             frontier_vol.append(opt_vol)
             frontier_ret.append(opt_ret)
@@ -197,6 +199,8 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
             "expectedReturn": round(float(ret_arr[max_idx]) * 100, 2),
             "volatility": round(float(vol_arr[max_idx]) * 100, 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "backtestReturn": opt_backtest_ret,
+            "backtestSharpe": backtest_sharpe,
             "comparisonData": comparison_data,
             "numPortfolios": num_portfolios,
             "trainPeriodStart": train_returns.index[0].strftime("%Y-%m-%d"),
@@ -247,12 +251,15 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
             for d in portfolio_series.index
         ]
 
-        # --- Max drawdown ---
+        # --- Max drawdown et métriques backtest ---
         test_common = test_returns.index.intersection(full_common)
         test_ret_series = (returns_monthly.loc[test_common] * best_weights).sum(axis=1)
         cum_test = (1 + test_ret_series).cumprod()
         max_drawdown = float(-((cum_test - cum_test.cummax()) / cum_test.cummax()).min() * 100)
         opt_backtest_ret = round(float((cum_test.iloc[-1] - 1) * 100), 2) if len(cum_test) > 0 else 0
+        test_mean_ann = float(test_ret_series.mean()) * 12
+        test_vol_ann = float(test_ret_series.std()) * (12 ** 0.5) if test_ret_series.std() > 1e-12 else 1e-10
+        backtest_sharpe = round((test_mean_ann - rf_annual) / test_vol_ann, 4) if test_vol_ann > 1e-10 else 0.0
 
         return {
             "weights": weights_dict,
@@ -260,6 +267,8 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
             "expectedReturn": round(float(opt_ret_val) * 100, 2),
             "volatility": round(float(opt_vol_val) * 100, 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "backtestReturn": opt_backtest_ret,
+            "backtestSharpe": backtest_sharpe,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": train_returns.index[0].strftime("%Y-%m-%d"),
@@ -312,12 +321,15 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
             for d in portfolio_series.index
         ]
 
-        # --- Max drawdown ---
+        # --- Max drawdown et métriques backtest ---
         test_common = test_returns.index.intersection(full_common)
         test_ret_series = (returns_monthly.loc[test_common] * best_weights).sum(axis=1)
         cum_test = (1 + test_ret_series).cumprod()
         max_drawdown = float(-((cum_test - cum_test.cummax()) / cum_test.cummax()).min() * 100)
         opt_backtest_ret = round(float((cum_test.iloc[-1] - 1) * 100), 2) if len(cum_test) > 0 else 0
+        test_mean_ann = float(test_ret_series.mean()) * 12
+        test_vol_ann = float(test_ret_series.std()) * (12 ** 0.5) if test_ret_series.std() > 1e-12 else 1e-10
+        backtest_sharpe = round((test_mean_ann - rf_annual) / test_vol_ann, 4) if test_vol_ann > 1e-10 else 0.0
 
         return {
             "weights": weights_dict,
@@ -325,6 +337,8 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
             "expectedReturn": round(float(opt_ret_val) * 100, 2),
             "volatility": round(float(opt_vol_val) * 100, 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "backtestReturn": opt_backtest_ret,
+            "backtestSharpe": backtest_sharpe,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": train_returns.index[0].strftime("%Y-%m-%d"),
@@ -338,4 +352,3 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
                 "backtestReturn": opt_backtest_ret
             }],
         }
-

@@ -1,5 +1,12 @@
 import type { SimulateResult, LlmSimulateResult } from "./api";
 
+/** Données de comparaison Monte-Carlo vs Gradient (sauvegardées en historique). */
+export interface ComparisonPayload {
+  monteCarlo: SimulateResult;
+  bestGradient: SimulateResult;
+  bestGradientLabel: string;
+}
+
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 export type SimulationModelId =
@@ -24,6 +31,8 @@ export interface SimulationEntry {
   result: SimulateResult | null;
   llmResult: LlmSimulateResult | null;
   classicResult: SimulateResult | null;
+  /** Comparaison Monte-Carlo vs Gradient (mode "comparison") — pour affichage dans l'historique. */
+  comparisonData?: ComparisonPayload | null;
   description?: string;
 }
 

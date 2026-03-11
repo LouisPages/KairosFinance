@@ -43,6 +43,10 @@ export interface SimulateResult {
   expectedReturn: number;
   volatility: number;
   maxDrawdown: number;
+  /** Rendement réalisé sur la période de test (backtest), cohérent avec la courbe. */
+  backtestReturn?: number;
+  /** Ratio de Sharpe calculé sur les rendements de la période de test. */
+  backtestSharpe?: number;
   comparisonData: { date: string; portfolio: number; market: number }[];
   numPortfolios?: number;
   trainPeriodStart?: string;
@@ -97,12 +101,15 @@ export interface LlmSimulateResult {
 
 export async function runSimulation(
   model: string,
-  symbols: string[]
+  symbols: string[],
+  method?: "monte_carlo" | "gradient_fixe" | "gradient_optimal"
 ): Promise<SimulateResult> {
+  const body: { model: string; symbols: string[]; method?: string } = { model, symbols };
+  if (method) body.method = method;
   const r = await fetch(`${API_BASE}/api/simulate`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ model, symbols }),
+    body: JSON.stringify(body),
   });
   if (!r.ok) {
     const err = await r.json().catch(() => ({ detail: r.statusText }));

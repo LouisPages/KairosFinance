@@ -1,5 +1,1475 @@
 [
   {
+    "id": "sim-1773261411740-4qcby",
+    "date": "2026-03-11T20:36:51.740Z",
+    "modelId": "markowitz-3factors",
+    "symbols": [
+      "AOS",
+      "AMD",
+      "AMGN",
+      "BLK",
+      "TECH",
+      "CDW",
+      "COIN",
+      "COST",
+      "DOV",
+      "EQT",
+      "FSLR",
+      "GDDY",
+      "LH",
+      "NWSA",
+      "ON",
+      "PPL",
+      "SWKS",
+      "TRGP",
+      "UNP",
+      "WM"
+    ],
+    "result": {
+      "weights": {
+        "AOS": 0.08653708559678766,
+        "AMD": 0.03599550911057057,
+        "AMGN": 0.06574338335998854,
+        "BLK": 0.03956116606734961,
+        "TECH": 0.021068998538159904,
+        "CDW": 0.09418887278194636,
+        "COIN": 0.011216159370475112,
+        "COST": 0.005275454734980443,
+        "DOV": 0.05710618981713935,
+        "EQT": 0.08238252517725729,
+        "FSLR": 0.00600186223170758,
+        "GDDY": 0.009476833933472826,
+        "LH": 0.057041760758969905,
+        "NWSA": 0.09501449507161948,
+        "ON": 0.024422097354088734,
+        "PPL": 0.09909595107861706,
+        "SWKS": 0.011940789240146235,
+        "TRGP": 0.07704803702607488,
+        "UNP": 0.0472076534092658,
+        "WM": 0.07367517534138253
+      },
+      "sharpe": 0.3919,
+      "expectedReturn": 10.54,
+      "volatility": 18.82,
+      "maxDrawdown": 3.71,
+      "comparisonData": [
+        {
+          "date": "2021-05",
+          "portfolio": 64.61,
+          "market": 71.56
+        },
+        {
+          "date": "2021-06",
+          "portfolio": 66.46,
+          "market": 73.16
+        },
+        {
+          "date": "2021-07",
+          "portfolio": 66.5,
+          "market": 74.95
+        },
+        {
+          "date": "2021-08",
+          "portfolio": 68.05,
+          "market": 77.18
+        },
+        {
+          "date": "2021-09",
+          "portfolio": 65.79,
+          "market": 73.58
+        },
+        {
+          "date": "2021-10",
+          "portfolio": 70.25,
+          "market": 78.74
+        },
+        {
+          "date": "2021-11",
+          "portfolio": 70.4,
+          "market": 78.11
+        },
+        {
+          "date": "2021-12",
+          "portfolio": 75.13,
+          "market": 81.72
+        },
+        {
+          "date": "2022-01",
+          "portfolio": 70.97,
+          "market": 77.41
+        },
+        {
+          "date": "2022-02",
+          "portfolio": 69.89,
+          "market": 75.13
+        },
+        {
+          "date": "2022-03",
+          "portfolio": 75.04,
+          "market": 77.95
+        },
+        {
+          "date": "2022-04",
+          "portfolio": 70.17,
+          "market": 71.11
+        },
+        {
+          "date": "2022-05",
+          "portfolio": 72.18,
+          "market": 71.27
+        },
+        {
+          "date": "2022-06",
+          "portfolio": 64.23,
+          "market": 65.39
+        },
+        {
+          "date": "2022-07",
+          "portfolio": 72.93,
+          "market": 71.42
+        },
+        {
+          "date": "2022-08",
+          "portfolio": 71.08,
+          "market": 68.5
+        },
+        {
+          "date": "2022-09",
+          "portfolio": 63.28,
+          "market": 62.17
+        },
+        {
+          "date": "2022-10",
+          "portfolio": 68.48,
+          "market": 67.22
+        },
+        {
+          "date": "2022-11",
+          "portfolio": 75.14,
+          "market": 70.96
+        },
+        {
+          "date": "2022-12",
+          "portfolio": 70.3,
+          "market": 66.87
+        },
+        {
+          "date": "2023-01",
+          "portfolio": 75.04,
+          "market": 71.07
+        },
+        {
+          "date": "2023-02",
+          "portfolio": 72.54,
+          "market": 69.29
+        },
+        {
+          "date": "2023-03",
+          "portfolio": 74.12,
+          "market": 71.86
+        },
+        {
+          "date": "2023-04",
+          "portfolio": 73.39,
+          "market": 73
+        },
+        {
+          "date": "2023-05",
+          "portfolio": 72.35,
+          "market": 73.34
+        },
+        {
+          "date": "2023-06",
+          "portfolio": 78.16,
+          "market": 78.09
+        },
+        {
+          "date": "2023-07",
+          "portfolio": 80.91,
+          "market": 80.65
+        },
+        {
+          "date": "2023-08",
+          "portfolio": 81.44,
+          "market": 79.34
+        },
+        {
+          "date": "2023-09",
+          "portfolio": 77.75,
+          "market": 75.58
+        },
+        {
+          "date": "2023-10",
+          "portfolio": 77.35,
+          "market": 73.94
+        },
+        {
+          "date": "2023-11",
+          "portfolio": 83.93,
+          "market": 80.69
+        },
+        {
+          "date": "2023-12",
+          "portfolio": 90.15,
+          "market": 84.37
+        },
+        {
+          "date": "2024-01",
+          "portfolio": 88.56,
+          "market": 85.72
+        },
+        {
+          "date": "2024-02",
+          "portfolio": 94.38,
+          "market": 90.19
+        },
+        {
+          "date": "2024-03",
+          "portfolio": 97.62,
+          "market": 93.14
+        },
+        {
+          "date": "2024-04",
+          "portfolio": 94.19,
+          "market": 89.38
+        },
+        {
+          "date": "2024-05",
+          "portfolio": 98.1,
+          "market": 93.91
+        },
+        {
+          "date": "2024-06",
+          "portfolio": 97.5,
+          "market": 97.22
+        },
+        {
+          "date": "2024-07",
+          "portfolio": 99.89,
+          "market": 98.4
+        },
+        {
+          "date": "2024-08",
+          "portfolio": 102.64,
+          "market": 100.69
+        },
+        {
+          "date": "2024-09",
+          "portfolio": 104.01,
+          "market": 102.81
+        },
+        {
+          "date": "2024-10",
+          "portfolio": 101.24,
+          "market": 101.89
+        },
+        {
+          "date": "2024-11",
+          "portfolio": 107.76,
+          "market": 107.97
+        },
+        {
+          "date": "2024-12",
+          "portfolio": 100.91,
+          "market": 105.37
+        },
+        {
+          "date": "2025-01",
+          "portfolio": 107.13,
+          "market": 108.2
+        },
+        {
+          "date": "2025-02",
+          "portfolio": 104.99,
+          "market": 106.83
+        },
+        {
+          "date": "2025-03",
+          "portfolio": 102.52,
+          "market": 100.87
+        },
+        {
+          "date": "2025-04",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2025-05",
+          "portfolio": 103.24,
+          "market": 106.28
+        },
+        {
+          "date": "2025-06",
+          "portfolio": 107.78,
+          "market": 111.75
+        },
+        {
+          "date": "2025-07",
+          "portfolio": 109.22,
+          "market": 114.32
+        },
+        {
+          "date": "2025-08",
+          "portfolio": 108.38,
+          "market": 116.67
+        },
+        {
+          "date": "2025-09",
+          "portfolio": 109.65,
+          "market": 120.82
+        },
+        {
+          "date": "2025-10",
+          "portfolio": 107.89,
+          "market": 123.7
+        },
+        {
+          "date": "2025-11",
+          "portfolio": 110.73,
+          "market": 123.94
+        },
+        {
+          "date": "2025-12",
+          "portfolio": 108.71,
+          "market": 124.04
+        },
+        {
+          "date": "2026-01",
+          "portfolio": 112.81,
+          "market": 125.87
+        },
+        {
+          "date": "2026-02",
+          "portfolio": 117.79,
+          "market": 124.78
+        },
+        {
+          "date": "2026-03",
+          "portfolio": 113.42,
+          "market": 123.18
+        }
+      ],
+      "numPortfolios": 10000,
+      "trainPeriodStart": "2021-05",
+      "trainPeriodEnd": "2025-03",
+      "testPeriodStart": "2025-04",
+      "testPeriodEnd": "2026-03",
+      "efficientFrontier": [
+        {
+          "volatility": 18.32,
+          "expectedReturn": 9.99,
+          "sharpe": 0.3724,
+          "backtestReturn": 9.16
+        },
+        {
+          "volatility": 18.33,
+          "expectedReturn": 10.17,
+          "sharpe": 0.3818,
+          "backtestReturn": 4.79
+        },
+        {
+          "volatility": 18.47,
+          "expectedReturn": 10.36,
+          "sharpe": 0.3893,
+          "backtestReturn": 14.05
+        },
+        {
+          "volatility": 18.6,
+          "expectedReturn": 10.4,
+          "sharpe": 0.3889,
+          "backtestReturn": 14.53
+        },
+        {
+          "volatility": 18.82,
+          "expectedReturn": 10.54,
+          "sharpe": 0.3919,
+          "backtestReturn": 10.63
+        }
+      ]
+    },
+    "llmResult": null,
+    "classicResult": null,
+    "comparisonData": {
+      "monteCarlo": {
+        "weights": {
+          "AOS": 0.08653708559678766,
+          "AMD": 0.03599550911057057,
+          "AMGN": 0.06574338335998854,
+          "BLK": 0.03956116606734961,
+          "TECH": 0.021068998538159904,
+          "CDW": 0.09418887278194636,
+          "COIN": 0.011216159370475112,
+          "COST": 0.005275454734980443,
+          "DOV": 0.05710618981713935,
+          "EQT": 0.08238252517725729,
+          "FSLR": 0.00600186223170758,
+          "GDDY": 0.009476833933472826,
+          "LH": 0.057041760758969905,
+          "NWSA": 0.09501449507161948,
+          "ON": 0.024422097354088734,
+          "PPL": 0.09909595107861706,
+          "SWKS": 0.011940789240146235,
+          "TRGP": 0.07704803702607488,
+          "UNP": 0.0472076534092658,
+          "WM": 0.07367517534138253
+        },
+        "sharpe": 0.3919,
+        "expectedReturn": 10.54,
+        "volatility": 18.82,
+        "maxDrawdown": 3.71,
+        "comparisonData": [
+          {
+            "date": "2021-05",
+            "portfolio": 64.61,
+            "market": 71.56
+          },
+          {
+            "date": "2021-06",
+            "portfolio": 66.46,
+            "market": 73.16
+          },
+          {
+            "date": "2021-07",
+            "portfolio": 66.5,
+            "market": 74.95
+          },
+          {
+            "date": "2021-08",
+            "portfolio": 68.05,
+            "market": 77.18
+          },
+          {
+            "date": "2021-09",
+            "portfolio": 65.79,
+            "market": 73.58
+          },
+          {
+            "date": "2021-10",
+            "portfolio": 70.25,
+            "market": 78.74
+          },
+          {
+            "date": "2021-11",
+            "portfolio": 70.4,
+            "market": 78.11
+          },
+          {
+            "date": "2021-12",
+            "portfolio": 75.13,
+            "market": 81.72
+          },
+          {
+            "date": "2022-01",
+            "portfolio": 70.97,
+            "market": 77.41
+          },
+          {
+            "date": "2022-02",
+            "portfolio": 69.89,
+            "market": 75.13
+          },
+          {
+            "date": "2022-03",
+            "portfolio": 75.04,
+            "market": 77.95
+          },
+          {
+            "date": "2022-04",
+            "portfolio": 70.17,
+            "market": 71.11
+          },
+          {
+            "date": "2022-05",
+            "portfolio": 72.18,
+            "market": 71.27
+          },
+          {
+            "date": "2022-06",
+            "portfolio": 64.23,
+            "market": 65.39
+          },
+          {
+            "date": "2022-07",
+            "portfolio": 72.93,
+            "market": 71.42
+          },
+          {
+            "date": "2022-08",
+            "portfolio": 71.08,
+            "market": 68.5
+          },
+          {
+            "date": "2022-09",
+            "portfolio": 63.28,
+            "market": 62.17
+          },
+          {
+            "date": "2022-10",
+            "portfolio": 68.48,
+            "market": 67.22
+          },
+          {
+            "date": "2022-11",
+            "portfolio": 75.14,
+            "market": 70.96
+          },
+          {
+            "date": "2022-12",
+            "portfolio": 70.3,
+            "market": 66.87
+          },
+          {
+            "date": "2023-01",
+            "portfolio": 75.04,
+            "market": 71.07
+          },
+          {
+            "date": "2023-02",
+            "portfolio": 72.54,
+            "market": 69.29
+          },
+          {
+            "date": "2023-03",
+            "portfolio": 74.12,
+            "market": 71.86
+          },
+          {
+            "date": "2023-04",
+            "portfolio": 73.39,
+            "market": 73
+          },
+          {
+            "date": "2023-05",
+            "portfolio": 72.35,
+            "market": 73.34
+          },
+          {
+            "date": "2023-06",
+            "portfolio": 78.16,
+            "market": 78.09
+          },
+          {
+            "date": "2023-07",
+            "portfolio": 80.91,
+            "market": 80.65
+          },
+          {
+            "date": "2023-08",
+            "portfolio": 81.44,
+            "market": 79.34
+          },
+          {
+            "date": "2023-09",
+            "portfolio": 77.75,
+            "market": 75.58
+          },
+          {
+            "date": "2023-10",
+            "portfolio": 77.35,
+            "market": 73.94
+          },
+          {
+            "date": "2023-11",
+            "portfolio": 83.93,
+            "market": 80.69
+          },
+          {
+            "date": "2023-12",
+            "portfolio": 90.15,
+            "market": 84.37
+          },
+          {
+            "date": "2024-01",
+            "portfolio": 88.56,
+            "market": 85.72
+          },
+          {
+            "date": "2024-02",
+            "portfolio": 94.38,
+            "market": 90.19
+          },
+          {
+            "date": "2024-03",
+            "portfolio": 97.62,
+            "market": 93.14
+          },
+          {
+            "date": "2024-04",
+            "portfolio": 94.19,
+            "market": 89.38
+          },
+          {
+            "date": "2024-05",
+            "portfolio": 98.1,
+            "market": 93.91
+          },
+          {
+            "date": "2024-06",
+            "portfolio": 97.5,
+            "market": 97.22
+          },
+          {
+            "date": "2024-07",
+            "portfolio": 99.89,
+            "market": 98.4
+          },
+          {
+            "date": "2024-08",
+            "portfolio": 102.64,
+            "market": 100.69
+          },
+          {
+            "date": "2024-09",
+            "portfolio": 104.01,
+            "market": 102.81
+          },
+          {
+            "date": "2024-10",
+            "portfolio": 101.24,
+            "market": 101.89
+          },
+          {
+            "date": "2024-11",
+            "portfolio": 107.76,
+            "market": 107.97
+          },
+          {
+            "date": "2024-12",
+            "portfolio": 100.91,
+            "market": 105.37
+          },
+          {
+            "date": "2025-01",
+            "portfolio": 107.13,
+            "market": 108.2
+          },
+          {
+            "date": "2025-02",
+            "portfolio": 104.99,
+            "market": 106.83
+          },
+          {
+            "date": "2025-03",
+            "portfolio": 102.52,
+            "market": 100.87
+          },
+          {
+            "date": "2025-04",
+            "portfolio": 100,
+            "market": 100
+          },
+          {
+            "date": "2025-05",
+            "portfolio": 103.24,
+            "market": 106.28
+          },
+          {
+            "date": "2025-06",
+            "portfolio": 107.78,
+            "market": 111.75
+          },
+          {
+            "date": "2025-07",
+            "portfolio": 109.22,
+            "market": 114.32
+          },
+          {
+            "date": "2025-08",
+            "portfolio": 108.38,
+            "market": 116.67
+          },
+          {
+            "date": "2025-09",
+            "portfolio": 109.65,
+            "market": 120.82
+          },
+          {
+            "date": "2025-10",
+            "portfolio": 107.89,
+            "market": 123.7
+          },
+          {
+            "date": "2025-11",
+            "portfolio": 110.73,
+            "market": 123.94
+          },
+          {
+            "date": "2025-12",
+            "portfolio": 108.71,
+            "market": 124.04
+          },
+          {
+            "date": "2026-01",
+            "portfolio": 112.81,
+            "market": 125.87
+          },
+          {
+            "date": "2026-02",
+            "portfolio": 117.79,
+            "market": 124.78
+          },
+          {
+            "date": "2026-03",
+            "portfolio": 113.42,
+            "market": 123.18
+          }
+        ],
+        "numPortfolios": 10000,
+        "trainPeriodStart": "2021-05",
+        "trainPeriodEnd": "2025-03",
+        "testPeriodStart": "2025-04",
+        "testPeriodEnd": "2026-03",
+        "efficientFrontier": [
+          {
+            "volatility": 18.32,
+            "expectedReturn": 9.99,
+            "sharpe": 0.3724,
+            "backtestReturn": 9.16
+          },
+          {
+            "volatility": 18.33,
+            "expectedReturn": 10.17,
+            "sharpe": 0.3818,
+            "backtestReturn": 4.79
+          },
+          {
+            "volatility": 18.47,
+            "expectedReturn": 10.36,
+            "sharpe": 0.3893,
+            "backtestReturn": 14.05
+          },
+          {
+            "volatility": 18.6,
+            "expectedReturn": 10.4,
+            "sharpe": 0.3889,
+            "backtestReturn": 14.53
+          },
+          {
+            "volatility": 18.82,
+            "expectedReturn": 10.54,
+            "sharpe": 0.3919,
+            "backtestReturn": 10.63
+          }
+        ]
+      },
+      "bestGradient": {
+        "weights": {
+          "AOS": 0.07280287463244699,
+          "AMD": 0.03412194753636652,
+          "AMGN": 0.12558935769428275,
+          "BLK": 0.06756326971020415,
+          "TECH": 0,
+          "CDW": 0.05312603177087862,
+          "COIN": 0,
+          "COST": 0.03367215795856719,
+          "DOV": 0.07513292705255649,
+          "EQT": 0.05718107285143588,
+          "FSLR": 0,
+          "GDDY": 0.020576647344873494,
+          "LH": 0.06448686566440168,
+          "NWSA": 0.05972098154439467,
+          "ON": 0,
+          "PPL": 0.09926987089825601,
+          "SWKS": 0,
+          "TRGP": 0.10479151375207725,
+          "UNP": 0.05696131016699245,
+          "WM": 0.07500317142226566
+        },
+        "sharpe": 0.5021,
+        "expectedReturn": 12.04,
+        "volatility": 17.67,
+        "maxDrawdown": 3.68,
+        "comparisonData": [
+          {
+            "date": "2021-05",
+            "portfolio": 59.62,
+            "market": 71.56
+          },
+          {
+            "date": "2021-06",
+            "portfolio": 61.35,
+            "market": 73.16
+          },
+          {
+            "date": "2021-07",
+            "portfolio": 61.74,
+            "market": 74.95
+          },
+          {
+            "date": "2021-08",
+            "portfolio": 62.84,
+            "market": 77.18
+          },
+          {
+            "date": "2021-09",
+            "portfolio": 60.52,
+            "market": 73.58
+          },
+          {
+            "date": "2021-10",
+            "portfolio": 64.64,
+            "market": 78.74
+          },
+          {
+            "date": "2021-11",
+            "portfolio": 64.45,
+            "market": 78.11
+          },
+          {
+            "date": "2021-12",
+            "portfolio": 69.15,
+            "market": 81.72
+          },
+          {
+            "date": "2022-01",
+            "portfolio": 66.25,
+            "market": 77.41
+          },
+          {
+            "date": "2022-02",
+            "portfolio": 65.27,
+            "market": 75.13
+          },
+          {
+            "date": "2022-03",
+            "portfolio": 70.08,
+            "market": 77.95
+          },
+          {
+            "date": "2022-04",
+            "portfolio": 65.78,
+            "market": 71.11
+          },
+          {
+            "date": "2022-05",
+            "portfolio": 67.72,
+            "market": 71.27
+          },
+          {
+            "date": "2022-06",
+            "portfolio": 61.26,
+            "market": 65.39
+          },
+          {
+            "date": "2022-07",
+            "portfolio": 68.2,
+            "market": 71.42
+          },
+          {
+            "date": "2022-08",
+            "portfolio": 66.36,
+            "market": 68.5
+          },
+          {
+            "date": "2022-09",
+            "portfolio": 59.2,
+            "market": 62.17
+          },
+          {
+            "date": "2022-10",
+            "portfolio": 64.93,
+            "market": 67.22
+          },
+          {
+            "date": "2022-11",
+            "portfolio": 70.98,
+            "market": 70.96
+          },
+          {
+            "date": "2022-12",
+            "portfolio": 66.9,
+            "market": 66.87
+          },
+          {
+            "date": "2023-01",
+            "portfolio": 70.29,
+            "market": 71.07
+          },
+          {
+            "date": "2023-02",
+            "portfolio": 67.45,
+            "market": 69.29
+          },
+          {
+            "date": "2023-03",
+            "portfolio": 68.81,
+            "market": 71.86
+          },
+          {
+            "date": "2023-04",
+            "portfolio": 68.71,
+            "market": 73
+          },
+          {
+            "date": "2023-05",
+            "portfolio": 66.49,
+            "market": 73.34
+          },
+          {
+            "date": "2023-06",
+            "portfolio": 71.43,
+            "market": 78.09
+          },
+          {
+            "date": "2023-07",
+            "portfolio": 73.88,
+            "market": 80.65
+          },
+          {
+            "date": "2023-08",
+            "portfolio": 74.54,
+            "market": 79.34
+          },
+          {
+            "date": "2023-09",
+            "portfolio": 72.16,
+            "market": 75.58
+          },
+          {
+            "date": "2023-10",
+            "portfolio": 72.12,
+            "market": 73.94
+          },
+          {
+            "date": "2023-11",
+            "portfolio": 78.35,
+            "market": 80.69
+          },
+          {
+            "date": "2023-12",
+            "portfolio": 83.3,
+            "market": 84.37
+          },
+          {
+            "date": "2024-01",
+            "portfolio": 83.28,
+            "market": 85.72
+          },
+          {
+            "date": "2024-02",
+            "portfolio": 87.38,
+            "market": 90.19
+          },
+          {
+            "date": "2024-03",
+            "portfolio": 90.8,
+            "market": 93.14
+          },
+          {
+            "date": "2024-04",
+            "portfolio": 88.11,
+            "market": 89.38
+          },
+          {
+            "date": "2024-05",
+            "portfolio": 91.99,
+            "market": 93.91
+          },
+          {
+            "date": "2024-06",
+            "portfolio": 92.4,
+            "market": 97.22
+          },
+          {
+            "date": "2024-07",
+            "portfolio": 95.13,
+            "market": 98.4
+          },
+          {
+            "date": "2024-08",
+            "portfolio": 98.85,
+            "market": 100.69
+          },
+          {
+            "date": "2024-09",
+            "portfolio": 99.98,
+            "market": 102.81
+          },
+          {
+            "date": "2024-10",
+            "portfolio": 99.08,
+            "market": 101.89
+          },
+          {
+            "date": "2024-11",
+            "portfolio": 104.9,
+            "market": 107.97
+          },
+          {
+            "date": "2024-12",
+            "portfolio": 97.94,
+            "market": 105.37
+          },
+          {
+            "date": "2025-01",
+            "portfolio": 104.86,
+            "market": 108.2
+          },
+          {
+            "date": "2025-02",
+            "portfolio": 105.02,
+            "market": 106.83
+          },
+          {
+            "date": "2025-03",
+            "portfolio": 103.03,
+            "market": 100.87
+          },
+          {
+            "date": "2025-04",
+            "portfolio": 100,
+            "market": 100
+          },
+          {
+            "date": "2025-05",
+            "portfolio": 101.99,
+            "market": 106.28
+          },
+          {
+            "date": "2025-06",
+            "portfolio": 105.03,
+            "market": 111.75
+          },
+          {
+            "date": "2025-07",
+            "portfolio": 106.34,
+            "market": 114.32
+          },
+          {
+            "date": "2025-08",
+            "portfolio": 106.11,
+            "market": 116.67
+          },
+          {
+            "date": "2025-09",
+            "portfolio": 106.66,
+            "market": 120.82
+          },
+          {
+            "date": "2025-10",
+            "portfolio": 104.9,
+            "market": 123.7
+          },
+          {
+            "date": "2025-11",
+            "portfolio": 109.62,
+            "market": 123.94
+          },
+          {
+            "date": "2025-12",
+            "portfolio": 108.15,
+            "market": 124.04
+          },
+          {
+            "date": "2026-01",
+            "portfolio": 112.86,
+            "market": 125.87
+          },
+          {
+            "date": "2026-02",
+            "portfolio": 119.98,
+            "market": 124.78
+          },
+          {
+            "date": "2026-03",
+            "portfolio": 115.56,
+            "market": 123.18
+          }
+        ],
+        "numPortfolios": 1,
+        "trainPeriodStart": "2021-05",
+        "trainPeriodEnd": "2025-03",
+        "testPeriodStart": "2025-04",
+        "testPeriodEnd": "2026-03",
+        "efficientFrontier": [
+          {
+            "volatility": 17.67,
+            "expectedReturn": 12.04,
+            "sharpe": 0.5021,
+            "backtestReturn": 12.16
+          }
+        ]
+      },
+      "bestGradientLabel": "Gradient à pas optimal"
+    },
+    "description": ""
+  },
+  {
+    "id": "sim-1773261345295-6j2pa",
+    "date": "2026-03-11T20:35:45.295Z",
+    "modelId": "markowitz-3factors",
+    "symbols": [
+      "AOS",
+      "AMD",
+      "AMGN",
+      "BLK",
+      "TECH",
+      "CDW",
+      "COIN",
+      "COST",
+      "DOV",
+      "EQT",
+      "FSLR",
+      "GDDY",
+      "LH",
+      "NWSA",
+      "ON",
+      "PPL",
+      "SWKS",
+      "TRGP",
+      "UNP",
+      "WM"
+    ],
+    "result": {
+      "weights": {
+        "AOS": 0.05625719656633615,
+        "AMD": 0.008144010230132151,
+        "AMGN": 0.08121233676188613,
+        "BLK": 0.0068818324589423096,
+        "TECH": 0.0020859324837908637,
+        "CDW": 0.00010767765632136089,
+        "COIN": 0.0005561010707872865,
+        "COST": 0.11991886084985462,
+        "DOV": 0.047658272202323784,
+        "EQT": 0.055902020085143146,
+        "FSLR": 0.017095724378776468,
+        "GDDY": 0.039625754722998514,
+        "LH": 0.03340681957966506,
+        "NWSA": 0.12399947730380163,
+        "ON": 0.005330231619318208,
+        "PPL": 0.07278589718716637,
+        "SWKS": 0.03150725907459922,
+        "TRGP": 0.12470384490564729,
+        "UNP": 0.05294916787386988,
+        "WM": 0.11987158298863965
+      },
+      "sharpe": 0.4198,
+      "expectedReturn": 10.53,
+      "volatility": 17.53,
+      "maxDrawdown": 3.83,
+      "comparisonData": [
+        {
+          "date": "2021-05",
+          "portfolio": 54.05,
+          "market": 71.56
+        },
+        {
+          "date": "2021-06",
+          "portfolio": 55.84,
+          "market": 73.16
+        },
+        {
+          "date": "2021-07",
+          "portfolio": 55.85,
+          "market": 74.95
+        },
+        {
+          "date": "2021-08",
+          "portfolio": 56.28,
+          "market": 77.18
+        },
+        {
+          "date": "2021-09",
+          "portfolio": 55.56,
+          "market": 73.58
+        },
+        {
+          "date": "2021-10",
+          "portfolio": 59.18,
+          "market": 78.74
+        },
+        {
+          "date": "2021-11",
+          "portfolio": 58.75,
+          "market": 78.11
+        },
+        {
+          "date": "2021-12",
+          "portfolio": 62.57,
+          "market": 81.72
+        },
+        {
+          "date": "2022-01",
+          "portfolio": 60.27,
+          "market": 77.41
+        },
+        {
+          "date": "2022-02",
+          "portfolio": 60.46,
+          "market": 75.13
+        },
+        {
+          "date": "2022-03",
+          "portfolio": 65.63,
+          "market": 77.95
+        },
+        {
+          "date": "2022-04",
+          "portfolio": 62.34,
+          "market": 71.11
+        },
+        {
+          "date": "2022-05",
+          "portfolio": 61.51,
+          "market": 71.27
+        },
+        {
+          "date": "2022-06",
+          "portfolio": 56.2,
+          "market": 65.39
+        },
+        {
+          "date": "2022-07",
+          "portfolio": 63.05,
+          "market": 71.42
+        },
+        {
+          "date": "2022-08",
+          "portfolio": 62.24,
+          "market": 68.5
+        },
+        {
+          "date": "2022-09",
+          "portfolio": 56.15,
+          "market": 62.17
+        },
+        {
+          "date": "2022-10",
+          "portfolio": 60.84,
+          "market": 67.22
+        },
+        {
+          "date": "2022-11",
+          "portfolio": 66.2,
+          "market": 70.96
+        },
+        {
+          "date": "2022-12",
+          "portfolio": 61.68,
+          "market": 66.87
+        },
+        {
+          "date": "2023-01",
+          "portfolio": 65.38,
+          "market": 71.07
+        },
+        {
+          "date": "2023-02",
+          "portfolio": 62.27,
+          "market": 69.29
+        },
+        {
+          "date": "2023-03",
+          "portfolio": 64.08,
+          "market": 71.86
+        },
+        {
+          "date": "2023-04",
+          "portfolio": 64.43,
+          "market": 73
+        },
+        {
+          "date": "2023-05",
+          "portfolio": 62.72,
+          "market": 73.34
+        },
+        {
+          "date": "2023-06",
+          "portfolio": 67.36,
+          "market": 78.09
+        },
+        {
+          "date": "2023-07",
+          "portfolio": 69.53,
+          "market": 80.65
+        },
+        {
+          "date": "2023-08",
+          "portfolio": 69.78,
+          "market": 79.34
+        },
+        {
+          "date": "2023-09",
+          "portfolio": 67.74,
+          "market": 75.58
+        },
+        {
+          "date": "2023-10",
+          "portfolio": 67.82,
+          "market": 73.94
+        },
+        {
+          "date": "2023-11",
+          "portfolio": 73.3,
+          "market": 80.69
+        },
+        {
+          "date": "2023-12",
+          "portfolio": 78.28,
+          "market": 84.37
+        },
+        {
+          "date": "2024-01",
+          "portfolio": 78.19,
+          "market": 85.72
+        },
+        {
+          "date": "2024-02",
+          "portfolio": 83.12,
+          "market": 90.19
+        },
+        {
+          "date": "2024-03",
+          "portfolio": 86.02,
+          "market": 93.14
+        },
+        {
+          "date": "2024-04",
+          "portfolio": 84.31,
+          "market": 89.38
+        },
+        {
+          "date": "2024-05",
+          "portfolio": 89.99,
+          "market": 93.91
+        },
+        {
+          "date": "2024-06",
+          "portfolio": 91.12,
+          "market": 97.22
+        },
+        {
+          "date": "2024-07",
+          "portfolio": 92.77,
+          "market": 98.4
+        },
+        {
+          "date": "2024-08",
+          "portfolio": 96.97,
+          "market": 100.69
+        },
+        {
+          "date": "2024-09",
+          "portfolio": 96.63,
+          "market": 102.81
+        },
+        {
+          "date": "2024-10",
+          "portfolio": 96.89,
+          "market": 101.89
+        },
+        {
+          "date": "2024-11",
+          "portfolio": 105.13,
+          "market": 107.97
+        },
+        {
+          "date": "2024-12",
+          "portfolio": 97.66,
+          "market": 105.37
+        },
+        {
+          "date": "2025-01",
+          "portfolio": 103.91,
+          "market": 108.2
+        },
+        {
+          "date": "2025-02",
+          "portfolio": 104.65,
+          "market": 106.83
+        },
+        {
+          "date": "2025-03",
+          "portfolio": 102.24,
+          "market": 100.87
+        },
+        {
+          "date": "2025-04",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2025-05",
+          "portfolio": 101.82,
+          "market": 106.28
+        },
+        {
+          "date": "2025-06",
+          "portfolio": 103.97,
+          "market": 111.75
+        },
+        {
+          "date": "2025-07",
+          "portfolio": 103.01,
+          "market": 114.32
+        },
+        {
+          "date": "2025-08",
+          "portfolio": 103.29,
+          "market": 116.67
+        },
+        {
+          "date": "2025-09",
+          "portfolio": 104.02,
+          "market": 120.82
+        },
+        {
+          "date": "2025-10",
+          "portfolio": 100.04,
+          "market": 123.7
+        },
+        {
+          "date": "2025-11",
+          "portfolio": 104.57,
+          "market": 123.94
+        },
+        {
+          "date": "2025-12",
+          "portfolio": 103.28,
+          "market": 124.04
+        },
+        {
+          "date": "2026-01",
+          "portfolio": 107.11,
+          "market": 125.87
+        },
+        {
+          "date": "2026-02",
+          "portfolio": 113.68,
+          "market": 124.78
+        },
+        {
+          "date": "2026-03",
+          "portfolio": 110.52,
+          "market": 123.18
+        }
+      ],
+      "numPortfolios": 10000,
+      "trainPeriodStart": "2021-05",
+      "trainPeriodEnd": "2025-03",
+      "testPeriodStart": "2025-04",
+      "testPeriodEnd": "2026-03",
+      "efficientFrontier": [
+        {
+          "volatility": 17.53,
+          "expectedReturn": 10.53,
+          "sharpe": 0.4198,
+          "backtestReturn": 8.09
+        },
+        {
+          "volatility": 19.6,
+          "expectedReturn": 10.62,
+          "sharpe": 0.3803,
+          "backtestReturn": 12.78
+        }
+      ]
+    },
+    "llmResult": null,
+    "classicResult": null,
+    "comparisonData": null,
+    "description": null
+  },
+  {
     "id": "sim-1772894264650-hf2b2",
     "date": "2026-03-07T14:37:44.650Z",
     "modelId": "markowitz-5factors",
