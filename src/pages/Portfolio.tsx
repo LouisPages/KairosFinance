@@ -1,13 +1,13 @@
 import { useState, useMemo, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, TrendingUp, Search, X, BarChart3, Activity } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight, TrendingUp, Search, X, BarChart3, Activity, Newspaper, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
-import { fetchStocks, fetchHistory } from "@/lib/api";
+import { fetchStocks, fetchHistory, fetchNews } from "@/lib/api";
 import { loadSavedSymbols, saveSymbols } from "@/lib/portfolioStorage";
-import type { StockItem } from "@/lib/api";
+import type { StockItem, NewsArticle } from "@/lib/api";
 
 const indices = ["S&P 500", "NASDAQ", "DOW JONES"] as const;
 const enabledIndex = "S&P 500";
@@ -28,6 +28,8 @@ const Portfolio = () => {
   const [chartInterval, setChartInterval] = useState<"daily" | "monthly" | "annual">("daily");
   const [historyData, setHistoryData] = useState<{ date: string; price: number }[]>([]);
   const [historyLoading, setHistoryLoading] = useState(false);
+  const [newsArticles, setNewsArticles] = useState<NewsArticle[]>([]);
+  const [newsLoading, setNewsLoading] = useState(false);
 
   useEffect(() => {
     fetchStocks()
@@ -60,7 +62,38 @@ const Portfolio = () => {
       .finally(() => setHistoryLoading(false));
   }, [selectedStock, chartStart, chartEnd, chartInterval]);
 
+  useEffect(() => {
+    if (!selectedStock) {
+      setNewsArticles([]);
+      return;
+    }
+    const controller = new AbortController();
+    setNewsLoading(true);
+    fetchNews(selectedStock.symbol, 12, controller.signal)
+      .then((res) => setNewsArticles(res.articles || []))
+      .catch(() => setNewsArticles([]))
+      .finally(() => setNewsLoading(false));
+    return () => controller.abort();
+  }, [selectedStock]);
+
   const chartData = useMemo(() => historyData, [historyData]);
+
+  const formatNewsDate = (iso: string) => {
+    if (!iso) return "";
+    try {
+      const d = new Date(iso);
+      const now = new Date();
+      const diffMs = now.getTime() - d.getTime();
+      const diffH = Math.floor(diffMs / (1000 * 60 * 60));
+      const diffD = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      if (diffH < 1) return "À l'instant";
+      if (diffH < 24) return `Il y a ${diffH}h`;
+      if (diffD < 7) return `Il y a ${diffD}j`;
+      return d.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
+    } catch {
+      return iso;
+    }
+  };
 
   const toggleStock = (symbol: string) => {
     setSelectedSymbols((prev) =>
@@ -234,7 +267,7 @@ const Portfolio = () => {
                 ))}
               </div>
 
-              <div className="glass-card p-6 flex-1 min-h-0 flex flex-col">
+              <div className="glass-card p-6 flex flex-col shrink-0 min-h-[55vh]">
                 <div className="flex items-center justify-between mb-4 shrink-0 flex-wrap gap-2">
                   <div>
                     <h3 className="font-display text-base font-bold text-foreground">{selectedStock.symbol}</h3>
@@ -270,7 +303,7 @@ const Portfolio = () => {
                     </select>
                   </div>
                 </div>
-                <div className="flex-1 min-h-[300px]">
+                <div className="flex-1 min-h-[320px]">
                   {historyLoading ? (
                     <p className="text-muted-foreground">Chargement des données…</p>
                   ) : chartData.length === 0 ? (
@@ -295,6 +328,65 @@ const Portfolio = () => {
                     </ResponsiveContainer>
                   )}
                 </div>
+              </div>
+
+              <div className="glass-card p-4 shrink-0">
+                <h3 className="font-display text-sm font-bold text-foreground mb-3 flex items-center gap-2">
+                  <Newspaper className="h-4 w-4 text-primary" />
+                  Actualités récentes — {selectedStock.symbol}
+                </h3>
+                {newsLoading ? (
+                  <div className="flex items-center gap-2 text-muted-foreground text-sm py-4">
+                    <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+                    Chargement des actualités…
+                  </div>
+                ) : newsArticles.length === 0 ? (
+                  <p className="text-sm text-muted-foreground py-2">Aucune actualité récente pour le moment.</p>
+                ) : (
+                  <ul className="space-y-3 max-h-[280px] overflow-y-auto pr-1">
+                    {newsArticles.map((article, idx) => (
+                      <li key={idx}>
+                        <a
+                          href={article.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex gap-3 p-3 rounded-lg border border-border bg-card hover:bg-muted/50 transition-colors group"
+                        >
+                          {article.thumbnail ? (
+                            <img
+                              src={article.thumbnail}
+                              alt=""
+                              className="w-16 h-16 rounded-md object-cover shrink-0 bg-muted"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <div className="w-16 h-16 rounded-md bg-muted shrink-0 flex items-center justify-center">
+                              <Newspaper className="h-6 w-6 text-muted-foreground" />
+                            </div>
+                          )}
+                          <div className="min-w-0 flex-1">
+                            <p className="text-xs font-semibold text-foreground line-clamp-2 group-hover:text-primary">
+                              {article.title}
+                            </p>
+                            <div className="flex items-center gap-2 mt-1 text-[11px] text-muted-foreground">
+                              {article.publisher && <span>{article.publisher}</span>}
+                              {article.publishedAt && (
+                                <>
+                                  {article.publisher && <span>·</span>}
+                                  <span>{formatNewsDate(article.publishedAt)}</span>
+                                </>
+                              )}
+                            </div>
+                            {article.summary && (
+                              <p className="text-[11px] text-muted-foreground mt-1 line-clamp-2">{article.summary}</p>
+                            )}
+                          </div>
+                          <ExternalLink className="h-3.5 w-3.5 text-muted-foreground shrink-0 self-center opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </>
           ) : (

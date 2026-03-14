@@ -29,6 +29,33 @@ export async function fetchHistory(
   return r.json();
 }
 
+/** Article d'actualité pour un titre (source: yfinance / Yahoo Finance). */
+export interface NewsArticle {
+  title: string;
+  url: string;
+  publisher: string;
+  publishedAt: string;
+  thumbnail: string | null;
+  summary: string | null;
+}
+
+export interface NewsResponse {
+  symbol: string;
+  articles: NewsArticle[];
+}
+
+export async function fetchNews(
+  symbol: string,
+  limit?: number,
+  signal?: AbortSignal
+): Promise<NewsResponse> {
+  const params = new URLSearchParams({ symbol: symbol.trim().toUpperCase() });
+  if (limit != null && limit > 0) params.set("limit", String(limit));
+  const r = await fetch(`${API_BASE}/api/news?${params}`, { signal });
+  if (!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+
 export interface EfficientFrontierPoint {
   volatility: number;
   expectedReturn: number;

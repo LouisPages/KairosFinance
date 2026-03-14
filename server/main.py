@@ -55,6 +55,80 @@ def list_stocks():
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# ── News (actualités) par symbole, avec cache ───────────────────────────────
+
+NEWS_CACHE: dict[str, tuple[list[dict], datetime]] = {}
+NEWS_CACHE_TTL_MINUTES = 25
+_news_lock = threading.Lock()
+
+
+def _get_news_for_symbol(symbol: str, limit: int = 12) -> list[dict]:
+    """Récupère les actualités yfinance pour un symbole. Normalise title, url, publisher, date, thumbnail."""
+    try:
+        ticker = yf.Ticker(symbol)
+        raw = ticker.get_news(count=min(limit, 50), tab="news")
+    except Exception:
+        return []
+    out = []
+    for item in raw or []:
+        content = item.get("content")
+        if not isinstance(content, dict):
+            continue
+        title = (content.get("title") or "").strip()
+        if not title:
+            continue
+        # URL: canonicalUrl ou clickThroughUrl
+        url = None
+        for key in ("canonicalUrl", "clickThroughUrl"):
+            u = content.get(key)
+            if isinstance(u, dict) and u.get("url"):
+                url = u["url"]
+                break
+        if not url:
+            continue
+        # Publisher
+        provider = content.get("provider") or {}
+        publisher = provider.get("displayName", "") if isinstance(provider, dict) else ""
+        # Date
+        pub_date = content.get("pubDate") or content.get("displayTime") or ""
+        # Thumbnail (yfinance fournit parfois content.thumbnail.originalUrl)
+        thumbnail = None
+        thumb_obj = content.get("thumbnail")
+        if isinstance(thumb_obj, dict) and thumb_obj.get("originalUrl"):
+            thumbnail = thumb_obj["originalUrl"]
+        summary = (content.get("summary") or content.get("description") or "").strip()
+        out.append({
+            "title": title,
+            "url": url,
+            "publisher": publisher,
+            "publishedAt": pub_date,
+            "thumbnail": thumbnail,
+            "summary": summary[:300] if summary else None,
+        })
+        if len(out) >= limit:
+            break
+    return out
+
+
+@app.get("/api/news")
+def get_news(symbol: str, limit: int = 12):
+    """Actualités récentes pour un symbole. Cache 25 min par symbole."""
+    symbol = (symbol or "").strip().upper()
+    if not symbol:
+        raise HTTPException(status_code=400, detail="symbol requis")
+    limit = max(1, min(30, limit))
+    now = datetime.now()
+    with _news_lock:
+        cached = NEWS_CACHE.get(symbol)
+        if cached:
+            articles, fetched_at = cached
+            if (now - fetched_at).total_seconds() < NEWS_CACHE_TTL_MINUTES * 60:
+                return {"symbol": symbol, "articles": articles[:limit]}
+        articles = _get_news_for_symbol(symbol, limit=limit)
+        NEWS_CACHE[symbol] = (articles, now)
+    return {"symbol": symbol, "articles": articles}
+
+
 # ── Simulation history endpoints ──────────────────────────────────────────────
 
 class SimulationEntry(BaseModel):
