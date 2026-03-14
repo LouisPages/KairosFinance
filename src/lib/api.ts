@@ -63,6 +63,35 @@ export interface EfficientFrontierPoint {
   backtestReturn?: number;
 }
 
+/** Une ligne de test statistique pour un coefficient (alpha ou facteur). */
+export interface FactorStatRow {
+  beta: number;
+  std_err: number;
+  t_stat: number;
+  p_value: number;
+  ci_lower: number;
+  ci_upper: number;
+}
+
+/** Statistiques globales du modèle OLS (R², F, etc.). */
+export interface FactorModelStats {
+  r_squared: number;
+  adj_r_squared: number;
+  n_obs: number;
+  df_residual: number;
+  f_stat: number | null;
+  f_pvalue: number | null;
+}
+
+/** Par actif : tests par facteur + stats du modèle. */
+export interface FactorTestsForTicker {
+  factor_stats: Record<string, FactorStatRow>;
+  model_stats: FactorModelStats | null;
+}
+
+/** factor_tests renvoyé par les modèles multi-facteurs (1, 3, 5, LLM). */
+export type FactorTestsByTicker = Record<string, FactorTestsForTicker>;
+
 // Résultat des modèles classiques (Markowitz simple, CAPM, FF3)
 export interface SimulateResult {
   weights: Record<string, number>;
@@ -81,6 +110,8 @@ export interface SimulateResult {
   testPeriodStart?: string;
   testPeriodEnd?: string;
   efficientFrontier?: EfficientFrontierPoint[];
+  /** Tests statistiques de pertinence des facteurs par actif (modèles 1/3/5 facteurs). */
+  factor_tests?: FactorTestsByTicker;
 }
 
 // Résumé news par ticker
@@ -99,6 +130,8 @@ export interface LlmMonthStep {
   sharpe: number | null;
   expectedReturn: number | null;
   volatility: number | null;
+  /** Tests statistiques de pertinence des facteurs par actif pour ce mois. */
+  factor_tests?: FactorTestsByTicker;
 }
 
 export interface LlmPromptExample {

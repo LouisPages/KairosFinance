@@ -1,7 +1,7 @@
 ## Fichiers concernés
 
 ### À créer
-- `gestion/markowitz_1factor.py` — module principal exposant la fonction `run()` (hors `multifactor/`, car modèle CAPM à un seul facteur de marché)
+- `gestion/multifactor/markowitz_1factor.py` — module principal exposant la fonction `run()` (CAPM à un seul facteur de marché)
 
 ### À utiliser (sans modification)
 - `gestion/markowitz_simple.py` — référence structurelle : même pipeline Monte-Carlo, remplacer l'estimation de $\mu$ par la régression CAPM

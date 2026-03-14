@@ -226,17 +226,6 @@ const History = () => {
             Retrouvez l'ensemble des simulations réalisées. Cliquez sur une simulation pour afficher ses résultats.
           </p>
         </div>
-        {!loading && history.length > 0 && (
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleClearAll}
-            className="gap-2 text-destructive border-destructive/30 hover:bg-destructive/10 hover:text-destructive shrink-0 mt-1"
-          >
-            <RotateCcw className="h-3.5 w-3.5" />
-            Tout effacer
-          </Button>
-        )}
       </div>
 
       {loading ? (

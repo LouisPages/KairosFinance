@@ -2,12 +2,17 @@
 Markowitz CAPM (1 facteur) : les rendements espérés sont estimés par régression OLS
 sur le facteur de marché (MEDAF / CAPM), à fréquence mensuelle.
 """
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+
 import numpy as np
 import pandas as pd
 import yfinance as yf
 from typing import Any
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
+from ols_with_stats import ols_factor_regression
 
 """
 Choisir une methode entre : "monte_carlo", "gradient_fixe" et "gradient_optimal" 
@@ -78,16 +83,22 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
     rf_mean = float(rf_train.mean())
     mkt_excess_mean = float(mkt_excess.mean())
 
-    # --- Régression CAPM pour chaque actif ---
+    # --- Régression CAPM pour chaque actif (avec tests statistiques) ---
     betas = {}
+    factor_tests_by_ticker: dict[str, dict[str, Any]] = {}
+    X_mkt = mkt_excess.reshape(-1, 1)  # (n, 1) pour ols_factor_regression
     for ticker in train_r.columns:
         y = (train_r[ticker] - rf_train).values
-        X = np.column_stack([np.ones(len(mkt_excess)), mkt_excess])
-        try:
-            coeffs, _, _, _ = np.linalg.lstsq(X, y, rcond=None)
-            betas[ticker] = float(coeffs[1])
-        except Exception:
+        result = ols_factor_regression(y, X_mkt, ["Mkt-RF"])
+        if result is not None:
+            betas[ticker] = result["coeffs"].get("Mkt-RF", 1.0)
+            factor_tests_by_ticker[ticker] = {
+                "factor_stats": result["factor_tests"],
+                "model_stats": result["model_stats"],
+            }
+        else:
             betas[ticker] = 1.0
+            factor_tests_by_ticker[ticker] = {"factor_stats": {}, "model_stats": None}
 
     # Rendement espéré annualisé via CAPM (alpha ignoré conformément à la théorie)
     mu = np.array([
@@ -211,6 +222,7 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
                 {"volatility": v, "expectedReturn": r, "sharpe": s, "backtestReturn": b}
                 for v, r, s, b in zip(frontier_vol, frontier_ret, frontier_sharpe, frontier_backtest_ret)
             ],
+            "factor_tests": factor_tests_by_ticker,
         }
     elif method == "gradient_fixe":
         best_weights = opt_sharpe_gradient(mu, cov_matrix, rf_annual)
@@ -281,6 +293,7 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
                 "sharpe": round(float(opt_sharpe_val), 4),
                 "backtestReturn": opt_backtest_ret
             }],
+            "factor_tests": factor_tests_by_ticker,
         }
     else:  # gradient_optimal
         best_weights = opt_sharpe_gradient_optimal(mu, cov_matrix, rf_annual)
@@ -351,4 +364,5 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
                 "sharpe": round(float(opt_sharpe_val), 4),
                 "backtestReturn": opt_backtest_ret
             }],
+            "factor_tests": factor_tests_by_ticker,
         }

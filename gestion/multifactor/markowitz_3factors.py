@@ -13,6 +13,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from get_facteurs import load_famafrench_factors
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
+from ols_with_stats import ols_factor_regression
 
 """
 Choisir une methode entre : "monte_carlo", "gradient_fixe" et "gradient_optimal" 
@@ -76,19 +77,24 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
     rf_mean = float(rf_train.mean())
     factor_means = factors_train.mean().values  # [mean(Mkt-RF), mean(SMB), mean(HML)]
 
-    # --- Régression OLS à 3 facteurs pour chaque actif ---
-    X = np.column_stack([np.ones(len(common_train)), factors_train.values])
+    # --- Régression OLS à 3 facteurs pour chaque actif (avec tests statistiques) ---
+    X_factors = factors_train.values  # (n, 3) en décimal
     mu_monthly = np.zeros(len(valid))
+    factor_tests_by_ticker: dict[str, dict[str, Any]] = {}
 
     for idx, ticker in enumerate(train_r.columns):
         y = (train_r[ticker] - rf_train).values
-        try:
-            coeffs, _, _, _ = np.linalg.lstsq(X, y, rcond=None)
-            # coeffs[0] = alpha (ignoré), coeffs[1:] = betas des 3 facteurs
-            betas = coeffs[1:]
-        except Exception:
-            betas = np.zeros(len(FACTORS))
-        mu_monthly[idx] = rf_mean + float(np.dot(betas, factor_means))
+        result = ols_factor_regression(y, X_factors, FACTORS)
+        if result is not None:
+            betas = np.array([result["coeffs"].get(f, 0.0) for f in FACTORS])
+            mu_monthly[idx] = rf_mean + float(np.dot(betas, factor_means))
+            factor_tests_by_ticker[ticker] = {
+                "factor_stats": result["factor_tests"],
+                "model_stats": result["model_stats"],
+            }
+        else:
+            mu_monthly[idx] = rf_mean
+            factor_tests_by_ticker[ticker] = {"factor_stats": {}, "model_stats": None}
 
     mu = mu_monthly * 12  # annualiser
     cov_matrix = train_r.cov().values * 12
@@ -210,6 +216,7 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
                 {"volatility": v, "expectedReturn": r, "sharpe": s, "backtestReturn": b}
                 for v, r, s, b in zip(frontier_vol, frontier_ret, frontier_sharpe, frontier_backtest_ret)
             ],
+            "factor_tests": factor_tests_by_ticker,
         }
     elif method == "gradient_fixe":
         best_weights = opt_sharpe_gradient(mu, cov_matrix, rf_annual)
@@ -284,6 +291,7 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
                 "sharpe": round(float(opt_sharpe_val), 4),
                 "backtestReturn": opt_backtest_ret
             }],
+            "factor_tests": factor_tests_by_ticker,
         }
     else:  # gradient_optimal
         best_weights = opt_sharpe_gradient_optimal(mu, cov_matrix, rf_annual)
@@ -358,4 +366,5 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
                 "sharpe": round(float(opt_sharpe_val), 4),
                 "backtestReturn": opt_backtest_ret
             }],
+            "factor_tests": factor_tests_by_ticker,
         }

@@ -292,15 +292,6 @@ const Portfolio = () => {
                         className="bg-background border rounded px-2 py-1 text-foreground"
                       />
                     </label>
-                    <select
-                      value={chartInterval}
-                      onChange={(e) => setChartInterval(e.target.value as "daily" | "monthly" | "annual")}
-                      className="bg-background border rounded px-2 py-1 text-sm text-foreground"
-                    >
-                      <option value="daily">Journalier</option>
-                      <option value="monthly">Mensuel</option>
-                      <option value="annual">Annuel</option>
-                    </select>
                   </div>
                 </div>
                 <div className="flex-1 min-h-[320px]">

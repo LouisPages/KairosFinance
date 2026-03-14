@@ -5,7 +5,14 @@ import {
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer,
   CartesianGrid, Legend, ReferenceDot,
 } from "recharts";
-import type { SimulateResult, LlmSimulateResult, LlmMonthStep, LlmPromptExample } from "@/lib/api";
+import type {
+  SimulateResult,
+  LlmSimulateResult,
+  LlmMonthStep,
+  LlmPromptExample,
+  FactorTestsByTicker,
+  FactorStatRow,
+} from "@/lib/api";
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -140,6 +147,239 @@ export function FactorBadgesCompact({ factorMask }: { factorMask: Record<string,
       {ALL_FACTORS.map((f) => (
         <FactorBadge key={f} factor={f} active={factorMask[f] ?? true} />
       ))}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Pertinence des facteurs (tests statistiques OLS)
+// ---------------------------------------------------------------------------
+
+/** Agrège factor_tests par actif en métriques globales (moyennes, % significatif). */
+function aggregateFactorTests(factorTests: FactorTestsByTicker): {
+  modelStats: { meanR2: number; meanAdjR2: number; meanF: number | null; meanFPvalue: number | null; nAssets: number };
+  factorRows: { name: string; meanBeta: number; meanTStat: number; pctSignificant: number }[];
+} {
+  const tickers = Object.keys(factorTests);
+  if (tickers.length === 0) {
+    return { modelStats: { meanR2: 0, meanAdjR2: 0, meanF: null, meanFPvalue: null, nAssets: 0 }, factorRows: [] };
+  }
+
+  const r2List: number[] = [];
+  const adjR2List: number[] = [];
+  const fList: number[] = [];
+  const fpList: number[] = [];
+  const factorSums: Record<string, { beta: number; tStat: number; significant: number; count: number }> = {};
+
+  for (const ticker of tickers) {
+    const data = factorTests[ticker];
+    if (!data) continue;
+    if (data.model_stats != null) {
+      r2List.push(data.model_stats.r_squared);
+      adjR2List.push(data.model_stats.adj_r_squared);
+      if (data.model_stats.f_stat != null) fList.push(data.model_stats.f_stat);
+      if (data.model_stats.f_pvalue != null) fpList.push(data.model_stats.f_pvalue);
+    }
+    for (const [name, row] of Object.entries(data.factor_stats)) {
+      if (name === "alpha") continue;
+      const r = row as FactorStatRow;
+      if (!factorSums[name]) factorSums[name] = { beta: 0, tStat: 0, significant: 0, count: 0 };
+      factorSums[name].beta += r.beta;
+      factorSums[name].tStat += r.t_stat;
+      if (r.p_value < 0.05) factorSums[name].significant += 1;
+      factorSums[name].count += 1;
+    }
+  }
+
+  const n = tickers.length;
+  const modelStats = {
+    meanR2: r2List.length ? r2List.reduce((a, b) => a + b, 0) / r2List.length : 0,
+    meanAdjR2: adjR2List.length ? adjR2List.reduce((a, b) => a + b, 0) / adjR2List.length : 0,
+    meanF: fList.length ? fList.reduce((a, b) => a + b, 0) / fList.length : null,
+    meanFPvalue: fpList.length ? fpList.reduce((a, b) => a + b, 0) / fpList.length : null,
+    nAssets: n,
+  };
+
+  const factorRows = Object.entries(factorSums)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([name, s]) => ({
+      name,
+      meanBeta: s.count ? s.beta / s.count : 0,
+      meanTStat: s.count ? s.tStat / s.count : 0,
+      pctSignificant: s.count ? Math.round((s.significant / s.count) * 100) : 0,
+    }));
+
+  return { modelStats, factorRows };
+}
+
+function FactorStatsSection({
+  factorTests,
+  title = "Pertinence des facteurs",
+  variant = "by-ticker",
+}: {
+  factorTests: FactorTestsByTicker;
+  title?: string;
+  /** "global" = métriques agrégées (modèles 1/3/5 facteurs), "by-ticker" = détail par action (LLM). */
+  variant?: "global" | "by-ticker";
+}) {
+  const tickers = Object.keys(factorTests).sort();
+  if (tickers.length === 0) return null;
+
+  if (variant === "global") {
+    const { modelStats, factorRows } = aggregateFactorTests(factorTests);
+    return (
+      <div className="glass-card p-6">
+        <h3 className="font-display text-sm font-bold text-foreground mb-4">{title}</h3>
+        <p className="text-[11px] text-muted-foreground/80 mb-4">
+          Régression OLS des rendements en excès sur les facteurs (période d&apos;entraînement). Métriques moyennes sur les {modelStats.nAssets} actifs.
+        </p>
+        <div className="space-y-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
+            <div className="rounded bg-muted/50 px-2 py-1.5">
+              <span className="text-muted-foreground">R² moyen</span>
+              <span className="ml-1 font-medium">{modelStats.meanR2.toFixed(4)}</span>
+            </div>
+            <div className="rounded bg-muted/50 px-2 py-1.5">
+              <span className="text-muted-foreground">R² ajusté moyen</span>
+              <span className="ml-1 font-medium">{modelStats.meanAdjR2.toFixed(4)}</span>
+            </div>
+            {modelStats.meanF != null && (
+              <div className="rounded bg-muted/50 px-2 py-1.5">
+                <span className="text-muted-foreground">F moyen</span>
+                <span className="ml-1 font-medium">{modelStats.meanF.toFixed(2)}</span>
+              </div>
+            )}
+            {modelStats.meanFPvalue != null && (
+              <div className="rounded bg-muted/50 px-2 py-1.5">
+                <span className="text-muted-foreground">p-value (F) moy.</span>
+                <span className="ml-1 font-medium">{modelStats.meanFPvalue < 0.001 ? "< 0.001" : modelStats.meanFPvalue.toFixed(4)}</span>
+              </div>
+            )}
+            <div className="rounded bg-muted/50 px-2 py-1.5">
+              <span className="text-muted-foreground">Actifs</span>
+              <span className="ml-1 font-medium">{modelStats.nAssets}</span>
+            </div>
+          </div>
+          {factorRows.length > 0 && (
+            <div className="overflow-x-auto">
+              <table className="w-full text-[10px] border-collapse">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-1.5 pr-2 text-muted-foreground font-semibold">Facteur</th>
+                    <th className="text-right py-1.5 px-2 text-muted-foreground font-semibold">β moyen</th>
+                    <th className="text-right py-1.5 px-2 text-muted-foreground font-semibold">t-stat moyen</th>
+                    <th className="text-right py-1.5 px-2 text-muted-foreground font-semibold">% significatif (p&lt;0,05)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border/40">
+                  {factorRows.map(({ name, meanBeta, meanTStat, pctSignificant }) => (
+                    <tr key={name}>
+                      <td className="py-1.5 pr-2 font-medium" style={{ color: FACTOR_COLORS[name] ?? undefined }}>{name}</td>
+                      <td className="text-right px-2">{meanBeta.toFixed(4)}</td>
+                      <td className="text-right px-2">{meanTStat.toFixed(3)}</td>
+                      <td className="text-right px-2 font-medium">{pctSignificant} %</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="glass-card p-6">
+      <h3 className="font-display text-sm font-bold text-foreground mb-4">{title}</h3>
+      <p className="text-[11px] text-muted-foreground/80 mb-4">
+        Régression OLS des rendements en excès sur les facteurs (période d&apos;entraînement). R² et F : qualité du modèle.
+        Par facteur : β (coefficient), t-stat, p-value et intervalle de confiance à 95 %. Détail par action.
+      </p>
+      <div className="space-y-6">
+        {tickers.map((ticker) => {
+          const data = factorTests[ticker];
+          if (!data) return null;
+          const { factor_stats, model_stats } = data;
+          const factorNames = Object.keys(factor_stats).filter((k) => k !== "alpha").sort();
+          const hasFactorRows = factorNames.length > 0;
+
+          return (
+            <Accordion key={ticker} title={<span className="font-mono font-semibold">{ticker}</span>} defaultOpen={tickers.length <= 3}>
+              <div className="space-y-3">
+                {model_stats != null && (
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
+                    <div className="rounded bg-muted/50 px-2 py-1.5">
+                      <span className="text-muted-foreground">R²</span>
+                      <span className="ml-1 font-medium">{model_stats.r_squared.toFixed(4)}</span>
+                    </div>
+                    <div className="rounded bg-muted/50 px-2 py-1.5">
+                      <span className="text-muted-foreground">R² ajusté</span>
+                      <span className="ml-1 font-medium">{model_stats.adj_r_squared.toFixed(4)}</span>
+                    </div>
+                    {model_stats.f_stat != null && (
+                      <div className="rounded bg-muted/50 px-2 py-1.5">
+                        <span className="text-muted-foreground">F</span>
+                        <span className="ml-1 font-medium">{model_stats.f_stat.toFixed(2)}</span>
+                      </div>
+                    )}
+                    {model_stats.f_pvalue != null && (
+                      <div className="rounded bg-muted/50 px-2 py-1.5">
+                        <span className="text-muted-foreground">p-value (F)</span>
+                        <span className="ml-1 font-medium">{model_stats.f_pvalue < 0.001 ? "< 0.001" : model_stats.f_pvalue.toFixed(4)}</span>
+                      </div>
+                    )}
+                    <div className="rounded bg-muted/50 px-2 py-1.5 col-span-2 sm:col-span-1">
+                      <span className="text-muted-foreground">n</span>
+                      <span className="ml-1 font-medium">{model_stats.n_obs}</span>
+                    </div>
+                  </div>
+                )}
+                {hasFactorRows && (
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-[10px] border-collapse">
+                      <thead>
+                        <tr className="border-b border-border">
+                          <th className="text-left py-1.5 pr-2 text-muted-foreground font-semibold">Facteur</th>
+                          <th className="text-right py-1.5 px-2 text-muted-foreground font-semibold">β</th>
+                          <th className="text-right py-1.5 px-2 text-muted-foreground font-semibold">t-stat</th>
+                          <th className="text-right py-1.5 px-2 text-muted-foreground font-semibold">p-value</th>
+                          <th className="text-right py-1.5 px-2 text-muted-foreground font-semibold">IC 95 %</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-border/40">
+                        {factorNames.map((name) => {
+                          const row = factor_stats[name] as FactorStatRow | undefined;
+                          if (!row) return null;
+                          const sig = row.p_value < 0.05 ? "text-primary font-medium" : "text-muted-foreground";
+                          return (
+                            <tr key={name}>
+                              <td className="py-1.5 pr-2 font-medium" style={{ color: FACTOR_COLORS[name] ?? undefined }}>{name}</td>
+                              <td className={`text-right px-2 ${sig}`}>{row.beta.toFixed(4)}</td>
+                              <td className={`text-right px-2 ${sig}`}>{row.t_stat.toFixed(3)}</td>
+                              <td className={`text-right px-2 ${sig}`}>{row.p_value < 0.001 ? "< 0.001" : row.p_value.toFixed(4)}</td>
+                              <td className="text-right px-2 text-muted-foreground">[{row.ci_lower.toFixed(3)} ; {row.ci_upper.toFixed(3)}]</td>
+                            </tr>
+                          );
+                        })}
+                        {factor_stats["alpha"] != null && (
+                          <tr className="border-t border-border">
+                            <td className="py-1.5 pr-2 font-medium text-muted-foreground">α (intercept)</td>
+                            <td className="text-right px-2">{(factor_stats["alpha"] as FactorStatRow).beta.toFixed(4)}</td>
+                            <td className="text-right px-2">{(factor_stats["alpha"] as FactorStatRow).t_stat.toFixed(3)}</td>
+                            <td className="text-right px-2">{(factor_stats["alpha"] as FactorStatRow).p_value < 0.001 ? "< 0.001" : (factor_stats["alpha"] as FactorStatRow).p_value.toFixed(4)}</td>
+                            <td className="text-right px-2 text-muted-foreground">[{(factor_stats["alpha"] as FactorStatRow).ci_lower.toFixed(3)} ; {(factor_stats["alpha"] as FactorStatRow).ci_upper.toFixed(3)}]</td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+            </Accordion>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -379,6 +619,10 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
           </div>
         </div>
       )}
+
+      {result.factor_tests && Object.keys(result.factor_tests).length > 0 && (
+        <FactorStatsSection factorTests={result.factor_tests} title="Pertinence des facteurs" variant="global" />
+      )}
     </div>
   );
 }
@@ -549,6 +793,14 @@ export function ComparisonResult({
           </div>
         </div>
       </div>
+
+      {(bestGradient.factor_tests ?? monteCarlo.factor_tests) && Object.keys(bestGradient.factor_tests ?? monteCarlo.factor_tests!).length > 0 && (
+        <FactorStatsSection
+          factorTests={bestGradient.factor_tests ?? monteCarlo.factor_tests!}
+          title="Pertinence des facteurs"
+          variant="global"
+        />
+      )}
     </div>
   );
 }
@@ -804,6 +1056,14 @@ export function LlmResult({ result, classicResult }: {
           </div>
         )}
       </div>
+
+      {step?.factor_tests && Object.keys(step.factor_tests).length > 0 && (
+        <FactorStatsSection
+          factorTests={step.factor_tests}
+          title={`Pertinence des facteurs — mois ${selectedMonth}`}
+          variant="by-ticker"
+        />
+      )}
 
       <div className="glass-card p-6">
         <h3 className="font-display text-sm font-bold text-foreground mb-1">Sélection LLM par facteur — évolution mensuelle</h3>

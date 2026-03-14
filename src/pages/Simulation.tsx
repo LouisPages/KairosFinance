@@ -231,28 +231,27 @@ const Simulation = () => {
         ))}
       </div>
 
-      {/* Méthode d'optimisation (toujours visible ; ignorée pour le modèle LLM) */}
-      <div className="mb-6 flex flex-wrap items-center gap-3">
-        <label className="text-sm font-medium text-foreground">Méthode d'optimisation</label>
-        <Select
-          value={optimizationMethod}
-          onValueChange={(v) => { setOptimizationMethod(v as OptimizationMethodId); setResult(null); setComparisonData(null); setApiError(null); }}
-        >
-          <SelectTrigger className="w-[320px] cursor-pointer rounded-xl border-border bg-background/80">
-            <SelectValue placeholder="Choisir une méthode" />
-          </SelectTrigger>
-          <SelectContent>
-            {OPTIMIZATION_METHODS.map((opt) => (
-              <SelectItem key={opt.id} value={opt.id}>
-                {opt.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        {isLlm && (
-          <span className="text-xs text-muted-foreground">(non utilisée pour ce modèle)</span>
-        )}
-      </div>
+      {/* Méthode d'optimisation (masquée pour le modèle LLM) */}
+      {!isLlm && (
+        <div className="mb-6 flex flex-wrap items-center gap-3">
+          <label className="text-sm font-medium text-foreground">Méthode d'optimisation</label>
+          <Select
+            value={optimizationMethod}
+            onValueChange={(v) => { setOptimizationMethod(v as OptimizationMethodId); setResult(null); setComparisonData(null); setApiError(null); }}
+          >
+            <SelectTrigger className="w-[320px] cursor-pointer rounded-xl border-border bg-background/80">
+              <SelectValue placeholder="Choisir une méthode" />
+            </SelectTrigger>
+            <SelectContent>
+              {OPTIMIZATION_METHODS.map((opt) => (
+                <SelectItem key={opt.id} value={opt.id}>
+                  {opt.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      )}
 
       <Button onClick={handleRun} disabled={!canRun || running} className="gap-2 rounded-xl font-semibold">
         {running ? (
@@ -296,8 +295,9 @@ const Simulation = () => {
                 {llmProgress.type === "month" && llmProgress.total != null && llmProgress.current != null && (
                   <div className="space-y-1">
                     <div className="flex items-center justify-between text-[10px] text-muted-foreground">
-                      <span>Mois {llmProgress.current} / {llmProgress.total}</span>
-                      <span className="font-mono">{llmProgress.month}</span>
+                      <p className="text-[10px] text-muted-foreground/60 text-right">
+                        {Math.round((llmProgress.current / llmProgress.total) * 100)}%
+                      </p>
                     </div>
                     <div className="w-full rounded-full bg-secondary h-2 overflow-hidden">
                       <motion.div
@@ -307,9 +307,6 @@ const Simulation = () => {
                         transition={{ duration: 0.3 }}
                       />
                     </div>
-                    <p className="text-[10px] text-muted-foreground/60 text-right">
-                      {Math.round((llmProgress.current / llmProgress.total) * 100)}%
-                    </p>
                   </div>
                 )}
 

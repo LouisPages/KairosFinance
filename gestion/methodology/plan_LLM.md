@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Les modèles existants (`markowitz_1factor.py`, et les futurs `markowitz_3factors.py` / `markowitz_5factors.py`) utilisent des facteurs Fama-French **fixés statiquement**. L'objectif est d'introduire un pipeline LLM qui, chaque mois, détermine quels facteurs parmi les 5 (Mkt-RF, SMB, HML, RMW, CMA) sont pertinents pour chaque action du portefeuille, en s'appuyant sur l'actualité récente. Les poids du portefeuille sont ensuite recalculés sur une fenêtre glissante avec les seuls facteurs retenus.
+Les modèles existants (`gestion/multifactor/markowitz_1factor.py`, `markowitz_3factors.py`, `markowitz_5factors.py`) utilisent des facteurs Fama-French **fixés statiquement**. L'objectif est d'introduire un pipeline LLM qui, chaque mois, détermine quels facteurs parmi les 5 (Mkt-RF, SMB, HML, RMW, CMA) sont pertinents pour chaque action du portefeuille, en s'appuyant sur l'actualité récente. Les poids du portefeuille sont ensuite recalculés sur une fenêtre glissante avec les seuls facteurs retenus.
 
 ---
 
@@ -95,7 +95,7 @@ Les 5 facteurs Fama-French sont chargés via `gestion/famafrench_data.py` (exist
 
 ### Fenêtre glissante
 Pour prédire le mois `n+1` :
-- **Fenêtre d'entraînement** : tous les mois disponibles depuis le début de l'historique jusqu'au mois `n`, dont on prend les **80% les plus anciens** comme ensemble d'entraînement (cohérent avec le split existant dans `markowitz_1factor.py`).
+- **Fenêtre d'entraînement** : tous les mois disponibles depuis le début de l'historique jusqu'au mois `n`, dont on prend les **80% les plus anciens** comme ensemble d'entraînement (cohérent avec le split existant dans `gestion/multifactor/markowitz_1factor.py`).
 - Formule : `split = int(total_mois_disponibles_jusqu_à_n * 0.8)`
 
 ### Régression
@@ -112,7 +112,7 @@ $$\hat{\mu}_i = \left(\bar{R}_f + \sum_{k \in \mathcal{F}_n} \hat{\beta}_{i,k} \
 La matrice de covariance $\Sigma$ est estimée sur les rendements mensuels bruts, puis annualisée (×12).
 
 ### Fichier concerné
-`gestion/dynamic/markowitz_llm.py` (à créer) — s'inspire de `markowitz_1factor.py` mais avec facteurs dynamiques.
+`gestion/dynamic/markowitz_llm.py` (à créer) — s'inspire de `gestion/multifactor/markowitz_1factor.py` mais avec facteurs dynamiques.
 
 ---
 
@@ -140,7 +140,8 @@ gestion/
 ├── famafrench_data.py          # existant — à étendre pour les 5 facteurs, à renommer en 'get_facteurs.py'
 gestion/dynamic
 ├── markowitz_simple.py         # existant
-├── markowitz_1factor.py        # existant
+├── multifactor/
+│   ├── markowitz_1factor.py    # existant
 ├── markowitz_3factors.py       # à créer (Fama-French statique 3 facteurs)
 ├── markowitz_5factors.py       # à créer (Fama-French statique 5 facteurs)
 ├── markowitz_llm.py            # à créer — pipeline LLM complet

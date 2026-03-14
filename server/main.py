@@ -282,7 +282,7 @@ def simulate(req: SimulateRequest):
             import gestion.markowitz_simple as markowitz_simple
             result = markowitz_simple.run(req.symbols, start_s, end_s, method=method)
         elif req.model == "markowitz-1factor":
-            import gestion.markowitz_1factor as markowitz_1factor
+            import gestion.multifactor.markowitz_1factor as markowitz_1factor
             result = markowitz_1factor.run(req.symbols, start_s, end_s, method=method)
         elif req.model == "markowitz-3factors":
             import gestion.multifactor.markowitz_3factors as markowitz_3factors
@@ -308,8 +308,9 @@ async def simulate_llm_stream(req: SimulateRequest):
     if len(req.symbols) < 2:
         raise HTTPException(status_code=400, detail="Sélectionnez au moins 2 actions.")
 
-    end_d = datetime.now()
-    start_d = datetime(2005, 1, 1)
+    # Backtest LLM : octobre 2024 → 21 janvier 2026 (marge pour assez de données)
+    end_d = datetime(2026, 1, 21)
+    start_d = datetime(2024, 10, 1)
     start_s = start_d.strftime("%Y-%m-%d")
     end_s = end_d.strftime("%Y-%m-%d")
 
