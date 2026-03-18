@@ -1,5 +1,3 @@
-- Au lieu de prendre N portefeuilles aléatoires, faire une descente de gradient ? Comparer les deux méthodes ?
-- Tester la sensibilité aux facteurs avec des tests de students via python, afficher directement les p-values et autres métriques
 - Comparer le dynamique entre 5 et 8 facteurs et le Mkt-RF libre
 => sur la page simulation, mettre le bouton "lancer" en haut à droite et ajouter choix des modèles à comparer sur toutes la page en affichant éventuellement les caractéristiques+en donnant le choix de la période d'ajustement/backtest+du choix de la méthode d'optimisation 
 
@@ -12,3 +10,5 @@
 
 
 - Amélioration LLM: fine-tuning en croisant les actualités fournis par le premier agent et les facteur les plus pertinents (via leurs p-value)
+
+- Ajouter une page pour les cryptos avec les codes de syuma

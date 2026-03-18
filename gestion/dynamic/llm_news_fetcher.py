@@ -176,8 +176,9 @@ async def _fetch_all_async(
         for t in to_fetch:
             pair = await _fetch_single(client, t, year, month)
             fetched.append(pair)
-            # Respecter la limite du tier gratuit Mistral (~1 req/s)
-            await asyncio.sleep(1.5)
+            # Plan Scale : limite officielle 6 req/s.
+            # sleep(0.2) : ~5 req/s
+            await asyncio.sleep(0.2)
 
     for ticker, result in fetched:
         results[ticker] = result

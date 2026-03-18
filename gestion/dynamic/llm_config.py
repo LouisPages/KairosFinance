@@ -12,7 +12,7 @@ except ImportError:
     pass
 
 # --- Modèles ---
-MISTRAL_MODEL = os.getenv("MISTRAL_MODEL", "mistral-large-latest")
+MISTRAL_MODEL = os.getenv("MISTRAL_MODEL", "mistral-medium-latest")
 SELECTOR_PROVIDER = os.getenv("SELECTOR_PROVIDER", "gemini")  # "openai", "anthropic", "gemini" ou "mistral"
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
 ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-5")
