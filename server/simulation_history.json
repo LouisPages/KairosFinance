@@ -1,5 +1,6464 @@
 [
   {
+    "id": "sim-1773843195825-l62s1",
+    "date": "2026-03-18T14:13:15.825Z",
+    "modelId": "markowitz-5factors",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "AMZN",
+      "NVDA",
+      "KO",
+      "JNJ",
+      "JPM",
+      "XOM",
+      "PG",
+      "WMT"
+    ],
+    "result": {
+      "weights": {
+        "AAPL": 0.13910942632721024,
+        "MSFT": 0.06519420027236804,
+        "AMZN": 0.0852768979293868,
+        "NVDA": 0.014639353326967655,
+        "KO": 0.17242812787943665,
+        "JNJ": 0.10882061913391504,
+        "JPM": 0.008845453062917605,
+        "XOM": 0.10360934614239457,
+        "PG": 0.1818520707806965,
+        "WMT": 0.12022450514470695
+      },
+      "sharpe": 0.8009,
+      "expectedReturn": 11.69,
+      "volatility": 13.17,
+      "maxDrawdown": 13.37,
+      "comparisonData": [
+        {
+          "date": "2005-02",
+          "portfolio": 7.71,
+          "market": 19.23
+        },
+        {
+          "date": "2005-03",
+          "portfolio": 7.49,
+          "market": 18.88
+        },
+        {
+          "date": "2005-04",
+          "portfolio": 7.35,
+          "market": 18.52
+        },
+        {
+          "date": "2005-05",
+          "portfolio": 7.6,
+          "market": 19.12
+        },
+        {
+          "date": "2005-06",
+          "portfolio": 7.33,
+          "market": 19.15
+        },
+        {
+          "date": "2005-07",
+          "portfolio": 7.9,
+          "market": 19.88
+        },
+        {
+          "date": "2005-08",
+          "portfolio": 7.96,
+          "market": 19.69
+        },
+        {
+          "date": "2005-09",
+          "portfolio": 8.26,
+          "market": 19.85
+        },
+        {
+          "date": "2005-10",
+          "portfolio": 8.14,
+          "market": 19.38
+        },
+        {
+          "date": "2005-11",
+          "portfolio": 8.63,
+          "market": 20.24
+        },
+        {
+          "date": "2005-12",
+          "portfolio": 8.5,
+          "market": 20.2
+        },
+        {
+          "date": "2006-01",
+          "portfolio": 8.73,
+          "market": 20.68
+        },
+        {
+          "date": "2006-02",
+          "portfolio": 8.47,
+          "market": 20.8
+        },
+        {
+          "date": "2006-03",
+          "portfolio": 8.43,
+          "market": 21.14
+        },
+        {
+          "date": "2006-04",
+          "portfolio": 8.49,
+          "market": 21.41
+        },
+        {
+          "date": "2006-05",
+          "portfolio": 8.29,
+          "market": 20.77
+        },
+        {
+          "date": "2006-06",
+          "portfolio": 8.34,
+          "market": 20.82
+        },
+        {
+          "date": "2006-07",
+          "portfolio": 8.5,
+          "market": 20.91
+        },
+        {
+          "date": "2006-08",
+          "portfolio": 8.9,
+          "market": 21.37
+        },
+        {
+          "date": "2006-09",
+          "portfolio": 9.26,
+          "market": 21.95
+        },
+        {
+          "date": "2006-10",
+          "portfolio": 9.75,
+          "market": 22.64
+        },
+        {
+          "date": "2006-11",
+          "portfolio": 9.98,
+          "market": 23.09
+        },
+        {
+          "date": "2006-12",
+          "portfolio": 9.97,
+          "market": 23.4
+        },
+        {
+          "date": "2007-01",
+          "portfolio": 9.98,
+          "market": 23.75
+        },
+        {
+          "date": "2007-02",
+          "portfolio": 9.79,
+          "market": 23.28
+        },
+        {
+          "date": "2007-03",
+          "portfolio": 9.95,
+          "market": 23.55
+        },
+        {
+          "date": "2007-04",
+          "portfolio": 10.93,
+          "market": 24.6
+        },
+        {
+          "date": "2007-05",
+          "portfolio": 11.46,
+          "market": 25.43
+        },
+        {
+          "date": "2007-06",
+          "portfolio": 11.36,
+          "market": 25.06
+        },
+        {
+          "date": "2007-07",
+          "portfolio": 11.58,
+          "market": 24.27
+        },
+        {
+          "date": "2007-08",
+          "portfolio": 11.87,
+          "market": 24.59
+        },
+        {
+          "date": "2007-09",
+          "portfolio": 12.75,
+          "market": 25.54
+        },
+        {
+          "date": "2007-10",
+          "portfolio": 13.51,
+          "market": 25.88
+        },
+        {
+          "date": "2007-11",
+          "portfolio": 13.66,
+          "market": 24.88
+        },
+        {
+          "date": "2007-12",
+          "portfolio": 13.92,
+          "market": 24.6
+        },
+        {
+          "date": "2008-01",
+          "portfolio": 12.54,
+          "market": 23.11
+        },
+        {
+          "date": "2008-02",
+          "portfolio": 12.04,
+          "market": 22.52
+        },
+        {
+          "date": "2008-03",
+          "portfolio": 12.77,
+          "market": 22.31
+        },
+        {
+          "date": "2008-04",
+          "portfolio": 13.46,
+          "market": 23.38
+        },
+        {
+          "date": "2008-05",
+          "portfolio": 13.53,
+          "market": 23.73
+        },
+        {
+          "date": "2008-06",
+          "portfolio": 12.6,
+          "market": 21.75
+        },
+        {
+          "date": "2008-07",
+          "portfolio": 12.67,
+          "market": 21.55
+        },
+        {
+          "date": "2008-08",
+          "portfolio": 13.16,
+          "market": 21.89
+        },
+        {
+          "date": "2008-09",
+          "portfolio": 12.42,
+          "market": 19.82
+        },
+        {
+          "date": "2008-10",
+          "portfolio": 11.1,
+          "market": 16.55
+        },
+        {
+          "date": "2008-11",
+          "portfolio": 10.73,
+          "market": 15.4
+        },
+        {
+          "date": "2008-12",
+          "portfolio": 10.67,
+          "market": 15.55
+        },
+        {
+          "date": "2009-01",
+          "portfolio": 10.17,
+          "market": 14.27
+        },
+        {
+          "date": "2009-02",
+          "portfolio": 9.72,
+          "market": 12.74
+        },
+        {
+          "date": "2009-03",
+          "portfolio": 10.44,
+          "market": 13.8
+        },
+        {
+          "date": "2009-04",
+          "portfolio": 10.93,
+          "market": 15.17
+        },
+        {
+          "date": "2009-05",
+          "portfolio": 11.53,
+          "market": 16.06
+        },
+        {
+          "date": "2009-06",
+          "portfolio": 11.74,
+          "market": 16.05
+        },
+        {
+          "date": "2009-07",
+          "portfolio": 12.46,
+          "market": 17.24
+        },
+        {
+          "date": "2009-08",
+          "portfolio": 12.45,
+          "market": 17.88
+        },
+        {
+          "date": "2009-09",
+          "portfolio": 13.17,
+          "market": 18.52
+        },
+        {
+          "date": "2009-10",
+          "portfolio": 13.58,
+          "market": 18.16
+        },
+        {
+          "date": "2009-11",
+          "portfolio": 14.65,
+          "market": 19.28
+        },
+        {
+          "date": "2009-12",
+          "portfolio": 14.67,
+          "market": 19.65
+        },
+        {
+          "date": "2010-01",
+          "portfolio": 14.1,
+          "market": 18.93
+        },
+        {
+          "date": "2010-02",
+          "portfolio": 14.26,
+          "market": 19.52
+        },
+        {
+          "date": "2010-03",
+          "portfolio": 15.06,
+          "market": 20.71
+        },
+        {
+          "date": "2010-04",
+          "portfolio": 15.15,
+          "market": 21.03
+        },
+        {
+          "date": "2010-05",
+          "portfolio": 14.27,
+          "market": 19.36
+        },
+        {
+          "date": "2010-06",
+          "portfolio": 13.68,
+          "market": 18.36
+        },
+        {
+          "date": "2010-07",
+          "portfolio": 14.37,
+          "market": 19.61
+        },
+        {
+          "date": "2010-08",
+          "portfolio": 14.17,
+          "market": 18.73
+        },
+        {
+          "date": "2010-09",
+          "portfolio": 15.37,
+          "market": 20.41
+        },
+        {
+          "date": "2010-10",
+          "portfolio": 16.17,
+          "market": 21.19
+        },
+        {
+          "date": "2010-11",
+          "portfolio": 16.34,
+          "market": 21.19
+        },
+        {
+          "date": "2010-12",
+          "portfolio": 17,
+          "market": 22.6
+        },
+        {
+          "date": "2011-01",
+          "portfolio": 17.21,
+          "market": 23.13
+        },
+        {
+          "date": "2011-02",
+          "portfolio": 17.38,
+          "market": 23.93
+        },
+        {
+          "date": "2011-03",
+          "portfolio": 17.29,
+          "market": 23.94
+        },
+        {
+          "date": "2011-04",
+          "portfolio": 18.12,
+          "market": 24.63
+        },
+        {
+          "date": "2011-05",
+          "portfolio": 18.15,
+          "market": 24.35
+        },
+        {
+          "date": "2011-06",
+          "portfolio": 17.83,
+          "market": 23.94
+        },
+        {
+          "date": "2011-07",
+          "portfolio": 18.25,
+          "market": 23.46
+        },
+        {
+          "date": "2011-08",
+          "portfolio": 18.3,
+          "market": 22.17
+        },
+        {
+          "date": "2011-09",
+          "portfolio": 17.87,
+          "market": 20.64
+        },
+        {
+          "date": "2011-10",
+          "portfolio": 18.62,
+          "market": 22.89
+        },
+        {
+          "date": "2011-11",
+          "portfolio": 18.47,
+          "market": 22.79
+        },
+        {
+          "date": "2011-12",
+          "portfolio": 18.88,
+          "market": 23.03
+        },
+        {
+          "date": "2012-01",
+          "portfolio": 19.39,
+          "market": 24.1
+        },
+        {
+          "date": "2012-02",
+          "portfolio": 20.25,
+          "market": 25.15
+        },
+        {
+          "date": "2012-03",
+          "portfolio": 21.17,
+          "market": 25.96
+        },
+        {
+          "date": "2012-04",
+          "portfolio": 21.1,
+          "market": 25.78
+        },
+        {
+          "date": "2012-05",
+          "portfolio": 20.65,
+          "market": 24.23
+        },
+        {
+          "date": "2012-06",
+          "portfolio": 21.57,
+          "market": 25.22
+        },
+        {
+          "date": "2012-07",
+          "portfolio": 22.33,
+          "market": 25.52
+        },
+        {
+          "date": "2012-08",
+          "portfolio": 22.66,
+          "market": 26.15
+        },
+        {
+          "date": "2012-09",
+          "portfolio": 23.09,
+          "market": 26.82
+        },
+        {
+          "date": "2012-10",
+          "portfolio": 22.55,
+          "market": 26.33
+        },
+        {
+          "date": "2012-11",
+          "portfolio": 22.53,
+          "market": 26.48
+        },
+        {
+          "date": "2012-12",
+          "portfolio": 21.82,
+          "market": 26.72
+        },
+        {
+          "date": "2013-01",
+          "portfolio": 22.39,
+          "market": 28.08
+        },
+        {
+          "date": "2013-02",
+          "portfolio": 22.69,
+          "market": 28.44
+        },
+        {
+          "date": "2013-03",
+          "portfolio": 23.38,
+          "market": 29.52
+        },
+        {
+          "date": "2013-04",
+          "portfolio": 23.95,
+          "market": 30.09
+        },
+        {
+          "date": "2013-05",
+          "portfolio": 24.02,
+          "market": 30.8
+        },
+        {
+          "date": "2013-06",
+          "portfolio": 23.74,
+          "market": 30.39
+        },
+        {
+          "date": "2013-07",
+          "portfolio": 24.95,
+          "market": 31.96
+        },
+        {
+          "date": "2013-08",
+          "portfolio": 24.32,
+          "market": 31
+        },
+        {
+          "date": "2013-09",
+          "portfolio": 24.38,
+          "market": 31.98
+        },
+        {
+          "date": "2013-10",
+          "portfolio": 26.07,
+          "market": 33.46
+        },
+        {
+          "date": "2013-11",
+          "portfolio": 27.38,
+          "market": 34.45
+        },
+        {
+          "date": "2013-12",
+          "portfolio": 27.46,
+          "market": 35.35
+        },
+        {
+          "date": "2014-01",
+          "portfolio": 25.63,
+          "market": 34.1
+        },
+        {
+          "date": "2014-02",
+          "portfolio": 26.4,
+          "market": 35.65
+        },
+        {
+          "date": "2014-03",
+          "portfolio": 26.98,
+          "market": 35.95
+        },
+        {
+          "date": "2014-04",
+          "portfolio": 27.88,
+          "market": 36.2
+        },
+        {
+          "date": "2014-05",
+          "portfolio": 28.1,
+          "market": 37.04
+        },
+        {
+          "date": "2014-06",
+          "portfolio": 28.43,
+          "market": 37.8
+        },
+        {
+          "date": "2014-07",
+          "portfolio": 27.84,
+          "market": 37.3
+        },
+        {
+          "date": "2014-08",
+          "portfolio": 29.46,
+          "market": 38.77
+        },
+        {
+          "date": "2014-09",
+          "portfolio": 29.45,
+          "market": 38.23
+        },
+        {
+          "date": "2014-10",
+          "portfolio": 29.95,
+          "market": 39.13
+        },
+        {
+          "date": "2014-11",
+          "portfolio": 31.74,
+          "market": 40.21
+        },
+        {
+          "date": "2014-12",
+          "portfolio": 30.75,
+          "market": 40.11
+        },
+        {
+          "date": "2015-01",
+          "portfolio": 30.21,
+          "market": 38.92
+        },
+        {
+          "date": "2015-02",
+          "portfolio": 31.55,
+          "market": 41.1
+        },
+        {
+          "date": "2015-03",
+          "portfolio": 30.41,
+          "market": 40.46
+        },
+        {
+          "date": "2015-04",
+          "portfolio": 30.94,
+          "market": 40.86
+        },
+        {
+          "date": "2015-05",
+          "portfolio": 30.96,
+          "market": 41.38
+        },
+        {
+          "date": "2015-06",
+          "portfolio": 30.15,
+          "market": 40.54
+        },
+        {
+          "date": "2015-07",
+          "portfolio": 30.91,
+          "market": 41.46
+        },
+        {
+          "date": "2015-08",
+          "portfolio": 29.09,
+          "market": 38.93
+        },
+        {
+          "date": "2015-09",
+          "portfolio": 29.24,
+          "market": 37.94
+        },
+        {
+          "date": "2015-10",
+          "portfolio": 31.43,
+          "market": 41.16
+        },
+        {
+          "date": "2015-11",
+          "portfolio": 31.81,
+          "market": 41.31
+        },
+        {
+          "date": "2015-12",
+          "portfolio": 31.91,
+          "market": 40.6
+        },
+        {
+          "date": "2016-01",
+          "portfolio": 31.71,
+          "market": 38.58
+        },
+        {
+          "date": "2016-02",
+          "portfolio": 31.53,
+          "market": 38.55
+        },
+        {
+          "date": "2016-03",
+          "portfolio": 33.53,
+          "market": 41.14
+        },
+        {
+          "date": "2016-04",
+          "portfolio": 32.93,
+          "market": 41.3
+        },
+        {
+          "date": "2016-05",
+          "portfolio": 34.24,
+          "market": 42.01
+        },
+        {
+          "date": "2016-06",
+          "portfolio": 34.95,
+          "market": 42.15
+        },
+        {
+          "date": "2016-07",
+          "portfolio": 35.76,
+          "market": 43.69
+        },
+        {
+          "date": "2016-08",
+          "portfolio": 35.86,
+          "market": 43.74
+        },
+        {
+          "date": "2016-09",
+          "portfolio": 36.6,
+          "market": 43.74
+        },
+        {
+          "date": "2016-10",
+          "portfolio": 36.05,
+          "market": 42.98
+        },
+        {
+          "date": "2016-11",
+          "portfolio": 35.55,
+          "market": 44.57
+        },
+        {
+          "date": "2016-12",
+          "portfolio": 36.47,
+          "market": 45.47
+        },
+        {
+          "date": "2017-01",
+          "portfolio": 36.99,
+          "market": 46.29
+        },
+        {
+          "date": "2017-02",
+          "portfolio": 38.6,
+          "market": 48.1
+        },
+        {
+          "date": "2017-03",
+          "portfolio": 39.4,
+          "market": 48.16
+        },
+        {
+          "date": "2017-04",
+          "portfolio": 39.73,
+          "market": 48.64
+        },
+        {
+          "date": "2017-05",
+          "portfolio": 41.49,
+          "market": 49.33
+        },
+        {
+          "date": "2017-06",
+          "portfolio": 40.92,
+          "market": 49.64
+        },
+        {
+          "date": "2017-07",
+          "portfolio": 42.19,
+          "market": 50.66
+        },
+        {
+          "date": "2017-08",
+          "portfolio": 42.75,
+          "market": 50.81
+        },
+        {
+          "date": "2017-09",
+          "portfolio": 42.48,
+          "market": 51.84
+        },
+        {
+          "date": "2017-10",
+          "portfolio": 44.86,
+          "market": 53.06
+        },
+        {
+          "date": "2017-11",
+          "portfolio": 46.33,
+          "market": 54.68
+        },
+        {
+          "date": "2017-12",
+          "portfolio": 46.59,
+          "market": 55.34
+        },
+        {
+          "date": "2018-01",
+          "portfolio": 48.49,
+          "market": 58.46
+        },
+        {
+          "date": "2018-02",
+          "portfolio": 45.7,
+          "market": 56.34
+        },
+        {
+          "date": "2018-03",
+          "portfolio": 45.06,
+          "market": 54.79
+        },
+        {
+          "date": "2018-04",
+          "portfolio": 44.75,
+          "market": 55.07
+        },
+        {
+          "date": "2018-05",
+          "portfolio": 45.75,
+          "market": 56.41
+        },
+        {
+          "date": "2018-06",
+          "portfolio": 46.95,
+          "market": 56.74
+        },
+        {
+          "date": "2018-07",
+          "portfolio": 49.15,
+          "market": 58.84
+        },
+        {
+          "date": "2018-08",
+          "portfolio": 51.81,
+          "market": 60.72
+        },
+        {
+          "date": "2018-09",
+          "portfolio": 52.56,
+          "market": 61.08
+        },
+        {
+          "date": "2018-10",
+          "portfolio": 52.21,
+          "market": 56.86
+        },
+        {
+          "date": "2018-11",
+          "portfolio": 52.5,
+          "market": 57.91
+        },
+        {
+          "date": "2018-12",
+          "portfolio": 48.13,
+          "market": 52.81
+        },
+        {
+          "date": "2019-01",
+          "portfolio": 50.61,
+          "market": 57.04
+        },
+        {
+          "date": "2019-02",
+          "portfolio": 51.59,
+          "market": 58.89
+        },
+        {
+          "date": "2019-03",
+          "portfolio": 54.05,
+          "market": 59.96
+        },
+        {
+          "date": "2019-04",
+          "portfolio": 56.42,
+          "market": 62.41
+        },
+        {
+          "date": "2019-05",
+          "portfolio": 53.22,
+          "market": 58.43
+        },
+        {
+          "date": "2019-06",
+          "portfolio": 57.4,
+          "market": 62.49
+        },
+        {
+          "date": "2019-07",
+          "portfolio": 58.66,
+          "market": 63.44
+        },
+        {
+          "date": "2019-08",
+          "portfolio": 58.8,
+          "market": 62.37
+        },
+        {
+          "date": "2019-09",
+          "portfolio": 60.23,
+          "market": 63.59
+        },
+        {
+          "date": "2019-10",
+          "portfolio": 61.43,
+          "market": 64.99
+        },
+        {
+          "date": "2019-11",
+          "portfolio": 62.73,
+          "market": 67.35
+        },
+        {
+          "date": "2019-12",
+          "portfolio": 65.27,
+          "market": 69.3
+        },
+        {
+          "date": "2020-01",
+          "portfolio": 66.34,
+          "market": 69.28
+        },
+        {
+          "date": "2020-02",
+          "portfolio": 60.5,
+          "market": 63.79
+        },
+        {
+          "date": "2020-03",
+          "portfolio": 56.44,
+          "market": 55.83
+        },
+        {
+          "date": "2020-04",
+          "portfolio": 63.42,
+          "market": 62.91
+        },
+        {
+          "date": "2020-05",
+          "portfolio": 64.58,
+          "market": 65.91
+        },
+        {
+          "date": "2020-06",
+          "portfolio": 66.35,
+          "market": 67.08
+        },
+        {
+          "date": "2020-07",
+          "portfolio": 71.28,
+          "market": 71.03
+        },
+        {
+          "date": "2020-08",
+          "portfolio": 76.95,
+          "market": 75.99
+        },
+        {
+          "date": "2020-09",
+          "portfolio": 73.76,
+          "market": 73.14
+        },
+        {
+          "date": "2020-10",
+          "portfolio": 71.14,
+          "market": 71.32
+        },
+        {
+          "date": "2020-11",
+          "portfolio": 76.81,
+          "market": 79.08
+        },
+        {
+          "date": "2020-12",
+          "portfolio": 80.18,
+          "market": 82.01
+        },
+        {
+          "date": "2021-01",
+          "portfolio": 78.3,
+          "market": 81.17
+        },
+        {
+          "date": "2021-02",
+          "portfolio": 78.08,
+          "market": 83.43
+        },
+        {
+          "date": "2021-03",
+          "portfolio": 81.75,
+          "market": 87.22
+        },
+        {
+          "date": "2021-04",
+          "portfolio": 84.62,
+          "market": 91.83
+        },
+        {
+          "date": "2021-05",
+          "portfolio": 85.07,
+          "market": 92.43
+        },
+        {
+          "date": "2021-06",
+          "portfolio": 87.65,
+          "market": 94.51
+        },
+        {
+          "date": "2021-07",
+          "portfolio": 89.98,
+          "market": 96.81
+        },
+        {
+          "date": "2021-08",
+          "portfolio": 91.48,
+          "market": 99.7
+        },
+        {
+          "date": "2021-09",
+          "portfolio": 87.89,
+          "market": 95.05
+        },
+        {
+          "date": "2021-10",
+          "portfolio": 93.46,
+          "market": 101.72
+        },
+        {
+          "date": "2021-11",
+          "portfolio": 93.04,
+          "market": 100.9
+        },
+        {
+          "date": "2021-12",
+          "portfolio": 99.44,
+          "market": 105.57
+        },
+        {
+          "date": "2022-01",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2022-02",
+          "portfolio": 98.65,
+          "market": 97.05
+        },
+        {
+          "date": "2022-03",
+          "portfolio": 102.64,
+          "market": 100.7
+        },
+        {
+          "date": "2022-04",
+          "portfolio": 100.6,
+          "market": 91.86
+        },
+        {
+          "date": "2022-05",
+          "portfolio": 97.33,
+          "market": 92.07
+        },
+        {
+          "date": "2022-06",
+          "portfolio": 92.17,
+          "market": 84.47
+        },
+        {
+          "date": "2022-07",
+          "portfolio": 99.47,
+          "market": 92.25
+        },
+        {
+          "date": "2022-08",
+          "portfolio": 96.35,
+          "market": 88.49
+        },
+        {
+          "date": "2022-09",
+          "portfolio": 88.92,
+          "market": 80.31
+        },
+        {
+          "date": "2022-10",
+          "portfolio": 96.26,
+          "market": 86.84
+        },
+        {
+          "date": "2022-11",
+          "portfolio": 100.74,
+          "market": 91.66
+        },
+        {
+          "date": "2022-12",
+          "portfolio": 96.6,
+          "market": 86.38
+        },
+        {
+          "date": "2023-01",
+          "portfolio": 99.03,
+          "market": 91.81
+        },
+        {
+          "date": "2023-02",
+          "portfolio": 96.65,
+          "market": 89.5
+        },
+        {
+          "date": "2023-03",
+          "portfolio": 103.06,
+          "market": 92.82
+        },
+        {
+          "date": "2023-04",
+          "portfolio": 107.64,
+          "market": 94.31
+        },
+        {
+          "date": "2023-05",
+          "portfolio": 105.39,
+          "market": 94.74
+        },
+        {
+          "date": "2023-06",
+          "portfolio": 111.76,
+          "market": 100.88
+        },
+        {
+          "date": "2023-07",
+          "portfolio": 114.03,
+          "market": 104.18
+        },
+        {
+          "date": "2023-08",
+          "portfolio": 113.07,
+          "market": 102.49
+        },
+        {
+          "date": "2023-09",
+          "portfolio": 108.2,
+          "market": 97.63
+        },
+        {
+          "date": "2023-10",
+          "portfolio": 108.43,
+          "market": 95.51
+        },
+        {
+          "date": "2023-11",
+          "portfolio": 113.28,
+          "market": 104.23
+        },
+        {
+          "date": "2023-12",
+          "portfolio": 113.31,
+          "market": 108.99
+        },
+        {
+          "date": "2024-01",
+          "portfolio": 116.69,
+          "market": 110.73
+        },
+        {
+          "date": "2024-02",
+          "portfolio": 120.58,
+          "market": 116.51
+        },
+        {
+          "date": "2024-03",
+          "portfolio": 123,
+          "market": 120.32
+        },
+        {
+          "date": "2024-04",
+          "portfolio": 121.21,
+          "market": 115.46
+        },
+        {
+          "date": "2024-05",
+          "portfolio": 127.06,
+          "market": 121.3
+        },
+        {
+          "date": "2024-06",
+          "portfolio": 131.29,
+          "market": 125.58
+        },
+        {
+          "date": "2024-07",
+          "portfolio": 133.75,
+          "market": 127.1
+        },
+        {
+          "date": "2024-08",
+          "portfolio": 140.49,
+          "market": 130.07
+        },
+        {
+          "date": "2024-09",
+          "portfolio": 142.15,
+          "market": 132.81
+        },
+        {
+          "date": "2024-10",
+          "portfolio": 138,
+          "market": 131.62
+        },
+        {
+          "date": "2024-11",
+          "portfolio": 144.92,
+          "market": 139.47
+        },
+        {
+          "date": "2024-12",
+          "portfolio": 141.39,
+          "market": 136.12
+        },
+        {
+          "date": "2025-01",
+          "portfolio": 143.61,
+          "market": 139.77
+        },
+        {
+          "date": "2025-02",
+          "portfolio": 149.05,
+          "market": 138
+        },
+        {
+          "date": "2025-03",
+          "portfolio": 144.14,
+          "market": 130.31
+        },
+        {
+          "date": "2025-04",
+          "portfolio": 141.98,
+          "market": 129.18
+        },
+        {
+          "date": "2025-05",
+          "portfolio": 145.42,
+          "market": 137.3
+        },
+        {
+          "date": "2025-06",
+          "portfolio": 146.42,
+          "market": 144.35
+        },
+        {
+          "date": "2025-07",
+          "portfolio": 147.99,
+          "market": 147.68
+        },
+        {
+          "date": "2025-08",
+          "portfolio": 152.99,
+          "market": 150.71
+        },
+        {
+          "date": "2025-09",
+          "portfolio": 155.25,
+          "market": 156.07
+        },
+        {
+          "date": "2025-10",
+          "portfolio": 159.08,
+          "market": 159.79
+        },
+        {
+          "date": "2025-11",
+          "portfolio": 163.57,
+          "market": 160.11
+        },
+        {
+          "date": "2025-12",
+          "portfolio": 161.67,
+          "market": 160.23
+        },
+        {
+          "date": "2026-01",
+          "portfolio": 169.9,
+          "market": 162.6
+        },
+        {
+          "date": "2026-02",
+          "portfolio": 178.06,
+          "market": 161.19
+        },
+        {
+          "date": "2026-03",
+          "portfolio": 172.84,
+          "market": 157.62
+        }
+      ],
+      "numPortfolios": 10000,
+      "trainPeriodStart": "2005-02",
+      "trainPeriodEnd": "2021-12",
+      "testPeriodStart": "2022-01",
+      "testPeriodEnd": "2026-03",
+      "efficientFrontier": [
+        {
+          "volatility": 11.71,
+          "expectedReturn": 9.53,
+          "sharpe": 0.7164,
+          "backtestReturn": 93.14
+        },
+        {
+          "volatility": 11.85,
+          "expectedReturn": 9.86,
+          "sharpe": 0.7363,
+          "backtestReturn": 79
+        },
+        {
+          "volatility": 11.91,
+          "expectedReturn": 10.35,
+          "sharpe": 0.7736,
+          "backtestReturn": 83.31
+        },
+        {
+          "volatility": 12.15,
+          "expectedReturn": 10.42,
+          "sharpe": 0.7634,
+          "backtestReturn": 103.63
+        },
+        {
+          "volatility": 12.17,
+          "expectedReturn": 10.67,
+          "sharpe": 0.7832,
+          "backtestReturn": 97.27
+        },
+        {
+          "volatility": 12.39,
+          "expectedReturn": 10.84,
+          "sharpe": 0.7828,
+          "backtestReturn": 83.12
+        },
+        {
+          "volatility": 12.45,
+          "expectedReturn": 10.92,
+          "sharpe": 0.7855,
+          "backtestReturn": 80.46
+        },
+        {
+          "volatility": 12.48,
+          "expectedReturn": 10.99,
+          "sharpe": 0.7896,
+          "backtestReturn": 95.1
+        },
+        {
+          "volatility": 12.57,
+          "expectedReturn": 11.01,
+          "sharpe": 0.7852,
+          "backtestReturn": 79.11
+        },
+        {
+          "volatility": 12.58,
+          "expectedReturn": 11.13,
+          "sharpe": 0.794,
+          "backtestReturn": 88.61
+        },
+        {
+          "volatility": 12.8,
+          "expectedReturn": 11.16,
+          "sharpe": 0.783,
+          "backtestReturn": 96.95
+        },
+        {
+          "volatility": 12.89,
+          "expectedReturn": 11.18,
+          "sharpe": 0.7789,
+          "backtestReturn": 95.3
+        },
+        {
+          "volatility": 12.89,
+          "expectedReturn": 11.33,
+          "sharpe": 0.7905,
+          "backtestReturn": 74.93
+        },
+        {
+          "volatility": 13.03,
+          "expectedReturn": 11.49,
+          "sharpe": 0.7939,
+          "backtestReturn": 103.42
+        },
+        {
+          "volatility": 13.05,
+          "expectedReturn": 11.54,
+          "sharpe": 0.7966,
+          "backtestReturn": 100.8
+        },
+        {
+          "volatility": 13.09,
+          "expectedReturn": 11.54,
+          "sharpe": 0.7945,
+          "backtestReturn": 92.57
+        },
+        {
+          "volatility": 13.17,
+          "expectedReturn": 11.69,
+          "sharpe": 0.8009,
+          "backtestReturn": 73.81
+        },
+        {
+          "volatility": 13.3,
+          "expectedReturn": 11.72,
+          "sharpe": 0.7952,
+          "backtestReturn": 89.92
+        },
+        {
+          "volatility": 13.39,
+          "expectedReturn": 11.73,
+          "sharpe": 0.7902,
+          "backtestReturn": 108.97
+        },
+        {
+          "volatility": 13.46,
+          "expectedReturn": 11.81,
+          "sharpe": 0.7925,
+          "backtestReturn": 99.36
+        },
+        {
+          "volatility": 13.59,
+          "expectedReturn": 11.85,
+          "sharpe": 0.7885,
+          "backtestReturn": 89.98
+        },
+        {
+          "volatility": 13.73,
+          "expectedReturn": 11.89,
+          "sharpe": 0.783,
+          "backtestReturn": 88.76
+        },
+        {
+          "volatility": 13.77,
+          "expectedReturn": 11.94,
+          "sharpe": 0.7842,
+          "backtestReturn": 81.07
+        },
+        {
+          "volatility": 13.8,
+          "expectedReturn": 12.01,
+          "sharpe": 0.7877,
+          "backtestReturn": 75.35
+        },
+        {
+          "volatility": 13.82,
+          "expectedReturn": 12.16,
+          "sharpe": 0.7974,
+          "backtestReturn": 75.41
+        },
+        {
+          "volatility": 14.11,
+          "expectedReturn": 12.28,
+          "sharpe": 0.7893,
+          "backtestReturn": 98.05
+        },
+        {
+          "volatility": 14.26,
+          "expectedReturn": 12.29,
+          "sharpe": 0.7823,
+          "backtestReturn": 82.84
+        },
+        {
+          "volatility": 14.37,
+          "expectedReturn": 12.36,
+          "sharpe": 0.7807,
+          "backtestReturn": 53.46
+        },
+        {
+          "volatility": 14.4,
+          "expectedReturn": 12.4,
+          "sharpe": 0.7819,
+          "backtestReturn": 104.09
+        },
+        {
+          "volatility": 14.49,
+          "expectedReturn": 12.53,
+          "sharpe": 0.7858,
+          "backtestReturn": 76.59
+        },
+        {
+          "volatility": 14.68,
+          "expectedReturn": 12.64,
+          "sharpe": 0.7832,
+          "backtestReturn": 97.51
+        },
+        {
+          "volatility": 14.81,
+          "expectedReturn": 12.66,
+          "sharpe": 0.778,
+          "backtestReturn": 87.09
+        },
+        {
+          "volatility": 14.92,
+          "expectedReturn": 12.78,
+          "sharpe": 0.7805,
+          "backtestReturn": 74.22
+        },
+        {
+          "volatility": 15.09,
+          "expectedReturn": 12.81,
+          "sharpe": 0.7732,
+          "backtestReturn": 81.32
+        },
+        {
+          "volatility": 15.19,
+          "expectedReturn": 12.83,
+          "sharpe": 0.7695,
+          "backtestReturn": 95.34
+        },
+        {
+          "volatility": 15.34,
+          "expectedReturn": 12.84,
+          "sharpe": 0.7625,
+          "backtestReturn": 91.38
+        },
+        {
+          "volatility": 15.35,
+          "expectedReturn": 12.97,
+          "sharpe": 0.7704,
+          "backtestReturn": 67.56
+        },
+        {
+          "volatility": 15.42,
+          "expectedReturn": 12.99,
+          "sharpe": 0.7682,
+          "backtestReturn": 78.11
+        },
+        {
+          "volatility": 15.49,
+          "expectedReturn": 13.02,
+          "sharpe": 0.767,
+          "backtestReturn": 66.56
+        },
+        {
+          "volatility": 15.5,
+          "expectedReturn": 13.07,
+          "sharpe": 0.7694,
+          "backtestReturn": 109.57
+        },
+        {
+          "volatility": 15.59,
+          "expectedReturn": 13.09,
+          "sharpe": 0.7669,
+          "backtestReturn": 66.84
+        },
+        {
+          "volatility": 15.89,
+          "expectedReturn": 13.13,
+          "sharpe": 0.7544,
+          "backtestReturn": 114.55
+        },
+        {
+          "volatility": 15.97,
+          "expectedReturn": 13.13,
+          "sharpe": 0.7507,
+          "backtestReturn": 67.2
+        },
+        {
+          "volatility": 16.01,
+          "expectedReturn": 13.28,
+          "sharpe": 0.7581,
+          "backtestReturn": 107.35
+        },
+        {
+          "volatility": 16.13,
+          "expectedReturn": 13.41,
+          "sharpe": 0.7605,
+          "backtestReturn": 88.1
+        },
+        {
+          "volatility": 16.54,
+          "expectedReturn": 13.43,
+          "sharpe": 0.7429,
+          "backtestReturn": 110.3
+        },
+        {
+          "volatility": 16.58,
+          "expectedReturn": 13.43,
+          "sharpe": 0.7415,
+          "backtestReturn": 110.57
+        },
+        {
+          "volatility": 16.62,
+          "expectedReturn": 13.51,
+          "sharpe": 0.7446,
+          "backtestReturn": 102
+        },
+        {
+          "volatility": 16.74,
+          "expectedReturn": 13.55,
+          "sharpe": 0.7416,
+          "backtestReturn": 68.5
+        },
+        {
+          "volatility": 16.8,
+          "expectedReturn": 13.56,
+          "sharpe": 0.739,
+          "backtestReturn": 94.35
+        },
+        {
+          "volatility": 16.88,
+          "expectedReturn": 13.59,
+          "sharpe": 0.7373,
+          "backtestReturn": 99.99
+        },
+        {
+          "volatility": 16.92,
+          "expectedReturn": 13.64,
+          "sharpe": 0.7384,
+          "backtestReturn": 121.15
+        },
+        {
+          "volatility": 17.04,
+          "expectedReturn": 13.88,
+          "sharpe": 0.7475,
+          "backtestReturn": 100.09
+        },
+        {
+          "volatility": 17.32,
+          "expectedReturn": 13.89,
+          "sharpe": 0.7364,
+          "backtestReturn": 112.95
+        },
+        {
+          "volatility": 17.67,
+          "expectedReturn": 14.15,
+          "sharpe": 0.7359,
+          "backtestReturn": 85.77
+        },
+        {
+          "volatility": 18.05,
+          "expectedReturn": 14.29,
+          "sharpe": 0.7283,
+          "backtestReturn": 67.15
+        },
+        {
+          "volatility": 19.18,
+          "expectedReturn": 14.35,
+          "sharpe": 0.6889,
+          "backtestReturn": 133.81
+        },
+        {
+          "volatility": 19.38,
+          "expectedReturn": 14.43,
+          "sharpe": 0.6857,
+          "backtestReturn": 86.21
+        },
+        {
+          "volatility": 19.59,
+          "expectedReturn": 14.83,
+          "sharpe": 0.6987,
+          "backtestReturn": 87.64
+        },
+        {
+          "volatility": 19.87,
+          "expectedReturn": 14.89,
+          "sharpe": 0.6918,
+          "backtestReturn": 84.35
+        },
+        {
+          "volatility": 20.82,
+          "expectedReturn": 15.1,
+          "sharpe": 0.6702,
+          "backtestReturn": 113.25
+        }
+      ],
+      "factor_tests": {
+        "AAPL": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.012852,
+              "std_err": 0.005227,
+              "t_stat": 2.459,
+              "p_value": 0.014796,
+              "ci_lower": 0.002545,
+              "ci_upper": 0.023159
+            },
+            "Mkt-RF": {
+              "beta": 1.374032,
+              "std_err": 0.128554,
+              "t_stat": 10.6884,
+              "p_value": 0,
+              "ci_lower": 1.120514,
+              "ci_upper": 1.62755
+            },
+            "SMB": {
+              "beta": -0.147306,
+              "std_err": 0.234318,
+              "t_stat": -0.6287,
+              "p_value": 0.530301,
+              "ci_lower": -0.6094,
+              "ci_upper": 0.314788
+            },
+            "HML": {
+              "beta": -0.664938,
+              "std_err": 0.21347,
+              "t_stat": -3.1149,
+              "p_value": 0.002115,
+              "ci_lower": -1.085917,
+              "ci_upper": -0.243959
+            },
+            "RMW": {
+              "beta": 0.75161,
+              "std_err": 0.306592,
+              "t_stat": 2.4515,
+              "p_value": 0.015098,
+              "ci_lower": 0.146986,
+              "ci_upper": 1.356234
+            },
+            "CMA": {
+              "beta": -0.621965,
+              "std_err": 0.386027,
+              "t_stat": -1.6112,
+              "p_value": 0.108738,
+              "ci_lower": -1.38324,
+              "ci_upper": 0.139311
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.424268,
+            "adj_r_squared": 0.409656,
+            "n_obs": 203,
+            "df_residual": 197,
+            "f_stat": 29.0346,
+            "f_pvalue": 0
+          }
+        },
+        "MSFT": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.006727,
+              "std_err": 0.003677,
+              "t_stat": 1.8298,
+              "p_value": 0.068796,
+              "ci_lower": -0.000523,
+              "ci_upper": 0.013978
+            },
+            "Mkt-RF": {
+              "beta": 1.054863,
+              "std_err": 0.090433,
+              "t_stat": 11.6646,
+              "p_value": 0,
+              "ci_lower": 0.876523,
+              "ci_upper": 1.233203
+            },
+            "SMB": {
+              "beta": -0.565716,
+              "std_err": 0.164834,
+              "t_stat": -3.432,
+              "p_value": 0.00073,
+              "ci_lower": -0.890782,
+              "ci_upper": -0.240651
+            },
+            "HML": {
+              "beta": -0.07323,
+              "std_err": 0.150168,
+              "t_stat": -0.4877,
+              "p_value": 0.626338,
+              "ci_lower": -0.369372,
+              "ci_upper": 0.222913
+            },
+            "RMW": {
+              "beta": -0.106734,
+              "std_err": 0.215676,
+              "t_stat": -0.4949,
+              "p_value": 0.621237,
+              "ci_lower": -0.532064,
+              "ci_upper": 0.318597
+            },
+            "CMA": {
+              "beta": -0.331058,
+              "std_err": 0.271555,
+              "t_stat": -1.2191,
+              "p_value": 0.224256,
+              "ci_lower": -0.866587,
+              "ci_upper": 0.20447
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.441272,
+            "adj_r_squared": 0.427092,
+            "n_obs": 203,
+            "df_residual": 197,
+            "f_stat": 31.1174,
+            "f_pvalue": 0
+          }
+        },
+        "AMZN": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.01278,
+              "std_err": 0.006277,
+              "t_stat": 2.0359,
+              "p_value": 0.043096,
+              "ci_lower": 0.000401,
+              "ci_upper": 0.025159
+            },
+            "Mkt-RF": {
+              "beta": 1.276413,
+              "std_err": 0.154398,
+              "t_stat": 8.267,
+              "p_value": 0,
+              "ci_lower": 0.971929,
+              "ci_upper": 1.580898
+            },
+            "SMB": {
+              "beta": -0.096127,
+              "std_err": 0.281425,
+              "t_stat": -0.3416,
+              "p_value": 0.733036,
+              "ci_lower": -0.651119,
+              "ci_upper": 0.458865
+            },
+            "HML": {
+              "beta": -1.044454,
+              "std_err": 0.256385,
+              "t_stat": -4.0738,
+              "p_value": 6.7e-05,
+              "ci_lower": -1.550066,
+              "ci_upper": -0.538843
+            },
+            "RMW": {
+              "beta": 0.009392,
+              "std_err": 0.368229,
+              "t_stat": 0.0255,
+              "p_value": 0.979678,
+              "ci_lower": -0.716785,
+              "ci_upper": 0.735568
+            },
+            "CMA": {
+              "beta": -0.686754,
+              "std_err": 0.463633,
+              "t_stat": -1.4812,
+              "p_value": 0.140139,
+              "ci_lower": -1.601074,
+              "ci_upper": 0.227567
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.346525,
+            "adj_r_squared": 0.32994,
+            "n_obs": 203,
+            "df_residual": 197,
+            "f_stat": 20.8931,
+            "f_pvalue": 0
+          }
+        },
+        "NVDA": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.019101,
+              "std_err": 0.008404,
+              "t_stat": 2.2729,
+              "p_value": 0.024109,
+              "ci_lower": 0.002528,
+              "ci_upper": 0.035674
+            },
+            "Mkt-RF": {
+              "beta": 1.550829,
+              "std_err": 0.2067,
+              "t_stat": 7.5028,
+              "p_value": 0,
+              "ci_lower": 1.1432,
+              "ci_upper": 1.958458
+            },
+            "SMB": {
+              "beta": 0.215888,
+              "std_err": 0.376758,
+              "t_stat": 0.573,
+              "p_value": 0.567288,
+              "ci_lower": -0.527108,
+              "ci_upper": 0.958885
+            },
+            "HML": {
+              "beta": -0.728348,
+              "std_err": 0.343236,
+              "t_stat": -2.122,
+              "p_value": 0.035087,
+              "ci_lower": -1.405236,
+              "ci_upper": -0.05146
+            },
+            "RMW": {
+              "beta": -0.314794,
+              "std_err": 0.492967,
+              "t_stat": -0.6386,
+              "p_value": 0.523845,
+              "ci_lower": -1.286963,
+              "ci_upper": 0.657376
+            },
+            "CMA": {
+              "beta": -0.458152,
+              "std_err": 0.620689,
+              "t_stat": -0.7381,
+              "p_value": 0.461311,
+              "ci_lower": -1.682199,
+              "ci_upper": 0.765896
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.287631,
+            "adj_r_squared": 0.269551,
+            "n_obs": 203,
+            "df_residual": 197,
+            "f_stat": 15.9084,
+            "f_pvalue": 0
+          }
+        },
+        "KO": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.00033,
+              "std_err": 0.00261,
+              "t_stat": 0.1263,
+              "p_value": 0.899634,
+              "ci_lower": -0.004818,
+              "ci_upper": 0.005477
+            },
+            "Mkt-RF": {
+              "beta": 0.729468,
+              "std_err": 0.064202,
+              "t_stat": 11.3621,
+              "p_value": 0,
+              "ci_lower": 0.602857,
+              "ci_upper": 0.856078
+            },
+            "SMB": {
+              "beta": -0.615005,
+              "std_err": 0.117022,
+              "t_stat": -5.2555,
+              "p_value": 0,
+              "ci_lower": -0.845782,
+              "ci_upper": -0.384228
+            },
+            "HML": {
+              "beta": 0.010883,
+              "std_err": 0.10661,
+              "t_stat": 0.1021,
+              "p_value": 0.918797,
+              "ci_lower": -0.199361,
+              "ci_upper": 0.221126
+            },
+            "RMW": {
+              "beta": 0.435642,
+              "std_err": 0.153117,
+              "t_stat": 2.8452,
+              "p_value": 0.004908,
+              "ci_lower": 0.133684,
+              "ci_upper": 0.7376
+            },
+            "CMA": {
+              "beta": 0.340726,
+              "std_err": 0.192788,
+              "t_stat": 1.7674,
+              "p_value": 0.078715,
+              "ci_lower": -0.039466,
+              "ci_upper": 0.720919
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.42609,
+            "adj_r_squared": 0.411524,
+            "n_obs": 203,
+            "df_residual": 197,
+            "f_stat": 29.2519,
+            "f_pvalue": 0
+          }
+        },
+        "JNJ": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.000292,
+              "std_err": 0.002384,
+              "t_stat": 0.1223,
+              "p_value": 0.902784,
+              "ci_lower": -0.004411,
+              "ci_upper": 0.004994
+            },
+            "Mkt-RF": {
+              "beta": 0.71036,
+              "std_err": 0.058648,
+              "t_stat": 12.1124,
+              "p_value": 0,
+              "ci_lower": 0.594702,
+              "ci_upper": 0.826018
+            },
+            "SMB": {
+              "beta": -0.410931,
+              "std_err": 0.106898,
+              "t_stat": -3.8441,
+              "p_value": 0.000163,
+              "ci_lower": -0.621744,
+              "ci_upper": -0.200119
+            },
+            "HML": {
+              "beta": -0.064422,
+              "std_err": 0.097387,
+              "t_stat": -0.6615,
+              "p_value": 0.509061,
+              "ci_lower": -0.256477,
+              "ci_upper": 0.127633
+            },
+            "RMW": {
+              "beta": 0.185354,
+              "std_err": 0.139871,
+              "t_stat": 1.3252,
+              "p_value": 0.186646,
+              "ci_lower": -0.090482,
+              "ci_upper": 0.46119
+            },
+            "CMA": {
+              "beta": 0.497576,
+              "std_err": 0.17611,
+              "t_stat": 2.8254,
+              "p_value": 0.005209,
+              "ci_lower": 0.150274,
+              "ci_upper": 0.844878
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.437341,
+            "adj_r_squared": 0.423061,
+            "n_obs": 203,
+            "df_residual": 197,
+            "f_stat": 30.6247,
+            "f_pvalue": 0
+          }
+        },
+        "JPM": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.009276,
+              "std_err": 0.003347,
+              "t_stat": 2.7709,
+              "p_value": 0.006125,
+              "ci_lower": 0.002674,
+              "ci_upper": 0.015877
+            },
+            "Mkt-RF": {
+              "beta": 0.935966,
+              "std_err": 0.082336,
+              "t_stat": 11.3677,
+              "p_value": 0,
+              "ci_lower": 0.773593,
+              "ci_upper": 1.098339
+            },
+            "SMB": {
+              "beta": -0.41218,
+              "std_err": 0.150076,
+              "t_stat": -2.7465,
+              "p_value": 0.006582,
+              "ci_lower": -0.708141,
+              "ci_upper": -0.116219
+            },
+            "HML": {
+              "beta": 1.519664,
+              "std_err": 0.136722,
+              "t_stat": 11.115,
+              "p_value": 0,
+              "ci_lower": 1.250037,
+              "ci_upper": 1.789292
+            },
+            "RMW": {
+              "beta": -0.942075,
+              "std_err": 0.196365,
+              "t_stat": -4.7976,
+              "p_value": 3e-06,
+              "ci_lower": -1.329323,
+              "ci_upper": -0.554827
+            },
+            "CMA": {
+              "beta": -0.741699,
+              "std_err": 0.247242,
+              "t_stat": -2.9999,
+              "p_value": 0.003049,
+              "ci_lower": -1.229279,
+              "ci_upper": -0.25412
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.67863,
+            "adj_r_squared": 0.670474,
+            "n_obs": 203,
+            "df_residual": 197,
+            "f_stat": 83.2002,
+            "f_pvalue": 0
+          }
+        },
+        "XOM": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.003075,
+              "std_err": 0.003783,
+              "t_stat": -0.813,
+              "p_value": 0.417217,
+              "ci_lower": -0.010536,
+              "ci_upper": 0.004385
+            },
+            "Mkt-RF": {
+              "beta": 0.784006,
+              "std_err": 0.093046,
+              "t_stat": 8.426,
+              "p_value": 0,
+              "ci_lower": 0.600512,
+              "ci_upper": 0.967499
+            },
+            "SMB": {
+              "beta": 0.192609,
+              "std_err": 0.169597,
+              "t_stat": 1.1357,
+              "p_value": 0.257468,
+              "ci_lower": -0.14185,
+              "ci_upper": 0.527067
+            },
+            "HML": {
+              "beta": 0.24383,
+              "std_err": 0.154507,
+              "t_stat": 1.5781,
+              "p_value": 0.116143,
+              "ci_lower": -0.060869,
+              "ci_upper": 0.54853
+            },
+            "RMW": {
+              "beta": 0.348166,
+              "std_err": 0.221908,
+              "t_stat": 1.569,
+              "p_value": 0.11826,
+              "ci_lower": -0.089454,
+              "ci_upper": 0.785786
+            },
+            "CMA": {
+              "beta": 0.287855,
+              "std_err": 0.279402,
+              "t_stat": 1.0303,
+              "p_value": 0.304154,
+              "ci_lower": -0.263147,
+              "ci_upper": 0.838857
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.367783,
+            "adj_r_squared": 0.351737,
+            "n_obs": 203,
+            "df_residual": 197,
+            "f_stat": 22.9204,
+            "f_pvalue": 0
+          }
+        },
+        "PG": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.00138,
+              "std_err": 0.002625,
+              "t_stat": 0.5258,
+              "p_value": 0.59959,
+              "ci_lower": -0.003796,
+              "ci_upper": 0.006557
+            },
+            "Mkt-RF": {
+              "beta": 0.623426,
+              "std_err": 0.064566,
+              "t_stat": 9.6557,
+              "p_value": 0,
+              "ci_lower": 0.496097,
+              "ci_upper": 0.750754
+            },
+            "SMB": {
+              "beta": -0.510136,
+              "std_err": 0.117686,
+              "t_stat": -4.3347,
+              "p_value": 2.3e-05,
+              "ci_lower": -0.742222,
+              "ci_upper": -0.278051
+            },
+            "HML": {
+              "beta": -0.052739,
+              "std_err": 0.107214,
+              "t_stat": -0.4919,
+              "p_value": 0.623335,
+              "ci_lower": -0.264174,
+              "ci_upper": 0.158696
+            },
+            "RMW": {
+              "beta": 0.340033,
+              "std_err": 0.153985,
+              "t_stat": 2.2082,
+              "p_value": 0.028382,
+              "ci_lower": 0.036362,
+              "ci_upper": 0.643703
+            },
+            "CMA": {
+              "beta": 0.761519,
+              "std_err": 0.193881,
+              "t_stat": 3.9278,
+              "p_value": 0.000119,
+              "ci_lower": 0.379171,
+              "ci_upper": 1.143868
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.360364,
+            "adj_r_squared": 0.344129,
+            "n_obs": 203,
+            "df_residual": 197,
+            "f_stat": 22.1975,
+            "f_pvalue": 0
+          }
+        },
+        "WMT": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.001157,
+              "std_err": 0.003261,
+              "t_stat": 0.3547,
+              "p_value": 0.723172,
+              "ci_lower": -0.005275,
+              "ci_upper": 0.007588
+            },
+            "Mkt-RF": {
+              "beta": 0.511374,
+              "std_err": 0.080214,
+              "t_stat": 6.3751,
+              "p_value": 0,
+              "ci_lower": 0.353186,
+              "ci_upper": 0.669561
+            },
+            "SMB": {
+              "beta": -0.413361,
+              "std_err": 0.146208,
+              "t_stat": -2.8272,
+              "p_value": 0.00518,
+              "ci_lower": -0.701694,
+              "ci_upper": -0.125028
+            },
+            "HML": {
+              "beta": -0.147606,
+              "std_err": 0.133199,
+              "t_stat": -1.1082,
+              "p_value": 0.269141,
+              "ci_lower": -0.410285,
+              "ci_upper": 0.115072
+            },
+            "RMW": {
+              "beta": 0.392243,
+              "std_err": 0.191305,
+              "t_stat": 2.0504,
+              "p_value": 0.041654,
+              "ci_lower": 0.014975,
+              "ci_upper": 0.769511
+            },
+            "CMA": {
+              "beta": 0.564397,
+              "std_err": 0.24087,
+              "t_stat": 2.3432,
+              "p_value": 0.020118,
+              "ci_lower": 0.089383,
+              "ci_upper": 1.039411
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.195194,
+            "adj_r_squared": 0.174768,
+            "n_obs": 203,
+            "df_residual": 197,
+            "f_stat": 9.5559,
+            "f_pvalue": 0
+          }
+        }
+      }
+    },
+    "llmResult": null,
+    "classicResult": null,
+    "comparisonData": null,
+    "description": "Simulations avec 10 actions introduites en bourse avant 2005 pour que l'ajustement se fasse bien dès 2005 (sur les simulations précédentes cela commençait en 2021 faute de données)"
+  },
+  {
+    "id": "sim-1773841792963-c580h",
+    "date": "2026-03-18T13:49:52.963Z",
+    "modelId": "markowitz-5factors",
+    "symbols": [
+      "AOS",
+      "AMD",
+      "BLK",
+      "CDW",
+      "COIN",
+      "COST",
+      "DOV",
+      "EQT",
+      "GDDY",
+      "LH",
+      "NWSA",
+      "ON",
+      "PPL",
+      "SWKS",
+      "TRGP",
+      "UNP",
+      "WM"
+    ],
+    "result": {
+      "weights": {
+        "AOS": 0.12461657186069312,
+        "AMD": 0.049867514552988455,
+        "BLK": 0.015742557486287913,
+        "CDW": 0.10634595750376612,
+        "COIN": 0.00019852179159661292,
+        "COST": 0.04792760310658703,
+        "DOV": 0.08264913169745151,
+        "EQT": 0.09263638956734412,
+        "GDDY": 0.011236928120514118,
+        "LH": 0.062079254455954594,
+        "NWSA": 0.13385358731646688,
+        "ON": 0.006580540255327691,
+        "PPL": 0.08331558100854047,
+        "SWKS": 0.010065467058563026,
+        "TRGP": 0.0726533068603319,
+        "UNP": 0.03297535517261121,
+        "WM": 0.0672557321849753
+      },
+      "sharpe": 0.445,
+      "expectedReturn": 11.67,
+      "volatility": 19.11,
+      "maxDrawdown": 3.46,
+      "comparisonData": [
+        {
+          "date": "2021-05",
+          "portfolio": 62.93,
+          "market": 71.56
+        },
+        {
+          "date": "2021-06",
+          "portfolio": 64.72,
+          "market": 73.16
+        },
+        {
+          "date": "2021-07",
+          "portfolio": 65.08,
+          "market": 74.95
+        },
+        {
+          "date": "2021-08",
+          "portfolio": 66.55,
+          "market": 77.18
+        },
+        {
+          "date": "2021-09",
+          "portfolio": 64.39,
+          "market": 73.58
+        },
+        {
+          "date": "2021-10",
+          "portfolio": 68.84,
+          "market": 78.74
+        },
+        {
+          "date": "2021-11",
+          "portfolio": 69.74,
+          "market": 78.11
+        },
+        {
+          "date": "2021-12",
+          "portfolio": 74.33,
+          "market": 81.72
+        },
+        {
+          "date": "2022-01",
+          "portfolio": 70.13,
+          "market": 77.41
+        },
+        {
+          "date": "2022-02",
+          "portfolio": 68.86,
+          "market": 75.13
+        },
+        {
+          "date": "2022-03",
+          "portfolio": 73.56,
+          "market": 77.95
+        },
+        {
+          "date": "2022-04",
+          "portfolio": 69.01,
+          "market": 71.11
+        },
+        {
+          "date": "2022-05",
+          "portfolio": 70.23,
+          "market": 71.27
+        },
+        {
+          "date": "2022-06",
+          "portfolio": 62.58,
+          "market": 65.39
+        },
+        {
+          "date": "2022-07",
+          "portfolio": 71.41,
+          "market": 71.42
+        },
+        {
+          "date": "2022-08",
+          "portfolio": 69.04,
+          "market": 68.5
+        },
+        {
+          "date": "2022-09",
+          "portfolio": 61.19,
+          "market": 62.17
+        },
+        {
+          "date": "2022-10",
+          "portfolio": 66.05,
+          "market": 67.22
+        },
+        {
+          "date": "2022-11",
+          "portfolio": 72.78,
+          "market": 70.96
+        },
+        {
+          "date": "2022-12",
+          "portfolio": 67.84,
+          "market": 66.87
+        },
+        {
+          "date": "2023-01",
+          "portfolio": 73.35,
+          "market": 71.07
+        },
+        {
+          "date": "2023-02",
+          "portfolio": 70.87,
+          "market": 69.29
+        },
+        {
+          "date": "2023-03",
+          "portfolio": 72.38,
+          "market": 71.86
+        },
+        {
+          "date": "2023-04",
+          "portfolio": 71.85,
+          "market": 73
+        },
+        {
+          "date": "2023-05",
+          "portfolio": 71.09,
+          "market": 73.34
+        },
+        {
+          "date": "2023-06",
+          "portfolio": 77.37,
+          "market": 78.09
+        },
+        {
+          "date": "2023-07",
+          "portfolio": 79.15,
+          "market": 80.65
+        },
+        {
+          "date": "2023-08",
+          "portfolio": 80.11,
+          "market": 79.34
+        },
+        {
+          "date": "2023-09",
+          "portfolio": 76.34,
+          "market": 75.58
+        },
+        {
+          "date": "2023-10",
+          "portfolio": 77.07,
+          "market": 73.94
+        },
+        {
+          "date": "2023-11",
+          "portfolio": 82.83,
+          "market": 80.69
+        },
+        {
+          "date": "2023-12",
+          "portfolio": 88.83,
+          "market": 84.37
+        },
+        {
+          "date": "2024-01",
+          "portfolio": 87.7,
+          "market": 85.72
+        },
+        {
+          "date": "2024-02",
+          "portfolio": 94.4,
+          "market": 90.19
+        },
+        {
+          "date": "2024-03",
+          "portfolio": 97.31,
+          "market": 93.14
+        },
+        {
+          "date": "2024-04",
+          "portfolio": 94.14,
+          "market": 89.38
+        },
+        {
+          "date": "2024-05",
+          "portfolio": 97.34,
+          "market": 93.91
+        },
+        {
+          "date": "2024-06",
+          "portfolio": 96.98,
+          "market": 97.22
+        },
+        {
+          "date": "2024-07",
+          "portfolio": 97.83,
+          "market": 98.4
+        },
+        {
+          "date": "2024-08",
+          "portfolio": 101.07,
+          "market": 100.69
+        },
+        {
+          "date": "2024-09",
+          "portfolio": 102.77,
+          "market": 102.81
+        },
+        {
+          "date": "2024-10",
+          "portfolio": 99.44,
+          "market": 101.89
+        },
+        {
+          "date": "2024-11",
+          "portfolio": 106.48,
+          "market": 107.97
+        },
+        {
+          "date": "2024-12",
+          "portfolio": 99.86,
+          "market": 105.37
+        },
+        {
+          "date": "2025-01",
+          "portfolio": 105.99,
+          "market": 108.2
+        },
+        {
+          "date": "2025-02",
+          "portfolio": 104.24,
+          "market": 106.83
+        },
+        {
+          "date": "2025-03",
+          "portfolio": 101.43,
+          "market": 100.87
+        },
+        {
+          "date": "2025-04",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2025-05",
+          "portfolio": 103.44,
+          "market": 106.28
+        },
+        {
+          "date": "2025-06",
+          "portfolio": 107.49,
+          "market": 111.75
+        },
+        {
+          "date": "2025-07",
+          "portfolio": 108.25,
+          "market": 114.32
+        },
+        {
+          "date": "2025-08",
+          "portfolio": 107.65,
+          "market": 116.67
+        },
+        {
+          "date": "2025-09",
+          "portfolio": 108.63,
+          "market": 120.82
+        },
+        {
+          "date": "2025-10",
+          "portfolio": 106.47,
+          "market": 123.7
+        },
+        {
+          "date": "2025-11",
+          "portfolio": 107.93,
+          "market": 123.94
+        },
+        {
+          "date": "2025-12",
+          "portfolio": 106.33,
+          "market": 124.04
+        },
+        {
+          "date": "2026-01",
+          "portfolio": 110.98,
+          "market": 125.87
+        },
+        {
+          "date": "2026-02",
+          "portfolio": 114.97,
+          "market": 124.78
+        },
+        {
+          "date": "2026-03",
+          "portfolio": 110.99,
+          "market": 122.02
+        }
+      ],
+      "numPortfolios": 10000,
+      "trainPeriodStart": "2021-05",
+      "trainPeriodEnd": "2025-03",
+      "testPeriodStart": "2025-04",
+      "testPeriodEnd": "2026-03",
+      "efficientFrontier": [
+        {
+          "volatility": 18.13,
+          "expectedReturn": 9.93,
+          "sharpe": 0.3731,
+          "backtestReturn": 6.9
+        },
+        {
+          "volatility": 18.71,
+          "expectedReturn": 10.59,
+          "sharpe": 0.3968,
+          "backtestReturn": 7.94
+        },
+        {
+          "volatility": 19.11,
+          "expectedReturn": 11.67,
+          "sharpe": 0.445,
+          "backtestReturn": 9.42
+        },
+        {
+          "volatility": 19.48,
+          "expectedReturn": 11.74,
+          "sharpe": 0.4398,
+          "backtestReturn": 6.35
+        },
+        {
+          "volatility": 20.32,
+          "expectedReturn": 11.9,
+          "sharpe": 0.4299,
+          "backtestReturn": 16.24
+        },
+        {
+          "volatility": 21.96,
+          "expectedReturn": 11.93,
+          "sharpe": 0.3991,
+          "backtestReturn": 15.27
+        },
+        {
+          "volatility": 22.02,
+          "expectedReturn": 11.93,
+          "sharpe": 0.3981,
+          "backtestReturn": 19.32
+        }
+      ],
+      "factor_tests": {
+        "AOS": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.012672,
+              "std_err": 0.008162,
+              "t_stat": -1.5525,
+              "p_value": 0.128228,
+              "ci_lower": -0.029157,
+              "ci_upper": 0.003812
+            },
+            "Mkt-RF": {
+              "beta": 1.372534,
+              "std_err": 0.168241,
+              "t_stat": 8.1581,
+              "p_value": 0,
+              "ci_lower": 1.032763,
+              "ci_upper": 1.712304
+            },
+            "SMB": {
+              "beta": 0.451629,
+              "std_err": 0.303606,
+              "t_stat": 1.4875,
+              "p_value": 0.144521,
+              "ci_lower": -0.161516,
+              "ci_upper": 1.064774
+            },
+            "HML": {
+              "beta": 0.158493,
+              "std_err": 0.29597,
+              "t_stat": 0.5355,
+              "p_value": 0.595193,
+              "ci_lower": -0.439229,
+              "ci_upper": 0.756216
+            },
+            "RMW": {
+              "beta": 1.420873,
+              "std_err": 0.330469,
+              "t_stat": 4.2996,
+              "p_value": 0.000103,
+              "ci_lower": 0.753478,
+              "ci_upper": 2.088269
+            },
+            "CMA": {
+              "beta": -0.331761,
+              "std_err": 0.405311,
+              "t_stat": -0.8185,
+              "p_value": 0.417785,
+              "ci_lower": -1.150304,
+              "ci_upper": 0.486782
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.70315,
+            "adj_r_squared": 0.666949,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 19.4234,
+            "f_pvalue": 0
+          }
+        },
+        "AMD": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.003225,
+              "std_err": 0.019776,
+              "t_stat": 0.1631,
+              "p_value": 0.871256,
+              "ci_lower": -0.036714,
+              "ci_upper": 0.043164
+            },
+            "Mkt-RF": {
+              "beta": 1.696224,
+              "std_err": 0.407623,
+              "t_stat": 4.1613,
+              "p_value": 0.000158,
+              "ci_lower": 0.873013,
+              "ci_upper": 2.519436
+            },
+            "SMB": {
+              "beta": -0.079713,
+              "std_err": 0.735591,
+              "t_stat": -0.1084,
+              "p_value": 0.914235,
+              "ci_lower": -1.565268,
+              "ci_upper": 1.405843
+            },
+            "HML": {
+              "beta": -0.677636,
+              "std_err": 0.717088,
+              "t_stat": -0.945,
+              "p_value": 0.350204,
+              "ci_lower": -2.125825,
+              "ci_upper": 0.770553
+            },
+            "RMW": {
+              "beta": 0.817751,
+              "std_err": 0.800675,
+              "t_stat": 1.0213,
+              "p_value": 0.313088,
+              "ci_lower": -0.799245,
+              "ci_upper": 2.434746
+            },
+            "CMA": {
+              "beta": -0.465498,
+              "std_err": 0.982006,
+              "t_stat": -0.474,
+              "p_value": 0.637995,
+              "ci_lower": -2.4487,
+              "ci_upper": 1.517704
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.412502,
+            "adj_r_squared": 0.340856,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 5.7575,
+            "f_pvalue": 0.00041
+          }
+        },
+        "BLK": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.000773,
+              "std_err": 0.007164,
+              "t_stat": -0.1079,
+              "p_value": 0.914608,
+              "ci_lower": -0.015241,
+              "ci_upper": 0.013695
+            },
+            "Mkt-RF": {
+              "beta": 1.471512,
+              "std_err": 0.147661,
+              "t_stat": 9.9655,
+              "p_value": 0,
+              "ci_lower": 1.173305,
+              "ci_upper": 1.769719
+            },
+            "SMB": {
+              "beta": 0.24546,
+              "std_err": 0.266466,
+              "t_stat": 0.9212,
+              "p_value": 0.362352,
+              "ci_lower": -0.292679,
+              "ci_upper": 0.7836
+            },
+            "HML": {
+              "beta": 0.265057,
+              "std_err": 0.259764,
+              "t_stat": 1.0204,
+              "p_value": 0.313532,
+              "ci_lower": -0.259546,
+              "ci_upper": 0.789661
+            },
+            "RMW": {
+              "beta": -0.027434,
+              "std_err": 0.290043,
+              "t_stat": -0.0946,
+              "p_value": 0.925103,
+              "ci_lower": -0.613188,
+              "ci_upper": 0.558319
+            },
+            "CMA": {
+              "beta": 0.050536,
+              "std_err": 0.35573,
+              "t_stat": 0.1421,
+              "p_value": 0.887726,
+              "ci_lower": -0.667875,
+              "ci_upper": 0.768948
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.740452,
+            "adj_r_squared": 0.7088,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 23.3934,
+            "f_pvalue": 0
+          }
+        },
+        "CDW": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.009723,
+              "std_err": 0.009824,
+              "t_stat": -0.9897,
+              "p_value": 0.328139,
+              "ci_lower": -0.029564,
+              "ci_upper": 0.010118
+            },
+            "Mkt-RF": {
+              "beta": 0.982766,
+              "std_err": 0.202497,
+              "t_stat": 4.8532,
+              "p_value": 1.8e-05,
+              "ci_lower": 0.573815,
+              "ci_upper": 1.391717
+            },
+            "SMB": {
+              "beta": -0.072135,
+              "std_err": 0.365424,
+              "t_stat": -0.1974,
+              "p_value": 0.844489,
+              "ci_lower": -0.810123,
+              "ci_upper": 0.665853
+            },
+            "HML": {
+              "beta": 0.174581,
+              "std_err": 0.356232,
+              "t_stat": 0.4901,
+              "p_value": 0.626692,
+              "ci_lower": -0.544844,
+              "ci_upper": 0.894006
+            },
+            "RMW": {
+              "beta": 0.472207,
+              "std_err": 0.397756,
+              "t_stat": 1.1872,
+              "p_value": 0.24199,
+              "ci_lower": -0.331077,
+              "ci_upper": 1.275491
+            },
+            "CMA": {
+              "beta": -0.574614,
+              "std_err": 0.487837,
+              "t_stat": -1.1779,
+              "p_value": 0.245635,
+              "ci_lower": -1.559821,
+              "ci_upper": 0.410592
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.43636,
+            "adj_r_squared": 0.367623,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 6.3483,
+            "f_pvalue": 0.000189
+          }
+        },
+        "COIN": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.038082,
+              "std_err": 0.024128,
+              "t_stat": 1.5783,
+              "p_value": 0.122171,
+              "ci_lower": -0.010645,
+              "ci_upper": 0.086809
+            },
+            "Mkt-RF": {
+              "beta": 3.122631,
+              "std_err": 0.497311,
+              "t_stat": 6.279,
+              "p_value": 0,
+              "ci_lower": 2.11829,
+              "ci_upper": 4.126972
+            },
+            "SMB": {
+              "beta": 1.061255,
+              "std_err": 0.897442,
+              "t_stat": 1.1825,
+              "p_value": 0.243807,
+              "ci_lower": -0.751166,
+              "ci_upper": 2.873675
+            },
+            "HML": {
+              "beta": 0.826255,
+              "std_err": 0.874868,
+              "t_stat": 0.9444,
+              "p_value": 0.350481,
+              "ci_lower": -0.940577,
+              "ci_upper": 2.593086
+            },
+            "RMW": {
+              "beta": -3.642329,
+              "std_err": 0.976846,
+              "t_stat": -3.7287,
+              "p_value": 0.000583,
+              "ci_lower": -5.61511,
+              "ci_upper": -1.669549
+            },
+            "CMA": {
+              "beta": -2.862903,
+              "std_err": 1.198076,
+              "t_stat": -2.3896,
+              "p_value": 0.021549,
+              "ci_lower": -5.282466,
+              "ci_upper": -0.44334
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.724217,
+            "adj_r_squared": 0.690584,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 21.5335,
+            "f_pvalue": 0
+          }
+        },
+        "COST": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.017033,
+              "std_err": 0.007674,
+              "t_stat": 2.2195,
+              "p_value": 0.032044,
+              "ci_lower": 0.001534,
+              "ci_upper": 0.032531
+            },
+            "Mkt-RF": {
+              "beta": 1.016276,
+              "std_err": 0.158178,
+              "t_stat": 6.4249,
+              "p_value": 0,
+              "ci_lower": 0.69683,
+              "ci_upper": 1.335723
+            },
+            "SMB": {
+              "beta": 0.181302,
+              "std_err": 0.285445,
+              "t_stat": 0.6352,
+              "p_value": 0.528856,
+              "ci_lower": -0.395166,
+              "ci_upper": 0.75777
+            },
+            "HML": {
+              "beta": -0.353532,
+              "std_err": 0.278265,
+              "t_stat": -1.2705,
+              "p_value": 0.211074,
+              "ci_lower": -0.9155,
+              "ci_upper": 0.208436
+            },
+            "RMW": {
+              "beta": 0.306751,
+              "std_err": 0.310701,
+              "t_stat": 0.9873,
+              "p_value": 0.329293,
+              "ci_lower": -0.320723,
+              "ci_upper": 0.934224
+            },
+            "CMA": {
+              "beta": -0.05916,
+              "std_err": 0.381067,
+              "t_stat": -0.1552,
+              "p_value": 0.877388,
+              "ci_lower": -0.828739,
+              "ci_upper": 0.71042
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.59208,
+            "adj_r_squared": 0.542334,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 11.902,
+            "f_pvalue": 0
+          }
+        },
+        "DOV": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.00511,
+              "std_err": 0.006137,
+              "t_stat": -0.8326,
+              "p_value": 0.409889,
+              "ci_lower": -0.017505,
+              "ci_upper": 0.007285
+            },
+            "Mkt-RF": {
+              "beta": 1.309185,
+              "std_err": 0.126503,
+              "t_stat": 10.349,
+              "p_value": 0,
+              "ci_lower": 1.053707,
+              "ci_upper": 1.564664
+            },
+            "SMB": {
+              "beta": 0.073396,
+              "std_err": 0.228286,
+              "t_stat": 0.3215,
+              "p_value": 0.749458,
+              "ci_lower": -0.387637,
+              "ci_upper": 0.534429
+            },
+            "HML": {
+              "beta": 0.21545,
+              "std_err": 0.222544,
+              "t_stat": 0.9681,
+              "p_value": 0.338659,
+              "ci_lower": -0.233987,
+              "ci_upper": 0.664886
+            },
+            "RMW": {
+              "beta": 0.396357,
+              "std_err": 0.248484,
+              "t_stat": 1.5951,
+              "p_value": 0.118371,
+              "ci_lower": -0.105467,
+              "ci_upper": 0.898182
+            },
+            "CMA": {
+              "beta": -0.151286,
+              "std_err": 0.30476,
+              "t_stat": -0.4964,
+              "p_value": 0.622255,
+              "ci_lower": -0.766761,
+              "ci_upper": 0.464189
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.74946,
+            "adj_r_squared": 0.718906,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 24.5293,
+            "f_pvalue": 0
+          }
+        },
+        "EQT": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.028846,
+              "std_err": 0.020015,
+              "t_stat": 1.4412,
+              "p_value": 0.157118,
+              "ci_lower": -0.011575,
+              "ci_upper": 0.069267
+            },
+            "Mkt-RF": {
+              "beta": 0.861542,
+              "std_err": 0.412544,
+              "t_stat": 2.0884,
+              "p_value": 0.043017,
+              "ci_lower": 0.028393,
+              "ci_upper": 1.694692
+            },
+            "SMB": {
+              "beta": 0.16514,
+              "std_err": 0.744471,
+              "t_stat": 0.2218,
+              "p_value": 0.825554,
+              "ci_lower": -1.33835,
+              "ci_upper": 1.66863
+            },
+            "HML": {
+              "beta": -0.064219,
+              "std_err": 0.725745,
+              "t_stat": -0.0885,
+              "p_value": 0.929921,
+              "ci_lower": -1.529891,
+              "ci_upper": 1.401453
+            },
+            "RMW": {
+              "beta": -0.66279,
+              "std_err": 0.810341,
+              "t_stat": -0.8179,
+              "p_value": 0.418133,
+              "ci_lower": -2.299307,
+              "ci_upper": 0.973726
+            },
+            "CMA": {
+              "beta": 1.064716,
+              "std_err": 0.993861,
+              "t_stat": 1.0713,
+              "p_value": 0.290304,
+              "ci_lower": -0.942427,
+              "ci_upper": 3.07186
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.142312,
+            "adj_r_squared": 0.037716,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 1.3606,
+            "f_pvalue": 0.259
+          }
+        },
+        "GDDY": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.019842,
+              "std_err": 0.012534,
+              "t_stat": 1.5831,
+              "p_value": 0.12109,
+              "ci_lower": -0.005471,
+              "ci_upper": 0.045154
+            },
+            "Mkt-RF": {
+              "beta": 1.026046,
+              "std_err": 0.258338,
+              "t_stat": 3.9717,
+              "p_value": 0.000282,
+              "ci_lower": 0.504321,
+              "ci_upper": 1.54777
+            },
+            "SMB": {
+              "beta": 0.485586,
+              "std_err": 0.466193,
+              "t_stat": 1.0416,
+              "p_value": 0.303701,
+              "ci_lower": -0.45591,
+              "ci_upper": 1.427083
+            },
+            "HML": {
+              "beta": -0.315874,
+              "std_err": 0.454467,
+              "t_stat": -0.695,
+              "p_value": 0.490949,
+              "ci_lower": -1.233689,
+              "ci_upper": 0.60194
+            },
+            "RMW": {
+              "beta": -0.490257,
+              "std_err": 0.507441,
+              "t_stat": -0.9661,
+              "p_value": 0.339641,
+              "ci_lower": -1.515056,
+              "ci_upper": 0.534541
+            },
+            "CMA": {
+              "beta": 0.530088,
+              "std_err": 0.622363,
+              "t_stat": 0.8517,
+              "p_value": 0.39931,
+              "ci_lower": -0.726801,
+              "ci_upper": 1.786976
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.363506,
+            "adj_r_squared": 0.285884,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 4.6831,
+            "f_pvalue": 0.00179
+          }
+        },
+        "LH": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.008568,
+              "std_err": 0.00622,
+              "t_stat": -1.3775,
+              "p_value": 0.17584,
+              "ci_lower": -0.021129,
+              "ci_upper": 0.003994
+            },
+            "Mkt-RF": {
+              "beta": 1.015636,
+              "std_err": 0.1282,
+              "t_stat": 7.9223,
+              "p_value": 0,
+              "ci_lower": 0.756731,
+              "ci_upper": 1.274541
+            },
+            "SMB": {
+              "beta": 0.321649,
+              "std_err": 0.231348,
+              "t_stat": 1.3903,
+              "p_value": 0.171932,
+              "ci_lower": -0.145568,
+              "ci_upper": 0.788866
+            },
+            "HML": {
+              "beta": 0.253622,
+              "std_err": 0.225529,
+              "t_stat": 1.1246,
+              "p_value": 0.267314,
+              "ci_lower": -0.201843,
+              "ci_upper": 0.709087
+            },
+            "RMW": {
+              "beta": 0.727372,
+              "std_err": 0.251818,
+              "t_stat": 2.8885,
+              "p_value": 0.006157,
+              "ci_lower": 0.218816,
+              "ci_upper": 1.235928
+            },
+            "CMA": {
+              "beta": -0.241042,
+              "std_err": 0.308848,
+              "t_stat": -0.7805,
+              "p_value": 0.439605,
+              "ci_lower": -0.864773,
+              "ci_upper": 0.382688
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.672424,
+            "adj_r_squared": 0.632476,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 16.8324,
+            "f_pvalue": 0
+          }
+        },
+        "NWSA": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.003686,
+              "std_err": 0.009055,
+              "t_stat": -0.407,
+              "p_value": 0.686092,
+              "ci_lower": -0.021972,
+              "ci_upper": 0.014601
+            },
+            "Mkt-RF": {
+              "beta": 0.964644,
+              "std_err": 0.186636,
+              "t_stat": 5.1686,
+              "p_value": 7e-06,
+              "ci_lower": 0.587725,
+              "ci_upper": 1.341564
+            },
+            "SMB": {
+              "beta": 0.067448,
+              "std_err": 0.336801,
+              "t_stat": 0.2003,
+              "p_value": 0.842266,
+              "ci_lower": -0.612735,
+              "ci_upper": 0.747632
+            },
+            "HML": {
+              "beta": 0.246521,
+              "std_err": 0.328329,
+              "t_stat": 0.7508,
+              "p_value": 0.457039,
+              "ci_lower": -0.416553,
+              "ci_upper": 0.909596
+            },
+            "RMW": {
+              "beta": -0.023503,
+              "std_err": 0.366601,
+              "t_stat": -0.0641,
+              "p_value": 0.949193,
+              "ci_lower": -0.763868,
+              "ci_upper": 0.716862
+            },
+            "CMA": {
+              "beta": -0.104813,
+              "std_err": 0.449626,
+              "t_stat": -0.2331,
+              "p_value": 0.816835,
+              "ci_lower": -1.012851,
+              "ci_upper": 0.803225
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.430961,
+            "adj_r_squared": 0.361566,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 6.2103,
+            "f_pvalue": 0.000226
+          }
+        },
+        "ON": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.005922,
+              "std_err": 0.016508,
+              "t_stat": 0.3587,
+              "p_value": 0.721626,
+              "ci_lower": -0.027417,
+              "ci_upper": 0.039262
+            },
+            "Mkt-RF": {
+              "beta": 1.361565,
+              "std_err": 0.340265,
+              "t_stat": 4.0015,
+              "p_value": 0.000257,
+              "ci_lower": 0.674387,
+              "ci_upper": 2.048744
+            },
+            "SMB": {
+              "beta": 1.883727,
+              "std_err": 0.614037,
+              "t_stat": 3.0678,
+              "p_value": 0.003812,
+              "ci_lower": 0.643653,
+              "ci_upper": 3.123801
+            },
+            "HML": {
+              "beta": -0.301825,
+              "std_err": 0.598592,
+              "t_stat": -0.5042,
+              "p_value": 0.616802,
+              "ci_lower": -1.510707,
+              "ci_upper": 0.907057
+            },
+            "RMW": {
+              "beta": 1.179272,
+              "std_err": 0.668367,
+              "t_stat": 1.7644,
+              "p_value": 0.085113,
+              "ci_lower": -0.170522,
+              "ci_upper": 2.529065
+            },
+            "CMA": {
+              "beta": -0.05604,
+              "std_err": 0.819734,
+              "t_stat": -0.0684,
+              "p_value": 0.945829,
+              "ci_lower": -1.711526,
+              "ci_upper": 1.599446
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.471708,
+            "adj_r_squared": 0.407282,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 7.3217,
+            "f_pvalue": 5.6e-05
+          }
+        },
+        "PPL": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.001321,
+              "std_err": 0.006925,
+              "t_stat": -0.1908,
+              "p_value": 0.849633,
+              "ci_lower": -0.015307,
+              "ci_upper": 0.012664
+            },
+            "Mkt-RF": {
+              "beta": 0.853149,
+              "std_err": 0.142739,
+              "t_stat": 5.977,
+              "p_value": 0,
+              "ci_lower": 0.564881,
+              "ci_upper": 1.141417
+            },
+            "SMB": {
+              "beta": -0.070744,
+              "std_err": 0.257586,
+              "t_stat": -0.2746,
+              "p_value": 0.784969,
+              "ci_lower": -0.590949,
+              "ci_upper": 0.44946
+            },
+            "HML": {
+              "beta": 0.21372,
+              "std_err": 0.251107,
+              "t_stat": 0.8511,
+              "p_value": 0.39965,
+              "ci_lower": -0.2934,
+              "ci_upper": 0.72084
+            },
+            "RMW": {
+              "beta": 0.247446,
+              "std_err": 0.280376,
+              "t_stat": 0.8826,
+              "p_value": 0.382625,
+              "ci_lower": -0.318785,
+              "ci_upper": 0.813678
+            },
+            "CMA": {
+              "beta": 0.47834,
+              "std_err": 0.343874,
+              "t_stat": 1.391,
+              "p_value": 0.17172,
+              "ci_lower": -0.216129,
+              "ci_upper": 1.172808
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.508951,
+            "adj_r_squared": 0.449067,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 8.499,
+            "f_pvalue": 1.4e-05
+          }
+        },
+        "SWKS": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.017243,
+              "std_err": 0.011308,
+              "t_stat": -1.5249,
+              "p_value": 0.134964,
+              "ci_lower": -0.04008,
+              "ci_upper": 0.005593
+            },
+            "Mkt-RF": {
+              "beta": 1.170668,
+              "std_err": 0.233075,
+              "t_stat": 5.0227,
+              "p_value": 1e-05,
+              "ci_lower": 0.699963,
+              "ci_upper": 1.641373
+            },
+            "SMB": {
+              "beta": 0.611553,
+              "std_err": 0.420605,
+              "t_stat": 1.454,
+              "p_value": 0.153563,
+              "ci_lower": -0.237876,
+              "ci_upper": 1.460981
+            },
+            "HML": {
+              "beta": -0.300737,
+              "std_err": 0.410025,
+              "t_stat": -0.7335,
+              "p_value": 0.46745,
+              "ci_lower": -1.1288,
+              "ci_upper": 0.527325
+            },
+            "RMW": {
+              "beta": -0.07383,
+              "std_err": 0.457819,
+              "t_stat": -0.1613,
+              "p_value": 0.872677,
+              "ci_lower": -0.998414,
+              "ci_upper": 0.850754
+            },
+            "CMA": {
+              "beta": -0.049346,
+              "std_err": 0.561503,
+              "t_stat": -0.0879,
+              "p_value": 0.930398,
+              "ci_lower": -1.183325,
+              "ci_upper": 1.084632
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.4971,
+            "adj_r_squared": 0.435771,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 8.1054,
+            "f_pvalue": 2.2e-05
+          }
+        },
+        "TRGP": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.035426,
+              "std_err": 0.01019,
+              "t_stat": 3.4764,
+              "p_value": 0.001216,
+              "ci_lower": 0.014846,
+              "ci_upper": 0.056006
+            },
+            "Mkt-RF": {
+              "beta": 1.179734,
+              "std_err": 0.210041,
+              "t_stat": 5.6167,
+              "p_value": 2e-06,
+              "ci_lower": 0.755548,
+              "ci_upper": 1.60392
+            },
+            "SMB": {
+              "beta": -0.461995,
+              "std_err": 0.379037,
+              "t_stat": -1.2189,
+              "p_value": 0.229861,
+              "ci_lower": -1.227475,
+              "ci_upper": 0.303485
+            },
+            "HML": {
+              "beta": 0.548172,
+              "std_err": 0.369503,
+              "t_stat": 1.4835,
+              "p_value": 0.145579,
+              "ci_lower": -0.198054,
+              "ci_upper": 1.294397
+            },
+            "RMW": {
+              "beta": -0.985116,
+              "std_err": 0.412573,
+              "t_stat": -2.3877,
+              "p_value": 0.021644,
+              "ci_lower": -1.818325,
+              "ci_upper": -0.151908
+            },
+            "CMA": {
+              "beta": 0.533114,
+              "std_err": 0.50601,
+              "t_stat": 1.0536,
+              "p_value": 0.298252,
+              "ci_lower": -0.488794,
+              "ci_upper": 1.555022
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.503887,
+            "adj_r_squared": 0.443386,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 8.3285,
+            "f_pvalue": 1.7e-05
+          }
+        },
+        "UNP": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.002285,
+              "std_err": 0.008495,
+              "t_stat": -0.269,
+              "p_value": 0.789285,
+              "ci_lower": -0.019442,
+              "ci_upper": 0.014872
+            },
+            "Mkt-RF": {
+              "beta": 0.993857,
+              "std_err": 0.175105,
+              "t_stat": 5.6758,
+              "p_value": 1e-06,
+              "ci_lower": 0.640225,
+              "ci_upper": 1.347488
+            },
+            "SMB": {
+              "beta": 0.101947,
+              "std_err": 0.315992,
+              "t_stat": 0.3226,
+              "p_value": 0.748619,
+              "ci_lower": -0.536212,
+              "ci_upper": 0.740105
+            },
+            "HML": {
+              "beta": 0.225986,
+              "std_err": 0.308044,
+              "t_stat": 0.7336,
+              "p_value": 0.467356,
+              "ci_lower": -0.396121,
+              "ci_upper": 0.848093
+            },
+            "RMW": {
+              "beta": -0.003819,
+              "std_err": 0.34395,
+              "t_stat": -0.0111,
+              "p_value": 0.991195,
+              "ci_lower": -0.698441,
+              "ci_upper": 0.690803
+            },
+            "CMA": {
+              "beta": -0.071284,
+              "std_err": 0.421846,
+              "t_stat": -0.169,
+              "p_value": 0.866642,
+              "ci_lower": -0.92322,
+              "ci_upper": 0.780651
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.478107,
+            "adj_r_squared": 0.414462,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 7.512,
+            "f_pvalue": 4.4e-05
+          }
+        },
+        "WM": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.006287,
+              "std_err": 0.007116,
+              "t_stat": 0.8835,
+              "p_value": 0.382096,
+              "ci_lower": -0.008083,
+              "ci_upper": 0.020657
+            },
+            "Mkt-RF": {
+              "beta": 0.634467,
+              "std_err": 0.146664,
+              "t_stat": 4.326,
+              "p_value": 9.5e-05,
+              "ci_lower": 0.338272,
+              "ci_upper": 0.930661
+            },
+            "SMB": {
+              "beta": -0.504588,
+              "std_err": 0.264668,
+              "t_stat": -1.9065,
+              "p_value": 0.063612,
+              "ci_lower": -1.039097,
+              "ci_upper": 0.02992
+            },
+            "HML": {
+              "beta": -0.137916,
+              "std_err": 0.258011,
+              "t_stat": -0.5345,
+              "p_value": 0.595859,
+              "ci_lower": -0.65898,
+              "ci_upper": 0.383148
+            },
+            "RMW": {
+              "beta": -0.118779,
+              "std_err": 0.288086,
+              "t_stat": -0.4123,
+              "p_value": 0.682263,
+              "ci_lower": -0.700581,
+              "ci_upper": 0.463022
+            },
+            "CMA": {
+              "beta": 0.1289,
+              "std_err": 0.35333,
+              "t_stat": 0.3648,
+              "p_value": 0.717125,
+              "ci_lower": -0.584664,
+              "ci_upper": 0.842464
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.361922,
+            "adj_r_squared": 0.284108,
+            "n_obs": 47,
+            "df_residual": 41,
+            "f_stat": 4.6511,
+            "f_pvalue": 0.001873
+          }
+        }
+      }
+    },
+    "llmResult": null,
+    "classicResult": null,
+    "comparisonData": {
+      "monteCarlo": {
+        "weights": {
+          "AOS": 0.12461657186069312,
+          "AMD": 0.049867514552988455,
+          "BLK": 0.015742557486287913,
+          "CDW": 0.10634595750376612,
+          "COIN": 0.00019852179159661292,
+          "COST": 0.04792760310658703,
+          "DOV": 0.08264913169745151,
+          "EQT": 0.09263638956734412,
+          "GDDY": 0.011236928120514118,
+          "LH": 0.062079254455954594,
+          "NWSA": 0.13385358731646688,
+          "ON": 0.006580540255327691,
+          "PPL": 0.08331558100854047,
+          "SWKS": 0.010065467058563026,
+          "TRGP": 0.0726533068603319,
+          "UNP": 0.03297535517261121,
+          "WM": 0.0672557321849753
+        },
+        "sharpe": 0.445,
+        "expectedReturn": 11.67,
+        "volatility": 19.11,
+        "maxDrawdown": 3.46,
+        "comparisonData": [
+          {
+            "date": "2021-05",
+            "portfolio": 62.93,
+            "market": 71.56
+          },
+          {
+            "date": "2021-06",
+            "portfolio": 64.72,
+            "market": 73.16
+          },
+          {
+            "date": "2021-07",
+            "portfolio": 65.08,
+            "market": 74.95
+          },
+          {
+            "date": "2021-08",
+            "portfolio": 66.55,
+            "market": 77.18
+          },
+          {
+            "date": "2021-09",
+            "portfolio": 64.39,
+            "market": 73.58
+          },
+          {
+            "date": "2021-10",
+            "portfolio": 68.84,
+            "market": 78.74
+          },
+          {
+            "date": "2021-11",
+            "portfolio": 69.74,
+            "market": 78.11
+          },
+          {
+            "date": "2021-12",
+            "portfolio": 74.33,
+            "market": 81.72
+          },
+          {
+            "date": "2022-01",
+            "portfolio": 70.13,
+            "market": 77.41
+          },
+          {
+            "date": "2022-02",
+            "portfolio": 68.86,
+            "market": 75.13
+          },
+          {
+            "date": "2022-03",
+            "portfolio": 73.56,
+            "market": 77.95
+          },
+          {
+            "date": "2022-04",
+            "portfolio": 69.01,
+            "market": 71.11
+          },
+          {
+            "date": "2022-05",
+            "portfolio": 70.23,
+            "market": 71.27
+          },
+          {
+            "date": "2022-06",
+            "portfolio": 62.58,
+            "market": 65.39
+          },
+          {
+            "date": "2022-07",
+            "portfolio": 71.41,
+            "market": 71.42
+          },
+          {
+            "date": "2022-08",
+            "portfolio": 69.04,
+            "market": 68.5
+          },
+          {
+            "date": "2022-09",
+            "portfolio": 61.19,
+            "market": 62.17
+          },
+          {
+            "date": "2022-10",
+            "portfolio": 66.05,
+            "market": 67.22
+          },
+          {
+            "date": "2022-11",
+            "portfolio": 72.78,
+            "market": 70.96
+          },
+          {
+            "date": "2022-12",
+            "portfolio": 67.84,
+            "market": 66.87
+          },
+          {
+            "date": "2023-01",
+            "portfolio": 73.35,
+            "market": 71.07
+          },
+          {
+            "date": "2023-02",
+            "portfolio": 70.87,
+            "market": 69.29
+          },
+          {
+            "date": "2023-03",
+            "portfolio": 72.38,
+            "market": 71.86
+          },
+          {
+            "date": "2023-04",
+            "portfolio": 71.85,
+            "market": 73
+          },
+          {
+            "date": "2023-05",
+            "portfolio": 71.09,
+            "market": 73.34
+          },
+          {
+            "date": "2023-06",
+            "portfolio": 77.37,
+            "market": 78.09
+          },
+          {
+            "date": "2023-07",
+            "portfolio": 79.15,
+            "market": 80.65
+          },
+          {
+            "date": "2023-08",
+            "portfolio": 80.11,
+            "market": 79.34
+          },
+          {
+            "date": "2023-09",
+            "portfolio": 76.34,
+            "market": 75.58
+          },
+          {
+            "date": "2023-10",
+            "portfolio": 77.07,
+            "market": 73.94
+          },
+          {
+            "date": "2023-11",
+            "portfolio": 82.83,
+            "market": 80.69
+          },
+          {
+            "date": "2023-12",
+            "portfolio": 88.83,
+            "market": 84.37
+          },
+          {
+            "date": "2024-01",
+            "portfolio": 87.7,
+            "market": 85.72
+          },
+          {
+            "date": "2024-02",
+            "portfolio": 94.4,
+            "market": 90.19
+          },
+          {
+            "date": "2024-03",
+            "portfolio": 97.31,
+            "market": 93.14
+          },
+          {
+            "date": "2024-04",
+            "portfolio": 94.14,
+            "market": 89.38
+          },
+          {
+            "date": "2024-05",
+            "portfolio": 97.34,
+            "market": 93.91
+          },
+          {
+            "date": "2024-06",
+            "portfolio": 96.98,
+            "market": 97.22
+          },
+          {
+            "date": "2024-07",
+            "portfolio": 97.83,
+            "market": 98.4
+          },
+          {
+            "date": "2024-08",
+            "portfolio": 101.07,
+            "market": 100.69
+          },
+          {
+            "date": "2024-09",
+            "portfolio": 102.77,
+            "market": 102.81
+          },
+          {
+            "date": "2024-10",
+            "portfolio": 99.44,
+            "market": 101.89
+          },
+          {
+            "date": "2024-11",
+            "portfolio": 106.48,
+            "market": 107.97
+          },
+          {
+            "date": "2024-12",
+            "portfolio": 99.86,
+            "market": 105.37
+          },
+          {
+            "date": "2025-01",
+            "portfolio": 105.99,
+            "market": 108.2
+          },
+          {
+            "date": "2025-02",
+            "portfolio": 104.24,
+            "market": 106.83
+          },
+          {
+            "date": "2025-03",
+            "portfolio": 101.43,
+            "market": 100.87
+          },
+          {
+            "date": "2025-04",
+            "portfolio": 100,
+            "market": 100
+          },
+          {
+            "date": "2025-05",
+            "portfolio": 103.44,
+            "market": 106.28
+          },
+          {
+            "date": "2025-06",
+            "portfolio": 107.49,
+            "market": 111.75
+          },
+          {
+            "date": "2025-07",
+            "portfolio": 108.25,
+            "market": 114.32
+          },
+          {
+            "date": "2025-08",
+            "portfolio": 107.65,
+            "market": 116.67
+          },
+          {
+            "date": "2025-09",
+            "portfolio": 108.63,
+            "market": 120.82
+          },
+          {
+            "date": "2025-10",
+            "portfolio": 106.47,
+            "market": 123.7
+          },
+          {
+            "date": "2025-11",
+            "portfolio": 107.93,
+            "market": 123.94
+          },
+          {
+            "date": "2025-12",
+            "portfolio": 106.33,
+            "market": 124.04
+          },
+          {
+            "date": "2026-01",
+            "portfolio": 110.98,
+            "market": 125.87
+          },
+          {
+            "date": "2026-02",
+            "portfolio": 114.97,
+            "market": 124.78
+          },
+          {
+            "date": "2026-03",
+            "portfolio": 110.99,
+            "market": 122.02
+          }
+        ],
+        "numPortfolios": 10000,
+        "trainPeriodStart": "2021-05",
+        "trainPeriodEnd": "2025-03",
+        "testPeriodStart": "2025-04",
+        "testPeriodEnd": "2026-03",
+        "efficientFrontier": [
+          {
+            "volatility": 18.13,
+            "expectedReturn": 9.93,
+            "sharpe": 0.3731,
+            "backtestReturn": 6.9
+          },
+          {
+            "volatility": 18.71,
+            "expectedReturn": 10.59,
+            "sharpe": 0.3968,
+            "backtestReturn": 7.94
+          },
+          {
+            "volatility": 19.11,
+            "expectedReturn": 11.67,
+            "sharpe": 0.445,
+            "backtestReturn": 9.42
+          },
+          {
+            "volatility": 19.48,
+            "expectedReturn": 11.74,
+            "sharpe": 0.4398,
+            "backtestReturn": 6.35
+          },
+          {
+            "volatility": 20.32,
+            "expectedReturn": 11.9,
+            "sharpe": 0.4299,
+            "backtestReturn": 16.24
+          },
+          {
+            "volatility": 21.96,
+            "expectedReturn": 11.93,
+            "sharpe": 0.3991,
+            "backtestReturn": 15.27
+          },
+          {
+            "volatility": 22.02,
+            "expectedReturn": 11.93,
+            "sharpe": 0.3981,
+            "backtestReturn": 19.32
+          }
+        ],
+        "factor_tests": {
+          "AOS": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.012672,
+                "std_err": 0.008162,
+                "t_stat": -1.5525,
+                "p_value": 0.128228,
+                "ci_lower": -0.029157,
+                "ci_upper": 0.003812
+              },
+              "Mkt-RF": {
+                "beta": 1.372534,
+                "std_err": 0.168241,
+                "t_stat": 8.1581,
+                "p_value": 0,
+                "ci_lower": 1.032763,
+                "ci_upper": 1.712304
+              },
+              "SMB": {
+                "beta": 0.451629,
+                "std_err": 0.303606,
+                "t_stat": 1.4875,
+                "p_value": 0.144521,
+                "ci_lower": -0.161516,
+                "ci_upper": 1.064774
+              },
+              "HML": {
+                "beta": 0.158493,
+                "std_err": 0.29597,
+                "t_stat": 0.5355,
+                "p_value": 0.595193,
+                "ci_lower": -0.439229,
+                "ci_upper": 0.756216
+              },
+              "RMW": {
+                "beta": 1.420873,
+                "std_err": 0.330469,
+                "t_stat": 4.2996,
+                "p_value": 0.000103,
+                "ci_lower": 0.753478,
+                "ci_upper": 2.088269
+              },
+              "CMA": {
+                "beta": -0.331761,
+                "std_err": 0.405311,
+                "t_stat": -0.8185,
+                "p_value": 0.417785,
+                "ci_lower": -1.150304,
+                "ci_upper": 0.486782
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.70315,
+              "adj_r_squared": 0.666949,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 19.4234,
+              "f_pvalue": 0
+            }
+          },
+          "AMD": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.003225,
+                "std_err": 0.019776,
+                "t_stat": 0.1631,
+                "p_value": 0.871256,
+                "ci_lower": -0.036714,
+                "ci_upper": 0.043164
+              },
+              "Mkt-RF": {
+                "beta": 1.696224,
+                "std_err": 0.407623,
+                "t_stat": 4.1613,
+                "p_value": 0.000158,
+                "ci_lower": 0.873013,
+                "ci_upper": 2.519436
+              },
+              "SMB": {
+                "beta": -0.079713,
+                "std_err": 0.735591,
+                "t_stat": -0.1084,
+                "p_value": 0.914235,
+                "ci_lower": -1.565268,
+                "ci_upper": 1.405843
+              },
+              "HML": {
+                "beta": -0.677636,
+                "std_err": 0.717088,
+                "t_stat": -0.945,
+                "p_value": 0.350204,
+                "ci_lower": -2.125825,
+                "ci_upper": 0.770553
+              },
+              "RMW": {
+                "beta": 0.817751,
+                "std_err": 0.800675,
+                "t_stat": 1.0213,
+                "p_value": 0.313088,
+                "ci_lower": -0.799245,
+                "ci_upper": 2.434746
+              },
+              "CMA": {
+                "beta": -0.465498,
+                "std_err": 0.982006,
+                "t_stat": -0.474,
+                "p_value": 0.637995,
+                "ci_lower": -2.4487,
+                "ci_upper": 1.517704
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.412502,
+              "adj_r_squared": 0.340856,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 5.7575,
+              "f_pvalue": 0.00041
+            }
+          },
+          "BLK": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.000773,
+                "std_err": 0.007164,
+                "t_stat": -0.1079,
+                "p_value": 0.914608,
+                "ci_lower": -0.015241,
+                "ci_upper": 0.013695
+              },
+              "Mkt-RF": {
+                "beta": 1.471512,
+                "std_err": 0.147661,
+                "t_stat": 9.9655,
+                "p_value": 0,
+                "ci_lower": 1.173305,
+                "ci_upper": 1.769719
+              },
+              "SMB": {
+                "beta": 0.24546,
+                "std_err": 0.266466,
+                "t_stat": 0.9212,
+                "p_value": 0.362352,
+                "ci_lower": -0.292679,
+                "ci_upper": 0.7836
+              },
+              "HML": {
+                "beta": 0.265057,
+                "std_err": 0.259764,
+                "t_stat": 1.0204,
+                "p_value": 0.313532,
+                "ci_lower": -0.259546,
+                "ci_upper": 0.789661
+              },
+              "RMW": {
+                "beta": -0.027434,
+                "std_err": 0.290043,
+                "t_stat": -0.0946,
+                "p_value": 0.925103,
+                "ci_lower": -0.613188,
+                "ci_upper": 0.558319
+              },
+              "CMA": {
+                "beta": 0.050536,
+                "std_err": 0.35573,
+                "t_stat": 0.1421,
+                "p_value": 0.887726,
+                "ci_lower": -0.667875,
+                "ci_upper": 0.768948
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.740452,
+              "adj_r_squared": 0.7088,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 23.3934,
+              "f_pvalue": 0
+            }
+          },
+          "CDW": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.009723,
+                "std_err": 0.009824,
+                "t_stat": -0.9897,
+                "p_value": 0.328139,
+                "ci_lower": -0.029564,
+                "ci_upper": 0.010118
+              },
+              "Mkt-RF": {
+                "beta": 0.982766,
+                "std_err": 0.202497,
+                "t_stat": 4.8532,
+                "p_value": 1.8e-05,
+                "ci_lower": 0.573815,
+                "ci_upper": 1.391717
+              },
+              "SMB": {
+                "beta": -0.072135,
+                "std_err": 0.365424,
+                "t_stat": -0.1974,
+                "p_value": 0.844489,
+                "ci_lower": -0.810123,
+                "ci_upper": 0.665853
+              },
+              "HML": {
+                "beta": 0.174581,
+                "std_err": 0.356232,
+                "t_stat": 0.4901,
+                "p_value": 0.626692,
+                "ci_lower": -0.544844,
+                "ci_upper": 0.894006
+              },
+              "RMW": {
+                "beta": 0.472207,
+                "std_err": 0.397756,
+                "t_stat": 1.1872,
+                "p_value": 0.24199,
+                "ci_lower": -0.331077,
+                "ci_upper": 1.275491
+              },
+              "CMA": {
+                "beta": -0.574614,
+                "std_err": 0.487837,
+                "t_stat": -1.1779,
+                "p_value": 0.245635,
+                "ci_lower": -1.559821,
+                "ci_upper": 0.410592
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.43636,
+              "adj_r_squared": 0.367623,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 6.3483,
+              "f_pvalue": 0.000189
+            }
+          },
+          "COIN": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.038082,
+                "std_err": 0.024128,
+                "t_stat": 1.5783,
+                "p_value": 0.122171,
+                "ci_lower": -0.010645,
+                "ci_upper": 0.086809
+              },
+              "Mkt-RF": {
+                "beta": 3.122631,
+                "std_err": 0.497311,
+                "t_stat": 6.279,
+                "p_value": 0,
+                "ci_lower": 2.11829,
+                "ci_upper": 4.126972
+              },
+              "SMB": {
+                "beta": 1.061255,
+                "std_err": 0.897442,
+                "t_stat": 1.1825,
+                "p_value": 0.243807,
+                "ci_lower": -0.751166,
+                "ci_upper": 2.873675
+              },
+              "HML": {
+                "beta": 0.826255,
+                "std_err": 0.874868,
+                "t_stat": 0.9444,
+                "p_value": 0.350481,
+                "ci_lower": -0.940577,
+                "ci_upper": 2.593086
+              },
+              "RMW": {
+                "beta": -3.642329,
+                "std_err": 0.976846,
+                "t_stat": -3.7287,
+                "p_value": 0.000583,
+                "ci_lower": -5.61511,
+                "ci_upper": -1.669549
+              },
+              "CMA": {
+                "beta": -2.862903,
+                "std_err": 1.198076,
+                "t_stat": -2.3896,
+                "p_value": 0.021549,
+                "ci_lower": -5.282466,
+                "ci_upper": -0.44334
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.724217,
+              "adj_r_squared": 0.690584,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 21.5335,
+              "f_pvalue": 0
+            }
+          },
+          "COST": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.017033,
+                "std_err": 0.007674,
+                "t_stat": 2.2195,
+                "p_value": 0.032044,
+                "ci_lower": 0.001534,
+                "ci_upper": 0.032531
+              },
+              "Mkt-RF": {
+                "beta": 1.016276,
+                "std_err": 0.158178,
+                "t_stat": 6.4249,
+                "p_value": 0,
+                "ci_lower": 0.69683,
+                "ci_upper": 1.335723
+              },
+              "SMB": {
+                "beta": 0.181302,
+                "std_err": 0.285445,
+                "t_stat": 0.6352,
+                "p_value": 0.528856,
+                "ci_lower": -0.395166,
+                "ci_upper": 0.75777
+              },
+              "HML": {
+                "beta": -0.353532,
+                "std_err": 0.278265,
+                "t_stat": -1.2705,
+                "p_value": 0.211074,
+                "ci_lower": -0.9155,
+                "ci_upper": 0.208436
+              },
+              "RMW": {
+                "beta": 0.306751,
+                "std_err": 0.310701,
+                "t_stat": 0.9873,
+                "p_value": 0.329293,
+                "ci_lower": -0.320723,
+                "ci_upper": 0.934224
+              },
+              "CMA": {
+                "beta": -0.05916,
+                "std_err": 0.381067,
+                "t_stat": -0.1552,
+                "p_value": 0.877388,
+                "ci_lower": -0.828739,
+                "ci_upper": 0.71042
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.59208,
+              "adj_r_squared": 0.542334,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 11.902,
+              "f_pvalue": 0
+            }
+          },
+          "DOV": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.00511,
+                "std_err": 0.006137,
+                "t_stat": -0.8326,
+                "p_value": 0.409889,
+                "ci_lower": -0.017505,
+                "ci_upper": 0.007285
+              },
+              "Mkt-RF": {
+                "beta": 1.309185,
+                "std_err": 0.126503,
+                "t_stat": 10.349,
+                "p_value": 0,
+                "ci_lower": 1.053707,
+                "ci_upper": 1.564664
+              },
+              "SMB": {
+                "beta": 0.073396,
+                "std_err": 0.228286,
+                "t_stat": 0.3215,
+                "p_value": 0.749458,
+                "ci_lower": -0.387637,
+                "ci_upper": 0.534429
+              },
+              "HML": {
+                "beta": 0.21545,
+                "std_err": 0.222544,
+                "t_stat": 0.9681,
+                "p_value": 0.338659,
+                "ci_lower": -0.233987,
+                "ci_upper": 0.664886
+              },
+              "RMW": {
+                "beta": 0.396357,
+                "std_err": 0.248484,
+                "t_stat": 1.5951,
+                "p_value": 0.118371,
+                "ci_lower": -0.105467,
+                "ci_upper": 0.898182
+              },
+              "CMA": {
+                "beta": -0.151286,
+                "std_err": 0.30476,
+                "t_stat": -0.4964,
+                "p_value": 0.622255,
+                "ci_lower": -0.766761,
+                "ci_upper": 0.464189
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.74946,
+              "adj_r_squared": 0.718906,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 24.5293,
+              "f_pvalue": 0
+            }
+          },
+          "EQT": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.028846,
+                "std_err": 0.020015,
+                "t_stat": 1.4412,
+                "p_value": 0.157118,
+                "ci_lower": -0.011575,
+                "ci_upper": 0.069267
+              },
+              "Mkt-RF": {
+                "beta": 0.861542,
+                "std_err": 0.412544,
+                "t_stat": 2.0884,
+                "p_value": 0.043017,
+                "ci_lower": 0.028393,
+                "ci_upper": 1.694692
+              },
+              "SMB": {
+                "beta": 0.16514,
+                "std_err": 0.744471,
+                "t_stat": 0.2218,
+                "p_value": 0.825554,
+                "ci_lower": -1.33835,
+                "ci_upper": 1.66863
+              },
+              "HML": {
+                "beta": -0.064219,
+                "std_err": 0.725745,
+                "t_stat": -0.0885,
+                "p_value": 0.929921,
+                "ci_lower": -1.529891,
+                "ci_upper": 1.401453
+              },
+              "RMW": {
+                "beta": -0.66279,
+                "std_err": 0.810341,
+                "t_stat": -0.8179,
+                "p_value": 0.418133,
+                "ci_lower": -2.299307,
+                "ci_upper": 0.973726
+              },
+              "CMA": {
+                "beta": 1.064716,
+                "std_err": 0.993861,
+                "t_stat": 1.0713,
+                "p_value": 0.290304,
+                "ci_lower": -0.942427,
+                "ci_upper": 3.07186
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.142312,
+              "adj_r_squared": 0.037716,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 1.3606,
+              "f_pvalue": 0.259
+            }
+          },
+          "GDDY": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.019842,
+                "std_err": 0.012534,
+                "t_stat": 1.5831,
+                "p_value": 0.12109,
+                "ci_lower": -0.005471,
+                "ci_upper": 0.045154
+              },
+              "Mkt-RF": {
+                "beta": 1.026046,
+                "std_err": 0.258338,
+                "t_stat": 3.9717,
+                "p_value": 0.000282,
+                "ci_lower": 0.504321,
+                "ci_upper": 1.54777
+              },
+              "SMB": {
+                "beta": 0.485586,
+                "std_err": 0.466193,
+                "t_stat": 1.0416,
+                "p_value": 0.303701,
+                "ci_lower": -0.45591,
+                "ci_upper": 1.427083
+              },
+              "HML": {
+                "beta": -0.315874,
+                "std_err": 0.454467,
+                "t_stat": -0.695,
+                "p_value": 0.490949,
+                "ci_lower": -1.233689,
+                "ci_upper": 0.60194
+              },
+              "RMW": {
+                "beta": -0.490257,
+                "std_err": 0.507441,
+                "t_stat": -0.9661,
+                "p_value": 0.339641,
+                "ci_lower": -1.515056,
+                "ci_upper": 0.534541
+              },
+              "CMA": {
+                "beta": 0.530088,
+                "std_err": 0.622363,
+                "t_stat": 0.8517,
+                "p_value": 0.39931,
+                "ci_lower": -0.726801,
+                "ci_upper": 1.786976
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.363506,
+              "adj_r_squared": 0.285884,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 4.6831,
+              "f_pvalue": 0.00179
+            }
+          },
+          "LH": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.008568,
+                "std_err": 0.00622,
+                "t_stat": -1.3775,
+                "p_value": 0.17584,
+                "ci_lower": -0.021129,
+                "ci_upper": 0.003994
+              },
+              "Mkt-RF": {
+                "beta": 1.015636,
+                "std_err": 0.1282,
+                "t_stat": 7.9223,
+                "p_value": 0,
+                "ci_lower": 0.756731,
+                "ci_upper": 1.274541
+              },
+              "SMB": {
+                "beta": 0.321649,
+                "std_err": 0.231348,
+                "t_stat": 1.3903,
+                "p_value": 0.171932,
+                "ci_lower": -0.145568,
+                "ci_upper": 0.788866
+              },
+              "HML": {
+                "beta": 0.253622,
+                "std_err": 0.225529,
+                "t_stat": 1.1246,
+                "p_value": 0.267314,
+                "ci_lower": -0.201843,
+                "ci_upper": 0.709087
+              },
+              "RMW": {
+                "beta": 0.727372,
+                "std_err": 0.251818,
+                "t_stat": 2.8885,
+                "p_value": 0.006157,
+                "ci_lower": 0.218816,
+                "ci_upper": 1.235928
+              },
+              "CMA": {
+                "beta": -0.241042,
+                "std_err": 0.308848,
+                "t_stat": -0.7805,
+                "p_value": 0.439605,
+                "ci_lower": -0.864773,
+                "ci_upper": 0.382688
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.672424,
+              "adj_r_squared": 0.632476,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 16.8324,
+              "f_pvalue": 0
+            }
+          },
+          "NWSA": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.003686,
+                "std_err": 0.009055,
+                "t_stat": -0.407,
+                "p_value": 0.686092,
+                "ci_lower": -0.021972,
+                "ci_upper": 0.014601
+              },
+              "Mkt-RF": {
+                "beta": 0.964644,
+                "std_err": 0.186636,
+                "t_stat": 5.1686,
+                "p_value": 7e-06,
+                "ci_lower": 0.587725,
+                "ci_upper": 1.341564
+              },
+              "SMB": {
+                "beta": 0.067448,
+                "std_err": 0.336801,
+                "t_stat": 0.2003,
+                "p_value": 0.842266,
+                "ci_lower": -0.612735,
+                "ci_upper": 0.747632
+              },
+              "HML": {
+                "beta": 0.246521,
+                "std_err": 0.328329,
+                "t_stat": 0.7508,
+                "p_value": 0.457039,
+                "ci_lower": -0.416553,
+                "ci_upper": 0.909596
+              },
+              "RMW": {
+                "beta": -0.023503,
+                "std_err": 0.366601,
+                "t_stat": -0.0641,
+                "p_value": 0.949193,
+                "ci_lower": -0.763868,
+                "ci_upper": 0.716862
+              },
+              "CMA": {
+                "beta": -0.104813,
+                "std_err": 0.449626,
+                "t_stat": -0.2331,
+                "p_value": 0.816835,
+                "ci_lower": -1.012851,
+                "ci_upper": 0.803225
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.430961,
+              "adj_r_squared": 0.361566,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 6.2103,
+              "f_pvalue": 0.000226
+            }
+          },
+          "ON": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.005922,
+                "std_err": 0.016508,
+                "t_stat": 0.3587,
+                "p_value": 0.721626,
+                "ci_lower": -0.027417,
+                "ci_upper": 0.039262
+              },
+              "Mkt-RF": {
+                "beta": 1.361565,
+                "std_err": 0.340265,
+                "t_stat": 4.0015,
+                "p_value": 0.000257,
+                "ci_lower": 0.674387,
+                "ci_upper": 2.048744
+              },
+              "SMB": {
+                "beta": 1.883727,
+                "std_err": 0.614037,
+                "t_stat": 3.0678,
+                "p_value": 0.003812,
+                "ci_lower": 0.643653,
+                "ci_upper": 3.123801
+              },
+              "HML": {
+                "beta": -0.301825,
+                "std_err": 0.598592,
+                "t_stat": -0.5042,
+                "p_value": 0.616802,
+                "ci_lower": -1.510707,
+                "ci_upper": 0.907057
+              },
+              "RMW": {
+                "beta": 1.179272,
+                "std_err": 0.668367,
+                "t_stat": 1.7644,
+                "p_value": 0.085113,
+                "ci_lower": -0.170522,
+                "ci_upper": 2.529065
+              },
+              "CMA": {
+                "beta": -0.05604,
+                "std_err": 0.819734,
+                "t_stat": -0.0684,
+                "p_value": 0.945829,
+                "ci_lower": -1.711526,
+                "ci_upper": 1.599446
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.471708,
+              "adj_r_squared": 0.407282,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 7.3217,
+              "f_pvalue": 5.6e-05
+            }
+          },
+          "PPL": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.001321,
+                "std_err": 0.006925,
+                "t_stat": -0.1908,
+                "p_value": 0.849633,
+                "ci_lower": -0.015307,
+                "ci_upper": 0.012664
+              },
+              "Mkt-RF": {
+                "beta": 0.853149,
+                "std_err": 0.142739,
+                "t_stat": 5.977,
+                "p_value": 0,
+                "ci_lower": 0.564881,
+                "ci_upper": 1.141417
+              },
+              "SMB": {
+                "beta": -0.070744,
+                "std_err": 0.257586,
+                "t_stat": -0.2746,
+                "p_value": 0.784969,
+                "ci_lower": -0.590949,
+                "ci_upper": 0.44946
+              },
+              "HML": {
+                "beta": 0.21372,
+                "std_err": 0.251107,
+                "t_stat": 0.8511,
+                "p_value": 0.39965,
+                "ci_lower": -0.2934,
+                "ci_upper": 0.72084
+              },
+              "RMW": {
+                "beta": 0.247446,
+                "std_err": 0.280376,
+                "t_stat": 0.8826,
+                "p_value": 0.382625,
+                "ci_lower": -0.318785,
+                "ci_upper": 0.813678
+              },
+              "CMA": {
+                "beta": 0.47834,
+                "std_err": 0.343874,
+                "t_stat": 1.391,
+                "p_value": 0.17172,
+                "ci_lower": -0.216129,
+                "ci_upper": 1.172808
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.508951,
+              "adj_r_squared": 0.449067,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 8.499,
+              "f_pvalue": 1.4e-05
+            }
+          },
+          "SWKS": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.017243,
+                "std_err": 0.011308,
+                "t_stat": -1.5249,
+                "p_value": 0.134964,
+                "ci_lower": -0.04008,
+                "ci_upper": 0.005593
+              },
+              "Mkt-RF": {
+                "beta": 1.170668,
+                "std_err": 0.233075,
+                "t_stat": 5.0227,
+                "p_value": 1e-05,
+                "ci_lower": 0.699963,
+                "ci_upper": 1.641373
+              },
+              "SMB": {
+                "beta": 0.611553,
+                "std_err": 0.420605,
+                "t_stat": 1.454,
+                "p_value": 0.153563,
+                "ci_lower": -0.237876,
+                "ci_upper": 1.460981
+              },
+              "HML": {
+                "beta": -0.300737,
+                "std_err": 0.410025,
+                "t_stat": -0.7335,
+                "p_value": 0.46745,
+                "ci_lower": -1.1288,
+                "ci_upper": 0.527325
+              },
+              "RMW": {
+                "beta": -0.07383,
+                "std_err": 0.457819,
+                "t_stat": -0.1613,
+                "p_value": 0.872677,
+                "ci_lower": -0.998414,
+                "ci_upper": 0.850754
+              },
+              "CMA": {
+                "beta": -0.049346,
+                "std_err": 0.561503,
+                "t_stat": -0.0879,
+                "p_value": 0.930398,
+                "ci_lower": -1.183325,
+                "ci_upper": 1.084632
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.4971,
+              "adj_r_squared": 0.435771,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 8.1054,
+              "f_pvalue": 2.2e-05
+            }
+          },
+          "TRGP": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.035426,
+                "std_err": 0.01019,
+                "t_stat": 3.4764,
+                "p_value": 0.001216,
+                "ci_lower": 0.014846,
+                "ci_upper": 0.056006
+              },
+              "Mkt-RF": {
+                "beta": 1.179734,
+                "std_err": 0.210041,
+                "t_stat": 5.6167,
+                "p_value": 2e-06,
+                "ci_lower": 0.755548,
+                "ci_upper": 1.60392
+              },
+              "SMB": {
+                "beta": -0.461995,
+                "std_err": 0.379037,
+                "t_stat": -1.2189,
+                "p_value": 0.229861,
+                "ci_lower": -1.227475,
+                "ci_upper": 0.303485
+              },
+              "HML": {
+                "beta": 0.548172,
+                "std_err": 0.369503,
+                "t_stat": 1.4835,
+                "p_value": 0.145579,
+                "ci_lower": -0.198054,
+                "ci_upper": 1.294397
+              },
+              "RMW": {
+                "beta": -0.985116,
+                "std_err": 0.412573,
+                "t_stat": -2.3877,
+                "p_value": 0.021644,
+                "ci_lower": -1.818325,
+                "ci_upper": -0.151908
+              },
+              "CMA": {
+                "beta": 0.533114,
+                "std_err": 0.50601,
+                "t_stat": 1.0536,
+                "p_value": 0.298252,
+                "ci_lower": -0.488794,
+                "ci_upper": 1.555022
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.503887,
+              "adj_r_squared": 0.443386,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 8.3285,
+              "f_pvalue": 1.7e-05
+            }
+          },
+          "UNP": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.002285,
+                "std_err": 0.008495,
+                "t_stat": -0.269,
+                "p_value": 0.789285,
+                "ci_lower": -0.019442,
+                "ci_upper": 0.014872
+              },
+              "Mkt-RF": {
+                "beta": 0.993857,
+                "std_err": 0.175105,
+                "t_stat": 5.6758,
+                "p_value": 1e-06,
+                "ci_lower": 0.640225,
+                "ci_upper": 1.347488
+              },
+              "SMB": {
+                "beta": 0.101947,
+                "std_err": 0.315992,
+                "t_stat": 0.3226,
+                "p_value": 0.748619,
+                "ci_lower": -0.536212,
+                "ci_upper": 0.740105
+              },
+              "HML": {
+                "beta": 0.225986,
+                "std_err": 0.308044,
+                "t_stat": 0.7336,
+                "p_value": 0.467356,
+                "ci_lower": -0.396121,
+                "ci_upper": 0.848093
+              },
+              "RMW": {
+                "beta": -0.003819,
+                "std_err": 0.34395,
+                "t_stat": -0.0111,
+                "p_value": 0.991195,
+                "ci_lower": -0.698441,
+                "ci_upper": 0.690803
+              },
+              "CMA": {
+                "beta": -0.071284,
+                "std_err": 0.421846,
+                "t_stat": -0.169,
+                "p_value": 0.866642,
+                "ci_lower": -0.92322,
+                "ci_upper": 0.780651
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.478107,
+              "adj_r_squared": 0.414462,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 7.512,
+              "f_pvalue": 4.4e-05
+            }
+          },
+          "WM": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.006287,
+                "std_err": 0.007116,
+                "t_stat": 0.8835,
+                "p_value": 0.382096,
+                "ci_lower": -0.008083,
+                "ci_upper": 0.020657
+              },
+              "Mkt-RF": {
+                "beta": 0.634467,
+                "std_err": 0.146664,
+                "t_stat": 4.326,
+                "p_value": 9.5e-05,
+                "ci_lower": 0.338272,
+                "ci_upper": 0.930661
+              },
+              "SMB": {
+                "beta": -0.504588,
+                "std_err": 0.264668,
+                "t_stat": -1.9065,
+                "p_value": 0.063612,
+                "ci_lower": -1.039097,
+                "ci_upper": 0.02992
+              },
+              "HML": {
+                "beta": -0.137916,
+                "std_err": 0.258011,
+                "t_stat": -0.5345,
+                "p_value": 0.595859,
+                "ci_lower": -0.65898,
+                "ci_upper": 0.383148
+              },
+              "RMW": {
+                "beta": -0.118779,
+                "std_err": 0.288086,
+                "t_stat": -0.4123,
+                "p_value": 0.682263,
+                "ci_lower": -0.700581,
+                "ci_upper": 0.463022
+              },
+              "CMA": {
+                "beta": 0.1289,
+                "std_err": 0.35333,
+                "t_stat": 0.3648,
+                "p_value": 0.717125,
+                "ci_lower": -0.584664,
+                "ci_upper": 0.842464
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.361922,
+              "adj_r_squared": 0.284108,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 4.6511,
+              "f_pvalue": 0.001873
+            }
+          }
+        }
+      },
+      "bestGradient": {
+        "weights": {
+          "AOS": 0.13572280146377405,
+          "AMD": 0.08042704430004406,
+          "BLK": 0.06720666786029937,
+          "CDW": 0.09294752704038435,
+          "COIN": 0,
+          "COST": 0.04990259970744781,
+          "DOV": 0.09657148538378957,
+          "EQT": 0.013056244768763258,
+          "GDDY": 0,
+          "LH": 0.09974681194072754,
+          "NWSA": 0.0649733098506782,
+          "ON": 0.003032293026126321,
+          "PPL": 0.0989465674074989,
+          "SWKS": 0,
+          "TRGP": 0.0635713074780721,
+          "UNP": 0.06239807415603859,
+          "WM": 0.0714972656163559
+        },
+        "sharpe": 0.4954,
+        "expectedReturn": 13.09,
+        "volatility": 20.02,
+        "maxDrawdown": 4.94,
+        "comparisonData": [
+          {
+            "date": "2021-05",
+            "portfolio": 68,
+            "market": 71.56
+          },
+          {
+            "date": "2021-06",
+            "portfolio": 69.84,
+            "market": 73.16
+          },
+          {
+            "date": "2021-07",
+            "portfolio": 72.01,
+            "market": 74.95
+          },
+          {
+            "date": "2021-08",
+            "portfolio": 74.65,
+            "market": 77.18
+          },
+          {
+            "date": "2021-09",
+            "portfolio": 70.1,
+            "market": 73.58
+          },
+          {
+            "date": "2021-10",
+            "portfolio": 76.77,
+            "market": 78.74
+          },
+          {
+            "date": "2021-11",
+            "portfolio": 78.74,
+            "market": 78.11
+          },
+          {
+            "date": "2021-12",
+            "portfolio": 83.31,
+            "market": 81.72
+          },
+          {
+            "date": "2022-01",
+            "portfolio": 77.27,
+            "market": 77.41
+          },
+          {
+            "date": "2022-02",
+            "portfolio": 74.71,
+            "market": 75.13
+          },
+          {
+            "date": "2022-03",
+            "portfolio": 76.96,
+            "market": 77.95
+          },
+          {
+            "date": "2022-04",
+            "portfolio": 70.05,
+            "market": 71.11
+          },
+          {
+            "date": "2022-05",
+            "portfolio": 71.46,
+            "market": 71.27
+          },
+          {
+            "date": "2022-06",
+            "portfolio": 64.85,
+            "market": 65.39
+          },
+          {
+            "date": "2022-07",
+            "portfolio": 73.17,
+            "market": 71.42
+          },
+          {
+            "date": "2022-08",
+            "portfolio": 69.6,
+            "market": 68.5
+          },
+          {
+            "date": "2022-09",
+            "portfolio": 61.33,
+            "market": 62.17
+          },
+          {
+            "date": "2022-10",
+            "portfolio": 66.23,
+            "market": 67.22
+          },
+          {
+            "date": "2022-11",
+            "portfolio": 73.71,
+            "market": 70.96
+          },
+          {
+            "date": "2022-12",
+            "portfolio": 69.66,
+            "market": 66.87
+          },
+          {
+            "date": "2023-01",
+            "portfolio": 75.62,
+            "market": 71.07
+          },
+          {
+            "date": "2023-02",
+            "portfolio": 73.26,
+            "market": 69.29
+          },
+          {
+            "date": "2023-03",
+            "portfolio": 75.37,
+            "market": 71.86
+          },
+          {
+            "date": "2023-04",
+            "portfolio": 74.11,
+            "market": 73
+          },
+          {
+            "date": "2023-05",
+            "portfolio": 73.37,
+            "market": 73.34
+          },
+          {
+            "date": "2023-06",
+            "portfolio": 79.13,
+            "market": 78.09
+          },
+          {
+            "date": "2023-07",
+            "portfolio": 81.25,
+            "market": 80.65
+          },
+          {
+            "date": "2023-08",
+            "portfolio": 80.82,
+            "market": 79.34
+          },
+          {
+            "date": "2023-09",
+            "portfolio": 77.02,
+            "market": 75.58
+          },
+          {
+            "date": "2023-10",
+            "portfolio": 77.3,
+            "market": 73.94
+          },
+          {
+            "date": "2023-11",
+            "portfolio": 84.65,
+            "market": 80.69
+          },
+          {
+            "date": "2023-12",
+            "portfolio": 91.66,
+            "market": 84.37
+          },
+          {
+            "date": "2024-01",
+            "portfolio": 91.17,
+            "market": 85.72
+          },
+          {
+            "date": "2024-02",
+            "portfolio": 97.75,
+            "market": 90.19
+          },
+          {
+            "date": "2024-03",
+            "portfolio": 100.92,
+            "market": 93.14
+          },
+          {
+            "date": "2024-04",
+            "portfolio": 96.31,
+            "market": 89.38
+          },
+          {
+            "date": "2024-05",
+            "portfolio": 98.74,
+            "market": 93.91
+          },
+          {
+            "date": "2024-06",
+            "portfolio": 98.88,
+            "market": 97.22
+          },
+          {
+            "date": "2024-07",
+            "portfolio": 100.99,
+            "market": 98.4
+          },
+          {
+            "date": "2024-08",
+            "portfolio": 104.86,
+            "market": 100.69
+          },
+          {
+            "date": "2024-09",
+            "portfolio": 107.07,
+            "market": 102.81
+          },
+          {
+            "date": "2024-10",
+            "portfolio": 103.08,
+            "market": 101.89
+          },
+          {
+            "date": "2024-11",
+            "portfolio": 108.2,
+            "market": 107.97
+          },
+          {
+            "date": "2024-12",
+            "portfolio": 100.8,
+            "market": 105.37
+          },
+          {
+            "date": "2025-01",
+            "portfolio": 106.6,
+            "market": 108.2
+          },
+          {
+            "date": "2025-02",
+            "portfolio": 104.94,
+            "market": 106.83
+          },
+          {
+            "date": "2025-03",
+            "portfolio": 101.14,
+            "market": 100.87
+          },
+          {
+            "date": "2025-04",
+            "portfolio": 100,
+            "market": 100
+          },
+          {
+            "date": "2025-05",
+            "portfolio": 103.02,
+            "market": 106.28
+          },
+          {
+            "date": "2025-06",
+            "portfolio": 107.58,
+            "market": 111.75
+          },
+          {
+            "date": "2025-07",
+            "portfolio": 110.47,
+            "market": 114.32
+          },
+          {
+            "date": "2025-08",
+            "portfolio": 110.45,
+            "market": 116.67
+          },
+          {
+            "date": "2025-09",
+            "portfolio": 111.26,
+            "market": 120.82
+          },
+          {
+            "date": "2025-10",
+            "portfolio": 111.13,
+            "market": 123.7
+          },
+          {
+            "date": "2025-11",
+            "portfolio": 111.69,
+            "market": 123.94
+          },
+          {
+            "date": "2025-12",
+            "portfolio": 110.91,
+            "market": 124.04
+          },
+          {
+            "date": "2026-01",
+            "portfolio": 116.43,
+            "market": 125.87
+          },
+          {
+            "date": "2026-02",
+            "portfolio": 121.07,
+            "market": 124.78
+          },
+          {
+            "date": "2026-03",
+            "portfolio": 115.09,
+            "market": 122.02
+          }
+        ],
+        "numPortfolios": 1,
+        "trainPeriodStart": "2021-05",
+        "trainPeriodEnd": "2025-03",
+        "testPeriodStart": "2025-04",
+        "testPeriodEnd": "2026-03",
+        "efficientFrontier": [
+          {
+            "volatility": 20.02,
+            "expectedReturn": 13.09,
+            "sharpe": 0.4954,
+            "backtestReturn": 13.8
+          }
+        ],
+        "factor_tests": {
+          "AOS": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.012672,
+                "std_err": 0.008162,
+                "t_stat": -1.5525,
+                "p_value": 0.128228,
+                "ci_lower": -0.029157,
+                "ci_upper": 0.003812
+              },
+              "Mkt-RF": {
+                "beta": 1.372534,
+                "std_err": 0.168241,
+                "t_stat": 8.1581,
+                "p_value": 0,
+                "ci_lower": 1.032763,
+                "ci_upper": 1.712304
+              },
+              "SMB": {
+                "beta": 0.451629,
+                "std_err": 0.303606,
+                "t_stat": 1.4875,
+                "p_value": 0.144521,
+                "ci_lower": -0.161516,
+                "ci_upper": 1.064774
+              },
+              "HML": {
+                "beta": 0.158493,
+                "std_err": 0.29597,
+                "t_stat": 0.5355,
+                "p_value": 0.595193,
+                "ci_lower": -0.439229,
+                "ci_upper": 0.756216
+              },
+              "RMW": {
+                "beta": 1.420873,
+                "std_err": 0.330469,
+                "t_stat": 4.2996,
+                "p_value": 0.000103,
+                "ci_lower": 0.753478,
+                "ci_upper": 2.088269
+              },
+              "CMA": {
+                "beta": -0.331761,
+                "std_err": 0.405311,
+                "t_stat": -0.8185,
+                "p_value": 0.417785,
+                "ci_lower": -1.150304,
+                "ci_upper": 0.486782
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.70315,
+              "adj_r_squared": 0.666949,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 19.4234,
+              "f_pvalue": 0
+            }
+          },
+          "AMD": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.003225,
+                "std_err": 0.019776,
+                "t_stat": 0.1631,
+                "p_value": 0.871256,
+                "ci_lower": -0.036714,
+                "ci_upper": 0.043164
+              },
+              "Mkt-RF": {
+                "beta": 1.696224,
+                "std_err": 0.407623,
+                "t_stat": 4.1613,
+                "p_value": 0.000158,
+                "ci_lower": 0.873013,
+                "ci_upper": 2.519436
+              },
+              "SMB": {
+                "beta": -0.079713,
+                "std_err": 0.735591,
+                "t_stat": -0.1084,
+                "p_value": 0.914235,
+                "ci_lower": -1.565268,
+                "ci_upper": 1.405843
+              },
+              "HML": {
+                "beta": -0.677636,
+                "std_err": 0.717088,
+                "t_stat": -0.945,
+                "p_value": 0.350204,
+                "ci_lower": -2.125825,
+                "ci_upper": 0.770553
+              },
+              "RMW": {
+                "beta": 0.817751,
+                "std_err": 0.800675,
+                "t_stat": 1.0213,
+                "p_value": 0.313088,
+                "ci_lower": -0.799245,
+                "ci_upper": 2.434746
+              },
+              "CMA": {
+                "beta": -0.465498,
+                "std_err": 0.982006,
+                "t_stat": -0.474,
+                "p_value": 0.637995,
+                "ci_lower": -2.4487,
+                "ci_upper": 1.517704
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.412502,
+              "adj_r_squared": 0.340856,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 5.7575,
+              "f_pvalue": 0.00041
+            }
+          },
+          "BLK": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.000773,
+                "std_err": 0.007164,
+                "t_stat": -0.1079,
+                "p_value": 0.914608,
+                "ci_lower": -0.015241,
+                "ci_upper": 0.013695
+              },
+              "Mkt-RF": {
+                "beta": 1.471512,
+                "std_err": 0.147661,
+                "t_stat": 9.9655,
+                "p_value": 0,
+                "ci_lower": 1.173305,
+                "ci_upper": 1.769719
+              },
+              "SMB": {
+                "beta": 0.24546,
+                "std_err": 0.266466,
+                "t_stat": 0.9212,
+                "p_value": 0.362352,
+                "ci_lower": -0.292679,
+                "ci_upper": 0.7836
+              },
+              "HML": {
+                "beta": 0.265057,
+                "std_err": 0.259764,
+                "t_stat": 1.0204,
+                "p_value": 0.313532,
+                "ci_lower": -0.259546,
+                "ci_upper": 0.789661
+              },
+              "RMW": {
+                "beta": -0.027434,
+                "std_err": 0.290043,
+                "t_stat": -0.0946,
+                "p_value": 0.925103,
+                "ci_lower": -0.613188,
+                "ci_upper": 0.558319
+              },
+              "CMA": {
+                "beta": 0.050536,
+                "std_err": 0.35573,
+                "t_stat": 0.1421,
+                "p_value": 0.887726,
+                "ci_lower": -0.667875,
+                "ci_upper": 0.768948
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.740452,
+              "adj_r_squared": 0.7088,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 23.3934,
+              "f_pvalue": 0
+            }
+          },
+          "CDW": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.009723,
+                "std_err": 0.009824,
+                "t_stat": -0.9897,
+                "p_value": 0.328139,
+                "ci_lower": -0.029564,
+                "ci_upper": 0.010118
+              },
+              "Mkt-RF": {
+                "beta": 0.982766,
+                "std_err": 0.202497,
+                "t_stat": 4.8532,
+                "p_value": 1.8e-05,
+                "ci_lower": 0.573815,
+                "ci_upper": 1.391717
+              },
+              "SMB": {
+                "beta": -0.072135,
+                "std_err": 0.365424,
+                "t_stat": -0.1974,
+                "p_value": 0.844489,
+                "ci_lower": -0.810123,
+                "ci_upper": 0.665853
+              },
+              "HML": {
+                "beta": 0.174581,
+                "std_err": 0.356232,
+                "t_stat": 0.4901,
+                "p_value": 0.626692,
+                "ci_lower": -0.544844,
+                "ci_upper": 0.894006
+              },
+              "RMW": {
+                "beta": 0.472207,
+                "std_err": 0.397756,
+                "t_stat": 1.1872,
+                "p_value": 0.24199,
+                "ci_lower": -0.331077,
+                "ci_upper": 1.275491
+              },
+              "CMA": {
+                "beta": -0.574614,
+                "std_err": 0.487837,
+                "t_stat": -1.1779,
+                "p_value": 0.245635,
+                "ci_lower": -1.559821,
+                "ci_upper": 0.410592
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.43636,
+              "adj_r_squared": 0.367623,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 6.3483,
+              "f_pvalue": 0.000189
+            }
+          },
+          "COIN": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.038082,
+                "std_err": 0.024128,
+                "t_stat": 1.5783,
+                "p_value": 0.122171,
+                "ci_lower": -0.010645,
+                "ci_upper": 0.086809
+              },
+              "Mkt-RF": {
+                "beta": 3.122631,
+                "std_err": 0.497311,
+                "t_stat": 6.279,
+                "p_value": 0,
+                "ci_lower": 2.11829,
+                "ci_upper": 4.126972
+              },
+              "SMB": {
+                "beta": 1.061255,
+                "std_err": 0.897442,
+                "t_stat": 1.1825,
+                "p_value": 0.243807,
+                "ci_lower": -0.751166,
+                "ci_upper": 2.873675
+              },
+              "HML": {
+                "beta": 0.826255,
+                "std_err": 0.874868,
+                "t_stat": 0.9444,
+                "p_value": 0.350481,
+                "ci_lower": -0.940577,
+                "ci_upper": 2.593086
+              },
+              "RMW": {
+                "beta": -3.642329,
+                "std_err": 0.976846,
+                "t_stat": -3.7287,
+                "p_value": 0.000583,
+                "ci_lower": -5.61511,
+                "ci_upper": -1.669549
+              },
+              "CMA": {
+                "beta": -2.862903,
+                "std_err": 1.198076,
+                "t_stat": -2.3896,
+                "p_value": 0.021549,
+                "ci_lower": -5.282466,
+                "ci_upper": -0.44334
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.724217,
+              "adj_r_squared": 0.690584,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 21.5335,
+              "f_pvalue": 0
+            }
+          },
+          "COST": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.017033,
+                "std_err": 0.007674,
+                "t_stat": 2.2195,
+                "p_value": 0.032044,
+                "ci_lower": 0.001534,
+                "ci_upper": 0.032531
+              },
+              "Mkt-RF": {
+                "beta": 1.016276,
+                "std_err": 0.158178,
+                "t_stat": 6.4249,
+                "p_value": 0,
+                "ci_lower": 0.69683,
+                "ci_upper": 1.335723
+              },
+              "SMB": {
+                "beta": 0.181302,
+                "std_err": 0.285445,
+                "t_stat": 0.6352,
+                "p_value": 0.528856,
+                "ci_lower": -0.395166,
+                "ci_upper": 0.75777
+              },
+              "HML": {
+                "beta": -0.353532,
+                "std_err": 0.278265,
+                "t_stat": -1.2705,
+                "p_value": 0.211074,
+                "ci_lower": -0.9155,
+                "ci_upper": 0.208436
+              },
+              "RMW": {
+                "beta": 0.306751,
+                "std_err": 0.310701,
+                "t_stat": 0.9873,
+                "p_value": 0.329293,
+                "ci_lower": -0.320723,
+                "ci_upper": 0.934224
+              },
+              "CMA": {
+                "beta": -0.05916,
+                "std_err": 0.381067,
+                "t_stat": -0.1552,
+                "p_value": 0.877388,
+                "ci_lower": -0.828739,
+                "ci_upper": 0.71042
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.59208,
+              "adj_r_squared": 0.542334,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 11.902,
+              "f_pvalue": 0
+            }
+          },
+          "DOV": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.00511,
+                "std_err": 0.006137,
+                "t_stat": -0.8326,
+                "p_value": 0.409889,
+                "ci_lower": -0.017505,
+                "ci_upper": 0.007285
+              },
+              "Mkt-RF": {
+                "beta": 1.309185,
+                "std_err": 0.126503,
+                "t_stat": 10.349,
+                "p_value": 0,
+                "ci_lower": 1.053707,
+                "ci_upper": 1.564664
+              },
+              "SMB": {
+                "beta": 0.073396,
+                "std_err": 0.228286,
+                "t_stat": 0.3215,
+                "p_value": 0.749458,
+                "ci_lower": -0.387637,
+                "ci_upper": 0.534429
+              },
+              "HML": {
+                "beta": 0.21545,
+                "std_err": 0.222544,
+                "t_stat": 0.9681,
+                "p_value": 0.338659,
+                "ci_lower": -0.233987,
+                "ci_upper": 0.664886
+              },
+              "RMW": {
+                "beta": 0.396357,
+                "std_err": 0.248484,
+                "t_stat": 1.5951,
+                "p_value": 0.118371,
+                "ci_lower": -0.105467,
+                "ci_upper": 0.898182
+              },
+              "CMA": {
+                "beta": -0.151286,
+                "std_err": 0.30476,
+                "t_stat": -0.4964,
+                "p_value": 0.622255,
+                "ci_lower": -0.766761,
+                "ci_upper": 0.464189
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.74946,
+              "adj_r_squared": 0.718906,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 24.5293,
+              "f_pvalue": 0
+            }
+          },
+          "EQT": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.028846,
+                "std_err": 0.020015,
+                "t_stat": 1.4412,
+                "p_value": 0.157118,
+                "ci_lower": -0.011575,
+                "ci_upper": 0.069267
+              },
+              "Mkt-RF": {
+                "beta": 0.861542,
+                "std_err": 0.412544,
+                "t_stat": 2.0884,
+                "p_value": 0.043017,
+                "ci_lower": 0.028393,
+                "ci_upper": 1.694692
+              },
+              "SMB": {
+                "beta": 0.16514,
+                "std_err": 0.744471,
+                "t_stat": 0.2218,
+                "p_value": 0.825554,
+                "ci_lower": -1.33835,
+                "ci_upper": 1.66863
+              },
+              "HML": {
+                "beta": -0.064219,
+                "std_err": 0.725745,
+                "t_stat": -0.0885,
+                "p_value": 0.929921,
+                "ci_lower": -1.529891,
+                "ci_upper": 1.401453
+              },
+              "RMW": {
+                "beta": -0.66279,
+                "std_err": 0.810341,
+                "t_stat": -0.8179,
+                "p_value": 0.418133,
+                "ci_lower": -2.299307,
+                "ci_upper": 0.973726
+              },
+              "CMA": {
+                "beta": 1.064716,
+                "std_err": 0.993861,
+                "t_stat": 1.0713,
+                "p_value": 0.290304,
+                "ci_lower": -0.942427,
+                "ci_upper": 3.07186
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.142312,
+              "adj_r_squared": 0.037716,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 1.3606,
+              "f_pvalue": 0.259
+            }
+          },
+          "GDDY": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.019842,
+                "std_err": 0.012534,
+                "t_stat": 1.5831,
+                "p_value": 0.12109,
+                "ci_lower": -0.005471,
+                "ci_upper": 0.045154
+              },
+              "Mkt-RF": {
+                "beta": 1.026046,
+                "std_err": 0.258338,
+                "t_stat": 3.9717,
+                "p_value": 0.000282,
+                "ci_lower": 0.504321,
+                "ci_upper": 1.54777
+              },
+              "SMB": {
+                "beta": 0.485586,
+                "std_err": 0.466193,
+                "t_stat": 1.0416,
+                "p_value": 0.303701,
+                "ci_lower": -0.45591,
+                "ci_upper": 1.427083
+              },
+              "HML": {
+                "beta": -0.315874,
+                "std_err": 0.454467,
+                "t_stat": -0.695,
+                "p_value": 0.490949,
+                "ci_lower": -1.233689,
+                "ci_upper": 0.60194
+              },
+              "RMW": {
+                "beta": -0.490257,
+                "std_err": 0.507441,
+                "t_stat": -0.9661,
+                "p_value": 0.339641,
+                "ci_lower": -1.515056,
+                "ci_upper": 0.534541
+              },
+              "CMA": {
+                "beta": 0.530088,
+                "std_err": 0.622363,
+                "t_stat": 0.8517,
+                "p_value": 0.39931,
+                "ci_lower": -0.726801,
+                "ci_upper": 1.786976
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.363506,
+              "adj_r_squared": 0.285884,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 4.6831,
+              "f_pvalue": 0.00179
+            }
+          },
+          "LH": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.008568,
+                "std_err": 0.00622,
+                "t_stat": -1.3775,
+                "p_value": 0.17584,
+                "ci_lower": -0.021129,
+                "ci_upper": 0.003994
+              },
+              "Mkt-RF": {
+                "beta": 1.015636,
+                "std_err": 0.1282,
+                "t_stat": 7.9223,
+                "p_value": 0,
+                "ci_lower": 0.756731,
+                "ci_upper": 1.274541
+              },
+              "SMB": {
+                "beta": 0.321649,
+                "std_err": 0.231348,
+                "t_stat": 1.3903,
+                "p_value": 0.171932,
+                "ci_lower": -0.145568,
+                "ci_upper": 0.788866
+              },
+              "HML": {
+                "beta": 0.253622,
+                "std_err": 0.225529,
+                "t_stat": 1.1246,
+                "p_value": 0.267314,
+                "ci_lower": -0.201843,
+                "ci_upper": 0.709087
+              },
+              "RMW": {
+                "beta": 0.727372,
+                "std_err": 0.251818,
+                "t_stat": 2.8885,
+                "p_value": 0.006157,
+                "ci_lower": 0.218816,
+                "ci_upper": 1.235928
+              },
+              "CMA": {
+                "beta": -0.241042,
+                "std_err": 0.308848,
+                "t_stat": -0.7805,
+                "p_value": 0.439605,
+                "ci_lower": -0.864773,
+                "ci_upper": 0.382688
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.672424,
+              "adj_r_squared": 0.632476,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 16.8324,
+              "f_pvalue": 0
+            }
+          },
+          "NWSA": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.003686,
+                "std_err": 0.009055,
+                "t_stat": -0.407,
+                "p_value": 0.686092,
+                "ci_lower": -0.021972,
+                "ci_upper": 0.014601
+              },
+              "Mkt-RF": {
+                "beta": 0.964644,
+                "std_err": 0.186636,
+                "t_stat": 5.1686,
+                "p_value": 7e-06,
+                "ci_lower": 0.587725,
+                "ci_upper": 1.341564
+              },
+              "SMB": {
+                "beta": 0.067448,
+                "std_err": 0.336801,
+                "t_stat": 0.2003,
+                "p_value": 0.842266,
+                "ci_lower": -0.612735,
+                "ci_upper": 0.747632
+              },
+              "HML": {
+                "beta": 0.246521,
+                "std_err": 0.328329,
+                "t_stat": 0.7508,
+                "p_value": 0.457039,
+                "ci_lower": -0.416553,
+                "ci_upper": 0.909596
+              },
+              "RMW": {
+                "beta": -0.023503,
+                "std_err": 0.366601,
+                "t_stat": -0.0641,
+                "p_value": 0.949193,
+                "ci_lower": -0.763868,
+                "ci_upper": 0.716862
+              },
+              "CMA": {
+                "beta": -0.104813,
+                "std_err": 0.449626,
+                "t_stat": -0.2331,
+                "p_value": 0.816835,
+                "ci_lower": -1.012851,
+                "ci_upper": 0.803225
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.430961,
+              "adj_r_squared": 0.361566,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 6.2103,
+              "f_pvalue": 0.000226
+            }
+          },
+          "ON": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.005922,
+                "std_err": 0.016508,
+                "t_stat": 0.3587,
+                "p_value": 0.721626,
+                "ci_lower": -0.027417,
+                "ci_upper": 0.039262
+              },
+              "Mkt-RF": {
+                "beta": 1.361565,
+                "std_err": 0.340265,
+                "t_stat": 4.0015,
+                "p_value": 0.000257,
+                "ci_lower": 0.674387,
+                "ci_upper": 2.048744
+              },
+              "SMB": {
+                "beta": 1.883727,
+                "std_err": 0.614037,
+                "t_stat": 3.0678,
+                "p_value": 0.003812,
+                "ci_lower": 0.643653,
+                "ci_upper": 3.123801
+              },
+              "HML": {
+                "beta": -0.301825,
+                "std_err": 0.598592,
+                "t_stat": -0.5042,
+                "p_value": 0.616802,
+                "ci_lower": -1.510707,
+                "ci_upper": 0.907057
+              },
+              "RMW": {
+                "beta": 1.179272,
+                "std_err": 0.668367,
+                "t_stat": 1.7644,
+                "p_value": 0.085113,
+                "ci_lower": -0.170522,
+                "ci_upper": 2.529065
+              },
+              "CMA": {
+                "beta": -0.05604,
+                "std_err": 0.819734,
+                "t_stat": -0.0684,
+                "p_value": 0.945829,
+                "ci_lower": -1.711526,
+                "ci_upper": 1.599446
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.471708,
+              "adj_r_squared": 0.407282,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 7.3217,
+              "f_pvalue": 5.6e-05
+            }
+          },
+          "PPL": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.001321,
+                "std_err": 0.006925,
+                "t_stat": -0.1908,
+                "p_value": 0.849633,
+                "ci_lower": -0.015307,
+                "ci_upper": 0.012664
+              },
+              "Mkt-RF": {
+                "beta": 0.853149,
+                "std_err": 0.142739,
+                "t_stat": 5.977,
+                "p_value": 0,
+                "ci_lower": 0.564881,
+                "ci_upper": 1.141417
+              },
+              "SMB": {
+                "beta": -0.070744,
+                "std_err": 0.257586,
+                "t_stat": -0.2746,
+                "p_value": 0.784969,
+                "ci_lower": -0.590949,
+                "ci_upper": 0.44946
+              },
+              "HML": {
+                "beta": 0.21372,
+                "std_err": 0.251107,
+                "t_stat": 0.8511,
+                "p_value": 0.39965,
+                "ci_lower": -0.2934,
+                "ci_upper": 0.72084
+              },
+              "RMW": {
+                "beta": 0.247446,
+                "std_err": 0.280376,
+                "t_stat": 0.8826,
+                "p_value": 0.382625,
+                "ci_lower": -0.318785,
+                "ci_upper": 0.813678
+              },
+              "CMA": {
+                "beta": 0.47834,
+                "std_err": 0.343874,
+                "t_stat": 1.391,
+                "p_value": 0.17172,
+                "ci_lower": -0.216129,
+                "ci_upper": 1.172808
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.508951,
+              "adj_r_squared": 0.449067,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 8.499,
+              "f_pvalue": 1.4e-05
+            }
+          },
+          "SWKS": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.017243,
+                "std_err": 0.011308,
+                "t_stat": -1.5249,
+                "p_value": 0.134964,
+                "ci_lower": -0.04008,
+                "ci_upper": 0.005593
+              },
+              "Mkt-RF": {
+                "beta": 1.170668,
+                "std_err": 0.233075,
+                "t_stat": 5.0227,
+                "p_value": 1e-05,
+                "ci_lower": 0.699963,
+                "ci_upper": 1.641373
+              },
+              "SMB": {
+                "beta": 0.611553,
+                "std_err": 0.420605,
+                "t_stat": 1.454,
+                "p_value": 0.153563,
+                "ci_lower": -0.237876,
+                "ci_upper": 1.460981
+              },
+              "HML": {
+                "beta": -0.300737,
+                "std_err": 0.410025,
+                "t_stat": -0.7335,
+                "p_value": 0.46745,
+                "ci_lower": -1.1288,
+                "ci_upper": 0.527325
+              },
+              "RMW": {
+                "beta": -0.07383,
+                "std_err": 0.457819,
+                "t_stat": -0.1613,
+                "p_value": 0.872677,
+                "ci_lower": -0.998414,
+                "ci_upper": 0.850754
+              },
+              "CMA": {
+                "beta": -0.049346,
+                "std_err": 0.561503,
+                "t_stat": -0.0879,
+                "p_value": 0.930398,
+                "ci_lower": -1.183325,
+                "ci_upper": 1.084632
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.4971,
+              "adj_r_squared": 0.435771,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 8.1054,
+              "f_pvalue": 2.2e-05
+            }
+          },
+          "TRGP": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.035426,
+                "std_err": 0.01019,
+                "t_stat": 3.4764,
+                "p_value": 0.001216,
+                "ci_lower": 0.014846,
+                "ci_upper": 0.056006
+              },
+              "Mkt-RF": {
+                "beta": 1.179734,
+                "std_err": 0.210041,
+                "t_stat": 5.6167,
+                "p_value": 2e-06,
+                "ci_lower": 0.755548,
+                "ci_upper": 1.60392
+              },
+              "SMB": {
+                "beta": -0.461995,
+                "std_err": 0.379037,
+                "t_stat": -1.2189,
+                "p_value": 0.229861,
+                "ci_lower": -1.227475,
+                "ci_upper": 0.303485
+              },
+              "HML": {
+                "beta": 0.548172,
+                "std_err": 0.369503,
+                "t_stat": 1.4835,
+                "p_value": 0.145579,
+                "ci_lower": -0.198054,
+                "ci_upper": 1.294397
+              },
+              "RMW": {
+                "beta": -0.985116,
+                "std_err": 0.412573,
+                "t_stat": -2.3877,
+                "p_value": 0.021644,
+                "ci_lower": -1.818325,
+                "ci_upper": -0.151908
+              },
+              "CMA": {
+                "beta": 0.533114,
+                "std_err": 0.50601,
+                "t_stat": 1.0536,
+                "p_value": 0.298252,
+                "ci_lower": -0.488794,
+                "ci_upper": 1.555022
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.503887,
+              "adj_r_squared": 0.443386,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 8.3285,
+              "f_pvalue": 1.7e-05
+            }
+          },
+          "UNP": {
+            "factor_stats": {
+              "alpha": {
+                "beta": -0.002285,
+                "std_err": 0.008495,
+                "t_stat": -0.269,
+                "p_value": 0.789285,
+                "ci_lower": -0.019442,
+                "ci_upper": 0.014872
+              },
+              "Mkt-RF": {
+                "beta": 0.993857,
+                "std_err": 0.175105,
+                "t_stat": 5.6758,
+                "p_value": 1e-06,
+                "ci_lower": 0.640225,
+                "ci_upper": 1.347488
+              },
+              "SMB": {
+                "beta": 0.101947,
+                "std_err": 0.315992,
+                "t_stat": 0.3226,
+                "p_value": 0.748619,
+                "ci_lower": -0.536212,
+                "ci_upper": 0.740105
+              },
+              "HML": {
+                "beta": 0.225986,
+                "std_err": 0.308044,
+                "t_stat": 0.7336,
+                "p_value": 0.467356,
+                "ci_lower": -0.396121,
+                "ci_upper": 0.848093
+              },
+              "RMW": {
+                "beta": -0.003819,
+                "std_err": 0.34395,
+                "t_stat": -0.0111,
+                "p_value": 0.991195,
+                "ci_lower": -0.698441,
+                "ci_upper": 0.690803
+              },
+              "CMA": {
+                "beta": -0.071284,
+                "std_err": 0.421846,
+                "t_stat": -0.169,
+                "p_value": 0.866642,
+                "ci_lower": -0.92322,
+                "ci_upper": 0.780651
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.478107,
+              "adj_r_squared": 0.414462,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 7.512,
+              "f_pvalue": 4.4e-05
+            }
+          },
+          "WM": {
+            "factor_stats": {
+              "alpha": {
+                "beta": 0.006287,
+                "std_err": 0.007116,
+                "t_stat": 0.8835,
+                "p_value": 0.382096,
+                "ci_lower": -0.008083,
+                "ci_upper": 0.020657
+              },
+              "Mkt-RF": {
+                "beta": 0.634467,
+                "std_err": 0.146664,
+                "t_stat": 4.326,
+                "p_value": 9.5e-05,
+                "ci_lower": 0.338272,
+                "ci_upper": 0.930661
+              },
+              "SMB": {
+                "beta": -0.504588,
+                "std_err": 0.264668,
+                "t_stat": -1.9065,
+                "p_value": 0.063612,
+                "ci_lower": -1.039097,
+                "ci_upper": 0.02992
+              },
+              "HML": {
+                "beta": -0.137916,
+                "std_err": 0.258011,
+                "t_stat": -0.5345,
+                "p_value": 0.595859,
+                "ci_lower": -0.65898,
+                "ci_upper": 0.383148
+              },
+              "RMW": {
+                "beta": -0.118779,
+                "std_err": 0.288086,
+                "t_stat": -0.4123,
+                "p_value": 0.682263,
+                "ci_lower": -0.700581,
+                "ci_upper": 0.463022
+              },
+              "CMA": {
+                "beta": 0.1289,
+                "std_err": 0.35333,
+                "t_stat": 0.3648,
+                "p_value": 0.717125,
+                "ci_lower": -0.584664,
+                "ci_upper": 0.842464
+              }
+            },
+            "model_stats": {
+              "r_squared": 0.361922,
+              "adj_r_squared": 0.284108,
+              "n_obs": 47,
+              "df_residual": 41,
+              "f_stat": 4.6511,
+              "f_pvalue": 0.001873
+            }
+          }
+        }
+      },
+      "bestGradientLabel": "Gradient à pas optimal"
+    },
+    "description": "Simulations avec tests statistiques"
+  },
+  {
     "id": "sim-1773495156108-in1aj",
     "date": "2026-03-14T13:32:36.109Z",
     "modelId": "markowitz-3factors",
