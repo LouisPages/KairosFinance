@@ -25,6 +25,8 @@ from .llm_config import (
     MAX_TOKENS_SELECTOR,
     ALL_FACTORS,
     MIN_FACTORS_REQUIRED,
+    FACTORS_CACHE_FILE,
+    SELECTOR_MAX_RETRIES,
 )
 
 logger = logging.getLogger(__name__)
@@ -33,7 +35,7 @@ logger = logging.getLogger(__name__)
 FactorMask = dict[str, bool]
 
 _FALLBACK_MASK: FactorMask = {
-    "Mkt-RF": False, "SMB": False, "HML": False, "RMW": False, "CMA": False,
+    "Mkt-RF": True, "SMB": False, "HML": False, "RMW": False, "CMA": False,
     "UMD": False, "HY_SPREAD": False, "TERM_SPREAD": False, "VIX": False,
 }
 
@@ -183,7 +185,9 @@ _ANTHROPIC_MIN_INTERVAL = 13.0  # secondes entre deux appels (60s / 5 req + marg
 _anthropic_last_call: float = 0.0
 
 
-def _call_anthropic(system_prompt: str, user_msg: str, max_retries: int = 4) -> str:
+def _call_anthropic(system_prompt: str, user_msg: str, max_retries: int | None = None) -> str:
+    if max_retries is None:
+        max_retries = SELECTOR_MAX_RETRIES
     import anthropic
 
     global _anthropic_last_call
@@ -220,7 +224,9 @@ def _call_anthropic(system_prompt: str, user_msg: str, max_retries: int = 4) -> 
     raise RuntimeError("Anthropic : échec après %d tentatives." % max_retries)
 
 
-def _call_gemini(system_prompt: str, user_msg: str, max_retries: int = 3) -> str:
+def _call_gemini(system_prompt: str, user_msg: str, max_retries: int | None = None) -> str:
+    if max_retries is None:
+        max_retries = SELECTOR_MAX_RETRIES
     from google import genai
     from google.genai import types
     client = genai.Client(api_key=GOOGLE_API_KEY)
@@ -254,7 +260,9 @@ def _call_gemini(system_prompt: str, user_msg: str, max_retries: int = 3) -> str
     raise RuntimeError("Gemini : quota dépassé après %d tentatives." % max_retries)
 
 
-def _call_mistral_selector(system_prompt: str, user_msg: str, max_retries: int = 3) -> str:
+def _call_mistral_selector(system_prompt: str, user_msg: str, max_retries: int | None = None) -> str:
+    if max_retries is None:
+        max_retries = SELECTOR_MAX_RETRIES
     import httpx
     payload = {
         "model": MISTRAL_MODEL,
@@ -289,6 +297,35 @@ def _call_mistral_selector(system_prompt: str, user_msg: str, max_retries: int =
 
 
 # ---------------------------------------------------------------------------
+# Cache disque : choix et explications des facteurs (ticker × mois)
+# ---------------------------------------------------------------------------
+
+def _factors_cache_key(ticker: str, year: int, month: int) -> str:
+    return f"{ticker}_{year:04d}{month:02d}"
+
+
+def _load_factors_cache() -> dict:
+    """Charge le cache des réponses LLM (masque + explication) depuis le fichier."""
+    if FACTORS_CACHE_FILE.exists():
+        try:
+            with open(FACTORS_CACHE_FILE, encoding="utf-8") as f:
+                return json.load(f)
+        except (json.JSONDecodeError, OSError):
+            return {}
+    return {}
+
+
+def _save_factors_cache(cache: dict) -> None:
+    """Enregistre le cache des choix et explications des facteurs dans llm_cache/factors_cache.json."""
+    try:
+        FACTORS_CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with open(FACTORS_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False, indent=2)
+    except OSError as e:
+        logger.warning("Impossible d'écrire le cache facteurs : %s", e)
+
+
+# ---------------------------------------------------------------------------
 # Log de tous les prompts capturés (un par ticker × mois)
 # ---------------------------------------------------------------------------
 
@@ -320,12 +357,37 @@ def select_factors_for_ticker(
     year: int,
     month: int,
     news: dict[str, Any],
+    cache: dict | None = None,
 ) -> FactorMask:
     """
     Retourne un dict { facteur: bool } pour un ticker et un mois donnés.
     En cas d'échec, retourne le fallback (tous les facteurs actifs).
+    Si cache est fourni, lit/écrit les choix et explications dans le cache disque.
     """
     provider = SELECTOR_PROVIDER.lower()
+    key = _factors_cache_key(ticker, year, month)
+
+    # Lecture depuis le cache (choix + explication dans "response")
+    if cache is not None and key in cache:
+        entry = cache[key]
+        raw = entry.get("response", "")
+        mask = _parse_mask(raw)
+        if mask is not None:
+            _prompt_log.append({
+                "ticker": ticker,
+                "month": f"{year}-{month:02d}",
+                "provider": entry.get("provider", provider),
+                "system": entry.get("system", ""),
+                "user": entry.get("user", ""),
+                "response": raw.strip(),
+            })
+            logger.info(
+                "%s %d-%02d (cache) — facteurs actifs : %s",
+                ticker, year, month,
+                [f for f, v in mask.items() if v],
+            )
+            return mask
+
     api_key_map = {
         "openai": OPENAI_API_KEY,
         "anthropic": ANTHROPIC_API_KEY,
@@ -358,14 +420,18 @@ def select_factors_for_ticker(
             logger.warning("Parsing échoué pour %s — fallback.", ticker)
             return _FALLBACK_MASK.copy()
 
-        _prompt_log.append({
+        # Enregistrement dans le log et dans le cache disque (choix + explication)
+        log_entry = {
             "ticker": ticker,
             "month": f"{year}-{month:02d}",
             "provider": provider,
             "system": system_prompt,
             "user": user_msg,
             "response": raw.strip(),
-        })
+        }
+        _prompt_log.append(log_entry)
+        if cache is not None:
+            cache[key] = log_entry
 
         logger.info(
             "%s %d-%02d — facteurs actifs : %s",
@@ -387,14 +453,17 @@ def select_factors(
 ) -> tuple[dict[str, FactorMask], list[str]]:
     """
     Lance la sélection pour tous les tickers.
+    Charge le cache des facteurs (choix + explications), le met à jour, puis le sauvegarde.
     Retourne :
       - per_ticker  : { ticker: { facteur: bool } }
       - active_factors : facteurs dont au moins un ticker les a activés
     """
+    cache = _load_factors_cache()
     per_ticker: dict[str, FactorMask] = {}
     for ticker in tickers:
         news = news_results.get(ticker, {})
-        per_ticker[ticker] = select_factors_for_ticker(ticker, year, month, news)
+        per_ticker[ticker] = select_factors_for_ticker(ticker, year, month, news, cache=cache)
+    _save_factors_cache(cache)
 
     active_factors = [f for f in ALL_FACTORS if any(per_ticker[t].get(f, True) for t in tickers)]
     if len(active_factors) < MIN_FACTORS_REQUIRED:

@@ -191,13 +191,6 @@ def history_delete(entry_id: str):
     return {"ok": True}
 
 
-@app.delete("/api/history")
-def history_clear():
-    with _history_lock:
-        _write_history([])
-    return {"ok": True}
-
-
 # ── Stock price history ───────────────────────────────────────────────────────
 
 @app.get("/api/history")
@@ -308,9 +301,9 @@ async def simulate_llm_stream(req: SimulateRequest):
     if len(req.symbols) < 2:
         raise HTTPException(status_code=400, detail="Sélectionnez au moins 2 actions.")
 
-    # Backtest LLM : octobre 2024 → 21 janvier 2026 (marge pour assez de données)
-    end_d = datetime(2026, 1, 21)
-    start_d = datetime(2024, 10, 1)
+    # Backtest LLM : 1 an de backtest (12 mois) ≈ 20 % → plage large pour atteindre 59+ mois (déc. 2020 → janv. 2026)
+    start_d = datetime(2005, 1, 1)
+    end_d = datetime(2026, 1, 1)
     start_s = start_d.strftime("%Y-%m-%d")
     end_s = end_d.strftime("%Y-%m-%d")
 

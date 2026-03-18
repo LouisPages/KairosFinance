@@ -17,12 +17,24 @@ import pandas as pd
 import yfinance as yf
 
 from gestion.get_facteurs import load_famafrench_5factors, load_momentum_factor
+from gestion.ols_with_stats import ols_factor_regression
 from gestion.dynamic.llm_news_fetcher import fetch_news
 from gestion.dynamic.llm_factor_selector import select_factors, get_all_prompt_examples, reset_prompt_log, FactorMask
 from gestion.dynamic.llm_config import ALL_FACTORS
 from gestion.dynamic.fred_loader import load_fred_factors
 
 logger = logging.getLogger(__name__)
+
+
+def _json_sanitize(obj: Any) -> Any:
+    """Remplace nan/inf par None pour que la réponse soit JSON-sérialisable."""
+    if isinstance(obj, dict):
+        return {k: _json_sanitize(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_json_sanitize(x) for x in obj]
+    if isinstance(obj, float) and (np.isnan(obj) or np.isinf(obj)):
+        return None
+    return obj
 
 
 # ---------------------------------------------------------------------------
@@ -44,6 +56,9 @@ def _download_prices(tickers: list[str], start: str, end: str) -> pd.DataFrame:
         if isinstance(prices.columns, pd.MultiIndex):
             prices.columns = [c[-1] if isinstance(c, tuple) else c for c in prices.columns]
     prices = prices.dropna(axis=1, how="all")
+    # Éviter "Cannot join tz-naive with tz-aware" : normaliser en tz-naive
+    if hasattr(prices.index, "tz") and prices.index.tz is not None:
+        prices.index = prices.index.tz_localize(None)
     return prices
 
 
@@ -54,33 +69,34 @@ def _monthly_returns(prices: pd.DataFrame) -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
-# Régression OLS multi-facteurs
+# Régression OLS multi-facteurs (avec tests statistiques)
 # ---------------------------------------------------------------------------
 
-def _ols_regression(
+def _ols_regression_with_stats(
     asset_returns: pd.Series,
     factor_returns: pd.DataFrame,
     active_factors: list[str],
     rf: pd.Series,
-) -> dict[str, float]:
-    """OLS sur les facteurs actifs (masque booléen LLM)."""
+) -> tuple[dict[str, float], dict[str, Any] | None]:
+    """
+    OLS sur les facteurs actifs via statsmodels. Retourne (coeffs, factor_tests).
+    factor_tests est None si la régression échoue.
+    """
     X_cols = factor_returns[active_factors]
     common_idx = asset_returns.index.intersection(X_cols.index).intersection(rf.index)
     if len(common_idx) < max(len(active_factors) + 2, 5):
-        return {"alpha": 0.0, **{f: 0.0 for f in active_factors}}
+        return {"alpha": 0.0, **{f: 0.0 for f in active_factors}}, None
 
     y = (asset_returns.loc[common_idx] - rf.loc[common_idx]).values
-    X_raw = X_cols.loc[common_idx].values / 100.0
-    X = np.column_stack([np.ones(len(X_raw)), X_raw])
-    try:
-        coeffs, _, _, _ = np.linalg.lstsq(X, y, rcond=None)
-    except np.linalg.LinAlgError:
-        return {"alpha": 0.0, **{f: 0.0 for f in active_factors}}
-
-    result = {"alpha": float(coeffs[0])}
-    for i, f in enumerate(active_factors):
-        result[f] = float(coeffs[i + 1])
-    return result
+    X_raw = X_cols.loc[common_idx].values / 100.0  # décimal
+    result = ols_factor_regression(y, X_raw, active_factors)
+    if result is not None:
+        return result["coeffs"], {
+            "factor_stats": result["factor_tests"],
+            "model_stats": result["model_stats"],
+        }
+    # Fallback : coefficients à 0, pas de stats
+    return {"alpha": 0.0, **{f: 0.0 for f in active_factors}}, {"factor_stats": {}, "model_stats": None}
 
 
 def _expected_return_annualized(
@@ -112,18 +128,24 @@ def _optimize_portfolio(
     best_ret = 0.0
     best_vol = 0.0
 
+    # Éviter NaN si matrice de covariance dégénérée (p. ex. peu de données)
+    if not np.isfinite(cov_matrix).all() or not np.isfinite(mean_returns).all():
+        return np.ones(n) / n, 0.0, 0.0, 0.0
+
     for _ in range(num_portfolios):
         w = np.random.random(n)
         w /= w.sum()
         ret = float(np.dot(mean_returns, w))
-        vol = float(np.sqrt(w @ cov_matrix @ w))
+        vol = float(np.sqrt(np.maximum(w @ cov_matrix @ w, 0.0)))
         sharpe = (ret - risk_free_rate) / vol if vol > 1e-10 else 0.0
-        if sharpe > best_sharpe:
+        if np.isfinite(sharpe) and sharpe > best_sharpe:
             best_sharpe = sharpe
-            best_w = w
+            best_w = w.copy()
             best_ret = ret
             best_vol = vol
 
+    if not np.isfinite(best_sharpe):
+        best_sharpe = 0.0
     return best_w, best_ret, best_vol, best_sharpe
 
 
@@ -177,6 +199,7 @@ def _step(
 
     mu_vec = []
     valid_tickers = []
+    factor_tests_by_ticker: dict[str, dict[str, Any]] = {}
     for ticker in tickers:
         if ticker not in train.columns:
             continue
@@ -185,10 +208,11 @@ def _step(
         active = [f for f in available_factors if ticker_mask.get(f, True)]
         if not active:
             active = available_factors[:1]
-        betas = _ols_regression(train[ticker], train_ff, active, rf_train)
+        betas, factor_tests = _ols_regression_with_stats(train[ticker], train_ff, active, rf_train)
         mu = _expected_return_annualized(betas, factor_means, rf_mean, active)
         mu_vec.append(mu)
         valid_tickers.append(ticker)
+        factor_tests_by_ticker[ticker] = factor_tests if factor_tests else {"factor_stats": {}, "model_stats": None}
 
     if len(valid_tickers) < 2:
         return None
@@ -220,6 +244,7 @@ def _step(
             }
             for t in valid_tickers
         },
+        "factor_tests": factor_tests_by_ticker,
     }
 
 
@@ -297,9 +322,14 @@ def run(
     monthly_ret.index = monthly_ret.index.to_period("M")
 
     n_months = len(monthly_ret)
-    split = int(n_months * 0.8)
-    if split < 12:
-        return {"error": "Pas assez de données pour la période."}
+
+    # Backtest = 1 an (12 mois), part test ≈ 20 % si assez de données ; min 24 mois (12 train + 12 test)
+    if n_months < 24:
+        _first = str(monthly_ret.index[0]) if n_months > 0 else "?"
+        _last = str(monthly_ret.index[-1]) if n_months > 0 else "?"
+        return {"error": "Pas assez de données pour la période. Il faut au moins 24 mois (12 d'entraînement + 12 de backtest). Période disponible : {} à {} ({} mois). Un ou plusieurs titres n'ont peut-être pas de données sur toute la plage.".format(_first, _last, n_months)}
+    # Derniers 12 mois = backtest (1 an), le reste = entraînement (≈ 80 % quand n_months ~60)
+    split = n_months - 12
 
     train_periods = monthly_ret.index[:split]
     test_periods = monthly_ret.index[split:]
@@ -358,6 +388,7 @@ def run(
             "sharpe": step_result["sharpe"] if step_result else None,
             "expectedReturn": step_result["expectedReturn"] if step_result else None,
             "volatility": step_result["volatility"] if step_result else None,
+            "factor_tests": step_result["factor_tests"] if step_result else {},
         })
 
         # Appliquer les poids au rendement du mois suivant (t+1)
@@ -387,6 +418,9 @@ def run(
             auto_adjust=False,
             progress=False,
         )
+        if not spy_data.empty and hasattr(spy_data.index, "tz") and spy_data.index.tz is not None:
+            spy_data = spy_data.copy()
+            spy_data.index = spy_data.index.tz_localize(None)
         adj = spy_data["Adj Close"] if "Adj Close" in spy_data.columns else spy_data["Close"]
         if isinstance(adj, pd.DataFrame):
             adj = adj.iloc[:, 0]
@@ -435,7 +469,7 @@ def run(
 
     _emit("status", step="done", message="Backtest terminé. Calcul des métriques…")
 
-    return {
+    result = {
         # Métriques globales (période de test)
         "totalReturn": total_return_pct,
         "maxDrawdown": max_drawdown,
@@ -454,3 +488,4 @@ def run(
         # Tous les prompts LLM capturés (un par ticker × mois)
         "promptExamples": get_all_prompt_examples(),
     }
+    return _json_sanitize(result)

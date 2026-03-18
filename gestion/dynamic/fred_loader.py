@@ -90,6 +90,9 @@ def load_fred_factors(
     # c'est-à-dire la variation calculée sur t-1 → t-2
     df = df.shift(1)
 
+    # Éviter "Cannot join tz-naive with tz-aware" : normaliser en tz-naive avant Period
+    if hasattr(df.index, "tz") and df.index.tz is not None:
+        df.index = df.index.tz_localize(None)
     # Conversion en Period("M")
     df.index = df.index.to_period("M")
 

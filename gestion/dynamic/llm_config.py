@@ -28,6 +28,8 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
 TEMPERATURE = 0.0
 MAX_TOKENS_NEWS = 1500
 MAX_TOKENS_SELECTOR = 800
+# Nombre max de tentatives en cas de rate limit / erreur temporaire (sélection facteurs)
+SELECTOR_MAX_RETRIES = 1
 
 # --- Fenêtre de news ---
 NEWS_WINDOW_MONTHS = 3
@@ -40,3 +42,4 @@ MIN_FACTORS_REQUIRED = 1
 CACHE_DIR = Path(__file__).resolve().parent / "llm_cache"
 CACHE_DIR.mkdir(exist_ok=True)
 NEWS_CACHE_FILE = CACHE_DIR / "news_cache.json"
+FACTORS_CACHE_FILE = CACHE_DIR / "factors_cache.json"
