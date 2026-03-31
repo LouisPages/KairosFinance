@@ -1,5 +1,1857 @@
 [
   {
+    "id": "sim-1774961133601-ooaqa",
+    "date": "2026-03-31T12:45:33.601Z",
+    "modelId": "markowitz-crypto-ff3",
+    "symbols": [
+      "BTC",
+      "ETH",
+      "USDT",
+      "BNB",
+      "XRP",
+      "SOL",
+      "TRX",
+      "DOGE",
+      "ADA",
+      "BCH",
+      "HYPE",
+      "LEO",
+      "WLFI",
+      "PAXG",
+      "DOT",
+      "XAUt",
+      "USDG",
+      "RAIN",
+      "CIRCLEUSYC"
+    ],
+    "result": {
+      "weights": {
+        "BTC": 0.20841191084165764,
+        "ETH": 0.386596437725746,
+        "BNB": 0.1165302828601604,
+        "XRP": 0,
+        "SOL": 0.16477980040255394,
+        "TRX": 0,
+        "DOGE": 0.01060589060098326,
+        "ADA": 0,
+        "BCH": 0,
+        "HYPE": 0.032650119487173314,
+        "LEO": 0.08042555808172533,
+        "DOT": 0
+      },
+      "sharpe": 1.3875,
+      "expectedReturn": 147.33,
+      "volatility": 103.3,
+      "maxDrawdown": 19.87,
+      "comparisonData": [
+        {
+          "date": "2016-02-29 00:00:00",
+          "portfolio": 0.12,
+          "market": 0.42
+        },
+        {
+          "date": "2016-03-31 00:00:00",
+          "portfolio": 0.16,
+          "market": 0.44
+        },
+        {
+          "date": "2016-04-30 00:00:00",
+          "portfolio": 0.15,
+          "market": 0.43
+        },
+        {
+          "date": "2016-05-31 00:00:00",
+          "portfolio": 0.19,
+          "market": 0.45
+        },
+        {
+          "date": "2016-06-30 00:00:00",
+          "portfolio": 0.19,
+          "market": 0.48
+        },
+        {
+          "date": "2016-07-31 00:00:00",
+          "portfolio": 0.18,
+          "market": 0.46
+        },
+        {
+          "date": "2016-08-31 00:00:00",
+          "portfolio": 0.18,
+          "market": 0.45
+        },
+        {
+          "date": "2016-09-30 00:00:00",
+          "portfolio": 0.19,
+          "market": 0.48
+        },
+        {
+          "date": "2016-10-31 00:00:00",
+          "portfolio": 0.18,
+          "market": 0.47
+        },
+        {
+          "date": "2016-11-30 00:00:00",
+          "portfolio": 0.17,
+          "market": 0.46
+        },
+        {
+          "date": "2016-12-31 00:00:00",
+          "portfolio": 0.18,
+          "market": 0.47
+        },
+        {
+          "date": "2017-01-31 00:00:00",
+          "portfolio": 0.2,
+          "market": 0.48
+        },
+        {
+          "date": "2017-02-28 00:00:00",
+          "portfolio": 0.25,
+          "market": 0.5
+        },
+        {
+          "date": "2017-03-31 00:00:00",
+          "portfolio": 0.45,
+          "market": 0.73
+        },
+        {
+          "date": "2017-04-30 00:00:00",
+          "portfolio": 0.58,
+          "market": 0.94
+        },
+        {
+          "date": "2017-05-31 00:00:00",
+          "portfolio": 1.11,
+          "market": 1.64
+        },
+        {
+          "date": "2017-06-30 00:00:00",
+          "portfolio": 1.23,
+          "market": 1.69
+        },
+        {
+          "date": "2017-07-31 00:00:00",
+          "portfolio": 1.13,
+          "market": 1.57
+        },
+        {
+          "date": "2017-08-31 00:00:00",
+          "portfolio": 1.67,
+          "market": 1.87
+        },
+        {
+          "date": "2017-09-30 00:00:00",
+          "portfolio": 1.48,
+          "market": 1.67
+        },
+        {
+          "date": "2017-10-31 00:00:00",
+          "portfolio": 2.51,
+          "market": 2.45
+        },
+        {
+          "date": "2017-11-30 00:00:00",
+          "portfolio": 3.51,
+          "market": 4.1
+        },
+        {
+          "date": "2017-12-31 00:00:00",
+          "portfolio": 6.38,
+          "market": 12.34
+        },
+        {
+          "date": "2018-01-31 00:00:00",
+          "portfolio": 6.98,
+          "market": 11.05
+        },
+        {
+          "date": "2018-02-28 00:00:00",
+          "portfolio": 6.57,
+          "market": 10.19
+        },
+        {
+          "date": "2018-03-31 00:00:00",
+          "portfolio": 4.64,
+          "market": 7.67
+        },
+        {
+          "date": "2018-04-30 00:00:00",
+          "portfolio": 6.55,
+          "market": 12.03
+        },
+        {
+          "date": "2018-05-31 00:00:00",
+          "portfolio": 5.66,
+          "market": 9.76
+        },
+        {
+          "date": "2018-06-30 00:00:00",
+          "portfolio": 5.06,
+          "market": 8.24
+        },
+        {
+          "date": "2018-07-31 00:00:00",
+          "portfolio": 5.49,
+          "market": 8.94
+        },
+        {
+          "date": "2018-08-31 00:00:00",
+          "portfolio": 4.4,
+          "market": 7.47
+        },
+        {
+          "date": "2018-09-30 00:00:00",
+          "portfolio": 4.03,
+          "market": 8.05
+        },
+        {
+          "date": "2018-10-31 00:00:00",
+          "portfolio": 3.73,
+          "market": 7.26
+        },
+        {
+          "date": "2018-11-30 00:00:00",
+          "portfolio": 2.69,
+          "market": 5.44
+        },
+        {
+          "date": "2018-12-31 00:00:00",
+          "portfolio": 2.84,
+          "market": 5.59
+        },
+        {
+          "date": "2019-01-31 00:00:00",
+          "portfolio": 2.56,
+          "market": 5.35
+        },
+        {
+          "date": "2019-02-28 00:00:00",
+          "portfolio": 3.03,
+          "market": 5.81
+        },
+        {
+          "date": "2019-03-31 00:00:00",
+          "portfolio": 3.4,
+          "market": 6.69
+        },
+        {
+          "date": "2019-04-30 00:00:00",
+          "portfolio": 3.82,
+          "market": 7.25
+        },
+        {
+          "date": "2019-05-31 00:00:00",
+          "portfolio": 5.49,
+          "market": 9.69
+        },
+        {
+          "date": "2019-06-30 00:00:00",
+          "portfolio": 6.77,
+          "market": 10.86
+        },
+        {
+          "date": "2019-07-31 00:00:00",
+          "portfolio": 5.2,
+          "market": 8.56
+        },
+        {
+          "date": "2019-08-31 00:00:00",
+          "portfolio": 4.64,
+          "market": 7.51
+        },
+        {
+          "date": "2019-09-30 00:00:00",
+          "portfolio": 4.29,
+          "market": 6.73
+        },
+        {
+          "date": "2019-10-31 00:00:00",
+          "portfolio": 4.68,
+          "market": 7.73
+        },
+        {
+          "date": "2019-11-30 00:00:00",
+          "portfolio": 4.11,
+          "market": 6.89
+        },
+        {
+          "date": "2019-12-31 00:00:00",
+          "portfolio": 3.72,
+          "market": 6.21
+        },
+        {
+          "date": "2020-01-31 00:00:00",
+          "portfolio": 4.72,
+          "market": 8.08
+        },
+        {
+          "date": "2020-02-29 00:00:00",
+          "portfolio": 5.1,
+          "market": 7.9
+        },
+        {
+          "date": "2020-03-31 00:00:00",
+          "portfolio": 3.81,
+          "market": 6.27
+        },
+        {
+          "date": "2020-04-30 00:00:00",
+          "portfolio": 5.23,
+          "market": 8.1
+        },
+        {
+          "date": "2020-05-31 00:00:00",
+          "portfolio": 5.48,
+          "market": 8.45
+        },
+        {
+          "date": "2020-06-30 00:00:00",
+          "portfolio": 5.65,
+          "market": 8.48
+        },
+        {
+          "date": "2020-07-31 00:00:00",
+          "portfolio": 8.05,
+          "market": 11.23
+        },
+        {
+          "date": "2020-08-31 00:00:00",
+          "portfolio": 11.35,
+          "market": 13.58
+        },
+        {
+          "date": "2020-09-30 00:00:00",
+          "portfolio": 10.1,
+          "market": 12.14
+        },
+        {
+          "date": "2020-10-31 00:00:00",
+          "portfolio": 10.02,
+          "market": 11.84
+        },
+        {
+          "date": "2020-11-30 00:00:00",
+          "portfolio": 13.36,
+          "market": 16.28
+        },
+        {
+          "date": "2020-12-31 00:00:00",
+          "portfolio": 16.67,
+          "market": 18.12
+        },
+        {
+          "date": "2021-01-31 00:00:00",
+          "portfolio": 28.65,
+          "market": 35.49
+        },
+        {
+          "date": "2021-02-28 00:00:00",
+          "portfolio": 56.76,
+          "market": 72.15
+        },
+        {
+          "date": "2021-03-31 00:00:00",
+          "portfolio": 71.75,
+          "market": 84.43
+        },
+        {
+          "date": "2021-04-30 00:00:00",
+          "portfolio": 110.84,
+          "market": 157.89
+        },
+        {
+          "date": "2021-05-31 00:00:00",
+          "portfolio": 85.24,
+          "market": 124.44
+        },
+        {
+          "date": "2021-06-30 00:00:00",
+          "portfolio": 84.3,
+          "market": 115.33
+        },
+        {
+          "date": "2021-07-31 00:00:00",
+          "portfolio": 93.32,
+          "market": 118.76
+        },
+        {
+          "date": "2021-08-31 00:00:00",
+          "portfolio": 148.82,
+          "market": 181.04
+        },
+        {
+          "date": "2021-09-30 00:00:00",
+          "portfolio": 140.11,
+          "market": 164.82
+        },
+        {
+          "date": "2021-10-31 00:00:00",
+          "portfolio": 201.23,
+          "market": 211.43
+        },
+        {
+          "date": "2021-11-30 00:00:00",
+          "portfolio": 206.57,
+          "market": 203.83
+        },
+        {
+          "date": "2021-12-31 00:00:00",
+          "portfolio": 178.03,
+          "market": 174.15
+        },
+        {
+          "date": "2022-01-31 00:00:00",
+          "portfolio": 130.06,
+          "market": 132.22
+        },
+        {
+          "date": "2022-02-28 00:00:00",
+          "portfolio": 134.68,
+          "market": 137.14
+        },
+        {
+          "date": "2022-03-31 00:00:00",
+          "portfolio": 169.49,
+          "market": 168.02
+        },
+        {
+          "date": "2022-04-30 00:00:00",
+          "portfolio": 142.94,
+          "market": 139.44
+        },
+        {
+          "date": "2022-05-31 00:00:00",
+          "portfolio": 105.27,
+          "market": 109.61
+        },
+        {
+          "date": "2022-06-30 00:00:00",
+          "portfolio": 71,
+          "market": 83
+        },
+        {
+          "date": "2022-07-31 00:00:00",
+          "portfolio": 93.7,
+          "market": 97.6
+        },
+        {
+          "date": "2022-08-31 00:00:00",
+          "portfolio": 82.63,
+          "market": 86.74
+        },
+        {
+          "date": "2022-09-30 00:00:00",
+          "portfolio": 78.15,
+          "market": 87.08
+        },
+        {
+          "date": "2022-10-31 00:00:00",
+          "portfolio": 86.6,
+          "market": 96.21
+        },
+        {
+          "date": "2022-11-30 00:00:00",
+          "portfolio": 64.8,
+          "market": 79.08
+        },
+        {
+          "date": "2022-12-31 00:00:00",
+          "portfolio": 59.89,
+          "market": 69.31
+        },
+        {
+          "date": "2023-01-31 00:00:00",
+          "portfolio": 87.78,
+          "market": 93.96
+        },
+        {
+          "date": "2023-02-28 00:00:00",
+          "portfolio": 88.33,
+          "market": 94.03
+        },
+        {
+          "date": "2023-03-31 00:00:00",
+          "portfolio": 94.46,
+          "market": 97.21
+        },
+        {
+          "date": "2023-04-30 00:00:00",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2023-05-31 00:00:00",
+          "portfolio": 96.9,
+          "market": 97.66
+        },
+        {
+          "date": "2023-06-30 00:00:00",
+          "portfolio": 93.75,
+          "market": 101.32
+        },
+        {
+          "date": "2023-07-31 00:00:00",
+          "portfolio": 99.04,
+          "market": 112.33
+        },
+        {
+          "date": "2023-08-31 00:00:00",
+          "portfolio": 90.9,
+          "market": 100.31
+        },
+        {
+          "date": "2023-09-30 00:00:00",
+          "portfolio": 88.59,
+          "market": 99.3
+        },
+        {
+          "date": "2023-10-31 00:00:00",
+          "portfolio": 108.51,
+          "market": 115
+        },
+        {
+          "date": "2023-11-30 00:00:00",
+          "portfolio": 128.21,
+          "market": 129.39
+        },
+        {
+          "date": "2023-12-31 00:00:00",
+          "portfolio": 159.39,
+          "market": 161.37
+        },
+        {
+          "date": "2024-01-31 00:00:00",
+          "portfolio": 160.04,
+          "market": 151.81
+        },
+        {
+          "date": "2024-02-29 00:00:00",
+          "portfolio": 215.41,
+          "market": 190.57
+        },
+        {
+          "date": "2024-03-31 00:00:00",
+          "portfolio": 267.08,
+          "market": 245.92
+        },
+        {
+          "date": "2024-04-30 00:00:00",
+          "portfolio": 238.92,
+          "market": 208.98
+        },
+        {
+          "date": "2024-05-31 00:00:00",
+          "portfolio": 266.95,
+          "market": 218.9
+        },
+        {
+          "date": "2024-06-30 00:00:00",
+          "portfolio": 240.76,
+          "market": 198.71
+        },
+        {
+          "date": "2024-07-31 00:00:00",
+          "portfolio": 254.16,
+          "market": 213.02
+        },
+        {
+          "date": "2024-08-31 00:00:00",
+          "portfolio": 214.01,
+          "market": 189.81
+        },
+        {
+          "date": "2024-09-30 00:00:00",
+          "portfolio": 231.86,
+          "market": 207.25
+        },
+        {
+          "date": "2024-10-31 00:00:00",
+          "portfolio": 242.34,
+          "market": 212.68
+        },
+        {
+          "date": "2024-11-30 00:00:00",
+          "portfolio": 323.51,
+          "market": 379.31
+        },
+        {
+          "date": "2024-12-31 00:00:00",
+          "portfolio": 336.37,
+          "market": 455.76
+        },
+        {
+          "date": "2025-01-31 00:00:00",
+          "portfolio": 334.65,
+          "market": 450.92
+        }
+      ],
+      "numPortfolios": 1,
+      "trainPeriodStart": "2016-02-29 00:00:00",
+      "trainPeriodEnd": "2023-03-31 00:00:00",
+      "testPeriodStart": "2023-04-30 00:00:00",
+      "testPeriodEnd": "2025-01-31 00:00:00",
+      "efficientFrontier": [
+        {
+          "volatility": 103.3,
+          "expectedReturn": 147.33,
+          "sharpe": 1.3875,
+          "backtestReturn": 254.27
+        }
+      ],
+      "factor_tests": {
+        "BTC": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.022208,
+              "std_err": 0.021601,
+              "t_stat": 1.0281,
+              "p_value": 0.306886,
+              "ci_lower": -0.020755,
+              "ci_upper": 0.065171
+            },
+            "CMKT": {
+              "beta": 0.936732,
+              "std_err": 0.135191,
+              "t_stat": 6.929,
+              "p_value": 0,
+              "ci_lower": 0.667843,
+              "ci_upper": 1.205621
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -7.4699,
+              "p_value": 0,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.277914,
+              "std_err": 0.087706,
+              "t_stat": -3.1687,
+              "p_value": 0.002144,
+              "ci_lower": -0.452358,
+              "ci_upper": -0.10347
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.435981,
+            "adj_r_squared": 0.42239,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 32.079,
+            "f_pvalue": 0
+          }
+        },
+        "ETH": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.059863,
+              "std_err": 0.0439,
+              "t_stat": 1.3636,
+              "p_value": 0.176373,
+              "ci_lower": -0.027452,
+              "ci_upper": 0.147178
+            },
+            "CMKT": {
+              "beta": 1.421314,
+              "std_err": 0.274751,
+              "t_stat": 5.1731,
+              "p_value": 2e-06,
+              "ci_lower": 0.874845,
+              "ci_upper": 1.967782
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -5.7986,
+              "p_value": 0,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.270376,
+              "std_err": 0.178247,
+              "t_stat": -1.5169,
+              "p_value": 0.133101,
+              "ci_lower": -0.624902,
+              "ci_upper": 0.08415
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.358257,
+            "adj_r_squared": 0.342794,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 23.1677,
+            "f_pvalue": 0
+          }
+        },
+        "BNB": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.01368,
+              "std_err": 0.068912,
+              "t_stat": 0.1985,
+              "p_value": 0.843133,
+              "ci_lower": -0.123383,
+              "ci_upper": 0.150743
+            },
+            "CMKT": {
+              "beta": 2.764498,
+              "std_err": 0.431291,
+              "t_stat": 6.4098,
+              "p_value": 0,
+              "ci_lower": 1.906678,
+              "ci_upper": 3.622317
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -7.1993,
+              "p_value": 0,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.510431,
+              "std_err": 0.279803,
+              "t_stat": -1.8242,
+              "p_value": 0.071713,
+              "ci_lower": -1.066948,
+              "ci_upper": 0.046087
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.465079,
+            "adj_r_squared": 0.452189,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 36.0815,
+            "f_pvalue": 0
+          }
+        },
+        "XRP": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.011101,
+              "std_err": 0.05898,
+              "t_stat": -0.1882,
+              "p_value": 0.851165,
+              "ci_lower": -0.128411,
+              "ci_upper": 0.106208
+            },
+            "CMKT": {
+              "beta": 2.373326,
+              "std_err": 0.369134,
+              "t_stat": 6.4294,
+              "p_value": 0,
+              "ci_lower": 1.639134,
+              "ci_upper": 3.107518
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -7.833,
+              "p_value": 0,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.122795,
+              "std_err": 0.239479,
+              "t_stat": 0.5128,
+              "p_value": 0.609482,
+              "ci_lower": -0.353518,
+              "ci_upper": 0.599108
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.613969,
+            "adj_r_squared": 0.604667,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 66.0044,
+            "f_pvalue": 0
+          }
+        },
+        "SOL": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.041259,
+              "std_err": 0.050975,
+              "t_stat": 0.8094,
+              "p_value": 0.420601,
+              "ci_lower": -0.060128,
+              "ci_upper": 0.142646
+            },
+            "CMKT": {
+              "beta": 0.796025,
+              "std_err": 0.319031,
+              "t_stat": 2.4951,
+              "p_value": 0.014573,
+              "ci_lower": 0.161485,
+              "ci_upper": 1.430566
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -3.2,
+              "p_value": 0.001947,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.168182,
+              "std_err": 0.206974,
+              "t_stat": 0.8126,
+              "p_value": 0.418786,
+              "ci_lower": -0.243481,
+              "ci_upper": 0.579846
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.255936,
+            "adj_r_squared": 0.238006,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 14.2747,
+            "f_pvalue": 5e-06
+          }
+        },
+        "TRX": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.034518,
+              "std_err": 0.041996,
+              "t_stat": -0.8219,
+              "p_value": 0.413471,
+              "ci_lower": -0.118047,
+              "ci_upper": 0.049011
+            },
+            "CMKT": {
+              "beta": 1.204068,
+              "std_err": 0.262837,
+              "t_stat": 4.5811,
+              "p_value": 1.6e-05,
+              "ci_lower": 0.681296,
+              "ci_upper": 1.726839
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -6.2038,
+              "p_value": 0,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.468906,
+              "std_err": 0.170517,
+              "t_stat": 2.7499,
+              "p_value": 0.007315,
+              "ci_lower": 0.129754,
+              "ci_upper": 0.808059
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.62326,
+            "adj_r_squared": 0.614182,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 68.6555,
+            "f_pvalue": 0
+          }
+        },
+        "DOGE": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.018529,
+              "std_err": 0.062153,
+              "t_stat": 0.2981,
+              "p_value": 0.766357,
+              "ci_lower": -0.105091,
+              "ci_upper": 0.142149
+            },
+            "CMKT": {
+              "beta": 2.077025,
+              "std_err": 0.388989,
+              "t_stat": 5.3396,
+              "p_value": 1e-06,
+              "ci_lower": 1.303342,
+              "ci_upper": 2.850708
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -7.0179,
+              "p_value": 0,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.602997,
+              "std_err": 0.25236,
+              "t_stat": 2.3894,
+              "p_value": 0.019141,
+              "ci_lower": 0.101063,
+              "ci_upper": 1.10493
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.649798,
+            "adj_r_squared": 0.64136,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 77.0031,
+            "f_pvalue": 0
+          }
+        },
+        "ADA": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.04962,
+              "std_err": 0.048701,
+              "t_stat": -1.0189,
+              "p_value": 0.311231,
+              "ci_lower": -0.146485,
+              "ci_upper": 0.047245
+            },
+            "CMKT": {
+              "beta": 2.475554,
+              "std_err": 0.304801,
+              "t_stat": 8.1219,
+              "p_value": 0,
+              "ci_lower": 1.869317,
+              "ci_upper": 3.081791
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -9.7781,
+              "p_value": 0,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.03959,
+              "std_err": 0.197742,
+              "t_stat": 0.2002,
+              "p_value": 0.841804,
+              "ci_lower": -0.353711,
+              "ci_upper": 0.432892
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.699443,
+            "adj_r_squared": 0.6922,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 96.5768,
+            "f_pvalue": 0
+          }
+        },
+        "BCH": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.053502,
+              "std_err": 0.032602,
+              "t_stat": -1.6411,
+              "p_value": 0.104563,
+              "ci_lower": -0.118345,
+              "ci_upper": 0.011341
+            },
+            "CMKT": {
+              "beta": 1.292374,
+              "std_err": 0.20404,
+              "t_stat": 6.3339,
+              "p_value": 0,
+              "ci_lower": 0.886548,
+              "ci_upper": 1.698201
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -7.0117,
+              "p_value": 0,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.290529,
+              "std_err": 0.132372,
+              "t_stat": -2.1948,
+              "p_value": 0.030972,
+              "ci_lower": -0.553812,
+              "ci_upper": -0.027246
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.434022,
+            "adj_r_squared": 0.420384,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 31.8244,
+            "f_pvalue": 0
+          }
+        },
+        "HYPE": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": null,
+              "p_value": null,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "CMKT": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": null,
+              "p_value": null,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": null,
+              "p_value": null,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": null,
+              "p_value": null,
+              "ci_lower": 0,
+              "ci_upper": 0
+            }
+          },
+          "model_stats": {
+            "r_squared": null,
+            "adj_r_squared": null,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": null,
+            "f_pvalue": null
+          }
+        },
+        "LEO": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.009493,
+              "std_err": 0.013546,
+              "t_stat": 0.7008,
+              "p_value": 0.485396,
+              "ci_lower": -0.01745,
+              "ci_upper": 0.036435
+            },
+            "CMKT": {
+              "beta": 0.072844,
+              "std_err": 0.084779,
+              "t_stat": 0.8592,
+              "p_value": 0.39269,
+              "ci_lower": -0.095778,
+              "ci_upper": 0.241467
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -1.1302,
+              "p_value": 0.26166,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.02133,
+              "std_err": 0.055001,
+              "t_stat": 0.3878,
+              "p_value": 0.699151,
+              "ci_lower": -0.088065,
+              "ci_upper": 0.130725
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.046064,
+            "adj_r_squared": 0.023078,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 2.004,
+            "f_pvalue": 0.141269
+          }
+        },
+        "DOT": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.01896,
+              "std_err": 0.023584,
+              "t_stat": -0.8039,
+              "p_value": 0.423727,
+              "ci_lower": -0.065868,
+              "ci_upper": 0.027948
+            },
+            "CMKT": {
+              "beta": 0.567735,
+              "std_err": 0.147603,
+              "t_stat": 3.8464,
+              "p_value": 0.000234,
+              "ci_lower": 0.274159,
+              "ci_upper": 0.861311
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -4.4266,
+              "p_value": 2.9e-05,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.065789,
+              "std_err": 0.095758,
+              "t_stat": -0.687,
+              "p_value": 0.493976,
+              "ci_lower": -0.256249,
+              "ci_upper": 0.12467
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.272114,
+            "adj_r_squared": 0.254575,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 15.5144,
+            "f_pvalue": 2e-06
+          }
+        }
+      }
+    },
+    "llmResult": null,
+    "classicResult": null,
+    "comparisonData": null,
+    "description": null,
+    "assetMode": "crypto"
+  },
+  {
+    "id": "sim-1774961078980-y6b8y",
+    "date": "2026-03-31T12:44:38.980Z",
+    "modelId": "markowitz-crypto-ff3",
+    "symbols": [
+      "BTC",
+      "ETH",
+      "USDT",
+      "BNB"
+    ],
+    "result": {
+      "weights": {
+        "BTC": 0.3598719828585254,
+        "ETH": 0.45679310438174325,
+        "BNB": 0.1833349127597313
+      },
+      "sharpe": 1.3463,
+      "expectedReturn": 164.11,
+      "volatility": 118.93,
+      "maxDrawdown": 21.88,
+      "comparisonData": [
+        {
+          "date": "2016-02-29 00:00:00",
+          "portfolio": 0.1,
+          "market": 0.06
+        },
+        {
+          "date": "2016-03-31 00:00:00",
+          "portfolio": 0.14,
+          "market": 0.08
+        },
+        {
+          "date": "2016-04-30 00:00:00",
+          "portfolio": 0.13,
+          "market": 0.08
+        },
+        {
+          "date": "2016-05-31 00:00:00",
+          "portfolio": 0.17,
+          "market": 0.1
+        },
+        {
+          "date": "2016-06-30 00:00:00",
+          "portfolio": 0.18,
+          "market": 0.1
+        },
+        {
+          "date": "2016-07-31 00:00:00",
+          "portfolio": 0.17,
+          "market": 0.1
+        },
+        {
+          "date": "2016-08-31 00:00:00",
+          "portfolio": 0.16,
+          "market": 0.09
+        },
+        {
+          "date": "2016-09-30 00:00:00",
+          "portfolio": 0.17,
+          "market": 0.1
+        },
+        {
+          "date": "2016-10-31 00:00:00",
+          "portfolio": 0.17,
+          "market": 0.1
+        },
+        {
+          "date": "2016-11-30 00:00:00",
+          "portfolio": 0.16,
+          "market": 0.09
+        },
+        {
+          "date": "2016-12-31 00:00:00",
+          "portfolio": 0.17,
+          "market": 0.1
+        },
+        {
+          "date": "2017-01-31 00:00:00",
+          "portfolio": 0.2,
+          "market": 0.11
+        },
+        {
+          "date": "2017-02-28 00:00:00",
+          "portfolio": 0.25,
+          "market": 0.14
+        },
+        {
+          "date": "2017-03-31 00:00:00",
+          "portfolio": 0.5,
+          "market": 0.24
+        },
+        {
+          "date": "2017-04-30 00:00:00",
+          "portfolio": 0.68,
+          "market": 0.3
+        },
+        {
+          "date": "2017-05-31 00:00:00",
+          "portfolio": 1.45,
+          "market": 0.57
+        },
+        {
+          "date": "2017-06-30 00:00:00",
+          "portfolio": 1.64,
+          "market": 0.63
+        },
+        {
+          "date": "2017-07-31 00:00:00",
+          "portfolio": 1.51,
+          "market": 0.6
+        },
+        {
+          "date": "2017-08-31 00:00:00",
+          "portfolio": 2.47,
+          "market": 0.91
+        },
+        {
+          "date": "2017-09-30 00:00:00",
+          "portfolio": 2.14,
+          "market": 0.81
+        },
+        {
+          "date": "2017-10-31 00:00:00",
+          "portfolio": 4.5,
+          "market": 2.3
+        },
+        {
+          "date": "2017-11-30 00:00:00",
+          "portfolio": 7,
+          "market": 3.59
+        },
+        {
+          "date": "2017-12-31 00:00:00",
+          "portfolio": 14.94,
+          "market": 9.25
+        },
+        {
+          "date": "2018-01-31 00:00:00",
+          "portfolio": 16.27,
+          "market": 10.04
+        },
+        {
+          "date": "2018-02-28 00:00:00",
+          "portfolio": 15.23,
+          "market": 9.53
+        },
+        {
+          "date": "2018-03-31 00:00:00",
+          "portfolio": 9.43,
+          "market": 6.6
+        },
+        {
+          "date": "2018-04-30 00:00:00",
+          "portfolio": 14.46,
+          "market": 9.9
+        },
+        {
+          "date": "2018-05-31 00:00:00",
+          "portfolio": 11.74,
+          "market": 8.08
+        },
+        {
+          "date": "2018-06-30 00:00:00",
+          "portfolio": 10.18,
+          "market": 7.43
+        },
+        {
+          "date": "2018-07-31 00:00:00",
+          "portfolio": 11.49,
+          "market": 8.19
+        },
+        {
+          "date": "2018-08-31 00:00:00",
+          "portfolio": 8.53,
+          "market": 6.26
+        },
+        {
+          "date": "2018-09-30 00:00:00",
+          "portfolio": 7.5,
+          "market": 5.59
+        },
+        {
+          "date": "2018-10-31 00:00:00",
+          "portfolio": 6.81,
+          "market": 5.14
+        },
+        {
+          "date": "2018-11-30 00:00:00",
+          "portfolio": 4.22,
+          "market": 3.15
+        },
+        {
+          "date": "2018-12-31 00:00:00",
+          "portfolio": 4.46,
+          "market": 3.32
+        },
+        {
+          "date": "2019-01-31 00:00:00",
+          "portfolio": 3.91,
+          "market": 3.03
+        },
+        {
+          "date": "2019-02-28 00:00:00",
+          "portfolio": 4.92,
+          "market": 3.98
+        },
+        {
+          "date": "2019-03-31 00:00:00",
+          "portfolio": 5.82,
+          "market": 5.11
+        },
+        {
+          "date": "2019-04-30 00:00:00",
+          "portfolio": 6.91,
+          "market": 6.18
+        },
+        {
+          "date": "2019-05-31 00:00:00",
+          "portfolio": 11.06,
+          "market": 9.74
+        },
+        {
+          "date": "2019-06-30 00:00:00",
+          "portfolio": 14.37,
+          "market": 12.41
+        },
+        {
+          "date": "2019-07-31 00:00:00",
+          "portfolio": 10.39,
+          "market": 9.11
+        },
+        {
+          "date": "2019-08-31 00:00:00",
+          "portfolio": 9.15,
+          "market": 8.01
+        },
+        {
+          "date": "2019-09-30 00:00:00",
+          "portfolio": 8.13,
+          "market": 6.76
+        },
+        {
+          "date": "2019-10-31 00:00:00",
+          "portfolio": 9.29,
+          "market": 7.96
+        },
+        {
+          "date": "2019-11-30 00:00:00",
+          "portfolio": 7.76,
+          "market": 6.61
+        },
+        {
+          "date": "2019-12-31 00:00:00",
+          "portfolio": 6.86,
+          "market": 5.83
+        },
+        {
+          "date": "2020-01-31 00:00:00",
+          "portfolio": 9.33,
+          "market": 7.89
+        },
+        {
+          "date": "2020-02-29 00:00:00",
+          "portfolio": 10.08,
+          "market": 8.34
+        },
+        {
+          "date": "2020-03-31 00:00:00",
+          "portfolio": 6.53,
+          "market": 5.44
+        },
+        {
+          "date": "2020-04-30 00:00:00",
+          "portfolio": 9.78,
+          "market": 8.02
+        },
+        {
+          "date": "2020-05-31 00:00:00",
+          "portfolio": 10.74,
+          "market": 8.69
+        },
+        {
+          "date": "2020-06-30 00:00:00",
+          "portfolio": 10.01,
+          "market": 8.01
+        },
+        {
+          "date": "2020-07-31 00:00:00",
+          "portfolio": 13.44,
+          "market": 10.6
+        },
+        {
+          "date": "2020-08-31 00:00:00",
+          "portfolio": 15.85,
+          "market": 12.41
+        },
+        {
+          "date": "2020-09-30 00:00:00",
+          "portfolio": 14.9,
+          "market": 12.34
+        },
+        {
+          "date": "2020-10-31 00:00:00",
+          "portfolio": 16.65,
+          "market": 13.59
+        },
+        {
+          "date": "2020-11-30 00:00:00",
+          "portfolio": 22.69,
+          "market": 17.67
+        },
+        {
+          "date": "2020-12-31 00:00:00",
+          "portfolio": 31.81,
+          "market": 24.52
+        },
+        {
+          "date": "2021-01-31 00:00:00",
+          "portfolio": 46.88,
+          "market": 34.16
+        },
+        {
+          "date": "2021-02-28 00:00:00",
+          "portfolio": 89.78,
+          "market": 85.67
+        },
+        {
+          "date": "2021-03-31 00:00:00",
+          "portfolio": 114.09,
+          "market": 110.39
+        },
+        {
+          "date": "2021-04-30 00:00:00",
+          "portfolio": 156.15,
+          "market": 160.09
+        },
+        {
+          "date": "2021-05-31 00:00:00",
+          "portfolio": 114.95,
+          "market": 110.88
+        },
+        {
+          "date": "2021-06-30 00:00:00",
+          "portfolio": 108.69,
+          "market": 104.85
+        },
+        {
+          "date": "2021-07-31 00:00:00",
+          "portfolio": 123.33,
+          "market": 117.91
+        },
+        {
+          "date": "2021-08-31 00:00:00",
+          "portfolio": 156.13,
+          "market": 151.91
+        },
+        {
+          "date": "2021-09-30 00:00:00",
+          "portfolio": 135.45,
+          "market": 129.86
+        },
+        {
+          "date": "2021-10-31 00:00:00",
+          "portfolio": 201.71,
+          "market": 191.86
+        },
+        {
+          "date": "2021-11-30 00:00:00",
+          "portfolio": 206.39,
+          "market": 201.27
+        },
+        {
+          "date": "2021-12-31 00:00:00",
+          "portfolio": 170.83,
+          "market": 166.55
+        },
+        {
+          "date": "2022-01-31 00:00:00",
+          "portfolio": 127.17,
+          "market": 124.21
+        },
+        {
+          "date": "2022-02-28 00:00:00",
+          "portfolio": 126.33,
+          "market": 122.46
+        },
+        {
+          "date": "2022-03-31 00:00:00",
+          "portfolio": 159.25,
+          "market": 153.37
+        },
+        {
+          "date": "2022-04-30 00:00:00",
+          "portfolio": 133.54,
+          "market": 129.93
+        },
+        {
+          "date": "2022-05-31 00:00:00",
+          "portfolio": 102.75,
+          "market": 101.75
+        },
+        {
+          "date": "2022-06-30 00:00:00",
+          "portfolio": 62.1,
+          "market": 63.26
+        },
+        {
+          "date": "2022-07-31 00:00:00",
+          "portfolio": 85,
+          "market": 84.98
+        },
+        {
+          "date": "2022-08-31 00:00:00",
+          "portfolio": 75.77,
+          "market": 76.91
+        },
+        {
+          "date": "2022-09-30 00:00:00",
+          "portfolio": 71.25,
+          "market": 73.64
+        },
+        {
+          "date": "2022-10-31 00:00:00",
+          "portfolio": 80.24,
+          "market": 82.24
+        },
+        {
+          "date": "2022-11-30 00:00:00",
+          "portfolio": 64.96,
+          "market": 68.73
+        },
+        {
+          "date": "2022-12-31 00:00:00",
+          "portfolio": 62.72,
+          "market": 64.71
+        },
+        {
+          "date": "2023-01-31 00:00:00",
+          "portfolio": 82.89,
+          "market": 84.84
+        },
+        {
+          "date": "2023-02-28 00:00:00",
+          "portfolio": 85.23,
+          "market": 86.62
+        },
+        {
+          "date": "2023-03-31 00:00:00",
+          "portfolio": 95.56,
+          "market": 96.18
+        },
+        {
+          "date": "2023-04-30 00:00:00",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2023-05-31 00:00:00",
+          "portfolio": 97.47,
+          "market": 97.16
+        },
+        {
+          "date": "2023-06-30 00:00:00",
+          "portfolio": 95.35,
+          "market": 91.44
+        },
+        {
+          "date": "2023-07-31 00:00:00",
+          "portfolio": 94.89,
+          "market": 91.58
+        },
+        {
+          "date": "2023-08-31 00:00:00",
+          "portfolio": 87.59,
+          "market": 84.58
+        },
+        {
+          "date": "2023-09-30 00:00:00",
+          "portfolio": 85.66,
+          "market": 82.49
+        },
+        {
+          "date": "2023-10-31 00:00:00",
+          "portfolio": 98.62,
+          "market": 94.23
+        },
+        {
+          "date": "2023-11-30 00:00:00",
+          "portfolio": 107.33,
+          "market": 100.87
+        },
+        {
+          "date": "2023-12-31 00:00:00",
+          "portfolio": 126.15,
+          "market": 122.6
+        },
+        {
+          "date": "2024-01-31 00:00:00",
+          "portfolio": 127.38,
+          "market": 122.83
+        },
+        {
+          "date": "2024-02-29 00:00:00",
+          "portfolio": 182.41,
+          "market": 174.23
+        },
+        {
+          "date": "2024-03-31 00:00:00",
+          "portfolio": 207.89,
+          "market": 208.84
+        },
+        {
+          "date": "2024-04-30 00:00:00",
+          "portfolio": 193.09,
+          "market": 196.19
+        },
+        {
+          "date": "2024-05-31 00:00:00",
+          "portfolio": 212.87,
+          "market": 211.97
+        },
+        {
+          "date": "2024-06-30 00:00:00",
+          "portfolio": 192.96,
+          "market": 194
+        },
+        {
+          "date": "2024-07-31 00:00:00",
+          "portfolio": 197.65,
+          "market": 199.79
+        },
+        {
+          "date": "2024-08-31 00:00:00",
+          "portfolio": 166.3,
+          "market": 171.73
+        },
+        {
+          "date": "2024-09-30 00:00:00",
+          "portfolio": 180.33,
+          "market": 187.56
+        },
+        {
+          "date": "2024-10-31 00:00:00",
+          "portfolio": 186.82,
+          "market": 193.78
+        },
+        {
+          "date": "2024-11-30 00:00:00",
+          "portfolio": 243.76,
+          "market": 245.46
+        },
+        {
+          "date": "2024-12-31 00:00:00",
+          "portfolio": 235.32,
+          "market": 242.02
+        },
+        {
+          "date": "2025-01-31 00:00:00",
+          "portfolio": 235.3,
+          "market": 242.06
+        }
+      ],
+      "numPortfolios": 1,
+      "trainPeriodStart": "2016-02-29 00:00:00",
+      "trainPeriodEnd": "2023-03-31 00:00:00",
+      "testPeriodStart": "2023-04-30 00:00:00",
+      "testPeriodEnd": "2025-01-31 00:00:00",
+      "efficientFrontier": [
+        {
+          "volatility": 118.93,
+          "expectedReturn": 164.11,
+          "sharpe": 1.3463,
+          "backtestReturn": 146.23
+        }
+      ],
+      "factor_tests": {
+        "BTC": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.008787,
+              "std_err": 0.020081,
+              "t_stat": 0.4376,
+              "p_value": 0.662826,
+              "ci_lower": -0.031153,
+              "ci_upper": 0.048727
+            },
+            "CMKT": {
+              "beta": 0.614062,
+              "std_err": 0.06448,
+              "t_stat": 9.5233,
+              "p_value": 0,
+              "ci_lower": 0.485814,
+              "ci_upper": 0.742311
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": null,
+              "p_value": null,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.039853,
+              "std_err": 0.026072,
+              "t_stat": 1.5286,
+              "p_value": 0.130178,
+              "ci_lower": -0.012004,
+              "ci_upper": 0.091709
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.52777,
+            "adj_r_squared": 0.516391,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 46.3809,
+            "f_pvalue": 0
+          }
+        },
+        "ETH": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.007423,
+              "std_err": 0.027903,
+              "t_stat": 0.266,
+              "p_value": 0.790877,
+              "ci_lower": -0.048076,
+              "ci_upper": 0.062922
+            },
+            "CMKT": {
+              "beta": 1.026443,
+              "std_err": 0.089599,
+              "t_stat": 11.456,
+              "p_value": 0,
+              "ci_lower": 0.848235,
+              "ci_upper": 1.204652
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": null,
+              "p_value": null,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.394442,
+              "std_err": 0.036229,
+              "t_stat": 10.8875,
+              "p_value": 0,
+              "ci_lower": 0.322384,
+              "ci_upper": 0.466499
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.748818,
+            "adj_r_squared": 0.742765,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 123.7189,
+            "f_pvalue": 0
+          }
+        },
+        "BNB": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.015143,
+              "std_err": 0.035801,
+              "t_stat": -0.423,
+              "p_value": 0.673409,
+              "ci_lower": -0.086351,
+              "ci_upper": 0.056065
+            },
+            "CMKT": {
+              "beta": 2.351176,
+              "std_err": 0.11496,
+              "t_stat": 20.4522,
+              "p_value": 0,
+              "ci_lower": 2.122526,
+              "ci_upper": 2.579826
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": null,
+              "p_value": null,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.437052,
+              "std_err": 0.046483,
+              "t_stat": -9.4024,
+              "p_value": 0,
+              "ci_lower": -0.529505,
+              "ci_upper": -0.344599
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.860125,
+            "adj_r_squared": 0.856754,
+            "n_obs": 86,
+            "df_residual": 83,
+            "f_stat": 255.1926,
+            "f_pvalue": 0
+          }
+        }
+      }
+    },
+    "llmResult": null,
+    "classicResult": null,
+    "comparisonData": null,
+    "description": null,
+    "assetMode": "crypto"
+  },
+  {
     "id": "sim-1774948719787-u6dym",
     "date": "2026-03-31T09:18:39.788Z",
     "modelId": "markowitz-crypto-ff3",
