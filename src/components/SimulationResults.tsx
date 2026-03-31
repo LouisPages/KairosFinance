@@ -20,6 +20,9 @@ import type {
 
 export const FACTOR_COLORS: Record<string, string> = {
   "Mkt-RF":    "#3b82f6",
+  CMKT:        "#3b82f6",
+  SIZE:        "#8b5cf6",
+  MOM:         "#f59e0b",
   SMB:         "#8b5cf6",
   HML:         "#f59e0b",
   RMW:         "#10b981",
@@ -475,11 +478,17 @@ export function PromptExplorer({ examples }: { examples: LlmPromptExample[] }) {
 // Classic model result
 // ---------------------------------------------------------------------------
 
-export function ClassicResult({ result, chartStart, chartEnd, setChartStart, setChartEnd }: {
+export function ClassicResult({ result, chartStart, chartEnd, setChartStart, setChartEnd, benchmarkLineName, benchmarkFootnote }: {
   result: SimulateResult;
   chartStart: string; chartEnd: string;
   setChartStart: (v: string) => void; setChartEnd: (v: string) => void;
+  /** Légende de la série « marché » (défaut : Marché (S&P 500)). */
+  benchmarkLineName?: string;
+  /** Texte sous le graphique de performance (défaut : mention SPY). */
+  benchmarkFootnote?: string;
 }) {
+  const marketLineName = benchmarkLineName ?? "Marché (S&P 500)";
+  const marketFootnote = benchmarkFootnote ?? "Courbes normalisées à 100 au premier jour du backtest. Marché : ETF SPY.";
   const hasPeriods = !!(result.trainPeriodStart && result.trainPeriodEnd && result.testPeriodStart && result.testPeriodEnd);
   const filtered = result.comparisonData.filter(
     (d) => (!chartStart || d.date >= chartStart) && (!chartEnd || d.date <= chartEnd)
@@ -583,11 +592,11 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
               ) : (
                 <Line type="monotone" dataKey="portfolio" name="Portefeuille" stroke="hsl(var(--primary))" strokeWidth={2} dot={false} />
               )}
-              <Line type="monotone" dataKey="market" name="Marché (S&P 500)" stroke="hsl(var(--muted-foreground))" strokeWidth={2} dot={false} strokeDasharray="5 5" />
+              <Line type="monotone" dataKey="market" name={marketLineName} stroke="hsl(var(--muted-foreground))" strokeWidth={2} dot={false} strokeDasharray="5 5" />
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <p className="mt-2 text-[10px] text-muted-foreground/70">Courbes normalisées à 100 au premier jour du backtest. Marché : ETF SPY.</p>
+        <p className="mt-2 text-[10px] text-muted-foreground/70">{marketFootnote}</p>
       </div>
 
       {result.efficientFrontier != null && result.efficientFrontier.length > 0 && (

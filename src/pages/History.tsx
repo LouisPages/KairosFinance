@@ -110,6 +110,15 @@ function EntryCard({
       <div className="pr-6">
         <div className="flex items-center gap-2 flex-wrap">
           <p className="font-display text-sm font-bold text-foreground leading-tight">{label}</p>
+          {(entry.assetMode === "crypto" || entry.modelId === "markowitz-crypto-ff3") ? (
+            <span className="rounded px-1.5 py-0.5 text-[9px] font-semibold bg-amber-500/20 text-amber-700 dark:text-amber-400">
+              Crypto
+            </span>
+          ) : (
+            <span className="rounded px-1.5 py-0.5 text-[9px] font-semibold bg-slate-500/15 text-slate-600 dark:text-slate-400">
+              Actions
+            </span>
+          )}
           {entry.comparisonData && (
             <span className="rounded px-1.5 py-0.5 text-[9px] font-semibold bg-primary/20 text-primary">
               Comparaison
@@ -296,6 +305,16 @@ const History = () => {
                     chartEnd={chartEnd}
                     setChartStart={setChartStart}
                     setChartEnd={setChartEnd}
+                    benchmarkLineName={
+                      selected.assetMode === "crypto" || selected.modelId === "markowitz-crypto-ff3"
+                        ? "Marché (moyenne cross-section)"
+                        : undefined
+                    }
+                    benchmarkFootnote={
+                      selected.assetMode === "crypto" || selected.modelId === "markowitz-crypto-ff3"
+                        ? "Courbes normalisées à 100 au début du backtest. Marché : moyenne des rendements des cryptos à chaque date (proxy proche du facteur CMKT)."
+                        : undefined
+                    }
                   />
                 )}
                 {selected.llmResult && (

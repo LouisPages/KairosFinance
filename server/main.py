@@ -55,6 +55,70 @@ def list_stocks():
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# ── Cryptos (CSV locaux, format CoinGecko) ───────────────────────────────────
+
+CRYPTO_DATA_ROOT = _root / "gestion" / "crypto" / "données"
+
+
+@app.get("/api/crypto/list")
+def crypto_list():
+    try:
+        from gestion.crypto.markowitz_crypto_web import list_crypto_assets
+
+        return list_crypto_assets()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/crypto/history")
+def crypto_history(
+    symbol: str,
+    start: str | None = None,
+    end: str | None = None,
+):
+    """Série de prix USD depuis les CSV « données » (dernier prix par jour)."""
+    from gestion.crypto.crypto_fama_french import CSV_FILES
+
+    sym = (symbol or "").strip().upper()
+    if not sym or sym not in CSV_FILES:
+        raise HTTPException(status_code=400, detail="Symbole crypto inconnu")
+    path = CRYPTO_DATA_ROOT / CSV_FILES[sym]
+    if not path.is_file():
+        raise HTTPException(status_code=404, detail="Fichier de données absent")
+    try:
+        df = pd.read_csv(path, parse_dates=["snapped_at"])
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    df = df.rename(columns={"snapped_at": "Date", "price": "Close"})
+    df["Date"] = pd.to_datetime(df["Date"], utc=True).dt.tz_localize(None)
+    df["Close"] = pd.to_numeric(df["Close"], errors="coerce")
+    df = df.dropna(subset=["Close"])
+    if start:
+        try:
+            df = df[df["Date"] >= pd.Timestamp(start)]
+        except Exception:
+            pass
+    if end:
+        try:
+            df = df[df["Date"] <= pd.Timestamp(end)]
+        except Exception:
+            pass
+    dates = [d.strftime("%Y-%m-%d") for d in df["Date"]]
+    series = {sym: [round(float(x), 6) for x in df["Close"].values]}
+    return {"dates": dates, "series": series}
+
+
+@app.get("/api/crypto/news-symbol")
+def crypto_news_symbol(code: str):
+    """Symbole Yahoo Finance pour les actualités (ex. BTC → BTC-USD)."""
+    from gestion.crypto.markowitz_crypto_web import yahoo_ticker_for_news
+
+    c = (code or "").strip().upper()
+    if not c:
+        raise HTTPException(status_code=400, detail="code requis")
+    return {"code": c, "yahooSymbol": yahoo_ticker_for_news(c)}
+
+
 # ── News (actualités) par symbole, avec cache ───────────────────────────────
 
 NEWS_CACHE: dict[str, tuple[list[dict], datetime]] = {}
@@ -141,6 +205,8 @@ class SimulationEntry(BaseModel):
     classicResult: Any = None
     comparisonData: Optional[Any] = None  # { monteCarlo, bestGradient, bestGradientLabel }
     description: Optional[str] = None
+    # Mode d'actifs au moment de la simulation : actions (défaut) ou crypto
+    assetMode: Optional[str] = "actions"
 
 
 class DescriptionUpdate(BaseModel):
@@ -286,6 +352,10 @@ def simulate(req: SimulateRequest):
         elif req.model == "markowitz-llm":
             import gestion.dynamic.markowitz_llm as markowitz_llm
             result = markowitz_llm.run(req.symbols, start_s, end_s)
+        elif req.model == "markowitz-crypto-ff3":
+            import gestion.crypto.markowitz_crypto_web as markowitz_crypto_web
+            m = req.method if req.method in ("monte_carlo", "gradient_fixe", "gradient_optimal") else "gradient_optimal"
+            result = markowitz_crypto_web.run(req.symbols, method=m)
         else:
             raise HTTPException(status_code=400, detail="Modèle inconnu")
     except Exception as e:

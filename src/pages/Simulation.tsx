@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Brain } from "lucide-react";
@@ -15,9 +15,10 @@ import {
   type SimulateResult, type LlmSimulateResult,
   type LlmProgressEvent,
 } from "@/lib/api";
-import { loadSavedSymbols } from "@/lib/portfolioStorage";
+import { loadSavedSymbols, loadSavedCryptoSymbols } from "@/lib/portfolioStorage";
 import { saveToHistory } from "@/lib/simulationHistory";
 import { ClassicResult, LlmResult, ComparisonResult } from "@/components/SimulationResults";
+import { useAppMode } from "@/context/AppModeContext";
 
 // ---------------------------------------------------------------------------
 // Config
@@ -66,8 +67,14 @@ const COMPARISON_GRADIENT_LABEL = "Gradient à pas optimal";
 
 const Simulation = () => {
   const location = useLocation();
+  const { mode } = useAppMode();
+  const isCrypto = mode === "crypto";
   const symbolsFromState = (location.state as { symbols?: string[] } | null)?.symbols;
-  const symbols: string[] = symbolsFromState?.length ? symbolsFromState : loadSavedSymbols();
+  const symbols: string[] = symbolsFromState?.length
+    ? symbolsFromState
+    : isCrypto
+      ? loadSavedCryptoSymbols()
+      : loadSavedSymbols();
 
   const [selectedModel, setSelectedModel] = useState<string | null>(null);
   const [optimizationMethod, setOptimizationMethod] = useState<OptimizationMethodId>("gradient_optimal");
@@ -89,6 +96,25 @@ const Simulation = () => {
 
   const canRun = selectedModel != null && symbols.length >= 2;
   const isLlm = selectedModel === "markowitz-llm";
+
+  const assetModeTag = isCrypto ? ("crypto" as const) : ("actions" as const);
+
+  useEffect(() => {
+    if (isCrypto) {
+      setSelectedModel("markowitz-crypto-ff3");
+      setResult(null);
+      setLlmResult(null);
+      setClassicResult(null);
+      setComparisonData(null);
+      setApiError(null);
+      if (optimizationMethod === "comparison") setOptimizationMethod("gradient_optimal");
+    } else {
+      setSelectedModel((prev) => (prev === "markowitz-crypto-ff3" ? null : prev));
+    }
+  }, [isCrypto]);
+
+  const apiModelId =
+    selectedModel === "markowitz-crypto-ff3" ? "markowitz-crypto-ff3" : selectedModel;
 
   const handleRun = () => {
     if (!canRun) return;
@@ -123,6 +149,7 @@ const Simulation = () => {
             result: null,
             llmResult: llm,
             classicResult: classicResultRef.current,
+            assetMode: "actions",
           });
         },
         (msg) => {
@@ -135,9 +162,9 @@ const Simulation = () => {
       cancelStreamRef.current = cancel;
     } else if (optimizationMethod === "comparison") {
       // Exécution séquentielle pour éviter tout mélange de réponses (même données, ordre garanti)
-      runSimulation(selectedModel!, symbols, "monte_carlo")
+      runSimulation(apiModelId!, symbols, "monte_carlo")
         .then((monteCarlo) =>
-          runSimulation(selectedModel!, symbols, "gradient_optimal").then((gradientOptimal) => ({
+          runSimulation(apiModelId!, symbols, "gradient_optimal").then((gradientOptimal) => ({
             monteCarlo,
             gradientOptimal,
           }))
@@ -153,7 +180,7 @@ const Simulation = () => {
             setChartEnd(monteCarlo.comparisonData[monteCarlo.comparisonData.length - 1].date);
           }
           saveToHistory({
-            modelId: selectedModel!,
+            modelId: apiModelId!,
             symbols,
             result: monteCarlo,
             llmResult: null,
@@ -163,12 +190,13 @@ const Simulation = () => {
               bestGradient: gradientOptimal,
               bestGradientLabel: COMPARISON_GRADIENT_LABEL,
             },
+            assetMode: assetModeTag,
           });
         })
         .catch((e) => setApiError(e.message))
         .finally(() => setRunning(false));
     } else {
-      runSimulation(selectedModel!, symbols, optimizationMethod)
+      runSimulation(apiModelId!, symbols, optimizationMethod)
         .then((res) => {
           setResult(res);
           if (res.comparisonData.length > 0) {
@@ -176,11 +204,12 @@ const Simulation = () => {
             setChartEnd(res.comparisonData[res.comparisonData.length - 1].date);
           }
           saveToHistory({
-            modelId: selectedModel!,
+            modelId: apiModelId!,
             symbols,
             result: res,
             llmResult: null,
             classicResult: null,
+            assetMode: assetModeTag,
           });
         })
         .catch((e) => setApiError(e.message))
@@ -194,14 +223,20 @@ const Simulation = () => {
         <p className="section-label mb-2">Simulation</p>
         <h1 className="section-title mb-1">Optimisez votre portefeuille</h1>
         <p className="mb-8 text-sm text-muted-foreground">
-          Choisissez un modèle puis lancez l'optimisation. Les résultats incluent un backtesting sur 20 % des données historiques.
+          {isCrypto ? (
+            <>
+              En mode cryptos, seul le modèle à trois facteurs adapté (CMKT, SIZE, MOM) est disponible. Les courbes comparent le portefeuille optimal à la moyenne de marché cross-sectionnelle (proxy type CMKT).
+            </>
+          ) : (
+            <>Choisissez un modèle puis lancez l&apos;optimisation. Les résultats incluent un backtesting sur 20 % des données historiques.</>
+          )}
         </p>
       </div>
 
       {symbols.length < 2 && (
         <div className="mb-6 p-4 rounded-xl bg-muted/50 border border-border">
           <p className="text-xs text-muted-foreground">
-            Sélectionnez au moins 2 actions dans l'onglet{" "}
+            Sélectionnez au moins 2 {isCrypto ? "cryptos" : "actions"} dans l&apos;onglet{" "}
             <Link to="/portfolio" className="text-primary font-medium underline">Mon Portefeuille</Link>{" "}
             pour lancer une simulation.
           </p>
@@ -210,25 +245,37 @@ const Simulation = () => {
 
       {/* Sélection du modèle */}
       <div className="mb-8 grid gap-4 md:grid-cols-3 xl:grid-cols-5">
-        {models.map((m) => (
-          <button
-            key={m.id}
-            onClick={() => {
-              setSelectedModel(m.id);
-              setResult(null);
-              setLlmResult(null);
-              setClassicResult(null);
-              setComparisonData(null);
-              setApiError(null);
-            }}
-            className={`glass-card relative p-5 text-left cursor-pointer transition-shadow focus:outline-none focus:ring-0 active:ring-0 ${
-              selectedModel === m.id ? "!ring-2 !ring-primary" : ""
-            }`}
-          >
-            <h3 className="font-display text-sm font-bold text-foreground">{m.name}</h3>
-            <p className="mt-1 text-xs text-muted-foreground">{m.desc}</p>
-          </button>
-        ))}
+        {models.map((m) => {
+          const lockedCrypto = isCrypto && m.id !== "markowitz-3factors";
+          const effectiveId = isCrypto && m.id === "markowitz-3factors" ? "markowitz-crypto-ff3" : m.id;
+          const isSelected = selectedModel === effectiveId;
+          return (
+            <button
+              key={m.id}
+              type="button"
+              disabled={lockedCrypto}
+              onClick={() => {
+                if (lockedCrypto) return;
+                setSelectedModel(effectiveId);
+                setResult(null);
+                setLlmResult(null);
+                setClassicResult(null);
+                setComparisonData(null);
+                setApiError(null);
+              }}
+              className={`glass-card relative p-5 text-left transition-shadow focus:outline-none focus:ring-0 active:ring-0 ${
+                lockedCrypto ? "opacity-55 cursor-not-allowed" : "cursor-pointer"
+              } ${isSelected ? "!ring-2 !ring-primary" : ""}`}
+            >
+              <h3 className="font-display text-sm font-bold text-foreground">{m.name}</h3>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {isCrypto && m.id === "markowitz-3factors"
+                  ? "Facteurs CMKT, SIZE et MOM construits sur les cryptos sélectionnées (CSV) ; régression OLS puis optimisation Markowitz sur rendements mensuels."
+                  : m.desc}
+              </p>
+            </button>
+          );
+        })}
       </div>
 
       {/* Méthode d'optimisation (masquée pour le modèle LLM) */}
@@ -243,8 +290,8 @@ const Simulation = () => {
               <SelectValue placeholder="Choisir une méthode" />
             </SelectTrigger>
             <SelectContent>
-              {OPTIMIZATION_METHODS.map((opt) => (
-                <SelectItem key={opt.id} value={opt.id}>
+              {OPTIMIZATION_METHODS.filter((opt) => !isCrypto || opt.id !== "comparison").map((opt) => (
+                <SelectItem key={opt.id} value={opt.id} disabled={isCrypto && opt.id === "comparison"}>
                   {opt.label}
                 </SelectItem>
               ))}
@@ -354,6 +401,12 @@ const Simulation = () => {
                 chartEnd={chartEnd}
                 setChartStart={setChartStart}
                 setChartEnd={setChartEnd}
+                benchmarkLineName={isCrypto ? "Marché (moyenne cross-section)" : undefined}
+                benchmarkFootnote={
+                  isCrypto
+                    ? "Courbes normalisées à 100 au début du backtest. Marché : moyenne des rendements des cryptos à chaque date (proxy proche du facteur CMKT)."
+                    : undefined
+                }
               />
             )}
             {llmResult && (

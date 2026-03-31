@@ -13,7 +13,9 @@ export type SimulationModelId =
   | "markowitz-classic"
   | "markowitz-1factor"
   | "markowitz-3factors"
-  | "markowitz-llm";
+  | "markowitz-5factors"
+  | "markowitz-llm"
+  | "markowitz-crypto-ff3";
 
 export const MODEL_LABELS: Record<string, string> = {
   "markowitz-classic": "Markowitz classique",
@@ -21,6 +23,7 @@ export const MODEL_LABELS: Record<string, string> = {
   "markowitz-3factors": "Trois facteurs (Fama & French)",
   "markowitz-5factors": "Cinq facteurs (Fama & French)",
   "markowitz-llm": "Choix dynamique des facteurs (LLM)",
+  "markowitz-crypto-ff3": "Trois facteurs crypto (Fama-French adapté)",
 };
 
 export interface SimulationEntry {
@@ -34,6 +37,8 @@ export interface SimulationEntry {
   /** Comparaison Monte-Carlo vs Gradient (mode "comparison") — pour affichage dans l'historique. */
   comparisonData?: ComparisonPayload | null;
   description?: string;
+  /** Contexte au moment de la sauvegarde (défaut : actions). */
+  assetMode?: "actions" | "crypto";
 }
 
 export async function loadHistory(): Promise<SimulationEntry[]> {
@@ -48,10 +53,11 @@ export async function loadHistory(): Promise<SimulationEntry[]> {
 }
 
 export async function saveToHistory(
-  entry: Omit<SimulationEntry, "id" | "date">
+  entry: Omit<SimulationEntry, "id" | "date"> & { assetMode?: "actions" | "crypto" }
 ): Promise<SimulationEntry> {
   const newEntry: SimulationEntry = {
     ...entry,
+    assetMode: entry.assetMode ?? "actions",
     id: `sim-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
     date: new Date().toISOString(),
   };

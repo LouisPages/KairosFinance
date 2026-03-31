@@ -6,10 +6,28 @@ pour exposer la significativité des facteurs (p-value, t-stat, etc.).
 """
 from __future__ import annotations
 
+import math
 from typing import Any
 
 import numpy as np
 import statsmodels.api as sm
+
+
+def _json_float(x: Any, *, ndigits: int | None) -> float | None:
+    """Valeur JSON-sérialisable : None si non fini (nan, inf) — le JSON n'accepte pas nan."""
+    try:
+        v = float(x)
+    except (TypeError, ValueError):
+        return None
+    if not math.isfinite(v):
+        return None
+    return round(v, ndigits) if ndigits is not None else v
+
+
+def _coef_float(x: Any) -> float:
+    """Coefficient pour les calculs en chaîne : 0.0 si nan / inf (évite de casser np.dot)."""
+    v = _json_float(x, ndigits=None)
+    return 0.0 if v is None else v
 
 
 def ols_factor_regression(
@@ -53,10 +71,10 @@ def ols_factor_regression(
 
     coeffs: dict[str, float] = {}
     if add_constant:
-        coeffs["alpha"] = float(_at(model.params, 0))
+        coeffs["alpha"] = _coef_float(_at(model.params, 0))
     for i, name in enumerate(factor_names):
         idx = i + (1 if add_constant else 0)
-        coeffs[name] = float(_at(model.params, idx))
+        coeffs[name] = _coef_float(_at(model.params, idx))
 
     # Tests par coefficient (alpha + facteurs)
     factor_tests: dict[str, dict[str, float]] = {}
@@ -68,21 +86,21 @@ def ols_factor_regression(
         ci_low = float(ci_row.iloc[0]) if hasattr(ci_row, "iloc") else float(ci_row[0])
         ci_high = float(ci_row.iloc[1]) if hasattr(ci_row, "iloc") else float(ci_row[1])
         factor_tests[key] = {
-            "beta": round(float(_at(model.params, i)), 6),
-            "std_err": round(float(_at(model.bse, i)), 6),
-            "t_stat": round(float(_at(model.tvalues, i)), 4),
-            "p_value": round(float(_at(model.pvalues, i)), 6),
-            "ci_lower": round(ci_low, 6),
-            "ci_upper": round(ci_high, 6),
+            "beta": _json_float(_at(model.params, i), ndigits=6),
+            "std_err": _json_float(_at(model.bse, i), ndigits=6),
+            "t_stat": _json_float(_at(model.tvalues, i), ndigits=4),
+            "p_value": _json_float(_at(model.pvalues, i), ndigits=6),
+            "ci_lower": _json_float(ci_low, ndigits=6),
+            "ci_upper": _json_float(ci_high, ndigits=6),
         }
 
     model_stats = {
-        "r_squared": round(float(model.rsquared), 6),
-        "adj_r_squared": round(float(model.rsquared_adj), 6),
+        "r_squared": _json_float(model.rsquared, ndigits=6),
+        "adj_r_squared": _json_float(model.rsquared_adj, ndigits=6),
         "n_obs": int(model.nobs),
         "df_residual": int(model.df_resid),
-        "f_stat": round(float(model.fvalue), 4) if model.fvalue is not None else None,
-        "f_pvalue": round(float(model.f_pvalue), 6) if model.f_pvalue is not None else None,
+        "f_stat": _json_float(model.fvalue, ndigits=4) if model.fvalue is not None else None,
+        "f_pvalue": _json_float(model.f_pvalue, ndigits=6) if model.f_pvalue is not None else None,
     }
 
     return {

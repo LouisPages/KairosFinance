@@ -12,6 +12,36 @@ export async function fetchStocks(): Promise<StockItem[]> {
   return r.json();
 }
 
+export interface CryptoListItem {
+  symbol: string;
+  name: string;
+}
+
+export async function fetchCryptoList(): Promise<CryptoListItem[]> {
+  const r = await fetch(`${API_BASE}/api/crypto/list`);
+  if (!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+
+export async function fetchCryptoHistory(
+  symbol: string,
+  start: string,
+  end: string
+): Promise<{ dates: string[]; series: Record<string, number[]> }> {
+  const params = new URLSearchParams({ symbol: symbol.trim().toUpperCase(), start, end });
+  const r = await fetch(`${API_BASE}/api/crypto/history?${params}`);
+  if (!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+
+export async function fetchCryptoNewsYahooSymbol(code: string): Promise<string> {
+  const params = new URLSearchParams({ code: code.trim().toUpperCase() });
+  const r = await fetch(`${API_BASE}/api/crypto/news-symbol?${params}`);
+  if (!r.ok) throw new Error(await r.text());
+  const j = (await r.json()) as { yahooSymbol?: string };
+  return j.yahooSymbol ?? `${code}-USD`;
+}
+
 export async function fetchHistory(
   symbols: string[],
   start: string,

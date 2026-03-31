@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAppMode } from "@/context/AppModeContext";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Brain,
@@ -435,10 +436,80 @@ const expandVariants = {
   exit: { opacity: 0, height: 0, transition: { duration: 0.25 } },
 };
 
+const cryptoFfModel = {
+  id: "crypto-ff3",
+  icon: Layers,
+  name: "Fama-French crypto (CMKT, SIZE, MOM)",
+  badge: "Crypto",
+  desc: "Adaptation du paradigme Fama-French aux cryptomonnaies : facteurs construits sur l’univers CSV (CoinGecko), régressions OLS et optimisation Markowitz.",
+  color: "text-orange-400",
+  borderColor: "border-orange-400/30",
+  detail: {
+    summary:
+      "Le script crypto_fama_french.py charge les prix et capitalisations depuis des CSV locaux, rééchantillonne (hebdo dans le script batch, mensuel pour le site), construit trois facteurs — CMKT (moyenne des rendements), SIZE (petites vs grandes caps via market cap), MOM (momentum long/short sur quantiles) — puis estime les bêtas par actif, optimise le portefeuille (Sharpe / variance) et produit analyses d’endogénéité et comparaisons 1/N vs Sharpe.",
+    diagram: (
+      <div className="space-y-0">
+        <Box accent>
+          Entrée&nbsp;: fichiers CSV dans gestion/crypto/données · colonnes snapped_at, price, market_cap
+        </Box>
+        <Arrow />
+        <Box>
+          Rééchantillonnage (mensuel sur le site) · rendements arithmétiques<br />
+          Clip extrêmes, alignement des séries
+        </Box>
+        <Arrow />
+        <Box>
+          Facteurs<br />
+          CMKT = moyenne cross-section des rendements<br />
+          SIZE = moyenne(petites caps) − moyenne(grandes caps), grandes = top N par mcap moyen<br />
+          MOM = performance winners − losers (fenêtre glissante)
+        </Box>
+        <Arrow />
+        <Box>
+          OLS par crypto — ensemble train (80 %)<br />
+          r<sub>i</sub> = α + β<sub>CMKT</sub>·CMKT + β<sub>SIZE</sub>·SIZE + β<sub>MOM</sub>·MOM + ε<br />
+          μ̂<sub>i</sub> (mensuel) = α̂ + β̂′·F̄ → annualisé × 12 ; Σ empirique × 12
+        </Box>
+        <Arrow />
+        <Box>
+          Optimisation Markowitz (Monte-Carlo et/ou gradient à pas fixe / optimal)<br />
+          w* = argmax Sharpe sous contraintes w ≥ 0, Σw = 1 · stablecoins exclus du noyau d’optimisation
+        </Box>
+        <Arrow />
+        <Box accent>
+          Sortie web&nbsp;: poids w* · Sharpe · rendement / volatilité attendus · backtest 20 % · courbe vs moyenne de marché (CMKT)
+        </Box>
+      </div>
+    ),
+    steps: [
+      {
+        title: "Données",
+        text: "Un CSV par actif (format CoinGecko max). Le dossier est colocalisé avec crypto_fama_french.py (données). Les stablecoins listés dans le script sont exclus de l’optimisation pour éviter des poids triviaux.",
+      },
+      {
+        title: "CMKT",
+        text: "Facteur « marché crypto » : à chaque date, moyenne des rendements de l’univers chargé. C’est le parallèle du facteur de marché agrégé.",
+      },
+      {
+        title: "SIZE",
+        text: "Les N plus grosses capitalisations moyennes forment le pôle « large » ; les autres « small ». SIZE est long small, short large (sur rendements).",
+      },
+      {
+        title: "MOM",
+        text: "Sur une fenêtre de rendements passés, les actifs au-dessus du 70e quantile (winners) et en dessous du 30e (losers) alimentent un spread de rendement contemporain.",
+      },
+      {
+        title: "Pipeline batch (script)",
+        text: "En ligne de commande, le script génère aussi des graphiques (bêtas, α/R², frontière, poids, facteurs, corrélations, endogénéité, équipondéré vs Sharpe). L’API web réutilise la logique facteurs + OLS + optimisation sans produire les PNG.",
+      },
+    ],
+  },
+};
+
 /* ─────────────────────────────────────────────
    Component
 ───────────────────────────────────────────── */
-const Architecture = () => {
+function ArchitectureActions() {
   const [openId, setOpenId] = useState<string | null>(null);
 
   const toggle = (id: string) => setOpenId((prev) => (prev === id ? null : id));
@@ -594,6 +665,126 @@ const Architecture = () => {
       </div>
     </div>
   );
+}
+
+function ArchitectureCrypto() {
+  const [openId, setOpenId] = useState<string | null>(null);
+  const model = cryptoFfModel;
+  const isOpen = openId === model.id;
+  const Icon = model.icon;
+
+  return (
+    <div className="mx-auto max-w-5xl px-6 py-10">
+      <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
+        <p className="section-label mb-2">Architecture</p>
+        <h1 className="section-title mb-1">Modèle crypto Fama-French</h1>
+        <p className="mb-10 text-sm text-muted-foreground">
+          Description du pipeline implémenté dans gestion/crypto/crypto_fama_french.py et exposé sur le site via l’API (données CSV, facteurs CMKT / SIZE / MOM, OLS, Markowitz).
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="glass-card mb-12 p-6 md:p-8"
+      >
+        <h2 className="font-display text-base font-bold text-foreground mb-6">
+          Pipeline (mode cryptos)
+        </h2>
+        <div className="flex items-stretch justify-center gap-0">
+          <div className="flex flex-col items-center justify-center rounded-lg border border-primary/40 bg-primary/5 px-6 py-6 text-center flex-1">
+            <Database className="h-6 w-6 text-primary mb-3" />
+            <span className="text-sm font-semibold text-foreground">Données</span>
+            <span className="text-xs text-muted-foreground mt-1.5">CSV CoinGecko<br />gestion/crypto/données</span>
+          </div>
+          <div className="flex items-center px-2 text-muted-foreground shrink-0">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none">
+              <path d="M0 8h26M20 2l8 6-8 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+          <div className="flex flex-col items-center justify-center rounded-lg border border-border bg-background px-6 py-6 text-center flex-1">
+            <Brain className="h-6 w-6 text-primary mb-3" />
+            <span className="text-sm font-semibold text-foreground">Modélisation</span>
+            <span className="text-xs text-muted-foreground mt-1.5">Facteurs CMKT, SIZE, MOM<br />OLS · μ̂ et Σ · Sharpe max</span>
+          </div>
+          <div className="flex items-center px-2 text-muted-foreground shrink-0">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none">
+              <path d="M0 8h26M20 2l8 6-8 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+          <div className="flex flex-col items-center justify-center rounded-lg border border-primary/40 bg-primary/5 px-6 py-6 text-center flex-1">
+            <BarChart3 className="h-6 w-6 text-primary mb-3" />
+            <span className="text-sm font-semibold text-foreground">Résultats</span>
+            <span className="text-xs text-muted-foreground mt-1.5">Backtest 20 % · vs moyenne de marché</span>
+          </div>
+        </div>
+        <div className="mt-5 rounded-lg border border-border bg-muted/30 px-5 py-3">
+          <p className="text-xs text-muted-foreground text-center">
+            <span className="font-semibold text-foreground">Spécificité crypto :</span> pas de facteurs Ken French — tout est endogène à l’univers des cryptos chargées ; un test d’endogénéité (Durbin-Wu-Hausman) est prévu dans le script complet.
+          </p>
+        </div>
+      </motion.div>
+
+      <div className="flex flex-col gap-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fade}
+          custom={0}
+          className={`glass-card overflow-hidden border ${model.borderColor}`}
+        >
+          <button
+            type="button"
+            onClick={() => setOpenId((p) => (p === model.id ? null : model.id))}
+            className="w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-muted/20 transition-colors"
+          >
+            <div className="flex items-center gap-4">
+              <Icon className={`h-6 w-6 shrink-0 ${model.color}`} />
+              <div>
+                <h3 className="font-display text-base font-bold text-foreground">{model.name}</h3>
+                <p className="text-sm text-muted-foreground">{model.desc}</p>
+              </div>
+            </div>
+            <div className="shrink-0 text-muted-foreground">
+              {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+            </div>
+          </button>
+          <AnimatePresence initial={false}>
+            {isOpen && (
+              <motion.div
+                key="content"
+                variants={expandVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="overflow-hidden"
+              >
+                <div className="border-t border-border px-6 pb-6 pt-5 space-y-5">
+                  <p className="text-sm text-muted-foreground">{model.detail.summary}</p>
+                  <div className="rounded-lg bg-muted/40 border border-border p-4">{model.detail.diagram}</div>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {model.detail.steps.map((step, j) => (
+                      <div key={j} className="rounded-lg border border-border bg-background/50 px-4 py-3">
+                        <p className={`text-xs font-semibold mb-1 ${model.color}`}>{step.title}</p>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{step.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+const Architecture = () => {
+  const { mode } = useAppMode();
+  return mode === "crypto" ? <ArchitectureCrypto /> : <ArchitectureActions />;
 };
 
 export default Architecture;

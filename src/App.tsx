@@ -14,6 +14,7 @@ import History from "./pages/History";
 import Architecture from "./pages/Architecture";
 import NotFound from "./pages/NotFound";
 import { useIsMobile } from "./hooks/use-mobile";
+import { AppModeProvider } from "./context/AppModeContext";
 
 const queryClient = new QueryClient();
 
@@ -26,25 +27,27 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <ScrollToTop />
-          {isMobile ? (
-            <MobileBlock />
-          ) : (
-            <div className="flex min-h-screen flex-col">
-              <Navbar />
-              <main className="flex-1">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/portfolio" element={<Portfolio />} />
-                  <Route path="/simulation" element={<Simulation />} />
-                  <Route path="/history" element={<History />} />
-                  <Route path="/architecture" element={<Architecture />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </main>
-              <Footer />
-            </div>
-          )}
+          <AppModeProvider>
+            <ScrollToTop />
+            {isMobile ? (
+              <MobileBlock />
+            ) : (
+              <div className="flex min-h-screen flex-col">
+                <Navbar />
+                <main className="flex-1">
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/portfolio" element={<Portfolio />} />
+                    <Route path="/simulation" element={<Simulation />} />
+                    <Route path="/history" element={<History />} />
+                    <Route path="/architecture" element={<Architecture />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </main>
+                <Footer />
+              </div>
+            )}
+          </AppModeProvider>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

@@ -27,13 +27,9 @@ import warnings
 warnings.filterwarnings("ignore")
 
 import os
+from pathlib import Path
 import numpy as np
 import pandas as pd
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import seaborn as sns
 from scipy.optimize import minimize
 
 try:
@@ -48,8 +44,8 @@ except ImportError:
 #  CONFIGURATION
 # ============================================================
 
-# Dossier des CSV  (par défaut : même dossier que ce script)
-CSV_FOLDER = "/Users/syumalouette/Documents/PE_25/crypto/données"
+# Dossier des CSV  (sous-dossier « données » à côté de ce script)
+CSV_FOLDER = str(Path(__file__).resolve().parent / "données")
 
 # Correspondance nom affiché -> nom de fichier CSV
 CSV_FILES = {
@@ -133,6 +129,9 @@ N_LARGE = 20
 #  STYLE GLOBAL
 # ============================================================
 def set_style():
+    import matplotlib
+    matplotlib.use("Agg")
+    import seaborn as sns
     matplotlib.rcParams.update({
         "figure.dpi":       120,
         "savefig.dpi":      180,
@@ -150,6 +149,7 @@ def set_style():
 
 
 def save(fig, path):
+    import matplotlib.pyplot as plt
     fig.savefig(path, dpi=180, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print(f"  -> {path}")
@@ -198,6 +198,61 @@ def load_prices():
 
     returns = prices.pct_change().iloc[1:].clip(-0.99, 5.0).fillna(0.0)
     print(f"\n  -> {returns.shape[0]} périodes x {returns.shape[1]} actifs")
+    return returns, mcaps
+
+
+def load_prices_for_symbols(
+    symbols: list[str],
+    *,
+    freq: str | None = None,
+    start: str | None = None,
+    end: str | None = None,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Charge uniquement les symboles présents dans CSV_FILES.
+    freq : par défaut FREQ du module (ex. « W ») ; utiliser « ME » pour l'API web (mensuel).
+    """
+    use_freq = freq if freq is not None else FREQ
+    start_d = start or START
+    end_d = end or END
+    prices_d: dict[str, pd.Series] = {}
+    mcaps_d: dict[str, pd.Series] = {}
+    want = {s.strip().upper() for s in symbols if s.strip()}
+
+    for name, filename in CSV_FILES.items():
+        if name not in want:
+            continue
+        path = os.path.join(CSV_FOLDER, filename)
+        if not os.path.exists(path):
+            continue
+        try:
+            df = pd.read_csv(path, parse_dates=["snapped_at"])
+            df = df.rename(
+                columns={"snapped_at": "Date", "price": "Close", "market_cap": "MCap"}
+            )
+            df = df.set_index("Date")
+            df.index = df.index.tz_localize(None)
+            df = df[(df.index >= start_d) & (df.index <= end_d)]
+            df["Close"] = pd.to_numeric(df["Close"], errors="coerce")
+            df = df.dropna(subset=["Close"])
+            if len(df) < 10:
+                continue
+            prices_d[name] = df["Close"]
+            if "MCap" in df.columns:
+                mcaps_d[name] = pd.to_numeric(df["MCap"], errors="coerce")
+        except Exception:
+            continue
+
+    if not prices_d:
+        raise RuntimeError("Aucune donnée crypto pour les symboles demandés.")
+
+    prices = pd.DataFrame(prices_d).resample(use_freq).last().ffill().bfill()
+    mcaps = (
+        pd.DataFrame(mcaps_d).resample(use_freq).last().ffill().bfill()
+        if mcaps_d
+        else pd.DataFrame()
+    )
+    returns = prices.pct_change().iloc[1:].clip(-0.99, 5.0).fillna(0.0)
     return returns, mcaps
 
 
@@ -419,6 +474,8 @@ def optimize(returns, ols_df):
 
 def plot_all(ols_df, mc_df, opt, selected, returns, factors, size_large):
     print("\n[5/5] Génération des graphiques...")
+    import matplotlib.pyplot as plt
+    import seaborn as sns
     set_style()
     from matplotlib.patches import Patch
     from matplotlib.lines import Line2D
@@ -530,6 +587,8 @@ def plot_all(ols_df, mc_df, opt, selected, returns, factors, size_large):
 
 def plot_endogeneity(endo_df):
     """Heatmap des t-stats d'endogénéité par actif x facteur."""
+    import matplotlib.pyplot as plt
+    import seaborn as sns
     set_style()
     factor_names = ["CMKT", "SIZE", "MOM"]
     t_cols  = [f"t_{f}"    for f in factor_names if f"t_{f}"    in endo_df.columns]
@@ -557,7 +616,8 @@ def plot_endogeneity(endo_df):
         for i in range(endo_mask.shape[0]):
             for j in range(endo_mask.shape[1]):
                 if endo_mask[i, j]:
-                    ax1.add_patch(plt.Rectangle(
+                    import matplotlib.pyplot as _plt
+                    ax1.add_patch(_plt.Rectangle(
                         (j, i), 1, 1,
                         fill=False, edgecolor="red", lw=2.5
                     ))
@@ -602,6 +662,9 @@ def portfolio_comparison(returns,ols_df):
       (B) Drawdown
       (C) Allocation du portefeuille Sharpe optimal (barres horizontales)
     """
+    import matplotlib.pyplot as plt
+    import matplotlib.dates as mdates
+    import seaborn as sns
     print("\n[6/6] Comparaison Équiréparti vs Sharpe Optimal...")
 
     # ── Sélection des actifs (hors stablecoins, suffisamment de données)

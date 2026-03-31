@@ -3,12 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { BarChart3, Brain, ArrowRight, PieChart, LineChart, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { fetchStocks } from "@/lib/api";
-
-const STATS_DEFAULTS = [
-  { label: "Actions supportées", value: "—" },
-  { label: "Modèles de prédiction", value: "5" },
-];
+import { fetchStocks, fetchCryptoList, type CryptoListItem } from "@/lib/api";
 
 const features = [
   {
@@ -18,7 +13,7 @@ const features = [
   },
   {
     icon: Brain,
-    title: "Modèles de prédiction",
+    title: "Modèles d'optimisation",
     desc: "Cinq modèles d'optimisation basés sur la théorie de Markowitz, des facteurs Fama-French et un pipeline LLM dynamique.",
   },
   {
@@ -40,17 +35,23 @@ const fade = {
 
 const Home = () => {
   const [stocks, setStocks] = useState<Awaited<ReturnType<typeof fetchStocks>> | null>(null);
+  const [cryptos, setCryptos] = useState<CryptoListItem[] | null>(null);
 
   useEffect(() => {
     fetchStocks()
       .then(setStocks)
       .catch(() => setStocks(null));
+    fetchCryptoList()
+      .then(setCryptos)
+      .catch(() => setCryptos(null));
   }, []);
 
   const sp500Count = stocks !== null ? stocks.filter((s) => s.index === "S&P 500").length : 0;
+  const cryptoCount = cryptos !== null ? cryptos.length : 0;
   const stats = [
     { label: "Actions supportées", value: stocks !== null ? String(sp500Count) : "—" },
-    ...STATS_DEFAULTS.slice(1),
+    { label: "Cryptos supportées", value: cryptos !== null ? String(cryptoCount) : "—" },
+    { label: "Modèles de prédiction", value: "5" },
   ];
 
   return (
