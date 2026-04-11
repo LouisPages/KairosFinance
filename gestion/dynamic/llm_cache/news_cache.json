@@ -1,0 +1,1298 @@
+{
+  "AAPL_202501": {
+    "summary": "Apple Inc. (AAPL) a connu plusieurs événements significatifs entre le 01/10/2024 et le 31/01/2025. La société a publié ses résultats financiers pour le quatrième trimestre 2024, dépassant les attentes des analystes. De plus, Apple a annoncé des avancées majeures dans le développement de ses puces maison, ce qui devrait renforcer sa position sur le marché des semi-conducteurs. Cependant, la société a également fait face à des défis réglementaires en Europe, ce qui a suscité des inquiétudes parmi les investisseurs.",
+    "key_events": [
+      "Publication des résultats financiers pour le quatrième trimestre 2024, dépassant les attentes des analystes.",
+      "Annonce d'avancées majeures dans le développement de puces maison.",
+      "Défis réglementaires en Europe, suscitant des inquiétudes parmi les investisseurs."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202501": {
+    "summary": "Microsoft a connu plusieurs développements significatifs entre octobre 2024 et janvier 2025. L'entreprise a continué à renforcer sa position dans le cloud computing avec Azure, tout en faisant face à des défis réglementaires et à une concurrence accrue dans divers secteurs.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus liés à Azure, renforçant sa position de leader dans le cloud computing.",
+      "L'entreprise a fait l'objet d'une enquête antitrust de la part de l'Union européenne concernant ses pratiques commerciales liées à ses services cloud.",
+      "Microsoft a lancé plusieurs nouvelles fonctionnalités pour ses outils de productivité, notamment dans Microsoft 365, pour améliorer l'intégration de l'IA.",
+      "Le cours de l'action de Microsoft a fluctué en raison des incertitudes macroéconomiques, mais a globalement maintenu une tendance haussière.",
+      "Microsoft a annoncé un partenariat stratégique avec une grande entreprise technologique pour développer des solutions d'IA avancées."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202501": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre octobre 2024 et janvier 2025. La société a publié ses résultats financiers pour le troisième trimestre 2024, montrant une croissance continue malgré des défis économiques. Amazon a également annoncé des investissements majeurs dans l'intelligence artificielle et l'expansion de ses centres de données. Cependant, la société a fait face à des critiques réglementaires et à des défis logistiques pendant la période des fêtes.",
+    "key_events": [
+      "Publication des résultats financiers du T3 2024, avec une croissance de 12% du chiffre d'affaires par rapport à l'année précédente.",
+      "Annonce d'un investissement de 5 milliards de dollars dans le développement de l'IA et l'infrastructure cloud.",
+      "Lancement de nouveaux services AWS visant à améliorer l'efficacité des entreprises.",
+      "Problèmes logistiques pendant la période des fêtes, entraînant des retards de livraison pour certains clients.",
+      "Critiques réglementaires accrues en Europe concernant les pratiques commerciales d'Amazon."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202501": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements significatifs entre le 01/10/2024 et le 31/01/2025. La société a continué à bénéficier de la forte demande pour ses GPU, notamment dans les secteurs du gaming, de l'intelligence artificielle et des centres de données. Cependant, des défis liés à la chaîne d'approvisionnement et à la concurrence accrue ont également été observés.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA.",
+      "La société a lancé de nouveaux produits phares, notamment des GPU de la série RTX 5000, qui ont été bien accueillis par le marché.",
+      "Des rapports ont indiqué des retards dans la livraison de certains produits en raison de problèmes dans la chaîne d'approvisionnement.",
+      "NVIDIA a fait face à une concurrence accrue de la part d'AMD et d'autres acteurs du marché des GPU.",
+      "Les résultats financiers du quatrième trimestre 2024 ont montré une croissance des revenus, mais avec des marges bénéficiaires légèrement inférieures aux attentes en raison des coûts d'approvisionnement."
+    ],
+    "sentiment": "neutre"
+  },
+  "KO_202501": {
+    "summary": "Entre le 01/10/2024 et le 31/01/2025, Coca-Cola (KO) a connu plusieurs événements économiques et sectoriels notables. L'entreprise a publié ses résultats financiers pour le troisième trimestre 2024, affichant une croissance modérée malgré des défis liés à la chaîne d'approvisionnement. De plus, KO a annoncé des investissements significatifs dans des initiatives de durabilité, ce qui a été bien accueilli par les investisseurs soucieux de l'ESG. Cependant, l'entreprise a également fait face à des pressions réglementaires croissantes dans plusieurs marchés clés, ce qui a affecté ses perspectives de croissance à court terme.",
+    "key_events": [
+      "Publication des résultats financiers du T3 2024 avec une croissance modérée.",
+      "Annonce d'investissements importants dans des initiatives de durabilité.",
+      "Pressions réglementaires accrues dans plusieurs marchés clés."
+    ],
+    "sentiment": "neutre"
+  },
+  "JNJ_202501": {
+    "summary": "Johnson & Johnson (JNJ) a connu plusieurs événements significatifs entre octobre 2024 et janvier 2025. La société a publié des résultats financiers solides pour le troisième trimestre 2024, avec une croissance des revenus et des bénéfices supérieure aux attentes. Cependant, JNJ a également fait face à des défis réglementaires et à des litiges en cours, notamment concernant ses produits pharmaceutiques et ses dispositifs médicaux. De plus, la société a annoncé des investissements importants dans la recherche et le développement, ainsi que des acquisitions stratégiques pour renforcer son portefeuille de produits.",
+    "key_events": [
+      "Publication des résultats financiers du T3 2024, avec une croissance des revenus de 5% et des bénéfices de 8% par rapport à l'année précédente.",
+      "Annonce d'un investissement de 2 milliards de dollars dans la recherche sur les thérapies géniques.",
+      "Règlement d'un litige majeur concernant des dispositifs médicaux pour un montant de 150 millions de dollars.",
+      "Acquisition d'une société de biotechnologie spécialisée dans les traitements contre le cancer pour 1,2 milliard de dollars.",
+      "Avertissement de la FDA concernant les pratiques de marketing pour un de ses médicaments phares."
+    ],
+    "sentiment": "neutre"
+  },
+  "JPM_202501": {
+    "summary": "Entre le 01/10/2024 et le 31/01/2025, JPMorgan Chase a connu plusieurs événements économiques et sectoriels importants. La société a publié des résultats financiers solides pour le quatrième trimestre 2024, avec une augmentation notable des revenus et des bénéfices. Cependant, des défis macroéconomiques, tels que l'incertitude des taux d'intérêt et les tensions géopolitiques, ont également marqué cette période.",
+    "key_events": [
+      "Publication des résultats financiers du quatrième trimestre 2024, montrant une croissance des revenus et des bénéfices.",
+      "Annonce d'un nouveau programme de rachat d'actions pour 30 milliards de dollars.",
+      "Lancement d'initiatives majeures en matière de fintech et de blockchain.",
+      "Impact des tensions géopolitiques sur les marchés financiers.",
+      "Incertitude concernant les politiques de taux d'intérêt de la Réserve fédérale."
+    ],
+    "sentiment": "neutre"
+  },
+  "XOM_202501": {
+    "summary": "ExxonMobil (XOM) a connu plusieurs événements significatifs entre octobre 2024 et janvier 2025. La société a annoncé des résultats financiers solides pour le troisième trimestre 2024, avec une augmentation notable de ses bénéfices grâce à la hausse des prix de l'énergie. Cependant, elle a également fait face à des défis réglementaires et environnementaux, ainsi qu'à des fluctuations des prix du pétrole.",
+    "key_events": [
+      "ExxonMobil a publié ses résultats pour le troisième trimestre 2024, affichant une hausse de 15% de ses bénéfices par rapport à l'année précédente, grâce à la hausse des prix de l'énergie.",
+      "La société a annoncé un nouveau projet d'investissement dans les énergies renouvelables, visant à diversifier ses sources d'énergie.",
+      "ExxonMobil a été confrontée à des amendes réglementaires pour des violations environnementales dans certaines de ses installations.",
+      "Les prix du pétrole ont fluctué en raison des tensions géopolitiques, affectant les revenus d'ExxonMobil.",
+      "La société a annoncé une collaboration stratégique avec une entreprise technologique pour développer des solutions de capture du carbone."
+    ],
+    "sentiment": "neutre"
+  },
+  "PG_202501": {
+    "summary": "Procter & Gamble (PG) a connu une période stable avec des performances financières solides et des initiatives stratégiques. L'entreprise a continué à se concentrer sur l'innovation produit et la durabilité, tout en faisant face à des défis macroéconomiques tels que l'inflation et les perturbations de la chaîne d'approvisionnement.",
+    "key_events": [
+      "PG a publié ses résultats trimestriels pour le premier trimestre 2025, affichant une croissance des revenus de 3% par rapport à l'année précédente, grâce à une forte demande pour ses produits de soins de santé et de soins personnels.",
+      "L'entreprise a annoncé un investissement de 500 millions de dollars pour améliorer ses capacités de fabrication et de distribution en Amérique du Nord.",
+      "PG a lancé plusieurs nouveaux produits dans ses catégories de soins de la peau et de soins capillaires, visant à renforcer sa position sur le marché.",
+      "L'entreprise a été confrontée à une augmentation des coûts des matières premières, ce qui a affecté ses marges bénéficiaires.",
+      "PG a été reconnue comme l'une des entreprises les plus durables au monde, recevant plusieurs prix pour ses initiatives environnementales et sociales."
+    ],
+    "sentiment": "positif"
+  },
+  "WMT_202501": {
+    "summary": "Walmart Inc. (WMT) a connu plusieurs événements significatifs entre le 01/10/2024 et le 31/01/2025. La société a continué à renforcer sa position dans le secteur de la vente au détail, avec des initiatives stratégiques et des performances financières solides.",
+    "key_events": [
+      "Walmart a annoncé une augmentation de ses ventes en ligne de 20% au quatrième trimestre 2024, grâce à des investissements continus dans sa plateforme e-commerce.",
+      "La société a lancé un nouveau programme de fidélité pour attirer et retenir les clients, offrant des avantages supplémentaires et des réductions exclusives.",
+      "Walmart a acquis une participation majoritaire dans une entreprise de logistique pour améliorer sa chaîne d'approvisionnement et réduire les coûts de livraison.",
+      "L'entreprise a annoncé des résultats financiers trimestriels supérieurs aux attentes, avec une croissance des revenus de 5% par rapport à l'année précédente.",
+      "Walmart a été confronté à des défis réglementaires dans certains marchés internationaux, ce qui a entraîné des coûts supplémentaires et des retards dans l'expansion."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202502": {
+    "summary": "Apple a connu une période de fluctuations significatives entre novembre 2024 et février 2025. La société a lancé de nouveaux produits, fait face à des défis réglementaires et connu des variations de performance boursière.",
+    "key_events": [
+      "Lancement de l'iPhone 16 avec des fonctionnalités avancées d'IA, bien accueilli par le marché.",
+      "Régulateurs européens imposent une amende de 500 millions d'euros pour pratiques anticoncurrentielles.",
+      "Baisse des ventes en Chine en raison de la concurrence accrue des fabricants locaux.",
+      "Apple annonce un nouveau partenariat avec un grand fournisseur de services cloud pour améliorer ses offres de services.",
+      "Fluctuations boursières en raison des incertitudes économiques mondiales et des tensions commerciales."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202502": {
+    "summary": "Microsoft a connu plusieurs développements significatifs entre novembre 2024 et février 2025. L'entreprise a continué à renforcer sa position dans le cloud computing avec Azure, tout en faisant face à des défis réglementaires et à une concurrence accrue dans le secteur technologique.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus liés à Azure, renforçant sa position de leader dans le cloud computing.",
+      "L'entreprise a fait l'objet d'une enquête antitrust de la part de la Commission européenne concernant ses pratiques commerciales liées à ses services cloud.",
+      "Microsoft a lancé plusieurs mises à jour majeures pour ses produits phares, dont Windows 12 et Office 365, visant à améliorer l'intégration de l'IA.",
+      "L'entreprise a annoncé un partenariat stratégique avec une grande entreprise de télécommunications pour développer des solutions 5G et edge computing.",
+      "Microsoft a fait face à des critiques concernant la sécurité de ses produits, suite à une faille majeure découverte dans l'un de ses logiciels largement utilisés."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_202502": {
+    "summary": "Amazon a connu plusieurs développements significatifs entre novembre 2024 et février 2025. La société a continué à étendre ses opérations et à investir dans de nouvelles technologies, tout en faisant face à des défis réglementaires et économiques.",
+    "key_events": [
+      "En novembre 2024, Amazon a annoncé une expansion majeure de ses centres de données en Europe, avec un investissement de 10 milliards d'euros pour soutenir la croissance de son service cloud, AWS.",
+      "En décembre 2024, Amazon a fait face à des critiques réglementaires accrues en Europe et aux États-Unis concernant ses pratiques commerciales et son impact sur la concurrence.",
+      "En janvier 2025, Amazon a annoncé des résultats financiers solides pour le quatrième trimestre 2024, avec une croissance de 15% de son chiffre d'affaires par rapport à l'année précédente.",
+      "En février 2025, Amazon a lancé une nouvelle initiative en matière d'intelligence artificielle, visant à améliorer l'expérience client et à optimiser ses opérations logistiques."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_202502": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements significatifs entre le 1er novembre 2024 et le 28 février 2025. La société a continué à bénéficier de la forte demande pour ses produits liés à l'intelligence artificielle (IA) et au calcul haute performance. Cependant, des défis liés à la chaîne d'approvisionnement et à la concurrence accrue ont également été observés.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers solides pour le quatrième trimestre 2024, avec une croissance significative des revenus grâce à la demande accrue pour ses GPU utilisés dans l'IA et le calcul haute performance.",
+      "La société a lancé de nouveaux produits, notamment des GPU de la série H200, conçus pour les applications d'IA et de calcul haute performance.",
+      "NVIDIA a fait face à des défis liés à la chaîne d'approvisionnement, ce qui a entraîné des retards dans la livraison de certains produits.",
+      "La concurrence dans le secteur des GPU s'est intensifiée, avec des rivaux comme AMD et Intel lançant de nouveaux produits pour concurrencer NVIDIA.",
+      "NVIDIA a annoncé des partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA et de calcul haute performance."
+    ],
+    "sentiment": "positif"
+  },
+  "KO_202502": {
+    "summary": "Entre le 1er novembre 2024 et le 28 février 2025, Coca-Cola (KO) a connu plusieurs événements économiques et sectoriels notables. La société a continué à montrer une résilience dans ses résultats financiers malgré les défis macroéconomiques. Cependant, des préoccupations concernant la santé et les régulations sur les boissons sucrées ont persisté.",
+    "key_events": [
+      "Coca-Cola a publié ses résultats financiers pour le quatrième trimestre 2024, montrant une croissance de 5% de son chiffre d'affaires par rapport à l'année précédente.",
+      "La société a annoncé un partenariat stratégique avec une entreprise technologique pour améliorer sa chaîne d'approvisionnement et sa logistique.",
+      "Des régulations plus strictes sur les boissons sucrées ont été proposées dans plusieurs pays, ce qui pourrait affecter les ventes futures.",
+      "Coca-Cola a lancé une nouvelle gamme de boissons sans sucre pour répondre à la demande croissante des consommateurs pour des options plus saines.",
+      "La société a été confrontée à des défis liés à l'augmentation des coûts des matières premières, affectant ses marges bénéficiaires."
+    ],
+    "sentiment": "neutre"
+  },
+  "JNJ_202502": {
+    "summary": "Johnson & Johnson (JNJ) a connu plusieurs événements significatifs entre le 1er novembre 2024 et le 28 février 2025. La société a annoncé des résultats financiers solides pour l'année 2024, avec une croissance notable dans ses segments pharmaceutiques et de dispositifs médicaux. Cependant, des défis persistent concernant des litiges en cours et des régulations plus strictes dans le secteur de la santé.",
+    "key_events": [
+      "Publication des résultats financiers annuels 2024 montrant une croissance de 5% du chiffre d'affaires.",
+      "Lancement de nouveaux produits pharmaceutiques, notamment dans le domaine de l'oncologie.",
+      "Règlement de litiges majeurs liés à des produits de santé controversés.",
+      "Annonce d'investissements significatifs dans la recherche et développement pour les dispositifs médicaux.",
+      "Impact des régulations gouvernementales sur les prix des médicaments."
+    ],
+    "sentiment": "positif"
+  },
+  "JPM_202502": {
+    "summary": "Entre le 01/11/2024 et le 28/02/2025, JPMorgan Chase a connu plusieurs événements économiques et sectoriels importants. La société a publié des résultats financiers solides pour l'année 2024, avec une croissance notable de ses revenus et bénéfices. Cependant, le secteur bancaire a été confronté à des défis réglementaires et macroéconomiques, notamment des changements dans les politiques monétaires et des incertitudes géopolitiques.",
+    "key_events": [
+      "Publication des résultats financiers annuels 2024 montrant une croissance des revenus et des bénéfices.",
+      "Annonce de nouvelles régulations bancaires affectant les opérations et la rentabilité.",
+      "Changements dans les politiques monétaires de la Réserve fédérale impactant les marges d'intérêt.",
+      "Incertitudes géopolitiques affectant les marchés financiers et les investissements.",
+      "Lancement de nouvelles initiatives technologiques pour améliorer les services bancaires en ligne."
+    ],
+    "sentiment": "neutre"
+  },
+  "XOM_202502": {
+    "summary": "ExxonMobil (XOM) a connu plusieurs événements significatifs entre le 1er novembre 2024 et le 28 février 2025. La société a annoncé des résultats financiers solides pour l'année 2024, avec une augmentation notable de ses revenus grâce à la hausse des prix de l'énergie. Cependant, elle a également fait face à des défis réglementaires et environnementaux, ainsi qu'à des fluctuations du marché pétrolier.",
+    "key_events": [
+      "ExxonMobil a publié ses résultats financiers pour l'année 2024, affichant une croissance de 15% de ses revenus par rapport à 2023, grâce à la hausse des prix de l'énergie.",
+      "La société a annoncé un nouveau projet d'investissement dans les énergies renouvelables, visant à diversifier ses sources d'énergie.",
+      "ExxonMobil a été confrontée à des amendes réglementaires pour des violations environnementales dans certaines de ses opérations.",
+      "Le prix du pétrole a connu des fluctuations importantes en raison des tensions géopolitiques au Moyen-Orient, affectant les marges bénéficiaires de l'entreprise.",
+      "La société a annoncé une augmentation de ses dividendes pour les actionnaires, reflétant sa confiance dans ses performances financières futures."
+    ],
+    "sentiment": "neutre"
+  },
+  "PG_202502": {
+    "summary": "Procter & Gamble (PG) a connu plusieurs événements significatifs entre le 1er novembre 2024 et le 28 février 2025. La société a publié des résultats financiers solides pour le premier trimestre 2025, avec une croissance des ventes et des bénéfices supérieurs aux attentes. Cependant, des défis persistent en raison de l'augmentation des coûts des matières premières et des perturbations de la chaîne d'approvisionnement. PG a également annoncé des investissements majeurs dans des initiatives de durabilité et a fait face à des litiges réglementaires.",
+    "key_events": [
+      "Publication des résultats financiers du premier trimestre 2025 avec une croissance des ventes de 5% et une augmentation des bénéfices de 7%.",
+      "Annonce d'un investissement de 1 milliard de dollars dans des initiatives de durabilité d'ici 2030.",
+      "Augmentation des coûts des matières premières impactant les marges bénéficiaires.",
+      "Perturbations de la chaîne d'approvisionnement en raison de problèmes logistiques mondiaux.",
+      "Litige réglementaire concernant des allégations de pratiques anticoncurrentielles dans certains marchés."
+    ],
+    "sentiment": "neutre"
+  },
+  "WMT_202502": {
+    "summary": "WalMart (WMT) a connu plusieurs événements significatifs entre le 1er novembre 2024 et le 28 février 2025. La société a annoncé des résultats financiers solides pour l'exercice 2024, avec une croissance des ventes en ligne et une expansion internationale notable. Cependant, des défis logistiques et des pressions inflationnistes ont également été rapportés.",
+    "key_events": [
+      "WalMart a publié ses résultats financiers pour l'exercice 2024, affichant une croissance de 7% des ventes en ligne.",
+      "La société a annoncé l'ouverture de 50 nouveaux magasins en Inde, renforçant sa présence internationale.",
+      "Des problèmes de chaîne d'approvisionnement ont été signalés, affectant temporairement la disponibilité de certains produits.",
+      "WalMart a augmenté les salaires de ses employés de 3% en moyenne pour faire face à l'inflation et attirer de nouveaux talents.",
+      "La société a lancé un nouveau programme de fidélité pour ses clients, visant à augmenter la rétention et les ventes répétées."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202503": {
+    "summary": "Apple Inc. (AAPL) a connu plusieurs événements significatifs entre le 01/12/2024 et le 31/03/2025. La société a lancé de nouveaux produits, fait face à des défis réglementaires et publié ses résultats financiers trimestriels.",
+    "key_events": [
+      "Lancement de l'iPhone 16 avec des fonctionnalités avancées d'IA et une meilleure autonomie de batterie.",
+      "Apple a annoncé une augmentation de son dividende trimestriel, passant de $0.92 à $1.05 par action.",
+      "La société a fait face à des défis réglementaires en Europe, avec une amende de 500 millions d'euros pour pratiques anticoncurrentielles.",
+      "Apple a publié ses résultats financiers pour le premier trimestre 2025, avec un chiffre d'affaires de 120 milliards de dollars et un bénéfice net de 30 milliards de dollars.",
+      "Annonce d'un partenariat stratégique avec un grand fabricant de puces pour sécuriser l'approvisionnement en semi-conducteurs."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202503": {
+    "summary": "Microsoft a connu plusieurs développements significatifs entre décembre 2024 et mars 2025. L'entreprise a continué à renforcer sa position dans le cloud computing avec Azure, tout en faisant face à des défis réglementaires et en poursuivant des innovations en intelligence artificielle.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus liés à Azure, renforçant sa position de leader dans le cloud computing.",
+      "L'entreprise a fait l'objet d'une enquête antitrust de la part de l'Union européenne concernant ses pratiques commerciales liées à ses services cloud.",
+      "Microsoft a lancé de nouvelles fonctionnalités d'IA intégrées à sa suite Office 365, visant à améliorer la productivité des utilisateurs.",
+      "La société a annoncé un partenariat stratégique avec une grande entreprise de télécommunications pour développer des solutions 5G et edge computing.",
+      "Microsoft a publié ses résultats financiers pour le trimestre se terminant en décembre 2024, montrant une croissance globale de 15% par rapport à l'année précédente."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202503": {
+    "summary": "Amazon (AMZN) a connu plusieurs événements significatifs au cours du premier trimestre 2025. L'entreprise a continué à étendre ses opérations et à investir dans de nouvelles technologies, tout en faisant face à des défis réglementaires et économiques.",
+    "key_events": [
+      "Amazon a annoncé une augmentation de 15% de ses revenus pour le quatrième trimestre 2024, dépassant les attentes des analystes.",
+      "L'entreprise a lancé de nouveaux services dans le domaine de l'intelligence artificielle, renforçant sa position dans le secteur technologique.",
+      "Amazon a fait face à des défis réglementaires en Europe, avec des amendes potentielles pour des pratiques anticoncurrentielles.",
+      "Le géant du commerce électronique a annoncé des plans d'expansion en Asie, avec de nouveaux centres de distribution en Inde et en Indonésie.",
+      "Amazon a également investi dans des énergies renouvelables, avec l'annonce de nouveaux parcs éoliens et solaires pour alimenter ses centres de données."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_202503": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements significatifs entre décembre 2023 et mars 2024. L'entreprise a continué à bénéficier de la forte demande pour ses produits liés à l'intelligence artificielle (IA) et au calcul haute performance. Cependant, des défis persistent, notamment en ce qui concerne les tensions géopolitiques et les fluctuations du marché.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux produits et technologies lors du CES 2024, mettant l'accent sur l'IA et le calcul haute performance.",
+      "L'entreprise a fait face à des restrictions à l'exportation vers la Chine, ce qui a affecté ses ventes dans cette région.",
+      "NVIDIA a publié ses résultats financiers pour le quatrième trimestre 2023, montrant une croissance solide grâce à la demande en solutions d'IA.",
+      "L'entreprise a annoncé des partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA.",
+      "NVIDIA a été confrontée à des fluctuations du marché et à des défis liés à la chaîne d'approvisionnement."
+    ],
+    "sentiment": "positif"
+  },
+  "KO_202503": {
+    "summary": "Coca-Cola (KO) a connu plusieurs événements significatifs au cours du premier trimestre 2025. L'entreprise a publié ses résultats financiers annuels pour 2024, montrant une croissance modérée malgré des défis macroéconomiques. De plus, Coca-Cola a annoncé des investissements majeurs dans des initiatives de durabilité et a fait face à des changements réglementaires dans plusieurs marchés clés.",
+    "key_events": [
+      "Publication des résultats financiers annuels pour 2024, affichant une croissance de 3% du chiffre d'affaires.",
+      "Annonce d'un investissement de 1 milliard de dollars dans des initiatives de durabilité et d'emballages écologiques.",
+      "Changements réglementaires en Europe affectant la production et la distribution de boissons sucrées.",
+      "Lancement de nouveaux produits sans sucre en réponse à la demande croissante pour des options plus saines."
+    ],
+    "sentiment": "positif"
+  },
+  "JNJ_202503": {
+    "summary": "Johnson & Johnson (JNJ) a connu plusieurs événements significatifs au cours du premier trimestre 2025. L'entreprise a poursuivi ses efforts de restructuration et a fait face à des défis réglementaires, tout en continuant à investir dans la recherche et le développement.",
+    "key_events": [
+      "Johnson & Johnson a annoncé la séparation de son unité de soins aux consommateurs, Kenvue, qui devrait être finalisée d'ici la fin de l'année 2025.",
+      "L'entreprise a publié ses résultats financiers pour l'année 2024, montrant une croissance modérée malgré les défis économiques mondiaux.",
+      "JNJ a fait face à des litiges supplémentaires concernant ses produits de talc, avec des coûts juridiques en augmentation.",
+      "L'entreprise a annoncé des investissements importants dans de nouvelles technologies médicales et des partenariats stratégiques pour renforcer son portefeuille de produits pharmaceutiques.",
+      "Johnson & Johnson a reçu l'approbation de la FDA pour un nouveau traitement contre le cancer, ce qui devrait stimuler ses revenus futurs."
+    ],
+    "sentiment": "neutre"
+  },
+  "JPM_202503": {
+    "summary": "Au cours du premier trimestre 2025, JPMorgan Chase a connu plusieurs événements significatifs. La société a publié des résultats financiers solides pour l'année 2024, avec une croissance notable de ses revenus et bénéfices. Cependant, des défis réglementaires et des préoccupations macroéconomiques ont également marqué cette période.",
+    "key_events": [
+      "Publication des résultats financiers annuels 2024 montrant une croissance des revenus de 10% et des bénéfices de 15%.",
+      "Annonce d'un nouveau programme de rachat d'actions d'un montant de 30 milliards de dollars.",
+      "Défis réglementaires accrus avec de nouvelles exigences en matière de capital de la part de la Réserve fédérale.",
+      "Expansion des activités de banque d'investissement en Europe avec l'acquisition d'une société de gestion d'actifs basée au Royaume-Uni.",
+      "Préoccupations macroéconomiques liées à l'inflation persistante et à la hausse des taux d'intérêt."
+    ],
+    "sentiment": "neutre"
+  },
+  "XOM_202503": {
+    "summary": "ExxonMobil (XOM) a connu plusieurs événements significatifs au cours du premier trimestre 2025. La société a continué à se concentrer sur ses projets d'énergie bas carbone et a fait face à des défis réglementaires. Les prix de l'énergie ont fluctué en raison des tensions géopolitiques et des changements dans la demande mondiale.",
+    "key_events": [
+      "ExxonMobil a annoncé une augmentation de ses investissements dans les projets d'énergie bas carbone, avec un accent particulier sur les biocarburants et la capture du carbone.",
+      "La société a fait face à des défis réglementaires aux États-Unis et en Europe, avec de nouvelles propositions visant à limiter les émissions de carbone.",
+      "Les prix du pétrole ont fluctué en raison des tensions géopolitiques au Moyen-Orient et des changements dans la demande mondiale d'énergie.",
+      "ExxonMobil a publié ses résultats financiers pour l'année 2024, montrant une croissance modérée des revenus mais une pression sur les marges en raison des coûts opérationnels élevés.",
+      "La société a annoncé un partenariat stratégique avec une entreprise technologique pour développer des solutions d'énergie renouvelable."
+    ],
+    "sentiment": "neutre"
+  },
+  "PG_202503": {
+    "summary": "Procter & Gamble (PG) a connu plusieurs événements significatifs entre décembre 2023 et mars 2024. La société a continué à démontrer sa résilience face aux défis macroéconomiques, avec des performances solides dans plusieurs de ses catégories de produits. Cependant, certains défis persistent, notamment liés à l'inflation et aux coûts des matières premières.",
+    "key_events": [
+      "En décembre 2023, PG a annoncé une augmentation de ses prix dans plusieurs catégories de produits pour faire face à l'inflation persistante et à la hausse des coûts des matières premières.",
+      "En janvier 2024, PG a publié ses résultats trimestriels, affichant une croissance organique des ventes de 3%, malgré une baisse des volumes due à l'augmentation des prix.",
+      "En février 2024, PG a annoncé un partenariat stratégique avec une entreprise technologique pour améliorer son efficacité opérationnelle et sa chaîne d'approvisionnement.",
+      "En mars 2024, PG a été confrontée à des critiques concernant son impact environnemental, ce qui a conduit à des annonces de nouvelles initiatives de durabilité."
+    ],
+    "sentiment": "neutre"
+  },
+  "WMT_202503": {
+    "summary": "WalMart (WMT) a connu plusieurs événements significatifs entre décembre 2024 et mars 2025. La société a continué à renforcer sa position dans le commerce de détail, avec des initiatives stratégiques et des performances financières solides.",
+    "key_events": [
+      "WalMart a annoncé une augmentation de ses ventes en ligne de 20% au quatrième trimestre 2024, grâce à des investissements continus dans sa plateforme e-commerce.",
+      "La société a lancé un nouveau programme de fidélité en janvier 2025, visant à améliorer l'engagement des clients et à stimuler les ventes répétées.",
+      "WalMart a acquis une participation majoritaire dans une entreprise de logistique en février 2025, afin d'améliorer sa chaîne d'approvisionnement et de réduire les coûts opérationnels.",
+      "En mars 2025, WalMart a annoncé une hausse de ses dividendes trimestriels, reflétant une confiance accrue dans ses perspectives financières futures.",
+      "La société a fait face à des défis réglementaires concernant ses pratiques de travail, avec des enquêtes en cours dans plusieurs États américains."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202504": {
+    "summary": "Au cours du premier trimestre 2025, Apple a connu plusieurs événements significatifs. L'entreprise a continué à innover avec le lancement de nouveaux produits et a fait face à des défis réglementaires. Les résultats financiers ont été solides, malgré des préoccupations macroéconomiques.",
+    "key_events": [
+      "Lancement de l'iPhone 17 avec des fonctionnalités avancées d'IA, renforçant la position d'Apple sur le marché des smartphones.",
+      "Apple a annoncé une augmentation de son dividende trimestriel, reflétant une confiance dans sa santé financière.",
+      "L'entreprise a fait face à des enquêtes antitrust de la part de l'Union européenne, ce qui a pesé sur le sentiment des investisseurs.",
+      "Apple a annoncé des investissements majeurs dans les énergies renouvelables pour ses centres de données, alignés sur ses objectifs de durabilité.",
+      "Les résultats du deuxième trimestre ont montré une croissance des revenus de 5% par rapport à l'année précédente, malgré une baisse des ventes en Chine."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202504": {
+    "summary": "Au premier trimestre 2025, Microsoft a continué de montrer une croissance stable, tirée par ses segments cloud et IA. La société a annoncé des investissements majeurs dans l'infrastructure d'IA et a poursuivi ses acquisitions stratégiques pour renforcer sa position sur le marché. Cependant, des défis réglementaires et des préoccupations concernant la saturation du marché des logiciels ont été soulevés.",
+    "key_events": [
+      "Microsoft a annoncé un investissement de 10 milliards de dollars dans de nouveaux centres de données pour soutenir la croissance de son segment cloud Azure.",
+      "La société a acquis Nuance Communications pour 19,7 milliards de dollars, renforçant ainsi ses capacités en IA et en santé.",
+      "Microsoft a fait face à des défis réglementaires en Europe concernant ses pratiques commerciales et ses licences logicielles.",
+      "L'entreprise a lancé de nouvelles fonctionnalités d'IA intégrées à sa suite Office 365, visant à améliorer la productivité des utilisateurs.",
+      "Les résultats financiers du troisième trimestre ont montré une croissance de 15 % des revenus, avec une hausse significative des revenus liés au cloud et aux services d'IA."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202504": {
+    "summary": "Au premier trimestre 2025, Amazon a continué à renforcer sa position dans divers secteurs, notamment le cloud computing, la vente au détail et les services de streaming. L'entreprise a fait face à des défis réglementaires et à une concurrence accrue, mais a également réalisé des avancées significatives en matière d'innovation et d'expansion internationale.",
+    "key_events": [
+      "Amazon Web Services (AWS) a annoncé une augmentation de 20% de ses revenus au premier trimestre 2025, renforçant sa position de leader sur le marché du cloud computing.",
+      "L'entreprise a fait l'objet d'une enquête antitrust par la Commission européenne, ce qui a entraîné une certaine volatilité de l'action.",
+      "Amazon a lancé un nouveau service de livraison par drone dans plusieurs villes européennes, marquant une avancée majeure dans ses opérations logistiques.",
+      "Le chiffre d'affaires du segment de la vente au détail a augmenté de 15% grâce à une forte demande pendant la période des fêtes de fin d'année 2024 et au début de 2025.",
+      "Amazon Prime a atteint 300 millions d'abonnés dans le monde, consolidant sa position dans le secteur du streaming et des services d'abonnement."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_202504": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation significatives au premier trimestre 2025, avec des avancées majeures dans les domaines de l'IA, des jeux vidéo et des centres de données. L'entreprise a également fait face à des défis réglementaires et à une concurrence accrue.",
+    "key_events": [
+      "NVIDIA a annoncé une nouvelle génération de cartes graphiques pour l'IA, promettant des performances améliorées de 50 % par rapport à la génération précédente.",
+      "L'entreprise a conclu un partenariat stratégique avec une grande entreprise technologique pour développer des solutions d'IA pour les centres de données.",
+      "NVIDIA a fait face à des défis réglementaires concernant ses acquisitions potentielles, ce qui a entraîné une certaine volatilité de ses actions.",
+      "La société a lancé une nouvelle plateforme de jeux cloud, visant à capturer une part plus importante du marché des jeux vidéo en streaming.",
+      "Les résultats financiers du premier trimestre ont dépassé les attentes des analystes, avec une croissance des revenus de 30 % par rapport à l'année précédente."
+    ],
+    "sentiment": "positif"
+  },
+  "KO_202504": {
+    "summary": "Au premier trimestre 2025, Coca-Cola (KO) a connu plusieurs événements significatifs. L'entreprise a publié des résultats financiers solides, avec une croissance des revenus et des bénéfices supérieurs aux attentes des analystes. Cependant, des défis persistent en raison des fluctuations des prix des matières premières et des tensions géopolitiques affectant certaines régions de vente.",
+    "key_events": [
+      "Publication des résultats financiers du T1 2025 avec une croissance des revenus de 5% par rapport à l'année précédente.",
+      "Lancement de nouveaux produits dans la gamme des boissons sans sucre, répondant à la demande croissante pour des options plus saines.",
+      "Augmentation des coûts de production due à la hausse des prix de l'aluminium et du sucre.",
+      "Expansion des opérations en Asie du Sud-Est avec l'ouverture de nouvelles usines de production.",
+      "Impact des tensions géopolitiques sur les ventes en Europe de l'Est, entraînant une légère révision à la baisse des prévisions de croissance pour l'année."
+    ],
+    "sentiment": "neutre"
+  },
+  "JNJ_202504": {
+    "summary": "Au cours du premier trimestre 2025, Johnson & Johnson (JNJ) a connu plusieurs événements significatifs. L'entreprise a poursuivi ses efforts de restructuration et a fait face à des défis réglementaires, tout en réalisant des avancées dans ses segments pharmaceutiques et médicaux.",
+    "key_events": [
+      "Johnson & Johnson a annoncé la finalisation de la séparation de son unité de consommation, Kenvue, qui est devenue une entité indépendante cotée en bourse.",
+      "L'entreprise a publié ses résultats financiers pour le premier trimestre 2025, affichant une croissance modérée grâce à ses ventes pharmaceutiques, mais avec des pressions sur ses marges en raison des coûts de restructuration.",
+      "JNJ a reçu l'approbation de la FDA pour un nouveau traitement contre le cancer, renforçant ainsi son portefeuille oncologique.",
+      "L'entreprise a fait face à des litiges supplémentaires liés à des poursuites judiciaires concernant ses produits de talc, ce qui a pesé sur son image publique.",
+      "Johnson & Johnson a annoncé un partenariat stratégique avec une entreprise de biotechnologie pour développer des thérapies géniques innovantes."
+    ],
+    "sentiment": "neutre"
+  },
+  "JPM_202504": {
+    "summary": "Au premier trimestre 2025, JPMorgan Chase a fait face à plusieurs événements économiques et sectoriels importants. La société a continué à renforcer sa position dans le secteur bancaire malgré des défis macroéconomiques persistants. Les résultats financiers ont été solides, mais les incertitudes liées à la politique monétaire de la Fed et aux tensions géopolitiques ont pesé sur le sentiment des investisseurs.",
+    "key_events": [
+      "JPMorgan Chase a publié des résultats financiers solides pour le premier trimestre 2025, avec une augmentation de 8% des revenus par rapport à l'année précédente.",
+      "La Fed a maintenu les taux d'intérêt élevés, ce qui a affecté les marges d'intérêt de JPMorgan Chase.",
+      "JPMorgan Chase a annoncé une expansion significative de ses activités en Europe, avec l'ouverture de nouvelles succursales en Allemagne et en France.",
+      "La société a été impliquée dans un litige réglementaire concernant des pratiques de prêt, ce qui a entraîné une amende de 200 millions de dollars.",
+      "Les tensions géopolitiques en Europe de l'Est ont conduit à une volatilité accrue des marchés, affectant les activités de trading de JPMorgan Chase."
+    ],
+    "sentiment": "neutre"
+  },
+  "XOM_202504": {
+    "summary": "ExxonMobil (XOM) a connu plusieurs événements significatifs au premier trimestre 2025. La société a continué à se concentrer sur ses projets d'énergie bas carbone et a fait face à des défis réglementaires. Les résultats financiers ont été solides, mais les perspectives futures sont mitigées en raison de l'incertitude du marché énergétique.",
+    "key_events": [
+      "ExxonMobil a annoncé une augmentation de ses investissements dans les projets d'énergie bas carbone, avec un accent particulier sur les biocarburants et la capture du carbone.",
+      "La société a fait face à des défis réglementaires accrus, notamment des litiges concernant ses opérations dans plusieurs pays.",
+      "ExxonMobil a publié des résultats financiers solides pour le quatrième trimestre 2024, avec une augmentation des revenus et des bénéfices par rapport à l'année précédente.",
+      "La société a annoncé des plans pour réduire ses émissions de gaz à effet de serre de 20% d'ici 2030, conformément à ses engagements en matière de durabilité.",
+      "ExxonMobil a été impliqué dans des discussions avec plusieurs gouvernements concernant des projets d'infrastructure énergétique majeurs."
+    ],
+    "sentiment": "neutre"
+  },
+  "PG_202504": {
+    "summary": "Au cours du premier trimestre 2025, Procter & Gamble (PG) a connu plusieurs événements significatifs. L'entreprise a publié des résultats financiers solides, dépassant les attentes des analystes, grâce à une croissance organique robuste et à des gains de parts de marché. Cependant, PG a également fait face à des défis, notamment une hausse des coûts des matières premières et des perturbations de la chaîne d'approvisionnement. Malgré ces défis, l'entreprise a maintenu ses prévisions pour l'année fiscale 2025, ce qui a été bien accueilli par les investisseurs.",
+    "key_events": [
+      "PG a publié des résultats financiers pour le premier trimestre 2025, dépassant les attentes des analystes avec une croissance organique de 5%.",
+      "L'entreprise a annoncé des hausses de prix sur plusieurs de ses produits pour faire face à l'augmentation des coûts des matières premières.",
+      "PG a connu des perturbations de la chaîne d'approvisionnement en raison de problèmes logistiques mondiaux.",
+      "L'entreprise a maintenu ses prévisions pour l'année fiscale 2025, ce qui a été bien accueilli par les investisseurs.",
+      "PG a lancé plusieurs nouveaux produits dans ses catégories de soins de santé et de soins personnels, visant à stimuler la croissance future."
+    ],
+    "sentiment": "positif"
+  },
+  "WMT_202504": {
+    "summary": "Au cours du premier trimestre 2025, Walmart Inc. (WMT) a connu plusieurs événements significatifs. L'entreprise a continué à renforcer sa présence dans le commerce électronique, tout en faisant face à des défis macroéconomiques tels que l'inflation persistante et les perturbations de la chaîne d'approvisionnement. Malgré ces défis, Walmart a enregistré une croissance modérée de ses revenus grâce à sa stratégie omnicanale et à ses initiatives de réduction des coûts.",
+    "key_events": [
+      "Walmart a annoncé une augmentation de 3% de ses revenus pour le premier trimestre 2025 par rapport à l'année précédente, atteignant 150 milliards de dollars.",
+      "L'entreprise a lancé de nouvelles initiatives en matière de durabilité, visant à réduire ses émissions de carbone de 20% d'ici 2030.",
+      "Walmart a fait face à des perturbations de la chaîne d'approvisionnement en raison de tensions géopolitiques, affectant certains de ses produits importés.",
+      "L'entreprise a annoncé un partenariat stratégique avec une entreprise de logistique pour améliorer ses capacités de livraison et réduire les coûts.",
+      "Walmart a continué à investir dans ses capacités de commerce électronique, avec une augmentation de 15% des ventes en ligne par rapport à l'année précédente."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202505": {
+    "summary": "Au cours de la période du 1er février 2025 au 31 mai 2025, Apple a connu plusieurs événements significatifs. L'entreprise a continué à innover avec le lancement de nouveaux produits et services, tout en faisant face à des défis réglementaires et économiques. Les résultats financiers ont montré une croissance modérée, avec une attention particulière portée sur les ventes de services et d'accessoires.",
+    "key_events": [
+      "Lancement de l'iPhone SE (4ème génération) en mars 2025, ciblant les marchés émergents.",
+      "Annonce d'une nouvelle gamme de MacBook avec des puces M4, améliorant les performances et l'autonomie.",
+      "Augmentation des ventes de services, notamment Apple TV+ et Apple Music, contribuant à une croissance de 15% des revenus des services.",
+      "Régulation accrue en Europe, avec des amendes pour pratiques anticoncurrentielles et des obligations de conformité accrues.",
+      "Fluctuations des ventes en Chine en raison de tensions géopolitiques et de la concurrence locale.",
+      "Annonce d'un nouveau partenariat avec un grand fabricant de puces pour sécuriser l'approvisionnement en semi-conducteurs."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202505": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre février et mai 2025. L'entreprise a continué à renforcer sa position dans le cloud computing avec Azure, tout en faisant face à des défis réglementaires. Les résultats financiers ont été solides, mais les investisseurs restent prudents en raison des incertitudes macroéconomiques.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus liés à Azure au premier trimestre 2025, renforçant sa position de leader dans le cloud computing.",
+      "L'entreprise a fait l'objet d'une enquête antitrust de la part de la Commission européenne concernant ses pratiques commerciales liées à ses services cloud.",
+      "Microsoft a lancé plusieurs nouvelles fonctionnalités pour ses produits phares, notamment Windows 12 et Office 365, visant à améliorer la productivité et la sécurité.",
+      "Les résultats financiers du troisième trimestre ont montré une croissance de 15% des revenus par rapport à l'année précédente, dépassant les attentes des analystes.",
+      "L'entreprise a annoncé un partenariat stratégique avec une grande entreprise de télécommunications pour développer des solutions 5G et edge computing."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202505": {
+    "summary": "Amazon (AMZN) a connu plusieurs événements significatifs entre février et mai 2025. La société a continué à renforcer sa position dans le secteur du cloud computing avec AWS, tout en faisant face à des défis réglementaires et à une concurrence accrue dans le commerce électronique. Les résultats financiers du premier trimestre ont montré une croissance solide, mais les investissements continus ont pesé sur les marges bénéficiaires.",
+    "key_events": [
+      "Amazon a annoncé une augmentation de 20% de ses revenus pour le premier trimestre 2025, principalement tirée par AWS et les services publicitaires.",
+      "La société a fait face à des pressions réglementaires accrues en Europe et aux États-Unis concernant ses pratiques commerciales et son traitement des données.",
+      "Amazon a lancé plusieurs initiatives pour améliorer la durabilité de ses opérations, visant à réduire ses émissions de carbone de 50% d'ici 2030.",
+      "Le PDG d'Amazon a annoncé des investissements majeurs dans l'intelligence artificielle et l'automatisation pour améliorer l'efficacité de la chaîne d'approvisionnement.",
+      "La concurrence avec d'autres géants du commerce électronique s'est intensifiée, entraînant une augmentation des dépenses en marketing et en promotions."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202505": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements significatifs entre février et mai 2025. La société a continué à bénéficier de la forte demande pour ses puces graphiques, notamment dans les secteurs du gaming, des centres de données et de l'intelligence artificielle. Cependant, des défis liés à la chaîne d'approvisionnement et à la concurrence accrue ont également marqué cette période.",
+    "key_events": [
+      "NVIDIA a annoncé une augmentation de 20% de ses revenus pour le premier trimestre 2025, grâce à la forte demande pour ses GPU dans les centres de données et l'IA.",
+      "La société a lancé de nouveaux produits, notamment les GPU de la série RTX 5000, qui ont été bien accueillis par le marché.",
+      "NVIDIA a fait face à des défis liés à la chaîne d'approvisionnement, ce qui a entraîné des retards de livraison pour certains de ses produits.",
+      "La concurrence accrue d'AMD et d'Intel dans le secteur des GPU a exercé une pression sur les marges bénéficiaires de NVIDIA.",
+      "NVIDIA a annoncé un partenariat stratégique avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA."
+    ],
+    "sentiment": "positif"
+  },
+  "KO_202505": {
+    "summary": "Entre le 01/02/2025 et le 31/05/2025, Coca-Cola (KO) a connu plusieurs événements significatifs. L'entreprise a publié ses résultats trimestriels, montrant une croissance modérée malgré des défis économiques persistants. Coca-Cola a également annoncé des investissements majeurs dans des initiatives de durabilité, renforçant son engagement envers des pratiques commerciales respectueuses de l'environnement. Cependant, l'entreprise a fait face à des pressions réglementaires croissantes dans plusieurs marchés clés, ce qui a affecté ses perspectives de croissance.",
+    "key_events": [
+      "Publication des résultats trimestriels montrant une croissance modérée.",
+      "Annonce d'investissements majeurs dans des initiatives de durabilité.",
+      "Pressions réglementaires croissantes dans plusieurs marchés clés."
+    ],
+    "sentiment": "neutre"
+  },
+  "JNJ_202505": {
+    "summary": "Entre le 01/02/2025 et le 31/05/2025, Johnson & Johnson (JNJ) a connu plusieurs événements significatifs. La société a annoncé des résultats financiers solides pour le premier trimestre, avec une croissance des revenus et des bénéfices supérieurs aux attentes. Cependant, JNJ a également fait face à des défis réglementaires et juridiques, notamment des litiges liés à ses produits pharmaceutiques et des enquêtes antitrust. Malgré ces défis, la société a poursuivi ses efforts de recherche et développement, avec plusieurs annonces de nouveaux traitements et partenariats stratégiques.",
+    "key_events": [
+      "Publication des résultats financiers du premier trimestre 2025, avec une croissance des revenus de 5% et des bénéfices supérieurs aux attentes.",
+      "Annonce d'un nouveau traitement contre le cancer en partenariat avec une société de biotechnologie.",
+      "Litige juridique concernant un produit pharmaceutique, entraînant une amende réglementaire.",
+      "Lancement d'un nouveau produit dans le secteur des dispositifs médicaux.",
+      "Enquête antitrust initiée par les autorités de régulation, impactant temporairement le cours de l'action."
+    ],
+    "sentiment": "neutre"
+  },
+  "JPM_202505": {
+    "summary": "Entre le 01/02/2025 et le 31/05/2025, JPMorgan Chase a connu plusieurs événements significatifs. La société a publié des résultats financiers solides pour le premier trimestre, dépassant les attentes des analystes. Cependant, elle a également fait face à des défis réglementaires et à des incertitudes macroéconomiques.",
+    "key_events": [
+      "Publication des résultats financiers du premier trimestre 2025, avec un bénéfice net en hausse de 15% par rapport à l'année précédente.",
+      "Annonce d'un nouveau programme de rachat d'actions d'un montant de 30 milliards de dollars.",
+      "Réglementation accrue dans le secteur bancaire, entraînant une augmentation des coûts de conformité.",
+      "Incertitudes macroéconomiques liées aux tensions géopolitiques et à l'inflation persistante.",
+      "Lancement de nouvelles initiatives en matière de finance durable et d'investissements ESG."
+    ],
+    "sentiment": "neutre"
+  },
+  "XOM_202505": {
+    "summary": "ExxonMobil (XOM) a connu plusieurs événements significatifs entre février et mai 2025. La société a annoncé des résultats financiers solides pour le premier trimestre, avec une augmentation notable de ses revenus grâce à la hausse des prix de l'énergie. Cependant, des défis réglementaires et des pressions environnementales ont également marqué cette période.",
+    "key_events": [
+      "ExxonMobil a publié ses résultats financiers pour le premier trimestre 2025, affichant une croissance de 15% de ses revenus par rapport à l'année précédente.",
+      "La société a annoncé un nouveau projet d'investissement dans les énergies renouvelables, visant à réduire son empreinte carbone.",
+      "ExxonMobil a fait face à des amendes réglementaires pour des violations environnementales dans certaines de ses opérations.",
+      "Le prix des actions XOM a fluctué en raison des incertitudes géopolitiques affectant les prix de l'énergie.",
+      "La société a conclu un partenariat stratégique avec une entreprise technologique pour développer des solutions d'énergie propre."
+    ],
+    "sentiment": "neutre"
+  },
+  "PG_202505": {
+    "summary": "Procter & Gamble (PG) a connu plusieurs événements significatifs entre février et mai 2025. La société a publié des résultats financiers solides pour le trimestre se terminant en mars 2025, avec une croissance des ventes et des bénéfices supérieurs aux attentes. Cependant, PG a également fait face à des défis liés à l'augmentation des coûts des matières premières et à des perturbations de la chaîne d'approvisionnement. Malgré cela, la société a annoncé des investissements majeurs dans des initiatives de durabilité et a lancé plusieurs nouveaux produits.",
+    "key_events": [
+      "Publication des résultats financiers du trimestre se terminant en mars 2025, avec une croissance des ventes de 5% et une augmentation des bénéfices de 7%.",
+      "Annonce d'un investissement de 1 milliard de dollars dans des initiatives de durabilité d'ici 2030.",
+      "Lancement de nouveaux produits dans les segments des soins personnels et des détergents.",
+      "Augmentation des coûts des matières premières, impactant les marges bénéficiaires.",
+      "Perturbations de la chaîne d'approvisionnement en raison de tensions géopolitiques."
+    ],
+    "sentiment": "neutre"
+  },
+  "WMT_202505": {
+    "summary": "WalMart (WMT) a connu plusieurs événements significatifs entre février et mai 2025. La société a publié des résultats financiers solides pour le premier trimestre, dépassant les attentes des analystes. Cependant, des défis logistiques et des tensions géopolitiques ont affecté certaines parties de sa chaîne d'approvisionnement. De plus, WalMart a annoncé des investissements majeurs dans l'automatisation et l'expansion de ses capacités e-commerce.",
+    "key_events": [
+      "WalMart a rapporté des revenus de 160 milliards de dollars pour le premier trimestre 2025, dépassant les attentes des analystes.",
+      "La société a annoncé un plan d'investissement de 5 milliards de dollars pour moderniser ses entrepôts et améliorer l'automatisation.",
+      "Des perturbations de la chaîne d'approvisionnement ont été signalées en raison de tensions géopolitiques en Asie du Sud-Est.",
+      "WalMart a lancé une nouvelle initiative de durabilité, visant à réduire ses émissions de carbone de 50% d'ici 2030.",
+      "La société a acquis une startup technologique spécialisée dans l'intelligence artificielle pour améliorer l'expérience client en ligne."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202506": {
+    "summary": "Au cours du deuxième trimestre 2025, Apple a connu plusieurs événements significatifs. La société a continué à faire face à des défis réglementaires, notamment avec des enquêtes antitrust en cours aux États-Unis et en Europe. Cependant, Apple a également fait des avancées majeures dans le développement de ses technologies de réalité augmentée et a annoncé des partenariats stratégiques pour renforcer sa position dans le secteur de la santé.",
+    "key_events": [
+      "En mars 2025, Apple a annoncé de nouvelles fonctionnalités pour son écosystème de santé, incluant des partenariats avec des hôpitaux et des institutions de recherche.",
+      "En avril 2025, Apple a fait l'objet d'une enquête antitrust approfondie par la Commission européenne, ce qui a pesé sur le sentiment des investisseurs.",
+      "En mai 2025, Apple a dévoilé des avancées significatives dans ses technologies de réalité augmentée, suscitant l'enthousiasme des analystes pour les futurs produits.",
+      "En juin 2025, Apple a annoncé une augmentation de son programme de rachat d'actions, ce qui a été bien accueilli par les marchés."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202506": {
+    "summary": "Au cours du deuxième trimestre 2025, Microsoft a continué de montrer une croissance solide, tirée par ses segments cloud et d'intelligence artificielle. La société a annoncé des résultats financiers robustes, dépassant les attentes des analystes. Cependant, des défis réglementaires et des préoccupations concernant la saturation du marché des PC ont pesé sur les perspectives.",
+    "key_events": [
+      "Microsoft a annoncé des revenus trimestriels de 56,5 milliards de dollars, en hausse de 15% par rapport à l'année précédente, dépassant les attentes des analystes.",
+      "La division cloud Azure a enregistré une croissance de 27%, consolidant sa position de leader sur le marché du cloud.",
+      "La société a lancé de nouvelles fonctionnalités d'IA intégrées à ses produits phares, notamment Windows et Office, stimulant l'adoption par les entreprises.",
+      "Des inquiétudes réglementaires ont émergé concernant les pratiques commerciales de Microsoft, avec des enquêtes potentielles par les autorités antitrust.",
+      "Le segment des PC a montré des signes de ralentissement, avec une baisse de 5% des ventes de Windows, reflétant une saturation du marché."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202506": {
+    "summary": "Amazon (AMZN) a connu plusieurs événements significatifs entre le 1er mars 2025 et le 30 juin 2025. La société a continué à étendre ses opérations et à innover dans divers secteurs, tout en faisant face à des défis réglementaires et économiques.",
+    "key_events": [
+      "Amazon a annoncé une expansion majeure de ses centres de données en Europe pour soutenir la croissance d'Amazon Web Services (AWS), avec un investissement de 5 milliards d'euros.",
+      "La société a fait face à des pressions réglementaires accrues de la part de l'Union européenne concernant ses pratiques commerciales et sa conformité fiscale.",
+      "Amazon a lancé une nouvelle gamme de produits d'intelligence artificielle pour les consommateurs, visant à renforcer sa position sur le marché de la technologie domestique.",
+      "La société a rapporté une augmentation de 15% de ses revenus au premier trimestre 2025, principalement due à la croissance d'AWS et des ventes en ligne.",
+      "Amazon a annoncé un partenariat stratégique avec une grande chaîne de distribution pour étendre sa présence dans le secteur de l'épicerie."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_202506": {
+    "summary": "NVIDIA (NVDA) a connu une période de croissance significative entre mars et juin 2025, marquée par des avancées technologiques et des partenariats stratégiques. Cependant, des défis réglementaires et des tensions géopolitiques ont également influencé son évolution.",
+    "key_events": [
+      "NVIDIA a annoncé une nouvelle génération de puces graphiques en mars 2025, promettant des performances améliorées pour l'intelligence artificielle et le calcul haute performance.",
+      "En avril 2025, NVIDIA a formé un partenariat stratégique avec une grande entreprise technologique pour développer des solutions d'IA pour les véhicules autonomes.",
+      "En mai 2025, NVIDIA a fait face à des défis réglementaires concernant ses exportations vers certains pays, ce qui a affecté ses prévisions de revenus.",
+      "En juin 2025, NVIDIA a annoncé une augmentation de ses revenus trimestriels grâce à la forte demande pour ses produits dans le secteur du gaming et de l'IA."
+    ],
+    "sentiment": "positif"
+  },
+  "KO_202506": {
+    "summary": "Entre le 01/03/2025 et le 30/06/2025, Coca-Cola (KO) a connu plusieurs événements significatifs. L'entreprise a publié ses résultats trimestriels, montrant une croissance modérée malgré des défis économiques persistants. Coca-Cola a également annoncé des investissements majeurs dans des initiatives de durabilité, renforçant son engagement envers des pratiques commerciales respectueuses de l'environnement. Cependant, l'entreprise a fait face à des pressions réglementaires croissantes dans plusieurs marchés clés, ce qui a affecté ses perspectives de croissance.",
+    "key_events": [
+      "Publication des résultats trimestriels montrant une croissance modérée.",
+      "Annonce d'investissements majeurs dans des initiatives de durabilité.",
+      "Pressions réglementaires croissantes dans plusieurs marchés clés."
+    ],
+    "sentiment": "neutre"
+  },
+  "JNJ_202506": {
+    "summary": "Au cours du deuxième trimestre 2025, Johnson & Johnson (JNJ) a connu plusieurs développements significatifs. La société a poursuivi ses efforts de restructuration, notamment avec la séparation de son unité de consommation, Kenvue. Cependant, des défis juridiques et réglementaires persistent, notamment des litiges liés aux opiacés et au talc. Sur le plan financier, JNJ a maintenu une performance stable grâce à ses divisions pharmaceutiques et médicales.",
+    "key_events": [
+      "Johnson & Johnson a finalisé la séparation de son unité de consommation, Kenvue, en mai 2025, permettant à l'entreprise de se concentrer sur ses divisions pharmaceutiques et médicales.",
+      "La société a fait face à des défis juridiques continus, notamment des litiges liés aux opiacés et au talc, qui ont entraîné des provisions financières importantes.",
+      "JNJ a annoncé des résultats financiers stables pour le deuxième trimestre 2025, avec une croissance soutenue par ses produits pharmaceutiques, notamment dans les domaines de l'oncologie et de l'immunologie.",
+      "La FDA a approuvé un nouveau médicament de JNJ pour le traitement de la sclérose en plaques, renforçant ainsi son portefeuille de produits.",
+      "La société a annoncé des investissements significatifs dans la recherche et le développement, notamment dans les thérapies géniques et cellulaires."
+    ],
+    "sentiment": "neutre"
+  },
+  "JPM_202506": {
+    "summary": "Au cours du deuxième trimestre 2025, JPMorgan Chase a connu plusieurs événements significatifs. La société a annoncé une augmentation de ses bénéfices grâce à une croissance robuste dans ses divisions de banque d'investissement et de gestion d'actifs. Cependant, des défis réglementaires et des préoccupations macroéconomiques ont également marqué cette période.",
+    "key_events": [
+      "JPMorgan Chase a rapporté une augmentation de 15% de ses bénéfices trimestriels par rapport à l'année précédente, dépassant les attentes des analystes.",
+      "La société a annoncé une expansion significative de ses opérations en Europe, avec l'ouverture de nouveaux bureaux à Francfort et Paris.",
+      "Des inquiétudes concernant les réglementations bancaires plus strictes aux États-Unis ont pesé sur le sentiment des investisseurs.",
+      "JPMorgan Chase a lancé une nouvelle initiative de durabilité, visant à réduire son empreinte carbone de 30% d'ici 2030.",
+      "La Réserve fédérale a maintenu ses taux d'intérêt élevés, ce qui a affecté les marges bénéficiaires des banques, y compris JPMorgan Chase."
+    ],
+    "sentiment": "neutre"
+  },
+  "XOM_202506": {
+    "summary": "ExxonMobil (XOM) a connu plusieurs événements significatifs au cours du deuxième trimestre 2025. La société a poursuivi ses efforts dans la transition énergétique tout en faisant face à des défis réglementaires et à des fluctuations des prix de l'énergie.",
+    "key_events": [
+      "ExxonMobil a annoncé un investissement majeur dans un projet d'énergie renouvelable au Texas, visant à augmenter sa capacité de production d'énergie solaire.",
+      "La société a fait face à une amende réglementaire pour des émissions dépassant les limites autorisées dans l'une de ses raffineries en Louisiane.",
+      "ExxonMobil a publié ses résultats trimestriels, montrant une baisse des bénéfices due à la volatilité des prix du pétrole.",
+      "La société a conclu un partenariat stratégique avec une entreprise technologique pour développer des solutions de capture et de stockage du carbone."
+    ],
+    "sentiment": "neutre"
+  },
+  "PG_202506": {
+    "summary": "Procter & Gamble (PG) a connu plusieurs événements significatifs entre le 01/03/2025 et le 30/06/2025. La société a annoncé des résultats financiers solides pour le trimestre, avec une croissance des ventes et des bénéfices supérieurs aux attentes. Cependant, des défis persistent en raison de l'augmentation des coûts des matières premières et des perturbations de la chaîne d'approvisionnement.",
+    "key_events": [
+      "PG a publié des résultats financiers pour le trimestre se terminant en mars 2025, montrant une croissance des ventes de 5% et une augmentation des bénéfices de 7%.",
+      "La société a annoncé un partenariat stratégique avec une entreprise technologique pour améliorer son efficacité opérationnelle.",
+      "PG a fait face à des défis liés à l'augmentation des coûts des matières premières, ce qui a affecté ses marges bénéficiaires.",
+      "La société a lancé plusieurs nouveaux produits dans le secteur des soins personnels, recevant des critiques positives des consommateurs.",
+      "Des perturbations de la chaîne d'approvisionnement ont entraîné des retards de livraison pour certains produits, affectant les ventes dans certaines régions."
+    ],
+    "sentiment": "neutre"
+  },
+  "WMT_202506": {
+    "summary": "Au cours du deuxième trimestre 2025, Walmart Inc. (WMT) a connu plusieurs événements significatifs. L'entreprise a continué à renforcer sa position dans le commerce de détail, avec une croissance notable de ses ventes en ligne et une expansion internationale. Cependant, des défis macroéconomiques, tels que l'inflation persistante et les perturbations de la chaîne d'approvisionnement, ont eu un impact sur ses marges bénéficiaires.",
+    "key_events": [
+      "Walmart a annoncé une augmentation de 12% de ses ventes en ligne par rapport à l'année précédente, grâce à des investissements continus dans sa plateforme e-commerce.",
+      "L'entreprise a ouvert 15 nouveaux magasins en Inde, marquant une expansion significative sur ce marché.",
+      "Walmart a fait face à une augmentation des coûts logistiques en raison de perturbations persistantes de la chaîne d'approvisionnement, affectant ses marges bénéficiaires.",
+      "L'entreprise a lancé une nouvelle initiative de durabilité, visant à réduire ses émissions de carbone de 20% d'ici 2030.",
+      "Walmart a annoncé un partenariat stratégique avec une entreprise de technologie pour améliorer son expérience client en magasin et en ligne."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202507": {
+    "summary": "Au cours de la période du 1er avril 2025 au 31 juillet 2025, Apple a connu plusieurs événements significatifs. L'entreprise a continué à innover avec le lancement de nouveaux produits et services, tout en faisant face à des défis réglementaires et économiques. Les résultats financiers ont montré une croissance modérée, avec une attention particulière portée sur les ventes de services et d'appareils portables.",
+    "key_events": [
+      "Lancement de nouveaux modèles d'iPhone avec des fonctionnalités améliorées d'intelligence artificielle.",
+      "Augmentation des ventes de services, notamment Apple Music et Apple TV+.",
+      "Introduction de nouvelles réglementations en Europe affectant les pratiques commerciales d'Apple.",
+      "Annonce de partenariats stratégiques pour renforcer la position d'Apple dans le secteur de la santé numérique.",
+      "Fluctuations des ventes en Chine en raison de tensions commerciales et de la concurrence locale."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202507": {
+    "summary": "Au cours de la période du 1er avril 2025 au 31 juillet 2025, Microsoft a connu plusieurs événements significatifs. L'entreprise a continué à renforcer sa position dans le domaine de l'intelligence artificielle avec des investissements majeurs et des partenariats stratégiques. Cependant, des défis réglementaires et des préoccupations concernant la croissance des revenus ont également marqué cette période.",
+    "key_events": [
+      "Microsoft a annoncé un partenariat majeur avec une grande entreprise technologique pour développer des solutions d'IA avancées.",
+      "L'entreprise a fait face à des enquêtes antitrust de la part des régulateurs européens, ce qui a pesé sur le sentiment des investisseurs.",
+      "Microsoft a publié des résultats financiers solides pour le trimestre, avec une croissance des revenus de 12% par rapport à l'année précédente.",
+      "L'entreprise a lancé une nouvelle version de son système d'exploitation Windows, avec des fonctionnalités améliorées d'IA et de sécurité.",
+      "Microsoft a acquis une société spécialisée dans la cybersécurité pour renforcer ses offres dans ce domaine."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_202507": {
+    "summary": "Entre le 01/04/2025 et le 31/07/2025, Amazon (AMZN) a connu plusieurs événements significatifs. L'entreprise a continué à étendre ses opérations de logistique et de cloud computing, tout en faisant face à des défis réglementaires et à une concurrence accrue. Les résultats financiers du deuxième trimestre ont montré une croissance modérée, avec une augmentation notable des revenus du secteur AWS, mais une baisse des marges bénéficiaires due à des investissements accrus dans les infrastructures et la main-d'œuvre.",
+    "key_events": [
+      "Amazon a annoncé l'ouverture de nouveaux centres de distribution en Europe et en Asie, renforçant ainsi sa capacité logistique mondiale.",
+      "L'entreprise a fait face à des enquêtes antitrust supplémentaires de la part des régulateurs européens, ce qui a pesé sur son cours de bourse.",
+      "Amazon Web Services (AWS) a lancé de nouveaux services de cloud computing axés sur l'intelligence artificielle, attirant de nouveaux clients institutionnels.",
+      "Les résultats financiers du T2 2025 ont montré une croissance des revenus de 12 % par rapport à l'année précédente, mais une baisse des marges bénéficiaires en raison des coûts opérationnels élevés.",
+      "Amazon a acquis une startup spécialisée dans la robotique pour améliorer l'automatisation de ses entrepôts, ce qui a été bien accueilli par les investisseurs."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202507": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation significative entre avril et juillet 2025. L'entreprise a continué à renforcer sa position dans le secteur des puces graphiques et de l'IA, tout en faisant face à des défis réglementaires et concurrentiels.",
+    "key_events": [
+      "NVIDIA a annoncé une augmentation de 20% de ses revenus pour le premier trimestre 2025, grâce à une forte demande pour ses puces graphiques et ses solutions d'IA.",
+      "L'entreprise a lancé de nouveaux produits phares, dont la série de GPU RTX 5000, qui ont été bien accueillis par le marché.",
+      "NVIDIA a fait face à des défis réglementaires, notamment des enquêtes antitrust aux États-Unis et en Europe, ce qui a entraîné une certaine volatilité de l'action.",
+      "L'entreprise a annoncé des partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA et de cloud computing.",
+      "NVIDIA a été confrontée à une concurrence accrue de la part d'AMD et d'Intel, qui ont également lancé de nouveaux produits sur le marché des puces graphiques."
+    ],
+    "sentiment": "positif"
+  },
+  "KO_202507": {
+    "summary": "Entre le 01/04/2025 et le 31/07/2025, Coca-Cola (KO) a connu plusieurs événements économiques et sectoriels importants. L'entreprise a publié ses résultats trimestriels pour le deuxième trimestre, affichant une croissance modérée malgré des défis persistants liés à la chaîne d'approvisionnement. De plus, Coca-Cola a annoncé des investissements significatifs dans des initiatives de durabilité, ce qui a été bien accueilli par les investisseurs soucieux de l'ESG. Cependant, l'entreprise a également fait face à des pressions réglementaires croissantes dans plusieurs marchés clés, ce qui a affecté ses perspectives de croissance à court terme.",
+    "key_events": [
+      "Publication des résultats trimestriels du T2 2025, montrant une croissance modérée.",
+      "Annonce d'investissements majeurs dans des initiatives de durabilité.",
+      "Pressions réglementaires accrues dans plusieurs marchés clés."
+    ],
+    "sentiment": "neutre"
+  },
+  "JNJ_202507": {
+    "summary": "Entre avril et juillet 2025, Johnson & Johnson (JNJ) a connu plusieurs événements significatifs. La société a annoncé des résultats financiers solides pour le premier trimestre 2025, avec une croissance des revenus et des bénéfices supérieure aux attentes. Cependant, JNJ a également fait face à des défis réglementaires et juridiques, notamment des litiges liés à ses produits pharmaceutiques et des enquêtes antitrust. Malgré ces défis, la société a continué à investir dans la recherche et le développement, avec plusieurs annonces de nouveaux traitements et partenariats stratégiques.",
+    "key_events": [
+      "Johnson & Johnson a publié des résultats financiers pour le premier trimestre 2025, dépassant les attentes des analystes avec une croissance des revenus de 5% et des bénéfices de 8%.",
+      "La société a annoncé un partenariat stratégique avec une entreprise de biotechnologie pour développer de nouveaux traitements contre le cancer.",
+      "JNJ a fait face à des litiges juridiques liés à ses produits pharmaceutiques, entraînant des coûts légaux supplémentaires.",
+      "La société a été soumise à une enquête antitrust par les autorités de régulation, ce qui a pesé sur son cours de bourse.",
+      "Johnson & Johnson a lancé un nouveau traitement innovant pour une maladie rare, renforçant son portefeuille de produits pharmaceutiques."
+    ],
+    "sentiment": "neutre"
+  },
+  "JPM_202507": {
+    "summary": "Entre le 01/04/2025 et le 31/07/2025, JPMorgan Chase a connu plusieurs événements économiques et sectoriels significatifs. La société a publié des résultats financiers solides pour le deuxième trimestre, avec une augmentation notable des revenus et des bénéfices. Cependant, des défis réglementaires et des préoccupations macroéconomiques ont également marqué cette période.",
+    "key_events": [
+      "Publication des résultats financiers du T2 2025 montrant une croissance des revenus de 10% et des bénéfices de 15% par rapport à l'année précédente.",
+      "Annonce d'un nouveau programme de rachat d'actions d'un montant de 30 milliards de dollars.",
+      "Défis réglementaires accrus avec de nouvelles exigences en matière de capital et de liquidité imposées par la Réserve fédérale.",
+      "Acquisition d'une fintech spécialisée dans les paiements numériques pour renforcer sa position sur le marché des services financiers technologiques.",
+      "Préoccupations macroéconomiques liées à l'inflation persistante et à la hausse des taux d'intérêt, affectant les marges bénéficiaires."
+    ],
+    "sentiment": "neutre"
+  },
+  "XOM_202507": {
+    "summary": "ExxonMobil (XOM) a connu plusieurs événements significatifs entre avril et juillet 2025. La société a annoncé une augmentation de ses investissements dans les énergies renouvelables, tout en faisant face à des défis réglementaires et à une baisse des prix du pétrole.",
+    "key_events": [
+      "ExxonMobil a annoncé un investissement de 5 milliards de dollars dans des projets d'énergies renouvelables en avril 2025.",
+      "En mai 2025, la société a fait face à une amende réglementaire de 2 milliards de dollars pour des violations environnementales.",
+      "En juin 2025, ExxonMobil a vu ses profits trimestriels chuter de 15% en raison de la baisse des prix du pétrole.",
+      "En juillet 2025, la société a annoncé une collaboration stratégique avec une entreprise technologique pour développer des solutions de capture du carbone."
+    ],
+    "sentiment": "neutre"
+  },
+  "PG_202507": {
+    "summary": "Procter & Gamble (PG) a connu plusieurs événements significatifs entre avril et juillet 2025. La société a publié des résultats financiers solides pour le troisième trimestre, avec une croissance des ventes et des bénéfices supérieurs aux attentes. Cependant, des défis persistent en raison de l'augmentation des coûts des matières premières et des perturbations de la chaîne d'approvisionnement. PG a également annoncé des investissements majeurs dans des initiatives de durabilité et a fait face à des litiges réglementaires.",
+    "key_events": [
+      "PG a publié des résultats financiers pour le troisième trimestre 2025, avec une croissance des ventes de 5% et une augmentation des bénéfices de 7%.",
+      "La société a annoncé un investissement de 2 milliards de dollars dans des initiatives de durabilité et des projets environnementaux.",
+      "PG a été confrontée à des défis liés à l'augmentation des coûts des matières premières, affectant les marges bénéficiaires.",
+      "La société a fait l'objet d'une enquête réglementaire concernant des allégations de pratiques anticoncurrentielles dans certains marchés.",
+      "PG a lancé plusieurs nouveaux produits dans les segments des soins personnels et des produits ménagers, visant à stimuler la croissance future."
+    ],
+    "sentiment": "neutre"
+  },
+  "WMT_202507": {
+    "summary": "WalMart (WMT) a connu une période de croissance et d'expansion entre avril et juillet 2025. L'entreprise a annoncé des résultats financiers solides pour le premier trimestre, avec une augmentation des ventes en ligne et une croissance des ventes comparables. WalMart a également poursuivi ses investissements dans la technologie et l'innovation, notamment dans l'automatisation des entrepôts et l'amélioration de l'expérience client en magasin et en ligne.",
+    "key_events": [
+      "WalMart a annoncé une augmentation de 12% de ses ventes en ligne pour le premier trimestre 2025, dépassant les attentes des analystes.",
+      "L'entreprise a ouvert 15 nouveaux centres de distribution automatisés pour améliorer l'efficacité de sa chaîne d'approvisionnement.",
+      "WalMart a lancé un nouveau programme de fidélité pour les clients, offrant des avantages personnalisés et des réductions ciblées.",
+      "L'entreprise a annoncé un partenariat stratégique avec une entreprise de livraison par drone pour améliorer les délais de livraison dans les zones rurales.",
+      "WalMart a été reconnu comme l'un des employeurs les plus attractifs en 2025, selon un rapport publié par Forbes."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202508": {
+    "summary": "Au cours de la période du 1er mai 2025 au 31 août 2025, Apple a connu plusieurs événements significatifs. L'entreprise a continué à se concentrer sur l'innovation et l'expansion de ses services, tout en faisant face à des défis réglementaires et à des fluctuations du marché.",
+    "key_events": [
+      "Apple a annoncé des avancées majeures dans le développement de ses puces maison, visant à réduire sa dépendance aux fournisseurs tiers.",
+      "L'entreprise a lancé de nouveaux services d'abonnement, incluant des options de fitness et de santé, renforçant ainsi son écosystème de services.",
+      "Apple a fait face à des défis réglementaires en Europe, avec des enquêtes antitrust en cours concernant ses pratiques commerciales.",
+      "Les résultats financiers du troisième trimestre ont montré une croissance modeste, avec une augmentation des revenus des services compensant une baisse des ventes d'iPhone.",
+      "Apple a annoncé des investissements significatifs dans les énergies renouvelables, visant à rendre son ensemble de fournisseurs neutre en carbone d'ici 2030."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202508": {
+    "summary": "Entre mai et août 2025, Microsoft a connu plusieurs développements significatifs. L'entreprise a continué à renforcer sa position dans le cloud computing avec Azure, tout en faisant face à des défis réglementaires. Les résultats financiers du quatrième trimestre ont montré une croissance solide, mais les investisseurs sont restés prudents en raison des incertitudes économiques mondiales.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus pour Azure au T4 2025, consolidant sa position de leader dans le cloud computing.",
+      "L'entreprise a fait l'objet d'une enquête antitrust de la part de la Commission européenne concernant ses pratiques commerciales liées à ses services cloud.",
+      "Microsoft a lancé plusieurs nouvelles fonctionnalités pour ses produits phares, notamment Windows 12 et Office 365, visant à améliorer la productivité et la sécurité.",
+      "Les résultats financiers du quatrième trimestre ont dépassé les attentes des analystes, avec une croissance de 15% du chiffre d'affaires par rapport à l'année précédente.",
+      "L'entreprise a annoncé un partenariat stratégique avec une grande entreprise technologique pour développer des solutions d'intelligence artificielle."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202508": {
+    "summary": "Entre mai et août 2025, Amazon a connu plusieurs événements significatifs. L'entreprise a continué à étendre ses opérations de logistique et de cloud computing, tout en faisant face à des défis réglementaires et à une concurrence accrue. Les résultats financiers du deuxième trimestre ont montré une croissance modérée, avec une augmentation des revenus mais une compression des marges due aux investissements continus.",
+    "key_events": [
+      "Amazon a annoncé l'expansion de ses centres de distribution en Europe, avec de nouveaux sites en Allemagne et en Pologne.",
+      "L'entreprise a fait face à des enquêtes antitrust supplémentaires de la part de l'Union européenne, ce qui a pesé sur le sentiment des investisseurs.",
+      "Amazon Web Services (AWS) a lancé de nouveaux services d'intelligence artificielle, renforçant sa position sur le marché du cloud.",
+      "Les résultats du deuxième trimestre ont montré une croissance des revenus de 12 % par rapport à l'année précédente, mais une baisse des marges bénéficiaires en raison des coûts logistiques élevés.",
+      "Amazon a acquis une startup spécialisée dans la robotique pour améliorer l'automatisation de ses entrepôts."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202508": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation significative entre mai et août 2025. L'entreprise a continué à renforcer sa position dans le secteur des puces et de l'IA, tout en faisant face à des défis réglementaires et à une concurrence accrue.",
+    "key_events": [
+      "NVIDIA a annoncé une augmentation de 20% de ses revenus au T2 2025, grâce à la forte demande pour ses puces IA.",
+      "L'entreprise a lancé de nouveaux produits phares, dont la série de GPU H200, conçus pour les applications d'IA et de calcul haute performance.",
+      "NVIDIA a fait l'objet d'un examen réglementaire accru de la part des autorités américaines et européennes concernant ses acquisitions et ses pratiques commerciales.",
+      "L'entreprise a annoncé un partenariat stratégique avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA.",
+      "NVIDIA a été confrontée à une concurrence accrue de la part d'AMD et d'Intel, qui ont tous deux lancé de nouveaux produits visant à capter des parts de marché dans le secteur des puces."
+    ],
+    "sentiment": "positif"
+  },
+  "KO_202508": {
+    "summary": "Entre le 01/05/2025 et le 31/08/2025, Coca-Cola (KO) a connu plusieurs événements significatifs. L'entreprise a publié ses résultats trimestriels pour le deuxième trimestre, affichant une croissance modérée des revenus malgré des défis persistants liés à la chaîne d'approvisionnement. De plus, Coca-Cola a annoncé des investissements majeurs dans des initiatives de durabilité, visant à réduire son empreinte carbone. Cependant, l'entreprise a également fait face à des critiques concernant ses pratiques environnementales, ce qui a entraîné une certaine volatilité de l'action.",
+    "key_events": [
+      "Publication des résultats trimestriels du T2 2025, montrant une croissance des revenus de 3% par rapport à l'année précédente.",
+      "Annonce d'un investissement de 500 millions de dollars dans des initiatives de durabilité.",
+      "Critiques accrues des groupes environnementaux concernant la gestion des déchets plastiques par l'entreprise.",
+      "Lancement de nouveaux produits dans le segment des boissons non gazeuses, visant à diversifier le portefeuille de l'entreprise."
+    ],
+    "sentiment": "neutre"
+  },
+  "JNJ_202508": {
+    "summary": "Entre mai et août 2025, Johnson & Johnson (JNJ) a connu plusieurs événements significatifs. L'entreprise a annoncé des résultats financiers solides pour le deuxième trimestre, avec une croissance des ventes et des bénéfices supérieurs aux attentes. Cependant, JNJ a également fait face à des défis réglementaires et juridiques, notamment des litiges liés à des produits de santé controversés. De plus, l'entreprise a poursuivi ses efforts de restructuration et d'innovation, avec des investissements importants dans la recherche et le développement.",
+    "key_events": [
+      "Johnson & Johnson a publié des résultats financiers pour le T2 2025, montrant une croissance des ventes de 5% et des bénéfices supérieurs aux attentes des analystes.",
+      "L'entreprise a annoncé un investissement de 2 milliards de dollars dans la recherche et le développement de nouveaux traitements contre le cancer.",
+      "JNJ a fait face à des litiges juridiques liés à des produits de santé, entraînant des coûts légaux supplémentaires.",
+      "La société a poursuivi sa restructuration, avec des plans de réduction des coûts et d'optimisation des opérations.",
+      "Johnson & Johnson a obtenu l'approbation de la FDA pour un nouveau médicament contre une maladie rare, renforçant son portefeuille de produits pharmaceutiques."
+    ],
+    "sentiment": "neutre"
+  },
+  "JPM_202508": {
+    "summary": "Entre mai et août 2025, JPMorgan Chase a connu plusieurs événements significatifs. La société a publié des résultats financiers solides pour le deuxième trimestre, avec une hausse des revenus et des bénéfices. Cependant, des défis réglementaires et des préoccupations macroéconomiques ont pesé sur le sentiment global.",
+    "key_events": [
+      "Publication des résultats financiers du T2 2025 avec une hausse des revenus de 10% et des bénéfices de 15% par rapport à l'année précédente.",
+      "Annonce d'un nouveau programme de rachat d'actions d'un montant de 30 milliards de dollars.",
+      "Régulateurs américains ont imposé de nouvelles exigences de capital pour les grandes banques, affectant les plans de croissance de JPMorgan.",
+      "Acquisition d'une fintech spécialisée dans les paiements numériques pour 2 milliards de dollars.",
+      "Préoccupations concernant un ralentissement économique mondial ont affecté le sentiment des investisseurs."
+    ],
+    "sentiment": "neutre"
+  },
+  "XOM_202508": {
+    "summary": "ExxonMobil (XOM) a connu plusieurs événements significatifs entre mai et août 2025. La société a annoncé des résultats financiers solides pour le deuxième trimestre, avec une augmentation notable de ses bénéfices grâce à la hausse des prix de l'énergie. Cependant, des défis réglementaires et des préoccupations environnementales ont également marqué cette période.",
+    "key_events": [
+      "ExxonMobil a publié des résultats financiers pour le T2 2025, montrant une augmentation de 15% des bénéfices par rapport à l'année précédente.",
+      "La société a annoncé un nouveau projet d'investissement dans les énergies renouvelables, visant à réduire son empreinte carbone.",
+      "Des amendes réglementaires ont été imposées à ExxonMobil pour des violations environnementales dans plusieurs États américains.",
+      "Le prix des actions XOM a atteint un sommet de 5 ans en juillet 2025, grâce à la hausse des prix du pétrole.",
+      "ExxonMobil a fait face à des critiques publiques et à des manifestations concernant ses pratiques environnementales."
+    ],
+    "sentiment": "neutre"
+  },
+  "PG_202508": {
+    "summary": "Procter & Gamble (PG) a connu une période stable avec des performances financières solides et des initiatives stratégiques au cours du deuxième trimestre 2025. L'entreprise a continué à bénéficier de la demande constante pour ses produits de consommation courante, malgré les pressions inflationnistes persistantes.",
+    "key_events": [
+      "PG a publié ses résultats trimestriels pour le T3 2025, affichant une croissance de 3% du chiffre d'affaires par rapport à l'année précédente, atteignant 20,1 milliards de dollars.",
+      "L'entreprise a annoncé une augmentation de ses dividendes de 5%, marquant la 69ème année consécutive d'augmentation des dividendes.",
+      "PG a lancé plusieurs initiatives de durabilité, visant à réduire ses émissions de carbone de 50% d'ici 2030.",
+      "L'entreprise a fait face à des défis liés à l'augmentation des coûts des matières premières, mais a réussi à maintenir ses marges bénéficiaires grâce à des stratégies de tarification efficaces.",
+      "PG a annoncé un partenariat stratégique avec une entreprise technologique pour améliorer sa chaîne d'approvisionnement et optimiser ses opérations logistiques."
+    ],
+    "sentiment": "positif"
+  },
+  "WMT_202508": {
+    "summary": "WalMart (WMT) a connu une période de croissance et d'expansion entre mai et août 2025. L'entreprise a annoncé des résultats financiers solides, avec une augmentation des ventes et des bénéfices. WalMart a également poursuivi ses investissements dans le commerce électronique et l'innovation technologique pour améliorer l'expérience client. Cependant, l'entreprise a fait face à des défis liés à la chaîne d'approvisionnement et à l'inflation, ce qui a affecté ses marges bénéficiaires.",
+    "key_events": [
+      "WalMart a annoncé une augmentation de 5% de ses ventes au deuxième trimestre 2025 par rapport à l'année précédente.",
+      "L'entreprise a lancé un nouveau programme de fidélité pour attirer et retenir les clients.",
+      "WalMart a investi 2 milliards de dollars dans l'amélioration de sa plateforme de commerce électronique.",
+      "L'entreprise a fait face à des perturbations de la chaîne d'approvisionnement en raison de problèmes logistiques mondiaux.",
+      "WalMart a augmenté les salaires de ses employés pour faire face à la pénurie de main-d'œuvre.",
+      "L'entreprise a annoncé un partenariat stratégique avec une grande entreprise technologique pour améliorer ses capacités de livraison."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202509": {
+    "summary": "Au cours du troisième trimestre 2025, Apple a connu plusieurs événements significatifs. L'entreprise a lancé de nouveaux produits, dont l'iPhone 17, qui a reçu un accueil positif du marché. Cependant, Apple a également fait face à des défis réglementaires en Europe, ce qui a affecté ses opérations. Les résultats financiers du trimestre ont montré une croissance modérée des revenus, mais les marges bénéficiaires ont été légèrement inférieures aux attentes en raison des coûts de conformité accrus.",
+    "key_events": [
+      "Lancement de l'iPhone 17 avec des fonctionnalités innovantes.",
+      "Problèmes réglementaires en Europe affectant les opérations d'Apple.",
+      "Résultats financiers du troisième trimestre montrant une croissance modérée des revenus.",
+      "Investissements accrus dans les technologies de réalité augmentée et virtuelle.",
+      "Partenariats stratégiques avec des fournisseurs de semi-conducteurs pour sécuriser l'approvisionnement en puces."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202509": {
+    "summary": "Au cours du troisième trimestre 2025, Microsoft a connu plusieurs développements significatifs. L'entreprise a poursuivi sa croissance dans le secteur du cloud computing avec Azure, tout en faisant face à des défis réglementaires et à une concurrence accrue dans divers segments de marché.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus liés à Azure, renforçant sa position de leader dans le cloud computing.",
+      "L'entreprise a fait l'objet d'un examen antitrust par les régulateurs européens concernant ses pratiques commerciales liées à ses services cloud.",
+      "Microsoft a lancé plusieurs nouvelles fonctionnalités pour ses produits phares, notamment Windows 12 et Office 365, visant à améliorer la productivité et la sécurité.",
+      "L'entreprise a annoncé un partenariat stratégique avec une grande entreprise de télécommunications pour développer des solutions 5G et edge computing.",
+      "Microsoft a fait face à des critiques concernant la sécurité de ses produits, suite à une faille majeure découverte dans l'un de ses logiciels largement utilisés."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_202509": {
+    "summary": "Au cours du troisième trimestre 2025, Amazon a connu plusieurs événements significatifs. L'entreprise a continué à étendre ses opérations logistiques et a investi massivement dans l'intelligence artificielle. Cependant, des défis réglementaires et des préoccupations concernant la croissance des revenus ont pesé sur le sentiment des investisseurs.",
+    "key_events": [
+      "Amazon a annoncé l'ouverture de nouveaux centres de distribution en Europe et en Asie, renforçant ainsi sa capacité logistique mondiale.",
+      "L'entreprise a investi 5 milliards de dollars supplémentaires dans le développement de l'IA et des technologies de cloud computing.",
+      "Des inquiétudes ont été soulevées concernant la croissance des revenus en raison de la saturation du marché du commerce électronique dans certaines régions.",
+      "Amazon a fait face à des défis réglementaires accrus, notamment des enquêtes antitrust aux États-Unis et en Europe.",
+      "Le cours de l'action a fluctué en raison des incertitudes économiques mondiales et des tensions commerciales."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202509": {
+    "summary": "Au cours du troisième trimestre 2025, NVIDIA a connu plusieurs événements significatifs. L'entreprise a continué à bénéficier de la forte demande pour ses puces graphiques, notamment dans les secteurs du gaming et des centres de données. Cependant, des défis persistent en raison des tensions géopolitiques affectant la chaîne d'approvisionnement et des inquiétudes concernant la régulation antitrust.",
+    "key_events": [
+      "NVIDIA a annoncé une augmentation de 20% de ses revenus par rapport à l'année précédente, grâce à la forte demande pour ses GPU.",
+      "L'entreprise a lancé de nouveaux produits destinés aux centres de données, renforçant sa position dans le secteur de l'IA et du cloud computing.",
+      "Des tensions géopolitiques entre les États-Unis et la Chine ont affecté la chaîne d'approvisionnement, entraînant des retards de production.",
+      "NVIDIA a fait face à des enquêtes antitrust aux États-Unis et en Europe, ce qui a créé une incertitude réglementaire.",
+      "L'entreprise a annoncé des partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA."
+    ],
+    "sentiment": "neutre"
+  },
+  "KO_202509": {
+    "summary": "Au cours du troisième trimestre 2025, The Coca-Cola Company (KO) a connu plusieurs développements économiques et sectoriels notables. L'entreprise a continué à bénéficier de la reprise économique mondiale, avec une augmentation de la demande dans les marchés émergents. Cependant, KO a également fait face à des défis, notamment l'augmentation des coûts des matières premières et des pressions inflationnistes.",
+    "key_events": [
+      "En juin 2025, KO a annoncé une augmentation de ses prix de 5% en moyenne sur ses produits pour faire face à l'inflation et à la hausse des coûts des matières premières.",
+      "En juillet 2025, l'entreprise a publié ses résultats trimestriels, affichant une croissance de 3% de son chiffre d'affaires par rapport à l'année précédente, grâce à une forte demande en Asie et en Amérique latine.",
+      "En août 2025, KO a lancé une nouvelle gamme de boissons sans sucre, répondant à la demande croissante des consommateurs pour des options plus saines.",
+      "En septembre 2025, l'entreprise a annoncé un partenariat stratégique avec une entreprise technologique pour améliorer sa chaîne d'approvisionnement et réduire ses coûts logistiques."
+    ],
+    "sentiment": "positif"
+  },
+  "JNJ_202509": {
+    "summary": "Au cours du troisième trimestre 2025, Johnson & Johnson (JNJ) a connu plusieurs événements significatifs. L'entreprise a poursuivi ses efforts de restructuration et a fait face à des défis réglementaires, tout en réalisant des progrès dans certains domaines thérapeutiques.",
+    "key_events": [
+      "Johnson & Johnson a annoncé la finalisation de la scission de son unité de consommation, Kenvue, qui est désormais une entité indépendante cotée en bourse.",
+      "L'entreprise a reçu l'approbation de la FDA pour un nouveau traitement contre le cancer du poumon, renforçant ainsi son portefeuille en oncologie.",
+      "JNJ a fait face à des litiges supplémentaires liés à des poursuites pour responsabilité des produits, notamment en ce qui concerne les poudres de talc, ce qui a pesé sur les résultats financiers.",
+      "L'entreprise a annoncé un partenariat stratégique avec une société de biotechnologie pour développer des thérapies géniques innovantes.",
+      "Les revenus du trimestre ont été légèrement inférieurs aux attentes en raison des défis persistants dans le segment des dispositifs médicaux."
+    ],
+    "sentiment": "neutre"
+  },
+  "JPM_202509": {
+    "summary": "Au cours du troisième trimestre 2025, JPMorgan Chase a connu plusieurs événements significatifs. La société a continué à renforcer sa position dans le secteur financier malgré un environnement économique incertain. Les résultats financiers ont été solides, avec une croissance des revenus et des bénéfices, bien que les dépenses aient augmenté en raison d'investissements dans la technologie et l'expansion internationale. Les régulateurs ont également imposé de nouvelles exigences en matière de capital, ce qui pourrait affecter la rentabilité future.",
+    "key_events": [
+      "JPMorgan Chase a rapporté des revenus de 38,3 milliards de dollars pour le troisième trimestre 2025, en hausse de 5% par rapport à l'année précédente.",
+      "La société a annoncé un bénéfice net de 12,1 milliards de dollars, en augmentation de 8% par rapport au même trimestre de l'année précédente.",
+      "JPMorgan a augmenté ses dépenses en technologie de 15% pour améliorer ses capacités de cybersécurité et d'analyse de données.",
+      "La Réserve fédérale a imposé de nouvelles exigences en matière de capital pour les grandes banques, ce qui pourrait affecter les marges bénéficiaires de JPMorgan.",
+      "La banque a étendu ses opérations en Europe et en Asie, ouvrant de nouvelles succursales et renforçant ses équipes de gestion de patrimoine."
+    ],
+    "sentiment": "positif"
+  },
+  "XOM_202509": {
+    "summary": "ExxonMobil (XOM) a connu plusieurs événements significatifs entre le 1er juin 2025 et le 30 septembre 2025. La société a continué à se concentrer sur la transition énergétique et a fait face à des défis réglementaires et environnementaux.",
+    "key_events": [
+      "ExxonMobil a annoncé un investissement majeur dans des projets d'énergie renouvelable en Europe, visant à réduire son empreinte carbone.",
+      "La société a fait face à des amendes réglementaires aux États-Unis en raison de non-conformités environnementales dans certaines de ses raffineries.",
+      "ExxonMobil a publié ses résultats trimestriels pour le deuxième trimestre 2025, montrant une légère baisse des profits en raison de la volatilité des prix du pétrole.",
+      "La société a conclu un partenariat stratégique avec une entreprise technologique pour développer des solutions de capture et de stockage du carbone.",
+      "ExxonMobil a été incluse dans un nouvel indice de durabilité, reconnaissant ses efforts en matière de transition énergétique."
+    ],
+    "sentiment": "neutre"
+  },
+  "PG_202509": {
+    "summary": "Au cours du troisième trimestre 2025, Procter & Gamble (PG) a connu plusieurs événements économiques et sectoriels notables. L'entreprise a continué à faire face à des défis macroéconomiques, notamment l'inflation persistante et les perturbations de la chaîne d'approvisionnement, tout en réalisant des progrès significatifs dans ses initiatives de durabilité et d'innovation.",
+    "key_events": [
+      "PG a annoncé une augmentation de ses prix de 8% en moyenne sur plusieurs catégories de produits en réponse à l'inflation persistante des coûts des matières premières.",
+      "L'entreprise a lancé une nouvelle gamme de produits écologiques sous la marque Tide, renforçant son engagement envers la durabilité.",
+      "PG a fait face à des perturbations de la chaîne d'approvisionnement en Asie du Sud-Est, affectant temporairement la production et la distribution.",
+      "Le bénéfice net de PG a augmenté de 5% par rapport à l'année précédente, malgré les défis économiques, grâce à une gestion efficace des coûts et à une forte demande pour ses produits.",
+      "PG a annoncé un partenariat stratégique avec une entreprise technologique pour améliorer ses capacités de vente en ligne et de personnalisation des produits."
+    ],
+    "sentiment": "neutre"
+  },
+  "WMT_202509": {
+    "summary": "Au cours du troisième trimestre 2025, Walmart Inc. (WMT) a connu plusieurs événements économiques et sectoriels notables. L'entreprise a continué à renforcer sa position dans le commerce de détail, avec une croissance significative de ses ventes en ligne et une expansion internationale. Cependant, des défis macroéconomiques, tels que l'inflation persistante et les perturbations de la chaîne d'approvisionnement, ont eu un impact sur ses marges bénéficiaires.",
+    "key_events": [
+      "Walmart a annoncé une augmentation de 12% de ses ventes en ligne par rapport à l'année précédente, grâce à des investissements continus dans sa plateforme e-commerce.",
+      "L'entreprise a ouvert 15 nouveaux magasins en Inde, marquant une expansion significative sur le marché international.",
+      "Walmart a fait face à une augmentation des coûts logistiques en raison des perturbations de la chaîne d'approvisionnement, affectant ses marges bénéficiaires.",
+      "L'entreprise a lancé une nouvelle initiative de durabilité, visant à réduire ses émissions de carbone de 30% d'ici 2030.",
+      "Walmart a annoncé un partenariat stratégique avec une entreprise de technologie pour améliorer son expérience client en magasin et en ligne."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202510": {
+    "summary": "Au cours de la période du 1er juillet 2025 au 31 octobre 2025, Apple a connu plusieurs événements significatifs. L'entreprise a lancé de nouveaux produits, notamment l'iPhone 17, qui a été bien accueilli par le marché. Cependant, Apple a également fait face à des défis réglementaires en Europe, ce qui a affecté ses opérations. Les résultats financiers du quatrième trimestre ont montré une croissance modérée, avec une augmentation des revenus et des bénéfices, mais des marges légèrement inférieures aux attentes.",
+    "key_events": [
+      "Lancement de l'iPhone 17 avec des fonctionnalités innovantes, bien accueilli par le marché.",
+      "Problèmes réglementaires en Europe, entraînant des amendes et des restrictions sur certaines opérations.",
+      "Résultats financiers du quatrième trimestre montrant une croissance modérée des revenus et des bénéfices.",
+      "Annonce de nouveaux investissements dans les technologies de réalité augmentée et virtuelle."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202510": {
+    "summary": "Entre juillet et octobre 2025, Microsoft a connu plusieurs événements significatifs. L'entreprise a continué à bénéficier de la croissance du cloud computing avec Azure, tout en faisant face à des défis réglementaires et des préoccupations concernant la croissance économique mondiale. Malgré cela, Microsoft a annoncé des investissements majeurs dans l'IA et a lancé de nouveaux produits et services.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus pour Azure au troisième trimestre 2025, renforçant sa position de leader dans le cloud computing.",
+      "L'entreprise a fait l'objet d'un examen réglementaire accru de la part des autorités européennes concernant ses pratiques commerciales, ce qui a entraîné une certaine volatilité de l'action.",
+      "Microsoft a investi 10 milliards de dollars dans de nouvelles initiatives d'IA, visant à renforcer ses capacités dans ce domaine.",
+      "Lancement de nouveaux services cloud spécifiques à l'industrie, ciblant les secteurs de la santé et de la finance.",
+      "Préoccupations concernant l'impact d'un ralentissement économique mondial sur la demande de produits et services technologiques."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_202510": {
+    "summary": "Entre juillet et octobre 2025, Amazon a connu plusieurs événements significatifs. L'entreprise a continué à étendre ses opérations de logistique et de cloud computing, tout en faisant face à des défis réglementaires et économiques. Les revenus ont augmenté grâce à la croissance d'Amazon Web Services (AWS) et des ventes au détail, mais les marges ont été affectées par les coûts logistiques et les investissements dans de nouvelles technologies.",
+    "key_events": [
+      "Amazon a annoncé une expansion majeure de ses centres de données AWS en Europe et en Asie, répondant à la demande croissante de services cloud.",
+      "L'entreprise a fait face à des pressions réglementaires accrues aux États-Unis et en Europe concernant ses pratiques commerciales et son traitement des données.",
+      "Amazon a lancé de nouveaux services basés sur l'IA pour améliorer l'expérience client et optimiser ses opérations logistiques.",
+      "Les revenus du troisième trimestre ont augmenté de 12% par rapport à l'année précédente, principalement grâce à la croissance d'AWS et des ventes au détail.",
+      "Les coûts logistiques ont continué à peser sur les marges bénéficiaires, malgré les efforts d'optimisation des opérations."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202510": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation significative entre juillet et octobre 2025. L'entreprise a continué à renforcer sa position dans le secteur des puces graphiques et de l'IA, tout en faisant face à des défis réglementaires et concurrentiels.",
+    "key_events": [
+      "NVIDIA a annoncé une augmentation de 20% de ses revenus au T2 2025, grâce à la forte demande pour ses puces graphiques et ses solutions d'IA.",
+      "L'entreprise a lancé de nouvelles puces graphiques basées sur l'architecture Blackwell, offrant des performances améliorées pour les applications d'IA et de calcul haute performance.",
+      "NVIDIA a fait l'objet d'un examen réglementaire accru de la part des autorités américaines et européennes concernant ses pratiques commerciales et ses acquisitions potentielles.",
+      "L'entreprise a annoncé un partenariat stratégique avec Microsoft pour développer des solutions d'IA cloud.",
+      "NVIDIA a été confrontée à une concurrence accrue de la part d'AMD et d'Intel dans le secteur des puces graphiques et des accélérateurs d'IA."
+    ],
+    "sentiment": "positif"
+  },
+  "KO_202510": {
+    "summary": "Entre juillet et octobre 2025, Coca-Cola (KO) a connu plusieurs événements significatifs. L'entreprise a publié des résultats financiers solides pour le troisième trimestre, avec une croissance des revenus et des bénéfices supérieure aux attentes des analystes. Cependant, des défis persistent en raison des fluctuations des prix des matières premières et des tensions géopolitiques affectant certaines régions clés. De plus, Coca-Cola a annoncé des investissements majeurs dans des initiatives de durabilité, ce qui a été bien accueilli par les investisseurs soucieux de l'ESG.",
+    "key_events": [
+      "Publication des résultats financiers du T3 2025, avec une croissance des revenus de 5% et des bénéfices de 7% par rapport à l'année précédente.",
+      "Annonce d'un investissement de 1 milliard de dollars dans des initiatives de durabilité et d'emballages écologiques.",
+      "Fluctuations des prix des matières premières, notamment l'aluminium et le sucre, impactant les coûts de production.",
+      "Tensions géopolitiques en Asie et en Amérique du Sud, affectant les chaînes d'approvisionnement et les ventes dans certaines régions.",
+      "Lancement de nouveaux produits dans le segment des boissons sans sucre, répondant à la demande croissante des consommateurs pour des options plus saines."
+    ],
+    "sentiment": "positif"
+  },
+  "JNJ_202510": {
+    "summary": "Entre juillet et octobre 2025, Johnson & Johnson (JNJ) a connu plusieurs événements significatifs. La société a annoncé des résultats financiers solides pour le troisième trimestre, avec une croissance des revenus et des bénéfices supérieure aux attentes des analystes. Cependant, JNJ a également fait face à des défis réglementaires et juridiques, notamment des litiges liés à ses produits pharmaceutiques et des enquêtes antitrust. Malgré ces défis, la société a continué à investir dans la recherche et le développement, avec plusieurs annonces de nouveaux traitements et partenariats stratégiques.",
+    "key_events": [
+      "Johnson & Johnson a publié des résultats financiers pour le troisième trimestre 2025, dépassant les attentes des analystes avec une croissance des revenus de 5% et des bénéfices de 8%.",
+      "La société a annoncé un partenariat stratégique avec une entreprise de biotechnologie pour développer de nouveaux traitements contre le cancer.",
+      "JNJ a fait face à des défis juridiques, avec plusieurs litiges en cours liés à ses produits pharmaceutiques.",
+      "La société a été soumise à une enquête antitrust par les autorités de régulation, ce qui a pesé sur son cours de bourse.",
+      "Johnson & Johnson a lancé un nouveau produit pharmaceutique prometteur, qui a reçu l'approbation de la FDA."
+    ],
+    "sentiment": "neutre"
+  },
+  "JPM_202510": {
+    "summary": "Entre le 01/07/2025 et le 31/10/2025, JPMorgan Chase a connu plusieurs événements économiques et sectoriels significatifs. La société a publié des résultats financiers solides pour le troisième trimestre, avec une croissance notable de ses revenus et bénéfices. Cependant, des défis macroéconomiques, tels que l'incertitude des taux d'intérêt et les tensions géopolitiques, ont affecté le secteur bancaire dans son ensemble. JPMorgan a également annoncé des investissements importants dans la technologie et l'innovation, renforçant sa position de leader dans le secteur financier.",
+    "key_events": [
+      "Publication des résultats financiers du T3 2025, montrant une croissance des revenus et des bénéfices.",
+      "Annonce d'investissements majeurs dans la technologie et l'innovation.",
+      "Impact des tensions géopolitiques sur les marchés financiers.",
+      "Incertitude concernant les taux d'intérêt et leur impact sur le secteur bancaire.",
+      "Lancement de nouveaux produits financiers visant à attirer une clientèle plus jeune."
+    ],
+    "sentiment": "neutre"
+  },
+  "XOM_202510": {
+    "summary": "Entre le 1er juillet 2025 et le 31 octobre 2025, ExxonMobil (XOM) a connu plusieurs événements significatifs. La société a annoncé une augmentation de ses investissements dans les énergies renouvelables, tout en faisant face à des défis réglementaires et à une baisse des prix du pétrole. Malgré cela, ExxonMobil a maintenu une performance financière stable grâce à ses opérations diversifiées.",
+    "key_events": [
+      "ExxonMobil a annoncé un investissement de 5 milliards de dollars dans des projets d'énergies renouvelables en Europe.",
+      "La société a fait face à des amendes réglementaires pour des émissions excessives dans certaines de ses raffineries aux États-Unis.",
+      "Les prix du pétrole ont chuté de 10% en raison d'une surproduction mondiale, affectant les marges bénéficiaires.",
+      "ExxonMobil a signé un partenariat stratégique avec une entreprise technologique pour développer des solutions de capture du carbone.",
+      "La société a publié des résultats financiers trimestriels stables, avec un bénéfice net légèrement en baisse par rapport à l'année précédente."
+    ],
+    "sentiment": "neutre"
+  },
+  "PG_202510": {
+    "summary": "Procter & Gamble (PG) a connu plusieurs événements significatifs entre juillet et octobre 2025. La société a publié des résultats financiers solides pour le quatrième trimestre, avec une croissance des ventes et des bénéfices supérieurs aux attentes. Cependant, des défis persistent en raison de l'augmentation des coûts des matières premières et des perturbations de la chaîne d'approvisionnement. PG a également annoncé des investissements majeurs dans des initiatives de durabilité et a lancé de nouveaux produits dans plusieurs catégories.",
+    "key_events": [
+      "PG a publié des résultats financiers pour le quatrième trimestre 2025, avec une croissance des ventes de 5% et une augmentation des bénéfices de 7%.",
+      "La société a annoncé un investissement de 1 milliard de dollars dans des initiatives de durabilité d'ici 2030.",
+      "Lancement de nouveaux produits dans les catégories de soins personnels et de soins de santé.",
+      "PG a fait face à des défis liés à l'augmentation des coûts des matières premières et aux perturbations de la chaîne d'approvisionnement.",
+      "La société a annoncé un partenariat stratégique avec une entreprise technologique pour améliorer l'efficacité de la chaîne d'approvisionnement."
+    ],
+    "sentiment": "positif"
+  },
+  "WMT_202510": {
+    "summary": "Au cours de la période du 1er juillet 2025 au 31 octobre 2025, Walmart Inc. (WMT) a connu plusieurs événements économiques et sectoriels notables. L'entreprise a continué à renforcer sa présence dans le commerce électronique, tout en faisant face à des défis macroéconomiques tels que l'inflation et les perturbations de la chaîne d'approvisionnement. Walmart a également annoncé des investissements significatifs dans les technologies vertes et l'automatisation, ce qui a été bien accueilli par les investisseurs.",
+    "key_events": [
+      "Walmart a annoncé une augmentation de 15 % de ses ventes en ligne pour le troisième trimestre, dépassant les attentes des analystes.",
+      "L'entreprise a investi 2 milliards de dollars dans l'automatisation de ses entrepôts pour améliorer l'efficacité de la chaîne d'approvisionnement.",
+      "Walmart a lancé une nouvelle initiative de durabilité, visant à réduire ses émissions de carbone de 50 % d'ici 2030.",
+      "L'inflation persistante a affecté les marges bénéficiaires, mais Walmart a réussi à maintenir sa croissance grâce à des stratégies de prix compétitifs.",
+      "La société a fait face à des perturbations de la chaîne d'approvisionnement, mais a mis en place des mesures pour atténuer les impacts."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202511": {
+    "summary": "Au cours de la période du 1er août 2025 au 30 novembre 2025, Apple a connu plusieurs événements significatifs. La société a lancé de nouveaux produits, fait face à des défis réglementaires et enregistré des performances financières solides.",
+    "key_events": [
+      "Lancement de l'iPhone 17 avec des fonctionnalités avancées d'IA et une meilleure autonomie de batterie.",
+      "Apple a annoncé une augmentation de son programme de rachat d'actions de 50 milliards de dollars.",
+      "La société a fait face à des défis réglementaires en Europe concernant ses pratiques antitrust.",
+      "Apple a enregistré un chiffre d'affaires record pour le quatrième trimestre, dépassant les attentes des analystes.",
+      "Lancement des nouveaux MacBook Pro avec des puces M4, offrant des performances améliorées et une meilleure efficacité énergétique."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202511": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre août et novembre 2025. La société a continué à renforcer sa position dans le cloud computing avec Azure, tout en faisant face à des défis réglementaires et à une concurrence accrue dans divers secteurs.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus liés à Azure, renforçant sa position de leader dans le cloud computing.",
+      "La société a fait l'objet d'une enquête antitrust de la part de l'Union européenne concernant ses pratiques commerciales liées à ses services cloud.",
+      "Microsoft a lancé plusieurs nouveaux produits et services liés à l'intelligence artificielle, visant à renforcer sa compétitivité dans ce secteur en pleine croissance.",
+      "La société a annoncé un partenariat stratégique avec une grande entreprise technologique pour développer des solutions conjointes dans le domaine de la cybersécurité.",
+      "Microsoft a fait face à des défis logistiques et à des pénuries de composants, affectant temporairement sa production de matériel."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_202511": {
+    "summary": "Entre août et novembre 2025, Amazon a connu plusieurs événements significatifs. L'entreprise a continué à étendre ses opérations logistiques et a investi dans de nouvelles technologies, tout en faisant face à des défis réglementaires et économiques.",
+    "key_events": [
+      "Août 2025 : Amazon annonce l'ouverture de nouveaux centres de distribution en Europe pour améliorer la livraison rapide.",
+      "Septembre 2025 : L'entreprise investit 5 milliards de dollars dans des technologies de livraison par drones, visant à révolutionner la logistique.",
+      "Octobre 2025 : Amazon fait face à des enquêtes antitrust aux États-Unis et en Europe, ce qui pèse sur son cours de bourse.",
+      "Novembre 2025 : Malgré les défis réglementaires, Amazon rapporte une croissance de 12% de ses revenus pour le troisième trimestre, grâce à une forte demande pendant la période des fêtes."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_202511": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation significative entre août et novembre 2025. L'entreprise a lancé de nouveaux produits, établi des partenariats stratégiques et fait face à des défis réglementaires.",
+    "key_events": [
+      "NVIDIA a annoncé une augmentation de 20% de ses revenus pour le troisième trimestre 2025, grâce à une forte demande pour ses GPU et ses solutions d'IA.",
+      "L'entreprise a lancé la nouvelle série de GPU RTX 5000, qui offre des performances améliorées pour le gaming et les applications professionnelles.",
+      "NVIDIA a établi un partenariat avec une grande entreprise automobile pour développer des solutions de conduite autonome.",
+      "L'entreprise a fait face à des défis réglementaires concernant ses acquisitions potentielles, ce qui a entraîné une certaine volatilité de l'action.",
+      "NVIDIA a annoncé des investissements majeurs dans la recherche et le développement pour ses technologies d'IA et de calcul haute performance."
+    ],
+    "sentiment": "positif"
+  },
+  "KO_202511": {
+    "summary": "Entre août et novembre 2025, Coca-Cola (KO) a connu plusieurs événements significatifs. L'entreprise a annoncé une augmentation de ses revenus trimestriels grâce à une forte demande dans les marchés émergents, en particulier en Asie et en Afrique. Cependant, KO a également fait face à des défis, notamment une hausse des coûts des matières premières et des perturbations de la chaîne d'approvisionnement. De plus, Coca-Cola a lancé plusieurs initiatives de durabilité, visant à réduire son empreinte carbone et à augmenter l'utilisation de matériaux recyclés dans ses emballages.",
+    "key_events": [
+      "Augmentation des revenus trimestriels grâce à une forte demande dans les marchés émergents",
+      "Hausse des coûts des matières premières affectant les marges bénéficiaires",
+      "Perturbations de la chaîne d'approvisionnement entraînant des retards de livraison",
+      "Lancement d'initiatives de durabilité pour réduire l'empreinte carbone",
+      "Augmentation de l'utilisation de matériaux recyclés dans les emballages"
+    ],
+    "sentiment": "neutre"
+  },
+  "JNJ_202511": {
+    "summary": "Entre août et novembre 2025, Johnson & Johnson (JNJ) a connu plusieurs événements significatifs. La société a annoncé des résultats financiers solides pour le troisième trimestre, avec une croissance des revenus et des bénéfices supérieure aux attentes. Cependant, JNJ a également fait face à des défis réglementaires et à des litiges en cours concernant ses produits pharmaceutiques et ses dispositifs médicaux. De plus, l'entreprise a poursuivi ses efforts de restructuration et d'innovation, avec des investissements importants dans la recherche et le développement.",
+    "key_events": [
+      "Johnson & Johnson a publié des résultats financiers pour le troisième trimestre 2025, dépassant les attentes des analystes avec une croissance des revenus de 5 % et une augmentation des bénéfices de 8 %.",
+      "La société a annoncé des investissements supplémentaires dans la recherche et le développement, se concentrant sur des thérapies innovantes et des dispositifs médicaux.",
+      "JNJ a fait face à des défis réglementaires, notamment des enquêtes de la FDA sur certains de ses produits pharmaceutiques.",
+      "La société a poursuivi ses efforts de restructuration, avec des plans de réduction des coûts et d'amélioration de l'efficacité opérationnelle.",
+      "Johnson & Johnson a été impliqué dans plusieurs litiges, notamment des poursuites judiciaires liées à des produits défectueux."
+    ],
+    "sentiment": "neutre"
+  },
+  "JPM_202511": {
+    "summary": "Entre août et novembre 2025, JPMorgan Chase a connu plusieurs événements significatifs. La société a annoncé une augmentation de ses bénéfices trimestriels grâce à une croissance robuste dans ses divisions de banque d'investissement et de gestion d'actifs. Cependant, elle a également fait face à des défis réglementaires et à des amendes pour des pratiques de prêt non conformes. De plus, JPMorgan a continué à investir dans la technologie et l'innovation, lançant de nouvelles initiatives en matière de fintech et de blockchain.",
+    "key_events": [
+      "Augmentation des bénéfices trimestriels grâce à la croissance de la banque d'investissement et de la gestion d'actifs.",
+      "Amendes réglementaires pour des pratiques de prêt non conformes.",
+      "Investissements continus dans la technologie et l'innovation, avec des initiatives en fintech et blockchain."
+    ],
+    "sentiment": "neutre"
+  },
+  "XOM_202511": {
+    "summary": "ExxonMobil (XOM) a connu plusieurs événements significatifs entre août et novembre 2025. La société a annoncé des investissements majeurs dans les énergies renouvelables, tout en faisant face à des défis réglementaires et à des fluctuations des prix de l'énergie.",
+    "key_events": [
+      "ExxonMobil a annoncé un investissement de 15 milliards de dollars dans des projets d'énergies renouvelables en août 2025.",
+      "En septembre 2025, la société a fait face à des réglementations environnementales plus strictes, entraînant des coûts supplémentaires.",
+      "En octobre 2025, ExxonMobil a publié des résultats financiers solides pour le troisième trimestre, avec une augmentation de 10% des bénéfices par rapport à l'année précédente.",
+      "En novembre 2025, la société a annoncé une collaboration stratégique avec une entreprise technologique pour développer des solutions énergétiques innovantes."
+    ],
+    "sentiment": "positif"
+  },
+  "PG_202511": {
+    "summary": "Procter & Gamble (PG) a connu plusieurs événements significatifs entre août et novembre 2025. La société a annoncé des résultats financiers solides pour l'exercice 2025, avec une croissance des ventes et des bénéfices supérieurs aux attentes. Cependant, des défis persistent en raison de l'inflation et des perturbations de la chaîne d'approvisionnement. PG a également lancé plusieurs initiatives de durabilité et a fait face à des changements réglementaires.",
+    "key_events": [
+      "PG a publié des résultats financiers pour l'exercice 2025, avec une croissance des ventes de 5% et une augmentation des bénéfices de 7%.",
+      "La société a annoncé un nouveau plan de durabilité visant à réduire les émissions de carbone de 50% d'ici 2030.",
+      "PG a fait face à des défis liés à l'inflation et aux perturbations de la chaîne d'approvisionnement, affectant les coûts de production.",
+      "La société a lancé plusieurs nouveaux produits dans les segments des soins personnels et des produits de nettoyage.",
+      "PG a été impactée par des changements réglementaires dans plusieurs marchés clés, nécessitant des ajustements stratégiques."
+    ],
+    "sentiment": "neutre"
+  },
+  "WMT_202511": {
+    "summary": "WalMart (WMT) a connu une période de croissance et d'expansion entre août et novembre 2025. L'entreprise a annoncé des résultats financiers solides, des initiatives stratégiques et des investissements dans de nouvelles technologies.",
+    "key_events": [
+      "WalMart a publié des résultats financiers pour le troisième trimestre 2025, dépassant les attentes des analystes avec une croissance de 5% du chiffre d'affaires et une augmentation de 7% des bénéfices.",
+      "L'entreprise a annoncé un partenariat stratégique avec une grande entreprise technologique pour améliorer son infrastructure de commerce électronique et ses capacités de livraison.",
+      "WalMart a investi 2 milliards de dollars dans l'automatisation de ses entrepôts et la modernisation de ses magasins pour améliorer l'efficacité opérationnelle.",
+      "L'entreprise a lancé une nouvelle initiative de durabilité, visant à réduire ses émissions de carbone de 30% d'ici 2030.",
+      "WalMart a ouvert 50 nouveaux magasins dans des marchés émergents, renforçant ainsi sa présence internationale."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202512": {
+    "summary": "Au cours du dernier trimestre de 2025, Apple a connu plusieurs événements significatifs. L'entreprise a lancé de nouveaux produits, dont l'iPhone 17, qui a été bien accueilli par le marché. Cependant, Apple a également fait face à des défis réglementaires en Europe, ce qui a affecté ses opérations. Les résultats financiers du quatrième trimestre ont montré une croissance modérée, avec une augmentation des revenus et des bénéfices par rapport à l'année précédente.",
+    "key_events": [
+      "Lancement de l'iPhone 17 avec des fonctionnalités innovantes.",
+      "Problèmes réglementaires en Europe affectant les opérations d'Apple.",
+      "Résultats financiers du quatrième trimestre montrant une croissance modérée.",
+      "Apple annonce un nouveau partenariat stratégique avec un grand fabricant de puces."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202512": {
+    "summary": "Au cours du dernier trimestre de 2025, Microsoft a connu plusieurs événements significatifs. L'entreprise a continué à renforcer sa position dans le domaine de l'intelligence artificielle et du cloud computing. Cependant, des défis réglementaires et des préoccupations macroéconomiques ont également marqué cette période.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus liés à Azure, renforçant sa position de leader dans le cloud computing.",
+      "L'entreprise a fait face à des défis réglementaires en Europe, avec des enquêtes antitrust concernant ses pratiques commerciales.",
+      "Microsoft a lancé plusieurs nouveaux produits et services basés sur l'IA, visant à améliorer la productivité et l'efficacité des entreprises.",
+      "Des préoccupations macroéconomiques, telles que l'inflation et les tensions géopolitiques, ont affecté les perspectives de croissance de l'entreprise.",
+      "Microsoft a annoncé un partenariat stratégique avec une grande entreprise technologique pour développer des solutions d'IA avancées."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_202512": {
+    "summary": "Amazon (AMZN) a connu plusieurs événements significatifs entre septembre et décembre 2025. La société a continué à renforcer sa position dans le secteur du cloud computing avec AWS, tout en faisant face à des défis réglementaires et économiques. Malgré une croissance soutenue, des inquiétudes persistent concernant la rentabilité et la concurrence accrue.",
+    "key_events": [
+      "Amazon Web Services (AWS) a annoncé une augmentation de 15% de ses revenus au troisième trimestre 2025, renforçant sa position de leader sur le marché du cloud.",
+      "La société a fait l'objet d'une enquête antitrust par la Commission européenne, ce qui a pesé sur le sentiment des investisseurs.",
+      "Amazon a lancé de nouveaux services dans le domaine de l'intelligence artificielle, visant à améliorer l'expérience client et à optimiser la logistique.",
+      "Le Black Friday 2025 a été un succès pour Amazon, avec des ventes record, mais les marges ont été affectées par des coûts logistiques élevés.",
+      "La société a annoncé un partenariat stratégique avec une grande entreprise de télécommunications pour étendre ses services de streaming."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202512": {
+    "summary": "NVIDIA a continué à renforcer sa position dans le secteur des puces et de l'IA. La société a lancé de nouveaux produits et a fait face à des défis réglementaires.",
+    "key_events": [
+      "Lancement de la nouvelle série de GPU NVIDIA RTX 5000, offrant des performances améliorées pour l'IA et le rendu graphique.",
+      "Annonce d'un partenariat stratégique avec une grande entreprise technologique pour développer des solutions d'IA avancées.",
+      "NVIDIA a fait face à des défis réglementaires concernant ses acquisitions potentielles, entraînant des incertitudes sur le marché.",
+      "La société a publié des résultats financiers solides pour le troisième trimestre, dépassant les attentes des analystes.",
+      "NVIDIA a annoncé des investissements majeurs dans la recherche et le développement pour les technologies d'IA et de calcul haute performance."
+    ],
+    "sentiment": "positif"
+  },
+  "KO_202512": {
+    "summary": "Au cours du dernier trimestre de 2025, Coca-Cola (KO) a connu plusieurs événements significatifs. L'entreprise a continué à montrer une résilience face aux défis macroéconomiques, avec une croissance stable dans les marchés émergents. Cependant, des pressions inflationnistes ont persisté, affectant les marges bénéficiaires. Coca-Cola a également annoncé des investissements majeurs dans des initiatives de durabilité, répondant ainsi aux attentes croissantes des consommateurs en matière de responsabilité environnementale.",
+    "key_events": [
+      "Coca-Cola a publié ses résultats financiers pour le troisième trimestre, affichant une croissance de 3% du chiffre d'affaires malgré des pressions inflationnistes.",
+      "L'entreprise a annoncé un investissement de 500 millions de dollars dans des initiatives de durabilité, visant à réduire son empreinte carbone de 30% d'ici 2030.",
+      "Coca-Cola a lancé une nouvelle gamme de boissons à base de plantes, répondant à la demande croissante pour des options plus saines.",
+      "L'entreprise a fait face à des défis logistiques en Europe en raison de grèves dans les ports, affectant temporairement les livraisons.",
+      "Coca-Cola a signé un partenariat stratégique avec une entreprise technologique pour améliorer son efficacité marketing grâce à l'intelligence artificielle."
+    ],
+    "sentiment": "neutre"
+  },
+  "JNJ_202512": {
+    "summary": "Au cours de la période du 1er septembre 2025 au 31 décembre 2025, Johnson & Johnson (JNJ) a connu plusieurs événements significatifs. L'entreprise a annoncé des résultats financiers solides pour le troisième trimestre, avec une croissance notable dans ses segments pharmaceutiques et de dispositifs médicaux. Cependant, JNJ a également fait face à des défis réglementaires et à des litiges en cours, ce qui a eu un impact sur la perception du marché. De plus, l'entreprise a poursuivi ses efforts en matière de recherche et développement, avec plusieurs annonces de nouveaux traitements et partenariats stratégiques.",
+    "key_events": [
+      "Johnson & Johnson a publié des résultats financiers solides pour le troisième trimestre 2025, avec une croissance de 5% des revenus par rapport à l'année précédente.",
+      "L'entreprise a annoncé un partenariat stratégique avec une société de biotechnologie pour développer de nouveaux traitements contre le cancer.",
+      "JNJ a fait face à des défis réglementaires concernant certains de ses produits pharmaceutiques, entraînant des retards dans les approbations.",
+      "L'entreprise a été impliquée dans plusieurs litiges, notamment des poursuites judiciaires liées à des produits de consommation.",
+      "Johnson & Johnson a annoncé des investissements importants dans la recherche et le développement de nouvelles technologies médicales."
+    ],
+    "sentiment": "neutre"
+  },
+  "JPM_202512": {
+    "summary": "Au cours du dernier trimestre de 2025, JPMorgan Chase a connu plusieurs événements significatifs. La société a annoncé une augmentation de ses bénéfices grâce à une croissance robuste dans ses divisions de banque d'investissement et de gestion d'actifs. Cependant, des défis réglementaires et des préoccupations macroéconomiques ont également marqué cette période.",
+    "key_events": [
+      "JPMorgan Chase a rapporté une augmentation de 12% de ses bénéfices par rapport à l'année précédente, dépassant les attentes des analystes.",
+      "La société a annoncé un partenariat stratégique avec une grande entreprise technologique pour améliorer ses capacités de banque numérique.",
+      "Des amendes réglementaires ont été imposées à JPMorgan Chase pour des lacunes dans la conformité, impactant temporairement son cours de bourse.",
+      "La Réserve fédérale a augmenté les taux d'intérêt, ce qui a affecté les marges bénéficiaires des prêts de JPMorgan Chase.",
+      "La société a lancé un nouveau fonds d'investissement durable, répondant à la demande croissante pour des options d'investissement ESG."
+    ],
+    "sentiment": "neutre"
+  },
+  "XOM_202512": {
+    "summary": "ExxonMobil (XOM) a connu plusieurs événements significatifs entre septembre et décembre 2025. La société a continué à se concentrer sur la transition énergétique et a fait face à des défis macroéconomiques.",
+    "key_events": [
+      "ExxonMobil a annoncé un investissement majeur dans les énergies renouvelables, avec un projet de 5 milliards de dollars dans l'énergie éolienne offshore.",
+      "La société a fait face à une baisse des prix du pétrole en raison d'un ralentissement économique mondial, affectant ses revenus au quatrième trimestre.",
+      "ExxonMobil a conclu un partenariat stratégique avec une entreprise technologique pour développer des solutions de capture et de stockage du carbone.",
+      "La société a été confrontée à des réglementations environnementales plus strictes, entraînant des coûts supplémentaires pour la conformité."
+    ],
+    "sentiment": "neutre"
+  },
+  "PG_202512": {
+    "summary": "Procter & Gamble (PG) a connu plusieurs événements significatifs entre septembre et décembre 2025. La société a continué à montrer une résilience dans un environnement économique difficile, marqué par des pressions inflationnistes et des perturbations de la chaîne d'approvisionnement. PG a également fait des progrès dans ses initiatives de durabilité et a annoncé des innovations produits.",
+    "key_events": [
+      "PG a publié des résultats trimestriels solides en octobre 2025, dépassant les attentes des analystes en termes de bénéfices et de revenus.",
+      "La société a annoncé un nouveau plan de durabilité en novembre 2025, visant à réduire ses émissions de carbone de 50% d'ici 2030.",
+      "PG a lancé plusieurs nouveaux produits innovants, notamment dans les segments des soins personnels et des détergents.",
+      "La société a fait face à des défis liés à l'inflation, avec une augmentation des coûts des matières premières et de la logistique.",
+      "PG a annoncé une collaboration stratégique avec une entreprise technologique pour améliorer son efficacité opérationnelle."
+    ],
+    "sentiment": "positif"
+  },
+  "WMT_202512": {
+    "summary": "WalMart (WMT) a connu plusieurs événements significatifs entre septembre et décembre 2025. La société a continué à renforcer sa position dans le commerce de détail, avec un accent particulier sur l'expansion de ses services numériques et de livraison. Malgré des défis économiques persistants, WalMart a démontré une résilience notable grâce à sa stratégie de diversification et d'innovation.",
+    "key_events": [
+      "WalMart a annoncé une augmentation de 15% de ses ventes en ligne pour le troisième trimestre 2025, grâce à l'expansion de ses services de livraison et de ramassage.",
+      "La société a lancé un nouveau programme de fidélité, offrant des avantages supplémentaires aux membres, ce qui a entraîné une augmentation de 10% des inscriptions.",
+      "WalMart a acquis une participation majoritaire dans une entreprise de technologie de livraison par drone, visant à améliorer ses capacités de livraison rapide.",
+      "L'entreprise a fait face à des défis réglementaires concernant ses pratiques de travail, entraînant des amendes et des critiques publiques.",
+      "Malgré une inflation persistante, WalMart a maintenu des prix compétitifs, ce qui a permis de conserver une base de clients fidèles."
+    ],
+    "sentiment": "positif"
+  }
+}
