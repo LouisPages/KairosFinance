@@ -3,12 +3,8 @@
 
 - Ne plus avoir un portefeuille contenant des actions fixés, mais adapter dynamiquement le portefeuille avec d'autres LLM
 
-- Demander une explication pour chaque résultat json du choix des facteurs par le LLM
-  => A tester !
-
-- Idée syuma : Ajouter balance portefeuille pour voir profit réelle+données détaillés pour chaque entreprise sur la page "mon portefeuille"  
-
 
 - Amélioration LLM: fine-tuning en croisant les actualités fournis par le premier agent et les facteur les plus pertinents (via leurs p-value)
 
-- Ajouter une page pour les cryptos avec les codes de syuma
+
+- Ajouter un bouton enregistrer plutôt que d'avoir un enregistrement automatique
