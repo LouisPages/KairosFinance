@@ -4,7 +4,7 @@ Phase 2 — Sélection binaire des facteurs Fama-French via LLM.
 Le LLM retourne un masque booléen par facteur (actif / inactif) selon
 l'actualité économique du mois.
 
-Providers supportés : "anthropic" (défaut), "mistral", "gemini", "openai".
+Providers supportés : "mistral" (défaut), "openai", "anthropic", "gemini".
 """
 import json
 import logging
@@ -30,6 +30,8 @@ from .llm_config import (
 )
 
 logger = logging.getLogger(__name__)
+
+_logged_mistral_fallback = False
 
 # Masque booléen par facteur
 FactorMask = dict[str, bool]
@@ -249,7 +251,7 @@ def _call_gemini(system_prompt: str, user_msg: str, max_retries: int | None = No
             if "PerDay" in err_str or "per_day" in err_str.lower():
                 raise RuntimeError(
                     "Quota journalier Gemini épuisé. "
-                    "Ajoutez SELECTOR_PROVIDER=anthropic dans .env."
+                    "Définissez SELECTOR_PROVIDER=mistral (ou openai / anthropic) dans .env."
                 ) from e
             if "429" in err_str or "quota" in err_str.lower():
                 wait = min(30 * (2 ** attempt), 120)
@@ -394,7 +396,22 @@ def select_factors_for_ticker(
         "gemini": GOOGLE_API_KEY,
         "mistral": MISTRAL_API_KEY,
     }
-    api_key = api_key_map.get(provider, "")
+    if provider not in api_key_map:
+        logger.warning("Provider inconnu '%s' — fallback.", SELECTOR_PROVIDER)
+        return _FALLBACK_MASK.copy()
+
+    api_key = api_key_map[provider]
+    if not api_key and MISTRAL_API_KEY:
+        global _logged_mistral_fallback
+        if not _logged_mistral_fallback:
+            logger.info(
+                "Sélecteur de facteurs : aucune clé pour «%s» — utilisation de Mistral.",
+                provider,
+            )
+            _logged_mistral_fallback = True
+        provider = "mistral"
+        api_key = MISTRAL_API_KEY
+
     if not api_key:
         logger.warning("Clé API %s manquante pour %s — fallback.", provider.upper(), ticker)
         return _FALLBACK_MASK.copy()

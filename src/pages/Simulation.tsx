@@ -317,7 +317,7 @@ const Simulation = () => {
 
       {isLlm && !running && !llmResult && (
         <p className="mt-2 text-[11px] text-muted-foreground/80">
-          Ce modèle interroge Mistral Le Chat (collecte des news AFP) + Gemini 2.0 Flash (sélection des facteurs) pour chaque mois de la période de test. Prévoyez 1–3 min selon le nombre d'actions et de mois.
+          Ce modèle interroge l'API Mistral (Le Chat / news AFP, puis sélection des facteurs) pour chaque mois de la période de test. Prévoyez 1–3 min selon le nombre d'actions et de mois.
         </p>
       )}
 

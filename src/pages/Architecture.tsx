@@ -342,12 +342,12 @@ const models = [
     icon: Bot,
     name: "LLM Dynamique",
     badge: "IA",
-    desc: "Sélection mensuelle des facteurs Fama-French guidée par LLM (Mistral Le Chat + Gemini 2.0 Flash) sur base de l'actualité économique.",
+    desc: "Sélection mensuelle des facteurs Fama-French guidée par LLM (Mistral : news AFP + sélection des facteurs) sur base de l'actualité économique.",
     color: "text-rose-400",
     borderColor: "border-rose-400/30",
     detail: {
       summary:
-        "Le pipeline le plus avancé : chaque mois, un premier LLM (Mistral Le Chat) résume les actualités AFP par ticker, puis un second LLM (Gemini 2.0 Flash) décide quels facteurs Fama-French sont pertinents. La régression et l'optimisation Markowitz n'utilisent que les facteurs retenus.",
+        "Le pipeline le plus avancé : chaque mois, un premier appel Mistral résume les actualités AFP par ticker, puis un second appel Mistral décide quels facteurs Fama-French sont pertinents. La régression et l'optimisation Markowitz n'utilisent que les facteurs retenus.",
       diagram: (
         <div className="space-y-0">
           <Row>
@@ -372,7 +372,7 @@ const models = [
           <Arrow />
           <Box>
             <span className="font-semibold text-foreground">Phase 2 — Sélection des facteurs</span><br />
-            Gemini 2.0 Flash · input : résumé + définitions FF<br />
+            Mistral (API) · input : résumé + définitions FF<br />
             → masque JSON : &#123; Mkt-RF, SMB, HML, RMW, CMA : bool &#125;<br />
             Masque global = union des facteurs retenus par ticker
           </Box>
@@ -401,8 +401,8 @@ const models = [
           text: "Mistral dispose d'un accès natif aux dépêches AFP. Pour chaque ticker, une requête avec fenêtre glissante de 3 mois produit un résumé JSON structuré (summary, key_events, sentiment). Les résultats sont mis en cache par (ticker, année_mois).",
         },
         {
-          title: "Phase 2 — Agent de sélection (Gemini 2.0 Flash)",
-          text: "Gemini 2.0 Flash reçoit le résumé économique et les définitions des facteurs FF. Il retourne un JSON booléen pour chaque facteur. Le masque global est l'union des facteurs sélectionnés sur tous les tickers. Fallback vers tous les facteurs si moins de 1 est retenu.",
+          title: "Phase 2 — Agent de sélection (Mistral)",
+          text: "Le modèle Mistral configuré (SELECTOR_PROVIDER, défaut mistral) reçoit le résumé économique et les définitions des facteurs FF. Il retourne un JSON booléen pour chaque facteur. Le masque global est l'union des facteurs sélectionnés sur tous les tickers. Fallback vers tous les facteurs si moins de 1 est retenu.",
         },
         {
           title: "Phase 3 — Régression dynamique",
@@ -414,7 +414,7 @@ const models = [
         },
         {
           title: "Gestion des clés API",
-          text: "MISTRAL_API_KEY, OPENAI_API_KEY / ANTHROPIC_API_KEY chargées depuis variables d'environnement ou .env (python-dotenv). Température = 0 pour reproductibilité. Requêtes Mistral parallèles via asyncio + httpx.",
+          text: "MISTRAL_API_KEY (obligatoire pour ce pipeline), éventuellement OPENAI_API_KEY / ANTHROPIC_API_KEY / GOOGLE_API_KEY si SELECTOR_PROVIDER pointe vers un autre fournisseur. Variables lues depuis l'environnement ou .env (python-dotenv). Température = 0 pour reproductibilité. Requêtes Mistral parallèles via asyncio + httpx.",
         },
       ],
     },
