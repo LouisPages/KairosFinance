@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="flex h-14 items-center justify-between gap-4">
         <Link to="/" className="flex shrink-0 items-center gap-2 font-display text-base font-bold text-foreground">
           <TrendingUp className="h-5 w-5 text-primary" />
-          Portfolio Manager
+          Kairos Finance
         </Link>
         <div className="flex min-w-0 flex-1 items-center justify-end gap-1">
           {navItems.map((item) => (

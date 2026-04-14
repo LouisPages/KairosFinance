@@ -1,0 +1,25 @@
+# Blueprint Render — https://render.com/docs/blueprint-spec
+# Déploiement pas à pas : README § « Déploiement sur Render ».
+# Dashboard → New → Blueprint → choisir ce dépôt → appliquer.
+
+services:
+  - type: web
+    name: pe25-portfolio
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      # Origines additionnelles pour CORS si le front est hébergé ailleurs (séparé par des virgules).
+      # Vide = localhost + build monolithique (recommandé).
+      - key: ALLOW_ORIGINS
+        sync: false
+      # Secrets LLM / fournisseurs (copier depuis .env) :
+      - key: MISTRAL_API_KEY
+        sync: false
+      - key: SELECTOR_PROVIDER
+        value: mistral
+      - key: MISTRAL_MODEL
+        value: mistral-medium-latest

@@ -1,0 +1,14 @@
+.git
+.github
+node_modules
+dist
+__pycache__
+*.py[cod]
+.venv
+.env
+*.md
+.cursor
+coverage
+**/node_modules
+**/.pytest_cache
+server/simulation_history.json

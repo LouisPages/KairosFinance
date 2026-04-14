@@ -7,11 +7,13 @@ sys.path.insert(0, str(_root))
 sys.path.insert(1, str(_root / "gestion"))
 
 import json
+import os
 import asyncio
 import threading
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import FileResponse, StreamingResponse
+from starlette.staticfiles import StaticFiles
 from pydantic import BaseModel
 from datetime import datetime, timedelta
 from typing import Any, Optional
@@ -37,14 +39,35 @@ def _write_history(entries: list) -> None:
         json.dump(entries, f, ensure_ascii=False, indent=2)
 
 
-app = FastAPI(title="PE25 Portfolio API")
+def _cors_allow_origins() -> list[str]:
+    origins = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:8080",
+        "http://127.0.0.1:8080",
+    ]
+    extra = (os.environ.get("ALLOW_ORIGINS") or "").strip()
+    if extra:
+        for o in extra.split(","):
+            u = o.strip().rstrip("/")
+            if u and u not in origins:
+                origins.append(u)
+    return origins
+
+
+app = FastAPI(title="Kairos Finance API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:8080", "http://127.0.0.1:8080"],
+    allow_origins=_cors_allow_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.get("/api/health")
+def health():
+    return {"status": "ok"}
 
 
 @app.get("/api/stocks")
@@ -426,3 +449,46 @@ async def simulate_llm_stream(req: SimulateRequest):
             "X-Accel-Buffering": "no",
         },
     )
+
+
+_dist_dir = _root / "dist"
+_assets_dir = _dist_dir / "assets"
+
+
+def _safe_dist_path(rel: str) -> Path | None:
+    """rel sans slash initial ; None si traversal hors dist/."""
+    if not rel or rel.startswith("/"):
+        return None
+    if any(p == ".." for p in rel.split("/")):
+        return None
+    p = (_dist_dir / rel).resolve()
+    try:
+        p.relative_to(_dist_dir.resolve())
+    except ValueError:
+        return None
+    return p
+
+
+if _dist_dir.is_dir() and _assets_dir.is_dir():
+    app.mount("/assets", StaticFiles(directory=str(_assets_dir)), name="assets")
+
+    @app.get("/")
+    def spa_index():
+        index = _dist_dir / "index.html"
+        if not index.is_file():
+            raise HTTPException(status_code=404)
+        return FileResponse(index)
+
+    @app.get("/{full_path:path}")
+    def spa_or_static(full_path: str):
+        if full_path.startswith("api/") or full_path in ("docs", "openapi.json", "redoc"):
+            raise HTTPException(status_code=404)
+        p = _safe_dist_path(full_path)
+        if p is None:
+            raise HTTPException(status_code=404)
+        if p.is_file():
+            return FileResponse(p)
+        index = _dist_dir / "index.html"
+        if index.is_file():
+            return FileResponse(index)
+        raise HTTPException(status_code=404)

@@ -68,7 +68,7 @@ const Home = () => {
           className="font-display font-bold leading-tight text-foreground"
           style={{ fontSize: "clamp(1.5rem, 2.2vw, 2.5rem)" }}
         >
-          Portfolio Manager
+          Kairos Finance
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -121,7 +121,7 @@ const Home = () => {
       {/* Features */}
       <section className="mb-20">
         <p className="section-label mb-2">Fonctionnalités</p>
-        <h2 className="section-title mb-8">Ce que propose l'application</h2>
+        <h2 className="section-title mb-8">Ce que propose Kairos Finance</h2>
         <div className="grid gap-5 md:grid-cols-2">
           {features.map((f, i) => (
             <motion.div

@@ -1,4 +1,4 @@
-# PE25 — Portfolio Manager
+# PE25 — Kairos Finance
 
 Application web de gestion et simulation de portefeuille boursier (projet PE 25, École Centrale Lyon). Elle permet de composer un portefeuille à partir d’actions du NASDAQ, Dow Jones et S&P 500, de visualiser des performances et d’utiliser des modèles d’optimisation type Markowitz.
 

@@ -2,7 +2,7 @@
   <img src="public/logo.png" alt="École Centrale de Lyon" width="120" />
 </p>
 
-<h1 align="center">Portfolio Manager</h1>
+<h1 align="center">Kairos Finance</h1>
 
 <p align="center">
   <strong>PE25 — Projet d’études</strong> · École Centrale de Lyon<br/>
@@ -152,7 +152,32 @@ npm run start
 npm run build
 ```
 
-Le résultat est dans **`dist/`**. La mise en ligne complète nécessite de servir ce dossier (statique) **et** de déployer l’API FastAPI (CORS : voir `allow_origins` dans `server/main.py` pour ajouter votre domaine).
+Le résultat est dans **`dist/`**. En local, l’API et le front peuvent rester sur deux ports (voir `VITE_API_URL` et CORS dans `server/main.py`). Pour une **mise en ligne sur une seule URL** (recommandé), utiliser le **Dockerfile** à la racine : build Vite + Uvicorn qui sert l’UI et `/api/*` (même origine, pas de CORS à configurer).
+
+### 8. Déploiement sur [Render](https://render.com)
+
+Le fichier **`render.yaml`** décrit un **Web Service** Docker (plan **Free** par défaut). L’application répond sur une URL du type `https://pe25-portfolio.onrender.com` : page d’accueil, routes React (`/portfolio`, etc.) et API sous `/api/...`.
+
+**Étapes**
+
+1. Créer un compte Render et connecter le dépôt **GitHub** (ou GitLab) contenant ce projet.
+2. **Dashboard** → **New** → **Blueprint** → sélectionner le dépôt → Render détecte `render.yaml` et propose de créer le service. Confirmer le déploiement.  
+   *Alternative : **New** → **Web Service** → même dépôt → **Runtime** : **Docker** → répertoire racine du repo, **Dockerfile path** : `Dockerfile`.*
+3. Dans **Environment** du service, renseigner au besoin les secrets (voir `.env.example`) : **`MISTRAL_API_KEY`** si vous utilisez Markowitz LLM ; laisser **`ALLOW_ORIGINS`** vide pour l’image monolithique. Les variables `SELECTOR_PROVIDER` / `MISTRAL_MODEL` sont préremplies dans le blueprint ; adaptez-les si vous changez de fournisseur.
+4. Attendre la fin du **premier build** (plusieurs minutes : `npm ci`, `npm run build`, `pip install`). Le **health check** utilise `GET /api/health`.
+5. Ouvrir l’URL **HTTPS** affichée par Render : c’est l’unique origine à utiliser pour la démo.
+
+**Comportement du plan gratuit**
+
+Le service **se met en veille** après une période sans trafic ; la **première requête** après veille peut prendre **une minute ou plus** (cold start + build image si redéploiement). Pour une démo sans veille, passer à un plan payant Render (**Starter** ou supérieur) sur ce même Web Service.
+
+**Fichiers utiles**
+
+| Fichier | Rôle |
+|--------|------|
+| `Dockerfile` | Image : Node (build `dist/`) + Python 3.12 + `uvicorn` sur le port **`PORT`** (injecté par Render). |
+| `render.yaml` | Blueprint : nom du service, `healthCheckPath`, variables d’environnement. |
+| `.dockerignore` | Réduit le contexte Docker ; l’historique `server/simulation_history.json` n’est pas copié (fichier recréé à l’usage sur l’instance). |
 
 ---
 
@@ -203,6 +228,8 @@ Le résultat est dans **`dist/`**. La mise en ligne complète nécessite de serv
 │   └── index.css
 ├── index.html
 ├── vite.config.ts                # Port 8080, alias `@` → `./src`
+├── Dockerfile                    # Build front + API pour prod (ex. Render)
+├── render.yaml                   # Blueprint Render (Web Service Docker)
 ├── structure.md                  # Guide pédagogique détaillé du front
 ├── .env.example
 └── package.json
@@ -212,7 +239,7 @@ Le résultat est dans **`dist/`**. La mise en ligne complète nécessite de serv
 
 ## API (FastAPI)
 
-Base URL par défaut côté front : `VITE_API_URL` ou `http://localhost:8000`.
+Base URL côté front : en dev, `VITE_API_URL` ou `http://localhost:8000` ; en build prod **sans** `VITE_API_URL`, requêtes relatives vers la même origine (Docker / Render monolithique).
 
 | Méthode | Chemin | Rôle |
 |---------|--------|------|

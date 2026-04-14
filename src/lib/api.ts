@@ -1,4 +1,7 @@
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
+/** Dev : API sur le port 8000. Prod : même origine (Docker / reverse-proxy) si VITE_API_URL absent. */
+const API_BASE =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.PROD ? "" : "http://localhost:8000");
 
 export interface StockItem {
   symbol: string;
