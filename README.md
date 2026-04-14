@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./dist/logo.png" alt="École Centrale de Lyon" width="120" />
+  <img src="public/logo.png" alt="École Centrale de Lyon" width="120" />
 </p>
 
 <h1 align="center">Portfolio Manager</h1>
