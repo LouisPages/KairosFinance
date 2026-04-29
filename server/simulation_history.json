@@ -64201,7 +64201,7 @@
     "llmResult": null,
     "classicResult": null,
     "comparisonData": null,
-    "description": null,
+    "description": "gradient",
     "assetMode": "crypto",
     "personTag": "Simulation de test"
   },
@@ -66460,7 +66460,7 @@
     "llmResult": null,
     "classicResult": null,
     "comparisonData": null,
-    "description": null,
+    "description": "Monte Carlo",
     "assetMode": "crypto",
     "personTag": "Simulation de test"
   },
