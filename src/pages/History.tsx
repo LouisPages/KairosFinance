@@ -1,10 +1,10 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Trash2, RotateCcw, History as HistoryIcon, Brain, PencilLine, Check, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Trash2, History as HistoryIcon, Brain, PencilLine, Check, X } from "lucide-react";
 import { ClassicResult, LlmResult, ComparisonResult } from "@/components/SimulationResults";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import {
-  loadHistory, deleteFromHistory, clearHistory, updateDescription,
+  loadHistory, deleteFromHistory, updateDescription, updateObservedInterpretation,
   type SimulationEntry, MODEL_LABELS,
 } from "@/lib/simulationHistory";
 
@@ -87,7 +87,7 @@ function EntryCard({
     <button
       onClick={onSelect}
       className={`glass-card relative w-full p-5 text-left transition-shadow focus:outline-none focus:ring-0 active:ring-0 ${
-        isSelected ? "!ring-2 !ring-primary" : ""
+        isSelected ? "!ring-2 !ring-inset !ring-primary" : ""
       }`}
     >
       <div className="absolute right-3 top-3 flex flex-col items-center gap-1">
@@ -122,6 +122,11 @@ function EntryCard({
           {entry.comparisonData && (
             <span className="rounded px-1.5 py-0.5 text-[9px] font-semibold bg-primary/20 text-primary">
               Comparaison
+            </span>
+          )}
+          {entry.personTag && (
+            <span className="rounded px-1.5 py-0.5 text-[9px] font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">
+              {entry.personTag}
             </span>
           )}
         </div>
@@ -180,6 +185,12 @@ const History = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [chartStart, setChartStart] = useState("");
   const [chartEnd, setChartEnd] = useState("");
+  const [personFilter, setPersonFilter] = useState<string>("all");
+  const [modelFilter, setModelFilter] = useState<string>("all");
+  const [analysisDraft, setAnalysisDraft] = useState("");
+  const [analysisLocked, setAnalysisLocked] = useState(false);
+  const [analysisSaving, setAnalysisSaving] = useState(false);
+  const [analysisSavedFlash, setAnalysisSavedFlash] = useState(false);
 
   useEffect(() => {
     loadHistory().then((entries) => {
@@ -189,10 +200,18 @@ const History = () => {
     });
   }, []);
 
-  const selected = history.find((e) => e.id === selectedId) ?? null;
+  const people = Array.from(new Set(history.map((entry) => entry.personTag).filter(Boolean) as string[]));
+  const models = Array.from(new Set(history.map((entry) => entry.modelId)));
+  const filteredHistory = history.filter((entry) => {
+    const matchesPerson = personFilter === "all" || (entry.personTag ?? "") === personFilter;
+    const matchesModel = modelFilter === "all" || entry.modelId === modelFilter;
+    return matchesPerson && matchesModel;
+  });
+  const selected = filteredHistory.find((e) => e.id === selectedId) ?? filteredHistory[0] ?? null;
 
   const handleSelect = useCallback((entry: SimulationEntry) => {
     setSelectedId(entry.id);
+    setAnalysisDraft(entry.observedInterpretation ?? "");
     const cd = entry.comparisonData?.monteCarlo?.comparisonData ?? entry.result?.comparisonData;
     if (cd?.length) {
       setChartStart(cd[0].date);
@@ -212,18 +231,50 @@ const History = () => {
     }
   }, [selectedId]);
 
-  const handleClearAll = useCallback(async () => {
-    await clearHistory();
-    setHistory([]);
-    setSelectedId(null);
-  }, []);
-
   const handleDescriptionSave = useCallback(async (id: string, description: string) => {
     await updateDescription(id, description);
     setHistory((prev) =>
       prev.map((e) => (e.id === id ? { ...e, description: description || undefined } : e))
     );
   }, []);
+
+  useEffect(() => {
+    if (selected) {
+      setAnalysisDraft(selected.observedInterpretation ?? "");
+      setAnalysisLocked(Boolean(selected.observedInterpretation?.trim()));
+      setAnalysisSavedFlash(false);
+      return;
+    }
+    setAnalysisDraft("");
+    setAnalysisLocked(false);
+    setAnalysisSavedFlash(false);
+  }, [selected]);
+
+  useEffect(() => {
+    if (!selectedId && filteredHistory.length > 0) {
+      handleSelect(filteredHistory[0]);
+      return;
+    }
+    if (selectedId && !filteredHistory.some((entry) => entry.id === selectedId)) {
+      setSelectedId(filteredHistory[0]?.id ?? null);
+    }
+  }, [filteredHistory, selectedId, handleSelect]);
+
+  const handleSaveAnalysis = useCallback(async () => {
+    if (!selected || analysisLocked) return;
+    const next = analysisDraft.trim();
+    setAnalysisSaving(true);
+    await updateObservedInterpretation(selected.id, next);
+    setHistory((prev) =>
+      prev.map((entry) =>
+        entry.id === selected.id ? { ...entry, observedInterpretation: next } : entry
+      )
+    );
+    setAnalysisLocked(true);
+    setAnalysisSavedFlash(true);
+    setTimeout(() => setAnalysisSavedFlash(false), 1600);
+    setAnalysisSaving(false);
+  }, [selected, analysisDraft, analysisLocked]);
 
   return (
     <div className="px-6 py-10">
@@ -252,18 +303,50 @@ const History = () => {
         </div>
       ) : (
         <div className="flex flex-col gap-10">
+          <div className="flex flex-wrap items-center gap-3">
+            <Select value={personFilter} onValueChange={setPersonFilter}>
+              <SelectTrigger className="w-[220px] rounded-xl border-border bg-background/80 text-xs">
+                <SelectValue placeholder="Filtrer par personne" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Toutes les personnes</SelectItem>
+                {people.map((person) => (
+                  <SelectItem key={person} value={person}>
+                    {person}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={modelFilter} onValueChange={setModelFilter}>
+              <SelectTrigger className="w-[280px] rounded-xl border-border bg-background/80 text-xs">
+                <SelectValue placeholder="Filtrer par modèle" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Tous les modèles</SelectItem>
+                {models.map((modelId) => (
+                  <SelectItem key={modelId} value={modelId}>
+                    {MODEL_LABELS[modelId] ?? modelId}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
           {/* Sélecteur de simulation */}
-          <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-4">
-            {history.map((entry) => (
-              <EntryCard
-                key={entry.id}
-                entry={entry}
-                isSelected={selectedId === entry.id}
-                onSelect={() => handleSelect(entry)}
-                onDelete={() => handleDelete(entry.id)}
-                onDescriptionSave={handleDescriptionSave}
-              />
-            ))}
+          <div className="overflow-x-auto pb-2">
+            <div className="flex min-w-max gap-4">
+              {filteredHistory.map((entry) => (
+                <div key={entry.id} className="w-[300px] shrink-0">
+                  <EntryCard
+                    entry={entry}
+                    isSelected={selectedId === entry.id}
+                    onSelect={() => handleSelect(entry)}
+                    onDelete={() => handleDelete(entry.id)}
+                    onDescriptionSave={handleDescriptionSave}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Résultats de la simulation sélectionnée */}
@@ -285,6 +368,53 @@ const History = () => {
                     }
                   </span>
                   <div className="h-px flex-1 bg-border" />
+                </div>
+                <div className="mb-6 glass-card p-4">
+                  <p className="text-xs font-semibold text-foreground">Résultat observé / interprétation</p>
+                  <p className="mt-1 text-[11px] text-muted-foreground">
+                    Complétez votre analyse qualitative de cette simulation.
+                  </p>
+                  <textarea
+                    value={analysisDraft}
+                    onChange={(e) => setAnalysisDraft(e.target.value)}
+                    rows={3}
+                    placeholder="Observations, conclusions, décisions..."
+                    disabled={analysisLocked}
+                    className={`mt-3 w-full resize-y rounded-md border border-border px-3 py-2 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary ${
+                      analysisLocked ? "cursor-not-allowed bg-muted/40 text-muted-foreground" : "bg-background/70"
+                    }`}
+                  />
+                  <div className="mt-3 flex items-center justify-end gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setAnalysisLocked(false)}
+                      disabled={!analysisLocked}
+                      className="rounded-lg border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      Modifier l&apos;analyse
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleSaveAnalysis}
+                      disabled={analysisLocked || analysisSaving}
+                      className="rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      {analysisSaving ? "Sauvegarde..." : "Sauvegarder l&apos;analyse"}
+                    </button>
+                  </div>
+                  <AnimatePresence>
+                    {analysisSavedFlash && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 6, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -6, scale: 0.98 }}
+                        className="mt-2 inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400"
+                      >
+                        <Check className="h-3 w-3" />
+                        Analyse sauvegardée
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 {selected.comparisonData && (

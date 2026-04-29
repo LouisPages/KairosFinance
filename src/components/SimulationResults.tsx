@@ -507,7 +507,7 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
   );
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-5">
       {(result.numPortfolios != null || result.trainPeriodStart != null) && (
         <p className="text-[11px] text-muted-foreground/80">
           {result.numPortfolios != null && <span>{result.numPortfolios.toLocaleString("fr-FR")} portefeuilles générés. </span>}
@@ -516,7 +516,7 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
         </p>
       )}
 
-      <div className="glass-card p-6">
+      <div className="glass-card p-4">
         <h3 className="font-display text-sm font-bold text-foreground mb-4">Allocation optimale</h3>
         <div className="space-y-2">
           {Object.entries(result.weights).map(([sym, w]) => (
@@ -532,14 +532,14 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-3 md:grid-cols-4">
         {[
           { label: "Sharpe (entraînement)", value: result.sharpe.toFixed(2), icon: BarChart3 },
           { label: "Rendement attendu (entraînement)", value: `${result.expectedReturn.toFixed(1)}%`, icon: TrendingUp },
           { label: "Volatilité", value: `${result.volatility.toFixed(1)}%`, icon: BarChart3 },
           { label: "Max Drawdown", value: `-${result.maxDrawdown.toFixed(1)}%`, icon: TrendingUp },
         ].map((kpi) => (
-          <div key={kpi.label} className="glass-card p-5 text-center">
+          <div key={kpi.label} className="glass-card p-3 text-center">
             <kpi.icon className="mx-auto h-5 w-5 text-primary" />
             <p className="mt-2 font-display text-xl font-bold text-foreground">{kpi.value}</p>
             <p className="mt-1 text-xs text-muted-foreground">{kpi.label}</p>
@@ -547,12 +547,12 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
         ))}
       </div>
       {(result.backtestReturn != null || result.backtestSharpe != null) && (
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-3 md:grid-cols-2">
           <p className="text-[11px] text-muted-foreground col-span-full">
             Métriques réalisées sur la période de backtest (cohérentes avec la courbe ci‑dessous) :
           </p>
           {result.backtestReturn != null && (
-            <div className="glass-card p-5 text-center">
+            <div className="glass-card p-3 text-center">
               <TrendingUp className="mx-auto h-5 w-5 text-primary" />
               <p className="mt-2 font-display text-xl font-bold text-foreground">
                 {result.backtestReturn >= 0 ? "+" : ""}{result.backtestReturn.toFixed(1)}%
@@ -561,7 +561,7 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
             </div>
           )}
           {result.backtestSharpe != null && (
-            <div className="glass-card p-5 text-center">
+            <div className="glass-card p-3 text-center">
               <BarChart3 className="mx-auto h-5 w-5 text-primary" />
               <p className="mt-2 font-display text-xl font-bold text-foreground">{result.backtestSharpe.toFixed(2)}</p>
               <p className="mt-1 text-xs text-muted-foreground">Sharpe backtest</p>
@@ -570,13 +570,13 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
         </div>
       )}
 
-      <div className="glass-card p-6">
+      <div className="glass-card p-4">
         <h3 className="font-display text-sm font-bold text-foreground mb-4">Performance : Portefeuille vs Marché</h3>
         <div className="flex items-center justify-end gap-3 flex-wrap mb-4">
           <label className="text-xs text-muted-foreground">Du <input type="date" value={chartStart} onChange={(e) => setChartStart(e.target.value)} className="bg-background border border-input rounded px-2 py-1.5 text-foreground text-xs" /></label>
           <label className="text-xs text-muted-foreground">Au <input type="date" value={chartEnd} onChange={(e) => setChartEnd(e.target.value)} className="bg-background border border-input rounded px-2 py-1.5 text-foreground text-xs" /></label>
         </div>
-        <div className="h-64">
+        <div className="h-56">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData} margin={{ left: 8, right: 8 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
@@ -600,9 +600,9 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
       </div>
 
       {result.efficientFrontier != null && result.efficientFrontier.length > 0 && (
-        <div className="glass-card p-6">
+        <div className="glass-card p-4">
           <h3 className="font-display text-sm font-bold text-foreground mb-4">Frontière efficiente</h3>
-          <div className="h-72">
+          <div className="h-60">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={[...result.efficientFrontier].sort((a, b) => a.volatility - b.volatility)} margin={{ left: 20, right: 16, top: 8, bottom: 24 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
@@ -680,13 +680,13 @@ export function ComparisonResult({
   const mcFront = (monteCarlo.efficientFrontier ?? []).sort((a, b) => a.volatility - b.volatility);
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-6">
       <p className="text-sm text-muted-foreground">
         Comparaison : Monte-Carlo vs {bestGradientLabel}. Courbes et frontières superposées.
       </p>
 
       {/* Tableau récapitulatif */}
-      <div className="glass-card p-6 overflow-x-auto">
+      <div className="glass-card p-4 overflow-x-auto">
         <h3 className="font-display text-sm font-bold text-foreground mb-4">Métriques côte à côte</h3>
         <table className="w-full text-xs">
           <thead>
@@ -715,13 +715,13 @@ export function ComparisonResult({
       </div>
 
       {/* Performance : portefeuille Monte-Carlo vs Gradient vs Marché (superposé) */}
-      <div className="glass-card p-6">
+      <div className="glass-card p-4">
         <h3 className="font-display text-sm font-bold text-foreground mb-4">Performance : Monte-Carlo vs {bestGradientLabel} vs Marché</h3>
         <div className="flex items-center justify-end gap-3 flex-wrap mb-4">
           <label className="text-xs text-muted-foreground">Du <input type="date" value={chartStart} onChange={(e) => setChartStart(e.target.value)} className="bg-background border border-input rounded px-2 py-1.5 text-foreground text-xs" /></label>
           <label className="text-xs text-muted-foreground">Au <input type="date" value={chartEnd} onChange={(e) => setChartEnd(e.target.value)} className="bg-background border border-input rounded px-2 py-1.5 text-foreground text-xs" /></label>
         </div>
-        <div className="h-64">
+        <div className="h-56">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={performanceData} margin={{ left: 8, right: 8 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
@@ -740,9 +740,9 @@ export function ComparisonResult({
 
       {/* Frontière efficiente (Monte-Carlo uniquement) + points optimaux des deux méthodes */}
       {mcFront.length > 0 && (
-        <div className="glass-card p-6">
+        <div className="glass-card p-4">
           <h3 className="font-display text-sm font-bold text-foreground mb-4">Frontière efficiente (Monte-Carlo)</h3>
-          <div className="h-72">
+          <div className="h-60">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={mcFront} margin={{ left: 20, right: 16, top: 8, bottom: 24 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
@@ -772,8 +772,8 @@ export function ComparisonResult({
       )}
 
       {/* Allocations côte à côte (optionnel) */}
-      <div className="grid gap-4 md:grid-cols-2">
-        <div className="glass-card p-6">
+      <div className="grid gap-3 md:grid-cols-2">
+        <div className="glass-card p-4">
           <h3 className="font-display text-sm font-bold text-foreground mb-4">Allocation Monte-Carlo</h3>
           <div className="space-y-2">
             {Object.entries(monteCarlo.weights).map(([sym, w]) => (
@@ -787,7 +787,7 @@ export function ComparisonResult({
             ))}
           </div>
         </div>
-        <div className="glass-card p-6">
+        <div className="glass-card p-4">
           <h3 className="font-display text-sm font-bold text-foreground mb-4">Allocation {bestGradientLabel}</h3>
           <div className="space-y-2">
             {Object.entries(bestGradient.weights).map(([sym, w]) => (
@@ -866,20 +866,20 @@ export function LlmResult({ result, classicResult }: {
   const spyTotalReturn = spyFinalValue != null ? (spyFinalValue / INITIAL_VALUE - 1) * 100 : null;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-5">
       <p className="text-[11px] text-muted-foreground/80">
         Backtest glissant sur {result.numMonths} mois.{" "}
         Entraînement : {result.trainPeriodStart} → {result.trainPeriodEnd}.{" "}
         Test : {result.testPeriodStart} → {result.testPeriodEnd}.
       </p>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-3 md:grid-cols-3">
         {[
           { label: "Valeur finale (LLM)", value: `$${result.finalValue.toLocaleString("en-US", { maximumFractionDigits: 0 })}`, sub: `+${result.totalReturn.toFixed(1)}% sur la période`, positive: result.totalReturn >= 0 },
           { label: "Max Drawdown", value: `-${result.maxDrawdown.toFixed(1)}%`, sub: "Perte maximale observée", positive: false },
           { label: "Mois backtestés", value: String(result.numMonths), sub: "Recalcul LLM chaque mois", positive: true },
         ].map((kpi) => (
-          <div key={kpi.label} className="glass-card p-5 text-center">
+          <div key={kpi.label} className="glass-card p-3 text-center">
             <p className={`font-display text-xl font-bold ${kpi.positive ? "text-foreground" : "text-muted-foreground"}`}>{kpi.value}</p>
             <p className="mt-1 text-xs font-semibold text-foreground">{kpi.label}</p>
             <p className="mt-0.5 text-[10px] text-muted-foreground">{kpi.sub}</p>
@@ -887,14 +887,14 @@ export function LlmResult({ result, classicResult }: {
         ))}
       </div>
 
-      <div className="glass-card p-6">
+      <div className="glass-card p-4">
         <h3 className="font-display text-sm font-bold text-foreground mb-1">
           Performance — base $10 000
         </h3>
         <p className="text-[11px] text-muted-foreground mb-4">
           Valeur d'un portefeuille de $10 000 investi au début de la période de test, rebalancé chaque mois selon les décisions du LLM.
         </p>
-        <div className="h-72">
+        <div className="h-60">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={mergedCurve} margin={{ left: 8, right: 8 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
@@ -920,7 +920,7 @@ export function LlmResult({ result, classicResult }: {
       </div>
 
       {(classicFinal || spyTotalReturn != null) && (
-        <div className="glass-card p-6">
+        <div className="glass-card p-4">
           <h3 className="font-display text-sm font-bold text-foreground mb-4">Comparaison des performances</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
@@ -983,7 +983,7 @@ export function LlmResult({ result, classicResult }: {
         </Accordion>
       )}
 
-      <div className="glass-card p-6">
+      <div className="glass-card p-4">
         <div className="flex items-center gap-2 mb-4">
           <Brain className="h-4 w-4 text-primary" />
           <h3 className="font-display text-sm font-bold text-foreground">Décisions mensuelles du LLM</h3>
@@ -1074,7 +1074,7 @@ export function LlmResult({ result, classicResult }: {
         />
       )}
 
-      <div className="glass-card p-6">
+      <div className="glass-card p-4">
         <h3 className="font-display text-sm font-bold text-foreground mb-1">Sélection LLM par facteur — évolution mensuelle</h3>
         <p className="text-[11px] text-muted-foreground mb-3">
           Pour chaque mois et chaque facteur, indique si le LLM l'a jugé pertinent (actif) ou non (inactif) — agrégé sur l'ensemble des actions du portefeuille.

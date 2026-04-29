@@ -3,6 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import {
   Select,
   SelectContent,
@@ -60,6 +61,7 @@ const OPTIMIZATION_METHODS: { id: OptimizationMethodId; label: string }[] = [
   { id: "comparison", label: "Comparaison (Monte-Carlo vs Gradient à pas optimal)" },
 ];
 const COMPARISON_GRADIENT_LABEL = "Gradient à pas optimal";
+const PERSON_TAGS = ["Syuma", "Akram", "Louis", "Bruno", "Aurélien", "Augustin"] as const;
 
 // ---------------------------------------------------------------------------
 // Page principale
@@ -91,6 +93,11 @@ const Simulation = () => {
   const [chartStart, setChartStart] = useState("");
   const [chartEnd, setChartEnd] = useState("");
   const [llmProgress, setLlmProgress] = useState<LlmProgressEvent | null>(null);
+  const [saveModalOpen, setSaveModalOpen] = useState(false);
+  const [saveDescription, setSaveDescription] = useState("");
+  const [savePersonTag, setSavePersonTag] = useState<string>("");
+  const [saveError, setSaveError] = useState<string | null>(null);
+  const [savingHistory, setSavingHistory] = useState(false);
   const cancelStreamRef = useRef<(() => void) | null>(null);
   const classicResultRef = useRef<SimulateResult | null>(null);
 
@@ -107,7 +114,7 @@ const Simulation = () => {
       setClassicResult(null);
       setComparisonData(null);
       setApiError(null);
-      if (optimizationMethod === "comparison") setOptimizationMethod("gradient_optimal");
+      setOptimizationMethod((prev) => (prev === "comparison" ? "gradient_optimal" : prev));
     } else {
       setSelectedModel((prev) => (prev === "markowitz-crypto-ff3" ? null : prev));
     }
@@ -143,14 +150,6 @@ const Simulation = () => {
           setRunning(false);
           setLlmProgress(null);
           cancelStreamRef.current = null;
-          saveToHistory({
-            modelId: "markowitz-llm",
-            symbols,
-            result: null,
-            llmResult: llm,
-            classicResult: classicResultRef.current,
-            assetMode: "actions",
-          });
         },
         (msg) => {
           setApiError(msg);
@@ -179,19 +178,6 @@ const Simulation = () => {
             setChartStart(monteCarlo.comparisonData[0].date);
             setChartEnd(monteCarlo.comparisonData[monteCarlo.comparisonData.length - 1].date);
           }
-          saveToHistory({
-            modelId: apiModelId!,
-            symbols,
-            result: monteCarlo,
-            llmResult: null,
-            classicResult: null,
-            comparisonData: {
-              monteCarlo,
-              bestGradient: gradientOptimal,
-              bestGradientLabel: COMPARISON_GRADIENT_LABEL,
-            },
-            assetMode: assetModeTag,
-          });
         })
         .catch((e) => setApiError(e.message))
         .finally(() => setRunning(false));
@@ -203,17 +189,50 @@ const Simulation = () => {
             setChartStart(res.comparisonData[0].date);
             setChartEnd(res.comparisonData[res.comparisonData.length - 1].date);
           }
-          saveToHistory({
-            modelId: apiModelId!,
-            symbols,
-            result: res,
-            llmResult: null,
-            classicResult: null,
-            assetMode: assetModeTag,
-          });
         })
         .catch((e) => setApiError(e.message))
         .finally(() => setRunning(false));
+    }
+  };
+
+  const hasResultToSave = !!(result || llmResult || comparisonData);
+  const handleOpenSaveModal = () => {
+    if (!hasResultToSave || !apiModelId) return;
+    setSaveDescription("");
+    setSavePersonTag("");
+    setSaveError(null);
+    setSaveModalOpen(true);
+  };
+
+  const handleSaveSimulation = async () => {
+    if (!apiModelId) return;
+    const trimmedDescription = saveDescription.trim();
+    if (!trimmedDescription) {
+      setSaveError("La description de simulation est requise.");
+      return;
+    }
+    if (!savePersonTag) {
+      setSaveError("Sélectionnez la personne à l'origine de la simulation.");
+      return;
+    }
+    setSaveError(null);
+    setSavingHistory(true);
+    try {
+      await saveToHistory({
+        modelId: apiModelId,
+        symbols,
+        result: comparisonData ? comparisonData.monteCarlo : result,
+        llmResult,
+        classicResult: llmResult ? classicResult : null,
+        comparisonData: comparisonData ?? null,
+        description: trimmedDescription,
+        personTag: savePersonTag,
+        observedInterpretation: "",
+        assetMode: assetModeTag,
+      });
+      setSaveModalOpen(false);
+    } finally {
+      setSavingHistory(false);
     }
   };
 
@@ -314,6 +333,16 @@ const Simulation = () => {
           <><Play className="h-4 w-4" /> Lancer la simulation</>
         )}
       </Button>
+      <div className="mt-3">
+        <Button
+          variant="secondary"
+          onClick={handleOpenSaveModal}
+          disabled={!hasResultToSave || running}
+          className="rounded-xl text-xs font-semibold"
+        >
+          Enregistrer les résultats de simulation
+        </Button>
+      </div>
 
       {isLlm && !running && !llmResult && (
         <p className="mt-2 text-[11px] text-muted-foreground/80">
@@ -415,6 +444,50 @@ const Simulation = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <Dialog open={saveModalOpen} onOpenChange={setSaveModalOpen}>
+        <DialogContent className="sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle>Enregistrer les résultats de simulation</DialogTitle>
+            <DialogDescription>
+              Renseignez une description et la personne à l&apos;origine de la simulation.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <label className="text-xs font-medium text-foreground">Description de la simulation</label>
+              <textarea
+                value={saveDescription}
+                onChange={(e) => setSaveDescription(e.target.value)}
+                rows={3}
+                placeholder="Contexte, hypothèses, objectif..."
+                className="w-full resize-none rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs font-medium text-foreground">Personne à l&apos;origine</label>
+              <Select value={savePersonTag} onValueChange={setSavePersonTag}>
+                <SelectTrigger className="w-full cursor-pointer rounded-xl border-border bg-background/80">
+                  <SelectValue placeholder="Choisir une personne" />
+                </SelectTrigger>
+                <SelectContent>
+                  {PERSON_TAGS.map((person) => (
+                    <SelectItem key={person} value={person}>
+                      {person}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            {saveError && <p className="text-xs text-destructive">{saveError}</p>}
+            <div className="flex justify-end">
+              <Button onClick={handleSaveSimulation} disabled={savingHistory} className="rounded-xl">
+                {savingHistory ? "Enregistrement..." : "Valider l'enregistrement"}
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

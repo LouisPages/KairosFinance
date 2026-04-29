@@ -23,7 +23,6 @@ import pandas as pd
 from .tickers_data import get_all_stocks
 
 HISTORY_FILE = Path(__file__).parent / "simulation_history.json"
-MAX_ENTRIES = 20
 _history_lock = threading.Lock()
 
 
@@ -31,7 +30,14 @@ def _read_history() -> list:
     if not HISTORY_FILE.exists():
         return []
     with open(HISTORY_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+        entries = json.load(f)
+    if not isinstance(entries, list):
+        return []
+    # Migration douce: tout historique existant sans tag est classé "test système simulation".
+    for entry in entries:
+        if isinstance(entry, dict) and not entry.get("personTag"):
+            entry["personTag"] = "test système simulation"
+    return entries
 
 
 def _write_history(entries: list) -> None:
@@ -228,12 +234,18 @@ class SimulationEntry(BaseModel):
     classicResult: Any = None
     comparisonData: Optional[Any] = None  # { monteCarlo, bestGradient, bestGradientLabel }
     description: Optional[str] = None
+    personTag: Optional[str] = None
+    observedInterpretation: Optional[str] = None
     # Mode d'actifs au moment de la simulation : actions (défaut) ou crypto
     assetMode: Optional[str] = "actions"
 
 
 class DescriptionUpdate(BaseModel):
     description: str
+
+
+class AnalysisUpdate(BaseModel):
+    observedInterpretation: str
 
 
 @app.get("/api/history/list")
@@ -247,8 +259,6 @@ def history_save(entry: SimulationEntry):
     with _history_lock:
         entries = _read_history()
         entries.insert(0, entry.model_dump())
-        if len(entries) > MAX_ENTRIES:
-            entries = entries[:MAX_ENTRIES]
         _write_history(entries)
     return {"ok": True}
 
@@ -261,6 +271,22 @@ def history_update_description(entry_id: str, body: DescriptionUpdate):
         for e in entries:
             if e.get("id") == entry_id:
                 e["description"] = body.description
+                found = True
+                break
+        if not found:
+            raise HTTPException(status_code=404, detail="Entrée introuvable")
+        _write_history(entries)
+    return {"ok": True}
+
+
+@app.patch("/api/history/{entry_id}/analysis")
+def history_update_analysis(entry_id: str, body: AnalysisUpdate):
+    with _history_lock:
+        entries = _read_history()
+        found = False
+        for e in entries:
+            if e.get("id") == entry_id:
+                e["observedInterpretation"] = body.observedInterpretation
                 found = True
                 break
         if not found:

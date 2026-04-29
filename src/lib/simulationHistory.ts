@@ -39,6 +39,8 @@ export interface SimulationEntry {
   /** Comparaison Monte-Carlo vs Gradient (mode "comparison") — pour affichage dans l'historique. */
   comparisonData?: ComparisonPayload | null;
   description?: string;
+  personTag?: string;
+  observedInterpretation?: string;
   /** Contexte au moment de la sauvegarde (défaut : actions). */
   assetMode?: "actions" | "crypto";
 }
@@ -99,6 +101,18 @@ export async function updateDescription(id: string, description: string): Promis
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ description }),
+    });
+  } catch {
+    // ignore
+  }
+}
+
+export async function updateObservedInterpretation(id: string, observedInterpretation: string): Promise<void> {
+  try {
+    await fetch(`${API_BASE}/api/history/${encodeURIComponent(id)}/analysis`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ observedInterpretation }),
     });
   } catch {
     // ignore
