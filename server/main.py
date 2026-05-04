@@ -33,10 +33,14 @@ def _read_history() -> list:
         entries = json.load(f)
     if not isinstance(entries, list):
         return []
-    # Migration douce: tout historique existant sans tag est classé "test système simulation".
+    # Migration douce: historique sans tag → libellé neutre (gris côté UI).
     for entry in entries:
-        if isinstance(entry, dict) and not entry.get("personTag"):
-            entry["personTag"] = "test système simulation"
+        if not isinstance(entry, dict):
+            continue
+        if not entry.get("personTag"):
+            entry["personTag"] = "Simulation de Test"
+        elif entry.get("personTag") == "test système simulation":
+            entry["personTag"] = "Simulation de Test"
     return entries
 
 

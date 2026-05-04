@@ -7,6 +7,7 @@ import {
   loadHistory, deleteFromHistory, updateDescription, updateObservedInterpretation,
   type SimulationEntry, MODEL_LABELS,
 } from "@/lib/simulationHistory";
+import { getPersonTagDotClass, getPersonTagPillClass } from "@/lib/personTags";
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleString("fr-FR", {
@@ -125,7 +126,9 @@ function EntryCard({
             </span>
           )}
           {entry.personTag && (
-            <span className="rounded px-1.5 py-0.5 text-[9px] font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">
+            <span
+              className={`rounded px-1.5 py-0.5 text-[9px] font-semibold ${getPersonTagPillClass(entry.personTag)}`}
+            >
               {entry.personTag}
             </span>
           )}
@@ -306,13 +309,27 @@ const History = () => {
           <div className="flex flex-wrap items-center gap-3">
             <Select value={personFilter} onValueChange={setPersonFilter}>
               <SelectTrigger className="w-[220px] rounded-xl border-border bg-background/80 text-xs">
-                <SelectValue placeholder="Filtrer par personne" />
+                <span className="flex min-w-0 flex-1 items-center gap-2 [&>span]:min-w-0">
+                  {personFilter !== "all" ? (
+                    <span
+                      className={`h-2 w-2 shrink-0 rounded-full ${getPersonTagDotClass(personFilter)}`}
+                      aria-hidden
+                    />
+                  ) : null}
+                  <SelectValue placeholder="Filtrer par personne" />
+                </span>
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Toutes les personnes</SelectItem>
                 {people.map((person) => (
                   <SelectItem key={person} value={person}>
-                    {person}
+                    <span className="flex items-center gap-2">
+                      <span
+                        className={`h-2 w-2 shrink-0 rounded-full ${getPersonTagDotClass(person)}`}
+                        aria-hidden
+                      />
+                      {person}
+                    </span>
                   </SelectItem>
                 ))}
               </SelectContent>

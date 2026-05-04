@@ -20,6 +20,7 @@ import { loadSavedSymbols, loadSavedCryptoSymbols } from "@/lib/portfolioStorage
 import { saveToHistory } from "@/lib/simulationHistory";
 import { ClassicResult, LlmResult, ComparisonResult } from "@/components/SimulationResults";
 import { useAppMode } from "@/context/AppModeContext";
+import { PERSON_TAGS, getPersonTagDotClass } from "@/lib/personTags";
 
 // ---------------------------------------------------------------------------
 // Config
@@ -61,8 +62,6 @@ const OPTIMIZATION_METHODS: { id: OptimizationMethodId; label: string }[] = [
   { id: "comparison", label: "Comparaison (Monte-Carlo vs Gradient à pas optimal)" },
 ];
 const COMPARISON_GRADIENT_LABEL = "Gradient à pas optimal";
-const PERSON_TAGS = ["Syuma", "Akram", "Louis", "Bruno", "Aurélien", "Augustin"] as const;
-
 // ---------------------------------------------------------------------------
 // Page principale
 // ---------------------------------------------------------------------------
@@ -468,12 +467,26 @@ const Simulation = () => {
               <label className="text-xs font-medium text-foreground">Personne à l&apos;origine</label>
               <Select value={savePersonTag} onValueChange={setSavePersonTag}>
                 <SelectTrigger className="w-full cursor-pointer rounded-xl border-border bg-background/80">
-                  <SelectValue placeholder="Choisir une personne" />
+                  <span className="flex min-w-0 flex-1 items-center gap-2 [&>span]:min-w-0">
+                    {savePersonTag ? (
+                      <span
+                        className={`h-2 w-2 shrink-0 rounded-full ${getPersonTagDotClass(savePersonTag)}`}
+                        aria-hidden
+                      />
+                    ) : null}
+                    <SelectValue placeholder="Choisir une personne" />
+                  </span>
                 </SelectTrigger>
                 <SelectContent>
                   {PERSON_TAGS.map((person) => (
                     <SelectItem key={person} value={person}>
-                      {person}
+                      <span className="flex items-center gap-2">
+                        <span
+                          className={`h-2 w-2 shrink-0 rounded-full ${getPersonTagDotClass(person)}`}
+                          aria-hidden
+                        />
+                        {person}
+                      </span>
                     </SelectItem>
                   ))}
                 </SelectContent>
