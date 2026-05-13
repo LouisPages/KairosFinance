@@ -15,7 +15,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse
 from starlette.staticfiles import StaticFiles
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from datetime import datetime, timedelta
 from typing import Any, Optional
 import yfinance as yf
@@ -486,6 +486,8 @@ class SimulateRequest(BaseModel):
     method: Optional[str] = None  # "monte_carlo" | "gradient_fixe" | "gradient_optimal" (ignoré pour markowitz-llm)
     start_date: Optional[str] = None  # YYYY-MM-DD — plage complète (ajustement + backtest)
     end_date: Optional[str] = None
+    # Tirages Monte-Carlo (même défaut que gestion/*.py : 10 000). Ignoré si method n’est pas monte_carlo.
+    monte_carlo_simulations: Optional[int] = Field(default=None, ge=100, le=500_000)
 
 
 @app.post("/api/simulate")
@@ -494,6 +496,7 @@ def simulate(req: SimulateRequest):
         raise HTTPException(status_code=400, detail="Sélectionnez au moins 2 actions pour lancer une simulation.")
     from gestion.config import OPTIMIZATION_METHOD
     method = req.method if req.method in ("monte_carlo", "gradient_fixe", "gradient_optimal") else OPTIMIZATION_METHOD
+    mc_n = req.monte_carlo_simulations if req.monte_carlo_simulations is not None else 10_000
     try:
         if req.model == "markowitz-crypto-ff3":
             import gestion.crypto.markowitz_crypto_web as markowitz_crypto_web
@@ -501,23 +504,23 @@ def simulate(req: SimulateRequest):
             m = req.method if req.method in ("monte_carlo", "gradient_fixe", "gradient_optimal") else "gradient_optimal"
             if req.start_date and req.end_date:
                 start_s, end_s = _parse_simulation_dates(req.start_date, req.end_date)
-                result = markowitz_crypto_web.run(req.symbols, method=m, start=start_s, end=end_s)
+                result = markowitz_crypto_web.run(req.symbols, method=m, num_portfolios=mc_n, start=start_s, end=end_s)
             else:
-                result = markowitz_crypto_web.run(req.symbols, method=m)
+                result = markowitz_crypto_web.run(req.symbols, method=m, num_portfolios=mc_n)
         else:
             start_s, end_s = _parse_simulation_dates(req.start_date, req.end_date)
             if req.model == "markowitz-classic":
                 import gestion.markowitz_simple as markowitz_simple
-                result = markowitz_simple.run(req.symbols, start_s, end_s, method=method)
+                result = markowitz_simple.run(req.symbols, start_s, end_s, method=method, num_portfolios=mc_n)
             elif req.model == "markowitz-1factor":
                 import gestion.multifactor.markowitz_1factor as markowitz_1factor
-                result = markowitz_1factor.run(req.symbols, start_s, end_s, method=method)
+                result = markowitz_1factor.run(req.symbols, start_s, end_s, method=method, num_portfolios=mc_n)
             elif req.model == "markowitz-3factors":
                 import gestion.multifactor.markowitz_3factors as markowitz_3factors
-                result = markowitz_3factors.run(req.symbols, start_s, end_s, method=method)
+                result = markowitz_3factors.run(req.symbols, start_s, end_s, method=method, num_portfolios=mc_n)
             elif req.model == "markowitz-5factors":
                 import gestion.multifactor.markowitz_5factors as markowitz_5factors
-                result = markowitz_5factors.run(req.symbols, start_s, end_s, method=method)
+                result = markowitz_5factors.run(req.symbols, start_s, end_s, method=method, num_portfolios=mc_n)
             elif req.model == "markowitz-llm":
                 import gestion.dynamic.markowitz_llm as markowitz_llm
                 result = markowitz_llm.run(req.symbols, start_s, end_s)

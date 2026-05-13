@@ -220,11 +220,15 @@ export async function fetchSimulationDataBounds(
   return r.json();
 }
 
+// Défaut aligné sur num_portfolios (10_000) dans gestion/markowitz_*.py
+export const DEFAULT_MONTE_CARLO_SIMULATIONS = 10_000;
+
 export async function runSimulation(
   model: string,
   symbols: string[],
   method?: "monte_carlo" | "gradient_fixe" | "gradient_optimal",
   period?: SimulationPeriod,
+  options?: { monteCarloSimulations?: number },
 ): Promise<SimulateResult> {
   const body: {
     model: string;
@@ -232,11 +236,15 @@ export async function runSimulation(
     method?: string;
     start_date?: string;
     end_date?: string;
+    monte_carlo_simulations?: number;
   } = { model, symbols };
   if (method) body.method = method;
   if (period) {
     body.start_date = period.startDate;
     body.end_date = period.endDate;
+  }
+  if (options?.monteCarloSimulations != null) {
+    body.monte_carlo_simulations = options.monteCarloSimulations;
   }
   const r = await fetch(`${API_BASE}/api/simulate`, {
     method: "POST",

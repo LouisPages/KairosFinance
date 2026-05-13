@@ -14,6 +14,7 @@ import {
 import {
   runSimulation, runLlmSimulationStream,
   fetchSimulationDataBounds,
+  DEFAULT_MONTE_CARLO_SIMULATIONS,
   type SimulateResult, type LlmSimulateResult,
   type LlmProgressEvent,
   type SimulationPeriod,
@@ -144,6 +145,9 @@ const Simulation = () => {
 
   const [selectedModel, setSelectedModel] = useState<string | null>(null);
   const [optimizationMethod, setOptimizationMethod] = useState<OptimizationMethodId>("gradient_optimal");
+  const [monteCarloSimulationsInput, setMonteCarloSimulationsInput] = useState(
+    String(DEFAULT_MONTE_CARLO_SIMULATIONS),
+  );
   const [running, setRunning] = useState(false);
   const [result, setResult] = useState<SimulateResult | null>(null);
   const [llmResult, setLlmResult] = useState<LlmSimulateResult | null>(null);
@@ -302,6 +306,13 @@ const Simulation = () => {
     if (e < rangeStartYm) setRangeStartYm(e);
   };
 
+  const monteCarloSimulationsCount = useMemo(() => {
+    const trimmed = monteCarloSimulationsInput.trim().replace(/\s/g, "");
+    const n = parseInt(trimmed, 10);
+    if (!Number.isFinite(n)) return DEFAULT_MONTE_CARLO_SIMULATIONS;
+    return Math.max(100, Math.min(n, 500_000));
+  }, [monteCarloSimulationsInput]);
+
   const periodHint = useMemo(() => {
     if (!bounds || !rangeStartYm || !rangeEndYm) return null;
     if (rangeStartYm > rangeEndYm) return "Le mois de fin doit être postérieur ou égal au mois de début.";
@@ -360,7 +371,9 @@ const Simulation = () => {
       cancelStreamRef.current = cancel;
     } else if (optimizationMethod === "comparison") {
       // Exécution séquentielle pour éviter tout mélange de réponses (même données, ordre garanti)
-      runSimulation(apiModelId!, symbols, "monte_carlo", simulationPeriod)
+      runSimulation(apiModelId!, symbols, "monte_carlo", simulationPeriod, {
+        monteCarloSimulations: monteCarloSimulationsCount,
+      })
         .then((monteCarlo) =>
           runSimulation(apiModelId!, symbols, "gradient_optimal", simulationPeriod).then((gradientOptimal) => ({
             monteCarlo,
@@ -381,7 +394,11 @@ const Simulation = () => {
         .catch((e) => setApiError(e.message))
         .finally(() => setRunning(false));
     } else {
-      runSimulation(apiModelId!, symbols, optimizationMethod, simulationPeriod)
+      const mcOpts =
+        optimizationMethod === "monte_carlo"
+          ? { monteCarloSimulations: monteCarloSimulationsCount }
+          : undefined;
+      runSimulation(apiModelId!, symbols, optimizationMethod, simulationPeriod, mcOpts)
         .then((res) => {
           setResult(res);
           if (res.comparisonData.length > 0) {
@@ -525,6 +542,39 @@ const Simulation = () => {
                     ))}
                   </SelectContent>
                 </Select>
+                {(optimizationMethod === "monte_carlo" || optimizationMethod === "comparison") && (
+                  <div className="space-y-1.5 pt-2">
+                    <Label htmlFor="mc-sim-count" className="text-sm font-medium text-foreground">
+                      Nombre de simulations Monte-Carlo
+                    </Label>
+                    <Input
+                      id="mc-sim-count"
+                      type="number"
+                      min={100}
+                      max={500_000}
+                      step={1000}
+                      value={monteCarloSimulationsInput}
+                      onChange={(e) => setMonteCarloSimulationsInput(e.target.value)}
+                      onBlur={() => {
+                        const trimmed = monteCarloSimulationsInput.trim().replace(/\s/g, "");
+                        const n = parseInt(trimmed, 10);
+                        if (!Number.isFinite(n)) {
+                          setMonteCarloSimulationsInput(String(DEFAULT_MONTE_CARLO_SIMULATIONS));
+                        } else {
+                          setMonteCarloSimulationsInput(
+                            String(Math.max(100, Math.min(n, 500_000))),
+                          );
+                        }
+                      }}
+                      placeholder={DEFAULT_MONTE_CARLO_SIMULATIONS.toLocaleString("fr-FR")}
+                      className="w-full max-w-[220px] rounded-xl border-border bg-background/80 font-mono text-sm h-9 placeholder:text-muted-foreground"
+                    />
+                    <p className="text-[11px] text-muted-foreground">
+                      Plage autorisée : 100 à 500&nbsp;000 (défaut :{" "}
+                      {DEFAULT_MONTE_CARLO_SIMULATIONS.toLocaleString("fr-FR")}).
+                    </p>
+                  </div>
+                )}
               </div>
             )}
             <div className={`space-y-3 min-w-0 ${isLlm ? "md:max-w-none" : ""}`}>
