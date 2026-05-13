@@ -8,8 +8,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 import numpy as np
 import pandas as pd
-import yfinance as yf
+from datetime import datetime, timedelta
 from typing import Any
+from yahoo_prices import yf_adj_close_wide, yf_single_ticker_adj_series
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
 from ols_with_stats import ols_factor_regression
@@ -20,23 +21,15 @@ Choisir une methode entre : "monte_carlo", "gradient_fixe" et "gradient_optimal"
 
 def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_portfolios: int = 10000) -> dict[str, Any]:
     # --- Collecte des prix et rééchantillonnage mensuel ---
-    data = yf.download(tickers, start=start, end=end, auto_adjust=False, progress=False, group_by="column")
-    if data.empty:
-        return {"error": "Données insuffisantes"}
-
-    if len(tickers) == 1:
-        pc = data["Adj Close"] if "Adj Close" in data.columns else data["Close"]
-        prices = pc.to_frame(name=tickers[0]) if isinstance(pc, pd.Series) else pc
-    else:
-        prices = data["Adj Close"].copy() if "Adj Close" in data.columns else data["Close"].copy()
-        if isinstance(prices.columns, pd.MultiIndex):
-            prices.columns = [c[-1] if isinstance(c, tuple) else c for c in prices.columns]
-
-    prices = prices.dropna(axis=1, how="all")
+    start_d = datetime.fromisoformat(start[:10])
+    end_d = datetime.fromisoformat(end[:10]) + timedelta(days=1)
+    prices, _missing = yf_adj_close_wide(tickers, start_d, end_d, "1d")
     valid = [c for c in tickers if c in prices.columns]
-    if len(valid) < 2:
+    if prices.empty or len(valid) < 2:
         return {"error": "Données insuffisantes"}
-    prices = prices[valid]
+    prices = prices[valid].dropna(how="any")
+    if len(prices) < 60:
+        return {"error": "Données insuffisantes"}
 
     # Rééchantillonnage mensuel (dernier jour ouvré du mois)
     monthly_prices = prices.resample("ME").last()
@@ -51,22 +44,19 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
     test_returns = returns_monthly.iloc[split:]
 
     # --- Facteur de marché : SPY mensuel ---
-    spy_data = yf.download("SPY", start=start, end=end, auto_adjust=False, progress=False)
-    if spy_data.empty or ("Adj Close" not in spy_data.columns and "Close" not in spy_data.columns):
+    spy_s = yf_single_ticker_adj_series("SPY", start_d, end_d, "1d")
+    if spy_s is None or spy_s.empty:
         return {"error": "Impossible de télécharger SPY"}
-    spy_col = spy_data["Adj Close"] if "Adj Close" in spy_data.columns else spy_data["Close"]
-    if isinstance(spy_col, pd.DataFrame):
-        spy_col = spy_col.iloc[:, 0]
-    spy_monthly = spy_col.resample("ME").last()
+    spy_monthly = spy_s.resample("ME").last()
     rm = spy_monthly.pct_change().dropna()
 
     # Taux sans risque mensuel depuis ^IRX
     try:
-        irx = yf.download("^IRX", start=start, end=end, auto_adjust=False, progress=False)
-        irx_col = irx["Adj Close"] if "Adj Close" in irx.columns else irx["Close"]
-        if isinstance(irx_col, pd.DataFrame):
-            irx_col = irx_col.iloc[:, 0]
-        rf_monthly = (irx_col / 100 / 12).resample("ME").last()
+        irx_s = yf_single_ticker_adj_series("^IRX", start_d, end_d, "1d")
+        if irx_s is not None and not irx_s.empty:
+            rf_monthly = (irx_s / 100 / 12).resample("ME").last()
+        else:
+            rf_monthly = pd.Series(0.02 / 12, index=rm.index)
     except Exception:
         rf_monthly = pd.Series(0.02 / 12, index=rm.index)
 

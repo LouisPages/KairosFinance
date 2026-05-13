@@ -5,12 +5,13 @@ Fallback ridge (lambda=1e-4) en cas de quasi-singularité de X'X (les factor_tes
 """
 import numpy as np
 import pandas as pd
-import yfinance as yf
+from datetime import datetime, timedelta
 from typing import Any
 
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+from yahoo_prices import yf_adj_close_wide, yf_single_ticker_adj_series
 from get_facteurs import load_famafrench_5factors
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
@@ -41,25 +42,28 @@ def _ols_or_ridge(X: np.ndarray, y: np.ndarray) -> np.ndarray:
         return np.linalg.solve(reg, Xty)
 
 
+def _spy_monthly_pct_change_period_index(start: str, end: str) -> pd.Series | None:
+    start_d = datetime.fromisoformat(start[:10])
+    end_d = datetime.fromisoformat(end[:10]) + timedelta(days=1)
+    spy_s = yf_single_ticker_adj_series("SPY", start_d, end_d, "1d")
+    if spy_s is None or spy_s.empty:
+        return None
+    spy_monthly = spy_s.resample("ME").last().pct_change().dropna()
+    spy_monthly.index = spy_monthly.index.to_period("M")
+    return spy_monthly
+
+
 def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_portfolios: int = 10000) -> dict[str, Any]:
     # --- Collecte des prix et rééchantillonnage mensuel ---
-    data = yf.download(tickers, start=start, end=end, auto_adjust=False, progress=False, group_by="column")
-    if data.empty:
-        return {"error": "Données insuffisantes"}
-
-    if len(tickers) == 1:
-        pc = data["Adj Close"] if "Adj Close" in data.columns else data["Close"]
-        prices = pc.to_frame(name=tickers[0]) if isinstance(pc, pd.Series) else pc
-    else:
-        prices = data["Adj Close"].copy() if "Adj Close" in data.columns else data["Close"].copy()
-        if isinstance(prices.columns, pd.MultiIndex):
-            prices.columns = [c[-1] if isinstance(c, tuple) else c for c in prices.columns]
-
-    prices = prices.dropna(axis=1, how="all")
+    start_d = datetime.fromisoformat(start[:10])
+    end_d = datetime.fromisoformat(end[:10]) + timedelta(days=1)
+    prices, _missing = yf_adj_close_wide(tickers, start_d, end_d, "1d")
     valid = [c for c in tickers if c in prices.columns]
-    if len(valid) < 2:
+    if prices.empty or len(valid) < 2:
         return {"error": "Données insuffisantes"}
-    prices = prices[valid]
+    prices = prices[valid].dropna(how="any")
+    if len(prices) < 60:
+        return {"error": "Données insuffisantes"}
 
     monthly_prices = prices.resample("ME").last()
     returns_monthly = monthly_prices.pct_change().dropna()
@@ -151,13 +155,8 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
         portfolio_series = 100 * cum_full / cum_full.iloc[0]
 
         # SPY mensuel de référence
-        spy_data = yf.download("SPY", start=start, end=end, auto_adjust=False, progress=False)
-        if not spy_data.empty and ("Adj Close" in spy_data.columns or "Close" in spy_data.columns):
-            spy_col = spy_data["Adj Close"] if "Adj Close" in spy_data.columns else spy_data["Close"]
-            if isinstance(spy_col, pd.DataFrame):
-                spy_col = spy_col.iloc[:, 0]
-            spy_monthly = spy_col.resample("ME").last().pct_change().dropna()
-            spy_monthly.index = spy_monthly.index.to_period("M")
+        spy_monthly = _spy_monthly_pct_change_period_index(start, end)
+        if spy_monthly is not None:
             spy_common = full_common.intersection(spy_monthly.index)
             spy_ret = spy_monthly.reindex(spy_common).fillna(0)
             spy_cum = (1 + spy_ret).cumprod()
@@ -258,11 +257,8 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
         cum_full = (1 + portfolio_returns_full).cumprod()
         portfolio_series = 100 * cum_full / cum_full.iloc[0]
 
-        spy_data = yf.download("SPY", start=start, end=end, auto_adjust=False, progress=False)
-        if not spy_data.empty:
-            spy_col = spy_data["Adj Close"] if "Adj Close" in spy_data.columns else spy_data["Close"]
-            spy_monthly = spy_col.resample("ME").last().pct_change().dropna()
-            spy_monthly.index = spy_monthly.index.to_period("M")
+        spy_monthly = _spy_monthly_pct_change_period_index(start, end)
+        if spy_monthly is not None:
             spy_common = full_common.intersection(spy_monthly.index)
             spy_ret = spy_monthly.reindex(spy_common).fillna(0)
             market_series = 100 * (1 + spy_ret).cumprod()
@@ -331,11 +327,8 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
         cum_full = (1 + portfolio_returns_full).cumprod()
         portfolio_series = 100 * cum_full / cum_full.iloc[0]
 
-        spy_data = yf.download("SPY", start=start, end=end, auto_adjust=False, progress=False)
-        if not spy_data.empty:
-            spy_col = spy_data["Adj Close"] if "Adj Close" in spy_data.columns else spy_data["Close"]
-            spy_monthly = spy_col.resample("ME").last().pct_change().dropna()
-            spy_monthly.index = spy_monthly.index.to_period("M")
+        spy_monthly = _spy_monthly_pct_change_period_index(start, end)
+        if spy_monthly is not None:
             spy_common = full_common.intersection(spy_monthly.index)
             spy_ret = spy_monthly.reindex(spy_common).fillna(0)
             market_series = 100 * (1 + spy_ret).cumprod()

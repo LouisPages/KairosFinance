@@ -192,13 +192,52 @@ export interface LlmSimulateResult {
   promptExamples?: LlmPromptExample[];
 }
 
+export interface SimulationDataBounds {
+  commonStart: string;
+  commonEnd: string;
+  assetMode: string;
+}
+
+/** Plage calendaire complète (ajustement + backtest) envoyée à l’API. */
+export interface SimulationPeriod {
+  startDate: string;
+  endDate: string;
+}
+
+export async function fetchSimulationDataBounds(
+  symbols: string[],
+  assetMode: "actions" | "crypto",
+): Promise<SimulationDataBounds> {
+  const params = new URLSearchParams({
+    symbols: symbols.join(","),
+    asset_mode: assetMode,
+  });
+  const r = await fetch(`${API_BASE}/api/simulation-data-bounds?${params}`);
+  if (!r.ok) {
+    const err = await r.json().catch(() => ({ detail: r.statusText }));
+    throw new Error((err as { detail?: string }).detail || "Impossible de charger les bornes de données.");
+  }
+  return r.json();
+}
+
 export async function runSimulation(
   model: string,
   symbols: string[],
-  method?: "monte_carlo" | "gradient_fixe" | "gradient_optimal"
+  method?: "monte_carlo" | "gradient_fixe" | "gradient_optimal",
+  period?: SimulationPeriod,
 ): Promise<SimulateResult> {
-  const body: { model: string; symbols: string[]; method?: string } = { model, symbols };
+  const body: {
+    model: string;
+    symbols: string[];
+    method?: string;
+    start_date?: string;
+    end_date?: string;
+  } = { model, symbols };
   if (method) body.method = method;
+  if (period) {
+    body.start_date = period.startDate;
+    body.end_date = period.endDate;
+  }
   const r = await fetch(`${API_BASE}/api/simulate`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -212,12 +251,23 @@ export async function runSimulation(
 }
 
 export async function runLlmSimulation(
-  symbols: string[]
+  symbols: string[],
+  period?: SimulationPeriod,
 ): Promise<LlmSimulateResult> {
+  const body: {
+    model: string;
+    symbols: string[];
+    start_date?: string;
+    end_date?: string;
+  } = { model: "markowitz-llm", symbols };
+  if (period) {
+    body.start_date = period.startDate;
+    body.end_date = period.endDate;
+  }
   const r = await fetch(`${API_BASE}/api/simulate`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ model: "markowitz-llm", symbols }),
+    body: JSON.stringify(body),
   });
   if (!r.ok) {
     const err = await r.json().catch(() => ({ detail: r.statusText }));
@@ -240,15 +290,26 @@ export function runLlmSimulationStream(
   onProgress: (evt: LlmProgressEvent) => void,
   onResult: (result: LlmSimulateResult) => void,
   onError: (msg: string) => void,
+  period?: SimulationPeriod,
 ): () => void {
   const controller = new AbortController();
 
   (async () => {
     try {
+      const body: {
+        model: string;
+        symbols: string[];
+        start_date?: string;
+        end_date?: string;
+      } = { model: "markowitz-llm", symbols };
+      if (period) {
+        body.start_date = period.startDate;
+        body.end_date = period.endDate;
+      }
       const r = await fetch(`${API_BASE}/api/simulate-llm-stream`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ model: "markowitz-llm", symbols }),
+        body: JSON.stringify(body),
         signal: controller.signal,
       });
       if (!r.ok) {

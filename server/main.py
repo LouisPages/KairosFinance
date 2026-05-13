@@ -8,6 +8,7 @@ sys.path.insert(1, str(_root / "gestion"))
 
 import json
 import os
+import time
 import asyncio
 import threading
 from fastapi import FastAPI, HTTPException, Request
@@ -21,9 +22,15 @@ import yfinance as yf
 import pandas as pd
 
 from .tickers_data import get_all_stocks
+from gestion.yahoo_prices import yf_adj_close_wide
 
 HISTORY_FILE = Path(__file__).parent / "simulation_history.json"
 _history_lock = threading.Lock()
+
+# Cache bornes simulation (actions) : évite double appel React StrictMode + répétitions navigation
+_sim_bounds_cache: dict[tuple[str, ...], tuple[float, dict[str, Optional[str]]]] = {}
+_sim_bounds_lock = threading.Lock()
+_SIM_BOUNDS_CACHE_TTL_SEC = 120.0
 
 
 def _read_history() -> list:
@@ -242,6 +249,9 @@ class SimulationEntry(BaseModel):
     observedInterpretation: Optional[str] = None
     # Mode d'actifs au moment de la simulation : actions (défaut) ou crypto
     assetMode: Optional[str] = "actions"
+    # Plage historique choisie (ajustement + backtest) au moment de la simulation
+    simulationStartDate: Optional[str] = None
+    simulationEndDate: Optional[str] = None
 
 
 class DescriptionUpdate(BaseModel):
@@ -312,6 +322,125 @@ def history_delete(entry_id: str):
 
 # ── Stock price history ───────────────────────────────────────────────────────
 
+
+def _equity_common_date_bounds(tickers: list[str]) -> dict[str, Optional[str]]:
+    """Premier / dernier jour où tous les titres ont une cotation quotidienne (Adj Close) alignée.
+
+    Évite les artefacts Yahoo (points isolés avant IPO) : on ne retient que les lignes complètes
+    du DataFrame commun, comme en simulation après dropna(how='any').
+    """
+    tickers = [t.strip() for t in tickers if t.strip()]
+    if not tickers:
+        return {"commonStart": None, "commonEnd": None, "error": "Aucun symbole."}
+
+    end_d = datetime.now() + timedelta(days=1)
+    start_d = datetime(1990, 1, 1)
+    prices, missing = yf_adj_close_wide(tickers, start_d, end_d, "1d")
+    if missing:
+        return {
+            "commonStart": None,
+            "commonEnd": None,
+            "error": f"Pas de série Yahoo pour : {', '.join(missing)}",
+        }
+    cols = [t for t in tickers if t in prices.columns]
+    if len(cols) < len(tickers):
+        absent = [t for t in tickers if t not in prices.columns]
+        return {
+            "commonStart": None,
+            "commonEnd": None,
+            "error": f"Pas de série Yahoo pour : {', '.join(absent)}",
+        }
+    if prices.empty:
+        return {
+            "commonStart": None,
+            "commonEnd": None,
+            "error": "Téléchargement vide (symboles invalides ?)",
+        }
+    aligned = prices[cols].dropna(how="any")
+    if aligned.empty:
+        return {
+            "commonStart": None,
+            "commonEnd": None,
+            "error": "Aucune date où tous les symboles ont une cotation simultanée.",
+        }
+    common_start = pd.Timestamp(aligned.index.min())
+    common_end = pd.Timestamp(aligned.index.max())
+    if common_start >= common_end:
+        return {
+            "commonStart": None,
+            "commonEnd": None,
+            "error": "Aucune fenêtre commune (cotations disjointes).",
+        }
+    return {
+        "commonStart": common_start.strftime("%Y-%m-%d"),
+        "commonEnd": common_end.strftime("%Y-%m-%d"),
+    }
+
+
+def _cached_equity_simulation_bounds(tickers: list[str]) -> dict[str, Optional[str]]:
+    """Même résultat que _equity_common_date_bounds avec cache court (page Simulation plus réactive)."""
+    key = tuple(sorted({t.strip() for t in tickers if t.strip()}))
+    if not key:
+        return {"commonStart": None, "commonEnd": None, "error": "Aucun symbole."}
+    now = time.time()
+    with _sim_bounds_lock:
+        hit = _sim_bounds_cache.get(key)
+        if hit and hit[0] > now:
+            return dict(hit[1])
+    out = _equity_common_date_bounds(list(key))
+    with _sim_bounds_lock:
+        _sim_bounds_cache[key] = (now + _SIM_BOUNDS_CACHE_TTL_SEC, dict(out))
+    return dict(out)
+
+
+def _parse_simulation_dates(start_date: Optional[str], end_date: Optional[str]) -> tuple[str, str]:
+    if end_date:
+        end_dt = datetime.fromisoformat(end_date[:10])
+    else:
+        end_dt = datetime.now()
+    end_s = end_dt.strftime("%Y-%m-%d")
+    if start_date:
+        start_s = datetime.fromisoformat(start_date[:10]).strftime("%Y-%m-%d")
+    else:
+        start_s = "2005-01-01"
+    if start_s >= end_s:
+        raise HTTPException(
+            status_code=400,
+            detail="La date de début doit être strictement antérieure à la date de fin.",
+        )
+    return start_s, end_s
+
+
+@app.get("/api/simulation-data-bounds")
+def simulation_data_bounds(symbols: str, asset_mode: str = "actions"):
+    """Borne min/max calendaires communes à tout le portefeuille (actions : Yahoo, cryptos : CSV)."""
+    tickers = [s.strip() for s in (symbols or "").split(",") if s.strip()]
+    if len(tickers) < 2:
+        raise HTTPException(status_code=400, detail="Indiquez au moins 2 symboles.")
+    mode = (asset_mode or "actions").strip().lower()
+    if mode == "crypto":
+        from gestion.crypto.markowitz_crypto_web import crypto_portfolio_common_bounds
+
+        out = crypto_portfolio_common_bounds(tickers)
+        if out.get("error"):
+            raise HTTPException(status_code=400, detail=out["error"])
+        return {
+            "commonStart": out["commonStart"],
+            "commonEnd": out["commonEnd"],
+            "assetMode": "crypto",
+        }
+    out = _cached_equity_simulation_bounds(tickers)
+    if out.get("error"):
+        raise HTTPException(status_code=400, detail=out["error"])
+    if not out.get("commonStart") or not out.get("commonEnd"):
+        raise HTTPException(status_code=400, detail="Impossible de déterminer les bornes.")
+    return {
+        "commonStart": out["commonStart"],
+        "commonEnd": out["commonEnd"],
+        "assetMode": "actions",
+    }
+
+
 @app.get("/api/history")
 def get_history(
     symbols: str,
@@ -340,33 +469,11 @@ def get_history(
             start_d = datetime(2005, 1, 1)
     interval_map = {"daily": "1d", "monthly": "1mo", "annual": "1y", "1d": "1d", "1mo": "1mo", "1y": "1y"}
     yf_interval = interval_map.get(interval, "1d")
-    data = yf.download(tickers, start=start_d, end=end_d, auto_adjust=False, progress=False, group_by="column")
-    if data.empty:
+    prices, _missing = yf_adj_close_wide(tickers, start_d, end_d, yf_interval)
+    if prices.empty:
         return {"dates": [], "series": {}}
-    if len(tickers) == 1:
-        if "Adj Close" in data.columns:
-            series = data["Adj Close"]
-        else:
-            series = data["Close"]
-        if isinstance(series, pd.DataFrame):
-            series = series.iloc[:, 0]
-        series = series.dropna()
-        out = {
-            "dates": [d.strftime("%Y-%m-%d") for d in series.index],
-            "series": {tickers[0]: [round(float(x), 2) for x in series.values]},
-        }
-        return out
-    if isinstance(data.columns, pd.MultiIndex):
-        if data.columns.names[0] in ("Open", "High", "Low", "Close", "Adj Close", "Volume"):
-            prices = data["Adj Close"].copy() if "Adj Close" in data.columns else data["Close"].copy()
-        else:
-            prices = data.xs("Adj Close", axis=1, level=1).copy() if "Adj Close" in data.columns.get_level_values(1) else data.xs("Close", axis=1, level=1).copy()
-    else:
-        prices = data["Adj Close"] if "Adj Close" in data.columns else data["Close"]
-    if isinstance(prices.columns, pd.MultiIndex):
-        prices.columns = [c[-1] if isinstance(c, tuple) else c for c in prices.columns]
     dates = [d.strftime("%Y-%m-%d") for d in prices.index]
-    series = {}
+    series: dict[str, list[float]] = {}
     for t in tickers:
         if t in prices.columns:
             series[t] = [round(float(x), 2) for x in prices[t].values]
@@ -377,40 +484,47 @@ class SimulateRequest(BaseModel):
     model: str
     symbols: list[str]
     method: Optional[str] = None  # "monte_carlo" | "gradient_fixe" | "gradient_optimal" (ignoré pour markowitz-llm)
+    start_date: Optional[str] = None  # YYYY-MM-DD — plage complète (ajustement + backtest)
+    end_date: Optional[str] = None
 
 
 @app.post("/api/simulate")
 def simulate(req: SimulateRequest):
     if len(req.symbols) < 2:
         raise HTTPException(status_code=400, detail="Sélectionnez au moins 2 actions pour lancer une simulation.")
-    end_d = datetime.now()
-    start_d = datetime(2005, 1, 1)
-    start_s = start_d.strftime("%Y-%m-%d")
-    end_s = end_d.strftime("%Y-%m-%d")
     from gestion.config import OPTIMIZATION_METHOD
     method = req.method if req.method in ("monte_carlo", "gradient_fixe", "gradient_optimal") else OPTIMIZATION_METHOD
     try:
-        if req.model == "markowitz-classic":
-            import gestion.markowitz_simple as markowitz_simple
-            result = markowitz_simple.run(req.symbols, start_s, end_s, method=method)
-        elif req.model == "markowitz-1factor":
-            import gestion.multifactor.markowitz_1factor as markowitz_1factor
-            result = markowitz_1factor.run(req.symbols, start_s, end_s, method=method)
-        elif req.model == "markowitz-3factors":
-            import gestion.multifactor.markowitz_3factors as markowitz_3factors
-            result = markowitz_3factors.run(req.symbols, start_s, end_s, method=method)
-        elif req.model == "markowitz-5factors":
-            import gestion.multifactor.markowitz_5factors as markowitz_5factors
-            result = markowitz_5factors.run(req.symbols, start_s, end_s, method=method)
-        elif req.model == "markowitz-llm":
-            import gestion.dynamic.markowitz_llm as markowitz_llm
-            result = markowitz_llm.run(req.symbols, start_s, end_s)
-        elif req.model == "markowitz-crypto-ff3":
+        if req.model == "markowitz-crypto-ff3":
             import gestion.crypto.markowitz_crypto_web as markowitz_crypto_web
+
             m = req.method if req.method in ("monte_carlo", "gradient_fixe", "gradient_optimal") else "gradient_optimal"
-            result = markowitz_crypto_web.run(req.symbols, method=m)
+            if req.start_date and req.end_date:
+                start_s, end_s = _parse_simulation_dates(req.start_date, req.end_date)
+                result = markowitz_crypto_web.run(req.symbols, method=m, start=start_s, end=end_s)
+            else:
+                result = markowitz_crypto_web.run(req.symbols, method=m)
         else:
-            raise HTTPException(status_code=400, detail="Modèle inconnu")
+            start_s, end_s = _parse_simulation_dates(req.start_date, req.end_date)
+            if req.model == "markowitz-classic":
+                import gestion.markowitz_simple as markowitz_simple
+                result = markowitz_simple.run(req.symbols, start_s, end_s, method=method)
+            elif req.model == "markowitz-1factor":
+                import gestion.multifactor.markowitz_1factor as markowitz_1factor
+                result = markowitz_1factor.run(req.symbols, start_s, end_s, method=method)
+            elif req.model == "markowitz-3factors":
+                import gestion.multifactor.markowitz_3factors as markowitz_3factors
+                result = markowitz_3factors.run(req.symbols, start_s, end_s, method=method)
+            elif req.model == "markowitz-5factors":
+                import gestion.multifactor.markowitz_5factors as markowitz_5factors
+                result = markowitz_5factors.run(req.symbols, start_s, end_s, method=method)
+            elif req.model == "markowitz-llm":
+                import gestion.dynamic.markowitz_llm as markowitz_llm
+                result = markowitz_llm.run(req.symbols, start_s, end_s)
+            else:
+                raise HTTPException(status_code=400, detail="Modèle inconnu")
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     if "error" in result:
@@ -424,11 +538,7 @@ async def simulate_llm_stream(req: SimulateRequest):
     if len(req.symbols) < 2:
         raise HTTPException(status_code=400, detail="Sélectionnez au moins 2 actions.")
 
-    # Backtest LLM : 1 an de backtest (12 mois) ≈ 20 % → plage large pour atteindre 59+ mois (déc. 2020 → janv. 2026)
-    start_d = datetime(2005, 1, 1)
-    end_d = datetime(2026, 1, 1)
-    start_s = start_d.strftime("%Y-%m-%d")
-    end_s = end_d.strftime("%Y-%m-%d")
+    start_s, end_s = _parse_simulation_dates(req.start_date, req.end_date)
 
     async def event_generator():
         import gestion.dynamic.markowitz_llm as markowitz_llm

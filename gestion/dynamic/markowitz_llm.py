@@ -14,9 +14,10 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-import yfinance as yf
+from datetime import datetime, timedelta
 
 from gestion.get_facteurs import load_famafrench_5factors, load_momentum_factor
+from gestion.yahoo_prices import yf_adj_close_wide, yf_single_ticker_adj_series
 from gestion.ols_with_stats import ols_factor_regression
 from gestion.dynamic.llm_news_fetcher import fetch_news
 from gestion.dynamic.llm_factor_selector import select_factors, get_all_prompt_examples, reset_prompt_log, FactorMask
@@ -42,24 +43,17 @@ def _json_sanitize(obj: Any) -> Any:
 # ---------------------------------------------------------------------------
 
 def _download_prices(tickers: list[str], start: str, end: str) -> pd.DataFrame:
-    data = yf.download(tickers, start=start, end=end, auto_adjust=False, progress=False, group_by="column")
-    if data.empty:
+    start_d = datetime.fromisoformat(start[:10])
+    end_d = datetime.fromisoformat(end[:10]) + timedelta(days=1)
+    prices, _missing = yf_adj_close_wide(tickers, start_d, end_d, "1d")
+    if prices.empty:
         return pd.DataFrame()
-    if len(tickers) == 1:
-        col = "Adj Close" if "Adj Close" in data.columns else "Close"
-        prices = data[col]
-        if isinstance(prices, pd.Series):
-            prices = prices.to_frame(name=tickers[0])
-    else:
-        col = "Adj Close" if "Adj Close" in data.columns else "Close"
-        prices = data[col].copy()
-        if isinstance(prices.columns, pd.MultiIndex):
-            prices.columns = [c[-1] if isinstance(c, tuple) else c for c in prices.columns]
-    prices = prices.dropna(axis=1, how="all")
-    # Éviter "Cannot join tz-naive with tz-aware" : normaliser en tz-naive
-    if hasattr(prices.index, "tz") and prices.index.tz is not None:
-        prices.index = prices.index.tz_localize(None)
-    return prices
+    tickers_clean = [t.strip() for t in tickers if t.strip()]
+    cols = [c for c in tickers_clean if c in prices.columns]
+    if not cols:
+        return pd.DataFrame()
+    out = prices[cols].dropna(how="any")
+    return out
 
 
 def _monthly_returns(prices: pd.DataFrame) -> pd.DataFrame:
@@ -411,20 +405,14 @@ def run(
     # -------------------------------------------------------------------
     spy_curve: list[dict] = []
     try:
-        spy_data = yf.download(
-            "SPY",
-            start=pd.Period(test_start_s, freq="M").to_timestamp().strftime("%Y-%m-%d"),
-            end=prices.index[-1],
-            auto_adjust=False,
-            progress=False,
-        )
-        if not spy_data.empty and hasattr(spy_data.index, "tz") and spy_data.index.tz is not None:
-            spy_data = spy_data.copy()
-            spy_data.index = spy_data.index.tz_localize(None)
-        adj = spy_data["Adj Close"] if "Adj Close" in spy_data.columns else spy_data["Close"]
-        if isinstance(adj, pd.DataFrame):
-            adj = adj.iloc[:, 0]
-        if not spy_data.empty and not adj.empty:
+        ts = pd.Period(test_start_s, freq="M").to_timestamp()
+        start_s = ts.strftime("%Y-%m-%d")
+        end_ts = pd.Timestamp(prices.index[-1])
+        end_s = end_ts.strftime("%Y-%m-%d")
+        start_d = datetime.fromisoformat(start_s[:10])
+        end_d = datetime.fromisoformat(end_s[:10]) + timedelta(days=1)
+        adj = yf_single_ticker_adj_series("SPY", start_d, end_d, "1d")
+        if adj is not None and not adj.empty:
             spy_monthly = adj.resample("ME").last()
             spy_monthly.index = spy_monthly.index.to_period("M")
             test_spy = spy_monthly.loc[spy_monthly.index >= test_periods[0]]

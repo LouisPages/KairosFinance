@@ -134,6 +134,11 @@ function EntryCard({
           )}
         </div>
         <p className="mt-0.5 text-[10px] text-muted-foreground font-mono">{formatDate(entry.date)}</p>
+        {entry.simulationStartDate && entry.simulationEndDate && (
+          <p className="mt-1 text-[10px] text-muted-foreground font-mono">
+            Plage : {entry.simulationStartDate} → {entry.simulationEndDate}
+          </p>
+        )}
         {entry.description && !editing && (
           <p className="mt-1 text-[10px] text-muted-foreground italic leading-snug">{entry.description}</p>
         )}
@@ -386,6 +391,11 @@ const History = () => {
                   </span>
                   <div className="h-px flex-1 bg-border" />
                 </div>
+                {selected.simulationStartDate && selected.simulationEndDate && (
+                  <p className="mb-4 text-center text-[11px] font-mono text-muted-foreground">
+                    Plage historique : {selected.simulationStartDate} → {selected.simulationEndDate}
+                  </p>
+                )}
                 <div className="mb-6 glass-card p-4">
                   <p className="text-xs font-semibold text-foreground">Résultat observé / interprétation</p>
                   <p className="mt-1 text-[11px] text-muted-foreground">

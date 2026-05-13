@@ -43,6 +43,9 @@ export interface SimulationEntry {
   observedInterpretation?: string;
   /** Contexte au moment de la sauvegarde (défaut : actions). */
   assetMode?: "actions" | "crypto";
+  /** Plage historique utilisée pour la simulation (ajustement + backtest). */
+  simulationStartDate?: string;
+  simulationEndDate?: string;
 }
 
 export async function loadHistory(): Promise<SimulationEntry[]> {

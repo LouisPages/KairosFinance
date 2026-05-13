@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Brain } from "lucide-react";
@@ -13,8 +13,10 @@ import {
 } from "@/components/ui/select";
 import {
   runSimulation, runLlmSimulationStream,
+  fetchSimulationDataBounds,
   type SimulateResult, type LlmSimulateResult,
   type LlmProgressEvent,
+  type SimulationPeriod,
 } from "@/lib/api";
 import { loadSavedSymbols, loadSavedCryptoSymbols } from "@/lib/portfolioStorage";
 import { saveToHistory } from "@/lib/simulationHistory";
@@ -62,6 +64,69 @@ const OPTIMIZATION_METHODS: { id: OptimizationMethodId; label: string }[] = [
   { id: "comparison", label: "Comparaison (Monte-Carlo vs Gradient à pas optimal)" },
 ];
 const COMPARISON_GRADIENT_LABEL = "Gradient à pas optimal";
+import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
+
+// ---------------------------------------------------------------------------
+// Plage calendaire (helpers)
+// ---------------------------------------------------------------------------
+
+function formatYMD(d: Date): string {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+function clampStr(v: string, lo: string, hi: string): string {
+  if (v < lo) return lo;
+  if (v > hi) return hi;
+  return v;
+}
+
+/** YYYY-MM à partir d'une date YYYY-MM-DD. */
+function ymdToYearMonth(ymd: string): string {
+  return ymd.slice(0, 7);
+}
+
+/** Premier jour calendaire du mois YYYY-MM. */
+function yearMonthFirstDay(ym: string): string {
+  return `${ym}-01`;
+}
+
+/** Dernier jour calendaire du mois YYYY-MM. */
+function yearMonthLastDay(ym: string): string {
+  const [y, mo] = ym.split("-").map(Number);
+  const last = new Date(y, mo, 0);
+  return formatYMD(last);
+}
+
+/** Liste des mois YYYY-MM de firstYm à lastYm inclus (firstYm <= lastYm). */
+function enumerateMonths(firstYm: string, lastYm: string): string[] {
+  let a = firstYm;
+  let b = lastYm;
+  if (a > b) [a, b] = [b, a];
+  const [y1, m1] = a.split("-").map(Number);
+  const [y2, m2] = b.split("-").map(Number);
+  const out: string[] = [];
+  let y = y1;
+  let m = m1;
+  while (y < y2 || (y === y2 && m <= m2)) {
+    out.push(`${y}-${String(m).padStart(2, "0")}`);
+    m += 1;
+    if (m > 12) {
+      m = 1;
+      y += 1;
+    }
+  }
+  return out;
+}
+
+function monthsInclusiveYm(startYm: string, endYm: string): number {
+  if (!startYm || !endYm || startYm > endYm) return 0;
+  return enumerateMonths(startYm, endYm).length;
+}
+
+const FACTOR_MODEL_IDS = new Set(["markowitz-1factor", "markowitz-3factors", "markowitz-5factors"]);
 // ---------------------------------------------------------------------------
 // Page principale
 // ---------------------------------------------------------------------------
@@ -100,9 +165,97 @@ const Simulation = () => {
   const cancelStreamRef = useRef<(() => void) | null>(null);
   const classicResultRef = useRef<SimulateResult | null>(null);
 
-  const canRun = selectedModel != null && symbols.length >= 2;
+  const [bounds, setBounds] = useState<{ commonStart: string; commonEnd: string } | null>(null);
+  const [boundsLoading, setBoundsLoading] = useState(false);
+  const [boundsError, setBoundsError] = useState<string | null>(null);
+  const [rangeStartYm, setRangeStartYm] = useState("");
+  const [rangeEndYm, setRangeEndYm] = useState("");
+
+  const symbolsKey = useMemo(() => [...symbols].sort().join(","), [symbols]);
+
   const isLlm = selectedModel === "markowitz-llm";
 
+  useEffect(() => {
+    const tickers = symbolsKey.split(",").map((s) => s.trim()).filter(Boolean);
+    if (tickers.length < 2) {
+      setBounds(null);
+      setBoundsError(null);
+      setBoundsLoading(false);
+      setRangeStartYm("");
+      setRangeEndYm("");
+      return;
+    }
+    let cancelled = false;
+    setBounds(null);
+    setRangeStartYm("");
+    setRangeEndYm("");
+    setBoundsLoading(true);
+    setBoundsError(null);
+    fetchSimulationDataBounds(tickers, isCrypto ? "crypto" : "actions")
+      .then((b) => {
+        if (cancelled) return;
+        setBounds({ commonStart: b.commonStart, commonEnd: b.commonEnd });
+        setRangeStartYm(ymdToYearMonth(b.commonStart));
+        setRangeEndYm(ymdToYearMonth(b.commonEnd));
+      })
+      .catch((e) => {
+        if (!cancelled) setBoundsError(e instanceof Error ? e.message : String(e));
+      })
+      .finally(() => {
+        if (!cancelled) setBoundsLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [symbolsKey, isCrypto]);
+
+  const availableMonths = useMemo(() => {
+    if (!bounds) return [];
+    const lo = ymdToYearMonth(bounds.commonStart);
+    const hi = ymdToYearMonth(bounds.commonEnd);
+    return enumerateMonths(lo, hi);
+  }, [bounds]);
+
+  const minMonthsRequired = useMemo(() => {
+    if (isLlm) return 24;
+    if (isCrypto) return 15;
+    if (selectedModel && FACTOR_MODEL_IDS.has(selectedModel)) return 25;
+    return 3;
+  }, [isLlm, isCrypto, selectedModel]);
+
+  const simulationPeriod: SimulationPeriod | undefined = useMemo(() => {
+    if (!bounds || !rangeStartYm || !rangeEndYm || rangeStartYm > rangeEndYm) return undefined;
+    const startDate = yearMonthFirstDay(rangeStartYm);
+    const endDate = yearMonthLastDay(rangeEndYm);
+    return { startDate, endDate };
+  }, [bounds, rangeStartYm, rangeEndYm]);
+
+  const periodValidForModel = useMemo(() => {
+    if (!simulationPeriod) return false;
+    const n = monthsInclusiveYm(rangeStartYm, rangeEndYm);
+    return n >= minMonthsRequired;
+  }, [simulationPeriod, rangeStartYm, rangeEndYm, minMonthsRequired]);
+
+  const sliderMonthMax = useMemo(() => Math.max(0, availableMonths.length - 1), [availableMonths]);
+
+  const sliderMonthValue = useMemo((): [number, number] => {
+    if (!availableMonths.length || !rangeStartYm || !rangeEndYm) return [0, sliderMonthMax];
+    let i0 = availableMonths.indexOf(rangeStartYm);
+    let i1 = availableMonths.indexOf(rangeEndYm);
+    if (i0 < 0) i0 = 0;
+    if (i1 < 0) i1 = sliderMonthMax;
+    if (i0 > i1) [i0, i1] = [i1, i0];
+    return [Math.max(0, i0), Math.min(sliderMonthMax, i1)];
+  }, [availableMonths, rangeStartYm, rangeEndYm, sliderMonthMax]);
+
+  const canRun =
+    selectedModel != null &&
+    symbols.length >= 2 &&
+    !!simulationPeriod &&
+    periodValidForModel &&
+    !boundsLoading &&
+    !boundsError &&
+    !!bounds;
   const assetModeTag = isCrypto ? ("crypto" as const) : ("actions" as const);
 
   useEffect(() => {
@@ -122,8 +275,54 @@ const Simulation = () => {
   const apiModelId =
     selectedModel === "markowitz-crypto-ff3" ? "markowitz-crypto-ff3" : selectedModel;
 
+  const handleRangeSlider = (vals: number[]) => {
+    if (!availableMonths.length || vals.length < 2) return;
+    const lo = Math.min(vals[0], vals[1]);
+    const hi = Math.max(vals[0], vals[1]);
+    const i0 = Math.max(0, Math.min(sliderMonthMax, lo));
+    const i1 = Math.max(0, Math.min(sliderMonthMax, hi));
+    setRangeStartYm(availableMonths[i0]);
+    setRangeEndYm(availableMonths[i1]);
+  };
+
+  const monthBoundsLo = availableMonths[0] ?? "";
+  const monthBoundsHi = availableMonths[availableMonths.length - 1] ?? "";
+
+  const handleStartMonthInput = (v: string) => {
+    if (!availableMonths.length) return;
+    const s = clampStr(v, monthBoundsLo, monthBoundsHi);
+    setRangeStartYm(s);
+    if (s > rangeEndYm) setRangeEndYm(s);
+  };
+
+  const handleEndMonthInput = (v: string) => {
+    if (!availableMonths.length) return;
+    const e = clampStr(v, monthBoundsLo, monthBoundsHi);
+    setRangeEndYm(e);
+    if (e < rangeStartYm) setRangeStartYm(e);
+  };
+
+  const periodHint = useMemo(() => {
+    if (!bounds || !rangeStartYm || !rangeEndYm) return null;
+    if (rangeStartYm > rangeEndYm) return "Le mois de fin doit être postérieur ou égal au mois de début.";
+    if (periodValidForModel) return null;
+    if (isLlm) return "Le modèle LLM exige au moins 24 mois inclus sur la plage choisie.";
+    if (isCrypto) return "En mode crypto, choisissez au moins 15 mois inclus.";
+    if (selectedModel && FACTOR_MODEL_IDS.has(selectedModel))
+      return "Les modèles à facteurs (CAPM / Fama-French) exigent au moins 25 mois inclus (régressions mensuelles + découpage train/test).";
+    return "Markowitz classique exige au moins 3 mois inclus (rendements quotidiens sur la plage).";
+  }, [
+    bounds,
+    rangeStartYm,
+    rangeEndYm,
+    periodValidForModel,
+    isLlm,
+    isCrypto,
+    selectedModel,
+  ]);
+
   const handleRun = () => {
-    if (!canRun) return;
+    if (!canRun || !simulationPeriod) return;
     setApiError(null);
     setRunning(true);
     setResult(null);
@@ -134,7 +333,7 @@ const Simulation = () => {
     classicResultRef.current = null;
 
     if (isLlm) {
-      runSimulation("markowitz-classic", symbols)
+      runSimulation("markowitz-classic", symbols, undefined, simulationPeriod)
         .then((classic) => {
           setClassicResult(classic);
           classicResultRef.current = classic;
@@ -156,13 +355,14 @@ const Simulation = () => {
           setLlmProgress(null);
           cancelStreamRef.current = null;
         },
+        simulationPeriod,
       );
       cancelStreamRef.current = cancel;
     } else if (optimizationMethod === "comparison") {
       // Exécution séquentielle pour éviter tout mélange de réponses (même données, ordre garanti)
-      runSimulation(apiModelId!, symbols, "monte_carlo")
+      runSimulation(apiModelId!, symbols, "monte_carlo", simulationPeriod)
         .then((monteCarlo) =>
-          runSimulation(apiModelId!, symbols, "gradient_optimal").then((gradientOptimal) => ({
+          runSimulation(apiModelId!, symbols, "gradient_optimal", simulationPeriod).then((gradientOptimal) => ({
             monteCarlo,
             gradientOptimal,
           }))
@@ -181,7 +381,7 @@ const Simulation = () => {
         .catch((e) => setApiError(e.message))
         .finally(() => setRunning(false));
     } else {
-      runSimulation(apiModelId!, symbols, optimizationMethod)
+      runSimulation(apiModelId!, symbols, optimizationMethod, simulationPeriod)
         .then((res) => {
           setResult(res);
           if (res.comparisonData.length > 0) {
@@ -228,6 +428,8 @@ const Simulation = () => {
         personTag: savePersonTag,
         observedInterpretation: "",
         assetMode: assetModeTag,
+        simulationStartDate: simulationPeriod?.startDate,
+        simulationEndDate: simulationPeriod?.endDate,
       });
       setSaveModalOpen(false);
     } finally {
@@ -296,25 +498,105 @@ const Simulation = () => {
         })}
       </div>
 
-      {/* Méthode d'optimisation (masquée pour le modèle LLM) */}
-      {!isLlm && (
-        <div className="mb-6 flex flex-wrap items-center gap-3">
-          <label className="text-sm font-medium text-foreground">Méthode d'optimisation</label>
-          <Select
-            value={optimizationMethod}
-            onValueChange={(v) => { setOptimizationMethod(v as OptimizationMethodId); setResult(null); setComparisonData(null); setApiError(null); }}
-          >
-            <SelectTrigger className="w-[320px] cursor-pointer rounded-xl border-border bg-background/80">
-              <SelectValue placeholder="Choisir une méthode" />
-            </SelectTrigger>
-            <SelectContent>
-              {OPTIMIZATION_METHODS.filter((opt) => !isCrypto || opt.id !== "comparison").map((opt) => (
-                <SelectItem key={opt.id} value={opt.id} disabled={isCrypto && opt.id === "comparison"}>
-                  {opt.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+      {/* Méthode d'optimisation + plage calendaire */}
+      {symbols.length >= 2 && (
+        <div className="mb-6 rounded-xl border border-border bg-muted/20 p-5 space-y-4">
+          <div className={`grid gap-6 ${isLlm ? "" : "md:grid-cols-2"}`}>
+            {!isLlm && (
+              <div className="space-y-2">
+                <Label className="text-sm font-medium text-foreground">Méthode d&apos;optimisation</Label>
+                <Select
+                  value={optimizationMethod}
+                  onValueChange={(v) => {
+                    setOptimizationMethod(v as OptimizationMethodId);
+                    setResult(null);
+                    setComparisonData(null);
+                    setApiError(null);
+                  }}
+                >
+                  <SelectTrigger className="w-full max-w-[320px] cursor-pointer rounded-xl border-border bg-background/80">
+                    <SelectValue placeholder="Choisir une méthode" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {OPTIMIZATION_METHODS.filter((opt) => !isCrypto || opt.id !== "comparison").map((opt) => (
+                      <SelectItem key={opt.id} value={opt.id} disabled={isCrypto && opt.id === "comparison"}>
+                        {opt.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
+            <div className={`space-y-3 min-w-0 ${isLlm ? "md:max-w-none" : ""}`}>
+              <div className="flex flex-wrap items-end justify-between gap-2">
+                <Label className="text-sm font-medium text-foreground">Période (ajustement + backtest)</Label>
+                {bounds && !boundsLoading && (
+                  <span className="text-[10px] font-mono text-muted-foreground shrink-0">
+                    données communes : {bounds.commonStart} → {bounds.commonEnd}
+                  </span>
+                )}
+              </div>
+              {boundsLoading && (
+                <div className="space-y-2 max-w-md">
+                  <Skeleton className="h-9 w-full" />
+                  <Skeleton className="h-4 w-full" />
+                </div>
+              )}
+              {boundsError && <p className="text-xs text-destructive">{boundsError}</p>}
+              {!boundsLoading && bounds && (
+                <>
+                  <p className="text-[11px] text-muted-foreground leading-snug">
+                    Choix au mois près (premier et dernier mois inclus). Les bornes viennent des cotations
+                    quotidiennes alignées sur tout le portefeuille (même source que la simulation).
+                    Markowitz classique utilise des rendements quotidiens ; CAPM, Fama-French et le LLM
+                    agrègent en rendements mensuels pour les régressions. Le découpage train/test reste
+                    celui de chaque modèle.
+                  </p>
+                  {sliderMonthMax >= 1 ? (
+                    <Slider
+                      value={sliderMonthValue}
+                      min={0}
+                      max={sliderMonthMax}
+                      step={1}
+                      onValueChange={handleRangeSlider}
+                      className="py-2 max-w-full"
+                    />
+                  ) : (
+                    <p className="text-xs text-muted-foreground">Plage trop courte pour le curseur (moins de deux mois).</p>
+                  )}
+                  <div className="flex flex-wrap gap-4 items-end">
+                    <div className="space-y-1">
+                      <Label htmlFor="sim-range-start" className="text-xs text-muted-foreground">Mois de début</Label>
+                      <Input
+                        id="sim-range-start"
+                        type="month"
+                        min={monthBoundsLo}
+                        max={rangeEndYm || monthBoundsHi}
+                        value={rangeStartYm}
+                        onChange={(e) => handleStartMonthInput(e.target.value)}
+                        className="w-[158px] rounded-lg bg-background/80 font-mono text-xs h-9"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="sim-range-end" className="text-xs text-muted-foreground">Mois de fin</Label>
+                      <Input
+                        id="sim-range-end"
+                        type="month"
+                        min={rangeStartYm || monthBoundsLo}
+                        max={monthBoundsHi}
+                        value={rangeEndYm}
+                        onChange={(e) => handleEndMonthInput(e.target.value)}
+                        className="w-[158px] rounded-lg bg-background/80 font-mono text-xs h-9"
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
+              {periodHint && (
+                <p className="text-xs text-amber-600 dark:text-amber-400">{periodHint}</p>
+              )}
+            </div>
+          </div>
         </div>
       )}
 

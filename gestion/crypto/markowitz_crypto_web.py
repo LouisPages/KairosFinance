@@ -98,10 +98,74 @@ def yahoo_ticker_for_news(code: str) -> str:
     return f"{c}-USD"
 
 
+def crypto_portfolio_common_bounds(symbols: list[str]) -> dict[str, Any]:
+    """
+    Intersection calendaire des plages où chaque crypto a au moins un prix (CSV).
+    Retourne commonStart / commonEnd au format YYYY-MM-DD, ou error.
+    """
+    from .crypto_fama_french import CSV_FOLDER
+
+    syms = [s.strip().upper() for s in symbols if s.strip()]
+    syms = [s for s in syms if s in CSV_FILES]
+    if len(syms) < 2:
+        return {
+            "error": "Sélectionnez au moins 2 cryptos reconnues.",
+            "commonStart": None,
+            "commonEnd": None,
+        }
+
+    firsts: list[pd.Timestamp] = []
+    lasts: list[pd.Timestamp] = []
+
+    for sym in syms:
+        path = os.path.join(CSV_FOLDER, CSV_FILES[sym])
+        if not os.path.isfile(path):
+            return {
+                "error": f"Fichier de données absent pour {sym}.",
+                "commonStart": None,
+                "commonEnd": None,
+            }
+        try:
+            df = pd.read_csv(path, parse_dates=["snapped_at"])
+            dates = pd.to_datetime(df["snapped_at"], utc=True).dt.tz_localize(None)
+            close = pd.to_numeric(df["price"], errors="coerce")
+            ok = close.notna()
+            if not ok.any():
+                return {
+                    "error": f"Aucun prix exploitable pour {sym}.",
+                    "commonStart": None,
+                    "commonEnd": None,
+                }
+            firsts.append(pd.Timestamp(dates[ok].min()))
+            lasts.append(pd.Timestamp(dates[ok].max()))
+        except Exception as e:
+            return {
+                "error": f"Lecture CSV impossible pour {sym}: {e}",
+                "commonStart": None,
+                "commonEnd": None,
+            }
+
+    common_start = max(firsts)
+    common_end = min(lasts)
+    if common_start >= common_end:
+        return {
+            "error": "Les cryptos sélectionnées n'ont pas de période commune avec des données.",
+            "commonStart": None,
+            "commonEnd": None,
+        }
+
+    return {
+        "commonStart": common_start.strftime("%Y-%m-%d"),
+        "commonEnd": common_end.strftime("%Y-%m-%d"),
+    }
+
+
 def run(
     tickers: list[str],
     method: str = "gradient_optimal",
     num_portfolios: int = 10000,
+    start: str | None = None,
+    end: str | None = None,
 ) -> dict[str, Any]:
     syms = [s.strip().upper() for s in tickers if s.strip()]
     syms = [s for s in syms if s in CSV_FILES]
@@ -109,7 +173,7 @@ def run(
         return {"error": "Sélectionnez au moins 2 cryptos reconnues (fichiers CSV présents)."}
 
     try:
-        returns, mcaps = load_prices_for_symbols(syms, freq="ME")
+        returns, mcaps = load_prices_for_symbols(syms, freq="ME", start=start, end=end)
     except RuntimeError as e:
         return {"error": str(e)}
 

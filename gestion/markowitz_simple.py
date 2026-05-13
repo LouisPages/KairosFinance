@@ -2,34 +2,36 @@
 Markowitz classique : moyenne-variance sur rendements historiques uniquement.
 Pas de facteurs, pas de Fama-French. On estime mu et Sigma sur l’historique, puis on maximise le Sharpe.
 """
+from datetime import datetime, timedelta
+from typing import Any
+
 import numpy as np
 import pandas as pd
-import yfinance as yf
-from typing import Any
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
+from yahoo_prices import yf_adj_close_wide, yf_single_ticker_adj_series
 
 """
 Choisir une methode entre : "monte_carlo", "gradient_fixe" et "gradient_optimal" 
 """
 
+
+def _spy_adj_series(index_start, index_end) -> pd.Series | None:
+    start_d = pd.Timestamp(index_start).to_pydatetime()
+    end_d = pd.Timestamp(index_end).to_pydatetime() + timedelta(days=1)
+    return yf_single_ticker_adj_series("SPY", start_d, end_d, "1d")
+
+
 def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, method: str = "gradient", num_portfolios: int = 10000) -> dict[str, Any]:
-    # Récup des prix (yfinance peut renvoyer MultiIndex selon le nombre de tickers)
-    data = yf.download(tickers, start=start, end=end, auto_adjust=False, progress=False, group_by="column")
-    if data.empty:
-        return {"error": "Données insuffisantes"}
-    if len(tickers) == 1:
-        pc = data["Adj Close"] if "Adj Close" in data.columns else data["Close"]
-        prices = pc.to_frame(name=tickers[0]) if isinstance(pc, pd.Series) else pc
-    else:
-        prices = data["Adj Close"].copy() if "Adj Close" in data.columns else data["Close"].copy()
-        if isinstance(prices.columns, pd.MultiIndex):
-            prices.columns = [c[-1] if isinstance(c, tuple) else c for c in prices.columns]
-    prices = prices.dropna(axis=1, how="all")
+    start_d = datetime.fromisoformat(start[:10])
+    end_d = datetime.fromisoformat(end[:10]) + timedelta(days=1)
+    prices, _missing = yf_adj_close_wide(tickers, start_d, end_d, "1d")
     valid = [c for c in tickers if c in prices.columns]
-    if len(valid) < 2:
+    if prices.empty or len(valid) < 2:
         return {"error": "Données insuffisantes"}
-    prices = prices[valid]
+    prices = prices[valid].dropna(how="any")
+    if len(prices) < 15:
+        return {"error": "Données insuffisantes"}
 
     # Train 80% / test 20%, en quotidien
     n = len(prices)
@@ -69,9 +71,9 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         cum_full = (1 + portfolio_returns_full).cumprod()
         portfolio_series = 100 * cum_full / cum_full.iloc[0]
 
-        spy = yf.download("SPY", start=prices.index[0], end=prices.index[-1], auto_adjust=False, progress=False)
-        if not spy.empty and "Adj Close" in spy.columns:
-            spy_ret = np.log(spy["Adj Close"] / spy["Adj Close"].shift(1)).dropna()
+        spy_s = _spy_adj_series(prices.index[0], prices.index[-1])
+        if spy_s is not None and not spy_s.empty:
+            spy_ret = np.log(spy_s / spy_s.shift(1)).dropna()
             spy_cum = (1 + spy_ret).cumprod()
             market_series = 100 * spy_cum / spy_cum.iloc[0]
             common_idx = portfolio_series.index.intersection(market_series.index)
@@ -177,9 +179,9 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         cum_full = (1 + portfolio_returns_full).cumprod()
         portfolio_series = 100 * cum_full / cum_full.iloc[0]
 
-        spy = yf.download("SPY", start=prices.index[0], end=prices.index[-1], auto_adjust=False, progress=False)
-        if not spy.empty and "Adj Close" in spy.columns:
-            spy_ret = np.log(spy["Adj Close"] / spy["Adj Close"].shift(1)).dropna()
+        spy_s = _spy_adj_series(prices.index[0], prices.index[-1])
+        if spy_s is not None and not spy_s.empty:
+            spy_ret = np.log(spy_s / spy_s.shift(1)).dropna()
             spy_cum = (1 + spy_ret).cumprod()
             market_series = 100 * spy_cum / spy_cum.iloc[0]
             common_idx = portfolio_series.index.intersection(market_series.index)
@@ -260,9 +262,9 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         cum_full = (1 + portfolio_returns_full).cumprod()
         portfolio_series = 100 * cum_full / cum_full.iloc[0]
 
-        spy = yf.download("SPY", start=prices.index[0], end=prices.index[-1], auto_adjust=False, progress=False)
-        if not spy.empty and "Adj Close" in spy.columns:
-            spy_ret = np.log(spy["Adj Close"] / spy["Adj Close"].shift(1)).dropna()
+        spy_s = _spy_adj_series(prices.index[0], prices.index[-1])
+        if spy_s is not None and not spy_s.empty:
+            spy_ret = np.log(spy_s / spy_s.shift(1)).dropna()
             spy_cum = (1 + spy_ret).cumprod()
             market_series = 100 * spy_cum / spy_cum.iloc[0]
             common_idx = portfolio_series.index.intersection(market_series.index)
