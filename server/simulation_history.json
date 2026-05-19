@@ -1,5 +1,410 @@
 [
   {
+    "id": "sim-1779174731831-n81j5",
+    "date": "2026-05-19T07:12:11.831Z",
+    "modelId": "markowitz-crypto-ff3",
+    "symbols": [
+      "BTC",
+      "ETH",
+      "BNB",
+      "DOGE"
+    ],
+    "result": {
+      "weights": {
+        "BTC": 0.7884761737825251,
+        "ETH": 0,
+        "BNB": 0.2115238262174749,
+        "DOGE": 0
+      },
+      "sharpe": 1.4655,
+      "expectedReturn": 70.19,
+      "volatility": 45.16,
+      "maxDrawdown": 24.36,
+      "comparisonData": [
+        {
+          "date": "2023-02-28 00:00:00",
+          "portfolio": 24.5,
+          "market": 35.74
+        },
+        {
+          "date": "2023-03-31 00:00:00",
+          "portfolio": 28.43,
+          "market": 37.93
+        },
+        {
+          "date": "2023-04-30 00:00:00",
+          "portfolio": 29.46,
+          "market": 39.97
+        },
+        {
+          "date": "2023-05-31 00:00:00",
+          "portfolio": 28.06,
+          "market": 37.99
+        },
+        {
+          "date": "2023-06-30 00:00:00",
+          "portfolio": 28.77,
+          "market": 35.14
+        },
+        {
+          "date": "2023-07-31 00:00:00",
+          "portfolio": 28.13,
+          "market": 37.2
+        },
+        {
+          "date": "2023-08-31 00:00:00",
+          "portfolio": 26.16,
+          "market": 33.62
+        },
+        {
+          "date": "2023-09-30 00:00:00",
+          "portfolio": 25.66,
+          "market": 32.52
+        },
+        {
+          "date": "2023-10-31 00:00:00",
+          "portfolio": 31.69,
+          "market": 36.98
+        },
+        {
+          "date": "2023-11-30 00:00:00",
+          "portfolio": 34.06,
+          "market": 40.36
+        },
+        {
+          "date": "2023-12-31 00:00:00",
+          "portfolio": 40.06,
+          "market": 48.1
+        },
+        {
+          "date": "2024-01-31 00:00:00",
+          "portfolio": 40.29,
+          "market": 46.78
+        },
+        {
+          "date": "2024-02-29 00:00:00",
+          "portfolio": 57.88,
+          "market": 66.87
+        },
+        {
+          "date": "2024-03-31 00:00:00",
+          "portfolio": 68.53,
+          "market": 88.77
+        },
+        {
+          "date": "2024-04-30 00:00:00",
+          "portfolio": 63.76,
+          "market": 78.47
+        },
+        {
+          "date": "2024-05-31 00:00:00",
+          "portfolio": 67.4,
+          "market": 85.39
+        },
+        {
+          "date": "2024-06-30 00:00:00",
+          "portfolio": 60.94,
+          "market": 74.9
+        },
+        {
+          "date": "2024-07-31 00:00:00",
+          "portfolio": 65.55,
+          "market": 77.16
+        },
+        {
+          "date": "2024-08-31 00:00:00",
+          "portfolio": 58.85,
+          "market": 65.46
+        },
+        {
+          "date": "2024-09-30 00:00:00",
+          "portfolio": 65.37,
+          "market": 73.59
+        },
+        {
+          "date": "2024-10-31 00:00:00",
+          "portfolio": 70.6,
+          "market": 81.86
+        },
+        {
+          "date": "2024-11-30 00:00:00",
+          "portfolio": 91.4,
+          "market": 129.53
+        },
+        {
+          "date": "2024-12-31 00:00:00",
+          "portfolio": 89.26,
+          "market": 119.62
+        },
+        {
+          "date": "2025-01-31 00:00:00",
+          "portfolio": 97.79,
+          "market": 123.13
+        },
+        {
+          "date": "2025-02-28 00:00:00",
+          "portfolio": 80.83,
+          "market": 93.49
+        },
+        {
+          "date": "2025-03-31 00:00:00",
+          "portfolio": 78.95,
+          "market": 83.05
+        },
+        {
+          "date": "2025-04-30 00:00:00",
+          "portfolio": 87.92,
+          "market": 86.92
+        },
+        {
+          "date": "2025-05-31 00:00:00",
+          "portfolio": 96.82,
+          "market": 102.29
+        },
+        {
+          "date": "2025-06-30 00:00:00",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2025-07-31 00:00:00",
+          "portfolio": 111.35,
+          "market": 127.99
+        },
+        {
+          "date": "2025-08-31 00:00:00",
+          "portfolio": 106.62,
+          "market": 132.38
+        },
+        {
+          "date": "2025-09-30 00:00:00",
+          "portfolio": 115.29,
+          "market": 142.29
+        },
+        {
+          "date": "2025-10-31 00:00:00",
+          "portfolio": 111.62,
+          "market": 130.65
+        },
+        {
+          "date": "2025-11-30 00:00:00",
+          "portfolio": 92.99,
+          "market": 106.13
+        },
+        {
+          "date": "2025-12-31 00:00:00",
+          "portfolio": 90.72,
+          "market": 100.31
+        },
+        {
+          "date": "2026-01-31 00:00:00",
+          "portfolio": 87.2,
+          "market": 95.21
+        }
+      ],
+      "numPortfolios": 1,
+      "trainPeriodStart": "2023-02-28 00:00:00",
+      "trainPeriodEnd": "2025-05-31 00:00:00",
+      "testPeriodStart": "2025-06-30 00:00:00",
+      "testPeriodEnd": "2026-01-31 00:00:00",
+      "efficientFrontier": [
+        {
+          "volatility": 45.16,
+          "expectedReturn": 70.19,
+          "sharpe": 1.4655,
+          "backtestReturn": -9.93
+        }
+      ],
+      "factor_tests": {
+        "BTC": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.028314,
+              "std_err": 0.015229,
+              "t_stat": 1.8592,
+              "p_value": 0.07481,
+              "ci_lower": -0.003051,
+              "ci_upper": 0.059679
+            },
+            "CMKT": {
+              "beta": 0.696757,
+              "std_err": 0.091208,
+              "t_stat": 7.6392,
+              "p_value": 0,
+              "ci_lower": 0.508909,
+              "ci_upper": 0.884604
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": null,
+              "p_value": null,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.016466,
+              "std_err": 0.060614,
+              "t_stat": -0.2717,
+              "p_value": 0.78812,
+              "ci_lower": -0.141303,
+              "ci_upper": 0.108371
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.736133,
+            "adj_r_squared": 0.715023,
+            "n_obs": 28,
+            "df_residual": 25,
+            "f_stat": 34.8723,
+            "f_pvalue": 0
+          }
+        },
+        "ETH": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.017194,
+              "std_err": 0.017796,
+              "t_stat": -0.9662,
+              "p_value": 0.343216,
+              "ci_lower": -0.053845,
+              "ci_upper": 0.019458
+            },
+            "CMKT": {
+              "beta": 0.877635,
+              "std_err": 0.106581,
+              "t_stat": 8.2345,
+              "p_value": 0,
+              "ci_lower": 0.658128,
+              "ci_upper": 1.097141
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": null,
+              "p_value": null,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.118164,
+              "std_err": 0.07083,
+              "t_stat": -1.6683,
+              "p_value": 0.10774,
+              "ci_lower": -0.264041,
+              "ci_upper": 0.027713
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.742966,
+            "adj_r_squared": 0.722403,
+            "n_obs": 28,
+            "df_residual": 25,
+            "f_stat": 36.1317,
+            "f_pvalue": 0
+          }
+        },
+        "BNB": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.007779,
+              "std_err": 0.016353,
+              "t_stat": -0.4757,
+              "p_value": 0.638422,
+              "ci_lower": -0.04146,
+              "ci_upper": 0.025901
+            },
+            "CMKT": {
+              "beta": 0.770102,
+              "std_err": 0.097942,
+              "t_stat": 7.8629,
+              "p_value": 0,
+              "ci_lower": 0.568388,
+              "ci_upper": 0.971817
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": null,
+              "p_value": null,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.289586,
+              "std_err": 0.065089,
+              "t_stat": -4.4491,
+              "p_value": 0.000155,
+              "ci_lower": -0.423639,
+              "ci_upper": -0.155533
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.716411,
+            "adj_r_squared": 0.693724,
+            "n_obs": 28,
+            "df_residual": 25,
+            "f_stat": 31.5779,
+            "f_pvalue": 0
+          }
+        },
+        "DOGE": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.003341,
+              "std_err": 0.020996,
+              "t_stat": -0.1591,
+              "p_value": 0.874848,
+              "ci_lower": -0.046583,
+              "ci_upper": 0.039901
+            },
+            "CMKT": {
+              "beta": 1.655506,
+              "std_err": 0.125746,
+              "t_stat": 13.1655,
+              "p_value": 0,
+              "ci_lower": 1.396529,
+              "ci_upper": 1.914484
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": null,
+              "p_value": null,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.424216,
+              "std_err": 0.083566,
+              "t_stat": 5.0764,
+              "p_value": 3.1e-05,
+              "ci_lower": 0.252108,
+              "ci_upper": 0.596324
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.926812,
+            "adj_r_squared": 0.920957,
+            "n_obs": 28,
+            "df_residual": 25,
+            "f_stat": 158.2933,
+            "f_pvalue": 0
+          }
+        }
+      }
+    },
+    "llmResult": null,
+    "classicResult": null,
+    "comparisonData": null,
+    "description": "Meilleur crypto du marché, plus cher",
+    "personTag": "Syuma",
+    "observedInterpretation": "",
+    "assetMode": "crypto",
+    "simulationStartDate": "2022-01-01",
+    "simulationEndDate": "2026-01-31"
+  },
+  {
     "id": "sim-1777915194671-jy7pr",
     "date": "2026-05-04T17:19:54.671Z",
     "modelId": "markowitz-classic",
