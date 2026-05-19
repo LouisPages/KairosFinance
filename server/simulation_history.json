@@ -1,5 +1,1857 @@
 [
   {
+    "id": "sim-1779176865141-w76bt",
+    "date": "2026-05-19T07:47:45.141Z",
+    "modelId": "markowitz-crypto-ff3",
+    "symbols": [
+      "AAVE",
+      "OKB",
+      "UNI",
+      "DOT",
+      "PAXG"
+    ],
+    "result": {
+      "weights": {
+        "DOT": 0,
+        "UNI": 0,
+        "OKB": 0.8044828423372276,
+        "AAVE": 0.19551715766277245
+      },
+      "sharpe": -0.1319,
+      "expectedReturn": -7.55,
+      "volatility": 87.58,
+      "maxDrawdown": 0,
+      "comparisonData": [
+        {
+          "date": "2021-11-30 00:00:00",
+          "portfolio": 140.33,
+          "market": 298.21
+        },
+        {
+          "date": "2021-12-31 00:00:00",
+          "portfolio": 162.83,
+          "market": 287.8
+        },
+        {
+          "date": "2022-01-31 00:00:00",
+          "portfolio": 114.13,
+          "market": 184.84
+        },
+        {
+          "date": "2022-02-28 00:00:00",
+          "portfolio": 93.08,
+          "market": 164.18
+        },
+        {
+          "date": "2022-03-31 00:00:00",
+          "portfolio": 125.87,
+          "market": 223.34
+        },
+        {
+          "date": "2022-04-30 00:00:00",
+          "portfolio": 105.3,
+          "market": 164.28
+        },
+        {
+          "date": "2022-05-31 00:00:00",
+          "portfolio": 72.05,
+          "market": 115.07
+        },
+        {
+          "date": "2022-06-30 00:00:00",
+          "portfolio": 64.18,
+          "market": 88.12
+        },
+        {
+          "date": "2022-07-31 00:00:00",
+          "portfolio": 96.95,
+          "market": 131.72
+        },
+        {
+          "date": "2022-08-31 00:00:00",
+          "portfolio": 82.08,
+          "market": 108.03
+        },
+        {
+          "date": "2022-09-30 00:00:00",
+          "portfolio": 82.89,
+          "market": 105.16
+        },
+        {
+          "date": "2022-10-31 00:00:00",
+          "portfolio": 85.96,
+          "market": 111.31
+        },
+        {
+          "date": "2022-11-30 00:00:00",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2022-12-31 00:00:00",
+          "portfolio": 116.36,
+          "market": 95.94
+        },
+        {
+          "date": "2023-01-31 00:00:00",
+          "portfolio": 173.52,
+          "market": 137.54
+        }
+      ],
+      "numPortfolios": 1,
+      "trainPeriodStart": "2021-11-30 00:00:00",
+      "trainPeriodEnd": "2022-10-31 00:00:00",
+      "testPeriodStart": "2022-11-30 00:00:00",
+      "testPeriodEnd": "2023-01-31 00:00:00",
+      "efficientFrontier": [
+        {
+          "volatility": 87.58,
+          "expectedReturn": -7.55,
+          "sharpe": -0.1319,
+          "backtestReturn": 101.86
+        }
+      ],
+      "factor_tests": {
+        "DOT": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.069939,
+              "std_err": 0.034448,
+              "t_stat": -2.0303,
+              "p_value": 0.072899,
+              "ci_lower": -0.147865,
+              "ci_upper": 0.007987
+            },
+            "CMKT": {
+              "beta": 0.976227,
+              "std_err": 0.190503,
+              "t_stat": 5.1245,
+              "p_value": 0.000624,
+              "ci_lower": 0.545279,
+              "ci_upper": 1.407175
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 6.3876,
+              "p_value": 0.000127,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.080821,
+              "std_err": 0.193199,
+              "t_stat": 0.4183,
+              "p_value": 0.685511,
+              "ci_lower": -0.356226,
+              "ci_upper": 0.517868
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.841758,
+            "adj_r_squared": 0.806593,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 23.9375,
+            "f_pvalue": 0.000249
+          }
+        },
+        "UNI": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.031965,
+              "std_err": 0.044154,
+              "t_stat": 0.7239,
+              "p_value": 0.487491,
+              "ci_lower": -0.067918,
+              "ci_upper": 0.131848
+            },
+            "CMKT": {
+              "beta": 1.560618,
+              "std_err": 0.244182,
+              "t_stat": 6.3912,
+              "p_value": 0.000127,
+              "ci_lower": 1.008241,
+              "ci_upper": 2.112995
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 7.6665,
+              "p_value": 3.1e-05,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.283851,
+              "std_err": 0.247637,
+              "t_stat": 1.1462,
+              "p_value": 0.281259,
+              "ci_lower": -0.276344,
+              "ci_upper": 0.844045
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.878218,
+            "adj_r_squared": 0.851155,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 32.4512,
+            "f_pvalue": 7.7e-05
+          }
+        },
+        "OKB": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.032901,
+              "std_err": 0.045676,
+              "t_stat": 0.7203,
+              "p_value": 0.489615,
+              "ci_lower": -0.070425,
+              "ci_upper": 0.136227
+            },
+            "CMKT": {
+              "beta": 0.901189,
+              "std_err": 0.252598,
+              "t_stat": 3.5677,
+              "p_value": 0.006046,
+              "ci_lower": 0.329773,
+              "ci_upper": 1.472606
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 4.9203,
+              "p_value": 0.000824,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.17779,
+              "std_err": 0.256173,
+              "t_stat": -0.694,
+              "p_value": 0.505186,
+              "ci_lower": -0.757293,
+              "ci_upper": 0.401714
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.79226,
+            "adj_r_squared": 0.746095,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 17.1617,
+            "f_pvalue": 0.000849
+          }
+        },
+        "AAVE": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.015309,
+              "std_err": 0.045407,
+              "t_stat": 0.3371,
+              "p_value": 0.74374,
+              "ci_lower": -0.087409,
+              "ci_upper": 0.118027
+            },
+            "CMKT": {
+              "beta": 1.578037,
+              "std_err": 0.251112,
+              "t_stat": 6.2842,
+              "p_value": 0.000144,
+              "ci_lower": 1.009982,
+              "ci_upper": 2.146092
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 8.3699,
+              "p_value": 1.5e-05,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.153918,
+              "std_err": 0.254666,
+              "t_stat": -0.6044,
+              "p_value": 0.560508,
+              "ci_lower": -0.730013,
+              "ci_upper": 0.422176
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.911584,
+            "adj_r_squared": 0.891936,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 46.3958,
+            "f_pvalue": 1.8e-05
+          }
+        }
+      }
+    },
+    "llmResult": null,
+    "classicResult": null,
+    "comparisonData": null,
+    "description": "Small Cap Post Covid (5/20) 2021-2023",
+    "personTag": "Syuma",
+    "observedInterpretation": "",
+    "assetMode": "crypto",
+    "simulationStartDate": "2020-10-01",
+    "simulationEndDate": "2023-01-31"
+  },
+  {
+    "id": "sim-1779176800790-wwrey",
+    "date": "2026-05-19T07:46:40.790Z",
+    "modelId": "markowitz-crypto-ff3",
+    "symbols": [
+      "AAVE",
+      "OKB",
+      "UNI",
+      "DOT",
+      "PAXG",
+      "WBT"
+    ],
+    "result": {
+      "weights": {
+        "DOT": 0,
+        "UNI": 0,
+        "OKB": 0.07884745600859107,
+        "AAVE": 0.2771634647041003,
+        "WBT": 0.6439890792873085
+      },
+      "sharpe": 2.7168,
+      "expectedReturn": 135.39,
+      "volatility": 48.36,
+      "maxDrawdown": 14.96,
+      "comparisonData": [
+        {
+          "date": "2024-02-29 00:00:00",
+          "portfolio": 18.35,
+          "market": 38.09
+        },
+        {
+          "date": "2024-03-31 00:00:00",
+          "portfolio": 20.84,
+          "market": 44.03
+        },
+        {
+          "date": "2024-04-30 00:00:00",
+          "portfolio": 21.53,
+          "market": 35.58
+        },
+        {
+          "date": "2024-05-31 00:00:00",
+          "portfolio": 21.85,
+          "market": 38.93
+        },
+        {
+          "date": "2024-06-30 00:00:00",
+          "portfolio": 20.79,
+          "market": 35.1
+        },
+        {
+          "date": "2024-07-31 00:00:00",
+          "portfolio": 22.23,
+          "market": 34.13
+        },
+        {
+          "date": "2024-08-31 00:00:00",
+          "portfolio": 24.49,
+          "market": 32.76
+        },
+        {
+          "date": "2024-09-30 00:00:00",
+          "portfolio": 27.5,
+          "market": 38.28
+        },
+        {
+          "date": "2024-10-31 00:00:00",
+          "portfolio": 38.01,
+          "market": 41.89
+        },
+        {
+          "date": "2024-11-30 00:00:00",
+          "portfolio": 48.25,
+          "market": 63.78
+        },
+        {
+          "date": "2024-12-31 00:00:00",
+          "portfolio": 57.44,
+          "market": 68.52
+        },
+        {
+          "date": "2025-01-31 00:00:00",
+          "portfolio": 63.64,
+          "market": 69.67
+        },
+        {
+          "date": "2025-02-28 00:00:00",
+          "portfolio": 53.14,
+          "market": 53.61
+        },
+        {
+          "date": "2025-03-31 00:00:00",
+          "portfolio": 53.11,
+          "market": 48.14
+        },
+        {
+          "date": "2025-04-30 00:00:00",
+          "portfolio": 54.57,
+          "market": 48.48
+        },
+        {
+          "date": "2025-05-31 00:00:00",
+          "portfolio": 65.08,
+          "market": 55.55
+        },
+        {
+          "date": "2025-06-30 00:00:00",
+          "portfolio": 87.87,
+          "market": 62.98
+        },
+        {
+          "date": "2025-07-31 00:00:00",
+          "portfolio": 83.87,
+          "market": 66.91
+        },
+        {
+          "date": "2025-08-31 00:00:00",
+          "portfolio": 103.46,
+          "market": 104.8
+        },
+        {
+          "date": "2025-09-30 00:00:00",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2025-10-31 00:00:00",
+          "portfolio": 92.19,
+          "market": 80.6
+        },
+        {
+          "date": "2025-11-30 00:00:00",
+          "portfolio": 109.12,
+          "market": 76.94
+        },
+        {
+          "date": "2025-12-31 00:00:00",
+          "portfolio": 101.96,
+          "market": 70.54
+        },
+        {
+          "date": "2026-01-31 00:00:00",
+          "portfolio": 92.79,
+          "market": 62.41
+        }
+      ],
+      "numPortfolios": 1,
+      "trainPeriodStart": "2024-02-29 00:00:00",
+      "trainPeriodEnd": "2025-08-31 00:00:00",
+      "testPeriodStart": "2025-09-30 00:00:00",
+      "testPeriodEnd": "2026-01-31 00:00:00",
+      "efficientFrontier": [
+        {
+          "volatility": 48.36,
+          "expectedReturn": 135.39,
+          "sharpe": 2.7168,
+          "backtestReturn": -10.32
+        }
+      ],
+      "factor_tests": {
+        "DOT": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.091339,
+              "std_err": 0.059052,
+              "t_stat": -1.5467,
+              "p_value": 0.141476,
+              "ci_lower": -0.216524,
+              "ci_upper": 0.033847
+            },
+            "CMKT": {
+              "beta": 1.472043,
+              "std_err": 0.382845,
+              "t_stat": 3.845,
+              "p_value": 0.00143,
+              "ci_lower": 0.660447,
+              "ci_upper": 2.283638
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 4.0068,
+              "p_value": 0.001017,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.192778,
+              "std_err": 0.187882,
+              "t_stat": 1.0261,
+              "p_value": 0.320127,
+              "ci_lower": -0.205514,
+              "ci_upper": 0.591069
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.502113,
+            "adj_r_squared": 0.439878,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 8.0679,
+            "f_pvalue": 0.003776
+          }
+        },
+        "UNI": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.020863,
+              "std_err": 0.049622,
+              "t_stat": -0.4204,
+              "p_value": 0.679762,
+              "ci_lower": -0.126057,
+              "ci_upper": 0.084332
+            },
+            "CMKT": {
+              "beta": 1.699636,
+              "std_err": 0.321708,
+              "t_stat": 5.2832,
+              "p_value": 7.4e-05,
+              "ci_lower": 1.017645,
+              "ci_upper": 2.381626
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 5.1024,
+              "p_value": 0.000107,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.468194,
+              "std_err": 0.157879,
+              "t_stat": 2.9655,
+              "p_value": 0.009111,
+              "ci_lower": 0.133506,
+              "ci_upper": 0.802882
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.63607,
+            "adj_r_squared": 0.590578,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 13.9822,
+            "f_pvalue": 0.000308
+          }
+        },
+        "OKB": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.068127,
+              "std_err": 0.07407,
+              "t_stat": -0.9198,
+              "p_value": 0.371357,
+              "ci_lower": -0.225147,
+              "ci_upper": 0.088894
+            },
+            "CMKT": {
+              "beta": 1.31493,
+              "std_err": 0.480204,
+              "t_stat": 2.7383,
+              "p_value": 0.014581,
+              "ci_lower": 0.296943,
+              "ci_upper": 2.332917
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 4.4254,
+              "p_value": 0.000424,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -1.257795,
+              "std_err": 0.235661,
+              "t_stat": -5.3373,
+              "p_value": 6.7e-05,
+              "ci_lower": -1.757374,
+              "ci_upper": -0.758216
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.815598,
+            "adj_r_squared": 0.792548,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 35.3834,
+            "f_pvalue": 1e-06
+          }
+        },
+        "AAVE": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.039933,
+              "std_err": 0.044691,
+              "t_stat": 0.8935,
+              "p_value": 0.384813,
+              "ci_lower": -0.054808,
+              "ci_upper": 0.134674
+            },
+            "CMKT": {
+              "beta": 1.181446,
+              "std_err": 0.289739,
+              "t_stat": 4.0776,
+              "p_value": 0.000877,
+              "ci_lower": 0.567228,
+              "ci_upper": 1.795664
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 3.8128,
+              "p_value": 0.001531,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.394215,
+              "std_err": 0.14219,
+              "t_stat": 2.7725,
+              "p_value": 0.013591,
+              "ci_lower": 0.092786,
+              "ci_upper": 0.695643
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.517813,
+            "adj_r_squared": 0.45754,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 8.5911,
+            "f_pvalue": 0.002922
+          }
+        },
+        "WBT": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.106426,
+              "std_err": 0.044406,
+              "t_stat": 2.3967,
+              "p_value": 0.029111,
+              "ci_lower": 0.01229,
+              "ci_upper": 0.200563
+            },
+            "CMKT": {
+              "beta": 0.431523,
+              "std_err": 0.287889,
+              "t_stat": 1.4989,
+              "p_value": 0.153365,
+              "ci_lower": -0.178775,
+              "ci_upper": 1.04182
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 1.233,
+              "p_value": 0.235373,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.235913,
+              "std_err": 0.141282,
+              "t_stat": 1.6698,
+              "p_value": 0.114403,
+              "ci_lower": -0.063592,
+              "ci_upper": 0.535417
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.172022,
+            "adj_r_squared": 0.068525,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 1.6621,
+            "f_pvalue": 0.220876
+          }
+        }
+      }
+    },
+    "llmResult": null,
+    "classicResult": null,
+    "comparisonData": null,
+    "description": "Small Cap (6/20 existant avant 2023)",
+    "personTag": "Syuma",
+    "observedInterpretation": "",
+    "assetMode": "crypto",
+    "simulationStartDate": "2023-01-01",
+    "simulationEndDate": "2026-01-31"
+  },
+  {
+    "id": "sim-1779176262005-rmfgc",
+    "date": "2026-05-19T07:37:42.005Z",
+    "modelId": "markowitz-crypto-ff3",
+    "symbols": [
+      "BCH",
+      "LEO",
+      "XMR",
+      "LINK",
+      "DAI",
+      "XLM",
+      "LTC",
+      "HBAR",
+      "AVAX",
+      "ZEC",
+      "SHIB",
+      "CRO"
+    ],
+    "result": {
+      "weights": {
+        "BCH": 0,
+        "LEO": 0.1350379067465909,
+        "XMR": 0.03292566893051454,
+        "LINK": 0,
+        "XLM": 0,
+        "LTC": 0,
+        "HBAR": 0,
+        "AVAX": 0,
+        "ZEC": 0.08335727276465323,
+        "SHIB": 0.5246666130050927,
+        "CRO": 0.22401253855314876
+      },
+      "sharpe": 0.7747,
+      "expectedReturn": 231.39,
+      "volatility": 293.51,
+      "maxDrawdown": 34.15,
+      "comparisonData": [
+        {
+          "date": "2021-10-31 00:00:00",
+          "portfolio": 211.59,
+          "market": 237.72
+        },
+        {
+          "date": "2021-11-30 00:00:00",
+          "portfolio": 297.81,
+          "market": 305.09
+        },
+        {
+          "date": "2021-12-31 00:00:00",
+          "portfolio": 240.63,
+          "market": 250.37
+        },
+        {
+          "date": "2022-01-31 00:00:00",
+          "portfolio": 168.37,
+          "market": 182.99
+        },
+        {
+          "date": "2022-02-28 00:00:00",
+          "portfolio": 192.59,
+          "market": 192.71
+        },
+        {
+          "date": "2022-03-31 00:00:00",
+          "portfolio": 235.57,
+          "market": 249.89
+        },
+        {
+          "date": "2022-04-30 00:00:00",
+          "portfolio": 191.76,
+          "market": 192.74
+        },
+        {
+          "date": "2022-05-31 00:00:00",
+          "portfolio": 119.11,
+          "market": 131.48
+        },
+        {
+          "date": "2022-06-30 00:00:00",
+          "portfolio": 94.79,
+          "market": 94.89
+        },
+        {
+          "date": "2022-07-31 00:00:00",
+          "portfolio": 107.32,
+          "market": 112.35
+        },
+        {
+          "date": "2022-08-31 00:00:00",
+          "portfolio": 105.68,
+          "market": 100.91
+        },
+        {
+          "date": "2022-09-30 00:00:00",
+          "portfolio": 95.42,
+          "market": 98.46
+        },
+        {
+          "date": "2022-10-31 00:00:00",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2022-11-30 00:00:00",
+          "portfolio": 73.11,
+          "market": 85.56
+        },
+        {
+          "date": "2022-12-31 00:00:00",
+          "portfolio": 65.85,
+          "market": 75.04
+        },
+        {
+          "date": "2023-01-31 00:00:00",
+          "portfolio": 87.98,
+          "market": 102.04
+        }
+      ],
+      "numPortfolios": 1,
+      "trainPeriodStart": "2021-10-31 00:00:00",
+      "trainPeriodEnd": "2022-09-30 00:00:00",
+      "testPeriodStart": "2022-10-31 00:00:00",
+      "testPeriodEnd": "2023-01-31 00:00:00",
+      "efficientFrontier": [
+        {
+          "volatility": 293.51,
+          "expectedReturn": 231.39,
+          "sharpe": 0.7747,
+          "backtestReturn": -7.8
+        }
+      ],
+      "factor_tests": {
+        "BCH": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.051067,
+              "std_err": 0.035437,
+              "t_stat": -1.441,
+              "p_value": 0.183443,
+              "ci_lower": -0.131232,
+              "ci_upper": 0.029098
+            },
+            "CMKT": {
+              "beta": 1.14979,
+              "std_err": 0.175417,
+              "t_stat": 6.5546,
+              "p_value": 0.000105,
+              "ci_lower": 0.752968,
+              "ci_upper": 1.546612
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -5.3265,
+              "p_value": 0.000477,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.428563,
+              "std_err": 0.140075,
+              "t_stat": -3.0595,
+              "p_value": 0.013582,
+              "ci_lower": -0.745435,
+              "ci_upper": -0.11169
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.840137,
+            "adj_r_squared": 0.804612,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 23.6491,
+            "f_pvalue": 0.000261
+          }
+        },
+        "LEO": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.033254,
+              "std_err": 0.072981,
+              "t_stat": 0.4557,
+              "p_value": 0.659434,
+              "ci_lower": -0.131841,
+              "ci_upper": 0.198349
+            },
+            "CMKT": {
+              "beta": -0.072447,
+              "std_err": 0.361262,
+              "t_stat": -0.2005,
+              "p_value": 0.845518,
+              "ci_lower": -0.889678,
+              "ci_upper": 0.744784
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 0.4795,
+              "p_value": 0.64303,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.205178,
+              "std_err": 0.288477,
+              "t_stat": 0.7112,
+              "p_value": 0.494952,
+              "ci_lower": -0.447402,
+              "ci_upper": 0.857757
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.069574,
+            "adj_r_squared": -0.137188,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 0.3365,
+            "f_pvalue": 0.722885
+          }
+        },
+        "XMR": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.019148,
+              "std_err": 0.05199,
+              "t_stat": 0.3683,
+              "p_value": 0.72116,
+              "ci_lower": -0.098461,
+              "ci_upper": 0.136757
+            },
+            "CMKT": {
+              "beta": 0.910822,
+              "std_err": 0.257354,
+              "t_stat": 3.5392,
+              "p_value": 0.006322,
+              "ci_lower": 0.328647,
+              "ci_upper": 1.492997
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -3.1197,
+              "p_value": 0.012325,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.437188,
+              "std_err": 0.205504,
+              "t_stat": -2.1274,
+              "p_value": 0.062284,
+              "ci_lower": -0.90207,
+              "ci_upper": 0.027693
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.586019,
+            "adj_r_squared": 0.494024,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 6.3701,
+            "f_pvalue": 0.018898
+          }
+        },
+        "LINK": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.04452,
+              "std_err": 0.051945,
+              "t_stat": -0.8571,
+              "p_value": 0.413647,
+              "ci_lower": -0.162028,
+              "ci_upper": 0.072987
+            },
+            "CMKT": {
+              "beta": 0.836632,
+              "std_err": 0.257132,
+              "t_stat": 3.2537,
+              "p_value": 0.009938,
+              "ci_lower": 0.254959,
+              "ci_upper": 1.418304
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -2.4659,
+              "p_value": 0.035809,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.240456,
+              "std_err": 0.205326,
+              "t_stat": -1.1711,
+              "p_value": 0.271634,
+              "ci_lower": -0.704936,
+              "ci_upper": 0.224025
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.588826,
+            "adj_r_squared": 0.497454,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 6.4443,
+            "f_pvalue": 0.018328
+          }
+        },
+        "XLM": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.042275,
+              "std_err": 0.032188,
+              "t_stat": -1.3134,
+              "p_value": 0.221556,
+              "ci_lower": -0.115089,
+              "ci_upper": 0.03054
+            },
+            "CMKT": {
+              "beta": 0.783699,
+              "std_err": 0.159333,
+              "t_stat": 4.9186,
+              "p_value": 0.000826,
+              "ci_lower": 0.423262,
+              "ci_upper": 1.144136
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -3.4757,
+              "p_value": 0.006985,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.162684,
+              "std_err": 0.127232,
+              "t_stat": -1.2786,
+              "p_value": 0.233009,
+              "ci_lower": -0.450502,
+              "ci_upper": 0.125134
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.786012,
+            "adj_r_squared": 0.738459,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 16.5292,
+            "f_pvalue": 0.00097
+          }
+        },
+        "LTC": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.049447,
+              "std_err": 0.018373,
+              "t_stat": -2.6913,
+              "p_value": 0.024743,
+              "ci_lower": -0.091009,
+              "ci_upper": -0.007885
+            },
+            "CMKT": {
+              "beta": 0.892546,
+              "std_err": 0.090946,
+              "t_stat": 9.814,
+              "p_value": 4e-06,
+              "ci_lower": 0.686811,
+              "ci_upper": 1.098282
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -6.866,
+              "p_value": 7.3e-05,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.175485,
+              "std_err": 0.072623,
+              "t_stat": -2.4164,
+              "p_value": 0.03884,
+              "ci_lower": -0.33977,
+              "ci_upper": -0.0112
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.937007,
+            "adj_r_squared": 0.923009,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 66.9368,
+            "f_pvalue": 4e-06
+          }
+        },
+        "HBAR": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.101829,
+              "std_err": 0.031945,
+              "t_stat": -3.1876,
+              "p_value": 0.011049,
+              "ci_lower": -0.174094,
+              "ci_upper": -0.029563
+            },
+            "CMKT": {
+              "beta": 0.852706,
+              "std_err": 0.158132,
+              "t_stat": 5.3924,
+              "p_value": 0.000437,
+              "ci_lower": 0.494986,
+              "ci_upper": 1.210426
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -3.5817,
+              "p_value": 0.005915,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.120631,
+              "std_err": 0.126273,
+              "t_stat": -0.9553,
+              "p_value": 0.364367,
+              "ci_lower": -0.40628,
+              "ci_upper": 0.165017
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.830744,
+            "adj_r_squared": 0.793131,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 22.0869,
+            "f_pvalue": 0.000338
+          }
+        },
+        "AVAX": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.022631,
+              "std_err": 0.071095,
+              "t_stat": 0.3183,
+              "p_value": 0.757504,
+              "ci_lower": -0.138197,
+              "ci_upper": 0.18346
+            },
+            "CMKT": {
+              "beta": 1.696266,
+              "std_err": 0.351927,
+              "t_stat": 4.8199,
+              "p_value": 0.000947,
+              "ci_lower": 0.900152,
+              "ci_upper": 2.492379
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -4.3506,
+              "p_value": 0.001849,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.870103,
+              "std_err": 0.281023,
+              "t_stat": -3.0962,
+              "p_value": 0.012801,
+              "ci_lower": -1.505821,
+              "ci_upper": -0.234386
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.721853,
+            "adj_r_squared": 0.660042,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 11.6785,
+            "f_pvalue": 0.003157
+          }
+        },
+        "ZEC": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.055817,
+              "std_err": 0.055806,
+              "t_stat": 1.0002,
+              "p_value": 0.343342,
+              "ci_lower": -0.070424,
+              "ci_upper": 0.182059
+            },
+            "CMKT": {
+              "beta": 1.788784,
+              "std_err": 0.276243,
+              "t_stat": 6.4754,
+              "p_value": 0.000115,
+              "ci_lower": 1.163879,
+              "ci_upper": 2.41369
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -4.9968,
+              "p_value": 0.000742,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.552512,
+              "std_err": 0.220587,
+              "t_stat": -2.5047,
+              "p_value": 0.0336,
+              "ci_lower": -1.051515,
+              "ci_upper": -0.053509
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.846533,
+            "adj_r_squared": 0.812429,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 24.8222,
+            "f_pvalue": 0.000217
+          }
+        },
+        "SHIB": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.007431,
+              "std_err": 0.142561,
+              "t_stat": 0.0521,
+              "p_value": 0.959566,
+              "ci_lower": -0.315063,
+              "ci_upper": 0.329926
+            },
+            "CMKT": {
+              "beta": 0.998475,
+              "std_err": 0.705685,
+              "t_stat": 1.4149,
+              "p_value": 0.190752,
+              "ci_lower": -0.597896,
+              "ci_upper": 2.594846
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 2.3606,
+              "p_value": 0.042562,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 3.487821,
+              "std_err": 0.563508,
+              "t_stat": 6.1895,
+              "p_value": 0.000161,
+              "ci_lower": 2.213077,
+              "ci_upper": 4.762564
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.9186,
+            "adj_r_squared": 0.900511,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 50.7824,
+            "f_pvalue": 1.3e-05
+          }
+        },
+        "CRO": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.151382,
+              "std_err": 0.194628,
+              "t_stat": 0.7778,
+              "p_value": 0.456644,
+              "ci_lower": -0.288897,
+              "ci_upper": 0.591662
+            },
+            "CMKT": {
+              "beta": 2.168462,
+              "std_err": 0.963425,
+              "t_stat": 2.2508,
+              "p_value": 0.050938,
+              "ci_lower": -0.010957,
+              "ci_upper": 4.347881
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": -1.7625,
+              "p_value": 0.111822,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.708301,
+              "std_err": 0.769319,
+              "t_stat": -0.9207,
+              "p_value": 0.381231,
+              "ci_lower": -2.448623,
+              "ci_upper": 1.03202
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.394688,
+            "adj_r_squared": 0.260174,
+            "n_obs": 12,
+            "df_residual": 9,
+            "f_stat": 2.9342,
+            "f_pvalue": 0.10445
+          }
+        }
+      }
+    },
+    "llmResult": null,
+    "classicResult": null,
+    "comparisonData": null,
+    "description": "Mid Cap (11/20) post Covid 2020-2023",
+    "personTag": "Syuma",
+    "observedInterpretation": "",
+    "assetMode": "crypto",
+    "simulationStartDate": "2020-09-01",
+    "simulationEndDate": "2023-01-31"
+  },
+  {
+    "id": "sim-1779176058154-pnd4h",
+    "date": "2026-05-19T07:34:18.154Z",
+    "modelId": "markowitz-crypto-ff3",
+    "symbols": [
+      "BTC",
+      "ETH",
+      "USDT",
+      "BNB",
+      "XRP",
+      "USDC",
+      "SOL",
+      "TRX",
+      "DOGE",
+      "ADA"
+    ],
+    "result": {
+      "weights": {
+        "BTC": 0,
+        "ETH": 0.12194628486136407,
+        "BNB": 0.11883146261717979,
+        "XRP": 0,
+        "SOL": 0.7592222525214561,
+        "TRX": 0,
+        "DOGE": 0,
+        "ADA": 0
+      },
+      "sharpe": 0.2558,
+      "expectedReturn": 50.77,
+      "volatility": 182.85,
+      "maxDrawdown": 8.83,
+      "comparisonData": [
+        {
+          "date": "2021-05-31 00:00:00",
+          "portfolio": 207.3,
+          "market": 193.94
+        },
+        {
+          "date": "2021-06-30 00:00:00",
+          "portfolio": 232.59,
+          "market": 181.62
+        },
+        {
+          "date": "2021-07-31 00:00:00",
+          "portfolio": 229.73,
+          "market": 182.94
+        },
+        {
+          "date": "2021-08-31 00:00:00",
+          "portfolio": 668.72,
+          "market": 308.96
+        },
+        {
+          "date": "2021-09-30 00:00:00",
+          "portfolio": 761.89,
+          "market": 275
+        },
+        {
+          "date": "2021-10-31 00:00:00",
+          "portfolio": 1096.97,
+          "market": 360.47
+        },
+        {
+          "date": "2021-11-30 00:00:00",
+          "portfolio": 1172.08,
+          "market": 347.29
+        },
+        {
+          "date": "2021-12-31 00:00:00",
+          "portfolio": 986.42,
+          "market": 287.5
+        },
+        {
+          "date": "2022-01-31 00:00:00",
+          "portfolio": 575.56,
+          "market": 209.61
+        },
+        {
+          "date": "2022-02-28 00:00:00",
+          "portfolio": 536.34,
+          "market": 203.55
+        },
+        {
+          "date": "2022-03-31 00:00:00",
+          "portfolio": 736.66,
+          "market": 258.5
+        },
+        {
+          "date": "2022-04-30 00:00:00",
+          "portfolio": 588.5,
+          "market": 210.78
+        },
+        {
+          "date": "2022-05-31 00:00:00",
+          "portfolio": 332.27,
+          "market": 163.44
+        },
+        {
+          "date": "2022-06-30 00:00:00",
+          "portfolio": 230.48,
+          "market": 117.59
+        },
+        {
+          "date": "2022-07-31 00:00:00",
+          "portfolio": 305.28,
+          "market": 142.53
+        },
+        {
+          "date": "2022-08-31 00:00:00",
+          "portfolio": 235.45,
+          "market": 124.02
+        },
+        {
+          "date": "2022-09-30 00:00:00",
+          "portfolio": 246.19,
+          "market": 129.08
+        },
+        {
+          "date": "2022-10-31 00:00:00",
+          "portfolio": 249.34,
+          "market": 147.76
+        },
+        {
+          "date": "2022-11-30 00:00:00",
+          "portfolio": 128.2,
+          "market": 115.82
+        },
+        {
+          "date": "2022-12-31 00:00:00",
+          "portfolio": 100,
+          "market": 100
+        },
+        {
+          "date": "2023-01-31 00:00:00",
+          "portfolio": 214.79,
+          "market": 143.23
+        },
+        {
+          "date": "2023-02-28 00:00:00",
+          "portfolio": 207.03,
+          "market": 142.93
+        },
+        {
+          "date": "2023-03-31 00:00:00",
+          "portfolio": 195.82,
+          "market": 152.51
+        },
+        {
+          "date": "2023-04-30 00:00:00",
+          "portfolio": 216.11,
+          "market": 159.02
+        }
+      ],
+      "numPortfolios": 1,
+      "trainPeriodStart": "2021-05-31 00:00:00",
+      "trainPeriodEnd": "2022-11-30 00:00:00",
+      "testPeriodStart": "2022-12-31 00:00:00",
+      "testPeriodEnd": "2023-04-30 00:00:00",
+      "efficientFrontier": [
+        {
+          "volatility": 182.85,
+          "expectedReturn": 50.77,
+          "sharpe": 0.2558,
+          "backtestReturn": 68.58
+        }
+      ],
+      "factor_tests": {
+        "BTC": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.020615,
+              "std_err": 0.027691,
+              "t_stat": -0.7444,
+              "p_value": 0.467406,
+              "ci_lower": -0.079318,
+              "ci_upper": 0.038089
+            },
+            "CMKT": {
+              "beta": 1.198004,
+              "std_err": 0.210698,
+              "t_stat": 5.6859,
+              "p_value": 3.4e-05,
+              "ci_lower": 0.751344,
+              "ci_upper": 1.644665
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 5.0683,
+              "p_value": 0.000114,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.319259,
+              "std_err": 0.144038,
+              "t_stat": -2.2165,
+              "p_value": 0.041497,
+              "ci_lower": -0.624606,
+              "ci_upper": -0.013911
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.719743,
+            "adj_r_squared": 0.68471,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 20.5452,
+            "f_pvalue": 3.8e-05
+          }
+        },
+        "ETH": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.013726,
+              "std_err": 0.032736,
+              "t_stat": 0.4193,
+              "p_value": 0.680567,
+              "ci_lower": -0.05567,
+              "ci_upper": 0.083123
+            },
+            "CMKT": {
+              "beta": 1.501108,
+              "std_err": 0.24908,
+              "t_stat": 6.0266,
+              "p_value": 1.8e-05,
+              "ci_lower": 0.973081,
+              "ci_upper": 2.029135
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 5.2322,
+              "p_value": 8.2e-05,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.310047,
+              "std_err": 0.170277,
+              "t_stat": -1.8208,
+              "p_value": 0.087386,
+              "ci_lower": -0.671018,
+              "ci_upper": 0.050925
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.763697,
+            "adj_r_squared": 0.734159,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 25.8548,
+            "f_pvalue": 1e-05
+          }
+        },
+        "BNB": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.005429,
+              "std_err": 0.02826,
+              "t_stat": 0.1921,
+              "p_value": 0.850069,
+              "ci_lower": -0.054479,
+              "ci_upper": 0.065337
+            },
+            "CMKT": {
+              "beta": 1.102774,
+              "std_err": 0.215023,
+              "t_stat": 5.1286,
+              "p_value": 0.000101,
+              "ci_lower": 0.646947,
+              "ci_upper": 1.558602
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 4.0679,
+              "p_value": 0.000895,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.014065,
+              "std_err": 0.146995,
+              "t_stat": -0.0957,
+              "p_value": 0.924959,
+              "ci_lower": -0.32568,
+              "ci_upper": 0.297549
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.779468,
+            "adj_r_squared": 0.751901,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 28.2759,
+            "f_pvalue": 6e-06
+          }
+        },
+        "XRP": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.020648,
+              "std_err": 0.036412,
+              "t_stat": -0.5671,
+              "p_value": 0.578539,
+              "ci_lower": -0.097839,
+              "ci_upper": 0.056542
+            },
+            "CMKT": {
+              "beta": 1.123546,
+              "std_err": 0.277054,
+              "t_stat": 4.0553,
+              "p_value": 0.000919,
+              "ci_lower": 0.536218,
+              "ci_upper": 1.710875
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 3.3273,
+              "p_value": 0.004267,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.093569,
+              "std_err": 0.189401,
+              "t_stat": -0.494,
+              "p_value": 0.628002,
+              "ci_lower": -0.49508,
+              "ci_upper": 0.307943
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.654693,
+            "adj_r_squared": 0.611529,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 15.1678,
+            "f_pvalue": 0.000202
+          }
+        },
+        "SOL": {
+          "factor_stats": {
+            "alpha": {
+              "beta": 0.069728,
+              "std_err": 0.059683,
+              "t_stat": 1.1683,
+              "p_value": 0.2598,
+              "ci_lower": -0.056795,
+              "ci_upper": 0.196251
+            },
+            "CMKT": {
+              "beta": 2.031676,
+              "std_err": 0.454118,
+              "t_stat": 4.4739,
+              "p_value": 0.000384,
+              "ci_lower": 1.068988,
+              "ci_upper": 2.994363
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 2.8526,
+              "p_value": 0.01152,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.790667,
+              "std_err": 0.310446,
+              "t_stat": 2.5469,
+              "p_value": 0.021539,
+              "ci_lower": 0.132551,
+              "ci_upper": 1.448783
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.856951,
+            "adj_r_squared": 0.83907,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 47.9249,
+            "f_pvalue": 0
+          }
+        },
+        "TRX": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.014333,
+              "std_err": 0.032779,
+              "t_stat": -0.4373,
+              "p_value": 0.667761,
+              "ci_lower": -0.083822,
+              "ci_upper": 0.055156
+            },
+            "CMKT": {
+              "beta": 0.764548,
+              "std_err": 0.249411,
+              "t_stat": 3.0654,
+              "p_value": 0.007396,
+              "ci_lower": 0.235821,
+              "ci_upper": 1.293276
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 2.4705,
+              "p_value": 0.025119,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.034956,
+              "std_err": 0.170503,
+              "t_stat": -0.205,
+              "p_value": 0.840144,
+              "ci_lower": -0.396407,
+              "ci_upper": 0.326494
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.540317,
+            "adj_r_squared": 0.482856,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 9.4033,
+            "f_pvalue": 0.001994
+          }
+        },
+        "DOGE": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.000101,
+              "std_err": 0.052446,
+              "t_stat": -0.0019,
+              "p_value": 0.998484,
+              "ci_lower": -0.111282,
+              "ci_upper": 0.111079
+            },
+            "CMKT": {
+              "beta": 1.423916,
+              "std_err": 0.399051,
+              "t_stat": 3.5683,
+              "p_value": 0.002566,
+              "ci_lower": 0.577966,
+              "ci_upper": 2.269865
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 3.2545,
+              "p_value": 0.004973,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": -0.455589,
+              "std_err": 0.2728,
+              "t_stat": -1.67,
+              "p_value": 0.114354,
+              "ci_lower": -1.033899,
+              "ci_upper": 0.122722
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.480752,
+            "adj_r_squared": 0.415846,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 7.4069,
+            "f_pvalue": 0.005284
+          }
+        },
+        "ADA": {
+          "factor_stats": {
+            "alpha": {
+              "beta": -0.033268,
+              "std_err": 0.041058,
+              "t_stat": -0.8103,
+              "p_value": 0.429664,
+              "ci_lower": -0.120306,
+              "ci_upper": 0.05377
+            },
+            "CMKT": {
+              "beta": 0.850862,
+              "std_err": 0.312399,
+              "t_stat": 2.7236,
+              "p_value": 0.015026,
+              "ci_lower": 0.188606,
+              "ci_upper": 1.513117
+            },
+            "SIZE": {
+              "beta": 0,
+              "std_err": 0,
+              "t_stat": 1.5955,
+              "p_value": 0.130151,
+              "ci_lower": 0,
+              "ci_upper": 0
+            },
+            "MOM": {
+              "beta": 0.444975,
+              "std_err": 0.213563,
+              "t_stat": 2.0836,
+              "p_value": 0.053594,
+              "ci_lower": -0.007759,
+              "ci_upper": 0.897709
+            }
+          },
+          "model_stats": {
+            "r_squared": 0.735777,
+            "adj_r_squared": 0.702749,
+            "n_obs": 19,
+            "df_residual": 16,
+            "f_stat": 22.2775,
+            "f_pvalue": 2.4e-05
+          }
+        }
+      }
+    },
+    "llmResult": null,
+    "classicResult": null,
+    "comparisonData": null,
+    "description": "Large Cap (10) Post Covid 2021-2023",
+    "personTag": "Syuma",
+    "observedInterpretation": "",
+    "assetMode": "crypto",
+    "simulationStartDate": "2020-04-01",
+    "simulationEndDate": "2023-04-30"
+  },
+  {
     "id": "sim-1779175725253-et8jj",
     "date": "2026-05-19T07:28:45.253Z",
     "modelId": "markowitz-crypto-ff3",
@@ -707,398 +2559,6 @@
     "classicResult": null,
     "comparisonData": null,
     "description": "Mid cap (existant avant 2023, 13/20) Post covid",
-    "personTag": "Syuma",
-    "observedInterpretation": "",
-    "assetMode": "crypto",
-    "simulationStartDate": "2023-01-01",
-    "simulationEndDate": "2026-01-31"
-  },
-  {
-    "id": "sim-1779175583645-omjge",
-    "date": "2026-05-19T07:26:23.645Z",
-    "modelId": "markowitz-crypto-ff3",
-    "symbols": [
-      "PAXG",
-      "DOT",
-      "UNI",
-      "OKB",
-      "AAVE",
-      "WBT"
-    ],
-    "result": {
-      "weights": {
-        "DOT": 0,
-        "UNI": 0,
-        "OKB": 0.07884745600859107,
-        "AAVE": 0.2771634647041003,
-        "WBT": 0.6439890792873085
-      },
-      "sharpe": 2.7168,
-      "expectedReturn": 135.39,
-      "volatility": 48.36,
-      "maxDrawdown": 14.96,
-      "comparisonData": [
-        {
-          "date": "2024-02-29 00:00:00",
-          "portfolio": 18.35,
-          "market": 38.09
-        },
-        {
-          "date": "2024-03-31 00:00:00",
-          "portfolio": 20.84,
-          "market": 44.03
-        },
-        {
-          "date": "2024-04-30 00:00:00",
-          "portfolio": 21.53,
-          "market": 35.58
-        },
-        {
-          "date": "2024-05-31 00:00:00",
-          "portfolio": 21.85,
-          "market": 38.93
-        },
-        {
-          "date": "2024-06-30 00:00:00",
-          "portfolio": 20.79,
-          "market": 35.1
-        },
-        {
-          "date": "2024-07-31 00:00:00",
-          "portfolio": 22.23,
-          "market": 34.13
-        },
-        {
-          "date": "2024-08-31 00:00:00",
-          "portfolio": 24.49,
-          "market": 32.76
-        },
-        {
-          "date": "2024-09-30 00:00:00",
-          "portfolio": 27.5,
-          "market": 38.28
-        },
-        {
-          "date": "2024-10-31 00:00:00",
-          "portfolio": 38.01,
-          "market": 41.89
-        },
-        {
-          "date": "2024-11-30 00:00:00",
-          "portfolio": 48.25,
-          "market": 63.78
-        },
-        {
-          "date": "2024-12-31 00:00:00",
-          "portfolio": 57.44,
-          "market": 68.52
-        },
-        {
-          "date": "2025-01-31 00:00:00",
-          "portfolio": 63.64,
-          "market": 69.67
-        },
-        {
-          "date": "2025-02-28 00:00:00",
-          "portfolio": 53.14,
-          "market": 53.61
-        },
-        {
-          "date": "2025-03-31 00:00:00",
-          "portfolio": 53.11,
-          "market": 48.14
-        },
-        {
-          "date": "2025-04-30 00:00:00",
-          "portfolio": 54.57,
-          "market": 48.48
-        },
-        {
-          "date": "2025-05-31 00:00:00",
-          "portfolio": 65.08,
-          "market": 55.55
-        },
-        {
-          "date": "2025-06-30 00:00:00",
-          "portfolio": 87.87,
-          "market": 62.98
-        },
-        {
-          "date": "2025-07-31 00:00:00",
-          "portfolio": 83.87,
-          "market": 66.91
-        },
-        {
-          "date": "2025-08-31 00:00:00",
-          "portfolio": 103.46,
-          "market": 104.8
-        },
-        {
-          "date": "2025-09-30 00:00:00",
-          "portfolio": 100,
-          "market": 100
-        },
-        {
-          "date": "2025-10-31 00:00:00",
-          "portfolio": 92.19,
-          "market": 80.6
-        },
-        {
-          "date": "2025-11-30 00:00:00",
-          "portfolio": 109.12,
-          "market": 76.94
-        },
-        {
-          "date": "2025-12-31 00:00:00",
-          "portfolio": 101.96,
-          "market": 70.54
-        },
-        {
-          "date": "2026-01-31 00:00:00",
-          "portfolio": 92.79,
-          "market": 62.41
-        }
-      ],
-      "numPortfolios": 1,
-      "trainPeriodStart": "2024-02-29 00:00:00",
-      "trainPeriodEnd": "2025-08-31 00:00:00",
-      "testPeriodStart": "2025-09-30 00:00:00",
-      "testPeriodEnd": "2026-01-31 00:00:00",
-      "efficientFrontier": [
-        {
-          "volatility": 48.36,
-          "expectedReturn": 135.39,
-          "sharpe": 2.7168,
-          "backtestReturn": -10.32
-        }
-      ],
-      "factor_tests": {
-        "DOT": {
-          "factor_stats": {
-            "alpha": {
-              "beta": -0.091339,
-              "std_err": 0.059052,
-              "t_stat": -1.5467,
-              "p_value": 0.141476,
-              "ci_lower": -0.216524,
-              "ci_upper": 0.033847
-            },
-            "CMKT": {
-              "beta": 1.472043,
-              "std_err": 0.382845,
-              "t_stat": 3.845,
-              "p_value": 0.00143,
-              "ci_lower": 0.660447,
-              "ci_upper": 2.283638
-            },
-            "SIZE": {
-              "beta": 0,
-              "std_err": 0,
-              "t_stat": 4.0068,
-              "p_value": 0.001017,
-              "ci_lower": 0,
-              "ci_upper": 0
-            },
-            "MOM": {
-              "beta": 0.192778,
-              "std_err": 0.187882,
-              "t_stat": 1.0261,
-              "p_value": 0.320127,
-              "ci_lower": -0.205514,
-              "ci_upper": 0.591069
-            }
-          },
-          "model_stats": {
-            "r_squared": 0.502113,
-            "adj_r_squared": 0.439878,
-            "n_obs": 19,
-            "df_residual": 16,
-            "f_stat": 8.0679,
-            "f_pvalue": 0.003776
-          }
-        },
-        "UNI": {
-          "factor_stats": {
-            "alpha": {
-              "beta": -0.020863,
-              "std_err": 0.049622,
-              "t_stat": -0.4204,
-              "p_value": 0.679762,
-              "ci_lower": -0.126057,
-              "ci_upper": 0.084332
-            },
-            "CMKT": {
-              "beta": 1.699636,
-              "std_err": 0.321708,
-              "t_stat": 5.2832,
-              "p_value": 7.4e-05,
-              "ci_lower": 1.017645,
-              "ci_upper": 2.381626
-            },
-            "SIZE": {
-              "beta": 0,
-              "std_err": 0,
-              "t_stat": 5.1024,
-              "p_value": 0.000107,
-              "ci_lower": 0,
-              "ci_upper": 0
-            },
-            "MOM": {
-              "beta": 0.468194,
-              "std_err": 0.157879,
-              "t_stat": 2.9655,
-              "p_value": 0.009111,
-              "ci_lower": 0.133506,
-              "ci_upper": 0.802882
-            }
-          },
-          "model_stats": {
-            "r_squared": 0.63607,
-            "adj_r_squared": 0.590578,
-            "n_obs": 19,
-            "df_residual": 16,
-            "f_stat": 13.9822,
-            "f_pvalue": 0.000308
-          }
-        },
-        "OKB": {
-          "factor_stats": {
-            "alpha": {
-              "beta": -0.068127,
-              "std_err": 0.07407,
-              "t_stat": -0.9198,
-              "p_value": 0.371357,
-              "ci_lower": -0.225147,
-              "ci_upper": 0.088894
-            },
-            "CMKT": {
-              "beta": 1.31493,
-              "std_err": 0.480204,
-              "t_stat": 2.7383,
-              "p_value": 0.014581,
-              "ci_lower": 0.296943,
-              "ci_upper": 2.332917
-            },
-            "SIZE": {
-              "beta": 0,
-              "std_err": 0,
-              "t_stat": 4.4254,
-              "p_value": 0.000424,
-              "ci_lower": 0,
-              "ci_upper": 0
-            },
-            "MOM": {
-              "beta": -1.257795,
-              "std_err": 0.235661,
-              "t_stat": -5.3373,
-              "p_value": 6.7e-05,
-              "ci_lower": -1.757374,
-              "ci_upper": -0.758216
-            }
-          },
-          "model_stats": {
-            "r_squared": 0.815598,
-            "adj_r_squared": 0.792548,
-            "n_obs": 19,
-            "df_residual": 16,
-            "f_stat": 35.3834,
-            "f_pvalue": 1e-06
-          }
-        },
-        "AAVE": {
-          "factor_stats": {
-            "alpha": {
-              "beta": 0.039933,
-              "std_err": 0.044691,
-              "t_stat": 0.8935,
-              "p_value": 0.384813,
-              "ci_lower": -0.054808,
-              "ci_upper": 0.134674
-            },
-            "CMKT": {
-              "beta": 1.181446,
-              "std_err": 0.289739,
-              "t_stat": 4.0776,
-              "p_value": 0.000877,
-              "ci_lower": 0.567228,
-              "ci_upper": 1.795664
-            },
-            "SIZE": {
-              "beta": 0,
-              "std_err": 0,
-              "t_stat": 3.8128,
-              "p_value": 0.001531,
-              "ci_lower": 0,
-              "ci_upper": 0
-            },
-            "MOM": {
-              "beta": 0.394215,
-              "std_err": 0.14219,
-              "t_stat": 2.7725,
-              "p_value": 0.013591,
-              "ci_lower": 0.092786,
-              "ci_upper": 0.695643
-            }
-          },
-          "model_stats": {
-            "r_squared": 0.517813,
-            "adj_r_squared": 0.45754,
-            "n_obs": 19,
-            "df_residual": 16,
-            "f_stat": 8.5911,
-            "f_pvalue": 0.002922
-          }
-        },
-        "WBT": {
-          "factor_stats": {
-            "alpha": {
-              "beta": 0.106426,
-              "std_err": 0.044406,
-              "t_stat": 2.3967,
-              "p_value": 0.029111,
-              "ci_lower": 0.01229,
-              "ci_upper": 0.200563
-            },
-            "CMKT": {
-              "beta": 0.431523,
-              "std_err": 0.287889,
-              "t_stat": 1.4989,
-              "p_value": 0.153365,
-              "ci_lower": -0.178775,
-              "ci_upper": 1.04182
-            },
-            "SIZE": {
-              "beta": 0,
-              "std_err": 0,
-              "t_stat": 1.233,
-              "p_value": 0.235373,
-              "ci_lower": 0,
-              "ci_upper": 0
-            },
-            "MOM": {
-              "beta": 0.235913,
-              "std_err": 0.141282,
-              "t_stat": 1.6698,
-              "p_value": 0.114403,
-              "ci_lower": -0.063592,
-              "ci_upper": 0.535417
-            }
-          },
-          "model_stats": {
-            "r_squared": 0.172022,
-            "adj_r_squared": 0.068525,
-            "n_obs": 19,
-            "df_residual": 16,
-            "f_stat": 1.6621,
-            "f_pvalue": 0.220876
-          }
-        }
-      }
-    },
-    "llmResult": null,
-    "classicResult": null,
-    "comparisonData": null,
-    "description": "Smal cap (existant avant 2023 donc 6/20",
     "personTag": "Syuma",
     "observedInterpretation": "",
     "assetMode": "crypto",
