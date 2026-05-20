@@ -158,21 +158,24 @@ export function FactorBadgesCompact({ factorMask }: { factorMask: Record<string,
 // Pertinence des facteurs (tests statistiques OLS)
 // ---------------------------------------------------------------------------
 
+function formatPValue(p: number): string {
+  return p < 0.001 ? "< 0.001" : p.toFixed(4);
+}
+
 /** Agrège factor_tests par actif en métriques globales (moyennes, % significatif). */
 function aggregateFactorTests(factorTests: FactorTestsByTicker): {
-  modelStats: { meanR2: number; meanAdjR2: number; meanF: number | null; meanFPvalue: number | null; nAssets: number };
-  factorRows: { name: string; meanBeta: number; meanTStat: number; pctSignificant: number }[];
+  modelStats: { meanR2: number; meanAdjR2: number; meanFPvalue: number | null };
+  factorRows: { name: string; meanBeta: number; meanPValue: number; pctSignificant: number }[];
 } {
   const tickers = Object.keys(factorTests);
   if (tickers.length === 0) {
-    return { modelStats: { meanR2: 0, meanAdjR2: 0, meanF: null, meanFPvalue: null, nAssets: 0 }, factorRows: [] };
+    return { modelStats: { meanR2: 0, meanAdjR2: 0, meanFPvalue: null }, factorRows: [] };
   }
 
   const r2List: number[] = [];
   const adjR2List: number[] = [];
-  const fList: number[] = [];
   const fpList: number[] = [];
-  const factorSums: Record<string, { beta: number; tStat: number; significant: number; count: number }> = {};
+  const factorSums: Record<string, { beta: number; pValue: number; significant: number; count: number }> = {};
 
   for (const ticker of tickers) {
     const data = factorTests[ticker];
@@ -180,27 +183,23 @@ function aggregateFactorTests(factorTests: FactorTestsByTicker): {
     if (data.model_stats != null) {
       r2List.push(data.model_stats.r_squared);
       adjR2List.push(data.model_stats.adj_r_squared);
-      if (data.model_stats.f_stat != null) fList.push(data.model_stats.f_stat);
       if (data.model_stats.f_pvalue != null) fpList.push(data.model_stats.f_pvalue);
     }
     for (const [name, row] of Object.entries(data.factor_stats)) {
       if (name === "alpha") continue;
       const r = row as FactorStatRow;
-      if (!factorSums[name]) factorSums[name] = { beta: 0, tStat: 0, significant: 0, count: 0 };
+      if (!factorSums[name]) factorSums[name] = { beta: 0, pValue: 0, significant: 0, count: 0 };
       factorSums[name].beta += r.beta;
-      factorSums[name].tStat += r.t_stat;
+      factorSums[name].pValue += r.p_value;
       if (r.p_value < 0.05) factorSums[name].significant += 1;
       factorSums[name].count += 1;
     }
   }
 
-  const n = tickers.length;
   const modelStats = {
     meanR2: r2List.length ? r2List.reduce((a, b) => a + b, 0) / r2List.length : 0,
     meanAdjR2: adjR2List.length ? adjR2List.reduce((a, b) => a + b, 0) / adjR2List.length : 0,
-    meanF: fList.length ? fList.reduce((a, b) => a + b, 0) / fList.length : null,
     meanFPvalue: fpList.length ? fpList.reduce((a, b) => a + b, 0) / fpList.length : null,
-    nAssets: n,
   };
 
   const factorRows = Object.entries(factorSums)
@@ -208,7 +207,7 @@ function aggregateFactorTests(factorTests: FactorTestsByTicker): {
     .map(([name, s]) => ({
       name,
       meanBeta: s.count ? s.beta / s.count : 0,
-      meanTStat: s.count ? s.tStat / s.count : 0,
+      meanPValue: s.count ? s.pValue / s.count : 0,
       pctSignificant: s.count ? Math.round((s.significant / s.count) * 100) : 0,
     }));
 
@@ -234,10 +233,11 @@ function FactorStatsSection({
       <div className="glass-card p-6">
         <h3 className="font-display text-sm font-bold text-foreground mb-4">{title}</h3>
         <p className="text-[11px] text-muted-foreground/80 mb-4">
-          Régression OLS des rendements en excès sur les facteurs (période d&apos;entraînement). Métriques moyennes sur les {modelStats.nAssets} actifs.
+          Régression OLS des rendements en excès sur les facteurs (période d&apos;entraînement). Métriques moyennes sur l&apos;ensemble du portefeuille.
+          Le % significatif indique la part d&apos;actifs pour lesquels le coefficient du facteur est statistiquement différent de zéro (p &lt; 0,05).
         </p>
         <div className="space-y-4">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px]">
             <div className="rounded bg-muted/50 px-2 py-1.5">
               <span className="text-muted-foreground">R² moyen</span>
               <span className="ml-1 font-medium">{modelStats.meanR2.toFixed(4)}</span>
@@ -246,22 +246,12 @@ function FactorStatsSection({
               <span className="text-muted-foreground">R² ajusté moyen</span>
               <span className="ml-1 font-medium">{modelStats.meanAdjR2.toFixed(4)}</span>
             </div>
-            {modelStats.meanF != null && (
-              <div className="rounded bg-muted/50 px-2 py-1.5">
-                <span className="text-muted-foreground">F moyen</span>
-                <span className="ml-1 font-medium">{modelStats.meanF.toFixed(2)}</span>
-              </div>
-            )}
             {modelStats.meanFPvalue != null && (
               <div className="rounded bg-muted/50 px-2 py-1.5">
                 <span className="text-muted-foreground">p-value (F) moy.</span>
-                <span className="ml-1 font-medium">{modelStats.meanFPvalue < 0.001 ? "< 0.001" : modelStats.meanFPvalue.toFixed(4)}</span>
+                <span className="ml-1 font-medium">{formatPValue(modelStats.meanFPvalue)}</span>
               </div>
             )}
-            <div className="rounded bg-muted/50 px-2 py-1.5">
-              <span className="text-muted-foreground">Actifs</span>
-              <span className="ml-1 font-medium">{modelStats.nAssets}</span>
-            </div>
           </div>
           {factorRows.length > 0 && (
             <div className="overflow-x-auto">
@@ -270,19 +260,22 @@ function FactorStatsSection({
                   <tr className="border-b border-border">
                     <th className="text-left py-1.5 pr-2 text-muted-foreground font-semibold">Facteur</th>
                     <th className="text-right py-1.5 px-2 text-muted-foreground font-semibold">β moyen</th>
-                    <th className="text-right py-1.5 px-2 text-muted-foreground font-semibold">t-stat moyen</th>
+                    <th className="text-right py-1.5 px-2 text-muted-foreground font-semibold">p-value moy.</th>
                     <th className="text-right py-1.5 px-2 text-muted-foreground font-semibold">% significatif (p&lt;0,05)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border/40">
-                  {factorRows.map(({ name, meanBeta, meanTStat, pctSignificant }) => (
-                    <tr key={name}>
-                      <td className="py-1.5 pr-2 font-medium" style={{ color: FACTOR_COLORS[name] ?? undefined }}>{name}</td>
-                      <td className="text-right px-2">{meanBeta.toFixed(4)}</td>
-                      <td className="text-right px-2">{meanTStat.toFixed(3)}</td>
-                      <td className="text-right px-2 font-medium">{pctSignificant} %</td>
-                    </tr>
-                  ))}
+                  {factorRows.map(({ name, meanBeta, meanPValue, pctSignificant }) => {
+                    const sig = meanPValue < 0.05 ? "text-primary font-medium" : "text-muted-foreground";
+                    return (
+                      <tr key={name}>
+                        <td className="py-1.5 pr-2 font-medium" style={{ color: FACTOR_COLORS[name] ?? undefined }}>{name}</td>
+                        <td className={`text-right px-2 ${sig}`}>{meanBeta.toFixed(4)}</td>
+                        <td className={`text-right px-2 ${sig}`}>{formatPValue(meanPValue)}</td>
+                        <td className="text-right px-2 font-medium">{pctSignificant} %</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -329,7 +322,7 @@ function FactorStatsSection({
                     {model_stats.f_pvalue != null && (
                       <div className="rounded bg-muted/50 px-2 py-1.5">
                         <span className="text-muted-foreground">p-value (F)</span>
-                        <span className="ml-1 font-medium">{model_stats.f_pvalue < 0.001 ? "< 0.001" : model_stats.f_pvalue.toFixed(4)}</span>
+                        <span className="ml-1 font-medium">{formatPValue(model_stats.f_pvalue)}</span>
                       </div>
                     )}
                     <div className="rounded bg-muted/50 px-2 py-1.5 col-span-2 sm:col-span-1">
@@ -360,7 +353,7 @@ function FactorStatsSection({
                               <td className="py-1.5 pr-2 font-medium" style={{ color: FACTOR_COLORS[name] ?? undefined }}>{name}</td>
                               <td className={`text-right px-2 ${sig}`}>{row.beta.toFixed(4)}</td>
                               <td className={`text-right px-2 ${sig}`}>{row.t_stat.toFixed(3)}</td>
-                              <td className={`text-right px-2 ${sig}`}>{row.p_value < 0.001 ? "< 0.001" : row.p_value.toFixed(4)}</td>
+                              <td className={`text-right px-2 ${sig}`}>{formatPValue(row.p_value)}</td>
                               <td className="text-right px-2 text-muted-foreground">[{row.ci_lower.toFixed(3)} ; {row.ci_upper.toFixed(3)}]</td>
                             </tr>
                           );
@@ -370,7 +363,7 @@ function FactorStatsSection({
                             <td className="py-1.5 pr-2 font-medium text-muted-foreground">α (intercept)</td>
                             <td className="text-right px-2">{(factor_stats["alpha"] as FactorStatRow).beta.toFixed(4)}</td>
                             <td className="text-right px-2">{(factor_stats["alpha"] as FactorStatRow).t_stat.toFixed(3)}</td>
-                            <td className="text-right px-2">{(factor_stats["alpha"] as FactorStatRow).p_value < 0.001 ? "< 0.001" : (factor_stats["alpha"] as FactorStatRow).p_value.toFixed(4)}</td>
+                            <td className="text-right px-2">{formatPValue((factor_stats["alpha"] as FactorStatRow).p_value)}</td>
                             <td className="text-right px-2 text-muted-foreground">[{(factor_stats["alpha"] as FactorStatRow).ci_lower.toFixed(3)} ; {(factor_stats["alpha"] as FactorStatRow).ci_upper.toFixed(3)}]</td>
                           </tr>
                         )}

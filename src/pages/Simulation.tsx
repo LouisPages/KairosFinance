@@ -181,7 +181,7 @@ const Simulation = () => {
 
   useEffect(() => {
     const tickers = symbolsKey.split(",").map((s) => s.trim()).filter(Boolean);
-    if (tickers.length < 2) {
+    if (isCrypto || tickers.length < 2) {
       setBounds(null);
       setBoundsError(null);
       setBoundsLoading(false);
@@ -195,7 +195,7 @@ const Simulation = () => {
     setRangeEndYm("");
     setBoundsLoading(true);
     setBoundsError(null);
-    fetchSimulationDataBounds(tickers, isCrypto ? "crypto" : "actions")
+    fetchSimulationDataBounds(tickers, "actions")
       .then((b) => {
         if (cancelled) return;
         setBounds({ commonStart: b.commonStart, commonEnd: b.commonEnd });
@@ -255,11 +255,12 @@ const Simulation = () => {
   const canRun =
     selectedModel != null &&
     symbols.length >= 2 &&
-    !!simulationPeriod &&
-    periodValidForModel &&
-    !boundsLoading &&
-    !boundsError &&
-    !!bounds;
+    (isCrypto ||
+      (!!simulationPeriod &&
+        periodValidForModel &&
+        !boundsLoading &&
+        !boundsError &&
+        !!bounds));
   const assetModeTag = isCrypto ? ("crypto" as const) : ("actions" as const);
 
   useEffect(() => {
@@ -333,7 +334,8 @@ const Simulation = () => {
   ]);
 
   const handleRun = () => {
-    if (!canRun || !simulationPeriod) return;
+    if (!canRun || (!isCrypto && !simulationPeriod)) return;
+    const periodForApi = isCrypto ? undefined : simulationPeriod;
     setApiError(null);
     setRunning(true);
     setResult(null);
@@ -344,7 +346,7 @@ const Simulation = () => {
     classicResultRef.current = null;
 
     if (isLlm) {
-      runSimulation("markowitz-classic", symbols, undefined, simulationPeriod)
+      runSimulation("markowitz-classic", symbols, undefined, periodForApi)
         .then((classic) => {
           setClassicResult(classic);
           classicResultRef.current = classic;
@@ -366,16 +368,16 @@ const Simulation = () => {
           setLlmProgress(null);
           cancelStreamRef.current = null;
         },
-        simulationPeriod,
+        periodForApi,
       );
       cancelStreamRef.current = cancel;
     } else if (optimizationMethod === "comparison") {
       // Exécution séquentielle pour éviter tout mélange de réponses (même données, ordre garanti)
-      runSimulation(apiModelId!, symbols, "monte_carlo", simulationPeriod, {
+      runSimulation(apiModelId!, symbols, "monte_carlo", periodForApi, {
         monteCarloSimulations: monteCarloSimulationsCount,
       })
         .then((monteCarlo) =>
-          runSimulation(apiModelId!, symbols, "gradient_optimal", simulationPeriod).then((gradientOptimal) => ({
+          runSimulation(apiModelId!, symbols, "gradient_optimal", periodForApi).then((gradientOptimal) => ({
             monteCarlo,
             gradientOptimal,
           }))
@@ -398,7 +400,7 @@ const Simulation = () => {
         optimizationMethod === "monte_carlo"
           ? { monteCarloSimulations: monteCarloSimulationsCount }
           : undefined;
-      runSimulation(apiModelId!, symbols, optimizationMethod, simulationPeriod, mcOpts)
+      runSimulation(apiModelId!, symbols, optimizationMethod, periodForApi, mcOpts)
         .then((res) => {
           setResult(res);
           if (res.comparisonData.length > 0) {
@@ -445,8 +447,8 @@ const Simulation = () => {
         personTag: savePersonTag,
         observedInterpretation: "",
         assetMode: assetModeTag,
-        simulationStartDate: simulationPeriod?.startDate,
-        simulationEndDate: simulationPeriod?.endDate,
+        simulationStartDate: isCrypto ? undefined : simulationPeriod?.startDate,
+        simulationEndDate: isCrypto ? undefined : simulationPeriod?.endDate,
       });
       setSaveModalOpen(false);
     } finally {
@@ -462,7 +464,7 @@ const Simulation = () => {
         <p className="mb-8 text-sm text-muted-foreground">
           {isCrypto ? (
             <>
-              En mode cryptos, seul le modèle à trois facteurs adapté (CMKT, SIZE, MOM) est disponible. Les courbes comparent le portefeuille optimal à la moyenne de marché cross-sectionnelle (proxy type CMKT).
+              En mode cryptos, seul le modèle à trois facteurs adapté (CMKT, SIZE, MOM) est disponible. Toute l&apos;historique de chaque crypto est prise en compte (mélange d&apos;actifs récents et anciens possible). Les courbes comparent le portefeuille optimal à la moyenne de marché cross-sectionnelle (proxy type CMKT).
             </>
           ) : (
             <>Choisissez un modèle puis lancez l&apos;optimisation. Les résultats incluent un backtesting sur 20 % des données historiques.</>
@@ -518,7 +520,7 @@ const Simulation = () => {
       {/* Méthode d'optimisation + plage calendaire */}
       {symbols.length >= 2 && (
         <div className="mb-6 rounded-xl border border-border bg-muted/20 p-5 space-y-4">
-          <div className={`grid gap-6 ${isLlm ? "" : "md:grid-cols-2"}`}>
+          <div className={`grid gap-6 ${isLlm || isCrypto ? "" : "md:grid-cols-2"}`}>
             {!isLlm && (
               <div className="space-y-2">
                 <Label className="text-sm font-medium text-foreground">Méthode d&apos;optimisation</Label>
@@ -577,75 +579,84 @@ const Simulation = () => {
                 )}
               </div>
             )}
-            <div className={`space-y-3 min-w-0 ${isLlm ? "md:max-w-none" : ""}`}>
-              <div className="flex flex-wrap items-end justify-between gap-2">
-                <Label className="text-sm font-medium text-foreground">Période (ajustement + backtest)</Label>
-                {bounds && !boundsLoading && (
-                  <span className="text-[10px] font-mono text-muted-foreground shrink-0">
-                    données communes : {bounds.commonStart} → {bounds.commonEnd}
-                  </span>
+            {!isCrypto && (
+              <div className={`space-y-3 min-w-0 ${isLlm ? "md:max-w-none" : ""}`}>
+                <div className="flex flex-wrap items-end justify-between gap-2">
+                  <Label className="text-sm font-medium text-foreground">Période (ajustement + backtest)</Label>
+                  {bounds && !boundsLoading && (
+                    <span className="text-[10px] font-mono text-muted-foreground shrink-0">
+                      données communes : {bounds.commonStart} → {bounds.commonEnd}
+                    </span>
+                  )}
+                </div>
+                {boundsLoading && (
+                  <div className="space-y-2 max-w-md">
+                    <Skeleton className="h-9 w-full" />
+                    <Skeleton className="h-4 w-full" />
+                  </div>
+                )}
+                {boundsError && <p className="text-xs text-destructive">{boundsError}</p>}
+                {!boundsLoading && bounds && (
+                  <>
+                    <p className="text-[11px] text-muted-foreground leading-snug">
+                      Choix au mois près (premier et dernier mois inclus). Les bornes viennent des cotations
+                      quotidiennes alignées sur tout le portefeuille (même source que la simulation).
+                      Markowitz classique utilise des rendements quotidiens ; CAPM, Fama-French et le LLM
+                      agrègent en rendements mensuels pour les régressions. Le découpage train/test reste
+                      celui de chaque modèle.
+                    </p>
+                    {sliderMonthMax >= 1 ? (
+                      <Slider
+                        value={sliderMonthValue}
+                        min={0}
+                        max={sliderMonthMax}
+                        step={1}
+                        onValueChange={handleRangeSlider}
+                        className="py-2 max-w-full"
+                      />
+                    ) : (
+                      <p className="text-xs text-muted-foreground">Plage trop courte pour le curseur (moins de deux mois).</p>
+                    )}
+                    <div className="flex flex-wrap gap-4 items-end">
+                      <div className="space-y-1">
+                        <Label htmlFor="sim-range-start" className="text-xs text-muted-foreground">Mois de début</Label>
+                        <Input
+                          id="sim-range-start"
+                          type="month"
+                          min={monthBoundsLo}
+                          max={rangeEndYm || monthBoundsHi}
+                          value={rangeStartYm}
+                          onChange={(e) => handleStartMonthInput(e.target.value)}
+                          className="w-[158px] rounded-lg bg-background/80 font-mono text-xs h-9"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <Label htmlFor="sim-range-end" className="text-xs text-muted-foreground">Mois de fin</Label>
+                        <Input
+                          id="sim-range-end"
+                          type="month"
+                          min={rangeStartYm || monthBoundsLo}
+                          max={monthBoundsHi}
+                          value={rangeEndYm}
+                          onChange={(e) => handleEndMonthInput(e.target.value)}
+                          className="w-[158px] rounded-lg bg-background/80 font-mono text-xs h-9"
+                        />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {periodHint && (
+                  <p className="text-xs text-amber-600 dark:text-amber-400">{periodHint}</p>
                 )}
               </div>
-              {boundsLoading && (
-                <div className="space-y-2 max-w-md">
-                  <Skeleton className="h-9 w-full" />
-                  <Skeleton className="h-4 w-full" />
-                </div>
-              )}
-              {boundsError && <p className="text-xs text-destructive">{boundsError}</p>}
-              {!boundsLoading && bounds && (
-                <>
-                  <p className="text-[11px] text-muted-foreground leading-snug">
-                    Choix au mois près (premier et dernier mois inclus). Les bornes viennent des cotations
-                    quotidiennes alignées sur tout le portefeuille (même source que la simulation).
-                    Markowitz classique utilise des rendements quotidiens ; CAPM, Fama-French et le LLM
-                    agrègent en rendements mensuels pour les régressions. Le découpage train/test reste
-                    celui de chaque modèle.
-                  </p>
-                  {sliderMonthMax >= 1 ? (
-                    <Slider
-                      value={sliderMonthValue}
-                      min={0}
-                      max={sliderMonthMax}
-                      step={1}
-                      onValueChange={handleRangeSlider}
-                      className="py-2 max-w-full"
-                    />
-                  ) : (
-                    <p className="text-xs text-muted-foreground">Plage trop courte pour le curseur (moins de deux mois).</p>
-                  )}
-                  <div className="flex flex-wrap gap-4 items-end">
-                    <div className="space-y-1">
-                      <Label htmlFor="sim-range-start" className="text-xs text-muted-foreground">Mois de début</Label>
-                      <Input
-                        id="sim-range-start"
-                        type="month"
-                        min={monthBoundsLo}
-                        max={rangeEndYm || monthBoundsHi}
-                        value={rangeStartYm}
-                        onChange={(e) => handleStartMonthInput(e.target.value)}
-                        className="w-[158px] rounded-lg bg-background/80 font-mono text-xs h-9"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <Label htmlFor="sim-range-end" className="text-xs text-muted-foreground">Mois de fin</Label>
-                      <Input
-                        id="sim-range-end"
-                        type="month"
-                        min={rangeStartYm || monthBoundsLo}
-                        max={monthBoundsHi}
-                        value={rangeEndYm}
-                        onChange={(e) => handleEndMonthInput(e.target.value)}
-                        className="w-[158px] rounded-lg bg-background/80 font-mono text-xs h-9"
-                      />
-                    </div>
-                  </div>
-                </>
-              )}
-              {periodHint && (
-                <p className="text-xs text-amber-600 dark:text-amber-400">{periodHint}</p>
-              )}
-            </div>
+            )}
+            {isCrypto && (
+              <p className="text-[11px] text-muted-foreground leading-snug">
+                En mode crypto, toute l&apos;historique disponible de chaque actif est utilisée (pas de contrainte
+                de période commune). Les rendements sont alignés mensuellement ; le découpage train/test (80&nbsp;% / 20&nbsp;%)
+                est appliqué automatiquement.
+              </p>
+            )}
           </div>
         </div>
       )}
