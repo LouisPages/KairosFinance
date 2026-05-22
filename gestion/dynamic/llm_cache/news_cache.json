@@ -1294,5 +1294,1451 @@
       "Malgré une inflation persistante, WalMart a maintenu des prix compétitifs, ce qui a permis de conserver une base de clients fidèles."
     ],
     "sentiment": "positif"
+  },
+  "AAPL_201501": {
+    "summary": "Entre le 01/10/2014 et le 31/01/2015, Apple a connu plusieurs événements significatifs. La société a annoncé des résultats financiers record pour le quatrième trimestre 2014, grâce à des ventes solides de l'iPhone 6 et de l'iPhone 6 Plus. Apple a également lancé l'Apple Watch et a annoncé un partenariat avec IBM pour développer des applications d'entreprise pour les appareils iOS. De plus, Apple a atteint une capitalisation boursière record, devenant la première entreprise à dépasser les 700 milliards de dollars.",
+    "key_events": [
+      "Apple annonce des résultats financiers record pour le quatrième trimestre 2014.",
+      "Lancement de l'Apple Watch.",
+      "Partenariat avec IBM pour développer des applications d'entreprise pour les appareils iOS.",
+      "Apple devient la première entreprise à dépasser les 700 milliards de dollars de capitalisation boursière."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201501": {
+    "summary": "Entre le 01/10/2014 et le 31/01/2015, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. La société a continué à afficher une croissance solide grâce à ses activités publicitaires et à l'expansion de ses initiatives dans de nouveaux domaines technologiques. Cependant, il y a eu des préoccupations concernant la concurrence accrue et les régulations antitrust.",
+    "key_events": [
+      "Alphabet a publié des résultats financiers solides pour le troisième trimestre 2014, avec une augmentation des revenus et des bénéfices.",
+      "La société a annoncé des investissements importants dans des projets innovants, notamment dans les domaines de la santé et de la technologie portable.",
+      "Des préoccupations ont été soulevées concernant la concurrence accrue dans le secteur de la publicité en ligne.",
+      "Alphabet a fait face à des enquêtes antitrust en Europe, ce qui a suscité des inquiétudes parmi les investisseurs.",
+      "La société a continué à étendre ses services et produits, notamment avec des mises à jour majeures pour ses plateformes Android et YouTube."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201501": {
+    "summary": "Entre le 01/10/2014 et le 31/01/2015, Amazon a connu plusieurs événements significatifs. La société a publié ses résultats financiers pour le troisième trimestre 2014, montrant une croissance des revenus mais une baisse des bénéfices. Amazon a également annoncé l'expansion de ses services AWS et a lancé de nouveaux produits, comme le Fire TV Stick. Cependant, la période a également été marquée par des critiques concernant les conditions de travail dans les entrepôts de la société.",
+    "key_events": [
+      "Publication des résultats financiers du T3 2014 avec une croissance des revenus de 20% mais une baisse des bénéfices.",
+      "Lancement de nouveaux produits, dont le Fire TV Stick.",
+      "Expansion des services Amazon Web Services (AWS).",
+      "Critiques et controverses concernant les conditions de travail dans les entrepôts d'Amazon."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_201501": {
+    "summary": "Entre le 01/10/2014 et le 31/01/2015, Meta (anciennement Facebook) a connu plusieurs événements significatifs. La société a continué à croître en termes d'utilisateurs et de revenus publicitaires. Cependant, des préoccupations concernant la diversification des revenus et la dépendance à la publicité ont été soulevées. De plus, des investissements importants dans de nouvelles technologies et acquisitions ont été réalisés.",
+    "key_events": [
+      "Facebook a annoncé des résultats financiers solides pour le troisième trimestre 2014, avec une augmentation de 59% des revenus publicitaires.",
+      "L'entreprise a poursuivi ses efforts pour diversifier ses revenus en investissant dans de nouvelles technologies, comme la réalité virtuelle avec l'acquisition d'Oculus VR.",
+      "Des préoccupations ont été exprimées concernant la dépendance de Facebook à la publicité, représentant plus de 90% de ses revenus.",
+      "Facebook a atteint le cap des 1,35 milliard d'utilisateurs actifs mensuels en septembre 2014.",
+      "L'entreprise a annoncé l'acquisition de WhatsApp pour 19 milliards de dollars, renforçant sa position dans le secteur des messageries instantanées."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201501": {
+    "summary": "NVIDIA a connu plusieurs événements importants entre octobre 2014 et janvier 2015. La société a annoncé des résultats financiers solides pour le troisième trimestre de l'exercice 2015, avec une croissance de ses revenus et de ses bénéfices. NVIDIA a également lancé de nouveaux produits, notamment la carte graphique GTX 970 et GTX 980, qui ont été bien accueillis par le marché. De plus, la société a annoncé des partenariats stratégiques et des avancées dans le domaine de l'intelligence artificielle et de l'informatique automobile.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers solides pour le troisième trimestre de l'exercice 2015, avec une augmentation des revenus et des bénéfices.",
+      "Lancement des cartes graphiques GTX 970 et GTX 980, qui ont été bien reçues par les consommateurs et les critiques.",
+      "NVIDIA a annoncé un partenariat avec Audi pour développer des technologies d'informatique automobile.",
+      "La société a fait des progrès significatifs dans le domaine de l'intelligence artificielle, avec des annonces concernant des plateformes de deep learning.",
+      "NVIDIA a été incluse dans l'indice S&P 500, ce qui est un signe de reconnaissance de sa croissance et de sa stabilité financière."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201502": {
+    "summary": "Entre le 01/11/2014 et le 28/02/2015, Apple a connu plusieurs événements significatifs. La société a lancé de nouveaux produits, dont l'iPad Air 2 et l'iMac Retina, et a continué à bénéficier du succès de l'iPhone 6 et 6 Plus. Les résultats financiers du premier trimestre 2015 ont été exceptionnels, avec un bénéfice record. Cependant, des inquiétudes concernant la dépendance d'Apple à l'iPhone et la saturation du marché des smartphones ont été soulevées.",
+    "key_events": [
+      "Lancement de l'iPad Air 2 et de l'iMac Retina en octobre 2014",
+      "Résultats financiers record pour le premier trimestre 2015, avec un bénéfice de 18 milliards de dollars",
+      "Apple devient la première société à atteindre une capitalisation boursière de 700 milliards de dollars",
+      "Préoccupations concernant la dépendance d'Apple à l'iPhone et la saturation du marché des smartphones",
+      "Apple annonce un nouveau programme de rachat d'actions de 100 milliards de dollars"
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201502": {
+    "summary": "Entre le 01/11/2014 et le 28/02/2015, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. La société a continué à renforcer sa position dominante dans le secteur de la publicité en ligne et a fait des progrès dans d'autres domaines tels que les technologies mobiles et les innovations en matière de santé. Cependant, il y a eu des préoccupations concernant la concurrence et la régulation en Europe.",
+    "key_events": [
+      "Alphabet a annoncé des résultats financiers solides pour le quatrième trimestre 2014, avec une augmentation des revenus et des bénéfices.",
+      "La société a poursuivi son expansion dans le domaine des technologies mobiles avec le lancement de nouveaux appareils et mises à jour logicielles.",
+      "Alphabet a fait face à des défis réglementaires en Europe, avec des enquêtes antitrust et des préoccupations concernant la vie privée.",
+      "La société a annoncé des investissements significatifs dans des projets de santé et de biotechnologie, notamment à travers sa filiale Calico.",
+      "Alphabet a continué à développer ses services cloud et d'entreprise, visant à concurrencer d'autres géants technologiques comme Amazon et Microsoft."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201502": {
+    "summary": "Amazon a connu une période de croissance et d'expansion significative entre novembre 2014 et février 2015. L'entreprise a investi dans de nouveaux projets et a vu une augmentation de ses revenus, bien que ses bénéfices aient été affectés par des dépenses élevées.",
+    "key_events": [
+      "Amazon a annoncé des revenus record pour la période des fêtes de fin d'année 2014, avec une augmentation de 15% par rapport à l'année précédente.",
+      "L'entreprise a lancé Amazon Prime Now, un service de livraison en une heure, dans certaines villes des États-Unis.",
+      "Amazon a annoncé l'acquisition de la société de jeux vidéo Double Helix Games.",
+      "Les dépenses élevées d'Amazon, notamment en raison de l'expansion de ses centres de distribution et de ses investissements technologiques, ont affecté ses bénéfices pour le quatrième trimestre 2014.",
+      "Amazon a annoncé un partenariat avec la société de télécommunications espagnole Telefonica pour offrir des services cloud."
+    ],
+    "sentiment": "positif"
+  },
+  "META_201502": {
+    "summary": "Entre le 01/11/2014 et le 28/02/2015, Meta (anciennement Facebook) a connu plusieurs événements significatifs. La société a continué à renforcer sa position dans le secteur des médias sociaux et de la publicité en ligne. Les revenus publicitaires ont augmenté, tirés par la croissance des utilisateurs mobiles. De plus, Meta a fait des acquisitions stratégiques et a investi dans de nouvelles technologies.",
+    "key_events": [
+      "Meta a rapporté des revenus publicitaires solides pour le quatrième trimestre 2014, dépassant les attentes des analystes.",
+      "La société a annoncé l'acquisition de plusieurs startups technologiques pour renforcer ses capacités en matière de réalité virtuelle et d'intelligence artificielle.",
+      "Meta a lancé de nouvelles fonctionnalités pour ses plateformes, visant à améliorer l'engagement des utilisateurs et l'efficacité publicitaire.",
+      "La société a fait face à des préoccupations croissantes concernant la vie privée et la sécurité des données, ce qui a conduit à des discussions avec les régulateurs."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201502": {
+    "summary": "NVIDIA a connu plusieurs événements importants entre le 01/11/2014 et le 28/02/2015. La société a annoncé des résultats financiers solides pour le quatrième trimestre de l'exercice 2015, avec une augmentation significative de ses revenus grâce à la demande croissante pour ses GPU. NVIDIA a également lancé de nouveaux produits, notamment la carte graphique GTX 960, et a fait des progrès dans le domaine des technologies automobiles et des centres de données. Cependant, la société a également été confrontée à des défis, notamment des inquiétudes concernant la concurrence et des fluctuations du marché.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers solides pour le quatrième trimestre de l'exercice 2015, avec un chiffre d'affaires de 1,25 milliard de dollars, en hausse de 9 % par rapport à l'année précédente.",
+      "Lancement de la carte graphique GTX 960, qui a été bien accueillie par les consommateurs et les critiques.",
+      "NVIDIA a fait des progrès dans le domaine des technologies automobiles avec sa plateforme NVIDIA DRIVE, qui a été adoptée par plusieurs constructeurs automobiles.",
+      "La société a également étendu sa présence dans le domaine des centres de données avec ses GPU Tesla.",
+      "Inquiétudes concernant la concurrence accrue dans le secteur des GPU, notamment de la part d'AMD et d'Intel.",
+      "Fluctuations du marché et inquiétudes concernant la croissance future des revenus."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201503": {
+    "summary": "Au cours de la période du 1er décembre 2014 au 31 mars 2015, Apple a connu plusieurs événements significatifs. L'entreprise a continué de bénéficier du succès de l'iPhone 6 et 6 Plus, lancé en septembre 2014, qui a stimulé les ventes et les revenus. Apple a également annoncé des records de revenus et de bénéfices pour le premier trimestre fiscal 2015. De plus, la société a fait l'actualité avec la sortie de l'Apple Watch, prévue pour avril 2015, et a poursuivi ses efforts en matière de recherche et développement, ainsi que d'acquisitions stratégiques.",
+    "key_events": [
+      "Succès continu de l'iPhone 6 et 6 Plus, stimulant les ventes et les revenus.",
+      "Annonce de records de revenus et de bénéfices pour le premier trimestre fiscal 2015.",
+      "Sortie prévue de l'Apple Watch pour avril 2015.",
+      "Poursuite des efforts en recherche et développement et acquisitions stratégiques."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201503": {
+    "summary": "During the period from December 1, 2014, to March 31, 2015, Alphabet Inc. (GOOGL) experienced several significant events. The company continued to show strong financial performance with consistent revenue growth, primarily driven by its advertising business. There were also notable developments in its other ventures, including advancements in its self-driving car project and expansions in its Google Fiber internet service.",
+    "key_events": [
+      "Alphabet reported strong Q4 2014 earnings in January 2015, with revenue up 15% year-over-year to $18.1 billion.",
+      "In December 2014, Google announced the expansion of its Google Fiber high-speed internet service to several new cities.",
+      "Google's self-driving car project made significant progress, with prototypes being tested on public roads.",
+      "The company faced regulatory scrutiny in the European Union over antitrust concerns related to its search and advertising practices.",
+      "Google announced plans to restructure its business, which would later lead to the creation of Alphabet Inc. as a parent company."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201503": {
+    "summary": "Au cours de la période du 1er décembre 2014 au 31 mars 2015, Amazon a connu plusieurs événements significatifs. L'entreprise a continué à étendre ses services et sa présence mondiale, tout en faisant face à des défis réglementaires et financiers.",
+    "key_events": [
+      "Amazon a annoncé l'ouverture de nouveaux centres de distribution en Europe pour améliorer la livraison et la logistique.",
+      "L'entreprise a lancé Amazon Prime Now, un service de livraison en une heure pour certains produits, initialement disponible à New York.",
+      "Amazon a fait face à des critiques et à des enquêtes réglementaires en Europe concernant ses pratiques fiscales et sa domination sur le marché.",
+      "Le quatrième trimestre 2014 a montré une croissance des revenus, mais les bénéfices ont été affectés par les investissements continus et les dépenses élevées.",
+      "Amazon a annoncé l'acquisition de la société de paiement en ligne 2lemetry, visant à renforcer ses capacités dans l'Internet des objets (IoT).",
+      "L'entreprise a également étendu ses services cloud avec de nouvelles fonctionnalités et des réductions de prix pour Amazon Web Services (AWS)."
+    ],
+    "sentiment": "positif"
+  },
+  "META_201503": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between December 1, 2014, and March 31, 2015. The company continued to grow its user base and advertising revenue. However, it also faced challenges related to privacy concerns and regulatory scrutiny.",
+    "key_events": [
+      "Facebook's user base continued to grow, reaching 1.39 billion monthly active users by the end of December 2014.",
+      "The company reported strong financial results for Q4 2014, with revenue increasing by 49% year-over-year to $3.85 billion.",
+      "In January 2015, Facebook announced new privacy measures to give users more control over their data.",
+      "The company faced regulatory scrutiny in Europe over its privacy policies and data handling practices.",
+      "Facebook launched new advertising tools and formats to improve targeting and engagement for businesses.",
+      "In March 2015, Facebook announced plans to expand its internet.org initiative to provide free basic internet services to more countries."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201503": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation entre décembre 2014 et mars 2015. L'entreprise a annoncé des partenariats stratégiques et lancé de nouveaux produits, tout en bénéficiant de la demande croissante pour ses solutions graphiques dans divers secteurs.",
+    "key_events": [
+      "NVIDIA a annoncé un partenariat avec Audi pour développer des systèmes de conduite autonome.",
+      "L'entreprise a lancé la carte graphique GeForce GTX 960, visant les joueurs à budget moyen.",
+      "NVIDIA a présenté sa nouvelle architecture de GPU, Pascal, promettant des améliorations significatives en termes de performance et d'efficacité énergétique.",
+      "L'entreprise a annoncé des résultats financiers solides pour le quatrième trimestre 2014, avec une augmentation des revenus et des bénéfices.",
+      "NVIDIA a étendu sa présence dans le secteur des centres de données avec des solutions pour l'apprentissage profond et l'intelligence artificielle."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201504": {
+    "summary": "Au premier trimestre 2015, Apple a connu une croissance significative grâce au succès de l'iPhone 6 et 6 Plus. La société a également annoncé de nouveaux records de revenus et de bénéfices. Cependant, des inquiétudes concernant la dépendance d'Apple à l'égard des ventes d'iPhone et la concurrence accrue sur le marché des smartphones ont été soulevées.",
+    "key_events": [
+      "Apple a rapporté des revenus records de 74,6 milliards de dollars et des bénéfices de 18 milliards de dollars pour le trimestre se terminant en décembre 2014, principalement grâce aux ventes de l'iPhone 6 et 6 Plus.",
+      "Lancement de l'Apple Watch en avril 2015, marquant l'entrée d'Apple sur le marché des wearables.",
+      "Apple a rejoint le projet Dow Jones Industrial Average en mars 2015, reflétant son importance croissante dans l'économie américaine.",
+      "Des inquiétudes ont été exprimées concernant la dépendance d'Apple à l'égard des ventes d'iPhone, qui représentaient une grande partie de ses revenus.",
+      "La concurrence sur le marché des smartphones s'est intensifiée, avec des entreprises comme Samsung et des fabricants chinois augmentant leur part de marché."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201504": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements importants au premier trimestre 2015. La société a continué à afficher une croissance solide, tirée par ses activités publicitaires et ses initiatives dans de nouveaux domaines technologiques. Cependant, des préoccupations concernant la régulation et la concurrence ont également été soulevées.",
+    "key_events": [
+      "Alphabet a annoncé des revenus solides pour le premier trimestre 2015, avec une croissance de 12% par rapport à l'année précédente, atteignant 17,3 milliards de dollars.",
+      "La société a poursuivi ses investissements dans des projets innovants, notamment dans les domaines de la santé, de l'intelligence artificielle et des voitures autonomes.",
+      "Des inquiétudes ont été exprimées concernant les régulations antitrust en Europe, ce qui pourrait potentiellement affecter les opérations de Google sur le continent.",
+      "Google a annoncé des plans pour restructurer son entreprise, créant une nouvelle société mère appelée Alphabet pour superviser ses diverses filiales et projets."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201504": {
+    "summary": "Amazon a connu une croissance significative et une expansion diversifiée au premier trimestre 2015. L'entreprise a poursuivi son expansion dans de nouveaux marchés et secteurs, tout en faisant face à des défis réglementaires et concurrentiels.",
+    "key_events": [
+      "Amazon a annoncé des résultats financiers pour le quatrième trimestre 2014, avec une croissance des revenus de 15 % par rapport à l'année précédente, atteignant 29,33 milliards de dollars.",
+      "L'entreprise a lancé Amazon Home Services, un marché en ligne pour la réservation de services professionnels locaux, élargissant ainsi son offre de services.",
+      "Amazon a annoncé l'acquisition de 2lemetry, une startup spécialisée dans l'Internet des objets (IoT), pour renforcer ses capacités dans ce domaine en pleine croissance.",
+      "Le géant du commerce électronique a fait face à des critiques et à des défis réglementaires en Europe, notamment concernant les pratiques fiscales et les conditions de travail dans ses entrepôts.",
+      "Amazon a annoncé le lancement de son service de stockage cloud illimité, Amazon Drive, pour les utilisateurs Prime, renforçant ainsi les avantages de son programme d'abonnement.",
+      "L'entreprise a également annoncé l'expansion de son service de livraison en une heure, Prime Now, à de nouvelles villes aux États-Unis, améliorant ainsi son offre de livraison rapide."
+    ],
+    "sentiment": "positif"
+  },
+  "META_201504": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between January 1, 2015, and April 30, 2015. The company continued to expand its user base and advertising revenue. However, it also faced challenges related to user privacy and data security.",
+    "key_events": [
+      "Facebook reported strong fourth-quarter earnings for 2014 in January 2015, with revenue up 49% year-over-year.",
+      "In February 2015, Facebook announced a partnership with several media organizations to host their content directly on the platform, aiming to improve user experience and engagement.",
+      "March 2015 saw Facebook's acquisition of the virtual reality company Oculus VR, signaling its interest in expanding into new technologies.",
+      "Facebook faced criticism and legal challenges in April 2015 over its handling of user data and privacy concerns."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_201504": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation entre janvier et avril 2015. L'entreprise a lancé de nouveaux produits, établi des partenariats stratégiques et bénéficié de la demande croissante pour ses solutions graphiques.",
+    "key_events": [
+      "NVIDIA a annoncé ses résultats financiers pour le quatrième trimestre et l'exercice 2015, montrant une croissance des revenus et des bénéfices.",
+      "L'entreprise a lancé la carte graphique GeForce GTX TITAN X, basée sur l'architecture Maxwell, offrant des performances exceptionnelles pour les joueurs et les professionnels.",
+      "NVIDIA a étendu son partenariat avec Audi pour intégrer ses technologies de conduite autonome dans les véhicules de la marque.",
+      "L'entreprise a présenté sa plateforme NVIDIA DRIVE, une solution complète pour les véhicules autonomes, lors du Consumer Electronics Show (CES) 2015.",
+      "NVIDIA a annoncé des collaborations avec plusieurs entreprises pour adopter ses solutions de GPU dans des centres de données et des applications d'intelligence artificielle."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201505": {
+    "summary": "Apple a connu plusieurs événements significatifs entre février et mai 2015. La société a continué à bénéficier du succès de l'iPhone 6 et 6 Plus, tout en faisant face à des défis réglementaires et à des préoccupations concernant les conditions de travail chez ses fournisseurs.",
+    "key_events": [
+      "Apple a annoncé des résultats financiers record pour le premier trimestre 2015, avec un bénéfice net de 18 milliards de dollars, le plus élevé jamais enregistré par une entreprise.",
+      "Le 9 mars 2015, Apple a dévoilé l'Apple Watch, sa première entrée sur le marché des montres connectées.",
+      "Apple a fait face à des critiques concernant les conditions de travail chez ses fournisseurs en Chine, avec des rapports faisant état de violations des droits des travailleurs.",
+      "Le 27 avril 2015, Apple a annoncé un programme de rachat d'actions de 200 milliards de dollars, le plus important de l'histoire des entreprises.",
+      "Apple a été confronté à des défis réglementaires en Europe, avec des enquêtes sur ses pratiques fiscales en Irlande."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201505": {
+    "summary": "Entre le 01/02/2015 et le 31/05/2015, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. La société a continué à afficher une croissance solide grâce à ses activités publicitaires et à l'expansion de ses initiatives dans de nouveaux domaines technologiques. Cependant, des préoccupations concernant la régulation et la concurrence ont également été soulevées.",
+    "key_events": [
+      "Alphabet a annoncé des résultats financiers solides pour le premier trimestre 2015, avec une augmentation des revenus et des bénéfices.",
+      "La société a poursuivi ses investissements dans des projets innovants tels que les voitures autonomes et les technologies de santé.",
+      "Des inquiétudes concernant la régulation antitrust en Europe ont commencé à peser sur le sentiment des investisseurs.",
+      "Google a annoncé un partenariat stratégique avec plusieurs entreprises pour étendre sa présence dans le domaine de l'Internet des objets.",
+      "La société a fait face à des critiques concernant sa politique de confidentialité et de gestion des données."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_201505": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre février et mai 2015. La société a continué à étendre ses services et ses infrastructures, tout en faisant face à des défis réglementaires et concurrentiels. Les investissements dans de nouveaux projets et l'expansion internationale ont été des points clés de cette période.",
+    "key_events": [
+      "Amazon a annoncé l'expansion de son service Prime Now, offrant une livraison en une heure dans de nouvelles villes aux États-Unis.",
+      "La société a fait face à des critiques et à des enquêtes réglementaires concernant les conditions de travail dans ses entrepôts.",
+      "Amazon Web Services (AWS) a continué à croître rapidement, devenant un contributeur majeur aux revenus de l'entreprise.",
+      "Amazon a annoncé un partenariat avec plusieurs grandes marques pour étendre son offre de produits.",
+      "La société a investi massivement dans l'expansion de ses centres de données et de ses capacités logistiques en Europe et en Asie."
+    ],
+    "sentiment": "positif"
+  },
+  "META_201505": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between February 1, 2015, and May 31, 2015. The company continued to expand its user base and advertising revenue. However, it also faced challenges related to data privacy and regulatory scrutiny.",
+    "key_events": [
+      "Facebook reported strong earnings for Q4 2014 in January 2015, with revenue increasing by 49% year-over-year.",
+      "In February 2015, Facebook announced a partnership with several media organizations to host their content directly on the platform, aiming to improve user experience and engagement.",
+      "March 2015 saw Facebook's acquisition of the virtual reality company Oculus VR, signaling its interest in expanding into new technologies.",
+      "In April 2015, Facebook launched its new ad platform, Atlas, to compete with Google's display advertising network.",
+      "May 2015 brought concerns over data privacy as Facebook faced scrutiny from European regulators regarding its handling of user data."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_201505": {
+    "summary": "NVIDIA a connu plusieurs événements importants entre février et mai 2015. La société a annoncé des résultats financiers solides, avec une croissance significative de ses revenus grâce à la demande accrue pour ses GPU, notamment dans les secteurs du gaming et des centres de données. NVIDIA a également lancé de nouveaux produits, dont la carte graphique Titan X, qui a été bien accueillie par le marché. De plus, la société a continué à étendre sa présence dans le domaine de l'intelligence artificielle et du calcul haute performance.",
+    "key_events": [
+      "NVIDIA a annoncé des revenus record pour le quatrième trimestre de l'exercice 2015, avec une augmentation de 9% par rapport à l'année précédente.",
+      "Lancement de la carte graphique Titan X, basée sur l'architecture Maxwell, qui a été saluée pour ses performances exceptionnelles.",
+      "NVIDIA a présenté sa plateforme de calcul accéléré pour les centres de données, visant à améliorer les performances des applications d'intelligence artificielle.",
+      "La société a annoncé des partenariats stratégiques avec plusieurs entreprises technologiques pour développer des solutions de calcul haute performance."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201506": {
+    "summary": "Au cours du deuxième trimestre de 2015, Apple a connu plusieurs événements significatifs. La société a continué de bénéficier du succès de l'iPhone 6 et 6 Plus, lancés à l'automne 2014. Cependant, les ventes de l'Apple Watch, lancé en avril 2015, ont été mitigées. De plus, Apple a annoncé des plans pour étendre ses investissements en Chine et a fait face à des préoccupations concernant la saturation du marché des smartphones.",
+    "key_events": [
+      "Lancement de l'Apple Watch en avril 2015",
+      "Succès continu de l'iPhone 6 et 6 Plus",
+      "Expansion des investissements en Chine",
+      "Préoccupations concernant la saturation du marché des smartphones",
+      "Apple devient la première société à atteindre une capitalisation boursière de 700 milliards de dollars"
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201506": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements importants entre le 01/03/2015 et le 30/06/2015. La société a continué à renforcer sa position dominante dans le secteur de la publicité en ligne et a fait des progrès significatifs dans d'autres domaines technologiques.",
+    "key_events": [
+      "Google a annoncé un changement de structure pour devenir une filiale d'une nouvelle société mère appelée Alphabet Inc.",
+      "La société a présenté des résultats financiers solides pour le premier trimestre 2015, avec une augmentation des revenus et des bénéfices.",
+      "Google a poursuivi ses investissements dans des projets innovants tels que les voitures autonomes et les technologies de santé.",
+      "La société a fait face à des préoccupations réglementaires en Europe concernant ses pratiques antitrust."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201506": {
+    "summary": "Amazon a connu une croissance significative et une expansion diversifiée au cours du deuxième trimestre 2015. L'entreprise a lancé de nouveaux services et a vu une augmentation de ses revenus, bien que les dépenses élevées aient affecté les bénéfices.",
+    "key_events": [
+      "Amazon a annoncé une augmentation de ses revenus de 20% au premier trimestre 2015, atteignant 22,72 milliards de dollars.",
+      "Lancement d'Amazon Home Services, une marketplace pour les services à domicile, en mars 2015.",
+      "Introduction d'Amazon Echo, un appareil intelligent activé par la voix, qui a gagné en popularité.",
+      "Amazon a célébré les 20 ans de sa création en juillet 2015, marquant deux décennies de croissance et d'innovation.",
+      "Le bénéfice net d'Amazon a chuté de 92% au premier trimestre 2015, en partie à cause des dépenses élevées en recherche et développement."
+    ],
+    "sentiment": "positif"
+  },
+  "META_201506": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between March 1, 2015, and June 30, 2015. The company continued to expand its user base and advertising revenue. Key developments included advancements in virtual reality with the acquisition of Oculus VR, strategic partnerships, and new product features aimed at enhancing user engagement and monetization.",
+    "key_events": [
+      "Facebook announced that it had reached 1.44 billion monthly active users as of March 31, 2015, showing a steady increase in its user base.",
+      "The company continued to invest in virtual reality technology with its acquisition of Oculus VR, aiming to expand its capabilities in this emerging field.",
+      "Facebook introduced new advertising features, including improved targeting options and video ads, to boost its advertising revenue.",
+      "The company launched 'Instant Articles,' a new feature allowing publishers to post articles directly on Facebook, enhancing user engagement.",
+      "Facebook announced a partnership with several major media companies to integrate their content more closely with the Facebook platform."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201506": {
+    "summary": "NVIDIA a connu plusieurs événements importants entre mars et juin 2015. La société a annoncé des partenariats stratégiques et des lancements de produits, tout en faisant face à des défis sur le marché des GPU. Les résultats financiers ont été mitigés, avec des performances solides dans certains secteurs compensées par des faiblesses dans d'autres.",
+    "key_events": [
+      "NVIDIA a annoncé un partenariat avec Audi pour développer des systèmes de conduite autonome.",
+      "La société a lancé la carte graphique Titan X, visant les joueurs et les professionnels de la création de contenu.",
+      "NVIDIA a présenté sa nouvelle architecture de GPU, Pascal, promettant des améliorations significatives en termes de performance et d'efficacité énergétique.",
+      "Les résultats financiers du premier trimestre ont montré une croissance des revenus dans le secteur des centres de données, mais une baisse dans le secteur des GPU pour ordinateurs portables.",
+      "NVIDIA a annoncé des investissements dans la réalité virtuelle, un secteur en pleine croissance."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_201507": {
+    "summary": "Entre le 01/04/2015 et le 31/07/2015, Apple a connu plusieurs événements significatifs. La société a publié des résultats financiers solides pour le deuxième trimestre, avec un bénéfice record grâce aux ventes de l'iPhone. Apple a également annoncé un programme de rachat d'actions et une augmentation de son dividende. De plus, la société a lancé Apple Music, un nouveau service de streaming musical, et a fait face à des préoccupations concernant les ventes de l'Apple Watch.",
+    "key_events": [
+      "Publication des résultats financiers du deuxième trimestre avec un bénéfice record grâce aux ventes de l'iPhone.",
+      "Annonce d'un programme de rachat d'actions de 200 milliards de dollars et d'une augmentation du dividende.",
+      "Lancement d'Apple Music, un nouveau service de streaming musical.",
+      "Préoccupations concernant les ventes de l'Apple Watch, jugées inférieures aux attentes."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201507": {
+    "summary": "Entre avril et juillet 2015, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. La société a continué à afficher une croissance solide, avec des revenus publicitaires en hausse. Cependant, des préoccupations concernant la diversification des revenus et la régulation antitrust en Europe ont également marqué cette période.",
+    "key_events": [
+      "Alphabet a publié des résultats financiers solides pour le premier trimestre 2015, avec une augmentation des revenus publicitaires.",
+      "Des inquiétudes ont été soulevées concernant la dépendance de la société à la publicité, représentant la majorité de ses revenus.",
+      "L'Union européenne a intensifié ses enquêtes antitrust contre Google, ce qui a suscité des craintes parmi les investisseurs.",
+      "Google a annoncé des investissements importants dans des projets innovants, tels que les voitures autonomes et les technologies de santé."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_201507": {
+    "summary": "Entre le 01/04/2015 et le 31/07/2015, Amazon a connu plusieurs événements significatifs. La société a continué à investir massivement dans l'expansion de ses services, notamment Amazon Web Services (AWS) et Amazon Prime. Les résultats financiers du deuxième trimestre ont été publiés, montrant une croissance des revenus mais des marges bénéficiaires toujours sous pression. De plus, Amazon a célébré son 20e anniversaire avec des promotions spéciales, ce qui a stimulé les ventes.",
+    "key_events": [
+      "Amazon a annoncé une croissance de 20% de ses revenus pour le deuxième trimestre 2015, atteignant 23,18 milliards de dollars.",
+      "Lancement de nouvelles initiatives pour Amazon Prime, incluant des services supplémentaires pour les membres.",
+      "Amazon Web Services (AWS) a continué à montrer une forte croissance, devenant un contributeur majeur aux revenus totaux.",
+      "Célébration du 20e anniversaire d'Amazon avec des promotions spéciales et des remises pour les clients, stimulant les ventes.",
+      "Investissements continus dans l'expansion internationale, notamment en Inde et en Chine."
+    ],
+    "sentiment": "positif"
+  },
+  "META_201507": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between April 1, 2015, and July 31, 2015. The company continued to grow its user base and revenue, but also faced challenges related to data privacy and regulatory issues.",
+    "key_events": [
+      "Facebook reported strong Q1 2015 earnings on April 22, 2015, with revenue increasing by 42% year-over-year.",
+      "In May 2015, Facebook announced the launch of Instant Articles, a new feature that allows publishers to post articles directly to Facebook.",
+      "Facebook faced criticism and legal challenges related to data privacy and its handling of user information during this period.",
+      "On July 29, 2015, Facebook reported its Q2 2015 earnings, showing a 39% increase in revenue year-over-year, driven by strong mobile advertising growth."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201507": {
+    "summary": "NVIDIA a connu plusieurs événements importants entre avril et juillet 2015. La société a annoncé des résultats financiers solides, lancé de nouveaux produits et fait l'objet d'analyses positives de la part des analystes financiers.",
+    "key_events": [
+      "NVIDIA a annoncé ses résultats financiers pour le premier trimestre 2016, avec un chiffre d'affaires de 1,15 milliard de dollars, en hausse de 4 % par rapport à l'année précédente.",
+      "La société a lancé la carte graphique GeForce GTX Titan X, basée sur l'architecture Maxwell, qui a été bien accueillie par les consommateurs et les critiques.",
+      "NVIDIA a annoncé des partenariats avec plusieurs entreprises automobiles pour développer des systèmes de conduite autonome.",
+      "Les analystes financiers ont maintenu ou relevé leurs objectifs de cours pour NVIDIA, citant la forte demande pour ses produits et sa position solide sur le marché des GPU.",
+      "NVIDIA a annoncé son intention d'acquérir des parts dans des entreprises spécialisées dans l'intelligence artificielle et le deep learning."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201508": {
+    "summary": "Entre mai et août 2015, Apple a connu plusieurs événements significatifs. La société a continué à bénéficier du succès de l'iPhone 6 et 6 Plus, lancés en 2014. Cependant, il y a eu des préoccupations concernant la croissance future en raison de la saturation du marché des smartphones. Apple a également fait face à des fluctuations du marché boursier en raison des incertitudes économiques mondiales, notamment en Chine.",
+    "key_events": [
+      "Apple a annoncé des résultats financiers record pour le deuxième trimestre 2015, avec un bénéfice net de 13,6 milliards de dollars, grâce aux ventes soutenues de l'iPhone.",
+      "Tim Cook, le PDG d'Apple, a exprimé des préoccupations concernant la baisse des ventes en Chine, ce qui a affecté le sentiment des investisseurs.",
+      "Apple a lancé Apple Music en juin 2015, un service de streaming musical destiné à concurrencer des services comme Spotify.",
+      "La société a annoncé un programme de rachat d'actions de 200 milliards de dollars, ce qui a été bien accueilli par les investisseurs.",
+      "Des rumeurs ont commencé à circuler concernant le prochain iPhone, l'iPhone 6S, prévu pour un lancement en septembre 2015."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201508": {
+    "summary": "Entre le 01/05/2015 et le 31/08/2015, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. La société a annoncé une restructuration majeure avec la création d'une nouvelle société mère, Alphabet, pour superviser ses diverses filiales, dont Google. Cette période a également vu des performances financières solides et des avancées dans divers projets innovants.",
+    "key_events": [
+      "Alphabet Inc. a annoncé une restructuration majeure avec la création de la société mère Alphabet.",
+      "Google a publié des résultats financiers solides pour le deuxième trimestre 2015, avec une augmentation des revenus et des bénéfices.",
+      "La société a continué à investir dans des projets innovants, notamment dans les domaines de la santé et de la technologie.",
+      "Google a annoncé des progrès significatifs dans ses projets de voitures autonomes et de technologies de réalité virtuelle."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201508": {
+    "summary": "Entre le 01/05/2015 et le 31/08/2015, Amazon a connu plusieurs événements significatifs. La société a continué à investir massivement dans l'expansion de ses services, notamment Amazon Web Services (AWS) et Amazon Prime. Les résultats financiers du deuxième trimestre ont été publiés, montrant une croissance des revenus mais des marges bénéficiaires toujours sous pression. De plus, Amazon a fait face à des critiques concernant les conditions de travail dans ses entrepôts.",
+    "key_events": [
+      "Amazon a annoncé une croissance de 20% de ses revenus pour le deuxième trimestre 2015, atteignant 23,18 milliards de dollars.",
+      "Le service Amazon Web Services (AWS) a continué à montrer une forte croissance, avec une augmentation de 81% de ses revenus.",
+      "Amazon a célébré le 20ème anniversaire de sa création, marquant deux décennies d'innovation et de croissance.",
+      "La société a fait face à des critiques et des enquêtes concernant les conditions de travail dans ses entrepôts, ce qui a suscité des préoccupations en matière de responsabilité sociale de l'entreprise.",
+      "Amazon a lancé de nouveaux services et fonctionnalités pour les membres Prime, visant à renforcer la fidélité des clients."
+    ],
+    "sentiment": "positif"
+  },
+  "META_201508": {
+    "summary": "Entre mai et août 2015, Meta (anciennement Facebook) a connu plusieurs événements significatifs. L'entreprise a continué à renforcer sa position dans le secteur des médias sociaux et de la publicité en ligne. Cependant, elle a également fait face à des défis réglementaires et à des préoccupations concernant la croissance des utilisateurs.",
+    "key_events": [
+      "Facebook a annoncé un partenariat avec plusieurs médias pour héberger du contenu directement sur sa plateforme, renforçant ainsi son engagement dans le domaine des médias.",
+      "L'entreprise a publié ses résultats financiers pour le deuxième trimestre 2015, affichant une croissance solide des revenus et des bénéfices, grâce à une augmentation de la publicité mobile.",
+      "Facebook a atteint le cap des 1 milliard d'utilisateurs actifs en une seule journée, marquant une étape importante dans sa croissance.",
+      "L'entreprise a fait face à des critiques et à des préoccupations concernant la modération du contenu et la protection de la vie privée, ce qui a conduit à des discussions avec les régulateurs.",
+      "Facebook a lancé de nouvelles fonctionnalités pour les entreprises, notamment des outils de messagerie et de publicité améliorés, pour renforcer son offre aux annonceurs."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201508": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation entre mai et août 2015. L'entreprise a lancé de nouveaux produits, annoncé des partenariats stratégiques et publié des résultats financiers solides.",
+    "key_events": [
+      "NVIDIA a annoncé le lancement de la carte graphique GeForce GTX 980 Ti en juin 2015, renforçant sa position sur le marché des GPU haut de gamme.",
+      "L'entreprise a présenté sa nouvelle architecture de processeur graphique, Pascal, lors de la conférence GTC en mars 2015, avec des promesses de performances améliorées et d'efficacité énergétique.",
+      "NVIDIA a annoncé un partenariat avec Audi pour développer des systèmes de conduite autonome, marquant une avancée significative dans le secteur automobile.",
+      "L'entreprise a publié ses résultats financiers pour le deuxième trimestre de l'exercice 2016, affichant une croissance de 5% de son chiffre d'affaires par rapport à l'année précédente.",
+      "NVIDIA a annoncé une collaboration avec Microsoft pour intégrer ses GPU dans les serveurs Azure, renforçant sa présence dans le cloud computing."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201509": {
+    "summary": "Au cours de la période du 1er juin 2015 au 30 septembre 2015, Apple a connu plusieurs événements significatifs. L'entreprise a continué de bénéficier du succès de l'iPhone 6 et 6 Plus, tout en se préparant pour le lancement de nouveaux produits. Cependant, les préoccupations concernant la croissance future et la dépendance à l'égard des ventes d'iPhone ont commencé à peser sur le sentiment des investisseurs.",
+    "key_events": [
+      "Apple a annoncé des ventes record de l'iPhone 6 et 6 Plus, contribuant à une croissance significative des revenus.",
+      "L'entreprise a lancé l'Apple Watch en avril 2015, mais les ventes initiales ont été mitigées.",
+      "Apple a annoncé un programme de rachat d'actions de 200 milliards de dollars, montrant sa confiance dans sa trésorerie et ses perspectives futures.",
+      "Les préoccupations concernant la croissance future et la dépendance à l'égard des ventes d'iPhone ont commencé à émerger.",
+      "Apple a annoncé de nouveaux produits, dont l'iPad Pro et l'Apple TV, lors d'un événement spécial en septembre 2015."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201509": {
+    "summary": "Entre le 01/06/2015 et le 30/09/2015, Alphabet Inc. (anciennement Google) a connu plusieurs événements significatifs. La société a annoncé une restructuration majeure, créant une nouvelle société mère appelée Alphabet. Cette restructuration visait à séparer les activités principales de Google des projets plus ambitieux et risqués, connus sous le nom de \"Other Bets\". Financièrement, Alphabet a continué à afficher une croissance solide, avec des revenus publicitaires en hausse. Cependant, il y avait des préoccupations concernant les dépenses croissantes et la rentabilité des projets \"Other Bets\".",
+    "key_events": [
+      "Annonce de la création d'Alphabet comme société mère de Google et d'autres filiales.",
+      "Restructuration de l'entreprise pour séparer les activités principales de Google des projets \"Other Bets\".",
+      "Croissance continue des revenus publicitaires.",
+      "Préoccupations concernant les dépenses croissantes et la rentabilité des projets \"Other Bets\".",
+      "Lancement de nouveaux produits et services, notamment dans le domaine des technologies émergentes."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201509": {
+    "summary": "Au cours de la période du 1er juin 2015 au 30 septembre 2015, Amazon a connu plusieurs événements significatifs. L'entreprise a continué à étendre ses services et sa présence sur le marché, tout en faisant face à des défis réglementaires et concurrentiels.",
+    "key_events": [
+      "Amazon a annoncé l'acquisition d'Elements, une startup spécialisée dans la création de contenu interactif, pour renforcer ses capacités dans le domaine du streaming vidéo.",
+      "L'entreprise a lancé Amazon Business, une marketplace dédiée aux entreprises, visant à concurrencer directement les fournisseurs traditionnels de fournitures de bureau.",
+      "Amazon a fait face à des critiques et à des enquêtes de la part des autorités européennes concernant ses pratiques fiscales et ses conditions de travail dans ses entrepôts.",
+      "Le 30 juillet 2015, Amazon a publié ses résultats financiers pour le deuxième trimestre, affichant une croissance des revenus de 20% par rapport à l'année précédente, mais avec une baisse des bénéfices due à des investissements importants.",
+      "L'entreprise a annoncé l'expansion de son service Amazon Prime Now, offrant des livraisons en une heure, à de nouvelles villes aux États-Unis et en Europe."
+    ],
+    "sentiment": "positif"
+  },
+  "META_201509": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between June 1, 2015, and September 30, 2015. The company continued to grow its user base and advertising revenue. However, it also faced challenges related to data privacy and regulatory scrutiny.",
+    "key_events": [
+      "Facebook reached 1 billion users in a single day for the first time in its history.",
+      "The company continued to invest heavily in new technologies and acquisitions, including virtual reality with Oculus Rift.",
+      "Facebook faced scrutiny from regulators over its data privacy practices.",
+      "The company launched new features and tools for advertisers, further solidifying its position as a leader in digital advertising."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201509": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation entre juin et septembre 2015, avec des annonces majeures dans les domaines du gaming, de l'intelligence artificielle et des véhicules autonomes.",
+    "key_events": [
+      "NVIDIA a annoncé la carte graphique GeForce GTX 980 Ti en juin 2015, renforçant sa position sur le marché du gaming.",
+      "En août 2015, NVIDIA a présenté sa plateforme DRIVE PX pour les véhicules autonomes, marquant une avancée significative dans ce secteur.",
+      "NVIDIA a également annoncé des partenariats avec plusieurs entreprises pour développer des solutions d'intelligence artificielle.",
+      "Le chiffre d'affaires de NVIDIA pour le deuxième trimestre de l'exercice 2016 a augmenté de 5% par rapport à l'année précédente, atteignant 1,15 milliard de dollars."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201510": {
+    "summary": "Entre le 01/07/2015 et le 31/10/2015, Apple a connu plusieurs événements significatifs. La société a publié ses résultats financiers pour le troisième trimestre, montrant une croissance solide grâce aux ventes de l'iPhone. Cependant, les préoccupations concernant la croissance future et la dépendance à l'iPhone ont commencé à émerger. Apple a également lancé de nouveaux produits, dont l'iPad Pro et l'Apple TV, et a annoncé des mises à jour logicielles majeures.",
+    "key_events": [
+      "Publication des résultats financiers du troisième trimestre avec des revenus records grâce aux ventes de l'iPhone.",
+      "Lancement de l'iPad Pro et de l'Apple TV.",
+      "Annonce de mises à jour logicielles majeures, y compris iOS 9.",
+      "Préoccupations des investisseurs concernant la croissance future et la dépendance à l'iPhone.",
+      "Fluctuations du cours de l'action en raison des incertitudes du marché."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201510": {
+    "summary": "Entre le 01/07/2015 et le 31/10/2015, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. La société a été restructurée avec la création d'Alphabet comme société mère de Google, permettant une meilleure gestion des diverses entreprises sous son égide. Les résultats financiers du troisième trimestre ont été publiés, montrant une croissance solide des revenus et des bénéfices. Cependant, il y a eu des inquiétudes concernant les dépenses croissantes et la concurrence dans le secteur de la publicité en ligne.",
+    "key_events": [
+      "Restructuration de l'entreprise avec la création d'Alphabet Inc. comme société mère de Google.",
+      "Publication des résultats financiers du troisième trimestre, montrant une croissance des revenus et des bénéfices.",
+      "Inquiétudes concernant l'augmentation des dépenses et la concurrence dans le secteur de la publicité en ligne.",
+      "Lancement de nouveaux produits et services, notamment dans le domaine des technologies mobiles et de la publicité."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201510": {
+    "summary": "Entre le 01/07/2015 et le 31/10/2015, Amazon a connu plusieurs événements significatifs. La société a continué à étendre ses services et sa présence sur le marché, tout en faisant face à des défis réglementaires et concurrentiels.",
+    "key_events": [
+      "Amazon a célébré son 20ème anniversaire en juillet 2015, marquant deux décennies de croissance et d'innovation.",
+      "En juillet 2015, Amazon a lancé Prime Day, un événement de vente exclusif pour les membres Prime, qui a connu un succès mitigé en raison de problèmes techniques et de critiques des clients.",
+      "En août 2015, Amazon a ouvert son premier magasin physique à Seattle, marquant une nouvelle étape dans son expansion vers le commerce de détail traditionnel.",
+      "En septembre 2015, Amazon a annoncé l'acquisition d'Elemental Technologies, une entreprise spécialisée dans la diffusion vidéo en ligne, pour un montant estimé à 500 millions de dollars.",
+      "En octobre 2015, Amazon a fait face à des critiques et à des enquêtes réglementaires concernant ses pratiques de travail et ses conditions d'emploi dans ses entrepôts."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_201510": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between July 1, 2015, and October 31, 2015. The company continued to grow its user base and revenue, but also faced challenges related to data privacy and regulatory issues.",
+    "key_events": [
+      "July 29, 2015: Facebook reported its Q2 2015 earnings, beating expectations with revenue of $4.04 billion and earnings per share of $0.50.",
+      "August 2015: Facebook's user base reached 1.5 billion monthly active users, marking a significant milestone for the company.",
+      "September 2015: Facebook faced scrutiny over its handling of user data and privacy concerns, with critics arguing that the company needed to do more to protect user information.",
+      "October 2015: Facebook announced plans to expand its headquarters in Menlo Park, California, with a new office building designed by architect Frank Gehry.",
+      "October 28, 2015: Facebook reported its Q3 2015 earnings, with revenue of $4.5 billion and earnings per share of $0.57, again beating expectations."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201510": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation entre juillet et octobre 2015. L'entreprise a lancé de nouveaux produits, annoncé des partenariats stratégiques et affiché des résultats financiers solides.",
+    "key_events": [
+      "NVIDIA a annoncé un partenariat avec Audi pour développer des systèmes d'infodivertissement et de conduite autonome.",
+      "L'entreprise a lancé la carte graphique GeForce GTX 980 Ti, qui a été bien accueillie par les consommateurs et les critiques.",
+      "NVIDIA a annoncé des résultats financiers solides pour le deuxième trimestre, avec un chiffre d'affaires en hausse de 5 % par rapport à l'année précédente.",
+      "L'entreprise a présenté son architecture Pascal, qui promet des améliorations significatives en termes de performance et d'efficacité énergétique.",
+      "NVIDIA a annoncé un partenariat avec Microsoft pour développer des solutions de cloud gaming."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201511": {
+    "summary": "Entre août et novembre 2015, Apple a connu plusieurs événements significatifs. La société a lancé de nouveaux produits, dont l'iPhone 6s et l'iPad Pro, qui ont été bien reçus par le marché. Cependant, les ventes d'iPhone ont montré des signes de ralentissement, ce qui a suscité des inquiétudes parmi les investisseurs. De plus, Apple a continué à développer ses services, comme Apple Music et Apple Pay, pour diversifier ses revenus.",
+    "key_events": [
+      "Lancement de l'iPhone 6s et de l'iPad Pro en septembre 2015",
+      "Ralentissement des ventes d'iPhone signalé en novembre 2015",
+      "Expansion d'Apple Music et d'Apple Pay",
+      "Apple a annoncé des records de ventes pour le premier week-end de lancement de l'iPhone 6s",
+      "Tim Cook a exprimé des inquiétudes concernant la baisse des ventes en Chine"
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201511": {
+    "summary": "Alphabet Inc., la société mère de Google, a été créée en août 2015, ce qui a marqué une restructuration majeure de l'entreprise. Cette période a également vu des changements dans la direction et des rapports financiers solides.",
+    "key_events": [
+      "Création d'Alphabet Inc. en tant que société mère de Google, annoncée le 10 août 2015.",
+      "Larry Page devient le PDG d'Alphabet, tandis que Sundar Pichai est nommé PDG de Google.",
+      "Publication des résultats financiers du troisième trimestre 2015, montrant une croissance des revenus et des bénéfices.",
+      "Annonce de nouveaux produits et services, notamment des mises à jour pour Android et des avancées dans le domaine de l'intelligence artificielle."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201511": {
+    "summary": "Amazon a connu une période de croissance et d'expansion significative entre août et novembre 2015. L'entreprise a continué à diversifier ses activités et à investir dans de nouveaux marchés et technologies.",
+    "key_events": [
+      "En août 2015, Amazon a annoncé l'acquisition d'Elemental Technologies, une entreprise spécialisée dans la diffusion vidéo en ligne, pour un montant non divulgué.",
+      "En septembre 2015, Amazon a lancé son service de livraison en une heure, Prime Now, dans de nouvelles villes aux États-Unis, renforçant ainsi son offre de services pour les membres Prime.",
+      "En octobre 2015, Amazon a annoncé un partenariat avec le groupe de médias allemand ProSiebenSat.1 pour développer des services de commerce électronique et de vidéo en ligne.",
+      "En novembre 2015, Amazon a ouvert son premier magasin physique, Amazon Books, à Seattle, marquant une nouvelle étape dans l'expansion de l'entreprise dans le commerce de détail traditionnel.",
+      "Amazon a également annoncé des résultats financiers solides pour le troisième trimestre 2015, avec une augmentation significative des revenus et des bénéfices par rapport à l'année précédente."
+    ],
+    "sentiment": "positif"
+  },
+  "META_201511": {
+    "summary": "Entre août et novembre 2015, Meta (anciennement Facebook) a connu plusieurs événements significatifs. La société a continué à renforcer sa position dans le secteur des médias sociaux et de la publicité en ligne. Cependant, elle a également fait face à des défis réglementaires et à des préoccupations concernant la croissance des utilisateurs.",
+    "key_events": [
+      "En août 2015, Facebook a atteint un milliard d'utilisateurs actifs en une seule journée, marquant une étape importante pour la société.",
+      "En septembre 2015, Facebook a lancé une nouvelle fonctionnalité appelée 'Reactions', permettant aux utilisateurs d'exprimer différentes émotions en réaction aux publications.",
+      "En octobre 2015, Facebook a annoncé des résultats financiers solides pour le troisième trimestre, avec une augmentation de 41% des revenus par rapport à l'année précédente.",
+      "En novembre 2015, Facebook a fait face à des critiques concernant son rôle dans la diffusion de fausses informations et de contenus inappropriés.",
+      "En novembre 2015, Facebook a lancé une nouvelle application appelée 'Notify', visant à fournir aux utilisateurs des notifications personnalisées sur les sujets qui les intéressent."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201511": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation entre août et novembre 2015. L'entreprise a lancé de nouveaux produits, annoncé des partenariats stratégiques et publié des résultats financiers solides.",
+    "key_events": [
+      "NVIDIA a annoncé un partenariat avec Audi pour développer des systèmes d'infodivertissement et des tableaux de bord numériques pour les véhicules.",
+      "L'entreprise a lancé la carte graphique GeForce GTX 950, visant à offrir des performances élevées pour les joueurs avec un budget limité.",
+      "NVIDIA a publié ses résultats financiers pour le deuxième trimestre de l'exercice 2016, affichant une croissance de 5% de son chiffre d'affaires par rapport à l'année précédente.",
+      "L'entreprise a annoncé des avancées significatives dans le domaine de l'intelligence artificielle avec sa plateforme NVIDIA DRIVE PX, utilisée pour les véhicules autonomes.",
+      "NVIDIA a présenté sa nouvelle architecture de GPU, Pascal, promettant des améliorations significatives en termes de performances et d'efficacité énergétique."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201512": {
+    "summary": "Au cours de la période du 1er septembre 2015 au 31 décembre 2015, Apple a connu plusieurs événements significatifs. L'entreprise a lancé de nouveaux produits, dont l'iPhone 6s et l'iPad Pro, qui ont été bien accueillis par le marché. Cependant, les ventes de l'Apple Watch n'ont pas répondu aux attentes initiales. Les résultats financiers du quatrième trimestre ont montré une croissance des revenus et des bénéfices, mais les prévisions pour le trimestre suivant ont été jugées décevantes par les analystes, ce qui a affecté le cours de l'action.",
+    "key_events": [
+      "Lancement de l'iPhone 6s et de l'iPad Pro en septembre 2015",
+      "Ventes de l'Apple Watch inférieures aux attentes",
+      "Publication des résultats financiers du quatrième trimestre montrant une croissance des revenus et des bénéfices",
+      "Prévisions de revenus pour le premier trimestre 2016 inférieures aux attentes des analystes"
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201512": {
+    "summary": "Alphabet Inc., la société mère de Google, a été créée en octobre 2015, marquant une restructuration majeure de l'entreprise. Cette période a également vu des performances financières solides et des innovations continues dans divers secteurs technologiques.",
+    "key_events": [
+      "Création d'Alphabet Inc. en octobre 2015, devenant la société mère de Google.",
+      "Publication des résultats financiers du troisième trimestre 2015, montrant une croissance des revenus et des bénéfices.",
+      "Lancement de nouveaux produits et services, notamment dans les domaines de la publicité en ligne, du cloud computing et des appareils mobiles.",
+      "Investissements continus dans des projets de recherche et développement, y compris des initiatives dans l'intelligence artificielle et les voitures autonomes."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201512": {
+    "summary": "Amazon a connu une croissance significative et une expansion diversifiée au cours de la période allant du 1er septembre 2015 au 31 décembre 2015. L'entreprise a lancé de nouveaux services, étendu sa présence internationale et enregistré une hausse des revenus, bien que les bénéfices aient été affectés par des investissements importants.",
+    "key_events": [
+      "Amazon a annoncé l'ouverture de nouveaux centres de distribution dans plusieurs pays, renforçant ainsi sa capacité logistique.",
+      "Lancement d'Amazon Prime en Inde, marquant une expansion majeure sur le marché asiatique.",
+      "Introduction d'Amazon Echo, un appareil intelligent activé par la voix, qui a reçu des critiques positives et a ouvert de nouvelles opportunités de marché.",
+      "Amazon Web Services (AWS) a continué de croître rapidement, devenant l'un des principaux contributeurs aux revenus de l'entreprise.",
+      "Les revenus du quatrième trimestre ont augmenté de 22% par rapport à l'année précédente, atteignant 35,7 milliards de dollars.",
+      "Malgré la croissance des revenus, les bénéfices ont été inférieurs aux attentes en raison des investissements continus dans de nouvelles technologies et l'expansion internationale."
+    ],
+    "sentiment": "positif"
+  },
+  "META_201512": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between September 1, 2015, and December 31, 2015. The company continued to grow its user base and advertising revenue. However, it also faced challenges related to data privacy and regulatory scrutiny.",
+    "key_events": [
+      "Facebook reached 1.55 billion monthly active users as of September 30, 2015.",
+      "The company's advertising revenue grew to $4.3 billion in Q3 2015, up from $2.96 billion in Q3 2014.",
+      "Facebook introduced new features such as 'Reactions' to enhance user engagement.",
+      "The company faced scrutiny from European regulators over data privacy concerns.",
+      "Facebook's stock experienced volatility due to concerns over user growth and monetization."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_201512": {
+    "summary": "NVIDIA a connu une période de croissance et d'innovation entre septembre et décembre 2015. L'entreprise a lancé de nouveaux produits, établi des partenariats stratégiques et bénéficié de la croissance du marché du gaming et des centres de données.",
+    "key_events": [
+      "Lancement de nouvelles cartes graphiques GeForce GTX pour le marché du gaming.",
+      "Partenariat avec Audi pour le développement de systèmes de conduite autonome.",
+      "Annonce de résultats financiers solides pour le troisième trimestre, avec une croissance des revenus dans les secteurs du gaming et des centres de données.",
+      "Introduction de la plateforme NVIDIA DRIVE PX pour les véhicules autonomes.",
+      "Collaboration avec Microsoft pour l'utilisation de GPU NVIDIA dans le cloud Azure."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_202201": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre le 01/10/2021 et le 31/01/2022. La société a continué à montrer une croissance solide malgré les défis réglementaires et les préoccupations concernant la concurrence. Les revenus publicitaires ont augmenté, et la société a fait des progrès dans ses segments cloud et YouTube. Cependant, des inquiétudes concernant la régulation antitrust et la concurrence ont pesé sur le sentiment des investisseurs.",
+    "key_events": [
+      "Alphabet a rapporté des revenus de 65,1 milliards de dollars pour le troisième trimestre 2021, en hausse de 41% par rapport à l'année précédente.",
+      "La société a annoncé des investissements majeurs dans l'infrastructure cloud et l'expansion des centres de données.",
+      "Des préoccupations concernant la régulation antitrust aux États-Unis et en Europe ont persisté.",
+      "YouTube a continué à montrer une croissance robuste des revenus publicitaires.",
+      "Alphabet a fait face à une concurrence accrue dans le secteur de la publicité en ligne et des services cloud."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202201": {
+    "summary": "Microsoft a connu une période de croissance et d'expansion entre octobre 2021 et janvier 2022, avec des acquisitions majeures et des développements dans le domaine du cloud et des jeux vidéo. Cependant, il y a eu des préoccupations concernant la croissance des revenus et des défis réglementaires.",
+    "key_events": [
+      "Microsoft a annoncé l'acquisition d'Activision Blizzard pour 68,7 milliards de dollars, ce qui marque une entrée majeure dans l'industrie du jeu vidéo.",
+      "Les résultats financiers du premier trimestre 2022 ont montré une croissance des revenus de 20% par rapport à l'année précédente, avec un bénéfice net de 20,5 milliards de dollars.",
+      "Microsoft a lancé Windows 11, avec une adoption progressive par les utilisateurs et les entreprises.",
+      "La société a fait face à des défis réglementaires, notamment des enquêtes antitrust aux États-Unis et en Europe concernant ses pratiques commerciales.",
+      "Microsoft a continué à investir dans le cloud et l'IA, avec des annonces de nouveaux services et partenariats dans le domaine de la santé et de l'industrie."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202201": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre octobre 2021 et janvier 2022, notamment des annonces financières, des développements dans le secteur de la santé et des défis logistiques.",
+    "key_events": [
+      "Amazon a annoncé des résultats financiers solides pour le troisième trimestre 2021, avec une augmentation des ventes nettes de 15% par rapport à l'année précédente.",
+      "L'entreprise a fait face à des défis logistiques et à des perturbations de la chaîne d'approvisionnement, affectant ses opérations et ses coûts.",
+      "Amazon a annoncé son intention d'investir 1,2 milliard de dollars dans le secteur de la santé, avec l'acquisition de l'entreprise de soins de santé à domicile One Medical.",
+      "L'entreprise a été confrontée à des critiques et à des enquêtes réglementaires concernant ses pratiques de travail et ses politiques de concurrence.",
+      "Amazon a continué à étendre ses services de cloud computing avec AWS, en annonçant de nouveaux partenariats et innovations."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202201": {
+    "summary": "Meta, anciennement connu sous le nom de Facebook, a connu plusieurs événements importants entre le 01/10/2021 et le 31/01/2022. La société a changé de nom pour refléter son orientation vers le métavers, mais a également fait face à des défis réglementaires et à des préoccupations concernant la croissance des utilisateurs et les revenus.",
+    "key_events": [
+      "Le 28/10/2021, Facebook Inc. a annoncé son changement de nom pour Meta, reflétant son ambition de se concentrer sur le développement du métavers.",
+      "En novembre 2021, Meta a fait face à des fuites de documents internes, connus sous le nom de 'Facebook Papers', révélant des préoccupations concernant la modération de contenu et la désinformation sur ses plateformes.",
+      "Le 3/11/2021, Meta a annoncé des résultats financiers pour le troisième trimestre 2021, avec des revenus en hausse de 35% par rapport à l'année précédente, mais a averti d'un ralentissement de la croissance.",
+      "En décembre 2021, Meta a été confronté à des critiques et à des actions en justice concernant ses pratiques de collecte de données et de ciblage publicitaire.",
+      "Le 2/2/2022, Meta a annoncé une baisse de ses utilisateurs actifs quotidiens pour la première fois de son histoire, ce qui a entraîné une chute significative de son cours de bourse."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_202201": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements significatifs entre le 1er octobre 2021 et le 31 janvier 2022. L'entreprise a continué à renforcer sa position dans le secteur des semi-conducteurs et de l'intelligence artificielle, tout en faisant face à des défis liés à la chaîne d'approvisionnement mondiale.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux produits et technologies lors de sa conférence GTC en novembre 2021, mettant en avant des avancées dans les domaines de l'IA, de la robotique et des véhicules autonomes.",
+      "L'entreprise a fait face à des défis liés à la pénurie mondiale de semi-conducteurs, ce qui a affecté la production et les livraisons de certains de ses produits.",
+      "NVIDIA a annoncé des partenariats stratégiques avec plusieurs entreprises, dont Microsoft et Amazon, pour renforcer ses offres dans le cloud computing et l'IA.",
+      "L'entreprise a publié ses résultats financiers pour le troisième trimestre 2021, affichant une croissance solide malgré les défis de la chaîne d'approvisionnement.",
+      "NVIDIA a annoncé l'acquisition d'une entreprise spécialisée dans les technologies de réseau, renforçant ainsi ses capacités dans le domaine des centres de données."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202201": {
+    "summary": "Apple a connu une période de croissance et d'innovation entre octobre 2021 et janvier 2022, avec des lancements de nouveaux produits et des performances financières solides. Cependant, la société a également fait face à des défis en matière de chaîne d'approvisionnement et à des préoccupations réglementaires.",
+    "key_events": [
+      "Apple a lancé de nouveaux MacBook Pro avec des puces M1 Pro et M1 Max en octobre 2021, recevant des critiques positives.",
+      "La société a publié ses résultats financiers pour le quatrième trimestre 2021, affichant une croissance de 29 % de son chiffre d'affaires par rapport à l'année précédente.",
+      "Apple a annoncé de nouveaux AirPods en octobre 2021, avec une meilleure qualité audio et une autonomie prolongée.",
+      "En décembre 2021, Apple est devenu la première société à atteindre une capitalisation boursière de 3 000 milliards de dollars.",
+      "La société a fait face à des défis en matière de chaîne d'approvisionnement en raison de la pénurie mondiale de puces, affectant la production de certains produits.",
+      "Apple a été confronté à des préoccupations réglementaires, notamment aux États-Unis et en Europe, concernant ses pratiques commerciales et sa domination sur le marché."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_202202": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements importants entre le 1er novembre 2021 et le 28 février 2022. La société a continué à montrer une croissance solide malgré les défis réglementaires et les préoccupations concernant la concurrence. Les revenus publicitaires ont augmenté, et la société a fait des progrès dans ses segments cloud et YouTube. Cependant, des inquiétudes concernant la réglementation antitrust et la concurrence ont pesé sur le sentiment des investisseurs.",
+    "key_events": [
+      "Alphabet a rapporté des revenus solides pour le quatrième trimestre 2021, avec une croissance de 32% d'une année sur l'autre, atteignant 75,3 milliards de dollars.",
+      "La société a annoncé des plans pour investir davantage dans l'infrastructure cloud et l'intelligence artificielle.",
+      "Des préoccupations réglementaires continues aux États-Unis et en Europe concernant les pratiques antitrust de Google.",
+      "Google a fait face à une concurrence accrue dans le secteur de la publicité en ligne et des recherches sur le web.",
+      "Alphabet a annoncé un rachat d'actions de 70 milliards de dollars, ce qui a été bien accueilli par les investisseurs.",
+      "La société a continué à investir dans des initiatives de santé et de biotechnologie via sa filiale Verily."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202202": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre le 1er novembre 2021 et le 28 février 2022. L'entreprise a continué à montrer une croissance solide, avec des performances financières robustes et des annonces stratégiques majeures.",
+    "key_events": [
+      "Microsoft a annoncé de solides résultats financiers pour le deuxième trimestre de l'exercice 2022, avec une augmentation de 20 % du chiffre d'affaires et de 21 % du bénéfice net par rapport à l'année précédente.",
+      "L'acquisition d'Activision Blizzard a été annoncée en janvier 2022 pour un montant de 68,7 milliards de dollars, marquant l'une des plus grandes acquisitions de l'histoire de Microsoft.",
+      "Microsoft a continué à investir dans ses services cloud, avec Azure montrant une croissance de 46 %.",
+      "L'entreprise a également fait face à des défis, notamment des préoccupations concernant la concurrence et la réglementation, ainsi que des problèmes de chaîne d'approvisionnement affectant la division des appareils de surface."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202202": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre le 1er novembre 2021 et le 28 février 2022. La société a continué à étendre ses opérations et à investir dans de nouveaux projets, tout en faisant face à des défis réglementaires et logistiques. Les résultats financiers ont été solides, mais les coûts d'exploitation ont augmenté.",
+    "key_events": [
+      "Amazon a annoncé des plans pour investir 1,3 milliard de dollars dans des salaires et des avantages pour ses employés.",
+      "La société a fait face à des défis logistiques et à des pénuries de main-d'œuvre pendant la saison des fêtes.",
+      "Amazon a annoncé une augmentation de ses frais de livraison pour les vendeurs tiers sur sa plateforme.",
+      "La société a investi dans des projets d'énergie renouvelable, visant à atteindre la neutralité carbone d'ici 2040.",
+      "Amazon a annoncé l'acquisition de MGM Studios pour 8,45 milliards de dollars, renforçant ainsi son contenu de streaming.",
+      "Les résultats financiers du quatrième trimestre 2021 ont montré une croissance des revenus, mais les coûts d'exploitation ont augmenté, affectant les marges bénéficiaires."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202202": {
+    "summary": "Meta, anciennement connu sous le nom de Facebook, a connu plusieurs événements importants entre le 1er novembre 2021 et le 28 février 2022. La société a changé de nom pour refléter son orientation vers le métavers, mais a également fait face à des défis réglementaires et à des résultats financiers mitigés.",
+    "key_events": [
+      "Changement de nom de Facebook Inc. à Meta Platforms Inc. pour refléter l'orientation stratégique vers le métavers.",
+      "Publication des résultats financiers du quatrième trimestre 2021, montrant une croissance des revenus mais des avertissements sur la pression publicitaire et les coûts futurs liés au métavers.",
+      "Annonce d'investissements massifs dans la réalité virtuelle et augmentée, ainsi que dans les technologies liées au métavers.",
+      "Face à des défis réglementaires accrus, notamment en Europe et aux États-Unis, concernant la protection des données et les pratiques anticoncurrentielles.",
+      "Départ de plusieurs hauts dirigeants, y compris des responsables de la division de réalité virtuelle et augmentée."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202202": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre le 1er novembre 2021 et le 28 février 2022. La société a continué à se concentrer sur l'expansion de ses activités dans les domaines de l'IA, du gaming et des centres de données. Cependant, elle a également fait face à des défis liés à la chaîne d'approvisionnement et à la concurrence accrue dans le secteur des semi-conducteurs.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux produits et technologies lors de sa conférence GTC en novembre 2021, mettant l'accent sur l'IA et le métavers.",
+      "La société a fait face à des problèmes de chaîne d'approvisionnement, affectant la disponibilité de ses produits.",
+      "NVIDIA a annoncé des partenariats stratégiques avec plusieurs entreprises pour étendre son écosystème d'IA et de calcul accéléré.",
+      "La concurrence dans le secteur des semi-conducteurs s'est intensifiée, avec des rivaux comme AMD et Intel lançant de nouveaux produits.",
+      "NVIDIA a publié ses résultats financiers pour le quatrième trimestre 2021, montrant une croissance solide malgré les défis de la chaîne d'approvisionnement."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202202": {
+    "summary": "Apple a connu une période mitigée avec des performances solides et des défis réglementaires. La société a continué à montrer une croissance robuste, notamment avec ses services et ses ventes d'iPhone. Cependant, des préoccupations réglementaires et des perturbations de la chaîne d'approvisionnement ont pesé sur les perspectives.",
+    "key_events": [
+      "Apple a publié ses résultats financiers pour le premier trimestre 2022, affichant une croissance de 11 % de son chiffre d'affaires par rapport à l'année précédente, atteignant 123,9 milliards de dollars.",
+      "La société a annoncé un nouveau record de ventes pour l'iPhone, malgré les perturbations de la chaîne d'approvisionnement.",
+      "Apple a fait face à des défis réglementaires, notamment avec l'adoption de la loi sur la concurrence et les marchés numériques (DMA) par l'Union européenne, qui pourrait affecter ses pratiques commerciales.",
+      "La société a également été confrontée à des litiges juridiques, notamment avec Epic Games, concernant les pratiques de l'App Store.",
+      "Apple a continué à investir dans ses services, avec une croissance de 24 % des revenus des services, atteignant 19,5 milliards de dollars."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202203": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre le 1er décembre 2021 et le 31 mars 2022. La société a continué à montrer une croissance solide malgré les défis macroéconomiques. Plusieurs développements clés incluent des innovations technologiques, des changements réglementaires et des performances financières robustes.",
+    "key_events": [
+      "Alphabet a annoncé des résultats financiers solides pour le quatrième trimestre 2021, avec une croissance de 32% des revenus par rapport à l'année précédente.",
+      "La société a fait face à des pressions réglementaires accrues, notamment aux États-Unis et en Europe, concernant des pratiques anticoncurrentielles présumées.",
+      "Alphabet a poursuivi ses investissements dans l'intelligence artificielle et le cloud computing, avec des annonces majeures lors de la conférence Google I/O.",
+      "La société a également annoncé des plans pour étendre ses infrastructures de centres de données et de réseaux, visant à améliorer ses services cloud et de recherche.",
+      "En mars 2022, Alphabet a annoncé une division d'actions de 20 pour 1, ce qui a été bien accueilli par les investisseurs."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202203": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre décembre 2021 et mars 2022. L'entreprise a continué à montrer une croissance solide, avec des acquisitions majeures et des développements stratégiques. Cependant, il y a eu des défis réglementaires et des préoccupations macroéconomiques.",
+    "key_events": [
+      "Microsoft a annoncé l'acquisition d'Activision Blizzard pour 68,7 milliards de dollars en janvier 2022, marquant l'une des plus grandes acquisitions de l'histoire de l'industrie technologique.",
+      "L'entreprise a publié des résultats financiers solides pour le deuxième trimestre de l'exercice 2022, avec une croissance de 20 % du chiffre d'affaires par rapport à l'année précédente.",
+      "Microsoft a fait face à des défis réglementaires, notamment des enquêtes antitrust et des préoccupations concernant ses pratiques commerciales.",
+      "L'entreprise a continué à investir dans l'IA et le cloud computing, renforçant sa position sur le marché.",
+      "Il y a eu des préoccupations macroéconomiques, notamment l'inflation et les perturbations de la chaîne d'approvisionnement, qui pourraient affecter les coûts et la demande."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202203": {
+    "summary": "Amazon a connu plusieurs événements significatifs au cours de la période spécifiée. L'entreprise a continué à étendre ses opérations et à investir dans de nouveaux projets, tout en faisant face à des défis réglementaires et logistiques.",
+    "key_events": [
+      "Amazon a annoncé l'acquisition de MGM pour 8,45 milliards de dollars, renforçant ainsi son contenu pour Prime Video.",
+      "L'entreprise a fait face à des pénuries de main-d'œuvre et à des perturbations de la chaîne d'approvisionnement, affectant ses opérations logistiques.",
+      "Amazon a annoncé une hausse de ses frais de livraison pour les vendeurs tiers, ce qui a suscité des réactions mitigées.",
+      "La société a continué à investir dans ses projets spatiaux, notamment avec le lancement de nouveaux satellites pour son projet Kuiper.",
+      "Amazon a été confrontée à des pressions réglementaires accrues, notamment en Europe, concernant ses pratiques commerciales et fiscales."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202203": {
+    "summary": "Meta (anciennement Facebook) a connu plusieurs événements significatifs entre décembre 2021 et mars 2022. La société a changé de nom pour refléter son orientation vers le métavers, mais a également fait face à des défis réglementaires et à une baisse de ses performances financières.",
+    "key_events": [
+      "Changement de nom de Facebook Inc. à Meta Platforms Inc. en décembre 2021 pour refléter son orientation vers le métavers.",
+      "Annonce d'investissements massifs dans la réalité virtuelle et augmentée, ainsi que dans le développement du métavers.",
+      "Publication des résultats financiers du quatrième trimestre 2021 montrant une croissance des revenus, mais avec des avertissements sur les impacts futurs des changements de confidentialité d'Apple.",
+      "Baisse significative du cours de l'action en février 2022 après l'annonce d'une baisse des utilisateurs actifs quotidiens pour la première fois dans l'histoire de l'entreprise.",
+      "Défis réglementaires continus, notamment des enquêtes antitrust et des préoccupations concernant la protection des données et la désinformation."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_202203": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre le 01/12/2021 et le 31/03/2022. L'entreprise a continué à se concentrer sur l'expansion de ses activités dans les domaines de l'IA, du gaming et des centres de données. Cependant, elle a également fait face à des défis liés à la chaîne d'approvisionnement et à la concurrence accrue dans le secteur des semi-conducteurs.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux produits et technologies lors de la conférence CES 2022, notamment des GPU pour les véhicules autonomes et des avancées dans le domaine de l'IA.",
+      "L'entreprise a fait face à des problèmes de chaîne d'approvisionnement, affectant la disponibilité de ses produits et potentiellement ses revenus.",
+      "NVIDIA a annoncé une collaboration avec plusieurs entreprises pour développer des solutions de métavers, un domaine en pleine croissance.",
+      "L'entreprise a publié ses résultats financiers pour le quatrième trimestre 2021, montrant une croissance solide malgré les défis logistiques.",
+      "NVIDIA a fait l'objet d'une attention réglementaire accrue, notamment en ce qui concerne son acquisition d'Arm Ltd., qui a finalement été abandonnée en février 2022."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202203": {
+    "summary": "Au cours de la période du 01/12/2021 au 31/03/2022, Apple a connu plusieurs événements significatifs. L'entreprise a continué à faire face à des défis dans sa chaîne d'approvisionnement, mais a également atteint des jalons importants en termes de valorisation boursière. Apple a également fait l'objet de régulations antitrust et a lancé de nouveaux produits.",
+    "key_events": [
+      "Apple devient la première entreprise à atteindre une capitalisation boursière de 3 000 milliards de dollars en janvier 2022.",
+      "L'entreprise a continué à faire face à des pénuries de puces et à des perturbations de la chaîne d'approvisionnement.",
+      "Apple a lancé de nouveaux produits, dont le MacBook Pro avec la puce M1 Pro et M1 Max.",
+      "L'entreprise a fait l'objet de régulations antitrust aux États-Unis et en Europe.",
+      "Apple a annoncé des plans pour permettre les paiements tiers sur son App Store, conformément à un accord avec les régulateurs japonais."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_202204": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs au premier trimestre 2022. La société a continué à afficher une croissance solide malgré les défis macroéconomiques. Cependant, des préoccupations concernant la concurrence et la réglementation ont pesé sur le sentiment des investisseurs.",
+    "key_events": [
+      "Alphabet a rapporté des revenus de 68,01 milliards de dollars pour le quatrième trimestre 2021, en hausse de 32% par rapport à l'année précédente, dépassant les attentes des analystes.",
+      "La société a annoncé un split d'actions 20-pour-1, ce qui a été bien accueilli par les investisseurs.",
+      "Des inquiétudes concernant la concurrence accrue dans le secteur de la publicité en ligne et les pressions réglementaires ont affecté le sentiment des investisseurs.",
+      "Alphabet a continué à investir massivement dans l'innovation, notamment dans les domaines de l'intelligence artificielle et du cloud computing."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202204": {
+    "summary": "Microsoft a connu plusieurs événements significatifs au premier trimestre 2022, notamment l'annonce de l'acquisition d'Activision Blizzard pour 68,7 milliards de dollars, ce qui représente l'une des plus grandes acquisitions de l'histoire de l'industrie technologique. L'entreprise a également fait face à des défis réglementaires et à une croissance ralentie dans certains segments de son activité.",
+    "key_events": [
+      "Microsoft annonce l'acquisition d'Activision Blizzard pour 68,7 milliards de dollars en janvier 2022.",
+      "Publication des résultats financiers du deuxième trimestre fiscal 2022, montrant une croissance solide mais un ralentissement dans certains segments.",
+      "Annonce de nouvelles fonctionnalités pour Microsoft Azure et l'expansion des services cloud.",
+      "Défis réglementaires et enquêtes antitrust en cours aux États-Unis et en Europe.",
+      "Lancement de nouveaux produits et services, notamment dans le domaine de la cybersécurité et de l'intelligence artificielle."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202204": {
+    "summary": "Amazon a connu plusieurs événements significatifs au premier trimestre 2022, tant positifs que négatifs. La société a continué à investir massivement dans ses activités, tout en faisant face à des défis réglementaires et économiques.",
+    "key_events": [
+      "Amazon a annoncé une hausse de ses prix pour Amazon Prime aux États-Unis, passant de 119 à 139 dollars par an, en raison de l'inflation et de l'augmentation des coûts de main-d'œuvre.",
+      "La société a également annoncé la fermeture de plusieurs entrepôts physiques aux États-Unis, dans le cadre d'une réorganisation de son réseau logistique.",
+      "Amazon a investi 1 milliard de dollars dans des startups de logistique en Inde, visant à renforcer sa présence sur ce marché en pleine croissance.",
+      "La société a fait face à des critiques et à des pressions réglementaires accrues de la part des autorités européennes et américaines concernant ses pratiques commerciales et son traitement des employés.",
+      "Amazon a annoncé des résultats financiers mitigés pour le premier trimestre 2022, avec une croissance des revenus inférieure aux attentes, mais une augmentation significative des profits grâce à ses activités cloud (AWS)."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202204": {
+    "summary": "Meta, anciennement connu sous le nom de Facebook, a connu plusieurs événements importants au cours des quatre premiers mois de 2022. L'entreprise a fait face à des défis réglementaires, des changements stratégiques et des fluctuations de marché.",
+    "key_events": [
+      "Meta a subi une baisse significative de son cours de l'action en février 2022, en partie due à des préoccupations concernant la croissance des utilisateurs et les changements de politique de confidentialité d'Apple.",
+      "L'entreprise a annoncé des investissements massifs dans la réalité virtuelle et le métavers, reflétant sa nouvelle orientation stratégique.",
+      "Meta a fait face à des pressions réglementaires continues, notamment en Europe, concernant la protection des données et la concurrence.",
+      "En avril 2022, Meta a publié ses résultats trimestriels, montrant une croissance des revenus mais aussi des dépenses accrues liées à ses investissements dans le métavers.",
+      "L'entreprise a également annoncé des plans pour embaucher davantage d'ingénieurs en Europe, malgré les défis réglementaires."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_202204": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants au cours du premier trimestre 2022. L'entreprise a continué à bénéficier de la forte demande dans les secteurs du gaming, des centres de données et de l'intelligence artificielle. Cependant, des défis persistent en raison des tensions géopolitiques et des perturbations de la chaîne d'approvisionnement.",
+    "key_events": [
+      "NVIDIA a annoncé de solides résultats financiers pour le quatrième trimestre de l'exercice 2022, avec un chiffre d'affaires en hausse de 53% d'une année sur l'autre.",
+      "L'entreprise a fait face à des défis liés aux perturbations de la chaîne d'approvisionnement, affectant la disponibilité de certains produits.",
+      "NVIDIA a continué à étendre ses activités dans le domaine de l'intelligence artificielle et des centres de données, avec des annonces de nouveaux produits et partenariats.",
+      "La société a été impactée par les tensions géopolitiques, notamment en raison des restrictions à l'exportation vers la Chine.",
+      "NVIDIA a annoncé des plans pour acquérir Arm Limited, une transaction qui pourrait renforcer sa position dans le secteur des semi-conducteurs."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202204": {
+    "summary": "Au cours du premier trimestre 2022, Apple a connu plusieurs événements significatifs. La société a continué à faire face à des défis dans sa chaîne d'approvisionnement, mais a également réalisé des avancées majeures en termes d'innovation et de croissance financière. Les résultats financiers du premier trimestre ont montré une croissance solide, avec un chiffre d'affaires record. Cependant, les perturbations de la chaîne d'approvisionnement et la concurrence accrue ont posé des défis.",
+    "key_events": [
+      "Apple a annoncé un chiffre d'affaires record de 123,9 milliards de dollars pour le premier trimestre 2022, en hausse de 11 % par rapport à l'année précédente.",
+      "La société a lancé de nouveaux produits, dont l'iPhone SE (3e génération) et l'iPad Air (5e génération), avec des fonctionnalités améliorées et des prix compétitifs.",
+      "Apple a continué à faire face à des défis dans sa chaîne d'approvisionnement en raison de la pandémie de COVID-19 et des confinements en Chine.",
+      "La société a annoncé des plans pour étendre son empreinte dans le domaine de la santé, avec de nouvelles fonctionnalités pour l'Apple Watch et des partenariats avec des institutions de santé.",
+      "Apple a été confrontée à une concurrence accrue dans le secteur des puces, avec des rivaux comme Qualcomm et AMD lançant de nouveaux produits innovants."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_202205": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre le 1er février 2022 et le 31 mai 2022. La société a continué à montrer une croissance solide malgré les défis macroéconomiques. Cependant, il y a eu des préoccupations concernant la concurrence accrue et les changements réglementaires.",
+    "key_events": [
+      "Alphabet a publié ses résultats financiers pour le premier trimestre 2022, affichant une croissance des revenus de 23% par rapport à l'année précédente, atteignant 68,01 milliards de dollars.",
+      "La société a annoncé un split d'actions 20 pour 1, qui a été approuvé par les actionnaires et est entré en vigueur en juillet 2022.",
+      "Google a fait face à des pressions réglementaires accrues, notamment aux États-Unis et en Europe, concernant ses pratiques anticoncurrentielles.",
+      "Alphabet a continué à investir massivement dans l'intelligence artificielle et le cloud computing, avec des acquisitions et des partenariats stratégiques.",
+      "La société a annoncé des plans pour développer davantage ses services cloud et ses capacités d'IA, visant à renforcer sa position sur le marché."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202205": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre février et mai 2022. L'entreprise a continué à montrer une croissance solide, malgré les défis macroéconomiques. Les résultats financiers ont été positifs, avec une augmentation des revenus et des bénéfices. Cependant, il y a eu des préoccupations concernant la croissance future en raison des conditions macroéconomiques difficiles.",
+    "key_events": [
+      "Microsoft a annoncé des résultats financiers solides pour le trimestre se terminant en mars 2022, avec une augmentation de 18% des revenus et de 19% des bénéfices par action.",
+      "L'entreprise a poursuivi ses efforts d'acquisition, notamment avec l'annonce de l'acquisition d'Activision Blizzard pour 68,7 milliards de dollars, bien que cette acquisition soit toujours en attente d'approbation réglementaire.",
+      "Microsoft a également annoncé des investissements significatifs dans l'expansion de ses centres de données et infrastructures cloud pour répondre à la demande croissante.",
+      "En mai 2022, Microsoft a mis en garde contre les impacts potentiels des conditions macroéconomiques difficiles sur ses activités futures, notamment en raison de l'inflation et des perturbations de la chaîne d'approvisionnement."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202205": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre février et mai 2022. La société a annoncé une augmentation de ses frais pour les vendeurs tiers et a fait face à des défis logistiques et de main-d'œuvre. Malgré cela, Amazon a continué à investir dans de nouveaux projets et technologies, tout en faisant face à des pressions réglementaires et à des préoccupations concernant la croissance des revenus.",
+    "key_events": [
+      "Amazon a annoncé une augmentation des frais pour les vendeurs tiers sur sa plateforme, ce qui a suscité des réactions mitigées.",
+      "La société a fait face à des défis logistiques et de main-d'œuvre, notamment des grèves et des perturbations de la chaîne d'approvisionnement.",
+      "Amazon a continué à investir dans de nouveaux projets, notamment dans le domaine de la santé avec l'acquisition de One Medical.",
+      "La société a fait face à des pressions réglementaires accrues, notamment en Europe et aux États-Unis.",
+      "Amazon a signalé une croissance plus lente que prévu des revenus pour le premier trimestre 2022, ce qui a suscité des inquiétudes parmi les investisseurs.",
+      "La société a annoncé un partenariat avec Stellantis pour développer des logiciels pour les véhicules."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202205": {
+    "summary": "Meta (anciennement Facebook) a connu plusieurs événements significatifs entre février et mai 2022. La société a fait face à des défis réglementaires et à une baisse de ses performances financières, tout en poursuivant ses investissements dans le métavers.",
+    "key_events": [
+      "Meta a publié ses résultats financiers pour le quatrième trimestre 2021 en février 2022, révélant une croissance des revenus plus lente que prévu et une baisse de ses bénéfices.",
+      "En février 2022, Meta a annoncé un recul historique de son nombre d'utilisateurs quotidiens, ce qui a entraîné une chute de son cours de bourse.",
+      "La société a continué à investir massivement dans la réalité virtuelle et le métavers, avec des dépenses en capital prévues entre 29 et 34 milliards de dollars pour 2022.",
+      "En mars 2022, Meta a fait face à des pressions réglementaires accrues, notamment en Europe, concernant la protection des données et la concurrence.",
+      "En mai 2022, Meta a annoncé des partenariats avec plusieurs entreprises pour développer des technologies liées au métavers."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_202205": {
+    "summary": "NVIDIA a connu plusieurs événements significatifs entre le 1er février 2022 et le 31 mai 2022. La société a continué à se concentrer sur l'expansion de ses activités dans les domaines de l'IA, du gaming et des centres de données. Cependant, elle a également fait face à des défis liés à la chaîne d'approvisionnement et à la concurrence accrue dans le secteur des semi-conducteurs.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux produits et technologies lors de la conférence GTC 2022, mettant l'accent sur l'IA et le métavers.",
+      "La société a fait face à des défis liés à la chaîne d'approvisionnement, affectant la production et la livraison de ses produits.",
+      "NVIDIA a annoncé des partenariats stratégiques avec plusieurs entreprises pour renforcer sa position dans le domaine des centres de données et de l'IA.",
+      "La concurrence dans le secteur des semi-conducteurs s'est intensifiée, avec des rivaux comme AMD et Intel lançant de nouveaux produits.",
+      "NVIDIA a publié ses résultats financiers pour le premier trimestre de l'exercice 2023, montrant une croissance solide malgré les défis."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202205": {
+    "summary": "Apple a connu plusieurs événements significatifs entre février et mai 2022. La société a continué à faire face à des défis dans sa chaîne d'approvisionnement, mais a également réalisé des avancées majeures en termes d'innovation et de performance financière.",
+    "key_events": [
+      "Apple a signalé des perturbations continues dans sa chaîne d'approvisionnement en raison des confinements liés à la COVID-19 en Chine, ce qui a affecté la production et les livraisons.",
+      "En février, Apple a annoncé de nouvelles fonctionnalités pour ses services, notamment des mises à jour pour Apple TV+ et Apple Fitness+.",
+      "En mars, Apple a tenu un événement spécial où elle a présenté l'iPhone SE 2022 et l'iPad Air 2022, ainsi que le nouveau Mac Studio et l'écran Studio Display.",
+      "Apple a publié ses résultats financiers pour le deuxième trimestre 2022 en avril, affichant une croissance des revenus et des bénéfices malgré les défis de la chaîne d'approvisionnement.",
+      "En mai, Apple a annoncé des mises à jour logicielles majeures lors de sa conférence mondiale des développeurs (WWDC), y compris de nouvelles fonctionnalités pour iOS, iPadOS et macOS."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_202206": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre mars et juin 2022. La société a continué à montrer une croissance solide malgré les défis macroéconomiques. Cependant, des préoccupations concernant la régulation antitrust et la concurrence accrue dans divers secteurs ont pesé sur le sentiment des investisseurs.",
+    "key_events": [
+      "Alphabet a annoncé un split d'actions 20-pour-1 en février, qui a été effectué en juillet 2022, visant à rendre les actions plus accessibles aux petits investisseurs.",
+      "La société a continué à investir massivement dans l'intelligence artificielle et le cloud computing, des secteurs en forte croissance.",
+      "Des préoccupations régulières concernant la régulation antitrust aux États-Unis et en Europe ont persisté, avec des enquêtes en cours.",
+      "La concurrence accrue dans le secteur de la publicité en ligne et des services cloud a été un sujet de discussion récurrent.",
+      "Alphabet a rapporté des revenus solides pour le premier trimestre 2022, avec une croissance de 23% en glissement annuel, atteignant 68,01 milliards de dollars."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202206": {
+    "summary": "Microsoft a continué de montrer une performance solide au cours du deuxième trimestre 2022, malgré les défis macroéconomiques. La société a annoncé plusieurs acquisitions et investissements majeurs, tout en faisant face à des défis réglementaires.",
+    "key_events": [
+      "Microsoft a annoncé l'acquisition d'Activision Blizzard pour 68,7 milliards de dollars, ce qui serait la plus grande acquisition de l'histoire de l'entreprise si elle est finalisée.",
+      "La société a publié des résultats financiers solides pour le trimestre, avec une croissance de 18 % de son chiffre d'affaires par rapport à l'année précédente.",
+      "Microsoft a annoncé un partenariat stratégique avec Volkswagen pour développer des solutions de cloud computing pour l'industrie automobile.",
+      "La société a fait face à des défis réglementaires, notamment des enquêtes antitrust aux États-Unis et en Europe concernant ses pratiques commerciales.",
+      "Microsoft a annoncé un investissement de 20 milliards de dollars dans l'intelligence artificielle et les infrastructures de cloud computing sur les cinq prochaines années."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202206": {
+    "summary": "Amazon a connu plusieurs événements significatifs au cours du deuxième trimestre 2022, tant sur le plan opérationnel que financier. La société a continué à investir massivement dans ses infrastructures logistiques et technologiques, tout en faisant face à des défis macroéconomiques et réglementaires.",
+    "key_events": [
+      "Amazon a annoncé une hausse de ses prix pour les abonnements Prime aux États-Unis, passant de 119 à 139 dollars par an, en raison de l'inflation et de l'expansion des services offerts.",
+      "La société a poursuivi son expansion dans le secteur de la santé avec l'acquisition de One Medical pour 3,9 milliards de dollars, renforçant ainsi sa présence dans les soins de santé primaires.",
+      "Amazon a fait face à des pressions réglementaires accrues, notamment de la part de l'Union européenne, concernant ses pratiques commerciales et son respect de la concurrence.",
+      "Le bénéfice net d'Amazon a chuté au premier trimestre 2022, en partie à cause des investissements continus et des coûts logistiques élevés.",
+      "La société a annoncé un partenariat avec Grubhub pour étendre ses services de livraison de nourriture aux abonnés Prime aux États-Unis."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202206": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between March 1, 2022, and June 30, 2022. The company faced challenges related to regulatory scrutiny, market competition, and internal restructuring. Despite these challenges, Meta continued to invest heavily in its metaverse initiatives and reported steady user growth across its platforms.",
+    "key_events": [
+      "Meta faced regulatory scrutiny in the EU over data privacy concerns, leading to potential fines and restrictions.",
+      "The company announced a significant investment in AI and metaverse technologies, aiming to enhance its virtual reality offerings.",
+      "Meta reported a slight decline in daily active users for Facebook, raising concerns about user engagement.",
+      "The company underwent a major restructuring, including layoffs and departmental reorganizations to streamline operations.",
+      "Meta's stock price fluctuated significantly during this period, reflecting investor uncertainty about the company's future growth prospects.",
+      "The company launched new features for Instagram and WhatsApp, aiming to improve user experience and engagement."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202206": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre le 1er mars 2022 et le 30 juin 2022. La société a continué à se concentrer sur l'expansion de ses activités dans les domaines de l'IA, du gaming et des centres de données. Cependant, elle a également fait face à des défis liés aux perturbations de la chaîne d'approvisionnement et à la concurrence accrue dans le secteur des semi-conducteurs.",
+    "key_events": [
+      "NVIDIA a annoncé de nouvelles avancées dans le domaine de l'IA, notamment avec le lancement de nouvelles puces et technologies pour les centres de données.",
+      "La société a fait face à des défis liés aux perturbations de la chaîne d'approvisionnement, ce qui a affecté la production et la livraison de certains produits.",
+      "NVIDIA a continué à étendre ses partenariats avec des entreprises technologiques majeures pour renforcer sa position dans le marché du gaming et de l'IA.",
+      "La concurrence dans le secteur des semi-conducteurs s'est intensifiée, avec des rivaux comme AMD et Intel lançant de nouveaux produits.",
+      "NVIDIA a annoncé des résultats financiers solides pour le premier trimestre 2022, avec une croissance significative des revenus par rapport à l'année précédente."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202206": {
+    "summary": "Au cours de la période du 1er mars 2022 au 30 juin 2022, Apple a connu plusieurs événements significatifs. L'entreprise a continué à faire face à des défis liés à la chaîne d'approvisionnement mondiale, mais a également réalisé des avancées majeures en termes de développement de produits et de services. Les résultats financiers du deuxième trimestre ont été solides, malgré les impacts de la pandémie et des tensions géopolitiques.",
+    "key_events": [
+      "Apple a présenté l'iPhone SE (3e génération) et l'iPad Air (5e génération) lors d'un événement en mars 2022.",
+      "La société a annoncé des résultats financiers record pour le deuxième trimestre, avec un chiffre d'affaires de 97,3 milliards de dollars.",
+      "Apple a fait face à des perturbations de la chaîne d'approvisionnement en raison des confinements liés à la COVID-19 en Chine.",
+      "L'entreprise a annoncé de nouvelles fonctionnalités pour ses services, notamment Apple Pay et Apple TV+, lors de la WWDC 2022 en juin.",
+      "Apple a été confrontée à des défis réglementaires, notamment en ce qui concerne les lois antitrust et les réglementations sur la confidentialité des données."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202207": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre avril et juillet 2022. La société a continué à faire face à des défis réglementaires et à des pressions sur la publicité, tout en investissant dans de nouvelles technologies et en réalisant des acquisitions stratégiques.",
+    "key_events": [
+      "Alphabet a signalé des revenus publicitaires plus faibles que prévu en raison des changements dans la protection de la vie privée et de la concurrence accrue.",
+      "La société a annoncé des investissements majeurs dans l'intelligence artificielle et le cloud computing.",
+      "Alphabet a fait l'acquisition de Mandiant, une société de cybersécurité, pour 5,4 milliards de dollars.",
+      "Google a fait face à des poursuites antitrust supplémentaires de la part des régulateurs américains et européens.",
+      "La société a annoncé un rachat d'actions de 70 milliards de dollars, ce qui a été bien accueilli par les investisseurs."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202207": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre avril et juillet 2022. La société a continué à montrer une croissance solide malgré les défis macroéconomiques. Les résultats financiers ont été positifs, avec une augmentation des revenus et des bénéfices. Cependant, il y a eu des inquiétudes concernant la croissance future en raison des conditions économiques mondiales.",
+    "key_events": [
+      "Microsoft a publié ses résultats financiers pour le troisième trimestre 2022, affichant une croissance de 18 % des revenus et de 8 % des bénéfices.",
+      "La société a annoncé un partenariat stratégique avec Oracle pour offrir des services cloud interopérables.",
+      "Microsoft a acquis Activision Blizzard pour 68,7 milliards de dollars, ce qui est l'une des plus grandes acquisitions de l'histoire de l'industrie technologique.",
+      "Il y a eu des inquiétudes concernant l'impact de l'inflation et des tensions géopolitiques sur la croissance future de Microsoft.",
+      "Microsoft a annoncé des investissements significatifs dans l'intelligence artificielle et le cloud computing pour stimuler l'innovation."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202207": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre avril et juillet 2022. La société a annoncé une hausse des prix pour les abonnements Amazon Prime aux États-Unis, ce qui a eu un impact sur les revenus. De plus, Amazon a poursuivi son expansion dans le secteur de la santé avec l'acquisition de One Medical. Cependant, la société a également fait face à des défis, notamment des préoccupations concernant la croissance des revenus et des bénéfices, ainsi que des inquiétudes liées à la régulation antitrust.",
+    "key_events": [
+      "Amazon annonce une hausse des prix pour les abonnements Amazon Prime aux États-Unis.",
+      "Amazon acquiert One Medical, une entreprise de soins de santé primaires, pour 3,9 milliards de dollars.",
+      "Amazon Web Services (AWS) continue de croître, mais à un rythme plus lent que prévu.",
+      "Préoccupations concernant la croissance des revenus et des bénéfices d'Amazon.",
+      "Inquiétudes liées à la régulation antitrust et à son impact potentiel sur les activités d'Amazon."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202207": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between April 1, 2022, and July 31, 2022. The company faced challenges related to regulatory scrutiny, market competition, and internal restructuring. Despite these challenges, Meta continued to invest heavily in its metaverse initiatives and reported steady user growth across its platforms.",
+    "key_events": [
+      "Meta faced regulatory scrutiny and legal challenges related to data privacy and antitrust issues.",
+      "The company reported its first-ever year-over-year decline in revenue for Q2 2022, which impacted its stock price.",
+      "Meta announced significant investments in its metaverse division, Reality Labs, despite financial losses in that segment.",
+      "The company experienced a notable outage across its platforms, including Facebook, Instagram, and WhatsApp, which drew public attention.",
+      "Meta continued to face competition from other social media platforms, notably TikTok, which affected user engagement and growth.",
+      "The company announced plans to restructure and reduce its workforce to improve operational efficiency."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_202207": {
+    "summary": "NVIDIA a connu plusieurs événements significatifs entre avril et juillet 2022. L'entreprise a fait face à des défis réglementaires et macroéconomiques, mais a également annoncé des innovations et des partenariats stratégiques.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers solides pour le premier trimestre 2022, avec une croissance de 46 % de son chiffre d'affaires par rapport à l'année précédente.",
+      "L'entreprise a fait face à des défis liés à la chaîne d'approvisionnement, affectant la production et la livraison de ses produits.",
+      "NVIDIA a annoncé de nouveaux partenariats avec des entreprises technologiques majeures pour développer des solutions d'IA et de calcul haute performance.",
+      "L'entreprise a été confrontée à des réglementations accrues concernant les exportations de ses produits vers la Chine, ce qui pourrait affecter ses ventes.",
+      "NVIDIA a continué à innover avec le lancement de nouvelles technologies et produits, notamment dans le domaine du métavers et de la réalité virtuelle."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202207": {
+    "summary": "Apple a connu plusieurs événements significatifs entre avril et juillet 2022. La société a publié ses résultats financiers pour le deuxième trimestre, annoncé de nouvelles initiatives en matière de durabilité et fait face à des défis liés à la chaîne d'approvisionnement. De plus, Apple a continué à développer ses services et a fait l'objet de régulations antitrust.",
+    "key_events": [
+      "Apple a publié ses résultats financiers pour le deuxième trimestre 2022, affichant une croissance des revenus et des bénéfices malgré les défis économiques.",
+      "La société a annoncé des initiatives en matière de durabilité, notamment l'utilisation de matériaux recyclés dans ses produits.",
+      "Apple a fait face à des défis liés à la chaîne d'approvisionnement, notamment des pénuries de composants et des retards de production.",
+      "La société a continué à développer ses services, notamment Apple TV+, Apple Music et Apple Fitness+.",
+      "Apple a fait l'objet de régulations antitrust, notamment aux États-Unis et en Europe."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202208": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre mai et août 2022. La société a continué à faire face à des défis réglementaires et macroéconomiques, tout en poursuivant ses innovations technologiques et ses expansions commerciales.",
+    "key_events": [
+      "Alphabet a annoncé des résultats financiers pour le deuxième trimestre 2022, montrant une croissance des revenus mais une baisse des bénéfices par rapport aux attentes.",
+      "La société a fait face à des pressions réglementaires accrues aux États-Unis et en Europe concernant ses pratiques antitrust et de confidentialité des données.",
+      "Google Cloud a continué à croître rapidement, avec une augmentation significative des revenus et une expansion de ses services.",
+      "Alphabet a annoncé des investissements majeurs dans l'intelligence artificielle et le développement de nouveaux produits matériels, y compris des mises à jour pour ses appareils Pixel.",
+      "La société a également été confrontée à des défis macroéconomiques, notamment l'inflation et les craintes de récession, qui ont affecté le marché publicitaire en ligne."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202208": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre mai et août 2022. La société a continué à montrer une croissance solide malgré les défis macroéconomiques. Les résultats financiers du quatrième trimestre ont été positifs, avec une augmentation des revenus et des bénéfices. Cependant, il y a eu des inquiétudes concernant le ralentissement de la croissance dans certains segments, notamment en raison des impacts de la guerre en Ukraine et des perturbations de la chaîne d'approvisionnement.",
+    "key_events": [
+      "Microsoft a publié ses résultats financiers pour le quatrième trimestre de l'exercice 2022, affichant une croissance de 12 % des revenus et de 2 % des bénéfices.",
+      "La société a annoncé des investissements majeurs dans l'intelligence artificielle et le cloud computing, renforçant sa position sur le marché.",
+      "Microsoft a également fait face à des défis réglementaires, avec des enquêtes antitrust en cours dans plusieurs juridictions.",
+      "L'acquisition d'Activision Blizzard a été annoncée, mais elle fait l'objet d'un examen réglementaire approfondi.",
+      "La société a signalé des impacts négatifs potentiels liés à la guerre en Ukraine et aux perturbations de la chaîne d'approvisionnement."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202208": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre mai et août 2022. La société a annoncé une division d'actions de 20 pour 1, ce qui a été bien accueilli par les investisseurs. Cependant, les résultats financiers du deuxième trimestre ont été mitigés, avec des revenus inférieurs aux attentes en raison d'un ralentissement des ventes en ligne et d'une augmentation des coûts. Amazon a également annoncé l'acquisition de One Medical, une société de soins de santé, pour 3,9 milliards de dollars, marquant une expansion dans le secteur de la santé. De plus, la société a continué à investir dans ses capacités logistiques et technologiques, tout en faisant face à des défis réglementaires et à des préoccupations concernant les conditions de travail dans ses entrepôts.",
+    "key_events": [
+      "Amazon annonce une division d'actions de 20 pour 1",
+      "Résultats financiers du T2 inférieurs aux attentes",
+      "Acquisition de One Medical pour 3,9 milliards de dollars",
+      "Investissements continus dans la logistique et la technologie",
+      "Défis réglementaires et préoccupations concernant les conditions de travail"
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202208": {
+    "summary": "Meta, anciennement connu sous le nom de Facebook, a connu plusieurs événements importants entre mai et août 2022. La société a continué à faire face à des défis réglementaires et à des changements dans son modèle économique, tout en investissant massivement dans le métavers.",
+    "key_events": [
+      "Meta a annoncé un ralentissement de la croissance des revenus pour le deuxième trimestre 2022, en partie dû à des changements dans le suivi des utilisateurs par Apple.",
+      "La société a continué à investir massivement dans Reality Labs, sa division dédiée au métavers, avec des dépenses en capital atteignant des milliards de dollars.",
+      "Meta a fait face à des défis réglementaires continus, notamment des enquêtes antitrust et des préoccupations concernant la protection des données.",
+      "En juillet 2022, Meta a annoncé une baisse de ses revenus publicitaires, ce qui a affecté son cours de bourse.",
+      "La société a également annoncé des partenariats stratégiques pour développer ses technologies de réalité virtuelle et augmentée."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_202208": {
+    "summary": "NVIDIA a connu une période de croissance et de défis entre mai et août 2022. La société a annoncé des résultats financiers solides, mais a également fait face à des défis macroéconomiques et sectoriels.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers solides pour le deuxième trimestre de l'exercice 2023, avec un chiffre d'affaires de 6,7 milliards de dollars, en hausse de 3 % par rapport à l'année précédente.",
+      "La société a annoncé un split d'actions de 4 pour 1, ce qui a été bien accueilli par les investisseurs.",
+      "NVIDIA a fait face à des défis dans le secteur des jeux vidéo en raison d'un ralentissement du marché et de la baisse des ventes de GPU.",
+      "La société a continué à investir dans l'intelligence artificielle et le calcul haute performance, des secteurs en croissance.",
+      "NVIDIA a été affectée par les tensions géopolitiques et les restrictions à l'exportation, notamment en ce qui concerne la Chine.",
+      "La société a annoncé de nouveaux produits et technologies, notamment dans les domaines de l'IA, du rendu 3D et de la simulation."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202208": {
+    "summary": "Apple Inc. (AAPL) a connu plusieurs événements significatifs entre mai et août 2022. La société a continué à faire face à des défis liés aux perturbations de la chaîne d'approvisionnement et à l'impact économique de la guerre en Ukraine. Malgré cela, Apple a annoncé des innovations logicielles lors de la WWDC 2022 et a publié des résultats financiers solides pour le troisième trimestre.",
+    "key_events": [
+      "Apple a tenu sa conférence annuelle des développeurs (WWDC) en juin, annonçant de nouvelles fonctionnalités pour iOS, iPadOS et macOS, ainsi que de nouvelles puces M2 pour ses ordinateurs Mac.",
+      "En juillet, Apple a signalé des résultats financiers pour le troisième trimestre, dépassant les attentes des analystes avec un chiffre d'affaires de 83 milliards de dollars, en hausse de 2 % par rapport à l'année précédente.",
+      "Apple a également annoncé des plans pour ralentir l'embauche et les dépenses en raison des incertitudes économiques, tout en continuant à investir dans des domaines clés comme l'IA et la réalité augmentée.",
+      "La société a fait face à des défis réglementaires, notamment en ce qui concerne les lois antitrust et les réglementations sur la confidentialité des données."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202209": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre le 01/06/2022 et le 30/09/2022. La société a continué à faire face à des défis réglementaires et à des préoccupations concernant la croissance des revenus publicitaires. Cependant, il y a eu des développements positifs dans le domaine de l'innovation technologique et des partenariats stratégiques.",
+    "key_events": [
+      "Alphabet a annoncé des investissements supplémentaires dans l'intelligence artificielle et le cloud computing.",
+      "La société a fait face à des enquêtes antitrust supplémentaires de la part des régulateurs européens.",
+      "Alphabet a signalé une croissance plus lente que prévu des revenus publicitaires, ce qui a affecté le sentiment des investisseurs.",
+      "La société a lancé de nouveaux produits et services dans le domaine de la santé et de la technologie portable.",
+      "Alphabet a annoncé un partenariat stratégique avec une grande entreprise de télécommunications pour étendre ses services cloud."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202209": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre juin et septembre 2022. L'entreprise a continué à montrer une croissance solide malgré des défis macroéconomiques. Les résultats financiers du quatrième trimestre ont été positifs, avec une augmentation des revenus et des bénéfices. Cependant, il y a eu des inquiétudes concernant le ralentissement de la croissance dans certains segments, notamment en raison des conditions économiques mondiales.",
+    "key_events": [
+      "Microsoft a annoncé des résultats financiers solides pour le quatrième trimestre, avec un chiffre d'affaires de 51,9 milliards de dollars, en hausse de 12 % en glissement annuel.",
+      "L'entreprise a poursuivi ses investissements dans l'intelligence artificielle et le cloud computing, avec des annonces majeures lors de la conférence Microsoft Inspire.",
+      "Microsoft a annoncé un partenariat stratégique avec Oracle pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur plusieurs clouds.",
+      "Il y a eu des inquiétudes concernant le ralentissement de la croissance dans le segment des PC, en partie dû à la baisse de la demande mondiale.",
+      "Microsoft a annoncé des licenciements dans certains segments, reflétant des ajustements stratégiques face aux conditions économiques changeantes."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202209": {
+    "summary": "Au cours de la période du 1er juin 2022 au 30 septembre 2022, Amazon a fait face à plusieurs défis et opportunités. La société a continué à investir massivement dans ses infrastructures logistiques et technologiques, tout en faisant face à des pressions réglementaires et à un ralentissement de la croissance des ventes. Malgré cela, Amazon a poursuivi son expansion dans de nouveaux marchés et secteurs, notamment les soins de santé et les services cloud.",
+    "key_events": [
+      "Amazon a annoncé un partenariat avec Grubhub pour offrir des services de livraison de nourriture aux membres Prime aux États-Unis.",
+      "La société a poursuivi son expansion dans le secteur des soins de santé avec l'acquisition de One Medical pour 3,9 milliards de dollars.",
+      "Amazon a fait face à des pressions réglementaires accrues, notamment de la part de l'Union européenne, concernant ses pratiques commerciales et fiscales.",
+      "La croissance des ventes d'Amazon a ralenti, reflétant un retour à des tendances de consommation plus normales après la pandémie.",
+      "Amazon Web Services (AWS) a continué à croître, mais à un rythme plus lent que les trimestres précédents.",
+      "La société a annoncé des investissements supplémentaires dans les énergies renouvelables, visant à atteindre une neutralité carbone d'ici 2040."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202209": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between June 1, 2022, and September 30, 2022. The company faced challenges related to economic downturns, regulatory issues, and shifts in its business strategy.",
+    "key_events": [
+      "Meta announced plans to reduce its workforce and slow down hiring due to economic uncertainties and a weaker advertising market.",
+      "The company faced regulatory scrutiny in the European Union regarding data privacy and antitrust concerns.",
+      "Meta reported its first-ever year-over-year decline in revenue for Q2 2022, reflecting a challenging economic environment.",
+      "The company continued to invest heavily in its metaverse initiatives, despite skepticism from investors about the short-term profitability of these ventures.",
+      "Meta announced new features and updates for its virtual reality platform, Horizon Worlds, aiming to enhance user engagement.",
+      "The stock price of Meta experienced significant volatility, reflecting investor concerns about the company's growth prospects and economic challenges."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_202209": {
+    "summary": "NVIDIA a connu plusieurs événements significatifs entre juin et septembre 2022. L'entreprise a continué à se concentrer sur l'expansion de ses activités dans les domaines de l'IA, du gaming et des centres de données. Cependant, des défis macroéconomiques et des tensions géopolitiques ont affecté ses performances.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux produits et technologies lors de la conférence COMPUTEX 2022, mettant en avant ses avancées en matière de GPU et d'IA.",
+      "L'entreprise a fait face à des restrictions à l'exportation imposées par le gouvernement américain, limitant les ventes de certains de ses produits en Chine.",
+      "NVIDIA a publié ses résultats financiers pour le deuxième trimestre de l'exercice 2023, montrant une croissance des revenus, mais avec des prévisions prudentes pour le trimestre suivant en raison des conditions macroéconomiques.",
+      "L'entreprise a continué à investir dans des partenariats stratégiques pour renforcer sa position dans le domaine de l'IA et des centres de données."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202209": {
+    "summary": "Au cours de la période du 01/06/2022 au 30/09/2022, Apple a connu plusieurs événements significatifs. L'entreprise a continué à faire face à des défis liés à la chaîne d'approvisionnement et à la pénurie de puces, tout en lançant de nouveaux produits et en réalisant des performances financières solides. Cependant, les incertitudes macroéconomiques et les tensions géopolitiques ont également eu un impact sur ses opérations.",
+    "key_events": [
+      "Apple a annoncé de nouveaux MacBook Air et MacBook Pro avec la puce M2 lors de la WWDC en juin.",
+      "La société a publié ses résultats financiers pour le troisième trimestre, affichant une croissance des revenus et des bénéfices malgré les défis de la chaîne d'approvisionnement.",
+      "Apple a été confrontée à des problèmes de production en Chine en raison des restrictions liées à la politique zéro COVID.",
+      "L'entreprise a lancé l'iPhone 14 et les nouvelles Apple Watch lors d'un événement en septembre.",
+      "Apple a été affectée par les tensions géopolitiques entre les États-Unis et la Chine, ce qui a soulevé des inquiétudes concernant sa chaîne d'approvisionnement et ses opérations en Chine."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202210": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre juillet et octobre 2022. La société a continué à faire face à un environnement économique difficile marqué par l'inflation et les craintes de récession. Malgré cela, Alphabet a poursuivi ses investissements dans l'innovation et la croissance, tout en subissant des pressions réglementaires et des défis concurrentiels.",
+    "key_events": [
+      "Alphabet a publié ses résultats financiers pour le deuxième trimestre 2022 en juillet, affichant une croissance des revenus de 13% par rapport à l'année précédente, mais avec une baisse des bénéfices due à l'augmentation des coûts.",
+      "En août, Alphabet a annoncé un plan de rachat d'actions de 70 milliards de dollars, démontrant sa confiance dans la valeur à long terme de l'entreprise.",
+      "En septembre, la société a fait face à des pressions réglementaires accrues, notamment aux États-Unis et en Europe, concernant ses pratiques antitrust et sa gestion des données.",
+      "En octobre, Alphabet a annoncé des résultats financiers pour le troisième trimestre 2022, montrant une croissance des revenus de 6% par rapport à l'année précédente, mais avec une baisse des bénéfices en raison des investissements continus et de l'environnement économique difficile.",
+      "La société a également annoncé des licenciements et une réduction des investissements dans certains projets, reflétant un environnement économique plus difficile."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202210": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre juillet et octobre 2022. La société a continué à montrer une croissance solide malgré les défis macroéconomiques. Les résultats financiers du quatrième trimestre ont été positifs, avec une augmentation des revenus et des bénéfices. Cependant, il y a eu des inquiétudes concernant le ralentissement de la croissance dans certains segments, notamment le cloud computing.",
+    "key_events": [
+      "Microsoft a annoncé des revenus de 51,9 milliards de dollars pour le quatrième trimestre, en hausse de 12% en glissement annuel.",
+      "Le bénéfice net a augmenté de 2% pour atteindre 16,7 milliards de dollars.",
+      "La croissance de Azure, la plateforme cloud de Microsoft, a légèrement ralenti, passant de 50% à 40% en glissement annuel.",
+      "Microsoft a annoncé un partenariat stratégique avec Meta pour intégrer les outils de productivité de Microsoft avec les plateformes de réalité virtuelle de Meta.",
+      "La société a également annoncé des investissements importants dans l'intelligence artificielle et le machine learning pour améliorer ses produits et services."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202210": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre juillet et octobre 2022. La société a annoncé des résultats financiers mitigés pour le deuxième trimestre, avec une croissance des revenus mais une baisse des bénéfices. Amazon a également poursuivi ses investissements dans les énergies renouvelables et a fait face à des défis réglementaires et logistiques. De plus, la société a annoncé des plans pour améliorer les conditions de travail de ses employés.",
+    "key_events": [
+      "Amazon a annoncé des revenus de 121,2 milliards de dollars pour le deuxième trimestre 2022, en hausse de 7 % par rapport à l'année précédente, mais avec une baisse des bénéfices.",
+      "La société a investi dans plusieurs projets d'énergies renouvelables, visant à atteindre zéro émission nette de carbone d'ici 2040.",
+      "Amazon a fait face à des défis réglementaires, notamment des enquêtes antitrust et des critiques sur les conditions de travail.",
+      "La société a annoncé des plans pour améliorer les salaires et les conditions de travail de ses employés, en réponse aux critiques et aux pressions syndicales.",
+      "Amazon a continué à étendre ses services logistiques et de livraison, malgré les défis économiques mondiaux."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202210": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between July 1, 2022, and October 31, 2022. The company faced challenges related to economic downturns, regulatory issues, and strategic shifts in its business model. Despite these challenges, Meta continued to invest heavily in its metaverse initiatives and reported mixed financial results.",
+    "key_events": [
+      "Meta reported its second-quarter earnings in July 2022, showing a decline in revenue for the first time in its history, largely due to a slowdown in digital ad spending and economic uncertainties.",
+      "In July, Meta announced a price increase for its Oculus virtual reality headsets, reflecting its continued investment and focus on the metaverse.",
+      "The company faced regulatory scrutiny in the European Union over data privacy concerns, which could potentially impact its business operations and revenue streams.",
+      "Meta announced a restructuring plan in September, which included layoffs and budget cuts, aiming to improve operational efficiency amid economic challenges.",
+      "In October, Meta introduced new features for its virtual reality platform, Horizon Worlds, as part of its ongoing efforts to develop the metaverse.",
+      "Meta's stock price experienced significant volatility during this period, reflecting investor concerns about the company's growth prospects and economic conditions."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_202210": {
+    "summary": "NVIDIA a connu plusieurs événements significatifs entre juillet et octobre 2022. La société a annoncé des résultats financiers solides pour le deuxième trimestre de l'exercice 2023, avec une croissance notable dans les secteurs du gaming et des centres de données. Cependant, des défis persistent en raison des tensions géopolitiques et des restrictions à l'exportation vers la Chine. NVIDIA a également continué à innover avec de nouvelles annonces de produits et de technologies, tout en faisant face à des défis réglementaires et macroéconomiques.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers solides pour le deuxième trimestre de l'exercice 2023, avec un chiffre d'affaires de 6,7 milliards de dollars, en hausse de 3 % d'une année sur l'autre.",
+      "La société a lancé de nouveaux produits, notamment les GPU de la série RTX 40, qui promettent des performances améliorées pour le gaming et les applications professionnelles.",
+      "NVIDIA a fait face à des restrictions à l'exportation vers la Chine, ce qui pourrait affecter ses ventes et sa croissance dans cette région.",
+      "La société a continué à investir dans l'intelligence artificielle et le calcul haute performance, renforçant ainsi sa position dans ces secteurs.",
+      "NVIDIA a annoncé des partenariats stratégiques avec plusieurs entreprises technologiques pour développer des solutions innovantes."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202210": {
+    "summary": "Apple a connu plusieurs événements significatifs entre juillet et octobre 2022. La société a publié ses résultats financiers pour le troisième trimestre, montrant une croissance malgré les défis macroéconomiques. Apple a également annoncé de nouvelles fonctionnalités pour ses services et a fait face à des défis réglementaires et logistiques.",
+    "key_events": [
+      "Apple a publié ses résultats financiers pour le troisième trimestre 2022, affichant un chiffre d'affaires de 83 milliards de dollars, en hausse de 2 % par rapport à l'année précédente.",
+      "La société a annoncé de nouvelles fonctionnalités pour ses services, notamment des mises à jour pour Apple TV+ et Apple Fitness+.",
+      "Apple a fait face à des défis logistiques et de chaîne d'approvisionnement, affectant la production de l'iPhone 14.",
+      "La société a été confrontée à des défis réglementaires, notamment des enquêtes antitrust et des litiges juridiques.",
+      "Apple a continué à investir dans ses initiatives environnementales, visant à devenir neutre en carbone d'ici 2030."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202211": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements importants entre août et novembre 2022. La société a continué à faire face à un environnement économique difficile marqué par l'inflation et les craintes de récession. Malgré cela, Alphabet a annoncé des innovations et des investissements significatifs dans l'intelligence artificielle et le cloud computing. Cependant, les résultats financiers du troisième trimestre ont été mitigés, avec une croissance des revenus inférieure aux attentes, ce qui a affecté le sentiment des investisseurs.",
+    "key_events": [
+      "Alphabet a annoncé des investissements majeurs dans l'intelligence artificielle, notamment dans des projets liés à la santé et à l'automatisation.",
+      "La société a présenté de nouvelles fonctionnalités pour Google Cloud, visant à renforcer sa position sur le marché du cloud computing.",
+      "Les résultats financiers du troisième trimestre ont montré une croissance des revenus de 6%, inférieure aux attentes des analystes.",
+      "Alphabet a annoncé un ralentissement des embauches et une réduction des dépenses en raison de l'environnement économique incertain.",
+      "La société a fait face à des défis réglementaires, notamment des enquêtes antitrust dans plusieurs juridictions."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202211": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre août et novembre 2022. La société a continué à montrer une croissance stable malgré les défis macroéconomiques. Les résultats financiers du premier trimestre ont été solides, avec une augmentation des revenus et des bénéfices. Cependant, il y a eu des inquiétudes concernant le ralentissement de la croissance dans certains segments, notamment le cloud computing.",
+    "key_events": [
+      "Microsoft a annoncé des résultats financiers solides pour le premier trimestre de l'exercice 2023, avec une augmentation de 11% des revenus à 50,1 milliards de dollars.",
+      "La société a poursuivi ses investissements dans l'intelligence artificielle et le cloud computing, avec des annonces majeures lors de la conférence Ignite.",
+      "Microsoft a annoncé une augmentation de ses dividendes, reflétant sa confiance dans sa santé financière.",
+      "Il y a eu des inquiétudes concernant le ralentissement de la croissance dans le segment Azure, bien que les revenus aient continué à augmenter.",
+      "Microsoft a annoncé des licenciements dans certains départements, reflétant des ajustements stratégiques face aux conditions macroéconomiques."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_202211": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre août et novembre 2022. La société a annoncé des investissements majeurs dans l'infrastructure et les énergies renouvelables, tout en faisant face à des défis réglementaires et économiques. Les résultats financiers du troisième trimestre ont été mitigés, avec une croissance des revenus mais une baisse des bénéfices.",
+    "key_events": [
+      "Amazon a annoncé un investissement de 1,4 milliard de dollars dans l'infrastructure en Espagne, visant à renforcer ses capacités logistiques.",
+      "La société a également investi dans des projets d'énergies renouvelables, avec l'annonce de nouveaux parcs éoliens et solaires.",
+      "Amazon a fait face à des défis réglementaires, notamment des enquêtes antitrust et des préoccupations concernant les pratiques de travail.",
+      "Les résultats financiers du troisième trimestre ont montré une croissance des revenus de 15%, mais une baisse des bénéfices en raison des coûts opérationnels élevés.",
+      "Amazon a annoncé des plans pour embaucher 150 000 employés saisonniers pour faire face à la demande pendant les fêtes de fin d'année."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202211": {
+    "summary": "Meta, formerly known as Facebook, experienced several significant events between August 1, 2022, and November 30, 2022. The company faced challenges related to economic downturns, regulatory issues, and strategic shifts in its business model.",
+    "key_events": [
+      "Meta reported its first year-over-year revenue decline in Q2 2022, which continued into Q3, reflecting a challenging economic environment and increased competition.",
+      "The company announced a significant restructuring plan, including a 10% reduction in workforce, to streamline operations and cut costs.",
+      "Meta faced regulatory scrutiny and legal challenges, including a lawsuit from the Federal Trade Commission (FTC) over antitrust concerns.",
+      "The company continued to invest heavily in its metaverse initiatives, despite skepticism from investors and analysts about the short-term viability of these projects.",
+      "Meta's stock price experienced significant volatility, reflecting investor concerns about the company's growth prospects and strategic direction."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_202211": {
+    "summary": "NVIDIA a connu plusieurs événements significatifs entre août et novembre 2022. La société a annoncé des résultats financiers solides pour le deuxième trimestre de l'exercice 2023, mais a également fait face à des défis liés aux restrictions à l'exportation imposées par le gouvernement américain. NVIDIA a continué à innover avec de nouveaux produits et partenariats, tout en étant confrontée à des défis macroéconomiques.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers pour le deuxième trimestre de l'exercice 2023, avec un chiffre d'affaires de 6,7 milliards de dollars, en baisse de 19% par rapport à l'année précédente, mais supérieur aux attentes des analystes.",
+      "Le gouvernement américain a imposé de nouvelles restrictions à l'exportation de puces avancées vers la Chine, ce qui a affecté les ventes de NVIDIA dans ce marché.",
+      "NVIDIA a lancé de nouveaux produits, notamment les GPU de la série RTX 40, basés sur l'architecture Ada Lovelace, qui promettent des performances améliorées pour les jeux et les applications professionnelles.",
+      "La société a annoncé un partenariat avec Microsoft pour intégrer ses technologies d'IA dans les services cloud Azure.",
+      "NVIDIA a fait face à des défis macroéconomiques, notamment l'inflation et les perturbations de la chaîne d'approvisionnement, qui ont affecté ses coûts et sa capacité à répondre à la demande."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202211": {
+    "summary": "Apple Inc. (AAPL) a connu plusieurs événements significatifs entre août et novembre 2022. La société a lancé de nouveaux produits, fait face à des défis réglementaires et a été impactée par des conditions macroéconomiques difficiles.",
+    "key_events": [
+      "Lancement de l'iPhone 14 et des nouvelles Apple Watch en septembre 2022.",
+      "Problèmes de production en Chine en raison des restrictions liées au COVID-19.",
+      "Réglementations antitrust et défis juridiques aux États-Unis et en Europe.",
+      "Résultats financiers du quatrième trimestre 2022 montrant une croissance modérée malgré les conditions économiques difficiles.",
+      "Annonce de nouveaux investissements dans la production aux États-Unis."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202212": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements importants entre septembre et décembre 2022. La société a continué à faire face à un environnement économique difficile marqué par l'inflation et des craintes de récession. Malgré cela, Alphabet a poursuivi ses investissements dans l'innovation et l'IA, tout en subissant des pressions réglementaires et des défis concurrentiels.",
+    "key_events": [
+      "Alphabet a annoncé des résultats financiers pour le troisième trimestre 2022, avec un chiffre d'affaires de 69,1 milliards de dollars, en hausse de 6 % par rapport à l'année précédente, mais en dessous des attentes des analystes.",
+      "La société a annoncé un plan de réduction des coûts et une embauche plus lente en raison de l'environnement économique difficile.",
+      "Alphabet a continué à investir dans l'intelligence artificielle et a présenté de nouvelles fonctionnalités pour ses produits basés sur l'IA.",
+      "La société a fait face à des pressions réglementaires accrues, notamment aux États-Unis et en Europe, concernant ses pratiques anticoncurrentielles et la protection des données.",
+      "Alphabet a annoncé une collaboration avec plusieurs entreprises pour développer de nouvelles technologies et solutions numériques.",
+      "La société a également fait face à des défis concurrentiels, notamment de la part de Microsoft et d'Amazon dans le domaine du cloud computing."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_202212": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre septembre et décembre 2022. L'entreprise a continué à montrer une croissance solide malgré un contexte économique mondial difficile. Les résultats financiers du premier trimestre de l'exercice 2023 ont été positifs, avec une augmentation du chiffre d'affaires et des bénéfices. Cependant, il y a eu des licenciements et des ralentissements dans certains secteurs en raison de l'incertitude économique.",
+    "key_events": [
+      "Microsoft a annoncé des résultats financiers solides pour le premier trimestre de l'exercice 2023, avec une augmentation de 11% du chiffre d'affaires et de 17% des bénéfices par rapport à l'année précédente.",
+      "L'entreprise a poursuivi son expansion dans le cloud computing avec Azure, qui a connu une croissance de 35%.",
+      "Microsoft a annoncé des licenciements dans certains départements, notamment dans les divisions liées à la vente et au marketing, en raison de l'incertitude économique mondiale.",
+      "L'acquisition d'Activision Blizzard a été confrontée à des défis réglementaires, avec des inquiétudes concernant les pratiques anticoncurrentielles.",
+      "Microsoft a continué à investir dans l'intelligence artificielle et a annoncé de nouvelles fonctionnalités pour ses produits phares, notamment Windows et Office."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202212": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre septembre et décembre 2022. La société a fait face à des défis économiques, notamment une baisse des ventes et des bénéfices, ainsi qu'à des licenciements massifs. Cependant, Amazon a également poursuivi ses investissements dans de nouveaux projets et technologies.",
+    "key_events": [
+      "Amazon a annoncé un ralentissement de la croissance des ventes au troisième trimestre 2022, en raison d'un environnement économique difficile.",
+      "La société a annoncé des licenciements massifs, touchant environ 10 000 employés, principalement dans les divisions des appareils et des services.",
+      "Amazon a poursuivi ses investissements dans les énergies renouvelables, annonçant de nouveaux projets d'énergie éolienne et solaire.",
+      "La société a lancé de nouveaux services et produits, notamment dans le domaine de la santé avec Amazon Clinic.",
+      "Amazon a fait face à des critiques et à des enquêtes réglementaires concernant ses pratiques commerciales et son impact sur la concurrence."
+    ],
+    "sentiment": "neutre"
+  },
+  "META_202212": {
+    "summary": "Meta, anciennement connu sous le nom de Facebook, a connu plusieurs événements importants entre septembre et décembre 2022. La société a continué à faire face à des défis réglementaires et économiques, tout en investissant massivement dans le métavers et l'intelligence artificielle.",
+    "key_events": [
+      "Meta a annoncé des plans pour réduire ses coûts de 10 % au cours des mois à venir, ce qui inclut des licenciements et une réduction des budgets des projets.",
+      "La société a continué à investir dans le développement du métavers, malgré les critiques et les pertes financières associées à cette division.",
+      "Meta a lancé de nouveaux outils publicitaires et fonctionnalités pour les entreprises, visant à améliorer l'engagement des utilisateurs et les revenus publicitaires.",
+      "La société a fait face à des défis réglementaires continus, notamment en Europe, où des préoccupations concernant la protection des données et la concurrence ont été soulevées.",
+      "Meta a annoncé des partenariats avec plusieurs entreprises pour développer des technologies de réalité augmentée et virtuelle.",
+      "Les résultats financiers du troisième trimestre ont montré une baisse des revenus et des bénéfices, reflétant les défis économiques et la concurrence accrue dans le secteur de la publicité en ligne."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_202212": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre septembre et décembre 2022. La société a continué à se concentrer sur l'expansion de ses activités dans les domaines de l'IA, du gaming et des centres de données. Cependant, le marché a été marqué par des inquiétudes macroéconomiques et des défis spécifiques au secteur.",
+    "key_events": [
+      "NVIDIA a annoncé de nouvelles avancées dans le domaine de l'intelligence artificielle, notamment avec des partenariats stratégiques pour développer des solutions d'IA.",
+      "La société a fait face à des défis liés à la baisse de la demande dans le secteur du gaming, ce qui a affecté ses revenus.",
+      "NVIDIA a continué à investir dans le développement de ses puces et technologies pour les centres de données, un secteur en croissance.",
+      "L'entreprise a été impactée par les restrictions à l'exportation imposées par le gouvernement américain sur les ventes de puces avancées à la Chine.",
+      "NVIDIA a publié des résultats financiers mitigés pour le troisième trimestre, avec des revenus en baisse par rapport à l'année précédente."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202212": {
+    "summary": "Apple Inc. (AAPL) a connu plusieurs événements significatifs entre septembre et décembre 2022. La société a lancé de nouveaux produits, fait face à des défis réglementaires et a été affectée par des conditions macroéconomiques difficiles.",
+    "key_events": [
+      "Lancement de l'iPhone 14 et des nouveaux modèles de l'Apple Watch en septembre 2022.",
+      "Problèmes de production en Chine en raison des restrictions liées à la politique zéro COVID, affectant la production de l'iPhone 14.",
+      "Réglementation antitrust accrue aux États-Unis et en Europe, avec des préoccupations concernant les pratiques commerciales d'Apple.",
+      "Baisse des ventes en Chine en raison de la concurrence accrue et des conditions économiques difficiles.",
+      "Annonce de la réduction de la production de l'iPhone 14 en raison d'une demande plus faible que prévu."
+    ],
+    "sentiment": "négatif"
   }
 }
