@@ -2740,5 +2740,592 @@
       "Annonce de la réduction de la production de l'iPhone 14 en raison d'une demande plus faible que prévu."
     ],
     "sentiment": "négatif"
+  },
+  "MSFT_201501": {
+    "summary": "Entre le 01/10/2014 et le 31/01/2015, Microsoft a connu plusieurs événements significatifs. La société a continué à se concentrer sur sa transition vers le cloud et les services, avec des annonces majeures concernant Azure et Office 365. De plus, Microsoft a lancé Windows 10 et a fait des acquisitions stratégiques pour renforcer ses capacités dans le domaine de la productivité et des outils professionnels.",
+    "key_events": [
+      "Lancement de la preview technique de Windows 10 le 1er octobre 2014.",
+      "Annonce de l'acquisition de l'application de productivité mobile Accompli le 1er décembre 2014.",
+      "Publication des résultats financiers du premier trimestre fiscal 2015, montrant une croissance des revenus du cloud.",
+      "Annonce de nouvelles fonctionnalités pour Azure, renforçant la position de Microsoft dans le cloud computing.",
+      "Lancement de la preview publique de Windows 10 le 21 janvier 2015."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_201501": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre le 01/10/2014 et le 31/01/2015. La société a publié des résultats financiers solides pour le premier trimestre 2015, avec une hausse des revenus et des bénéfices. Oracle a également annoncé plusieurs acquisitions stratégiques et a continué à développer ses solutions cloud, renforçant ainsi sa position sur le marché des technologies de l'information.",
+    "key_events": [
+      "Oracle a publié ses résultats financiers pour le premier trimestre 2015, affichant une croissance des revenus de 3% pour atteindre 9,6 milliards de dollars et une hausse des bénéfices.",
+      "La société a annoncé l'acquisition de MicroGenesis, une entreprise spécialisée dans les solutions de gestion des services publics, pour renforcer son portefeuille de solutions sectorielles.",
+      "Oracle a lancé de nouvelles solutions cloud, notamment Oracle Database Cloud Service et Oracle Java Cloud Service, pour répondre à la demande croissante de services cloud.",
+      "La société a annoncé un partenariat avec Microsoft pour offrir des solutions interopérables entre Oracle Database et Microsoft SQL Server.",
+      "Oracle a été inclus dans l'indice Dow Jones Sustainability North America Index pour ses performances en matière de durabilité."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_201502": {
+    "summary": "Entre le 01/11/2014 et le 28/02/2015, Microsoft a connu plusieurs événements significatifs, notamment des changements stratégiques, des acquisitions et des performances financières solides.",
+    "key_events": [
+      "Microsoft a annoncé un changement stratégique majeur en se concentrant davantage sur les services cloud et mobiles.",
+      "L'acquisition de Revolution Analytics, une société spécialisée dans l'analyse de données, a été finalisée en février 2015.",
+      "Le lancement de Windows 10 a été annoncé, avec une mise à disposition gratuite pour les utilisateurs de Windows 7 et 8.",
+      "Microsoft a publié des résultats financiers solides pour le deuxième trimestre 2015, avec une croissance notable dans le segment cloud.",
+      "Satya Nadella, le PDG, a continué à restructurer l'entreprise pour une meilleure efficacité et innovation."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_201502": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants entre le 1er novembre 2014 et le 28 février 2015. La société a publié des résultats financiers solides, avec une croissance des revenus et des bénéfices. Oracle a également annoncé des acquisitions stratégiques et des partenariats pour renforcer sa position dans le marché du cloud computing. Cependant, la société a fait face à des défis concurrentiels et à des préoccupations concernant la transition vers le cloud.",
+    "key_events": [
+      "En décembre 2014, Oracle a annoncé des résultats financiers pour le deuxième trimestre de l'exercice 2015, avec une croissance des revenus de 3% et des bénéfices dépassant les attentes des analystes.",
+      "Oracle a acquis plusieurs sociétés, dont Datalogix et CoreLogic, pour renforcer ses capacités en matière de données et d'analytics.",
+      "La société a annoncé un partenariat stratégique avec Microsoft pour offrir des solutions de cloud hybride.",
+      "Oracle a fait face à des défis concurrentiels croissants de la part d'autres entreprises de cloud computing, telles qu'Amazon Web Services et Microsoft Azure.",
+      "En février 2015, Oracle a annoncé des plans pour licencier jusqu'à 1 000 employés dans le cadre d'une restructuration pour se concentrer sur le cloud computing."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201503": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre décembre 2014 et mars 2015. La société a continué à se concentrer sur sa transition vers le cloud et les services, tout en faisant face à des défis sur le marché des appareils mobiles.",
+    "key_events": [
+      "En décembre 2014, Microsoft a annoncé une restructuration majeure de son unité Xbox, visant à se concentrer davantage sur les services et les logiciels.",
+      "En janvier 2015, Microsoft a lancé Windows 10, avec une mise à jour majeure et une stratégie de mise à jour gratuite pour les utilisateurs de Windows 7 et 8.",
+      "En février 2015, Microsoft a annoncé un partenariat avec Dell pour fournir des solutions cloud hybrides.",
+      "En mars 2015, Microsoft a acquis Revolution Analytics, une société spécialisée dans l'analyse de données, pour renforcer ses capacités dans le domaine du big data."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_201503": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre le 01/12/2014 et le 31/03/2015. La société a publié des résultats financiers solides, annoncé des acquisitions stratégiques et fait face à des défis concurrentiels.",
+    "key_events": [
+      "En décembre 2014, Oracle a annoncé des résultats financiers pour le deuxième trimestre de l'exercice 2015, avec un chiffre d'affaires de 9,6 milliards de dollars, en hausse de 7% par rapport à l'année précédente.",
+      "En janvier 2015, Oracle a acquis Datalogix, une société spécialisée dans les données marketing, pour renforcer ses capacités dans le domaine du cloud et des données.",
+      "En mars 2015, Oracle a annoncé un partenariat avec Microsoft pour offrir des solutions cloud intégrées, visant à améliorer l'interopérabilité entre leurs plateformes respectives.",
+      "Oracle a fait face à une concurrence accrue dans le secteur des bases de données et du cloud computing, avec des rivaux comme Amazon Web Services et Microsoft Azure gagnant des parts de marché."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_201504": {
+    "summary": "Microsoft a connu plusieurs événements significatifs au premier trimestre 2015, notamment le lancement de Windows 10, des acquisitions stratégiques et des annonces de restructuration. Les résultats financiers ont été solides, mais la société a également fait face à des défis réglementaires.",
+    "key_events": [
+      "Lancement de Windows 10 avec de nouvelles fonctionnalités et une mise à jour gratuite pour les utilisateurs de Windows 7 et 8.",
+      "Acquisition de Revolution Analytics, une entreprise spécialisée dans l'analyse de données, pour renforcer les capacités d'analyse de Microsoft.",
+      "Annonce de la suppression de 18 000 postes dans le cadre d'une restructuration majeure visant à simplifier l'organisation et à réduire les coûts.",
+      "Publication des résultats financiers du deuxième trimestre 2015, montrant une croissance des revenus de 8% et une augmentation des bénéfices.",
+      "Microsoft a fait face à des défis réglementaires en Europe concernant des questions de concurrence et de protection des données."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_201504": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs au premier trimestre 2015. La société a continué à se concentrer sur la transition vers le cloud computing, ce qui a affecté ses résultats financiers. Les revenus ont été stables, mais les bénéfices ont été impactés par les coûts de transition.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers mitigés pour le troisième trimestre 2015, avec des revenus de 9,3 milliards de dollars, en légère baisse par rapport à l'année précédente.",
+      "La société a poursuivi sa stratégie de transition vers le cloud, ce qui a entraîné des coûts supplémentaires et une pression sur les marges bénéficiaires.",
+      "Oracle a acquis plusieurs entreprises pour renforcer ses offres dans le cloud, notamment CoreLogic et Maxymiser.",
+      "La société a annoncé un partenariat avec Microsoft pour améliorer l'interopérabilité entre leurs solutions cloud respectives.",
+      "Oracle a continué à investir dans l'innovation, avec des annonces majeures lors de la conférence Oracle OpenWorld."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201505": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre février et mai 2015. La société a continué à se concentrer sur sa transformation vers le cloud et les services, tout en faisant face à des défis réglementaires et à des changements de direction.",
+    "key_events": [
+      "Microsoft a annoncé des résultats financiers solides pour le trimestre se terminant en mars 2015, avec une croissance notable dans les segments cloud et matériel.",
+      "Le 10 février 2015, Microsoft a annoncé un partenariat stratégique avec Salesforce, visant à intégrer leurs plateformes cloud respectives.",
+      "En mars 2015, Microsoft a lancé Windows 10 en version technique preview, marquant une étape importante dans le développement de son nouveau système d'exploitation.",
+      "Le 2 avril 2015, Microsoft a annoncé la disponibilité générale d'Office 2016 pour les utilisateurs de Windows 10.",
+      "Le 29 avril 2015, Microsoft a annoncé des résultats financiers pour le troisième trimestre, montrant une croissance de 6% des revenus commerciaux de cloud.",
+      "En mai 2015, Microsoft a annoncé un plan de restructuration visant à réduire jusqu'à 7 800 emplois, principalement dans le secteur des téléphones Nokia."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_201505": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants entre février et mai 2015. La société a continué à se concentrer sur l'expansion de son offre de cloud computing et a fait plusieurs annonces stratégiques dans ce domaine. Les résultats financiers ont été mitigés, avec des revenus en légère baisse mais des bénéfices conformes aux attentes.",
+    "key_events": [
+      "En février 2015, Oracle a annoncé des partenariats stratégiques pour étendre son offre de cloud computing.",
+      "En mars 2015, Oracle a publié ses résultats financiers pour le troisième trimestre, avec des revenus de 9,3 milliards de dollars, en légère baisse par rapport à l'année précédente.",
+      "En avril 2015, Oracle a annoncé l'acquisition de plusieurs sociétés pour renforcer ses capacités dans le domaine du cloud et des logiciels.",
+      "En mai 2015, Oracle a tenu sa conférence annuelle Oracle OpenWorld Asia, où elle a présenté ses dernières innovations en matière de cloud et de bases de données."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201506": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre mars et juin 2015. La société a continué à se concentrer sur sa transformation vers le cloud et les services, tout en faisant face à des défis réglementaires et à des changements de direction.",
+    "key_events": [
+      "Microsoft a annoncé l'acquisition de Revolution Analytics, une société spécialisée dans le big data, en mars 2015.",
+      "En avril 2015, Microsoft a lancé Windows 10 Technical Preview, marquant une étape importante dans le développement de son nouveau système d'exploitation.",
+      "Microsoft a annoncé des réductions d'effectifs supplémentaires dans le cadre de sa restructuration, visant à recentrer l'entreprise sur ses activités principales.",
+      "En mai 2015, Microsoft a annoncé l'acquisition de 6Wunderkinder, une société allemande de développement de logiciels, pour renforcer sa présence sur le marché des applications de productivité.",
+      "Microsoft a fait face à des défis réglementaires en Europe concernant ses pratiques fiscales, ce qui a entraîné des enquêtes et des audits."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_201506": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre le 1er mars 2015 et le 30 juin 2015. La société a continué à se concentrer sur sa transition vers le cloud computing, tout en faisant face à des défis concurrentiels et à des changements de direction.",
+    "key_events": [
+      "Oracle a annoncé des résultats trimestriels mitigés pour le trimestre se terminant en février 2015, avec des revenus en baisse de 1% par rapport à l'année précédente.",
+      "La société a lancé plusieurs nouvelles solutions cloud, notamment Oracle Cloud Platform et Oracle Cloud Applications, pour renforcer sa position sur le marché du cloud computing.",
+      "Oracle a acquis Maxymiser, une société spécialisée dans l'optimisation des tests et de l'engagement client, pour renforcer ses offres dans le domaine du marketing cloud.",
+      "Larry Ellison, cofondateur d'Oracle, a officiellement quitté son poste de PDG pour devenir président exécutif et directeur de la technologie (CTO).",
+      "Oracle a fait face à une concurrence accrue de la part d'autres géants du cloud comme Amazon Web Services et Microsoft Azure, ce qui a pesé sur ses performances financières."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201507": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre avril et juillet 2015. La société a continué à se concentrer sur sa transition vers le cloud et a annoncé des résultats financiers solides. Cependant, des licenciements et des restructurations ont également eu lieu.",
+    "key_events": [
+      "Microsoft a annoncé des résultats financiers solides pour le troisième trimestre 2015, avec une croissance notable dans le segment du cloud.",
+      "La société a lancé Windows 10, une mise à jour majeure de son système d'exploitation, avec une adoption rapide et une mise à disposition gratuite pour les utilisateurs existants.",
+      "Microsoft a annoncé un plan de restructuration incluant des licenciements pour environ 7 800 employés, principalement dans le secteur des téléphones Nokia.",
+      "La société a acquis plusieurs entreprises pour renforcer ses capacités dans le cloud et l'IA, notamment des acquisitions dans le domaine de la cybersécurité et de l'analyse de données.",
+      "Microsoft a continué à investir dans son infrastructure cloud, avec l'ouverture de nouveaux centres de données Azure dans plusieurs régions du monde."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_201507": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants entre avril et juillet 2015. La société a publié ses résultats financiers pour le troisième trimestre fiscal 2015, a annoncé des acquisitions stratégiques et a fait face à des défis concurrentiels.",
+    "key_events": [
+      "En juin 2015, Oracle a annoncé des résultats financiers pour le troisième trimestre fiscal 2015, avec un chiffre d'affaires de 10,7 milliards de dollars, en légère baisse par rapport à l'année précédente.",
+      "Oracle a acquis Maxymiser, une société spécialisée dans les tests et l'optimisation des sites web, pour renforcer ses offres dans le domaine du marketing numérique.",
+      "La société a également annoncé l'acquisition de Ravello Systems, une entreprise de virtualisation cloud, pour améliorer ses capacités dans le cloud computing.",
+      "Oracle a fait face à une concurrence accrue dans le secteur des bases de données et du cloud computing, avec des rivaux comme Amazon Web Services et Microsoft Azure gagnant des parts de marché.",
+      "L'action d'Oracle a fluctué pendant cette période, reflétant les incertitudes du marché concernant la transition de la société vers le cloud computing."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201508": {
+    "summary": "Entre le 01/05/2015 et le 31/08/2015, Microsoft a connu plusieurs événements significatifs, notamment des annonces de produits, des résultats financiers et des changements stratégiques. La société a continué à se concentrer sur sa transformation vers le cloud et les services, tout en faisant face à des défis dans le secteur des appareils mobiles.",
+    "key_events": [
+      "Microsoft a annoncé Windows 10, avec une sortie prévue pour juillet 2015, marquant une étape importante dans leur stratégie de plateforme unifiée.",
+      "La société a publié ses résultats financiers pour le quatrième trimestre 2015, montrant une croissance dans le segment cloud, mais une baisse dans les revenus des appareils mobiles.",
+      "Microsoft a annoncé un plan de restructuration, incluant des suppressions d'emplois, principalement dans le secteur des appareils mobiles.",
+      "La sortie de Windows 10 a eu lieu le 29 juillet 2015, avec une adoption rapide par les utilisateurs.",
+      "Microsoft a acquis plusieurs entreprises pour renforcer ses capacités dans le cloud et l'intelligence artificielle."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_201508": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants entre mai et août 2015. La société a publié ses résultats financiers pour le quatrième trimestre et l'exercice 2015, a annoncé des acquisitions stratégiques et a fait face à des défis concurrentiels dans le secteur du cloud computing.",
+    "key_events": [
+      "Oracle a publié ses résultats financiers pour le quatrième trimestre et l'exercice 2015 en juin 2015, affichant une croissance modérée des revenus et des bénéfices.",
+      "La société a annoncé l'acquisition de Maxymiser, une entreprise spécialisée dans les tests et l'optimisation des sites web, en août 2015.",
+      "Oracle a continué à investir dans le développement de ses solutions cloud pour concurrencer des entreprises comme Amazon Web Services et Microsoft Azure.",
+      "La société a fait face à des défis concurrentiels dans le secteur du cloud computing, avec une croissance plus lente que certains de ses concurrents.",
+      "Oracle a annoncé des partenariats stratégiques avec plusieurs entreprises pour renforcer sa position sur le marché du cloud."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201509": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre juin et septembre 2015, notamment des annonces majeures concernant Windows 10, des acquisitions stratégiques et des résultats financiers solides.",
+    "key_events": [
+      "Lancement de Windows 10 le 29 juillet 2015, avec une adoption rapide et une mise à jour gratuite pour les utilisateurs de Windows 7 et 8.",
+      "Annonce de l'acquisition de l'application de calendrier Sunrise pour renforcer les services de productivité de Microsoft.",
+      "Publication des résultats financiers du quatrième trimestre 2015, montrant une croissance des revenus cloud et une augmentation des bénéfices.",
+      "Annonce de la restructuration de l'entreprise avec des licenciements dans le secteur des téléphones, reflétant un changement stratégique vers les services cloud et la productivité.",
+      "Introduction de nouveaux appareils Surface, y compris le Surface Pro 4 et le Surface Book, pour renforcer la position de Microsoft sur le marché des appareils haut de gamme."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_201509": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre le 1er juin 2015 et le 30 septembre 2015. La société a annoncé des résultats financiers solides, avec une croissance des revenus et des bénéfices. Oracle a également fait plusieurs annonces stratégiques concernant ses offres cloud et a acquis plusieurs entreprises pour renforcer ses capacités dans ce domaine.",
+    "key_events": [
+      "Oracle a annoncé ses résultats financiers pour le quatrième trimestre et l'exercice 2015, avec une croissance des revenus de 7% en glissement annuel pour atteindre 10,7 milliards de dollars.",
+      "La société a lancé Oracle Cloud Platform, une suite de services cloud pour les développeurs et les entreprises.",
+      "Oracle a acquis Maxymiser, une société spécialisée dans les tests et l'optimisation des sites web, pour renforcer ses capacités dans le domaine du marketing cloud.",
+      "La société a annoncé un partenariat stratégique avec Microsoft pour offrir des solutions cloud interopérables.",
+      "Oracle a dévoilé sa nouvelle génération de serveurs SPARC, conçus pour améliorer les performances des applications cloud et sur site."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_201510": {
+    "summary": "Entre juillet et octobre 2015, Microsoft a connu plusieurs événements significatifs, notamment des changements stratégiques, des lancements de produits et des annonces financières. La société a continué à se concentrer sur le cloud computing et a annoncé des restructurations pour améliorer son efficacité opérationnelle.",
+    "key_events": [
+      "Lancement de Windows 10 le 29 juillet 2015, avec un accent sur la convergence des appareils et une mise à jour gratuite pour les utilisateurs de Windows 7 et 8.",
+      "Annonce de restructurations et de licenciements pour rationaliser les opérations et se concentrer sur les activités principales, notamment le cloud computing.",
+      "Acquisition de plusieurs entreprises pour renforcer les capacités en matière de cloud et d'intelligence artificielle.",
+      "Publication des résultats financiers du quatrième trimestre 2015, montrant une croissance des revenus liés au cloud, mais une baisse des revenus liés aux licences Windows traditionnelles.",
+      "Annonce de nouveaux appareils Surface, y compris le Surface Book et le Surface Pro 4, pour renforcer la présence de Microsoft sur le marché des appareils haut de gamme."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_201510": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre juillet et octobre 2015. La société a annoncé des résultats financiers solides, des acquisitions stratégiques et des partenariats importants. Cependant, il y a eu des défis liés à la concurrence accrue dans le secteur du cloud computing.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers pour le quatrième trimestre 2015, montrant une croissance des revenus de 7% pour atteindre 10,7 milliards de dollars.",
+      "La société a finalisé l'acquisition de Maxymiser, une entreprise spécialisée dans l'optimisation de l'expérience client, pour renforcer ses offres dans le domaine du marketing cloud.",
+      "Oracle a annoncé un partenariat stratégique avec Microsoft pour offrir des solutions cloud interopérables.",
+      "La concurrence dans le secteur du cloud computing s'est intensifiée, avec des rivaux comme Amazon Web Services et Microsoft Azure gagnant des parts de marché.",
+      "Oracle a lancé de nouvelles solutions de cloud computing et de bases de données pour répondre à la demande croissante des entreprises."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_201511": {
+    "summary": "Entre août et novembre 2015, Microsoft a connu plusieurs événements significatifs. La société a poursuivi sa transition vers le cloud et a lancé de nouveaux produits matériels. Les résultats financiers ont été mitigés, avec des performances solides dans le cloud, mais des défis persistants dans le secteur des téléphones mobiles.",
+    "key_events": [
+      "Microsoft a annoncé une restructuration majeure en juin 2015, avec des licenciements et une réorganisation pour se concentrer sur le cloud et les entreprises.",
+      "Lancement de Windows 10 en juillet 2015, avec une adoption rapide et une mise à jour majeure pour les utilisateurs de Windows.",
+      "Introduction de nouveaux appareils Surface, dont le Surface Book et le Surface Pro 4, en octobre 2015.",
+      "Résultats financiers du premier trimestre 2016 (publié en octobre 2015) montrant une croissance du cloud, mais une baisse des revenus des téléphones.",
+      "Annonce de la fermeture de l'acquisition de l'application de calendrier Sunrise en août 2015."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201511": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants entre août et novembre 2015. La société a annoncé des résultats financiers solides, avec une croissance des revenus et des bénéfices. Oracle a également fait plusieurs acquisitions stratégiques pour renforcer sa position dans le cloud computing. Cependant, la société a fait face à des défis concurrentiels et à des préoccupations concernant la transition vers le cloud.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers pour le premier trimestre de l'exercice 2016, avec une croissance des revenus de 2% et des bénéfices dépassant les attentes.",
+      "La société a acquis StackEngine, une startup spécialisée dans la gestion des conteneurs Docker, pour renforcer ses offres dans le cloud.",
+      "Oracle a annoncé un partenariat avec Microsoft pour offrir des solutions cloud interopérables.",
+      "La société a fait face à des défis concurrentiels accrus de la part d'autres géants du cloud comme Amazon Web Services et Microsoft Azure.",
+      "Oracle a annoncé des plans pour restructurer ses opérations, avec des licenciements dans certains secteurs pour se concentrer sur la croissance du cloud."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201512": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre septembre et décembre 2015. La société a lancé de nouveaux produits, fait des acquisitions stratégiques et annoncé des restructurations. Les résultats financiers ont été solides, avec une croissance dans plusieurs segments clés.",
+    "key_events": [
+      "Lancement de Windows 10 en juillet 2015, avec une adoption rapide et une mise à jour majeure en novembre.",
+      "Acquisition de plusieurs sociétés, dont Havok, une entreprise spécialisée dans les moteurs de physique pour les jeux vidéo.",
+      "Annonce de la restructuration de l'entreprise, avec des suppressions d'emplois dans certains secteurs.",
+      "Lancement de nouveaux produits matériels, tels que le Surface Book et le Surface Pro 4.",
+      "Résultats financiers solides pour le premier trimestre 2016, avec une croissance des revenus dans le cloud et les services.",
+      "Partenariat avec plusieurs entreprises pour développer des solutions cloud et d'intelligence artificielle."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_201512": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants entre septembre et décembre 2015. La société a annoncé des résultats financiers solides, des acquisitions stratégiques et des partenariats significatifs. Cependant, il y a eu des défis liés à la concurrence accrue dans le secteur du cloud computing.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers pour le premier trimestre de l'exercice 2016, avec une hausse des revenus et des bénéfices.",
+      "La société a acquis StackEngine, une startup spécialisée dans la gestion de conteneurs Docker, pour renforcer ses offres dans le cloud.",
+      "Oracle a annoncé un partenariat avec Microsoft pour améliorer l'interopérabilité entre leurs solutions cloud respectives.",
+      "La concurrence dans le secteur du cloud computing s'est intensifiée, avec des rivaux comme Amazon Web Services et Microsoft Azure gagnant des parts de marché.",
+      "Oracle a lancé de nouvelles solutions de cloud computing et de bases de données pour répondre à la demande croissante des entreprises."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_201901": {
+    "summary": "Microsoft a connu une période de croissance et d'innovation entre octobre 2018 et janvier 2019. L'entreprise a enregistré une hausse de ses revenus et a poursuivi ses investissements dans le cloud, l'IA et d'autres technologies émergentes. Cependant, il y a eu des préoccupations concernant la concurrence et les réglementations.",
+    "key_events": [
+      "Microsoft a annoncé des résultats financiers solides pour le premier trimestre 2019, avec une hausse de 19 % de son chiffre d'affaires par rapport à l'année précédente.",
+      "L'entreprise a continué à investir dans le cloud computing, avec Azure comme l'un des principaux moteurs de croissance.",
+      "Microsoft a acquis plusieurs entreprises, dont GitHub, pour renforcer sa position dans le développement de logiciels et les services cloud.",
+      "Il y a eu des préoccupations concernant l'augmentation de la concurrence dans le secteur technologique, notamment de la part d'Amazon et de Google.",
+      "Des questions réglementaires ont été soulevées concernant la confidentialité des données et les pratiques anticoncurrentielles."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201901": {
+    "summary": "La période entre le 1er octobre 2018 et le 31 janvier 2019 a été marquée par plusieurs événements significatifs pour Apple Inc. (AAPL). La société a connu des fluctuations de ses actions en raison de divers facteurs, notamment des résultats financiers mitigés, des tensions commerciales entre les États-Unis et la Chine, et des annonces de produits.",
+    "key_events": [
+      "Apple a annoncé des résultats financiers pour le quatrième trimestre 2018, avec des revenus et des bénéfices inférieurs aux attentes des analystes.",
+      "La société a révélé une baisse des livraisons d'iPhone, attribuée à une demande plus faible que prévu, en particulier en Chine.",
+      "Apple a annoncé une révision à la baisse de ses prévisions de revenus pour le premier trimestre 2019, citant des défis économiques en Chine et une faible demande pour les iPhone.",
+      "La société a introduit de nouveaux produits, notamment l'iPad Pro et le MacBook Air, ainsi que des mises à jour logicielles.",
+      "Les tensions commerciales entre les États-Unis et la Chine ont eu un impact sur la chaîne d'approvisionnement et les ventes d'Apple.",
+      "Apple a annoncé un plan de rachat d'actions de 100 milliards de dollars, ce qui a été bien accueilli par les investisseurs."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_201901": {
+    "summary": "NVIDIA Corporation (NVDA) a connu une période de volatilité entre octobre 2018 et janvier 2019, marquée par des résultats financiers mitigés et des annonces importantes dans le secteur des semi-conducteurs et de l'intelligence artificielle.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers pour le troisième trimestre 2018 inférieurs aux attentes, avec un chiffre d'affaires de 3,18 milliards de dollars, en baisse par rapport aux prévisions.",
+      "La société a attribué cette baisse à un ralentissement des ventes dans le secteur du gaming et à une accumulation de stocks de cartes graphiques.",
+      "NVIDIA a annoncé des réductions de personnel, avec environ 7% de ses effectifs mondiaux concernés, dans le cadre d'une restructuration pour recentrer ses activités.",
+      "La société a continué à investir dans le secteur de l'intelligence artificielle et des véhicules autonomes, avec des partenariats et des annonces de nouveaux produits.",
+      "NVIDIA a présenté de nouvelles puces et technologies lors de la conférence GTC Europe, mettant en avant ses avancées dans le domaine de l'IA et du calcul haute performance.",
+      "Le cours de l'action NVDA a chuté de manière significative pendant cette période, reflétant les inquiétudes des investisseurs concernant la croissance future de l'entreprise."
+    ],
+    "sentiment": "négatif"
+  },
+  "AMZN_201901": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre octobre 2018 et janvier 2019. La société a annoncé une augmentation de son salaire minimum pour tous les employés américains, a été choisie pour établir un deuxième siège social à New York, et a connu une croissance continue de ses revenus et bénéfices. Cependant, il y a eu des préoccupations concernant la régulation antitrust et des critiques sur les conditions de travail.",
+    "key_events": [
+      "Amazon a augmenté son salaire minimum à 15 $/heure pour tous les employés américains à partir du 1er novembre 2018.",
+      "Amazon a été choisie, avec New York, pour établir un deuxième siège social (HQ2) en novembre 2018, promettant 25 000 emplois.",
+      "Les revenus du quatrième trimestre 2018 ont augmenté de 20 % par rapport à l'année précédente, atteignant 72,4 milliards de dollars.",
+      "Les bénéfices ont plus que doublé au quatrième trimestre 2018, atteignant 3,03 milliards de dollars.",
+      "Des préoccupations concernant la régulation antitrust ont été soulevées par des législateurs et des critiques.",
+      "Des critiques continues sur les conditions de travail et les pratiques de gestion ont été rapportées."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201901": {
+    "summary": "Entre le 01/10/2018 et le 31/01/2019, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. La société a continué à afficher une croissance solide, mais a également fait face à des défis réglementaires et à des préoccupations concernant la protection des données.",
+    "key_events": [
+      "Alphabet a publié ses résultats financiers pour le troisième trimestre 2018, affichant une croissance des revenus de 21 % par rapport à l'année précédente, atteignant 33,74 milliards de dollars.",
+      "La société a annoncé des investissements importants dans l'intelligence artificielle et le cloud computing, des secteurs clés pour sa croissance future.",
+      "Google a fait face à des critiques et à des manifestations de la part de ses employés concernant son projet de moteur de recherche censuré pour le marché chinois, connu sous le nom de projet Dragonfly.",
+      "Sundar Pichai, PDG de Google, a témoigné devant le Congrès américain sur des questions liées à la partialité politique et à la protection des données.",
+      "Alphabet a annoncé une restructuration de certaines de ses filiales, notamment la fermeture de Google+, son réseau social, en raison de failles de sécurité et d'une faible adoption par les utilisateurs."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201901": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants entre le 01/10/2018 et le 31/01/2019. La société a publié des résultats financiers solides pour le premier trimestre 2019, avec une croissance des revenus et des bénéfices. Oracle a également annoncé des avancées significatives dans ses services cloud et a fait l'acquisition de plusieurs entreprises pour renforcer ses offres. Cependant, la société a également fait face à des défis, notamment des inquiétudes concernant la concurrence accrue dans le secteur du cloud.",
+    "key_events": [
+      "Oracle a publié des résultats financiers solides pour le premier trimestre 2019, avec une croissance des revenus de 1% pour atteindre 9,6 milliards de dollars et des bénéfices en hausse.",
+      "La société a annoncé des avancées significatives dans ses services cloud, notamment avec l'expansion de ses centres de données cloud.",
+      "Oracle a acquis DataScience.com pour renforcer ses capacités dans le domaine de l'intelligence artificielle et du machine learning.",
+      "La société a fait face à des inquiétudes concernant la concurrence accrue dans le secteur du cloud, notamment de la part d'Amazon Web Services et de Microsoft Azure.",
+      "Oracle a annoncé un partenariat stratégique avec Microsoft pour interconnecter leurs clouds respectifs."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_201902": {
+    "summary": "Microsoft a connu une période de croissance et d'expansion entre novembre 2018 et février 2019. L'entreprise a continué à bénéficier de la demande pour ses services cloud et a fait des acquisitions stratégiques.",
+    "key_events": [
+      "En novembre 2018, Microsoft a dépassé Apple pour devenir l'entreprise la plus valorisée au monde, avec une capitalisation boursière dépassant les 800 milliards de dollars.",
+      "En décembre 2018, Microsoft a annoncé l'acquisition de GitHub pour 7,5 milliards de dollars, renforçant ainsi sa position dans le domaine du développement de logiciels et des services cloud.",
+      "En janvier 2019, Microsoft a publié ses résultats trimestriels, affichant une croissance de 12% de son chiffre d'affaires, grâce notamment à la forte demande pour ses services cloud Azure.",
+      "En février 2019, Microsoft a annoncé une collaboration avec Walmart pour utiliser Azure comme plateforme cloud préférée, renforçant ainsi sa position dans le secteur du commerce de détail."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201902": {
+    "summary": "La période entre le 1er novembre 2018 et le 28 février 2019 a été marquée par plusieurs événements significatifs pour Apple Inc. (AAPL). La société a connu des fluctuations de ses performances financières et des annonces majeures concernant ses produits et services.",
+    "key_events": [
+      "En novembre 2018, Apple a annoncé une baisse de ses livraisons d'iPhone, ce qui a entraîné une chute des actions.",
+      "En janvier 2019, Apple a réduit ses prévisions de revenus pour le premier trimestre fiscal 2019, citant un ralentissement des ventes en Chine.",
+      "Apple a annoncé des plans pour investir davantage dans le développement de ses services, y compris Apple TV+, Apple News+ et Apple Arcade, lors d'un événement en mars 2019.",
+      "La société a également fait face à des litiges avec Qualcomm, qui ont finalement été résolus en avril 2019, mais les tensions étaient palpables durant cette période.",
+      "En février 2019, Apple a annoncé des résultats financiers pour le premier trimestre fiscal 2019, avec un chiffre d'affaires de 84,3 milliards de dollars, en baisse par rapport à l'année précédente."
+    ],
+    "sentiment": "négatif"
+  },
+  "NVDA_201902": {
+    "summary": "NVIDIA a connu une période difficile entre novembre 2018 et février 2019, marquée par une baisse significative de ses actions due à des résultats financiers décevants et à une baisse de la demande dans le secteur des cryptomonnaies. Cependant, la société a également fait des annonces positives concernant ses avancées dans le domaine de l'IA et des partenariats stratégiques.",
+    "key_events": [
+      "En novembre 2018, NVIDIA a annoncé des résultats financiers décevants pour le troisième trimestre, avec une baisse de la demande dans le secteur des cryptomonnaies, ce qui a entraîné une chute de son action.",
+      "En janvier 2019, NVIDIA a présenté de nouvelles avancées dans le domaine de l'intelligence artificielle lors du CES, mettant en avant ses nouvelles puces et technologies.",
+      "En février 2019, NVIDIA a annoncé un partenariat stratégique avec Mercedes-Benz pour développer un nouveau système de calcul et d'IA pour les véhicules autonomes.",
+      "NVIDIA a également fait face à des défis réglementaires, avec des enquêtes en cours sur ses pratiques commerciales et ses acquisitions."
+    ],
+    "sentiment": "négatif"
+  },
+  "AMZN_201902": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre le 1er novembre 2018 et le 28 février 2019. L'entreprise a continué à se développer dans divers secteurs, tout en faisant face à des défis réglementaires et opérationnels.",
+    "key_events": [
+      "En novembre 2018, Amazon a annoncé le choix de New York et de la Virginie du Nord pour ses nouveaux sièges sociaux, connus sous le nom de HQ2.",
+      "En décembre 2018, Amazon a annoncé que ses ventes pour la saison des fêtes avaient battu des records, avec plus d'un milliard d'articles vendus.",
+      "En janvier 2019, Amazon a annoncé une augmentation de son salaire minimum à 15 dollars de l'heure pour tous les employés aux États-Unis.",
+      "En février 2019, Amazon a abandonné ses plans pour construire un siège social à New York en raison de l'opposition locale et politique.",
+      "En février 2019, Amazon a acquis la société de caméras de sécurité domestique Eero."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201902": {
+    "summary": "Entre le 01/11/2018 et le 28/02/2019, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. La société a continué à afficher une croissance solide, mais a également fait face à des défis réglementaires et à des préoccupations concernant la croissance des revenus publicitaires.",
+    "key_events": [
+      "En novembre 2018, Alphabet a annoncé des revenus trimestriels supérieurs aux attentes, mais a également révélé un ralentissement de la croissance des revenus publicitaires.",
+      "En décembre 2018, le PDG de Google, Sundar Pichai, a témoigné devant le Congrès américain sur des questions de confidentialité des données et de partialité politique.",
+      "En janvier 2019, Alphabet a annoncé un investissement de 1 milliard de dollars dans un parc immobilier à New York, marquant une expansion significative de sa présence dans la ville.",
+      "En février 2019, l'Union européenne a infligé une amende de 1,49 milliard d'euros à Google pour pratiques anticoncurrentielles dans le domaine de la publicité en ligne.",
+      "Tout au long de la période, Alphabet a continué à investir dans de nouvelles technologies, notamment dans les domaines de l'intelligence artificielle et du cloud computing."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201902": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants entre le 1er novembre 2018 et le 28 février 2019. La société a publié des résultats financiers solides pour son deuxième trimestre fiscal 2019, avec une croissance des revenus et des bénéfices. Oracle a également annoncé des avancées significatives dans son offre cloud, avec de nouveaux partenariats et des innovations technologiques. Cependant, la société a fait face à des défis concurrentiels et à des préoccupations concernant sa transition vers le cloud.",
+    "key_events": [
+      "Oracle a publié ses résultats pour le deuxième trimestre fiscal 2019 en décembre 2018, affichant une croissance des revenus de 1% pour atteindre 9,6 milliards de dollars et un bénéfice net en hausse de 7% à 2,3 milliards de dollars.",
+      "La société a annoncé un partenariat stratégique avec Microsoft en juin 2019 pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur les deux plateformes de manière transparente.",
+      "Oracle a lancé de nouvelles innovations dans son offre cloud, notamment des mises à jour pour Oracle Autonomous Database et l'expansion de ses services de cloud infrastructure.",
+      "La société a fait face à des défis concurrentiels accrus de la part d'autres fournisseurs de cloud, tels qu'Amazon Web Services (AWS) et Microsoft Azure.",
+      "Oracle a continué à investir dans des acquisitions stratégiques pour renforcer son portefeuille de produits et ses capacités technologiques."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_201903": {
+    "summary": "Microsoft a connu une période de croissance et d'expansion entre décembre 2018 et mars 2019. L'entreprise a continué à bénéficier de la demande pour ses services cloud et a fait des acquisitions stratégiques.",
+    "key_events": [
+      "En décembre 2018, Microsoft a dépassé Apple pour devenir l'entreprise la plus valorisée au monde, avec une capitalisation boursière dépassant les 800 milliards de dollars.",
+      "En janvier 2019, Microsoft a annoncé un partenariat avec Walgreens Boots Alliance pour développer des solutions de santé innovantes.",
+      "En février 2019, Microsoft a annoncé une augmentation de ses revenus trimestriels, tirée par la croissance de son activité cloud Azure.",
+      "En mars 2019, Microsoft a annoncé l'acquisition de Express Logic, une société spécialisée dans les systèmes d'exploitation en temps réel pour les appareils IoT."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201903": {
+    "summary": "Au cours de la période du 1er décembre 2018 au 31 mars 2019, Apple a connu plusieurs événements significatifs. La société a publié ses résultats financiers pour le premier trimestre 2019, révélant un chiffre d'affaires et des bénéfices inférieurs aux attentes en raison d'un ralentissement des ventes d'iPhone, en particulier en Chine. Apple a également annoncé une révision à la baisse de ses prévisions de revenus pour le premier trimestre 2019, ce qui a marqué la première fois en près de 20 ans que l'entreprise a réduit ses prévisions de revenus. Cependant, Apple a continué à mettre en avant la croissance de ses services et de ses produits portables, et a annoncé de nouveaux services tels que Apple TV+, Apple Arcade et Apple News+ lors d'un événement spécial en mars 2019.",
+    "key_events": [
+      "Apple a publié ses résultats financiers pour le premier trimestre 2019, révélant un chiffre d'affaires et des bénéfices inférieurs aux attentes.",
+      "Apple a annoncé une révision à la baisse de ses prévisions de revenus pour le premier trimestre 2019, citant un ralentissement des ventes d'iPhone, en particulier en Chine.",
+      "Apple a mis en avant la croissance de ses services et de ses produits portables, avec une augmentation de 19% des revenus des services au premier trimestre 2019.",
+      "Apple a annoncé de nouveaux services, notamment Apple TV+, Apple Arcade et Apple News+, lors d'un événement spécial en mars 2019."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_201903": {
+    "summary": "NVIDIA a connu une période difficile entre décembre 2018 et mars 2019, marquée par une baisse significative de ses actions en raison de la baisse de la demande pour ses puces graphiques et de la pression concurrentielle. Cependant, la société a également fait des annonces positives concernant ses avancées dans le domaine de l'IA et des véhicules autonomes.",
+    "key_events": [
+      "En décembre 2018, NVIDIA a annoncé une baisse de ses revenus due à une demande plus faible que prévu pour ses puces graphiques, en particulier dans le secteur des cryptomonnaies.",
+      "En janvier 2019, NVIDIA a présenté de nouvelles puces pour les véhicules autonomes lors du CES 2019, montrant ses progrès dans ce domaine.",
+      "En février 2019, NVIDIA a annoncé des résultats trimestriels décevants, avec une baisse de 54% de son bénéfice net par rapport à l'année précédente.",
+      "En mars 2019, NVIDIA a acquis Mellanox Technologies pour 6,9 milliards de dollars, une entreprise spécialisée dans les technologies de réseau haute performance, visant à renforcer ses capacités dans le domaine du calcul haute performance et de l'IA."
+    ],
+    "sentiment": "négatif"
+  },
+  "AMZN_201903": {
+    "summary": "Au cours de la période du 1er décembre 2018 au 31 mars 2019, Amazon a connu plusieurs événements significatifs. L'entreprise a continué à renforcer sa position dans divers secteurs, notamment le cloud computing, la vente au détail et les services de streaming. Cependant, il y a eu des préoccupations concernant les dépenses élevées et la régulation antitrust.",
+    "key_events": [
+      "Amazon a annoncé en décembre 2018 que son service de cloud computing, Amazon Web Services (AWS), avait atteint un taux de croissance annuel de 45%.",
+      "En janvier 2019, Amazon a annoncé une augmentation de son salaire minimum à 15 dollars de l'heure pour tous les employés américains, ce qui a été bien accueilli par les travailleurs et les syndicats.",
+      "En février 2019, Amazon a abandonné ses plans de construire un nouveau siège à New York en raison de l'opposition locale et des préoccupations concernant les subventions gouvernementales.",
+      "En mars 2019, il a été rapporté que les régulateurs antitrust européens commençaient à examiner les pratiques commerciales d'Amazon, ce qui pourrait potentiellement entraîner des amendes ou des restrictions pour l'entreprise."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201903": {
+    "summary": "Au cours de la période du 01/12/2018 au 31/03/2019, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. L'entreprise a continué à afficher une croissance solide, malgré des préoccupations concernant la régulation et la concurrence. Les revenus publicitaires ont augmenté, mais des inquiétudes concernant la protection des données et la vie privée ont persisté.",
+    "key_events": [
+      "En décembre 2018, Sundar Pichai, PDG de Google, a témoigné devant le Congrès américain sur des questions de transparence et de partialité politique.",
+      "Alphabet a annoncé des revenus de 39,28 milliards de dollars pour le quatrième trimestre 2018, en hausse de 22% par rapport à l'année précédente.",
+      "En mars 2019, l'Union européenne a infligé une amende de 1,49 milliard d'euros à Google pour pratiques anticoncurrentielles dans le domaine de la publicité en ligne.",
+      "Google a annoncé de nouvelles fonctionnalités pour son assistant vocal et ses appareils domestiques intelligents lors du Consumer Electronics Show (CES) en janvier 2019.",
+      "L'entreprise a continué à investir dans l'intelligence artificielle et le cloud computing, des secteurs clés pour sa croissance future."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201903": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants entre le 01/12/2018 et le 31/03/2019. La société a publié des résultats financiers solides, annoncé de nouvelles innovations technologiques et fait face à des défis concurrentiels.",
+    "key_events": [
+      "En décembre 2018, Oracle a annoncé des résultats financiers pour le deuxième trimestre de l'exercice 2019, avec un chiffre d'affaires de 9,6 milliards de dollars, en hausse de 1% par rapport à l'année précédente.",
+      "En janvier 2019, Oracle a lancé de nouvelles solutions cloud pour aider les entreprises à gérer leurs données plus efficacement.",
+      "En mars 2019, Oracle a annoncé une collaboration avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients de migrer et d'exécuter des charges de travail entre les deux environnements.",
+      "Oracle a également fait face à une concurrence accrue dans le secteur des bases de données avec des acteurs comme Amazon Web Services et Microsoft Azure."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_201904": {
+    "summary": "Microsoft a connu une période de croissance et d'expansion au premier trimestre de 2019. L'entreprise a continué à bénéficier de la demande pour ses services cloud et a fait plusieurs annonces importantes concernant ses produits et services.",
+    "key_events": [
+      "Microsoft a annoncé des résultats financiers solides pour le trimestre se terminant en décembre 2018, avec une croissance de 12% de son chiffre d'affaires par rapport à l'année précédente.",
+      "L'entreprise a lancé plusieurs nouveaux services et produits, notamment Azure Kubernetes Service (AKS), qui est devenu généralement disponible en mars 2019.",
+      "Microsoft a annoncé un partenariat stratégique avec SAP pour aider les entreprises à migrer leurs systèmes SAP vers le cloud Azure.",
+      "En avril 2019, Microsoft a annoncé qu'il allait acquérir Express Logic, une société spécialisée dans les systèmes d'exploitation en temps réel pour les appareils IoT.",
+      "L'entreprise a également fait face à des défis réglementaires, notamment des enquêtes antitrust aux États-Unis et en Europe."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201904": {
+    "summary": "Au cours du premier trimestre 2019, Apple a connu plusieurs événements significatifs. La société a publié ses résultats financiers pour le premier trimestre fiscal 2019, révélant un chiffre d'affaires de 84,3 milliards de dollars, en baisse de 5 % par rapport à l'année précédente. Apple a également annoncé une baisse de ses prévisions de revenus pour le premier trimestre fiscal 2019, citant un ralentissement économique en Chine et une faible demande pour les iPhone. De plus, Apple a introduit de nouveaux services, notamment Apple TV+, Apple Arcade, Apple News+ et Apple Card, lors d'un événement spécial en mars 2019.",
+    "key_events": [
+      "Apple a publié ses résultats financiers pour le premier trimestre fiscal 2019, avec un chiffre d'affaires de 84,3 milliards de dollars, en baisse de 5 % par rapport à l'année précédente.",
+      "Apple a annoncé une baisse de ses prévisions de revenus pour le premier trimestre fiscal 2019, en raison d'un ralentissement économique en Chine et d'une faible demande pour les iPhone.",
+      "Apple a introduit de nouveaux services, notamment Apple TV+, Apple Arcade, Apple News+ et Apple Card, lors d'un événement spécial en mars 2019."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_201904": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants au premier trimestre 2019. La société a annoncé des résultats financiers mitigés pour le quatrième trimestre de l'exercice 2019, avec une baisse des revenus due à un ralentissement du marché des jeux et des cryptomonnaies. Cependant, NVIDIA a continué à investir dans des secteurs prometteurs comme l'IA et le calcul haute performance. La société a également fait face à des défis macroéconomiques, notamment les tensions commerciales entre les États-Unis et la Chine.",
+    "key_events": [
+      "NVIDIA a annoncé des revenus de 2,21 milliards de dollars pour le quatrième trimestre de l'exercice 2019, en baisse de 24% par rapport à l'année précédente.",
+      "La société a annoncé un plan de restructuration incluant des suppressions d'emplois pour réduire les coûts.",
+      "NVIDIA a acquis Mellanox Technologies pour 6,9 milliards de dollars, renforçant ainsi ses capacités en matière de calcul haute performance et de réseau.",
+      "La société a présenté de nouvelles solutions pour les centres de données et l'IA lors de la conférence GTC 2019.",
+      "NVIDIA a fait face à des défis liés aux tensions commerciales entre les États-Unis et la Chine, affectant ses ventes et sa chaîne d'approvisionnement."
+    ],
+    "sentiment": "négatif"
+  },
+  "AMZN_201904": {
+    "summary": "Amazon a connu plusieurs événements significatifs au premier trimestre 2019, notamment des investissements majeurs, des changements dans sa structure organisationnelle et des défis réglementaires.",
+    "key_events": [
+      "Amazon a annoncé en février 2019 l'annulation de ses plans pour établir un nouveau siège à New York en raison de l'opposition locale.",
+      "En mars 2019, Amazon a annoncé un investissement de 700 millions de dollars pour former 100 000 employés aux compétences techniques d'ici 2025.",
+      "Amazon a acquis Eero, une startup spécialisée dans les routeurs Wi-Fi, pour un montant non divulgué en février 2019.",
+      "Le PDG d'Amazon, Jeff Bezos, a annoncé en avril 2019 que la société allait réduire le temps de livraison pour les membres Prime à un jour au lieu de deux.",
+      "Amazon a fait face à des pressions réglementaires accrues, notamment de la part de l'Union européenne, concernant ses pratiques commerciales et fiscales."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201904": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs au premier trimestre 2019. La société a continué à afficher une croissance solide, mais a également fait face à des défis réglementaires et à des préoccupations concernant la concurrence.",
+    "key_events": [
+      "Alphabet a publié ses résultats financiers pour le quatrième trimestre 2018 en février 2019, affichant une croissance des revenus de 22% par rapport à l'année précédente, atteignant 39,28 milliards de dollars.",
+      "En mars 2019, la Commission européenne a infligé une amende de 1,49 milliard d'euros à Google pour pratiques anticoncurrentielles dans le domaine de la publicité en ligne.",
+      "Google a annoncé des investissements importants dans l'intelligence artificielle et le cloud computing, avec l'ouverture de nouveaux centres de données et le lancement de nouveaux services.",
+      "La société a également fait face à des critiques concernant la gestion des données des utilisateurs et la vie privée, ce qui a conduit à des auditions au Congrès américain.",
+      "En avril 2019, Google a annoncé une restructuration de sa division hardware, avec le départ de plusieurs hauts dirigeants."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201904": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants au premier trimestre 2019. La société a publié des résultats financiers solides, avec une croissance des revenus et des bénéfices. Oracle a également fait des acquisitions stratégiques et a annoncé de nouveaux partenariats pour renforcer sa position dans le cloud computing. Cependant, la société a également fait face à des défis, notamment une concurrence accrue et des préoccupations concernant sa transition vers le cloud.",
+    "key_events": [
+      "Oracle a publié ses résultats financiers pour le deuxième trimestre 2019, affichant une croissance des revenus de 2% pour atteindre 9,6 milliards de dollars et un bénéfice net de 2,3 milliards de dollars.",
+      "La société a annoncé l'acquisition de DataScience.com, une plateforme de gestion du cycle de vie des données scientifiques, pour renforcer ses capacités dans le domaine de l'intelligence artificielle et du machine learning.",
+      "Oracle a annoncé un partenariat stratégique avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur les deux plateformes de manière transparente.",
+      "La société a fait face à une concurrence accrue de la part d'autres fournisseurs de cloud, tels qu'Amazon Web Services et Microsoft Azure, ce qui a suscité des préoccupations parmi les investisseurs concernant la croissance future d'Oracle.",
+      "Oracle a annoncé le lancement de nouvelles solutions de cloud computing, notamment Oracle Autonomous Database et Oracle Cloud Infrastructure, pour répondre à la demande croissante de services cloud."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201905": {
+    "summary": "Microsoft a connu une période de croissance et d'expansion entre février et mai 2019. L'entreprise a continué à bénéficier de la demande pour ses services cloud et a fait plusieurs annonces importantes concernant ses produits et services.",
+    "key_events": [
+      "Microsoft a dépassé Apple en tant que société la plus valorisée au monde en avril 2019.",
+      "L'entreprise a annoncé une augmentation de ses revenus de 14% pour le troisième trimestre de l'exercice 2019, grâce à la croissance de son activité cloud.",
+      "Microsoft a dévoilé une nouvelle version de sa console de jeu, la Xbox, et a annoncé des investissements importants dans les jeux vidéo.",
+      "L'entreprise a également annoncé des partenariats stratégiques, notamment avec Sony pour le développement de solutions cloud pour les jeux vidéo.",
+      "Microsoft a continué à étendre ses services Azure, avec de nouvelles fonctionnalités et des partenariats avec d'autres entreprises technologiques."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201905": {
+    "summary": "Au cours de la période du 1er février 2019 au 31 mai 2019, Apple a connu plusieurs événements significatifs. La société a lancé de nouveaux services, fait face à des défis réglementaires et publié ses résultats trimestriels. Les actions d'Apple ont fluctué en réponse à ces événements, mais ont globalement montré une tendance à la hausse.",
+    "key_events": [
+      "Apple a annoncé de nouveaux services lors d'un événement spécial le 25 mars 2019, notamment Apple TV+, Apple News+, Apple Card et Apple Arcade.",
+      "La société a publié ses résultats trimestriels pour le deuxième trimestre 2019 le 30 avril 2019, affichant un bénéfice par action de 2,46 $ et un chiffre d'affaires de 58 milliards de dollars, en baisse par rapport à l'année précédente.",
+      "Apple a fait face à des défis réglementaires, notamment une plainte de l'Union européenne pour pratiques anticoncurrentielles liées à Apple Pay.",
+      "Le 1er mai 2019, Apple a annoncé l'acquisition de la division modem d'Intel pour 1 milliard de dollars.",
+      "Les actions d'Apple ont atteint un sommet de 211,75 $ le 29 avril 2019, avant de clôturer à 178,96 $ le 31 mai 2019."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201905": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre le 1er février 2019 et le 31 mai 2019. La société a annoncé des résultats financiers mitigés pour son quatrième trimestre fiscal 2019, avec une baisse de ses revenus due à un ralentissement du marché des jeux et des cryptomonnaies. Cependant, NVIDIA a également fait des annonces positives concernant ses avancées dans les domaines de l'intelligence artificielle et de la conduite autonome, ainsi que des partenariats stratégiques.",
+    "key_events": [
+      "NVIDIA a annoncé ses résultats financiers pour le quatrième trimestre fiscal 2019, avec des revenus de 2,21 milliards de dollars, en baisse de 24% par rapport à l'année précédente.",
+      "La société a annoncé un partenariat avec Mercedes-Benz pour développer un système de conduite autonome.",
+      "NVIDIA a présenté de nouvelles solutions pour les centres de données et l'IA lors de la conférence GTC 2019.",
+      "La société a annoncé une collaboration avec Microsoft pour intégrer ses technologies d'IA dans les services cloud Azure.",
+      "NVIDIA a fait face à une concurrence accrue dans le secteur des puces graphiques, notamment de la part d'AMD."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_201905": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre février et mai 2019. L'entreprise a annoncé son retrait d'un projet de siège à New York en raison de l'opposition locale, tout en continuant à investir dans l'expansion de ses opérations et services, notamment avec le lancement de nouveaux produits Alexa et l'expansion de ses services cloud AWS. Les résultats financiers du premier trimestre ont dépassé les attentes, avec une augmentation notable des revenus et des bénéfices.",
+    "key_events": [
+      "Amazon annonce l'abandon de son projet de siège à New York en février 2019 en raison de l'opposition locale.",
+      "Lancement de nouveaux appareils et fonctionnalités Alexa lors d'un événement en septembre 2019, démontrant l'engagement continu d'Amazon dans l'innovation technologique.",
+      "Expansion des services AWS avec de nouvelles fonctionnalités et partenariats, renforçant la position d'Amazon sur le marché du cloud computing.",
+      "Publication des résultats financiers du premier trimestre 2019 en avril, montrant une croissance des revenus et des bénéfices supérieure aux attentes des analystes."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201905": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre le 1er février 2019 et le 31 mai 2019. La société a continué à montrer une croissance solide, mais a également fait face à des défis réglementaires et à des préoccupations concernant la concurrence.",
+    "key_events": [
+      "Alphabet a publié ses résultats financiers pour le premier trimestre 2019, affichant une croissance des revenus de 17% par rapport à l'année précédente, atteignant 36,3 milliards de dollars.",
+      "La société a annoncé un rachat d'actions de 12,5 milliards de dollars, ce qui a été bien accueilli par les investisseurs.",
+      "Google a fait face à des amendes réglementaires en Europe, notamment une amende de 1,49 milliard d'euros pour pratiques anticoncurrentielles dans le secteur de la publicité en ligne.",
+      "La société a continué à investir dans de nouvelles technologies, notamment dans le domaine de l'intelligence artificielle et du cloud computing.",
+      "Google a annoncé des mises à jour majeures pour son assistant vocal et ses services de cartographie lors de sa conférence annuelle Google I/O.",
+      "Des préoccupations ont été soulevées concernant la concurrence accrue dans le secteur de la publicité en ligne et les régulations potentielles aux États-Unis."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201905": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre le 1er février 2019 et le 31 mai 2019. La société a publié des résultats financiers solides, annoncé de nouvelles innovations technologiques et fait face à des défis concurrentiels.",
+    "key_events": [
+      "En mars 2019, Oracle a annoncé des résultats financiers pour le troisième trimestre de l'exercice 2019, avec un chiffre d'affaires de 9,6 milliards de dollars, en hausse de 3 % en glissement annuel.",
+      "Oracle a lancé de nouvelles solutions cloud, notamment Oracle Autonomous Database, pour renforcer sa position sur le marché du cloud computing.",
+      "La société a annoncé un partenariat stratégique avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur les deux plateformes.",
+      "Oracle a fait face à une concurrence accrue de la part d'autres géants du cloud comme Amazon Web Services (AWS) et Microsoft Azure.",
+      "En mai 2019, Oracle a annoncé l'acquisition de DataScience.com, une plateforme de gestion du cycle de vie des données scientifiques, pour renforcer ses capacités en matière d'intelligence artificielle et de machine learning."
+    ],
+    "sentiment": "positif"
   }
 }

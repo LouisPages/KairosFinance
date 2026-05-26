@@ -5,6 +5,3 @@
 
 
 - Amélioration LLM: fine-tuning en croisant les actualités fournis par le premier agent et les facteur les plus pertinents (via leurs p-value)
-
-
-- Ajouter un bouton enregistrer plutôt que d'avoir un enregistrement automatique

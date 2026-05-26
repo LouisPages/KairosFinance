@@ -33,10 +33,10 @@ Chaque ligne = une simulation à lancer : **portefeuille** + **fenêtre temporel
 
 | ID | Période   | Tickers (exemple S&P 500) |
 | -- | --------- | ------------------------- |
-| A1 | 2005–2015 | AAPL, MSFT, GOOGL, AMZN, NVDA, META |
-| A2 | 2010–2019 | AAPL, MSFT, GOOGL, AMZN, NVDA, META |
-| A3 | 2015–2022 | AAPL, MSFT, GOOGL, AMZN, NVDA, META |
-| A4 | 2018–2024 | AAPL, MSFT, GOOGL, AMZN, NVDA, META |
+| A1 | 2005–2015 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL |
+| A2 | 2010–2019 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL |
+| A3 | 2015–2022 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL |
+| A4 | 2018–2024 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL |
 
 ### Portefeuille B — Moyennes / petites (constituants S&P 500)
 
@@ -51,8 +51,7 @@ Chaque ligne = une simulation à lancer : **portefeuille** + **fenêtre temporel
 
 | ID | Période   | Tickers (exemple S&P 500) |
 | -- | --------- | ------------------------- |
-| C1 | 2005–2015 | AAPL, MSFT, GOOGL, AMZN, NVDA, META, CAG, CPB, HRL, CHD, IPG, NWL |
-| C2 | 2010–2019 | AAPL, MSFT, GOOGL, AMZN, NVDA, META, CAG, CPB, HRL, CHD, IPG, NWL |
-| C3 | 2015–2022 | AAPL, MSFT, GOOGL, AMZN, NVDA, META, CAG, CPB, HRL, CHD, IPG, NWL |
-| C4 | 2018–2024 | AAPL, MSFT, GOOGL, AMZN, NVDA, META, CAG, CPB, HRL, CHD, IPG, NWL |
-
+| C1 | 2005–2015 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, NWL |
+| C2 | 2010–2019 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, NWL |
+| C3 | 2015–2022 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, NWL |
+| C4 | 2018–2024 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, NWL |
