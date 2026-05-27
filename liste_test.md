@@ -42,16 +42,16 @@ Chaque ligne = une simulation à lancer : **portefeuille** + **fenêtre temporel
 
 | ID | Période   | Tickers (exemple S&P 500) |
 | -- | --------- | ------------------------- |
-| B1 | 2005–2015 | CAG, CPB, HRL, CHD, IPG, NWL, AOS, SEE |
-| B2 | 2010–2019 | CAG, CPB, HRL, CHD, IPG, NWL, AOS, SEE |
-| B3 | 2015–2022 | CAG, CPB, HRL, CHD, IPG, NWL, AOS, SEE |
-| B4 | 2018–2024 | CAG, CPB, HRL, CHD, IPG, NWL, AOS, SEE |
+| B1 | 2005–2015 | CAG, CPB, HRL, CHD, IPG, KMX, AOS, TAP |
+| B2 | 2010–2019 | CAG, CPB, HRL, CHD, IPG, KMX, AOS, TAP |
+| B3 | 2015–2022 | CAG, CPB, HRL, CHD, IPG, KMX, AOS, TAP |
+| B4 | 2018–2024 | CAG, CPB, HRL, CHD, IPG, KMX, AOS, TAP |
 
 ### Portefeuille C — Diversifié (grandes + moyennes/petites)
 
 | ID | Période   | Tickers (exemple S&P 500) |
 | -- | --------- | ------------------------- |
-| C1 | 2005–2015 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, NWL |
-| C2 | 2010–2019 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, NWL |
-| C3 | 2015–2022 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, NWL |
-| C4 | 2018–2024 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, NWL |
+| C1 | 2005–2015 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, KMX |
+| C2 | 2010–2019 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, KMX |
+| C3 | 2015–2022 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, KMX |
+| C4 | 2018–2024 | AAPL, MSFT, GOOGL, AMZN, NVDA, ORCL, CAG, CPB, HRL, CHD, IPG, KMX |
