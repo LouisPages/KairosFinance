@@ -3327,5 +3327,1360 @@
       "En mai 2019, Oracle a annoncé l'acquisition de DataScience.com, une plateforme de gestion du cycle de vie des données scientifiques, pour renforcer ses capacités en matière d'intelligence artificielle et de machine learning."
     ],
     "sentiment": "positif"
+  },
+  "MSFT_201906": {
+    "summary": "Microsoft a connu une période de croissance et d'expansion entre mars et juin 2019. L'entreprise a continué à bénéficier de la demande pour ses services cloud et a fait plusieurs annonces importantes concernant ses produits et services.",
+    "key_events": [
+      "Microsoft a atteint une capitalisation boursière de 1 000 milliards de dollars en avril 2019, devenant ainsi l'une des entreprises les plus valorisées au monde.",
+      "L'entreprise a annoncé de nouvelles fonctionnalités pour Azure, son service cloud, lors de la conférence Build 2019 en mai.",
+      "Microsoft a dévoilé la nouvelle génération de consoles Xbox, appelée Xbox Scarlett, lors de l'E3 2019 en juin.",
+      "Les résultats financiers du troisième trimestre ont montré une croissance des revenus de 14 % par rapport à l'année précédente, avec un bénéfice net de 8,8 milliards de dollars."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201906": {
+    "summary": "Au cours de la période du 1er mars 2019 au 30 juin 2019, Apple a annoncé plusieurs mises à jour de services et de produits, y compris des mises à jour pour l'Apple TV, l'Apple News et l'Apple Arcade. La société a également fait face à des défis réglementaires et à des tensions commerciales entre les États-Unis et la Chine. Malgré ces défis, Apple a continué à investir dans de nouvelles technologies et à étendre ses services.",
+    "key_events": [
+      "Apple a annoncé de nouveaux services lors d'un événement spécial le 25 mars 2019, notamment Apple TV+, Apple News+, Apple Arcade et Apple Card.",
+      "Apple a annoncé des mises à jour pour l'Apple TV, y compris une nouvelle interface utilisateur et un nouveau service d'abonnement appelé Apple TV+.",
+      "Apple a annoncé des mises à jour pour l'Apple News, y compris un nouveau service d'abonnement appelé Apple News+.",
+      "Apple a annoncé un nouveau service de jeu appelé Apple Arcade.",
+      "Apple a annoncé une nouvelle carte de crédit appelée Apple Card, en partenariat avec Goldman Sachs.",
+      "Apple a fait face à des défis réglementaires, notamment des enquêtes antitrust et des préoccupations concernant les pratiques de l'App Store.",
+      "Apple a été affecté par les tensions commerciales entre les États-Unis et la Chine, qui ont entraîné des tarifs douaniers sur certains produits Apple.",
+      "Apple a continué à investir dans de nouvelles technologies, notamment la réalité augmentée et les véhicules autonomes.",
+      "Apple a annoncé des plans pour étendre ses services, notamment Apple Pay et Apple Music, à de nouveaux marchés."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201906": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre le 1er mars 2019 et le 30 juin 2019. La société a continué à se concentrer sur ses activités principales dans les domaines du gaming, des centres de données et de l'intelligence artificielle. Cependant, elle a également fait face à des défis liés à la concurrence et à la baisse de la demande dans certains secteurs.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers pour le quatrième trimestre de l'exercice 2019, avec un chiffre d'affaires de 2,21 milliards de dollars, en baisse de 24 % par rapport à l'année précédente.",
+      "La société a lancé de nouveaux produits, notamment les cartes graphiques GeForce RTX pour les ordinateurs portables, visant à renforcer sa position sur le marché du gaming.",
+      "NVIDIA a fait face à une concurrence accrue de la part d'AMD et d'Intel dans le secteur des GPU et des puces pour centres de données.",
+      "La société a annoncé des partenariats stratégiques avec plusieurs entreprises, dont Microsoft et Amazon, pour renforcer ses offres dans le cloud et l'IA.",
+      "NVIDIA a été confrontée à une baisse de la demande dans le secteur des cryptomonnaies, ce qui a affecté ses ventes de GPU.",
+      "La société a continué à investir dans la recherche et le développement, notamment dans les domaines de l'IA et de la conduite autonome."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_201906": {
+    "summary": "Amazon a connu plusieurs événements significatifs au cours du deuxième trimestre 2019, notamment des investissements majeurs, des changements dans sa structure organisationnelle et des annonces de nouveaux services. La société a également fait face à des critiques et des défis réglementaires.",
+    "key_events": [
+      "Amazon a annoncé un investissement de 800 millions de dollars pour améliorer la rapidité de ses livraisons, visant à réduire le délai de livraison à un jour pour les membres Prime.",
+      "La société a annoncé son intention de former des milliers d'employés dans de nouvelles compétences technologiques, investissant plus de 700 millions de dollars dans ce programme de recyclage.",
+      "Amazon a dévoilé un nouveau service de livraison par drone, appelé Prime Air, qui a reçu l'approbation de la Federal Aviation Administration (FAA) pour des tests supplémentaires.",
+      "La société a fait face à des critiques concernant les conditions de travail dans ses entrepôts, ce qui a conduit à des annonces de changements dans les politiques de gestion des employés.",
+      "Amazon a annoncé son intention d'acquérir une participation minoritaire dans la société de livraison britannique Deliveroo, renforçant ainsi sa présence sur le marché européen de la livraison de nourriture."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201906": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre le 1er mars 2019 et le 30 juin 2019. La société a continué à montrer une croissance solide, mais a également fait face à des défis réglementaires et à des préoccupations concernant la concurrence.",
+    "key_events": [
+      "Alphabet a annoncé des revenus de 36,3 milliards de dollars pour le premier trimestre 2019, en hausse de 17% par rapport à l'année précédente.",
+      "La société a annoncé un rachat d'actions de 12,5 milliards de dollars, ce qui a été bien accueilli par les investisseurs.",
+      "Alphabet a fait face à des amendes réglementaires en Europe, notamment une amende de 1,5 milliard d'euros pour des pratiques anticoncurrentielles dans le marché de la publicité en ligne.",
+      "Google a annoncé des investissements importants dans l'intelligence artificielle et le cloud computing, des secteurs clés pour sa croissance future.",
+      "La société a également fait face à des critiques concernant la gestion des données des utilisateurs et la vie privée, ce qui a conduit à des auditions au Congrès américain."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201906": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre le 01/03/2019 et le 30/06/2019. La société a continué à se concentrer sur la croissance de son segment cloud, tout en faisant face à des défis concurrentiels. Les résultats financiers ont été mitigés, avec des revenus stables mais des préoccupations persistantes concernant la transition vers le cloud.",
+    "key_events": [
+      "En mars 2019, Oracle a annoncé des résultats financiers pour le troisième trimestre de l'exercice 2019, avec des revenus totaux en hausse de 1% par rapport à l'année précédente, atteignant 9,6 milliards de dollars.",
+      "Oracle a poursuivi son expansion dans le cloud avec l'annonce de nouvelles fonctionnalités pour Oracle Autonomous Database, visant à améliorer l'automatisation et la sécurité des bases de données.",
+      "En juin 2019, Oracle a annoncé un partenariat stratégique avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur les deux plateformes de manière transparente.",
+      "La société a également fait face à des défis concurrentiels, avec une pression accrue de la part d'autres fournisseurs de services cloud comme Amazon Web Services (AWS) et Microsoft Azure."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201907": {
+    "summary": "Entre le 01/04/2019 et le 31/07/2019, Microsoft a connu plusieurs événements significatifs. L'entreprise a continué de montrer une croissance solide, notamment grâce à son segment cloud. Cependant, il y a eu des préoccupations concernant la régulation antitrust et la concurrence dans le secteur technologique.",
+    "key_events": [
+      "Microsoft a publié des résultats financiers solides pour le troisième trimestre, avec une croissance de 14% du chiffre d'affaires.",
+      "L'entreprise a annoncé un partenariat stratégique avec Oracle pour interconnecter leurs clouds respectifs.",
+      "Microsoft a été ciblé par des enquêtes antitrust aux États-Unis, ce qui a suscité des inquiétudes parmi les investisseurs.",
+      "Satya Nadella, le PDG de Microsoft, a discuté de l'importance de l'intelligence artificielle et du cloud computing lors de plusieurs conférences.",
+      "Microsoft a acquis BlueTalon, une société spécialisée dans la sécurité des données, pour renforcer ses offres dans le domaine de la sécurité."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201907": {
+    "summary": "During the period from April 1, 2019, to July 31, 2019, Apple Inc. (AAPL) experienced several significant events. The company continued to face challenges in iPhone sales but showed growth in its services and wearables segments. Trade tensions between the U.S. and China also posed risks to Apple's supply chain and sales in China.",
+    "key_events": [
+      "Apple announced a decline in iPhone sales but reported growth in services and wearables during its Q2 2019 earnings call.",
+      "The U.S. and China trade tensions escalated, impacting Apple's supply chain and potentially affecting iPhone production costs.",
+      "Apple introduced new services, including Apple TV+, Apple Arcade, and Apple News+, aiming to diversify its revenue streams.",
+      "The company announced a $1 billion investment in Texas for a new campus, highlighting its commitment to U.S. expansion.",
+      "Apple faced regulatory scrutiny in Europe over its App Store practices and potential anti-competitive behavior."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_201907": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre avril et juillet 2019. La société a continué à se concentrer sur ses activités principales dans le domaine des GPU, tout en élargissant ses horizons dans les secteurs de l'intelligence artificielle et du calcul haute performance. Les résultats financiers ont été solides, malgré des défis dans certains segments de marché.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers pour le premier trimestre de l'exercice 2020, avec un chiffre d'affaires de 2,22 milliards de dollars, en baisse de 31% par rapport à l'année précédente, mais en ligne avec les attentes du marché.",
+      "La société a lancé de nouveaux produits, notamment les GPU Turing pour les stations de travail et les serveurs, renforçant ainsi sa position dans le domaine du calcul haute performance.",
+      "NVIDIA a annoncé l'acquisition de Mellanox Technologies pour 6,9 milliards de dollars, une entreprise spécialisée dans les solutions de réseau haute performance, ce qui devrait renforcer ses capacités dans le domaine du calcul haute performance et de l'intelligence artificielle.",
+      "La société a fait face à des défis dans le segment des cryptomonnaies, avec une baisse de la demande pour ses GPU, ce qui a affecté ses revenus.",
+      "NVIDIA a continué à investir dans le développement de ses technologies d'intelligence artificielle, notamment avec des partenariats stratégiques et des collaborations avec des entreprises technologiques majeures."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_201907": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre avril et juillet 2019. La société a continué à investir dans l'expansion de ses activités, notamment dans les domaines de la logistique et de la technologie. Cependant, elle a également fait face à des défis réglementaires et à des critiques concernant ses pratiques commerciales.",
+    "key_events": [
+      "Amazon a annoncé un investissement de 800 millions de dollars pour améliorer la rapidité de ses livraisons, visant à réduire le délai de livraison à un jour pour les membres Prime.",
+      "La société a fait face à des critiques et à des enquêtes antitrust de la part des régulateurs américains et européens concernant ses pratiques commerciales et son impact sur la concurrence.",
+      "Amazon a annoncé son intention d'acquérir une participation minoritaire dans la société de livraison britannique Deliveroo, renforçant ainsi sa présence dans le secteur de la livraison de nourriture.",
+      "La société a lancé plusieurs nouveaux produits et services, notamment des appareils Echo dotés de nouvelles fonctionnalités et des services de streaming de musique et de vidéo améliorés.",
+      "Amazon a été critiqué pour les conditions de travail dans ses entrepôts, ce qui a conduit à des grèves et à des appels à l'amélioration des conditions de travail."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201907": {
+    "summary": "Entre le 01/04/2019 et le 31/07/2019, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. La société a continué à afficher une croissance solide, mais a également fait face à des défis réglementaires et à des préoccupations concernant la concurrence.",
+    "key_events": [
+      "Alphabet a publié ses résultats financiers pour le premier trimestre 2019, affichant une croissance des revenus de 17% par rapport à l'année précédente, atteignant 36,3 milliards de dollars.",
+      "La société a annoncé un rachat d'actions de 25 milliards de dollars, ce qui a été bien accueilli par les investisseurs.",
+      "Alphabet a fait face à des pressions réglementaires accrues, avec des enquêtes antitrust ouvertes par le Département de la Justice des États-Unis et la Commission fédérale du commerce.",
+      "Google a annoncé des investissements majeurs dans l'intelligence artificielle et le cloud computing, visant à renforcer sa position sur ces marchés en croissance.",
+      "La société a été confrontée à des critiques concernant ses pratiques en matière de confidentialité des données et de collecte de données.",
+      "Alphabet a annoncé une restructuration de certaines de ses unités, notamment la fermeture de Google+, son réseau social."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201907": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre avril et juillet 2019. La société a annoncé des résultats financiers solides, avec une croissance dans le domaine du cloud. Cependant, il y a eu des défis concurrentiels et des changements dans la direction.",
+    "key_events": [
+      "Oracle a publié des résultats financiers pour le troisième trimestre 2019, montrant une croissance de 7% dans le secteur du cloud.",
+      "La société a annoncé un partenariat stratégique avec Microsoft pour interconnecter leurs clouds respectifs.",
+      "Oracle a fait face à une concurrence accrue dans le domaine des bases de données avec des rivaux comme Amazon Web Services et Microsoft Azure.",
+      "Mark Hurd, co-CEO d'Oracle, a pris un congé médical, ce qui a suscité des inquiétudes parmi les investisseurs.",
+      "Oracle a lancé de nouvelles solutions de cloud autonomes, visant à renforcer sa position sur le marché du cloud."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201908": {
+    "summary": "Entre le 01/05/2019 et le 31/08/2019, Microsoft a connu plusieurs événements significatifs. L'entreprise a continué de montrer une croissance solide, tirée par ses services cloud et ses abonnements. Cependant, il y a eu des préoccupations concernant la régulation antitrust et la concurrence accrue dans le secteur technologique.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 12% de son chiffre d'affaires pour le troisième trimestre, atteignant 33,7 milliards de dollars, dépassant les attentes des analystes.",
+      "L'entreprise a poursuivi son expansion dans le cloud avec Azure, qui a connu une croissance de 64%.",
+      "Microsoft a acquis BlueTalon, une société spécialisée dans la sécurité des données, pour renforcer ses capacités dans ce domaine.",
+      "Il y a eu des préoccupations croissantes concernant la régulation antitrust, avec des appels à une enquête sur les pratiques commerciales de Microsoft.",
+      "Microsoft a annoncé un partenariat stratégique avec Oracle pour interconnecter leurs clouds respectifs, Azure et Oracle Cloud.",
+      "L'entreprise a lancé Azure Sentinel, une nouvelle solution de sécurité cloud native."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201908": {
+    "summary": "Entre le 01/05/2019 et le 31/08/2019, Apple a connu plusieurs événements significatifs. La société a annoncé des mises à jour logicielles majeures lors de sa conférence mondiale des développeurs (WWDC) en juin, y compris iOS 13 et macOS Catalina. Cependant, Apple a également fait face à des défis réglementaires, notamment des enquêtes antitrust et des tensions commerciales entre les États-Unis et la Chine. Les résultats financiers du troisième trimestre ont montré une baisse des revenus par rapport à l'année précédente, principalement due à la baisse des ventes d'iPhone.",
+    "key_events": [
+      "Apple annonce iOS 13 et macOS Catalina lors de la WWDC en juin",
+      "Enquête antitrust ouverte par le Département de la Justice des États-Unis",
+      "Baisse des revenus au troisième trimestre en raison de la baisse des ventes d'iPhone",
+      "Tensions commerciales entre les États-Unis et la Chine affectant la chaîne d'approvisionnement d'Apple",
+      "Apple annonce l'acquisition d'Intel's smartphone modem business pour 1 milliard de dollars"
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_201908": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre mai et août 2019. L'entreprise a continué à se concentrer sur ses activités principales dans le gaming, les centres de données et l'IA, tout en faisant face à des défis macroéconomiques et sectoriels.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers pour le premier trimestre de l'exercice 2020, avec un chiffre d'affaires de 2,22 milliards de dollars, en baisse de 31% par rapport à l'année précédente, en raison d'un ralentissement des ventes dans le secteur du gaming et des centres de données.",
+      "L'entreprise a lancé de nouveaux produits, notamment les cartes graphiques GeForce RTX Super, qui offrent des performances améliorées pour les joueurs.",
+      "NVIDIA a annoncé l'acquisition de Mellanox Technologies, une société spécialisée dans les solutions de réseau haute performance, pour un montant de 6,9 milliards de dollars. Cette acquisition vise à renforcer les capacités de NVIDIA dans les centres de données et l'informatique haute performance.",
+      "L'entreprise a fait face à des défis liés à la guerre commerciale entre les États-Unis et la Chine, qui a affecté les ventes et la chaîne d'approvisionnement.",
+      "NVIDIA a continué à investir dans l'IA et le machine learning, en lançant de nouveaux produits et en collaborant avec des entreprises partenaires pour développer des solutions innovantes."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_201908": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre mai et août 2019. L'entreprise a continué à étendre ses opérations et à investir dans de nouvelles technologies, tout en faisant face à des défis réglementaires et à une concurrence accrue.",
+    "key_events": [
+      "Amazon a annoncé son intention d'investir 700 millions de dollars pour former 100 000 employés aux compétences numériques d'ici 2025.",
+      "L'entreprise a fait face à des critiques et à des enquêtes antitrust de la part des régulateurs américains et européens.",
+      "Amazon a annoncé des plans pour lancer plus de 3 000 satellites dans le cadre de son projet Kuiper, visant à fournir un accès Internet haut débit dans le monde entier.",
+      "L'entreprise a signalé une augmentation de 20% de ses revenus au deuxième trimestre, atteignant 63,4 milliards de dollars.",
+      "Amazon a annoncé l'acquisition de Health Navigator, une startup spécialisée dans les outils de diagnostic en ligne, pour renforcer ses services de santé."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201908": {
+    "summary": "Entre le 01/05/2019 et le 31/08/2019, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. La société a continué à afficher une croissance solide, mais a également fait face à des défis réglementaires et à des préoccupations concernant la concurrence.",
+    "key_events": [
+      "Alphabet a publié ses résultats financiers pour le deuxième trimestre 2019, affichant une croissance des revenus de 19% par rapport à l'année précédente, atteignant 38,94 milliards de dollars.",
+      "La société a annoncé un rachat d'actions de 25 milliards de dollars, ce qui a été bien accueilli par les investisseurs.",
+      "Alphabet a fait face à des enquêtes antitrust de la part des régulateurs américains, ce qui a suscité des inquiétudes parmi les investisseurs.",
+      "Google a annoncé des investissements majeurs dans l'intelligence artificielle et le cloud computing, visant à renforcer sa position sur ces marchés en croissance.",
+      "La société a été confrontée à des critiques concernant ses pratiques en matière de confidentialité des données, ce qui a conduit à des auditions au Congrès américain."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201908": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre mai et août 2019. La société a annoncé des résultats financiers solides, des partenariats stratégiques et des avancées technologiques, tout en faisant face à des défis concurrentiels.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers pour le quatrième trimestre et l'exercice 2019, avec un chiffre d'affaires de 11,1 milliards de dollars pour le trimestre, en hausse de 1 % en glissement annuel.",
+      "La société a lancé Oracle Autonomous Linux, un système d'exploitation autonome conçu pour réduire les coûts et améliorer la sécurité.",
+      "Oracle a annoncé un partenariat avec Microsoft pour interconnecter leurs clouds, permettant aux clients de migrer et d'exécuter des charges de travail entre Oracle Cloud et Microsoft Azure.",
+      "L'entreprise a fait face à une concurrence accrue dans le secteur des bases de données et des services cloud, avec des rivaux comme Amazon Web Services (AWS) et Microsoft Azure.",
+      "Oracle a acquis DataScience.com, une plateforme de gestion du cycle de vie des données scientifiques, pour renforcer ses capacités en matière d'intelligence artificielle et de machine learning."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_201909": {
+    "summary": "Microsoft a connu une période de croissance et d'expansion entre juin et septembre 2019, avec des développements significatifs dans divers domaines, notamment l'informatique en nuage, l'intelligence artificielle et les acquisitions stratégiques.",
+    "key_events": [
+      "Microsoft a annoncé un partenariat stratégique avec Oracle en juin 2019 pour interconnecter leurs clouds respectifs, Azure et Oracle Cloud.",
+      "En juillet 2019, Microsoft a publié ses résultats financiers pour le quatrième trimestre, affichant une croissance de 12% de son chiffre d'affaires par rapport à l'année précédente, grâce en grande partie à la croissance d'Azure.",
+      "Microsoft a acquis BlueTalon, une société spécialisée dans la sécurité des données, en juillet 2019, pour renforcer ses capacités en matière de gouvernance des données et de conformité.",
+      "En septembre 2019, Microsoft a annoncé un investissement de 1 milliard de dollars dans OpenAI pour développer des technologies d'IA avancées sur la plateforme Azure.",
+      "Microsoft a lancé Azure Synapse Analytics, un service d'analyse de données intégré, en septembre 2019, pour aider les entreprises à tirer parti de leurs données."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201909": {
+    "summary": "Au cours de la période du 1er juin 2019 au 30 septembre 2019, Apple a connu plusieurs événements significatifs. L'entreprise a annoncé des changements dans sa direction, des mises à jour de produits et a été impliquée dans des discussions sur les droits de douane. De plus, Apple a continué à faire face à des défis réglementaires et à des préoccupations concernant la demande pour ses produits phares.",
+    "key_events": [
+      "Le 10 juin 2019, Apple a tenu sa conférence annuelle des développeurs (WWDC), où elle a annoncé de nouvelles mises à jour logicielles, notamment iOS 13, iPadOS et macOS Catalina.",
+      "En août 2019, Apple a annoncé que Jony Ive, son chef du design, quittait l'entreprise pour créer sa propre société de design. Cette annonce a marqué la fin d'une ère, Ive ayant été responsable de nombreux produits emblématiques d'Apple.",
+      "Le 1er septembre 2019, Apple a été inclus dans la liste des entreprises exemptées des droits de douane américains sur certains produits chinois, ce qui a été perçu comme une victoire pour l'entreprise.",
+      "Le 10 septembre 2019, Apple a organisé un événement spécial où elle a dévoilé l'iPhone 11, l'iPhone 11 Pro et l'iPhone 11 Pro Max, ainsi que de nouvelles versions de l'Apple Watch et de l'iPad.",
+      "En septembre 2019, Apple a fait face à des critiques et à des enquêtes réglementaires concernant des préoccupations antitrust et des pratiques commerciales déloyales, notamment en Europe."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_201909": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre le 1er juin 2019 et le 30 septembre 2019. La société a continué à se concentrer sur ses activités principales dans les domaines du gaming, de l'intelligence artificielle et des centres de données. Cependant, elle a également fait face à des défis liés à la concurrence et aux tensions commerciales.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux produits et technologies lors de la conférence SIGGRAPH 2019, notamment des avancées dans le domaine du ray tracing et de l'IA.",
+      "La société a fait face à une concurrence accrue de la part d'AMD dans le secteur des GPU pour le gaming.",
+      "NVIDIA a continué à développer ses activités dans le domaine des centres de données, avec des partenariats et des collaborations avec des entreprises majeures.",
+      "La société a été affectée par les tensions commerciales entre les États-Unis et la Chine, ce qui a eu un impact sur ses ventes et sa chaîne d'approvisionnement.",
+      "NVIDIA a annoncé des résultats financiers mitigés pour le deuxième trimestre de l'exercice 2020, avec une baisse des revenus par rapport à l'année précédente."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_201909": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre juin et septembre 2019. La société a continué à étendre ses opérations et à investir dans de nouveaux projets, tout en faisant face à des défis réglementaires et concurrentiels.",
+    "key_events": [
+      "Amazon a annoncé son intention d'acquérir une participation minoritaire dans la société de livraison Deliveroo, renforçant ainsi sa présence dans le secteur de la livraison de nourriture.",
+      "La société a lancé un nouveau service appelé 'Amazon Personalize', qui permet aux développeurs de créer des recommandations personnalisées pour leurs applications.",
+      "Amazon a fait face à des critiques et à des enquêtes antitrust de la part des régulateurs américains et européens, qui examinent ses pratiques commerciales et son impact sur la concurrence.",
+      "La société a annoncé un investissement de 700 millions de dollars pour former 100 000 employés à de nouvelles compétences d'ici 2025, dans le cadre de son initiative 'Upskilling 2025'.",
+      "Amazon a lancé de nouveaux produits et services lors de son événement annuel 'Amazon Devices Event', notamment des mises à jour pour ses appareils Echo et des innovations en matière de domotique."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201909": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre le 1er juin 2019 et le 30 septembre 2019. La société a continué à faire face à des enquêtes antitrust et à des préoccupations concernant la régulation, tout en investissant dans de nouvelles technologies et en affichant une croissance solide des revenus.",
+    "key_events": [
+      "En juin 2019, Alphabet a fait l'objet d'une enquête antitrust ouverte par la Commission européenne pour des pratiques potentiellement anticoncurrentielles dans le secteur de la publicité en ligne.",
+      "En juillet 2019, Alphabet a annoncé des résultats financiers solides pour le deuxième trimestre, avec une croissance des revenus de 19% par rapport à l'année précédente, atteignant 38,94 milliards de dollars.",
+      "En août 2019, Google a annoncé un investissement de 3 milliards de dollars dans Jio Platforms, une filiale de Reliance Industries, pour renforcer sa présence sur le marché indien.",
+      "En septembre 2019, Google a présenté de nouveaux produits matériels, dont le Pixel 4, lors d'un événement à New York, mettant en avant ses innovations en matière de technologie des smartphones.",
+      "En septembre 2019, Alphabet a été confronté à des critiques et à des préoccupations concernant la protection des données et la vie privée, avec des appels à une régulation plus stricte de la part des législateurs américains."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201909": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre le 1er juin 2019 et le 30 septembre 2019. La société a continué à se concentrer sur la croissance de son activité cloud, tout en faisant face à des défis concurrentiels. Les résultats financiers ont été mitigés, avec des revenus stables mais des préoccupations concernant la croissance future.",
+    "key_events": [
+      "Oracle a annoncé des partenariats stratégiques pour renforcer son offre cloud, notamment avec Microsoft Azure.",
+      "La société a publié ses résultats financiers pour le quatrième trimestre 2019, affichant des revenus de 11,1 milliards de dollars, en légère hausse par rapport à l'année précédente.",
+      "Oracle a lancé de nouvelles solutions de base de données autonomes, visant à améliorer l'efficacité et la sécurité des données pour les entreprises.",
+      "La société a fait face à des critiques concernant sa stratégie de licence et ses pratiques commerciales, ce qui a suscité des inquiétudes parmi certains clients et analystes.",
+      "Oracle a continué à investir dans l'innovation technologique, notamment dans les domaines de l'intelligence artificielle et du machine learning."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201910": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre juillet et octobre 2019. La société a continué de montrer une croissance solide, tirée par ses services cloud et ses abonnements. Cependant, il y a eu des préoccupations concernant la régulation antitrust et la concurrence accrue dans le secteur technologique.",
+    "key_events": [
+      "Microsoft a publié ses résultats financiers pour le quatrième trimestre 2019, montrant une croissance de 12% de son chiffre d'affaires par rapport à l'année précédente, principalement due à la croissance d'Azure.",
+      "La société a annoncé un partenariat stratégique avec Oracle pour interconnecter leurs clouds respectifs, Azure et Oracle Cloud.",
+      "Microsoft a acquis jClarity, une société spécialisée dans l'optimisation des performances Java, pour renforcer ses capacités dans le domaine du développement logiciel.",
+      "La société a été confrontée à des préoccupations réglementaires concernant ses pratiques commerciales, avec des appels à une surveillance antitrust plus stricte.",
+      "Microsoft a lancé de nouveaux produits Surface, y compris le Surface Laptop 3 et le Surface Pro 7, pour renforcer sa position sur le marché des appareils.",
+      "La société a annoncé une collaboration avec BMW pour développer une plateforme cloud ouverte pour l'industrie automobile."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201910": {
+    "summary": "Apple a connu plusieurs événements significatifs entre juillet et octobre 2019. La société a publié ses résultats financiers pour le troisième trimestre, annoncé de nouveaux produits et services, et fait face à des défis réglementaires.",
+    "key_events": [
+      "Apple a publié ses résultats financiers pour le troisième trimestre 2019, avec un chiffre d'affaires de 53,8 milliards de dollars et un bénéfice par action de 2,18 dollars, dépassant les attentes des analystes.",
+      "En septembre, Apple a annoncé de nouveaux produits, dont l'iPhone 11, l'iPhone 11 Pro et l'iPhone 11 Pro Max, ainsi qu'une nouvelle version de l'Apple Watch et de l'iPad.",
+      "Apple a également lancé son service de streaming Apple TV+ en novembre, mais les annonces et préparations ont eu lieu durant cette période.",
+      "La société a fait face à des défis réglementaires, notamment une enquête antitrust ouverte par la Commission européenne sur les pratiques d'Apple concernant Apple Pay.",
+      "Apple a annoncé son intention de dépenser des milliards de dollars pour des projets de développement aux États-Unis, incluant de nouveaux centres de données et des investissements dans des fournisseurs américains."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201910": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre le 1er juillet 2019 et le 31 octobre 2019. La société a continué à se concentrer sur ses activités principales dans les domaines du gaming, des centres de données et de l'intelligence artificielle. Cependant, elle a également fait face à des défis liés à la concurrence et aux tensions commerciales entre les États-Unis et la Chine.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux produits et technologies lors de la conférence SIGGRAPH 2019, notamment des avancées dans le domaine du rendu graphique et de l'IA.",
+      "La société a fait face à une concurrence accrue de la part d'AMD dans le secteur des GPU pour le gaming.",
+      "NVIDIA a annoncé un partenariat avec Microsoft pour intégrer ses technologies de rendu graphique dans les services cloud Azure.",
+      "La société a été affectée par les tensions commerciales entre les États-Unis et la Chine, ce qui a entraîné une baisse des ventes dans certains segments de marché.",
+      "NVIDIA a annoncé des résultats financiers mitigés pour le deuxième trimestre 2019, avec une baisse des revenus par rapport à l'année précédente."
+    ],
+    "sentiment": "neutre"
+  },
+  "AMZN_201910": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre juillet et octobre 2019. La société a continué à renforcer sa position dans divers secteurs, notamment le cloud computing, la vente au détail et la technologie. Cependant, elle a également fait face à des défis réglementaires et à des critiques concernant ses pratiques commerciales.",
+    "key_events": [
+      "Amazon a annoncé des résultats financiers solides pour le deuxième trimestre 2019, avec une augmentation de 20% de son chiffre d'affaires par rapport à l'année précédente.",
+      "La société a lancé plusieurs nouveaux produits lors de son événement annuel 'Amazon Devices Event' en septembre, notamment des appareils Echo et des innovations en matière de domotique.",
+      "Amazon a fait face à des critiques et à des enquêtes antitrust de la part des régulateurs américains et européens, ce qui a pesé sur son image et ses opérations.",
+      "La société a annoncé un investissement majeur de 700 millions de dollars pour recycler ses employés dans le cadre de son initiative 'Upskilling 2025'.",
+      "Amazon a également renforcé sa présence dans le secteur de la santé avec l'acquisition de Health Navigator et le lancement de Amazon Care."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_201910": {
+    "summary": "Entre le 01/07/2019 et le 31/10/2019, Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs. La société a continué à afficher une croissance solide malgré les préoccupations croissantes concernant la réglementation antitrust et les questions de confidentialité des données. Les revenus publicitaires ont augmenté, mais la société a également fait face à des défis dans le secteur des appareils matériels.",
+    "key_events": [
+      "Alphabet a publié ses résultats financiers pour le deuxième trimestre 2019, affichant une croissance des revenus de 19 % par rapport à l'année précédente, principalement grâce à la publicité.",
+      "La société a annoncé des investissements importants dans Google Cloud et l'intelligence artificielle pour stimuler la croissance future.",
+      "Des préoccupations croissantes concernant les enquêtes antitrust aux États-Unis et en Europe ont pesé sur le sentiment des investisseurs.",
+      "Alphabet a fait face à des critiques concernant la confidentialité des données et la collecte de données personnelles.",
+      "La société a lancé de nouveaux produits matériels, tels que le Pixel 4 et le Nest Mini, mais a rencontré des défis concurrentiels dans ce secteur."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201910": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre le 1er juillet 2019 et le 31 octobre 2019. La société a annoncé des résultats financiers solides pour le quatrième trimestre, avec une croissance des revenus et des bénéfices. Oracle a également poursuivi son expansion dans le cloud avec de nouvelles solutions et partenariats. Cependant, la société a fait face à des défis concurrentiels et à des critiques concernant ses pratiques commerciales.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers solides pour le quatrième trimestre 2019, avec une croissance des revenus de 1% pour atteindre 11,1 milliards de dollars et des bénéfices en hausse.",
+      "La société a lancé de nouvelles solutions cloud, notamment Oracle Autonomous Linux, pour renforcer sa position sur le marché du cloud.",
+      "Oracle a annoncé un partenariat avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur les deux plateformes.",
+      "La société a fait face à des critiques et à des poursuites judiciaires concernant ses pratiques commerciales, notamment en ce qui concerne les licences logicielles.",
+      "Oracle a continué à investir dans l'innovation avec l'acquisition de plusieurs startups technologiques pour renforcer ses capacités en matière d'intelligence artificielle et de machine learning."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_201911": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre août et novembre 2019. La société a continué à montrer une croissance solide, tirée par ses segments cloud et entreprise. Cependant, il y a eu des préoccupations concernant la régulation antitrust et la concurrence dans le secteur technologique.",
+    "key_events": [
+      "Microsoft a annoncé de solides résultats financiers pour le quatrième trimestre 2019, avec une croissance de 14% du chiffre d'affaires.",
+      "La société a remporté un contrat de 10 milliards de dollars avec le Pentagone pour fournir des services cloud, connu sous le nom de JEDI.",
+      "Microsoft a continué à étendre ses services Azure, avec une croissance de 59% du chiffre d'affaires.",
+      "Il y a eu des préoccupations concernant la régulation antitrust, avec des enquêtes potentielles sur les pratiques commerciales de Microsoft.",
+      "La société a annoncé plusieurs acquisitions, dont Mover et PromoteIQ, pour renforcer ses capacités cloud et publicitaires.",
+      "Microsoft a lancé de nouveaux produits Surface, y compris le Surface Pro 7 et le Surface Laptop 3."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201911": {
+    "summary": "Entre le 01/08/2019 et le 30/11/2019, Apple a connu plusieurs événements significatifs. La société a lancé de nouveaux produits, dont l'iPhone 11, qui a été bien accueilli par le marché. Cependant, Apple a également fait face à des défis, notamment des tensions commerciales entre les États-Unis et la Chine, qui ont affecté sa chaîne d'approvisionnement. De plus, Apple a annoncé une augmentation de ses dividendes et un nouveau programme de rachat d'actions, ce qui a été positivement perçu par les investisseurs.",
+    "key_events": [
+      "Lancement de l'iPhone 11 en septembre 2019",
+      "Tensions commerciales entre les États-Unis et la Chine affectant la chaîne d'approvisionnement",
+      "Annonce d'une augmentation des dividendes",
+      "Lancement d'un nouveau programme de rachat d'actions",
+      "Résultats financiers du quatrième trimestre dépassant les attentes des analystes"
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201911": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre août et novembre 2019. La société a annoncé des résultats financiers solides, des partenariats stratégiques et des avancées technologiques, mais a également fait face à des défis réglementaires et concurrentiels.",
+    "key_events": [
+      "NVIDIA a annoncé ses résultats financiers pour le deuxième trimestre 2020 en août, dépassant les attentes des analystes avec un bénéfice par action de 1,24 USD et un chiffre d'affaires de 2,58 milliards USD.",
+      "En septembre, NVIDIA a annoncé un partenariat avec Microsoft pour intégrer ses technologies de GPU dans le cloud Azure, renforçant ainsi sa position dans le cloud computing.",
+      "NVIDIA a présenté de nouvelles avancées dans le domaine de l'IA et du calcul haute performance lors de la conférence GTC Europe en octobre.",
+      "La société a fait face à des défis réglementaires, notamment des enquêtes antitrust aux États-Unis et en Europe concernant ses pratiques commerciales.",
+      "En novembre, NVIDIA a annoncé l'acquisition de Mellanox Technologies, une société spécialisée dans les solutions de réseau haute performance, pour un montant de 7 milliards USD."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201911": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre août et novembre 2019. La société a continué à renforcer sa position dans divers secteurs, notamment le commerce électronique, le cloud computing et la technologie. Cependant, elle a également fait face à des défis réglementaires et à des critiques concernant ses pratiques commerciales.",
+    "key_events": [
+      "Amazon a annoncé son intention d'investir 700 millions de dollars pour former 100 000 employés aux compétences numériques d'ici 2025.",
+      "La société a lancé plusieurs nouveaux produits lors de son événement annuel en septembre, notamment des appareils Echo et des mises à jour pour ses services de streaming.",
+      "Amazon a fait face à des critiques et à des enquêtes antitrust de la part des régulateurs américains et européens.",
+      "La société a annoncé des plans pour ouvrir un nouveau bureau à Vancouver, créant 3 000 emplois supplémentaires.",
+      "Amazon a signalé une augmentation de 24% de ses revenus au troisième trimestre, atteignant 70 milliards de dollars, mais a également fait face à des critiques concernant les conditions de travail dans ses entrepôts."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201911": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre août et novembre 2019. La société a continué à montrer une croissance solide malgré des préoccupations réglementaires et des défis concurrentiels.",
+    "key_events": [
+      "Alphabet a signalé des revenus de 38,94 milliards de dollars pour le troisième trimestre de 2019, en hausse de 20% par rapport à l'année précédente.",
+      "La société a annoncé un rachat d'actions de 25 milliards de dollars en août 2019.",
+      "Des préoccupations réglementaires ont persisté, avec des enquêtes antitrust en cours aux États-Unis et en Europe.",
+      "En octobre 2019, Alphabet a acquis Fitbit pour 2,1 milliards de dollars, renforçant ainsi sa présence dans le secteur de la santé et des wearables.",
+      "La société a fait face à des critiques internes et externes concernant ses pratiques en matière de confidentialité des données et de modération de contenu sur YouTube."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201911": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre août et novembre 2019. La société a annoncé des résultats financiers solides pour le premier trimestre de l'exercice 2020, avec une croissance des revenus et des bénéfices. Oracle a également poursuivi son expansion dans le domaine du cloud computing, avec de nouvelles initiatives et partenariats. Cependant, la société a fait face à des défis concurrentiels et à des critiques concernant ses pratiques commerciales.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers solides pour le premier trimestre de l'exercice 2020, avec une croissance des revenus de 3% et des bénéfices de 8%.",
+      "La société a lancé de nouvelles initiatives dans le domaine du cloud computing, notamment des partenariats avec Microsoft et VMware.",
+      "Oracle a fait face à des critiques concernant ses pratiques commerciales, notamment en ce qui concerne les licences logicielles.",
+      "La société a annoncé l'acquisition de plusieurs entreprises pour renforcer ses capacités dans le domaine de l'intelligence artificielle et du machine learning.",
+      "Oracle a été confronté à une concurrence accrue de la part d'autres géants du cloud comme Amazon Web Services et Microsoft Azure."
+    ],
+    "sentiment": "neutre"
+  },
+  "MSFT_201912": {
+    "summary": "Microsoft a connu une période positive entre septembre et décembre 2019, avec une croissance solide dans ses différents segments, notamment le cloud computing et les services. L'entreprise a également annoncé des partenariats stratégiques et des acquisitions pour renforcer sa position sur le marché.",
+    "key_events": [
+      "Microsoft a annoncé un partenariat avec Oracle pour interconnecter leurs clouds respectifs, Azure et Oracle Cloud.",
+      "L'entreprise a acquis Mover, une plateforme de migration de données cloud, pour renforcer ses capacités dans le domaine du cloud computing.",
+      "Microsoft a lancé Azure Arc, une nouvelle solution pour gérer les ressources informatiques hybrides et multicloud.",
+      "Les résultats financiers du premier trimestre fiscal 2020 ont montré une croissance de 21% du chiffre d'affaires par rapport à l'année précédente, avec une forte performance du segment cloud.",
+      "Microsoft a annoncé un partenariat avec Siemens pour accélérer l'innovation industrielle et la transformation numérique."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_201912": {
+    "summary": "Apple Inc. (AAPL) a connu plusieurs événements significatifs entre septembre et décembre 2019. La société a lancé de nouveaux produits, fait face à des défis réglementaires et connu des fluctuations de marché.",
+    "key_events": [
+      "Lancement de l'iPhone 11 en septembre 2019, qui a été bien reçu par le marché.",
+      "Apple a annoncé des mises à jour pour ses services, notamment Apple TV+ et Apple Arcade, en novembre 2019.",
+      "En décembre 2019, Apple a atteint une capitalisation boursière record de plus de 1 300 milliards de dollars.",
+      "Apple a fait face à des défis réglementaires, notamment des enquêtes antitrust aux États-Unis et en Europe.",
+      "La société a annoncé des investissements supplémentaires dans la recherche et le développement pour ses futurs produits et services."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_201912": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements importants entre septembre et décembre 2019. La société a continué à se concentrer sur ses activités principales dans le domaine des GPU, tout en élargissant ses horizons dans des secteurs tels que l'IA et le calcul haute performance. Les résultats financiers ont été solides, avec une croissance significative des revenus et des bénéfices.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers solides pour le troisième trimestre 2019, avec une augmentation des revenus de 40% d'une année sur l'autre.",
+      "La société a lancé de nouveaux produits, notamment les GPU NVIDIA A100 basés sur l'architecture Ampere, conçus pour l'IA et le calcul haute performance.",
+      "NVIDIA a acquis Mellanox Technologies, une société spécialisée dans les solutions de réseau haute performance, pour un montant de 7 milliards de dollars.",
+      "La société a annoncé des partenariats stratégiques avec des entreprises telles que Microsoft et Amazon pour renforcer ses offres dans le cloud computing.",
+      "NVIDIA a continué à investir dans la recherche et le développement, notamment dans les domaines de l'IA et de la conduite autonome."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_201912": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre septembre et décembre 2019. La société a continué à renforcer sa position dans divers secteurs, notamment le commerce électronique, le cloud computing et la technologie. Cependant, elle a également fait face à des défis réglementaires et à des critiques concernant ses pratiques commerciales.",
+    "key_events": [
+      "Amazon a annoncé l'expansion de son service Amazon Fresh aux États-Unis, visant à offrir une livraison de courses plus rapide.",
+      "La société a fait face à des critiques et à des enquêtes antitrust de la part des régulateurs américains et européens.",
+      "Amazon a lancé plusieurs nouveaux produits et services lors de son événement annuel en septembre, notamment des appareils Echo et des services de streaming.",
+      "La société a annoncé des investissements majeurs dans des initiatives de durabilité, visant à réduire son empreinte carbone.",
+      "Amazon a connu une croissance continue de son service AWS (Amazon Web Services), qui reste un leader du marché du cloud computing.",
+      "La société a fait l'objet de critiques de la part d'employés et d'activistes concernant les conditions de travail dans ses entrepôts."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_201912": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements importants entre septembre et décembre 2019. La société a continué à faire face à des défis réglementaires et à des préoccupations concernant la concurrence, tout en réalisant des avancées technologiques et des acquisitions stratégiques.",
+    "key_events": [
+      "En septembre 2019, Google a annoncé un investissement de 3,3 milliards de dollars pour étendre ses centres de données européens au cours des deux prochaines années.",
+      "En octobre 2019, Google a acquis Fitbit pour 2,1 milliards de dollars, renforçant ainsi sa présence dans le secteur de la santé et des wearables.",
+      "En novembre 2019, Google a fait face à des enquêtes antitrust supplémentaires de la part des régulateurs américains et européens.",
+      "En décembre 2019, Sundar Pichai a été nommé PDG d'Alphabet Inc., succédant ainsi aux fondateurs Larry Page et Sergey Brin, qui ont quitté leurs rôles exécutifs mais restent au conseil d'administration."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_201912": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants entre septembre et décembre 2019. La société a continué à se concentrer sur la croissance de son secteur cloud, tout en faisant face à des défis concurrentiels. Les résultats financiers ont été mitigés, avec des revenus stables mais des préoccupations concernant la croissance future.",
+    "key_events": [
+      "Oracle a annoncé ses résultats financiers pour le premier trimestre 2020 en septembre, avec des revenus de 9,2 milliards de dollars, en légère baisse par rapport à l'année précédente.",
+      "En septembre, Oracle a lancé de nouvelles solutions cloud pour aider les entreprises à migrer leurs applications vers le cloud.",
+      "En octobre, Oracle a annoncé un partenariat avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur les deux plateformes.",
+      "En décembre, Oracle a annoncé l'acquisition de CrowdTwist, une plateforme de fidélisation client basée sur le cloud.",
+      "Oracle a fait face à des critiques concernant ses pratiques de licence et de vente, ce qui a entraîné des enquêtes et des poursuites judiciaires."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_202201": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements importants entre le 01/10/2021 et le 31/01/2022. La société a continué à se concentrer sur l'expansion de ses services cloud et a annoncé des partenariats stratégiques. Les résultats financiers ont montré une croissance constante, bien que des défis persistent dans certains segments de marché.",
+    "key_events": [
+      "Oracle a annoncé un partenariat avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur les deux plateformes de manière transparente.",
+      "La société a publié ses résultats financiers pour le premier trimestre de l'exercice 2022, affichant une croissance de 4% de son chiffre d'affaires par rapport à l'année précédente.",
+      "Oracle a lancé de nouvelles solutions de base de données autonomes, renforçant son offre dans le domaine des bases de données cloud.",
+      "La société a annoncé l'acquisition de Cerner, une entreprise spécialisée dans les solutions de santé, pour un montant de 28,3 milliards de dollars.",
+      "Oracle a été inclus dans l'indice Dow Jones Sustainability North America Index, reconnaissant ses efforts en matière de durabilité."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202202": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs développements importants entre le 1er novembre 2021 et le 28 février 2022. La société a continué à se concentrer sur l'expansion de ses services cloud et a fait plusieurs annonces stratégiques. Les résultats financiers ont montré une croissance constante, et la société a également été impliquée dans des partenariats et des acquisitions significatifs.",
+    "key_events": [
+      "Oracle a annoncé de solides résultats financiers pour le deuxième trimestre 2022, avec une croissance de 6% du chiffre d'affaires total et une croissance de 19% du chiffre d'affaires cloud.",
+      "La société a annoncé l'acquisition de Cerner, une société de technologies de l'information en santé, pour un montant de 28,3 milliards de dollars.",
+      "Oracle a lancé Oracle Alloy, une nouvelle plateforme cloud qui permet aux partenaires de devenir des fournisseurs de services cloud.",
+      "La société a annoncé un partenariat stratégique avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur les deux plateformes de manière transparente.",
+      "Oracle a été inclus dans l'indice Dow Jones Sustainability North America Index pour la quatrième année consécutive, reconnaissant ses efforts en matière de durabilité."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202203": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs développements importants entre le 1er décembre 2021 et le 31 mars 2022. La société a continué à se concentrer sur l'expansion de ses services cloud et a fait plusieurs annonces stratégiques.",
+    "key_events": [
+      "Oracle a annoncé de solides résultats financiers pour le deuxième trimestre 2022, avec une croissance de 4% du chiffre d'affaires par rapport à l'année précédente, atteignant 10,1 milliards de dollars.",
+      "La société a lancé Oracle Cloud Infrastructure (OCI) dans de nouvelles régions, notamment à Johannesburg, en Afrique du Sud, et à Abu Dhabi, aux Émirats arabes unis.",
+      "Oracle a annoncé un partenariat stratégique avec Microsoft pour interconnecter Oracle Cloud Infrastructure et Azure, permettant aux clients d'exécuter des charges de travail dans les deux environnements cloud de manière transparente.",
+      "La société a acquis Cerner Corporation, un fournisseur de solutions de santé, pour un montant de 28,3 milliards de dollars, marquant une entrée significative dans le secteur des soins de santé.",
+      "Oracle a été inclus dans l'indice Dow Jones Sustainability World Index pour la deuxième année consécutive, reconnaissant ses efforts en matière de durabilité."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202204": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs au premier trimestre 2022. L'entreprise a continué à renforcer sa position dans le cloud et a annoncé des partenariats stratégiques. Les résultats financiers ont montré une croissance constante, bien que les défis macroéconomiques aient eu un impact sur certaines divisions.",
+    "key_events": [
+      "Oracle a annoncé de solides résultats financiers pour le troisième trimestre 2022, avec une croissance de 4% du chiffre d'affaires par rapport à l'année précédente.",
+      "L'entreprise a lancé de nouvelles solutions cloud pour répondre à la demande croissante en services cloud.",
+      "Oracle a annoncé un partenariat stratégique avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur plusieurs clouds.",
+      "L'entreprise a fait face à des défis macroéconomiques, notamment des perturbations de la chaîne d'approvisionnement et une inflation croissante, qui ont affecté certaines divisions.",
+      "Oracle a continué à investir dans l'innovation, avec des avancées significatives dans les technologies de base de données autonomes."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202205": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre le 1er février 2022 et le 31 mai 2022. La société a continué à se concentrer sur l'expansion de ses services cloud et a réalisé des acquisitions stratégiques. Les résultats financiers ont montré une croissance constante, bien que les défis macroéconomiques aient eu un impact sur certaines de ses activités.",
+    "key_events": [
+      "Oracle a annoncé de solides résultats financiers pour le troisième trimestre 2022, avec une croissance de 4% du chiffre d'affaires par rapport à l'année précédente.",
+      "La société a poursuivi son expansion dans le domaine du cloud avec de nouveaux centres de données ouverts dans plusieurs régions, notamment en Europe et en Asie.",
+      "Oracle a acquis Cerner Corporation, une société spécialisée dans les technologies de l'information pour le secteur de la santé, pour un montant de 28,3 milliards de dollars.",
+      "La société a annoncé des partenariats stratégiques avec plusieurs grandes entreprises pour renforcer sa position dans le domaine du cloud et des bases de données.",
+      "Oracle a fait face à des défis macroéconomiques, notamment l'inflation et les perturbations de la chaîne d'approvisionnement, qui ont eu un impact sur ses coûts opérationnels."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202206": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs développements importants entre le 01/03/2022 et le 30/06/2022. La société a continué à se concentrer sur l'expansion de ses services cloud et a annoncé des partenariats stratégiques. Les résultats financiers ont montré une croissance constante, bien que les défis macroéconomiques aient eu un impact sur certaines de ses activités.",
+    "key_events": [
+      "Oracle a annoncé un partenariat avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur les deux plateformes de manière transparente.",
+      "La société a publié ses résultats financiers pour le troisième trimestre, affichant une croissance de 3% de son chiffre d'affaires par rapport à l'année précédente, atteignant 11,84 milliards de dollars.",
+      "Oracle a annoncé l'acquisition de Cerner, une société spécialisée dans les logiciels de santé, pour un montant de 28,3 milliards de dollars, marquant une entrée significative dans le secteur de la santé.",
+      "La société a lancé de nouvelles solutions de base de données autonomes, renforçant son offre dans le domaine des bases de données cloud.",
+      "Oracle a fait face à des défis macroéconomiques, notamment l'inflation et les perturbations de la chaîne d'approvisionnement, qui ont affecté certaines de ses activités."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202207": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs développements importants entre avril et juillet 2022. La société a continué à se concentrer sur l'expansion de ses services cloud et a annoncé des partenariats stratégiques. Les résultats financiers ont montré une croissance constante, bien que les défis macroéconomiques aient pesé sur la performance globale.",
+    "key_events": [
+      "Oracle a annoncé un partenariat avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur les deux plateformes de manière transparente.",
+      "La société a publié ses résultats financiers pour le quatrième trimestre et l'exercice 2022, affichant une croissance de 5% des revenus totaux et une augmentation de 6% des revenus cloud.",
+      "Oracle a acquis Cerner Corporation, une société de technologies de l'information en santé, pour un montant de 28,3 milliards de dollars, marquant une entrée significative dans le secteur de la santé.",
+      "La société a annoncé l'ouverture de nouvelles régions cloud en Europe et en Amérique du Sud, renforçant ainsi sa présence mondiale.",
+      "Oracle a été confronté à des défis macroéconomiques, notamment l'inflation et les perturbations de la chaîne d'approvisionnement, qui ont affecté ses coûts opérationnels."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202208": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre mai et août 2022. La société a continué à se concentrer sur la croissance de son activité cloud, tout en faisant face à des défis macroéconomiques. Les résultats financiers ont été solides, mais les perspectives futures ont été tempérées par des incertitudes économiques.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers solides pour le quatrième trimestre et l'exercice 2022, avec une croissance de 19% de ses revenus cloud.",
+      "La société a lancé de nouvelles solutions cloud pour soutenir la croissance de ses clients dans divers secteurs.",
+      "Oracle a annoncé un partenariat stratégique avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur plusieurs clouds.",
+      "La société a fait face à des défis macroéconomiques, notamment l'inflation et les perturbations de la chaîne d'approvisionnement, qui ont affecté ses coûts opérationnels.",
+      "Oracle a continué à investir dans l'innovation, avec des annonces majeures lors de sa conférence Oracle CloudWorld."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_202209": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre le 1er juin 2022 et le 30 septembre 2022. La société a continué à se concentrer sur la croissance de son activité cloud et a annoncé des partenariats stratégiques. Les résultats financiers ont montré une croissance constante, bien que les défis macroéconomiques aient eu un impact sur certaines de ses activités.",
+    "key_events": [
+      "Oracle a annoncé un partenariat avec Microsoft pour interconnecter leurs clouds, permettant aux clients d'exécuter des charges de travail sur les deux plateformes de manière transparente.",
+      "La société a publié ses résultats financiers pour le quatrième trimestre de l'exercice 2022, affichant une croissance de 5 % des revenus totaux et de 19 % des revenus cloud.",
+      "Oracle a acquis Cerner Corporation, une société spécialisée dans les solutions de santé, pour un montant de 28,3 milliards de dollars, marquant une entrée majeure dans le secteur de la santé.",
+      "La société a annoncé des investissements supplémentaires dans l'expansion de ses centres de données cloud pour répondre à la demande croissante de services cloud.",
+      "Oracle a été confronté à des défis macroéconomiques, notamment l'inflation et les perturbations de la chaîne d'approvisionnement, qui ont eu un impact sur ses coûts opérationnels."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202210": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre juillet et octobre 2022. La société a continué à se concentrer sur la croissance de son activité cloud, tout en faisant face à des défis macroéconomiques. Les résultats financiers ont été solides, mais les perspectives économiques mondiales ont suscité des inquiétudes.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers solides pour le premier trimestre de l'exercice 2023, avec une croissance de 23 % de ses revenus cloud.",
+      "La société a lancé de nouvelles solutions cloud pour répondre à la demande croissante en services cloud.",
+      "Oracle a annoncé un partenariat stratégique avec Microsoft pour interconnecter leurs clouds respectifs.",
+      "La société a fait face à des défis macroéconomiques, notamment l'inflation et les craintes de récession, qui ont affecté le sentiment des investisseurs.",
+      "Oracle a continué à investir dans l'innovation et le développement de nouvelles technologies, notamment dans le domaine de l'intelligence artificielle et de la blockchain."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_202211": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre août et novembre 2022. La société a continué à se concentrer sur la croissance de son activité cloud, tout en faisant face à des défis macroéconomiques. Les résultats financiers ont été mitigés, avec des performances solides dans certains segments et des difficultés dans d'autres.",
+    "key_events": [
+      "Oracle a annoncé des partenariats stratégiques pour étendre ses services cloud, notamment avec des entreprises en Europe et en Asie.",
+      "La société a publié ses résultats trimestriels en septembre, montrant une croissance modérée des revenus, mais avec des marges bénéficiaires sous pression en raison des coûts d'investissement élevés dans le cloud.",
+      "Oracle a fait face à des défis liés à la concurrence accrue dans le secteur du cloud, avec des rivaux comme Amazon Web Services (AWS) et Microsoft Azure.",
+      "La société a annoncé des acquisitions mineures pour renforcer ses capacités en intelligence artificielle et en machine learning.",
+      "Oracle a été confronté à des défis macroéconomiques, notamment l'inflation et la hausse des taux d'intérêt, qui ont affecté les dépenses des entreprises en technologie."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_202212": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre septembre et décembre 2022. La société a continué à se concentrer sur l'expansion de ses services cloud et a réalisé des acquisitions stratégiques. Les résultats financiers ont montré une croissance constante, bien que les défis macroéconomiques aient eu un impact sur certaines de ses activités.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers solides pour le premier trimestre de l'exercice 2023, avec une croissance de 18% de ses revenus cloud.",
+      "La société a acquis Cerner Corporation, une entreprise spécialisée dans les logiciels de santé, pour un montant de 28,3 milliards de dollars.",
+      "Oracle a lancé de nouveaux services cloud pour répondre à la demande croissante en solutions de gestion de données et d'intelligence artificielle.",
+      "La société a fait face à des défis liés à la chaîne d'approvisionnement mondiale, affectant certains de ses segments matériels.",
+      "Oracle a annoncé un partenariat stratégique avec Microsoft pour interconnecter leurs services cloud respectifs."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202401": {
+    "summary": "Microsoft a connu plusieurs développements significatifs entre octobre 2023 et janvier 2024. L'entreprise a continué à renforcer sa position dans le cloud computing avec Azure et a fait des avancées notables dans le domaine de l'intelligence artificielle. Cependant, elle a également fait face à des défis réglementaires et à une concurrence accrue dans certains secteurs.",
+    "key_events": [
+      "Microsoft a annoncé de solides résultats financiers pour le premier trimestre 2023, avec une croissance de 24% pour Azure.",
+      "L'entreprise a lancé de nouvelles fonctionnalités d'IA intégrées à ses produits Office 365, renforçant ainsi sa position dans le domaine de l'intelligence artificielle.",
+      "Microsoft a fait face à des défis réglementaires, notamment avec l'Union européenne, concernant ses pratiques commerciales et sa domination sur le marché.",
+      "L'acquisition d'Activision Blizzard a été finalisée, renforçant la position de Microsoft dans le secteur du jeu vidéo.",
+      "L'entreprise a annoncé des investissements majeurs dans l'infrastructure cloud pour répondre à la demande croissante de services cloud.",
+      "Microsoft a été confrontée à une concurrence accrue de la part d'Amazon Web Services (AWS) et de Google Cloud dans le secteur du cloud computing."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202401": {
+    "summary": "Apple a connu plusieurs événements significatifs entre octobre 2023 et janvier 2024. La société a publié ses résultats financiers pour le quatrième trimestre 2023, dépassant les attentes des analystes. Cependant, Apple a également fait face à des défis réglementaires, notamment des enquêtes antitrust et des amendes potentielles. De plus, la société a continué à innover avec le lancement de nouveaux produits et services.",
+    "key_events": [
+      "Apple a publié ses résultats financiers pour le quatrième trimestre 2023, affichant une croissance des revenus et des bénéfices supérieurs aux attentes.",
+      "La société a annoncé de nouveaux modèles de MacBook Pro équipés de puces M3, M3 Pro et M3 Max.",
+      "Apple a fait face à des défis réglementaires, notamment une enquête antitrust de l'Union européenne sur ses pratiques commerciales.",
+      "La société a été condamnée à une amende de 1,8 milliard d'euros par l'Union européenne pour abus de position dominante sur le marché de la musique en ligne.",
+      "Apple a continué à investir dans ses services, avec des lancements et des mises à jour pour Apple TV+, Apple Music et Apple Fitness+."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202401": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements significatifs entre le 1er octobre 2023 et le 31 janvier 2024. L'entreprise a continué à bénéficier de la forte demande pour ses produits liés à l'intelligence artificielle (IA) et au calcul haute performance. Cependant, des défis persistent en raison des tensions géopolitiques et des restrictions à l'exportation.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers solides pour le troisième trimestre 2023, avec une croissance significative des revenus grâce à la demande en solutions d'IA et de data center.",
+      "L'entreprise a lancé de nouveaux produits et technologies, notamment des GPU de nouvelle génération pour l'IA et le gaming.",
+      "NVIDIA a fait face à des restrictions à l'exportation vers la Chine, ce qui a affecté une partie de ses activités.",
+      "L'entreprise a annoncé des partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA.",
+      "NVIDIA a été confrontée à des défis logistiques et à des pénuries de composants, affectant sa chaîne d'approvisionnement."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202401": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre octobre 2023 et janvier 2024. La société a publié ses résultats financiers pour le troisième trimestre 2023, montrant une croissance continue malgré des défis économiques. Amazon a également annoncé des investissements majeurs dans l'intelligence artificielle et l'expansion de ses services cloud. De plus, la société a fait face à des défis réglementaires et a annoncé des plans pour améliorer ses conditions de travail.",
+    "key_events": [
+      "Amazon a publié ses résultats financiers pour le T3 2023, avec une croissance de 13 % des revenus par rapport à l'année précédente.",
+      "La société a annoncé un investissement de 4 milliards de dollars dans Anthropic, une startup d'IA, pour renforcer ses capacités en intelligence artificielle.",
+      "Amazon Web Services (AWS) a continué son expansion avec de nouveaux centres de données en Europe et en Asie.",
+      "La société a fait face à des défis réglementaires, notamment des enquêtes antitrust aux États-Unis et en Europe.",
+      "Amazon a annoncé des plans pour améliorer les conditions de travail et augmenter les salaires de ses employés.",
+      "La société a lancé de nouveaux produits et services, notamment des mises à jour pour ses appareils Echo et des améliorations pour Amazon Prime."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_202401": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre octobre 2023 et janvier 2024. La société a continué à montrer une croissance solide dans ses revenus publicitaires, tout en faisant face à des défis réglementaires et à des investissements importants dans l'intelligence artificielle. Les résultats financiers du quatrième trimestre ont été solides, avec une augmentation des revenus et des bénéfices.",
+    "key_events": [
+      "Alphabet a publié ses résultats financiers pour le troisième trimestre 2023, affichant une croissance de 11% des revenus par rapport à l'année précédente, atteignant 76,69 milliards de dollars.",
+      "La société a annoncé des investissements supplémentaires dans l'intelligence artificielle, notamment dans le développement de nouveaux modèles de langage et d'outils d'IA pour ses services cloud.",
+      "Alphabet a fait face à des défis réglementaires, notamment un procès antitrust intenté par le Département de la Justice des États-Unis concernant ses pratiques publicitaires.",
+      "Google a lancé de nouvelles fonctionnalités pour ses services cloud et ses outils d'IA, visant à renforcer sa position sur le marché de l'IA.",
+      "La société a annoncé une restructuration de certaines de ses unités, notamment la fermeture de certains projets moins performants pour se concentrer sur des domaines plus prometteurs."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202401": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs développements significatifs entre octobre 2023 et janvier 2024. L'entreprise a continué à se concentrer sur l'expansion de ses services cloud et a annoncé des partenariats stratégiques. Les résultats financiers ont montré une croissance stable, avec une attention particulière sur l'innovation technologique et l'expansion internationale.",
+    "key_events": [
+      "Oracle a annoncé un partenariat avec Microsoft pour interconnecter leurs clouds respectifs, permettant aux clients d'exécuter des charges de travail sur les deux plateformes de manière transparente.",
+      "L'entreprise a publié ses résultats financiers pour le premier trimestre 2024, affichant une croissance de 5% des revenus par rapport à l'année précédente, avec une forte performance dans le segment cloud.",
+      "Oracle a lancé de nouvelles solutions d'intelligence artificielle intégrées à ses services cloud, visant à améliorer l'efficacité opérationnelle pour ses clients.",
+      "L'entreprise a annoncé l'acquisition d'une société spécialisée dans les technologies de santé, visant à renforcer sa présence dans le secteur des soins de santé.",
+      "Oracle a été inclus dans l'indice Dow Jones Sustainability, reconnaissant ses efforts en matière de durabilité et de responsabilité sociale des entreprises."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202402": {
+    "summary": "Microsoft a connu plusieurs développements significatifs entre novembre 2023 et février 2024. L'entreprise a continué à renforcer sa position dans le domaine de l'intelligence artificielle, avec des investissements majeurs et des partenariats stratégiques. Cependant, elle a également fait face à des défis réglementaires et à des préoccupations concernant la croissance future.",
+    "key_events": [
+      "Microsoft a annoncé un investissement de 10 milliards de dollars dans OpenAI, renforçant ainsi sa position dans le domaine de l'IA.",
+      "L'entreprise a lancé de nouvelles fonctionnalités d'IA dans sa suite Microsoft 365, visant à améliorer la productivité des utilisateurs.",
+      "Microsoft a fait face à des enquêtes antitrust de la part des régulateurs européens concernant ses pratiques commerciales.",
+      "Les résultats financiers du premier trimestre 2024 ont montré une croissance solide, avec une augmentation de 20% du chiffre d'affaires par rapport à l'année précédente.",
+      "L'entreprise a annoncé des plans pour réduire ses émissions de carbone de 50% d'ici 2030, dans le cadre de ses initiatives de durabilité."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202402": {
+    "summary": "Apple a connu plusieurs événements significatifs entre le 1er novembre 2023 et le 29 février 2024. La société a continué à faire face à des défis réglementaires, notamment aux États-Unis et en Europe, tout en lançant de nouveaux produits et services. Les résultats financiers ont montré une croissance modérée, avec des performances solides dans certains segments et des défis dans d'autres.",
+    "key_events": [
+      "Apple a annoncé des résultats financiers pour le premier trimestre 2024, avec un chiffre d'affaires de 119,6 milliards de dollars, en hausse de 2 % par rapport à l'année précédente.",
+      "La société a lancé de nouveaux modèles de MacBook Pro équipés de puces M3, M3 Pro et M3 Max, marquant une étape importante dans sa transition vers ses propres processeurs.",
+      "Apple a fait face à des défis réglementaires, notamment une amende de 1,8 milliard d'euros de l'Union européenne pour abus de position dominante sur le marché de la musique en streaming.",
+      "La société a annoncé des investissements importants dans l'intelligence artificielle et la réalité augmentée, avec des rumeurs persistantes sur le lancement imminent de son casque de réalité mixte, l'Apple Vision Pro.",
+      "Apple a également été confrontée à des défis en Chine, avec des restrictions sur l'utilisation de l'iPhone par les employés gouvernementaux, ce qui a affecté ses ventes dans ce marché crucial."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202402": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements significatifs entre le 1er novembre 2023 et le 29 février 2024. La société a continué à bénéficier de la forte demande pour ses produits liés à l'intelligence artificielle (IA) et au calcul haute performance. Cependant, elle a également fait face à des défis liés à la concurrence et aux tensions géopolitiques affectant la chaîne d'approvisionnement.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers solides pour le troisième trimestre 2023, avec une croissance significative des revenus grâce à la demande en solutions d'IA.",
+      "La société a lancé de nouveaux produits et technologies, notamment des GPU et des solutions logicielles pour l'IA et le métavers.",
+      "NVIDIA a fait face à des défis liés aux restrictions à l'exportation imposées par le gouvernement américain, affectant ses ventes en Chine.",
+      "La société a annoncé des partenariats stratégiques avec plusieurs entreprises technologiques pour renforcer sa position dans le marché de l'IA.",
+      "NVIDIA a été confrontée à une concurrence accrue de la part d'autres entreprises technologiques, notamment dans le domaine des puces pour l'IA."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202402": {
+    "summary": "Amazon a connu plusieurs développements significatifs entre novembre 2023 et février 2024. L'entreprise a continué à investir dans l'IA et a fait face à des défis réglementaires. Les résultats financiers ont été solides, mais les dépenses élevées en capital ont suscité des inquiétudes parmi les investisseurs.",
+    "key_events": [
+      "Amazon a annoncé un investissement de 4 milliards de dollars dans Anthropic, une startup d'IA, en novembre 2023.",
+      "La Commission européenne a ouvert une enquête antitrust sur Amazon en décembre 2023.",
+      "Amazon a rapporté des revenus record pour le quatrième trimestre 2023, mais les dépenses en capital ont augmenté de manière significative.",
+      "En février 2024, Amazon a annoncé des plans pour licencier plusieurs centaines d'employés dans ses divisions AWS, Twitch et publicité.",
+      "Amazon a lancé un nouveau service de livraison par drone dans plusieurs villes américaines en janvier 2024."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202402": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs développements significatifs entre le 1er novembre 2023 et le 29 février 2024. La société a continué à se concentrer sur l'innovation dans le domaine de l'IA, tout en faisant face à des défis réglementaires et à des changements de direction.",
+    "key_events": [
+      "Alphabet a annoncé des avancées majeures dans le domaine de l'intelligence artificielle avec son modèle Gemini, qui promet des performances supérieures dans divers domaines.",
+      "La société a fait face à des défis réglementaires accrus, notamment avec des enquêtes antitrust aux États-Unis et en Europe.",
+      "Alphabet a annoncé des réductions d'effectifs dans certains départements pour optimiser ses coûts opérationnels.",
+      "La société a continué à investir massivement dans le cloud computing et l'IA, avec des acquisitions stratégiques et des partenariats.",
+      "Alphabet a publié des résultats financiers solides pour le quatrième trimestre 2023, avec une croissance des revenus et des bénéfices supérieurs aux attentes des analystes."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202402": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs développements significatifs entre le 1er novembre 2023 et le 29 février 2024. L'entreprise a continué à se concentrer sur l'expansion de ses services cloud et a annoncé des partenariats stratégiques. Les résultats financiers ont montré une croissance stable, avec une attention particulière sur les revenus générés par les services cloud. Cependant, la société a également fait face à des défis concurrentiels dans le secteur technologique.",
+    "key_events": [
+      "Oracle a annoncé un partenariat avec Microsoft pour améliorer l'interopérabilité entre Oracle Cloud et Azure, visant à attirer plus de clients entreprises.",
+      "La société a publié ses résultats trimestriels en décembre 2023, montrant une croissance de 5% des revenus totaux, avec une augmentation de 10% des revenus cloud.",
+      "Oracle a lancé de nouvelles solutions d'intelligence artificielle intégrées à ses services cloud pour renforcer son offre technologique.",
+      "La société a fait face à une concurrence accrue de la part d'autres géants du cloud comme Amazon Web Services et Google Cloud.",
+      "Oracle a annoncé l'acquisition d'une startup spécialisée dans la cybersécurité pour renforcer ses capacités de sécurité cloud."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202403": {
+    "summary": "Microsoft a connu plusieurs développements significatifs au cours des derniers mois. L'entreprise a continué à montrer une croissance solide, tirée par ses segments cloud et d'intelligence artificielle. Cependant, il y a eu des défis réglementaires et des préoccupations concernant la croissance des revenus.",
+    "key_events": [
+      "Microsoft a annoncé de solides résultats financiers pour le deuxième trimestre de l'exercice 2024, avec une croissance de 18 % des revenus du cloud.",
+      "L'entreprise a fait face à des défis réglementaires, notamment un examen antitrust de son partenariat avec OpenAI.",
+      "Microsoft a annoncé des investissements majeurs dans l'infrastructure d'IA, visant à étendre ses capacités dans ce domaine.",
+      "La société a également annoncé des licenciements dans le cadre d'une restructuration pour se concentrer sur les domaines de croissance clés.",
+      "Microsoft a lancé de nouveaux produits et services, notamment des outils d'IA pour les entreprises."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202403": {
+    "summary": "Apple a connu plusieurs événements significatifs au cours du premier trimestre 2024. La société a continué à faire face à des défis réglementaires, notamment avec le règlement d'un litige avec les développeurs d'applications. De plus, Apple a lancé de nouveaux produits et services, tout en faisant face à des défis sur le marché chinois. Les résultats financiers ont montré une croissance modérée, avec des préoccupations concernant la demande des consommateurs.",
+    "key_events": [
+      "Règlement d'un litige avec les développeurs d'applications aux États-Unis, mettant fin à un long conflit juridique.",
+      "Lancement de nouveaux produits, dont le MacBook Pro avec des puces M3, renforçant l'offre de matériel d'Apple.",
+      "Dégradation des perspectives de croissance en Chine en raison de la concurrence accrue et des tensions géopolitiques.",
+      "Publication des résultats financiers du premier trimestre 2024, montrant une croissance modérée des revenus et des bénéfices.",
+      "Annonce de nouvelles initiatives en matière d'intelligence artificielle et de services cloud, visant à renforcer l'écosystème Apple."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202403": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements significatifs entre décembre 2023 et mars 2024. L'entreprise a continué à bénéficier de la forte demande pour ses produits liés à l'intelligence artificielle (IA) et au calcul haute performance. Cependant, des défis persistent, notamment en ce qui concerne les tensions géopolitiques et les fluctuations du marché.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux produits et technologies lors du CES 2024, mettant l'accent sur l'IA et le calcul haute performance.",
+      "L'entreprise a fait face à des restrictions à l'exportation vers la Chine, ce qui a affecté ses ventes dans cette région.",
+      "NVIDIA a publié des résultats financiers solides pour le quatrième trimestre 2023, avec une croissance significative des revenus liés à l'IA.",
+      "L'entreprise a annoncé des partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA.",
+      "NVIDIA a été confrontée à des fluctuations du marché et à des préoccupations concernant la valorisation de ses actions."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202403": {
+    "summary": "Amazon a connu plusieurs événements significatifs au cours du dernier trimestre 2023 et du premier trimestre 2024. L'entreprise a continué à investir dans l'IA et a fait face à des défis réglementaires. Les résultats financiers ont été solides, mais avec des préoccupations concernant la croissance future.",
+    "key_events": [
+      "Amazon a annoncé un investissement de 4 milliards de dollars dans Anthropic, une startup d'IA, en mars 2024.",
+      "La Commission européenne a ouvert une enquête antitrust sur Amazon en janvier 2024.",
+      "Amazon a publié ses résultats financiers pour le quatrième trimestre 2023, avec un chiffre d'affaires de 170 milliards de dollars, en hausse de 14 % par rapport à l'année précédente.",
+      "L'entreprise a annoncé des plans pour licencier environ 5 % de sa main-d'œuvre en janvier 2024.",
+      "Amazon a lancé un nouveau service de livraison par drone, Prime Air, dans plusieurs villes américaines en décembre 2023."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202403": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre décembre 2023 et mars 2024. La société a continué à montrer une croissance solide dans ses secteurs clés, notamment la publicité numérique et le cloud computing. Cependant, des défis réglementaires et des préoccupations concernant la concurrence ont également marqué cette période.",
+    "key_events": [
+      "Alphabet a annoncé des résultats financiers solides pour le quatrième trimestre 2023, avec une croissance des revenus de 13% par rapport à l'année précédente, atteignant 86,3 milliards de dollars.",
+      "La société a poursuivi ses investissements dans l'intelligence artificielle (IA) et le machine learning, avec des avancées significatives dans ses produits et services basés sur l'IA.",
+      "Alphabet a fait face à des défis réglementaires, notamment des enquêtes antitrust aux États-Unis et en Europe, ce qui a suscité des inquiétudes parmi les investisseurs.",
+      "Google Cloud a continué à croître rapidement, avec une augmentation des revenus de 45% par rapport à l'année précédente, renforçant sa position sur le marché du cloud computing.",
+      "La société a annoncé des plans pour étendre ses infrastructures de centres de données, avec des investissements importants dans plusieurs régions du monde.",
+      "Alphabet a également fait face à des critiques concernant ses pratiques de collecte de données et de respect de la vie privée, ce qui a conduit à des discussions sur de possibles changements réglementaires."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_202403": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs développements significatifs au cours du premier trimestre 2024. L'entreprise a continué à se concentrer sur l'expansion de ses services cloud et a réalisé des acquisitions stratégiques. Les résultats financiers ont montré une croissance constante, bien que les dépenses accrues en R&D aient affecté les marges bénéficiaires.",
+    "key_events": [
+      "Oracle a annoncé de solides résultats financiers pour le deuxième trimestre 2024, avec une croissance de 18 % des revenus cloud.",
+      "L'entreprise a acquis Cerner, une société spécialisée dans les logiciels de santé, pour diversifier ses offres.",
+      "Oracle a annoncé un partenariat stratégique avec Microsoft pour améliorer l'interopérabilité entre leurs plateformes cloud respectives.",
+      "La société a investi massivement dans l'IA et le machine learning pour améliorer ses solutions cloud.",
+      "Oracle a fait face à des défis réglementaires en Europe concernant la conformité des données."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202404": {
+    "summary": "Microsoft a connu plusieurs développements significatifs au cours du premier trimestre 2024. L'entreprise a continué à montrer une croissance solide, tirée par ses segments cloud et d'intelligence artificielle. Cependant, il y a eu des défis réglementaires et des préoccupations concernant la croissance future.",
+    "key_events": [
+      "Microsoft a annoncé des résultats financiers solides pour le trimestre se terminant en décembre 2023, avec une croissance de 20 % de son chiffre d'affaires cloud.",
+      "L'entreprise a poursuivi son investissement dans l'IA, avec des annonces majeures concernant l'intégration de l'IA dans ses produits Office et Azure.",
+      "Microsoft a fait face à des défis réglementaires, notamment un examen antitrust de son acquisition d'Activision Blizzard, qui a finalement été approuvée.",
+      "L'entreprise a annoncé des plans pour augmenter ses investissements dans les centres de données et l'infrastructure cloud, visant une croissance future.",
+      "Microsoft a également annoncé des licenciements dans le cadre d'une restructuration, affectant environ 1 000 employés."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202404": {
+    "summary": "Apple a connu plusieurs événements significatifs au cours du premier trimestre 2024, notamment des fluctuations de ses actions en raison des rapports de ventes et des annonces de nouveaux produits. La société a également fait face à des défis réglementaires et a continué à investir dans l'innovation technologique.",
+    "key_events": [
+      "Apple a annoncé des résultats financiers record pour le trimestre se terminant en décembre 2023, avec des revenus atteignant 119,6 milliards de dollars.",
+      "Lancement de nouveaux MacBook Pro équipés de puces M3, renforçant la gamme de produits haut de gamme de la société.",
+      "Des rumeurs persistantes sur les projets de voiture autonome d'Apple, bien qu'il n'y ait pas eu d'annonce officielle.",
+      "Des défis réglementaires en Europe, où Apple a été confronté à des amendes pour des pratiques anticoncurrentielles présumées.",
+      "Fluctuations des actions en raison des rapports sur les ventes d'iPhone en Chine, qui ont montré une baisse en raison de la concurrence accrue."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202404": {
+    "summary": "NVIDIA Corporation (NVDA) a connu une période de croissance significative et d'innovations entre janvier et avril 2024. L'entreprise a continué à bénéficier de la forte demande pour ses produits dans les secteurs du gaming, des centres de données et de l'intelligence artificielle. Plusieurs annonces et événements clés ont marqué cette période.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux produits et technologies lors du CES 2024, notamment des avancées dans les GPU pour l'IA et le gaming.",
+      "L'entreprise a publié des résultats financiers solides pour le quatrième trimestre 2023, avec une croissance des revenus et des bénéfices supérieure aux attentes des analystes.",
+      "NVIDIA a annoncé des partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA et de cloud computing.",
+      "L'entreprise a été confrontée à des défis liés à la chaîne d'approvisionnement, mais a réussi à les surmonter grâce à une gestion efficace.",
+      "NVIDIA a continué à investir dans la recherche et le développement, avec un accent particulier sur les technologies d'IA et de machine learning."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202404": {
+    "summary": "Amazon a connu plusieurs événements significatifs au premier trimestre 2024, notamment des annonces financières, des développements dans le secteur de l'IA et des changements dans la gouvernance d'entreprise.",
+    "key_events": [
+      "Amazon a annoncé des résultats financiers pour le quatrième trimestre 2023, dépassant les attentes des analystes avec un bénéfice net de 10,6 milliards de dollars.",
+      "L'entreprise a annoncé un investissement supplémentaire de 2,75 milliards de dollars dans l'IA, renforçant son engagement dans ce secteur.",
+      "Amazon a annoncé des plans pour étendre ses opérations de livraison en Europe, avec de nouveaux centres de distribution en Allemagne et en Pologne.",
+      "Le PDG d'Amazon, Andy Jassy, a annoncé des changements dans la gouvernance d'entreprise, visant à améliorer la transparence et la responsabilité.",
+      "Amazon a fait face à des critiques concernant les pratiques de travail dans ses entrepôts, avec des rapports faisant état de conditions de travail difficiles."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_202404": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs au premier trimestre 2024. La société a continué à montrer une croissance solide dans ses revenus publicitaires, tout en faisant face à des défis réglementaires et à des investissements importants dans l'intelligence artificielle.",
+    "key_events": [
+      "Alphabet a publié ses résultats financiers pour le quatrième trimestre 2023 en janvier 2024, affichant une croissance de 13% des revenus par rapport à l'année précédente, atteignant 86,3 milliards de dollars.",
+      "En février 2024, Google a annoncé des investissements majeurs dans l'IA, y compris le lancement de nouveaux outils d'IA pour ses services cloud et publicitaires.",
+      "En mars 2024, Alphabet a fait face à des défis réglementaires accrus, avec des enquêtes antitrust en cours aux États-Unis et en Europe.",
+      "En avril 2024, Google a annoncé une expansion significative de ses centres de données en Europe pour soutenir la croissance de ses services cloud."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202404": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs développements significatifs au cours du premier trimestre 2024. L'entreprise a continué à se concentrer sur l'expansion de ses services cloud et a annoncé des partenariats stratégiques. Les résultats financiers ont montré une croissance stable, avec une attention particulière sur l'innovation technologique et l'expansion internationale.",
+    "key_events": [
+      "Oracle a annoncé un partenariat avec Microsoft pour interconnecter leurs clouds, permettant aux clients d'exécuter des charges de travail sur les deux plateformes de manière transparente.",
+      "L'entreprise a publié ses résultats financiers pour le troisième trimestre de l'exercice 2024, affichant une croissance de 7% des revenus par rapport à l'année précédente, avec une forte performance dans le segment cloud.",
+      "Oracle a lancé de nouvelles solutions d'intelligence artificielle intégrées à ses services cloud, visant à améliorer l'efficacité opérationnelle pour les entreprises.",
+      "La société a annoncé l'acquisition d'une entreprise spécialisée dans les solutions de cybersécurité, renforçant ainsi son portefeuille de services de sécurité cloud.",
+      "Oracle a été inclus dans l'indice Dow Jones Sustainability, reconnaissant ses efforts en matière de durabilité et de responsabilité sociale des entreprises."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202405": {
+    "summary": "Microsoft a connu plusieurs développements significatifs entre février et mai 2024. L'entreprise a continué à renforcer sa position dans le domaine de l'intelligence artificielle, avec des investissements majeurs et des partenariats stratégiques. Les résultats financiers du troisième trimestre ont été solides, dépassant les attentes des analystes. Cependant, des défis réglementaires et des préoccupations concernant la concurrence ont également marqué cette période.",
+    "key_events": [
+      "Microsoft a annoncé un partenariat majeur avec une grande entreprise technologique pour développer des solutions d'IA.",
+      "Les résultats financiers du troisième trimestre ont montré une croissance des revenus de 17%, dépassant les attentes des analystes.",
+      "L'entreprise a fait face à des défis réglementaires en Europe concernant ses pratiques commerciales.",
+      "Microsoft a lancé de nouvelles fonctionnalités pour sa plateforme cloud Azure, renforçant sa position sur le marché.",
+      "Des préoccupations concernant la concurrence accrue dans le domaine de l'IA ont été soulevées par les analystes."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202405": {
+    "summary": "Apple a connu plusieurs événements significatifs entre février et mai 2024. La société a continué à innover avec de nouveaux produits et services, tout en faisant face à des défis réglementaires et économiques. Les résultats financiers ont été solides, mais les perspectives futures sont mitigées en raison des tensions commerciales et des changements réglementaires.",
+    "key_events": [
+      "Apple a annoncé de nouveaux modèles de MacBook Pro avec des puces M3 en février 2024, renforçant sa gamme de produits haut de gamme.",
+      "En mars 2024, Apple a fait face à une amende de l'Union européenne pour des pratiques anticoncurrentielles liées à son App Store.",
+      "Apple a publié ses résultats financiers pour le deuxième trimestre 2024 en mai, affichant une croissance des revenus et des bénéfices malgré les défis économiques.",
+      "La société a annoncé des investissements supplémentaires dans les énergies renouvelables et les initiatives environnementales.",
+      "Apple a également fait face à des défis en Chine, avec des tensions commerciales affectant ses ventes et sa chaîne d'approvisionnement."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202405": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements significatifs entre le 1er février 2024 et le 31 mai 2024. La société a continué à bénéficier de la forte demande pour ses produits liés à l'intelligence artificielle (IA) et au calcul haute performance. Les résultats financiers ont été solides, avec une croissance notable des revenus et des bénéfices. Cependant, des défis persistent, notamment en ce qui concerne les tensions géopolitiques et les contraintes de la chaîne d'approvisionnement.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers record pour le trimestre clos en avril 2024, avec une croissance des revenus de 262% d'une année sur l'autre, principalement due à la demande pour ses puces d'IA.",
+      "La société a lancé de nouveaux produits et technologies, notamment des GPU de nouvelle génération pour les centres de données et les applications d'IA.",
+      "NVIDIA a fait face à des défis liés aux restrictions à l'exportation imposées par le gouvernement américain, affectant ses ventes en Chine.",
+      "La société a annoncé des partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA.",
+      "NVIDIA a été confrontée à des problèmes de chaîne d'approvisionnement, notamment des pénuries de composants, qui ont affecté sa capacité à répondre à la demande."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202405": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre février et mai 2024. La société a continué à investir dans l'expansion de ses services de cloud computing et de logistique. Les résultats financiers du premier trimestre ont montré une croissance solide, avec une augmentation notable des revenus d'Amazon Web Services (AWS). Cependant, des préoccupations concernant la régulation antitrust et les conditions de travail ont persisté.",
+    "key_events": [
+      "Amazon a annoncé une augmentation de 12% de ses revenus au premier trimestre 2024, avec AWS contribuant de manière significative à cette croissance.",
+      "La société a fait face à des enquêtes antitrust supplémentaires de la part des régulateurs américains et européens.",
+      "Amazon a annoncé des investissements majeurs dans l'infrastructure de livraison et la logistique pour améliorer l'efficacité et réduire les délais de livraison.",
+      "Des rapports ont souligné des préoccupations continues concernant les conditions de travail dans les entrepôts d'Amazon, entraînant des critiques de la part des syndicats et des groupes de défense des droits des travailleurs.",
+      "Amazon a lancé de nouveaux services et fonctionnalités pour AWS, renforçant sa position de leader sur le marché du cloud computing."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_202405": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre février et mai 2024. La société a continué à montrer une croissance solide dans ses revenus publicitaires et ses services cloud. Cependant, des préoccupations concernant la régulation antitrust et la concurrence accrue dans le secteur de l'IA ont pesé sur le sentiment des investisseurs.",
+    "key_events": [
+      "Alphabet a publié des résultats financiers solides pour le premier trimestre 2024, avec une croissance de 15% des revenus par rapport à l'année précédente.",
+      "La société a annoncé des avancées significatives dans le développement de ses technologies d'IA, notamment avec des mises à jour majeures pour son modèle de langage Gemini.",
+      "Des préoccupations réglementaires ont été soulevées par le Département de la Justice des États-Unis concernant les pratiques antitrust de Google.",
+      "Alphabet a annoncé un plan de rachat d'actions de 70 milliards de dollars, ce qui a été bien accueilli par les investisseurs.",
+      "La concurrence dans le secteur de l'IA s'est intensifiée, avec des rivaux comme Microsoft et Amazon faisant des avancées significatives."
+    ],
+    "sentiment": "neutre"
+  },
+  "ORCL_202405": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs développements significatifs entre février et mai 2024. La société a continué à se concentrer sur l'expansion de ses services cloud et a annoncé des partenariats stratégiques. Les résultats financiers ont montré une croissance stable, avec une attention particulière sur l'innovation technologique et les acquisitions.",
+    "key_events": [
+      "Oracle a annoncé un partenariat avec Microsoft pour améliorer l'interopérabilité entre Oracle Cloud et Azure, visant à offrir des solutions cloud plus intégrées.",
+      "La société a publié ses résultats trimestriels pour le troisième trimestre 2024, affichant une croissance de 5% des revenus par rapport à l'année précédente, avec une hausse notable des revenus liés aux services cloud.",
+      "Oracle a acquis une société spécialisée dans l'intelligence artificielle pour renforcer ses capacités en IA et machine learning, visant à intégrer ces technologies dans ses solutions cloud.",
+      "La société a annoncé le lancement de nouvelles solutions de base de données autonomes, visant à réduire les coûts opérationnels pour les entreprises.",
+      "Oracle a été inclus dans plusieurs indices de durabilité, reconnaissant ses efforts en matière de responsabilité sociale et environnementale."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202406": {
+    "summary": "Microsoft a continué de montrer une performance solide au cours du deuxième trimestre 2024, avec plusieurs développements clés dans divers segments de son activité. L'entreprise a poursuivi ses investissements dans l'intelligence artificielle et le cloud computing, tout en faisant face à des défis réglementaires.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de ses revenus grâce à la croissance continue de son segment cloud, Azure, qui a connu une hausse de 30 % des revenus par rapport à l'année précédente.",
+      "L'entreprise a également fait des avancées significatives dans le domaine de l'IA, avec l'intégration de nouvelles fonctionnalités d'IA dans ses produits Office 365 et Dynamics 365.",
+      "Microsoft a fait l'objet d'un examen réglementaire accru, notamment en Europe, où les autorités ont exprimé des préoccupations concernant les pratiques anticoncurrentielles potentielles liées à ses activités dans le cloud.",
+      "L'entreprise a annoncé un partenariat stratégique avec plusieurs grandes entreprises pour développer des solutions d'IA spécifiques à l'industrie.",
+      "Microsoft a continué à investir dans ses capacités de cybersécurité, lançant de nouveaux produits et services pour répondre à la demande croissante de solutions de sécurité avancées."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202406": {
+    "summary": "Apple a connu plusieurs événements significatifs au cours du deuxième trimestre 2024. La société a continué à innover avec de nouveaux produits et services, tout en faisant face à des défis réglementaires et économiques. Les performances financières sont restées solides, malgré un environnement économique incertain.",
+    "key_events": [
+      "Apple a annoncé de nouvelles fonctionnalités d'IA intégrées à ses produits lors de la WWDC 2024, ce qui a été bien accueilli par les investisseurs.",
+      "La société a fait face à des défis réglementaires en Europe, avec des amendes potentielles pour des pratiques anticoncurrentielles.",
+      "Apple a lancé de nouveaux modèles de MacBook avec des puces M3, renforçant sa position sur le marché des ordinateurs portables.",
+      "Les ventes d'iPhone ont légèrement diminué en raison de la saturation du marché, mais les services d'Apple ont continué à croître.",
+      "Apple a annoncé un nouveau partenariat avec des fournisseurs de contenu pour enrichir son offre de services."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_202406": {
+    "summary": "NVIDIA a continué de montrer une forte performance au cours du deuxième trimestre de 2024, tirée par la demande croissante pour ses puces d'IA et ses solutions graphiques. L'entreprise a annoncé des résultats financiers solides, dépassant les attentes des analystes. Cependant, des défis persistent en termes de chaîne d'approvisionnement et de concurrence accrue dans le secteur des semi-conducteurs.",
+    "key_events": [
+      "NVIDIA a annoncé des revenus records pour le trimestre, dépassant les attentes des analystes grâce à une forte demande pour ses puces d'IA.",
+      "L'entreprise a lancé de nouveaux produits phares, notamment des GPU de nouvelle génération pour les centres de données et les applications d'IA.",
+      "NVIDIA a fait face à des défis en termes de chaîne d'approvisionnement, avec des retards de livraison signalés pour certains de ses produits.",
+      "La concurrence dans le secteur des semi-conducteurs s'est intensifiée, avec des rivaux comme AMD et Intel lançant de nouveaux produits concurrentiels.",
+      "NVIDIA a annoncé des partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202406": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre mars et juin 2024. La société a continué à investir massivement dans l'intelligence artificielle et a fait face à des défis réglementaires. Les résultats financiers ont été solides, mais les dépenses élevées en capital ont suscité des inquiétudes parmi les investisseurs.",
+    "key_events": [
+      "Amazon a annoncé un investissement de 150 milliards de dollars dans des centres de données et l'IA au cours des 15 prochaines années.",
+      "La Commission européenne a ouvert une enquête antitrust sur Amazon concernant des pratiques commerciales déloyales.",
+      "Amazon a rapporté des revenus trimestriels supérieurs aux attentes, mais les dépenses en capital ont augmenté de manière significative.",
+      "La société a lancé de nouveaux services basés sur l'IA pour ses clients AWS, renforçant ainsi sa position sur le marché du cloud computing.",
+      "Amazon a fait face à des critiques concernant les conditions de travail dans ses entrepôts, entraînant des grèves et des manifestations."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202406": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs développements importants au cours du deuxième trimestre 2024. La société a continué à montrer une croissance solide dans ses segments publicitaires et cloud, tout en faisant face à des défis réglementaires et à une concurrence accrue dans le secteur de l'IA.",
+    "key_events": [
+      "Alphabet a publié des résultats financiers solides pour le premier trimestre 2024, avec une croissance de 15% des revenus par rapport à l'année précédente, atteignant 80,5 milliards de dollars.",
+      "La société a annoncé de nouvelles avancées dans le domaine de l'intelligence artificielle, notamment avec des mises à jour majeures pour son modèle d'IA Gemini.",
+      "Alphabet a fait face à des défis réglementaires, notamment une enquête antitrust de l'UE sur ses pratiques publicitaires.",
+      "La société a annoncé un nouveau programme de rachat d'actions d'une valeur de 70 milliards de dollars, ce qui a été bien accueilli par les investisseurs.",
+      "Google Cloud a continué à croître rapidement, avec une augmentation de 28% des revenus par rapport à l'année précédente."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202406": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs développements significatifs entre mars et juin 2024. La société a continué à se concentrer sur l'expansion de ses services cloud et a annoncé des partenariats stratégiques. Les résultats financiers ont montré une croissance stable, avec une attention particulière sur les revenus générés par les services cloud. Cependant, la concurrence dans le secteur reste intense, ce qui a conduit à des fluctuations du cours de l'action.",
+    "key_events": [
+      "Oracle a annoncé un partenariat avec Microsoft pour améliorer l'interopérabilité entre Oracle Cloud et Azure.",
+      "La société a publié ses résultats trimestriels pour le troisième trimestre 2024, montrant une croissance de 5% des revenus par rapport à l'année précédente.",
+      "Oracle a lancé de nouvelles solutions d'intelligence artificielle intégrées à ses services cloud.",
+      "La société a fait face à une concurrence accrue de la part d'Amazon Web Services et de Microsoft Azure, affectant légèrement ses parts de marché.",
+      "Oracle a annoncé l'acquisition d'une startup spécialisée dans la cybersécurité pour renforcer ses offres de sécurité cloud."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202407": {
+    "summary": "Microsoft a connu plusieurs développements significatifs entre avril et juillet 2024. L'entreprise a continué à renforcer sa position dans le cloud computing avec Azure, tout en faisant face à des défis réglementaires. Les résultats financiers ont été solides, mais les investissements massifs dans l'IA ont pesé sur les marges.",
+    "key_events": [
+      "Microsoft a annoncé des résultats financiers solides pour le trimestre clos en mars 2024, avec une croissance de 17% du chiffre d'affaires, tirée par Azure et les services cloud.",
+      "L'entreprise a poursuivi son investissement dans l'intelligence artificielle, avec des partenariats stratégiques et des acquisitions dans ce domaine.",
+      "Microsoft a fait face à des défis réglementaires, notamment des enquêtes antitrust aux États-Unis et en Europe concernant ses pratiques commerciales.",
+      "Le 15 juillet 2024, Microsoft a annoncé une augmentation de 20% de son dividende trimestriel, reflétant sa confiance dans sa santé financière.",
+      "L'action a atteint un nouveau sommet historique en juillet 2024, dépassant les 500 USD, grâce à l'optimisme des investisseurs concernant sa croissance future."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202407": {
+    "summary": "Apple a connu plusieurs événements significatifs entre avril et juillet 2024. La société a continué à innover avec de nouveaux produits et services, tout en faisant face à des défis réglementaires et économiques. Les résultats financiers ont été solides, mais les incertitudes macroéconomiques ont pesé sur les perspectives.",
+    "key_events": [
+      "Apple a lancé de nouveaux modèles d'iPad et de MacBook avec des puces M3 lors d'un événement en mai 2024.",
+      "La société a annoncé des avancées significatives dans le domaine de l'intelligence artificielle, intégrant de nouvelles fonctionnalités dans ses appareils.",
+      "Apple a fait face à des défis réglementaires en Europe, avec des amendes et des restrictions sur certaines de ses pratiques commerciales.",
+      "Les résultats financiers du deuxième trimestre 2024 ont montré une croissance des revenus et des bénéfices, malgré une baisse des ventes en Chine.",
+      "Apple a annoncé un nouveau partenariat avec des fournisseurs de contenu pour enrichir ses services de streaming."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202407": {
+    "summary": "Résumé indisponible pour NVDA.",
+    "key_events": [],
+    "sentiment": "neutre"
+  },
+  "AMZN_202407": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre avril et juillet 2024. La société a continué à investir dans l'expansion de ses centres de données et dans l'intelligence artificielle. Cependant, elle a également fait face à des défis réglementaires et à des préoccupations concernant la croissance des revenus.",
+    "key_events": [
+      "Amazon a annoncé un investissement de 150 milliards de dollars dans de nouveaux centres de données aux États-Unis sur les 15 prochaines années.",
+      "La société a lancé de nouveaux outils d'IA pour ses services cloud AWS, visant à renforcer sa position sur le marché de l'IA.",
+      "Amazon a fait face à des enquêtes antitrust de la part des régulateurs européens et américains, ce qui a pesé sur le sentiment des investisseurs.",
+      "Les résultats financiers du deuxième trimestre ont montré une croissance des revenus inférieure aux attentes, en partie due à la baisse des dépenses des consommateurs.",
+      "Amazon a annoncé une collaboration avec plusieurs grandes entreprises pour intégrer ses services d'IA dans leurs opérations."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202407": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre avril et juillet 2024. La société a continué à montrer une croissance solide dans ses revenus publicitaires, tout en faisant face à des défis réglementaires et à des investissements importants dans l'intelligence artificielle.",
+    "key_events": [
+      "Alphabet a publié des résultats financiers pour le premier trimestre 2024, montrant une croissance de 15% des revenus par rapport à l'année précédente, principalement tirée par la publicité et le cloud computing.",
+      "La société a annoncé des investissements majeurs dans l'IA, y compris le lancement de nouveaux outils d'IA générative pour ses services cloud.",
+      "Alphabet a fait face à des défis réglementaires, notamment des enquêtes antitrust aux États-Unis et en Europe.",
+      "Google a annoncé une expansion significative de ses centres de données en Europe pour soutenir la croissance de ses services cloud.",
+      "La société a également annoncé des partenariats stratégiques avec plusieurs entreprises pour intégrer ses outils d'IA dans divers secteurs."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202407": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs développements significatifs entre avril et juillet 2024. L'entreprise a continué à se concentrer sur l'expansion de ses services cloud et a annoncé des partenariats stratégiques. Les résultats financiers du quatrième trimestre ont montré une croissance stable, avec une augmentation des revenus liés aux services cloud. Cependant, la société a également fait face à des défis concurrentiels et à des pressions sur les marges.",
+    "key_events": [
+      "Oracle a annoncé un partenariat avec Microsoft pour améliorer l'interopérabilité entre Oracle Cloud et Azure.",
+      "Les résultats financiers du quatrième trimestre ont montré une croissance de 5% des revenus totaux, avec une augmentation de 10% des revenus liés aux services cloud.",
+      "Oracle a lancé de nouvelles solutions d'intelligence artificielle intégrées à ses services cloud pour améliorer l'automatisation et l'analyse des données.",
+      "La société a fait face à des défis concurrentiels accrus de la part d'Amazon Web Services (AWS) et de Microsoft Azure.",
+      "Oracle a annoncé l'acquisition d'une société de cybersécurité pour renforcer ses offres de sécurité cloud."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202408": {
+    "summary": "Résumé indisponible pour MSFT.",
+    "key_events": [],
+    "sentiment": "neutre"
+  },
+  "AAPL_202408": {
+    "summary": "Résumé indisponible pour AAPL.",
+    "key_events": [],
+    "sentiment": "neutre"
+  },
+  "NVDA_202408": {
+    "summary": "Résumé indisponible pour NVDA.",
+    "key_events": [],
+    "sentiment": "neutre"
+  },
+  "AMZN_202408": {
+    "summary": "Résumé indisponible pour AMZN.",
+    "key_events": [],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202408": {
+    "summary": "Résumé indisponible pour GOOGL.",
+    "key_events": [],
+    "sentiment": "neutre"
+  },
+  "ORCL_202408": {
+    "summary": "Résumé indisponible pour ORCL.",
+    "key_events": [],
+    "sentiment": "neutre"
+  },
+  "MSFT_202409": {
+    "summary": "Microsoft a connu plusieurs développements significatifs au cours du troisième trimestre 2024. L'entreprise a continué à renforcer sa position dans le domaine de l'intelligence artificielle et du cloud computing. Cependant, des défis réglementaires et des préoccupations macroéconomiques ont également marqué cette période.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus liés à Azure, son service de cloud computing, par rapport à l'année précédente.",
+      "L'entreprise a lancé de nouvelles fonctionnalités d'IA intégrées à sa suite Office 365, visant à améliorer la productivité des utilisateurs.",
+      "Microsoft a fait face à des enquêtes antitrust de la part des régulateurs européens concernant ses pratiques commerciales liées à ses services cloud.",
+      "La société a annoncé un partenariat stratégique avec une grande entreprise de télécommunications pour développer des solutions cloud hybrides.",
+      "Les résultats financiers du troisième trimestre ont montré une croissance solide, avec une augmentation de 15% du bénéfice net par rapport à l'année précédente.",
+      "Microsoft a annoncé des investissements majeurs dans l'expansion de ses centres de données en Europe et en Asie pour répondre à la demande croissante en services cloud."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202409": {
+    "summary": "Au cours du troisième trimestre 2024, Apple a connu plusieurs événements significatifs, notamment des annonces de produits, des performances financières solides et des défis réglementaires. La société a continué à innover avec de nouvelles versions de ses produits phares, tout en faisant face à des pressions réglementaires croissantes dans plusieurs juridictions.",
+    "key_events": [
+      "Lancement de l'iPhone 16 avec de nouvelles fonctionnalités d'IA et des améliorations de la batterie.",
+      "Annonce des résultats financiers du troisième trimestre avec une croissance des revenus de 5% par rapport à l'année précédente.",
+      "Apple a fait face à des amendes réglementaires en Europe pour des pratiques anticoncurrentielles présumées.",
+      "Introduction de nouveaux MacBook avec des puces M4, offrant des performances améliorées et une meilleure efficacité énergétique.",
+      "Apple a annoncé des investissements supplémentaires dans les énergies renouvelables pour ses centres de données."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_202409": {
+    "summary": "NVIDIA a continué de montrer une performance solide au cours du troisième trimestre de 2024, tirée par la demande croissante pour ses puces graphiques et ses solutions d'IA. La société a annoncé des résultats financiers robustes et a poursuivi ses investissements dans les technologies émergentes.",
+    "key_events": [
+      "NVIDIA a annoncé des revenus records pour le troisième trimestre, dépassant les attentes des analystes.",
+      "La société a lancé de nouvelles puces graphiques optimisées pour l'intelligence artificielle, renforçant sa position sur le marché.",
+      "NVIDIA a annoncé des partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA.",
+      "La société a continué à investir dans la recherche et le développement, avec un accent particulier sur les technologies de pointe comme l'IA et le calcul haute performance."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202409": {
+    "summary": "Amazon a connu plusieurs développements significatifs au cours du troisième trimestre 2024. L'entreprise a continué à investir massivement dans l'intelligence artificielle et a fait face à des défis réglementaires. Les résultats financiers ont été solides, mais les dépenses élevées ont suscité des inquiétudes parmi les investisseurs.",
+    "key_events": [
+      "Amazon a annoncé un investissement de 4 milliards de dollars dans Anthropic, une startup d'IA, renforçant ainsi sa position dans le domaine de l'intelligence artificielle.",
+      "L'entreprise a fait face à des pressions réglementaires accrues, notamment de la part de la FTC aux États-Unis, concernant ses pratiques commerciales.",
+      "Amazon a publié des résultats financiers solides pour le troisième trimestre, avec une croissance de 11% du chiffre d'affaires, mais les dépenses élevées ont pesé sur les marges bénéficiaires.",
+      "Le PDG Andy Jassy a annoncé des plans pour réduire les coûts opérationnels, notamment en rationalisant certaines divisions et en réduisant les effectifs dans certains secteurs.",
+      "Amazon a lancé de nouveaux services basés sur l'IA pour ses clients AWS, visant à attirer davantage d'entreprises vers sa plateforme cloud."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202409": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre le 01/06/2024 et le 30/09/2024. La société a continué à montrer une croissance solide dans ses revenus publicitaires, tout en faisant face à des défis réglementaires et à des investissements importants dans l'intelligence artificielle.",
+    "key_events": [
+      "Alphabet a annoncé une augmentation de 14% de ses revenus publicitaires au deuxième trimestre 2024, dépassant les attentes des analystes.",
+      "La société a fait face à des pressions réglementaires accrues de la part de l'Union européenne concernant ses pratiques antitrust.",
+      "Alphabet a investi massivement dans l'intelligence artificielle, avec plusieurs acquisitions et partenariats stratégiques.",
+      "La société a lancé de nouvelles fonctionnalités pour Google Cloud, visant à renforcer sa position sur le marché du cloud computing.",
+      "Alphabet a annoncé un plan de rachat d'actions de 70 milliards de dollars, ce qui a été bien accueilli par les investisseurs."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202409": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre juin et septembre 2024. La société a continué à se concentrer sur l'expansion de ses services cloud et a réalisé des acquisitions stratégiques. Les résultats financiers du quatrième trimestre ont montré une croissance solide, avec une hausse des revenus et des bénéfices. Cependant, des défis persistent en raison de la concurrence accrue dans le secteur du cloud computing.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers solides pour le quatrième trimestre 2024, avec une croissance de 8% des revenus par rapport à l'année précédente.",
+      "La société a finalisé l'acquisition de Cerner, une entreprise spécialisée dans les logiciels de santé, pour un montant de 28,3 milliards de dollars.",
+      "Oracle a lancé de nouveaux services cloud pour renforcer sa position face à des concurrents comme Amazon Web Services et Microsoft Azure.",
+      "La société a annoncé un partenariat stratégique avec NVIDIA pour intégrer des technologies d'IA dans ses solutions cloud.",
+      "Oracle a fait face à des défis réglementaires en Europe concernant ses pratiques commerciales et sa conformité aux règles de protection des données."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202410": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre juillet et octobre 2024. L'entreprise a continué à renforcer sa position dans le cloud computing avec Azure, tout en faisant face à des défis réglementaires et des investissements stratégiques.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus pour Azure, renforçant sa position de leader dans le cloud computing.",
+      "L'entreprise a fait l'objet d'une enquête antitrust de la part de la Commission européenne concernant ses pratiques commerciales liées à ses services cloud.",
+      "Microsoft a investi 1,5 milliard de dollars dans une nouvelle initiative d'intelligence artificielle, visant à améliorer ses capacités en IA et en apprentissage automatique.",
+      "La société a annoncé un partenariat stratégique avec une grande entreprise de télécommunications pour développer des solutions 5G.",
+      "Microsoft a publié ses résultats trimestriels pour le troisième trimestre 2024, affichant une croissance de 15% de son chiffre d'affaires par rapport à l'année précédente."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202410": {
+    "summary": "Apple a connu plusieurs événements significatifs entre juillet et octobre 2024. La société a publié ses résultats financiers pour le troisième trimestre, dépassant les attentes des analystes. De plus, Apple a annoncé de nouvelles initiatives en matière d'intelligence artificielle et a lancé de nouveaux produits, dont l'iPhone 16. Cependant, la société a également fait face à des défis réglementaires en Europe et à des préoccupations concernant la chaîne d'approvisionnement en Asie.",
+    "key_events": [
+      "Apple a publié ses résultats financiers pour le troisième trimestre, avec un chiffre d'affaires de 89,5 milliards de dollars, dépassant les attentes des analystes.",
+      "La société a annoncé de nouvelles initiatives en matière d'intelligence artificielle, visant à améliorer ses produits et services.",
+      "Apple a lancé l'iPhone 16, avec des fonctionnalités avancées et une meilleure performance de la batterie.",
+      "La société a fait face à des défis réglementaires en Europe, notamment des enquêtes antitrust et des amendes potentielles.",
+      "Des préoccupations concernant la chaîne d'approvisionnement en Asie ont été soulevées, en raison de tensions géopolitiques et de perturbations logistiques."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202410": {
+    "summary": "NVIDIA a connu une période de croissance significative et d'expansion stratégique entre juillet et octobre 2024. L'entreprise a continué à bénéficier de la forte demande pour ses produits liés à l'intelligence artificielle et au calcul haute performance. Plusieurs annonces majeures et événements sectoriels ont marqué cette période.",
+    "key_events": [
+      "NVIDIA a annoncé des résultats financiers record pour le deuxième trimestre 2024, avec une augmentation de 50% de ses revenus par rapport à l'année précédente, principalement due à la demande croissante pour ses GPU utilisés dans l'IA et le machine learning.",
+      "L'entreprise a lancé de nouveaux produits, dont la série de GPU Blackwell, qui promet des performances significativement améliorées pour les applications d'IA et de calcul haute performance.",
+      "NVIDIA a étendu ses partenariats stratégiques avec plusieurs grandes entreprises technologiques, dont Microsoft, Google et Amazon, pour fournir des solutions d'IA et de cloud computing.",
+      "L'entreprise a également annoncé des avancées majeures dans le domaine des véhicules autonomes, avec des partenariats avec plusieurs constructeurs automobiles pour intégrer ses technologies de conduite autonome.",
+      "NVIDIA a été confrontée à des défis en matière de chaîne d'approvisionnement, avec des pénuries de composants électroniques qui ont affecté la production de certains de ses produits.",
+      "L'entreprise a été impliquée dans des discussions réglementaires concernant l'acquisition d'Arm, qui ont finalement abouti à un accord sous certaines conditions imposées par les autorités de régulation."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202410": {
+    "summary": "Amazon a connu plusieurs événements significatifs entre juillet et octobre 2024. La société a continué à investir massivement dans l'intelligence artificielle et a fait face à des défis réglementaires en Europe. Les résultats financiers du troisième trimestre ont montré une croissance solide, mais avec des marges sous pression en raison des investissements élevés.",
+    "key_events": [
+      "Amazon a annoncé un investissement de 4 milliards de dollars supplémentaires dans Anthropic, une startup d'IA, portant son investissement total à 6 milliards de dollars.",
+      "L'Union européenne a ouvert une enquête antitrust sur les pratiques commerciales d'Amazon, notamment en ce qui concerne l'utilisation des données des vendeurs tiers.",
+      "Amazon a publié ses résultats financiers pour le troisième trimestre 2024, avec une croissance des revenus de 12 % par rapport à l'année précédente, mais une baisse des marges bénéficiaires en raison des coûts élevés liés à l'IA et à l'expansion logistique.",
+      "La société a lancé de nouveaux services basés sur l'IA pour ses clients AWS, renforçant ainsi sa position dans le cloud computing.",
+      "Amazon a fait face à des grèves et des protestations de la part de ses employés en Europe et aux États-Unis, exigeant de meilleures conditions de travail et des salaires plus élevés."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202410": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre juillet et octobre 2024. La société a continué à montrer une croissance solide dans ses segments publicitaires et cloud, tout en faisant face à des défis réglementaires et à une concurrence accrue dans le secteur technologique.",
+    "key_events": [
+      "Alphabet a publié ses résultats financiers pour le deuxième trimestre 2024, affichant une croissance de 14 % de ses revenus par rapport à l'année précédente, principalement grâce à la publicité et à Google Cloud.",
+      "La société a annoncé un nouveau partenariat stratégique avec une grande entreprise de télécommunications pour étendre ses services cloud.",
+      "Alphabet a fait face à des pressions réglementaires accrues en Europe et aux États-Unis concernant ses pratiques anticoncurrentielles.",
+      "La société a lancé plusieurs nouvelles fonctionnalités d'IA dans ses produits, renforçant sa position dans le domaine de l'intelligence artificielle.",
+      "Alphabet a annoncé un plan de rachat d'actions de 70 milliards de dollars, ce qui a été bien accueilli par les investisseurs."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202410": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre juillet et octobre 2024. La société a continué à se concentrer sur l'expansion de ses services cloud et a réalisé des acquisitions stratégiques. Les résultats financiers du premier trimestre ont été solides, avec une croissance des revenus et des bénéfices supérieurs aux attentes. Cependant, des défis persistent en raison de la concurrence accrue dans le secteur du cloud.",
+    "key_events": [
+      "Oracle a annoncé des résultats financiers pour le premier trimestre 2024 supérieurs aux attentes, avec une croissance de 8% des revenus.",
+      "La société a lancé de nouveaux services cloud pour renforcer sa position face à des concurrents comme Amazon Web Services et Microsoft Azure.",
+      "Oracle a acquis une société spécialisée dans l'intelligence artificielle pour améliorer ses offres de services cloud.",
+      "La société a annoncé un partenariat stratégique avec une grande entreprise technologique pour développer des solutions cloud hybrides.",
+      "Oracle a fait face à des défis réglementaires dans certaines régions, ce qui a affecté ses opérations internationales."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202411": {
+    "summary": "Microsoft a connu plusieurs événements significatifs entre août et novembre 2024. L'entreprise a continué à renforcer sa position dans le cloud computing avec Azure, tout en faisant face à des défis réglementaires et à une concurrence accrue dans divers secteurs.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de ses revenus liés à Azure, avec une croissance de 30% par rapport à l'année précédente.",
+      "L'entreprise a fait l'objet d'une enquête antitrust de la part des régulateurs européens concernant ses pratiques commerciales liées à ses services cloud.",
+      "Microsoft a lancé plusieurs nouvelles fonctionnalités pour ses produits phares, notamment Windows 12 et Office 365, visant à améliorer la productivité et la sécurité.",
+      "L'entreprise a annoncé un partenariat stratégique avec une grande entreprise de télécommunications pour développer des solutions 5G et edge computing.",
+      "Microsoft a fait face à des critiques concernant la sécurité de ses produits, suite à une série de cyberattaques ciblant ses systèmes."
+    ],
+    "sentiment": "neutre"
+  },
+  "AAPL_202411": {
+    "summary": "Apple Inc. (AAPL) a connu plusieurs événements significatifs entre août et novembre 2024. La société a lancé de nouveaux produits, fait face à des défis réglementaires et a vu des fluctuations dans ses performances financières.",
+    "key_events": [
+      "Lancement de l'iPhone 16 avec de nouvelles fonctionnalités IA, stimulant les ventes et l'intérêt des consommateurs.",
+      "Annonce de nouveaux MacBook avec des puces M4, améliorant les performances et l'efficacité énergétique.",
+      "Régulateurs européens imposent une amende à Apple pour pratiques anticoncurrentielles dans l'App Store.",
+      "Apple atteint une capitalisation boursière de 3 000 milliards de dollars, devenant la première entreprise à atteindre cette valorisation.",
+      "Fluctuations des ventes en Chine en raison de la concurrence accrue et des tensions géopolitiques."
+    ],
+    "sentiment": "positif"
+  },
+  "NVDA_202411": {
+    "summary": "NVIDIA a connu une période de croissance significative et d'expansion stratégique entre août et novembre 2024. L'entreprise a continué à bénéficier de la forte demande pour ses produits dans les secteurs de l'IA, du gaming et des centres de données. Plusieurs annonces majeures et partenariats ont été conclus, renforçant sa position sur le marché.",
+    "key_events": [
+      "NVIDIA a annoncé une augmentation de ses revenus de 60% par rapport à l'année précédente, grâce à la forte demande pour ses GPU utilisés dans l'intelligence artificielle.",
+      "L'entreprise a conclu un partenariat stratégique avec Microsoft pour développer des solutions d'IA et de cloud computing.",
+      "NVIDIA a lancé de nouveaux produits, dont la série RTX 5000, qui a été bien accueillie par le marché.",
+      "L'entreprise a annoncé une collaboration avec plusieurs constructeurs automobiles pour intégrer ses technologies de conduite autonome.",
+      "NVIDIA a fait face à des défis en termes de chaîne d'approvisionnement, mais a réussi à les surmonter grâce à des investissements stratégiques."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202411": {
+    "summary": "Amazon (AMZN) a connu plusieurs événements significatifs entre août et novembre 2024. La société a continué à investir massivement dans l'intelligence artificielle et a fait face à des défis réglementaires en Europe. Les résultats financiers du troisième trimestre ont été solides, mais les perspectives pour les fêtes de fin d'année ont été tempérées par des inquiétudes concernant la consommation des ménages.",
+    "key_events": [
+      "Amazon a annoncé un investissement de 4 milliards de dollars dans Anthropic, une startup d'IA, renforçant ainsi sa position dans le secteur technologique.",
+      "La Commission européenne a ouvert une enquête antitrust sur les pratiques commerciales d'Amazon, ce qui pourrait entraîner des amendes potentielles.",
+      "Les résultats du troisième trimestre ont montré une croissance de 12 % du chiffre d'affaires par rapport à l'année précédente, dépassant les attentes des analystes.",
+      "Amazon a lancé de nouveaux services basés sur l'IA pour ses clients AWS, visant à améliorer l'efficacité opérationnelle des entreprises.",
+      "Des inquiétudes ont été exprimées concernant la consommation des ménages pendant la période des fêtes, ce qui a tempéré les perspectives de croissance pour le quatrième trimestre."
+    ],
+    "sentiment": "neutre"
+  },
+  "GOOGL_202411": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre août et novembre 2024. La société a continué à montrer une croissance solide dans ses revenus publicitaires et cloud, tout en faisant face à des défis réglementaires et à une concurrence accrue dans le secteur technologique.",
+    "key_events": [
+      "Alphabet a rapporté des revenus trimestriels supérieurs aux attentes pour le troisième trimestre 2024, avec une croissance notable dans les segments publicitaires et cloud.",
+      "La société a annoncé des avancées significatives dans le développement de ses technologies d'IA, avec des investissements accrus dans ses filiales comme DeepMind.",
+      "Alphabet a fait face à des pressions réglementaires accrues, notamment en Europe, concernant des questions de concurrence et de protection des données.",
+      "La société a lancé de nouveaux produits et services, notamment dans le domaine de l'IA et de la réalité augmentée, pour renforcer sa position sur le marché.",
+      "Les actions d'Alphabet ont connu une volatilité due aux incertitudes macroéconomiques, mais ont globalement maintenu une tendance haussière grâce à des performances financières solides."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202411": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre août et novembre 2024. La société a continué à se concentrer sur l'expansion de ses services cloud et a réalisé des acquisitions stratégiques. Les résultats financiers ont été solides, avec une croissance constante des revenus et des bénéfices. Cependant, des défis macroéconomiques et une concurrence accrue dans le secteur du cloud ont également été observés.",
+    "key_events": [
+      "Oracle a annoncé une croissance de 8% de ses revenus cloud au T2 2024, atteignant 3,6 milliards de dollars.",
+      "La société a finalisé l'acquisition de Cerner, une entreprise spécialisée dans les logiciels de santé, pour 28,3 milliards de dollars.",
+      "Oracle a lancé de nouveaux services de base de données autonomes, renforçant son offre cloud.",
+      "La concurrence avec des acteurs majeurs comme Amazon Web Services (AWS) et Microsoft Azure s'est intensifiée.",
+      "Oracle a annoncé un partenariat stratégique avec Microsoft pour améliorer l'interopérabilité entre leurs plateformes cloud.",
+      "Les résultats financiers du T3 2024 ont montré une croissance de 5% des revenus totaux, avec une marge bénéficiaire stable."
+    ],
+    "sentiment": "positif"
+  },
+  "MSFT_202412": {
+    "summary": "Microsoft a connu plusieurs développements significatifs entre septembre et décembre 2024. L'entreprise a continué à renforcer sa position dans le cloud computing avec Azure, tout en faisant face à des défis réglementaires et à une concurrence accrue dans divers secteurs.",
+    "key_events": [
+      "Microsoft a annoncé une augmentation de 20% de ses revenus liés à Azure, renforçant sa position de leader dans le cloud computing.",
+      "L'entreprise a fait l'acquisition de plusieurs startups spécialisées en IA, visant à renforcer ses capacités en intelligence artificielle.",
+      "Microsoft a été confronté à des enquêtes antitrust de la part des régulateurs européens, ce qui a entraîné une certaine volatilité de l'action.",
+      "Le lancement de nouveaux produits Surface a été bien accueilli par le marché, contribuant à une hausse des ventes de matériel.",
+      "L'entreprise a annoncé un partenariat stratégique avec une grande entreprise de télécommunications pour développer des solutions cloud hybrides."
+    ],
+    "sentiment": "positif"
+  },
+  "AAPL_202412": {
+    "summary": "Au cours de la période du 1er septembre 2024 au 31 décembre 2024, Apple a connu plusieurs événements significatifs. L'entreprise a lancé de nouveaux produits, dont l'iPhone 16, qui a reçu un accueil positif du marché. Cependant, Apple a également fait face à des défis réglementaires, notamment des enquêtes antitrust aux États-Unis et en Europe. Les résultats financiers du dernier trimestre ont montré une croissance modérée, avec une augmentation des revenus et des bénéfices, bien que légèrement en dessous des attentes des analystes.",
+    "key_events": [
+      "Lancement de l'iPhone 16 avec des fonctionnalités innovantes.",
+      "Enquêtes antitrust aux États-Unis et en Europe.",
+      "Résultats financiers du dernier trimestre montrant une croissance modérée.",
+      "Annonce de nouveaux investissements dans les technologies de réalité augmentée."
+    ],
+    "sentiment": "neutre"
+  },
+  "NVDA_202412": {
+    "summary": "NVIDIA Corporation (NVDA) a connu plusieurs événements significatifs entre septembre et décembre 2024. La société a continué à bénéficier de la forte demande pour ses puces graphiques, notamment dans les secteurs du gaming, des centres de données et de l'intelligence artificielle. Cependant, des défis liés à la chaîne d'approvisionnement et à la concurrence accrue ont également marqué cette période.",
+    "key_events": [
+      "NVIDIA a annoncé de nouveaux partenariats stratégiques avec plusieurs grandes entreprises technologiques pour développer des solutions d'IA.",
+      "La société a lancé de nouvelles puces graphiques haut de gamme, renforçant sa position sur le marché du gaming et des centres de données.",
+      "Des retards dans la chaîne d'approvisionnement ont affecté la production, entraînant des pénuries de certains produits phares.",
+      "NVIDIA a fait face à une concurrence accrue de la part d'AMD et d'autres acteurs du marché des semi-conducteurs.",
+      "La société a annoncé des résultats financiers solides pour le troisième trimestre, avec une croissance des revenus supérieure aux attentes des analystes."
+    ],
+    "sentiment": "positif"
+  },
+  "AMZN_202412": {
+    "summary": "Amazon (AMZN) a connu plusieurs événements significatifs entre septembre et décembre 2024. La société a continué à renforcer sa position dans le secteur du commerce électronique et du cloud computing, tout en faisant face à des défis réglementaires et économiques.",
+    "key_events": [
+      "Amazon a annoncé une augmentation de ses revenus de 12% pour le troisième trimestre 2024, dépassant les attentes des analystes.",
+      "La société a lancé de nouveaux services dans le cadre d'Amazon Web Services (AWS), renforçant sa position dans le secteur du cloud computing.",
+      "Amazon a fait face à des défis réglementaires en Europe, avec des enquêtes antitrust en cours.",
+      "La société a annoncé des investissements majeurs dans l'intelligence artificielle et l'automatisation, visant à améliorer l'efficacité de ses entrepôts et de ses services logistiques.",
+      "Amazon a connu des perturbations dans sa chaîne d'approvisionnement en raison de tensions géopolitiques, affectant temporairement ses livraisons.",
+      "La société a annoncé un partenariat stratégique avec une grande entreprise technologique pour développer de nouvelles solutions de commerce électronique."
+    ],
+    "sentiment": "positif"
+  },
+  "GOOGL_202412": {
+    "summary": "Alphabet Inc. (GOOGL) a connu plusieurs événements significatifs entre septembre et décembre 2024. La société a continué à montrer une croissance solide dans ses segments publicitaires et cloud, tout en faisant face à des défis réglementaires et à une concurrence accrue dans le secteur technologique.",
+    "key_events": [
+      "Alphabet a annoncé des revenus publicitaires record pour le troisième trimestre 2024, dépassant les attentes des analystes.",
+      "La société a fait face à des amendes réglementaires en Europe pour des pratiques anticoncurrentielles, impactant temporairement le cours de l'action.",
+      "Google Cloud a continué sa croissance rapide, devenant l'un des principaux contributeurs aux revenus d'Alphabet.",
+      "Alphabet a annoncé des investissements majeurs dans l'intelligence artificielle et l'apprentissage automatique, visant à renforcer sa position dans ces domaines.",
+      "La société a lancé plusieurs nouveaux produits et services, notamment dans les domaines de la santé et de la finance, diversifiant ainsi ses sources de revenus."
+    ],
+    "sentiment": "positif"
+  },
+  "ORCL_202412": {
+    "summary": "Oracle Corporation (ORCL) a connu plusieurs événements significatifs entre septembre et décembre 2024. La société a continué à se concentrer sur l'expansion de ses services cloud et a réalisé des acquisitions stratégiques. Les résultats financiers ont été solides, avec une croissance constante des revenus et des bénéfices. Cependant, des défis macroéconomiques et une concurrence accrue dans le secteur du cloud ont posé des défis.",
+    "key_events": [
+      "Oracle a annoncé une croissance de 8% de ses revenus cloud au troisième trimestre 2024, atteignant 3,4 milliards de dollars.",
+      "La société a finalisé l'acquisition de Cerner, une entreprise spécialisée dans les logiciels de santé, pour 28,3 milliards de dollars.",
+      "Oracle a lancé de nouvelles solutions d'intelligence artificielle intégrées à ses services cloud, visant à améliorer l'efficacité opérationnelle pour ses clients.",
+      "La société a fait face à une concurrence accrue de la part d'Amazon Web Services (AWS) et de Microsoft Azure, impactant légèrement sa part de marché.",
+      "Oracle a annoncé un partenariat stratégique avec NVIDIA pour intégrer des technologies de GPU avancées dans ses centres de données cloud."
+    ],
+    "sentiment": "positif"
   }
 }

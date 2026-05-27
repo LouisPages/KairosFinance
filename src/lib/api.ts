@@ -136,6 +136,10 @@ export interface SimulateResult {
   backtestReturn?: number;
   /** Ratio de Sharpe calculé sur les rendements de la période de test. */
   backtestSharpe?: number;
+  /** Sharpe du benchmark marché sur la période d'entraînement (SPY ou CMKT). */
+  marketSharpe?: number;
+  /** Sharpe du benchmark marché sur la période de test (backtest). */
+  marketBacktestSharpe?: number;
   comparisonData: { date: string; portfolio: number; market: number }[];
   numPortfolios?: number;
   trainPeriodStart?: string;

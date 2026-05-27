@@ -10,6 +10,7 @@ import pandas as pd
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
 from yahoo_prices import yf_adj_close_wide, yf_single_ticker_adj_series
+from market_metrics import annualized_sharpe
 
 """
 Choisir une methode entre : "monte_carlo", "gradient_fixe" et "gradient_optimal" 
@@ -40,6 +41,20 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         return {"error": "Pas assez de données pour la période"}
     train_prices = prices.iloc[:split]
     test_prices = prices.iloc[split:]
+
+    market_sharpe_train = 0.0
+    market_sharpe_test = 0.0
+    spy_s = _spy_adj_series(prices.index[0], prices.index[-1])
+    if spy_s is not None and not spy_s.empty:
+        spy_log = np.log(spy_s / spy_s.shift(1)).dropna()
+        spy_train = spy_log[
+            (spy_log.index >= train_prices.index[0]) & (spy_log.index <= train_prices.index[-1])
+        ]
+        spy_test = spy_log[
+            (spy_log.index >= test_prices.index[0]) & (spy_log.index <= test_prices.index[-1])
+        ]
+        market_sharpe_train = annualized_sharpe(spy_train, risk_free_rate, 252)
+        market_sharpe_test = annualized_sharpe(spy_test, risk_free_rate, 252)
 
     # Rendements log, annualisés (252 jours)
     returns = np.log(train_prices / train_prices.shift(1)).dropna()
@@ -154,6 +169,8 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
             "expectedReturn": round(float(ret_arr[max_idx]) * 100, 2),
             "volatility": round(float(vol_arr[max_idx]) * 100, 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "marketSharpe": market_sharpe_train,
+            "marketBacktestSharpe": market_sharpe_test,
             "comparisonData": comparison_data,
             "numPortfolios": num_portfolios,
             "trainPeriodStart": train_start,
@@ -232,6 +249,8 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
             "maxDrawdown": round(max_drawdown, 2),
             "backtestReturn": opt_backtest_ret,
             "backtestSharpe": backtest_sharpe,
+            "marketSharpe": market_sharpe_train,
+            "marketBacktestSharpe": market_sharpe_test,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": train_prices.index[0].strftime("%Y-%m-%d"),
@@ -315,6 +334,8 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
             "maxDrawdown": round(max_drawdown, 2),
             "backtestReturn": opt_backtest_ret,
             "backtestSharpe": backtest_sharpe,
+            "marketSharpe": market_sharpe_train,
+            "marketBacktestSharpe": market_sharpe_test,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": train_prices.index[0].strftime("%Y-%m-%d"),

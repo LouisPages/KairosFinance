@@ -18,6 +18,7 @@ if _gestion_dir not in sys.path:
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
 from ols_with_stats import ols_factor_regression
+from market_metrics import annualized_sharpe
 
 from .crypto_fama_french import (
     CSV_FILES,
@@ -229,6 +230,8 @@ def run(
 
     full_r = ret[tradeable].astype(float)
     cmkt_full = full_r.mean(axis=1)
+    market_sharpe_train = annualized_sharpe(cmkt_full.loc[train_r.index], rf_annual, 12)
+    market_sharpe_test = annualized_sharpe(cmkt_full.loc[test_r.index], rf_annual, 12)
 
     def _scalar_series(s: pd.Series, key) -> float:
         val = s.loc[key]
@@ -328,6 +331,8 @@ def run(
             "expectedReturn": opt_ret,
             "volatility": opt_vol,
             "maxDrawdown": round(max_drawdown, 2),
+            "marketSharpe": market_sharpe_train,
+            "marketBacktestSharpe": market_sharpe_test,
             "comparisonData": comparison_data,
             "numPortfolios": num_portfolios,
             "trainPeriodStart": str(train_r.index[0]),
@@ -371,6 +376,8 @@ def run(
         "expectedReturn": round(float(opt_ret_val * 100), 2),
         "volatility": round(float(opt_vol_val * 100), 2),
         "maxDrawdown": round(max_drawdown, 2),
+        "marketSharpe": market_sharpe_train,
+        "marketBacktestSharpe": market_sharpe_test,
         "comparisonData": comparison_data,
         "numPortfolios": 1,
         "trainPeriodStart": str(train_r.index[0]),

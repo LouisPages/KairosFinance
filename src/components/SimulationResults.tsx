@@ -525,9 +525,10 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
         </div>
       </div>
 
-      <div className="grid gap-3 md:grid-cols-4">
+      <div className={`grid gap-3 ${result.marketSharpe != null ? "md:grid-cols-5" : "md:grid-cols-4"}`}>
         {[
           { label: "Sharpe (entraînement)", value: result.sharpe.toFixed(2), icon: BarChart3 },
+          ...(result.marketSharpe != null ? [{ label: "Sharpe marché (entraînement)", value: result.marketSharpe.toFixed(2), icon: BarChart3 }] : []),
           { label: "Rendement attendu (entraînement)", value: `${result.expectedReturn.toFixed(1)}%`, icon: TrendingUp },
           { label: "Volatilité", value: `${result.volatility.toFixed(1)}%`, icon: BarChart3 },
           { label: "Max Drawdown", value: `-${result.maxDrawdown.toFixed(1)}%`, icon: TrendingUp },
@@ -539,8 +540,8 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
           </div>
         ))}
       </div>
-      {(result.backtestReturn != null || result.backtestSharpe != null) && (
-        <div className="grid gap-3 md:grid-cols-2">
+      {(result.backtestReturn != null || result.backtestSharpe != null || result.marketBacktestSharpe != null) && (
+        <div className={`grid gap-3 ${result.marketBacktestSharpe != null ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
           <p className="text-[11px] text-muted-foreground col-span-full">
             Métriques réalisées sur la période de backtest (cohérentes avec la courbe ci‑dessous) :
           </p>
@@ -558,6 +559,13 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
               <BarChart3 className="mx-auto h-5 w-5 text-primary" />
               <p className="mt-2 font-display text-xl font-bold text-foreground">{result.backtestSharpe.toFixed(2)}</p>
               <p className="mt-1 text-xs text-muted-foreground">Sharpe backtest</p>
+            </div>
+          )}
+          {result.marketBacktestSharpe != null && (
+            <div className="glass-card p-3 text-center">
+              <BarChart3 className="mx-auto h-5 w-5 text-primary" />
+              <p className="mt-2 font-display text-xl font-bold text-foreground">{result.marketBacktestSharpe.toFixed(2)}</p>
+              <p className="mt-1 text-xs text-muted-foreground">Sharpe marché backtest</p>
             </div>
           )}
         </div>
@@ -691,12 +699,18 @@ export function ComparisonResult({
           </thead>
           <tbody className="divide-y divide-border/40">
             <tr><td className="py-1.5 text-muted-foreground">Sharpe (entraînement)</td><td className="py-1.5 text-right font-medium">{monteCarlo.sharpe.toFixed(2)}</td><td className="py-1.5 text-right font-medium">{bestGradient.sharpe.toFixed(2)}</td></tr>
+            {(monteCarlo.marketSharpe != null || bestGradient.marketSharpe != null) && (
+              <tr><td className="py-1.5 text-muted-foreground">Sharpe marché (entraînement)</td><td className="py-1.5 text-right font-medium">{(monteCarlo.marketSharpe ?? bestGradient.marketSharpe ?? 0).toFixed(2)}</td><td className="py-1.5 text-right font-medium">{(bestGradient.marketSharpe ?? monteCarlo.marketSharpe ?? 0).toFixed(2)}</td></tr>
+            )}
             <tr><td className="py-1.5 text-muted-foreground">Rendement attendu (entraînement)</td><td className="py-1.5 text-right font-medium">{monteCarlo.expectedReturn.toFixed(1)}%</td><td className="py-1.5 text-right font-medium">{bestGradient.expectedReturn.toFixed(1)}%</td></tr>
             {monteCarlo.backtestReturn != null && bestGradient.backtestReturn != null && (
               <tr><td className="py-1.5 text-muted-foreground">Rendement backtest</td><td className="py-1.5 text-right font-medium">{(monteCarlo.backtestReturn >= 0 ? "+" : "") + monteCarlo.backtestReturn.toFixed(1)}%</td><td className="py-1.5 text-right font-medium">{(bestGradient.backtestReturn >= 0 ? "+" : "") + bestGradient.backtestReturn.toFixed(1)}%</td></tr>
             )}
             {monteCarlo.backtestSharpe != null && bestGradient.backtestSharpe != null && (
               <tr><td className="py-1.5 text-muted-foreground">Sharpe backtest</td><td className="py-1.5 text-right font-medium">{monteCarlo.backtestSharpe.toFixed(2)}</td><td className="py-1.5 text-right font-medium">{bestGradient.backtestSharpe.toFixed(2)}</td></tr>
+            )}
+            {(monteCarlo.marketBacktestSharpe != null || bestGradient.marketBacktestSharpe != null) && (
+              <tr><td className="py-1.5 text-muted-foreground">Sharpe marché backtest</td><td className="py-1.5 text-right font-medium">{(monteCarlo.marketBacktestSharpe ?? bestGradient.marketBacktestSharpe ?? 0).toFixed(2)}</td><td className="py-1.5 text-right font-medium">{(bestGradient.marketBacktestSharpe ?? monteCarlo.marketBacktestSharpe ?? 0).toFixed(2)}</td></tr>
             )}
             <tr><td className="py-1.5 text-muted-foreground">Volatilité</td><td className="py-1.5 text-right font-medium">{monteCarlo.volatility.toFixed(1)}%</td><td className="py-1.5 text-right font-medium">{bestGradient.volatility.toFixed(1)}%</td></tr>
             <tr><td className="py-1.5 text-muted-foreground">Max Drawdown</td><td className="py-1.5 text-right font-medium">-{monteCarlo.maxDrawdown.toFixed(1)}%</td><td className="py-1.5 text-right font-medium">-{bestGradient.maxDrawdown.toFixed(1)}%</td></tr>

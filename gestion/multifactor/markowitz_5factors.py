@@ -16,6 +16,7 @@ from get_facteurs import load_famafrench_5factors
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
 from ols_with_stats import ols_factor_regression
+from market_metrics import market_sharpe_pair
 
 """
 Choisir une methode entre : "monte_carlo", "gradient_fixe" et "gradient_optimal" 
@@ -129,6 +130,12 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
     cov_matrix = train_r.cov().values * 12
     n_assets = len(valid)
     rf_annual = rf_mean * 12
+    market_sharpe_train, market_sharpe_test = 0.0, 0.0
+    spy_benchmark = _spy_monthly_pct_change_period_index(start, end)
+    if spy_benchmark is not None:
+        market_sharpe_train, market_sharpe_test = market_sharpe_pair(
+            spy_benchmark, train_returns.index, test_returns.index, rf_annual, 12
+        )
 
     if method == "monte_carlo":
         # --- Monte-Carlo ---
@@ -229,6 +236,8 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
             "expectedReturn": round(float(ret_arr[max_idx]) * 100, 2),
             "volatility": round(float(vol_arr[max_idx]) * 100, 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "marketSharpe": market_sharpe_train,
+            "marketBacktestSharpe": market_sharpe_test,
             "comparisonData": comparison_data,
             "numPortfolios": num_portfolios,
             "trainPeriodStart": str(train_returns.index[0]),
@@ -297,6 +306,8 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
             "expectedReturn": round(float(opt_ret_val) * 100, 2),
             "volatility": round(float(opt_vol_val) * 100, 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "marketSharpe": market_sharpe_train,
+            "marketBacktestSharpe": market_sharpe_test,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": str(train_returns.index[0]),
@@ -367,6 +378,8 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
             "expectedReturn": round(float(opt_ret_val) * 100, 2),
             "volatility": round(float(opt_vol_val) * 100, 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "marketSharpe": market_sharpe_train,
+            "marketBacktestSharpe": market_sharpe_test,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": str(train_returns.index[0]),

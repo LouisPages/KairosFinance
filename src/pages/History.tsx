@@ -73,6 +73,9 @@ function EntryCard({
   if (entry.result) {
     kpis.push(
       { label: "Sharpe", value: entry.result.sharpe.toFixed(2) },
+      ...(entry.result.marketSharpe != null
+        ? [{ label: "Sharpe marché", value: entry.result.marketSharpe.toFixed(2) }]
+        : []),
       { label: "Rendement", value: `${entry.result.expectedReturn.toFixed(1)}%` },
       { label: "Volatilité", value: `${entry.result.volatility.toFixed(1)}%` },
     );
