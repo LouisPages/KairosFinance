@@ -16,7 +16,7 @@ from get_facteurs import load_famafrench_5factors
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
 from ols_with_stats import ols_factor_regression
-from market_metrics import market_sharpe_pair
+from market_metrics import market_sharpe_triplet
 
 """
 Choisir une methode entre : "monte_carlo", "gradient_fixe" et "gradient_optimal" 
@@ -130,10 +130,10 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
     cov_matrix = train_r.cov().values * 12
     n_assets = len(valid)
     rf_annual = rf_mean * 12
-    market_sharpe_train, market_sharpe_test = 0.0, 0.0
+    market_sharpe_train, market_sharpe_test, market_sharpe_total = 0.0, 0.0, 0.0
     spy_benchmark = _spy_monthly_pct_change_period_index(start, end)
     if spy_benchmark is not None:
-        market_sharpe_train, market_sharpe_test = market_sharpe_pair(
+        market_sharpe_train, market_sharpe_test, market_sharpe_total = market_sharpe_triplet(
             spy_benchmark, train_returns.index, test_returns.index, rf_annual, 12
         )
 
@@ -224,6 +224,9 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
         opt_sharpe = round(float(sharpe_arr[max_idx]), 4)
         opt_test = (returns_monthly.loc[test_common] * best_weights).sum(axis=1)
         opt_backtest_ret = round(float((np.prod(1 + opt_test) - 1) * 100), 2)
+        test_mean_ann = float(opt_test.mean()) * 12
+        test_vol_ann = float(opt_test.std()) * (12 ** 0.5) if opt_test.std() > 1e-12 else 1e-10
+        backtest_sharpe = round((test_mean_ann - rf_annual) / test_vol_ann, 4) if test_vol_ann > 1e-10 else 0.0
         if (opt_vol, opt_ret) not in list(zip(frontier_vol, frontier_ret)):
             frontier_vol.append(opt_vol)
             frontier_ret.append(opt_ret)
@@ -236,8 +239,10 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
             "expectedReturn": round(float(ret_arr[max_idx]) * 100, 2),
             "volatility": round(float(vol_arr[max_idx]) * 100, 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "backtestSharpe": backtest_sharpe,
             "marketSharpe": market_sharpe_train,
             "marketBacktestSharpe": market_sharpe_test,
+            "marketTotalSharpe": market_sharpe_total,
             "comparisonData": comparison_data,
             "numPortfolios": num_portfolios,
             "trainPeriodStart": str(train_returns.index[0]),
@@ -299,6 +304,9 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
         cum_test = (1 + test_ret_series).cumprod()
         max_drawdown = float(-((cum_test - cum_test.cummax()) / cum_test.cummax()).min() * 100)
         opt_backtest_ret = round(float((cum_test.iloc[-1] - 1) * 100), 2)
+        test_mean_ann = float(test_ret_series.mean()) * 12
+        test_vol_ann = float(test_ret_series.std()) * (12 ** 0.5) if test_ret_series.std() > 1e-12 else 1e-10
+        backtest_sharpe = round((test_mean_ann - rf_annual) / test_vol_ann, 4) if test_vol_ann > 1e-10 else 0.0
 
         return {
             "weights": weights_dict,
@@ -306,8 +314,10 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
             "expectedReturn": round(float(opt_ret_val) * 100, 2),
             "volatility": round(float(opt_vol_val) * 100, 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "backtestSharpe": backtest_sharpe,
             "marketSharpe": market_sharpe_train,
             "marketBacktestSharpe": market_sharpe_test,
+            "marketTotalSharpe": market_sharpe_total,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": str(train_returns.index[0]),
@@ -371,6 +381,9 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
         cum_test = (1 + test_ret_series).cumprod()
         max_drawdown = float(-((cum_test - cum_test.cummax()) / cum_test.cummax()).min() * 100)
         opt_backtest_ret = round(float((cum_test.iloc[-1] - 1) * 100), 2)
+        test_mean_ann = float(test_ret_series.mean()) * 12
+        test_vol_ann = float(test_ret_series.std()) * (12 ** 0.5) if test_ret_series.std() > 1e-12 else 1e-10
+        backtest_sharpe = round((test_mean_ann - rf_annual) / test_vol_ann, 4) if test_vol_ann > 1e-10 else 0.0
 
         return {
             "weights": weights_dict,
@@ -378,8 +391,10 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
             "expectedReturn": round(float(opt_ret_val) * 100, 2),
             "volatility": round(float(opt_vol_val) * 100, 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "backtestSharpe": backtest_sharpe,
             "marketSharpe": market_sharpe_train,
             "marketBacktestSharpe": market_sharpe_test,
+            "marketTotalSharpe": market_sharpe_total,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": str(train_returns.index[0]),

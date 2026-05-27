@@ -232,6 +232,7 @@ def run(
     cmkt_full = full_r.mean(axis=1)
     market_sharpe_train = annualized_sharpe(cmkt_full.loc[train_r.index], rf_annual, 12)
     market_sharpe_test = annualized_sharpe(cmkt_full.loc[test_r.index], rf_annual, 12)
+    market_sharpe_total = annualized_sharpe(cmkt_full, rf_annual, 12)
 
     def _scalar_series(s: pd.Series, key) -> float:
         val = s.loc[key]
@@ -300,6 +301,9 @@ def run(
         opt_backtest_ret = (
             round(float((np.prod(1.0 + opt_test) - 1.0) * 100), 2) if len(opt_test) else 0.0
         )
+        test_mean_ann = float(np.mean(opt_test)) * 12 if len(opt_test) else 0.0
+        test_vol_ann = float(np.std(opt_test, ddof=1)) * (12 ** 0.5) if len(opt_test) > 1 else 1e-10
+        backtest_sharpe = round((test_mean_ann - rf_annual) / test_vol_ann, 4) if test_vol_ann > 1e-10 else 0.0
 
         vol_pct = vol_arr * 100.0
         ret_pct = ret_arr * 100.0
@@ -331,8 +335,10 @@ def run(
             "expectedReturn": opt_ret,
             "volatility": opt_vol,
             "maxDrawdown": round(max_drawdown, 2),
+            "backtestSharpe": backtest_sharpe,
             "marketSharpe": market_sharpe_train,
             "marketBacktestSharpe": market_sharpe_test,
+            "marketTotalSharpe": market_sharpe_total,
             "comparisonData": comparison_data,
             "numPortfolios": num_portfolios,
             "trainPeriodStart": str(train_r.index[0]),
@@ -369,6 +375,9 @@ def run(
     opt_backtest_ret = (
         round(float((cum_test.iloc[-1] - 1.0) * 100), 2) if len(cum_test) else 0.0
     )
+    test_mean_ann = float(np.mean(test_ret_series)) * 12 if len(test_ret_series) else 0.0
+    test_vol_ann = float(np.std(test_ret_series, ddof=1)) * (12 ** 0.5) if len(test_ret_series) > 1 else 1e-10
+    backtest_sharpe = round((test_mean_ann - rf_annual) / test_vol_ann, 4) if test_vol_ann > 1e-10 else 0.0
 
     return {
         "weights": weights_dict,
@@ -376,8 +385,10 @@ def run(
         "expectedReturn": round(float(opt_ret_val * 100), 2),
         "volatility": round(float(opt_vol_val * 100), 2),
         "maxDrawdown": round(max_drawdown, 2),
+        "backtestSharpe": backtest_sharpe,
         "marketSharpe": market_sharpe_train,
         "marketBacktestSharpe": market_sharpe_test,
+        "marketTotalSharpe": market_sharpe_total,
         "comparisonData": comparison_data,
         "numPortfolios": 1,
         "trainPeriodStart": str(train_r.index[0]),

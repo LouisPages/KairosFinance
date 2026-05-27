@@ -33,3 +33,17 @@ def market_sharpe_pair(
         annualized_sharpe(market_returns.loc[train_idx], rf_annual, periods_per_year),
         annualized_sharpe(market_returns.loc[test_idx], rf_annual, periods_per_year),
     )
+
+
+def market_sharpe_triplet(
+    market_returns: pd.Series,
+    train_index: pd.Index,
+    test_index: pd.Index,
+    rf_annual: float,
+    periods_per_year: int = 12,
+) -> tuple[float, float, float]:
+    train_s, test_s = market_sharpe_pair(
+        market_returns, train_index, test_index, rf_annual, periods_per_year
+    )
+    total_s = annualized_sharpe(market_returns, rf_annual, periods_per_year)
+    return train_s, test_s, total_s

@@ -33,6 +33,90 @@ _sim_bounds_lock = threading.Lock()
 _SIM_BOUNDS_CACHE_TTL_SEC = 120.0
 
 
+def _infer_periods_per_year(dates: list[pd.Timestamp]) -> int:
+    if len(dates) < 3:
+        return 252
+    deltas = pd.Series(dates).diff().dropna().dt.days
+    if deltas.empty:
+        return 252
+    median_days = float(deltas.median())
+    # Courbes mensuelles (modèles multifactoriels / crypto) vs quotidiennes (Markowitz classique)
+    return 12 if median_days >= 20 else 252
+
+
+def _annualized_sharpe_from_levels(
+    levels: pd.Series, periods_per_year: int, rf_annual: float = 0.0
+) -> float:
+    r = levels.pct_change().dropna()
+    if len(r) < 2:
+        return 0.0
+    ann_mean = float(r.mean()) * periods_per_year
+    ann_vol = float(r.std(ddof=1)) * (periods_per_year ** 0.5)
+    if ann_vol < 1e-10:
+        return 0.0
+    return round((ann_mean - rf_annual) / ann_vol, 4)
+
+
+def _backfill_sharpes_from_comparison(result: dict[str, Any]) -> bool:
+    if not isinstance(result, dict):
+        return False
+    comp = result.get("comparisonData")
+    if not isinstance(comp, list) or len(comp) < 3:
+        return False
+
+    df = pd.DataFrame(comp)
+    if not {"date", "portfolio", "market"}.issubset(df.columns):
+        return False
+    try:
+        df["date"] = pd.to_datetime(df["date"])
+    except Exception:
+        return False
+    df = df.dropna(subset=["date", "portfolio", "market"]).sort_values("date")
+    if len(df) < 3:
+        return False
+
+    periods_per_year = _infer_periods_per_year(list(df["date"]))
+    portfolio = pd.Series(df["portfolio"].astype(float).values, index=df["date"])
+    market = pd.Series(df["market"].astype(float).values, index=df["date"])
+
+    changed = False
+    test_start = result.get("testPeriodStart")
+    test_end = result.get("testPeriodEnd")
+    train_start = result.get("trainPeriodStart")
+    train_end = result.get("trainPeriodEnd")
+
+    def _slice(series: pd.Series, start: Optional[str], end: Optional[str]) -> pd.Series:
+        out = series
+        if start:
+            out = out[out.index >= pd.to_datetime(start)]
+        if end:
+            out = out[out.index <= pd.to_datetime(end)]
+        return out
+
+    train_port = _slice(portfolio, train_start, train_end)
+    test_port = _slice(portfolio, test_start, test_end)
+    train_mkt = _slice(market, train_start, train_end)
+    test_mkt = _slice(market, test_start, test_end)
+
+    if result.get("backtestSharpe") is None:
+        target = test_port if len(test_port) >= 3 else portfolio
+        result["backtestSharpe"] = _annualized_sharpe_from_levels(target, periods_per_year)
+        changed = True
+    if result.get("marketSharpe") is None:
+        target = train_mkt if len(train_mkt) >= 3 else market
+        result["marketSharpe"] = _annualized_sharpe_from_levels(target, periods_per_year)
+        changed = True
+    if result.get("marketBacktestSharpe") is None:
+        target = test_mkt if len(test_mkt) >= 3 else market
+        result["marketBacktestSharpe"] = _annualized_sharpe_from_levels(target, periods_per_year)
+        changed = True
+    if result.get("marketTotalSharpe") is None:
+        result["marketTotalSharpe"] = _annualized_sharpe_from_levels(market, periods_per_year)
+        changed = True
+
+    return changed
+
+
 def _read_history() -> list:
     if not HISTORY_FILE.exists():
         return []
@@ -41,13 +125,30 @@ def _read_history() -> list:
     if not isinstance(entries, list):
         return []
     # Migration douce: historique sans tag → libellé neutre (gris côté UI).
+    dirty = False
     for entry in entries:
         if not isinstance(entry, dict):
             continue
         if not entry.get("personTag"):
             entry["personTag"] = "Simulation de Test"
+            dirty = True
         elif entry.get("personTag") == "test système simulation":
             entry["personTag"] = "Simulation de Test"
+            dirty = True
+        if isinstance(entry.get("result"), dict):
+            dirty = _backfill_sharpes_from_comparison(entry["result"]) or dirty
+        if isinstance(entry.get("classicResult"), dict):
+            dirty = _backfill_sharpes_from_comparison(entry["classicResult"]) or dirty
+        comparison_payload = entry.get("comparisonData")
+        if isinstance(comparison_payload, dict):
+            mc = comparison_payload.get("monteCarlo")
+            bg = comparison_payload.get("bestGradient")
+            if isinstance(mc, dict):
+                dirty = _backfill_sharpes_from_comparison(mc) or dirty
+            if isinstance(bg, dict):
+                dirty = _backfill_sharpes_from_comparison(bg) or dirty
+    if dirty:
+        _write_history(entries)
     return entries
 
 

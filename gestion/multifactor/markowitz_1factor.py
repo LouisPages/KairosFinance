@@ -14,7 +14,7 @@ from yahoo_prices import yf_adj_close_wide, yf_single_ticker_adj_series
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
 from ols_with_stats import ols_factor_regression
-from market_metrics import market_sharpe_pair
+from market_metrics import market_sharpe_triplet
 
 """
 Choisir une methode entre : "monte_carlo", "gradient_fixe" et "gradient_optimal" 
@@ -103,7 +103,7 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
 
     # Taux sans risque annualisé pour le ratio de Sharpe
     rf_annual = rf_mean * 12
-    market_sharpe_train, market_sharpe_test = market_sharpe_pair(
+    market_sharpe_train, market_sharpe_test, market_sharpe_total = market_sharpe_triplet(
         rm, train_returns.index, test_returns.index, rf_annual, 12
     )
 
@@ -208,6 +208,7 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
             "backtestSharpe": backtest_sharpe,
             "marketSharpe": market_sharpe_train,
             "marketBacktestSharpe": market_sharpe_test,
+            "marketTotalSharpe": market_sharpe_total,
             "comparisonData": comparison_data,
             "numPortfolios": num_portfolios,
             "trainPeriodStart": train_returns.index[0].strftime("%Y-%m-%d"),
@@ -279,6 +280,7 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
             "backtestSharpe": backtest_sharpe,
             "marketSharpe": market_sharpe_train,
             "marketBacktestSharpe": market_sharpe_test,
+            "marketTotalSharpe": market_sharpe_total,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": train_returns.index[0].strftime("%Y-%m-%d"),
@@ -352,6 +354,7 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
             "backtestSharpe": backtest_sharpe,
             "marketSharpe": market_sharpe_train,
             "marketBacktestSharpe": market_sharpe_test,
+            "marketTotalSharpe": market_sharpe_total,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": train_returns.index[0].strftime("%Y-%m-%d"),

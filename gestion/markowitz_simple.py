@@ -44,6 +44,7 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
 
     market_sharpe_train = 0.0
     market_sharpe_test = 0.0
+    market_sharpe_total = 0.0
     spy_s = _spy_adj_series(prices.index[0], prices.index[-1])
     if spy_s is not None and not spy_s.empty:
         spy_log = np.log(spy_s / spy_s.shift(1)).dropna()
@@ -55,6 +56,7 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         ]
         market_sharpe_train = annualized_sharpe(spy_train, risk_free_rate, 252)
         market_sharpe_test = annualized_sharpe(spy_test, risk_free_rate, 252)
+        market_sharpe_total = annualized_sharpe(spy_log, risk_free_rate, 252)
 
     # Rendements log, annualisés (252 jours)
     returns = np.log(train_prices / train_prices.shift(1)).dropna()
@@ -128,6 +130,9 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
         _dd_min = drawdown.min()
         _dd_min = _dd_min.iloc[0] if isinstance(_dd_min, pd.Series) else _dd_min
         max_drawdown = float(-_dd_min * 100) if len(drawdown) > 0 else 0
+        ann_mean = float(portfolio_returns_test.mean()) * 252
+        ann_vol = float(portfolio_returns_test.std()) * (252 ** 0.5) if portfolio_returns_test.std() > 1e-12 else 1e-10
+        backtest_sharpe = round((ann_mean - risk_free_rate) / ann_vol, 4) if ann_vol > 1e-10 else 0.0
 
         # Frontière efficiente : points (vol, rendement) Pareto-optimaux (pour chaque vol, rendement max)
         vol_pct = vol_arr * 100
@@ -169,8 +174,10 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
             "expectedReturn": round(float(ret_arr[max_idx]) * 100, 2),
             "volatility": round(float(vol_arr[max_idx]) * 100, 2),
             "maxDrawdown": round(max_drawdown, 2),
+            "backtestSharpe": backtest_sharpe,
             "marketSharpe": market_sharpe_train,
             "marketBacktestSharpe": market_sharpe_test,
+            "marketTotalSharpe": market_sharpe_total,
             "comparisonData": comparison_data,
             "numPortfolios": num_portfolios,
             "trainPeriodStart": train_start,
@@ -251,6 +258,7 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
             "backtestSharpe": backtest_sharpe,
             "marketSharpe": market_sharpe_train,
             "marketBacktestSharpe": market_sharpe_test,
+            "marketTotalSharpe": market_sharpe_total,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": train_prices.index[0].strftime("%Y-%m-%d"),
@@ -336,6 +344,7 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
             "backtestSharpe": backtest_sharpe,
             "marketSharpe": market_sharpe_train,
             "marketBacktestSharpe": market_sharpe_test,
+            "marketTotalSharpe": market_sharpe_total,
             "comparisonData": comparison_data,
             "numPortfolios": 1,
             "trainPeriodStart": train_prices.index[0].strftime("%Y-%m-%d"),

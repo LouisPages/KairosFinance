@@ -525,10 +525,10 @@ export function ClassicResult({ result, chartStart, chartEnd, setChartStart, set
         </div>
       </div>
 
-      <div className={`grid gap-3 ${result.marketSharpe != null ? "md:grid-cols-5" : "md:grid-cols-4"}`}>
+      <div className={`grid gap-3 ${result.marketTotalSharpe != null ? "md:grid-cols-5" : "md:grid-cols-4"}`}>
         {[
           { label: "Sharpe (entraînement)", value: result.sharpe.toFixed(2), icon: BarChart3 },
-          ...(result.marketSharpe != null ? [{ label: "Sharpe marché (entraînement)", value: result.marketSharpe.toFixed(2), icon: BarChart3 }] : []),
+          ...(result.marketTotalSharpe != null ? [{ label: "Sharpe marché (total)", value: result.marketTotalSharpe.toFixed(2), icon: BarChart3 }] : []),
           { label: "Rendement attendu (entraînement)", value: `${result.expectedReturn.toFixed(1)}%`, icon: TrendingUp },
           { label: "Volatilité", value: `${result.volatility.toFixed(1)}%`, icon: BarChart3 },
           { label: "Max Drawdown", value: `-${result.maxDrawdown.toFixed(1)}%`, icon: TrendingUp },
@@ -699,8 +699,8 @@ export function ComparisonResult({
           </thead>
           <tbody className="divide-y divide-border/40">
             <tr><td className="py-1.5 text-muted-foreground">Sharpe (entraînement)</td><td className="py-1.5 text-right font-medium">{monteCarlo.sharpe.toFixed(2)}</td><td className="py-1.5 text-right font-medium">{bestGradient.sharpe.toFixed(2)}</td></tr>
-            {(monteCarlo.marketSharpe != null || bestGradient.marketSharpe != null) && (
-              <tr><td className="py-1.5 text-muted-foreground">Sharpe marché (entraînement)</td><td className="py-1.5 text-right font-medium">{(monteCarlo.marketSharpe ?? bestGradient.marketSharpe ?? 0).toFixed(2)}</td><td className="py-1.5 text-right font-medium">{(bestGradient.marketSharpe ?? monteCarlo.marketSharpe ?? 0).toFixed(2)}</td></tr>
+            {(monteCarlo.marketTotalSharpe != null || bestGradient.marketTotalSharpe != null) && (
+              <tr><td className="py-1.5 text-muted-foreground">Sharpe marché (total)</td><td className="py-1.5 text-right font-medium">{(monteCarlo.marketTotalSharpe ?? bestGradient.marketTotalSharpe ?? 0).toFixed(2)}</td><td className="py-1.5 text-right font-medium">{(bestGradient.marketTotalSharpe ?? monteCarlo.marketTotalSharpe ?? 0).toFixed(2)}</td></tr>
             )}
             <tr><td className="py-1.5 text-muted-foreground">Rendement attendu (entraînement)</td><td className="py-1.5 text-right font-medium">{monteCarlo.expectedReturn.toFixed(1)}%</td><td className="py-1.5 text-right font-medium">{bestGradient.expectedReturn.toFixed(1)}%</td></tr>
             {monteCarlo.backtestReturn != null && bestGradient.backtestReturn != null && (

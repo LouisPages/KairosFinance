@@ -140,6 +140,8 @@ export interface SimulateResult {
   marketSharpe?: number;
   /** Sharpe du benchmark marché sur la période de test (backtest). */
   marketBacktestSharpe?: number;
+  /** Sharpe du benchmark marché sur l'ensemble de la période (train + test). */
+  marketTotalSharpe?: number;
   comparisonData: { date: string; portfolio: number; market: number }[];
   numPortfolios?: number;
   trainPeriodStart?: string;
