@@ -70,6 +70,13 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient", num_
     rm_train = rm.loc[common_train]
     rf_train = rf_monthly.reindex(common_train).ffill().fillna(0.02 / 12)
 
+    #test
+    ###
+    train_r = train_returns.iloc[:split]
+    print("\n[DEBUG] Aperçu des rendements réels injectés dans le modèle :")
+    print(train_r.tail())
+    ###
+    
     mkt_excess = (rm_train - rf_train).values
     rf_mean = float(rf_train.mean())
     mkt_excess_mean = float(mkt_excess.mean())
