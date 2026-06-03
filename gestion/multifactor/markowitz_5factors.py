@@ -256,8 +256,9 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
             "factor_tests": factor_tests_by_ticker,
         }
     elif method == "gradient_fixe":
-        best_weights = opt_sharpe_gradient(mu, cov_matrix, rf_annual)
-        best_weights = np.asarray(best_weights).ravel()
+        
+        weights_calculated = opt_sharpe_gradient(mu, cov_matrix, rf_annual)
+        best_weights = np.asarray(weights_calculated).flatten()
 
         # Métriques optimales
         opt_ret_val = np.dot(best_weights, mu)
@@ -333,8 +334,9 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
             "factor_tests": factor_tests_by_ticker,
         }
     else:  # gradient_optimal
-        best_weights = opt_sharpe_gradient_optimal(mu, cov_matrix, rf_annual)
-        best_weights = np.asarray(best_weights).ravel()
+    
+        weights_calculated = opt_sharpe_gradient_optimal(mu, cov_matrix, rf_annual)
+        best_weights = np.asarray(weights_calculated).flatten()
 
         # Métriques optimales
         opt_ret_val = np.dot(best_weights, mu)
