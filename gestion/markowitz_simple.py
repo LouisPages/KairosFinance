@@ -10,7 +10,7 @@ import pandas as pd
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
 from yahoo_prices import yf_adj_close_wide, yf_single_ticker_adj_series
-from market_metrics import annualized_sharpe
+from market_metrics import spy_sharpe_triplet_for_period
 
 """
 Choisir une methode entre : "monte_carlo", "gradient_fixe" et "gradient_optimal" 
@@ -42,21 +42,9 @@ def run(tickers: list[str], start: str, end: str, risk_free_rate: float = 0.03, 
     train_prices = prices.iloc[:split]
     test_prices = prices.iloc[split:]
 
-    market_sharpe_train = 0.0
-    market_sharpe_test = 0.0
-    market_sharpe_total = 0.0
-    spy_s = _spy_adj_series(prices.index[0], prices.index[-1])
-    if spy_s is not None and not spy_s.empty:
-        spy_log = np.log(spy_s / spy_s.shift(1)).dropna()
-        spy_train = spy_log[
-            (spy_log.index >= train_prices.index[0]) & (spy_log.index <= train_prices.index[-1])
-        ]
-        spy_test = spy_log[
-            (spy_log.index >= test_prices.index[0]) & (spy_log.index <= test_prices.index[-1])
-        ]
-        market_sharpe_train = annualized_sharpe(spy_train, risk_free_rate, 252)
-        market_sharpe_test = annualized_sharpe(spy_test, risk_free_rate, 252)
-        market_sharpe_total = annualized_sharpe(spy_log, risk_free_rate, 252)
+    market_sharpe_train, market_sharpe_test, market_sharpe_total = spy_sharpe_triplet_for_period(
+        start, end, risk_free_rate, periods_per_year=252, use_log_returns=True
+    )
 
     # Rendements log, annualisés (252 jours)
     returns = np.log(train_prices / train_prices.shift(1)).dropna()

@@ -15,7 +15,7 @@ from get_facteurs import load_famafrench_factors
 from Methodes_de_descente.gradient_pas_fixe import opt_sharpe_gradient
 from Methodes_de_descente.gradient_pas_optimal import opt_sharpe_gradient_optimal
 from ols_with_stats import ols_factor_regression
-from market_metrics import market_sharpe_triplet
+from market_metrics import rf_annual_from_irx, spy_sharpe_triplet_for_period
 
 """
 Choisir une methode entre : "monte_carlo", "gradient_fixe" et "gradient_optimal" 
@@ -123,13 +123,12 @@ def run(tickers: list[str], start: str, end: str, method: str = "gradient",num_p
     cov_residual = np.diag(residual_variances) * 12
     
     cov_matrix = cov_factoriel + cov_residual
+    n_assets = len(train_r.columns)
     rf_annual = rf_mean * 12
-    market_sharpe_train, market_sharpe_test, market_sharpe_total = 0.0, 0.0, 0.0
-    spy_benchmark = _spy_monthly_pct_change_period_index(start, end)
-    if spy_benchmark is not None:
-        market_sharpe_train, market_sharpe_test, market_sharpe_total = market_sharpe_triplet(
-            spy_benchmark, train_returns.index, test_returns.index, rf_annual, 12
-        )
+    benchmark_rf = rf_annual_from_irx(start, end)
+    market_sharpe_train, market_sharpe_test, market_sharpe_total = spy_sharpe_triplet_for_period(
+        start, end, benchmark_rf, periods_per_year=12, use_log_returns=False, min_train=24
+    )
 
     if method == "monte_carlo":
 

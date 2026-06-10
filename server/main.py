@@ -24,8 +24,12 @@ import pandas as pd
 
 from .tickers_data import get_all_stocks
 from gestion.yahoo_prices import yf_adj_close_wide
+from gestion.market_metrics import rf_annual_from_irx, spy_sharpe_triplet_for_period
 
 HISTORY_FILE = Path(__file__).parent / "simulation_history.json"
+MARKET_SHARPE_VERSION = 2
+CRYPTO_RF_ANNUAL = 0.04
+CLASSIC_RF_ANNUAL = 0.03
 _history_lock = threading.Lock()
 
 # Cache bornes simulation (actions) : évite double appel React StrictMode + répétitions navigation
@@ -56,6 +60,146 @@ def _annualized_sharpe_from_levels(
     if ann_vol < 1e-10:
         return 0.0
     return round((ann_mean - rf_annual) / ann_vol, 4)
+
+
+def _normalize_history_date(raw: Any) -> Optional[str]:
+    if raw is None:
+        return None
+    s = str(raw).strip().replace(" 00:00:00", "")
+    if len(s) >= 10:
+        return s[:10]
+    if len(s) == 7 and s[4] == "-":
+        return f"{s}-01"
+    return None
+
+
+def _infer_simulation_period(entry: dict[str, Any], result: Optional[dict[str, Any]]) -> tuple[Optional[str], Optional[str]]:
+    start = _normalize_history_date(entry.get("simulationStartDate"))
+    end = _normalize_history_date(entry.get("simulationEndDate"))
+    if start and end:
+        return start, end
+    if isinstance(result, dict):
+        start = start or _normalize_history_date(result.get("trainPeriodStart"))
+        end = end or _normalize_history_date(result.get("testPeriodEnd"))
+    return start, end
+
+
+def _market_sharpes_for_stock_model(
+    model_id: str,
+    start: str,
+    end: str,
+    cache: dict[tuple[str, str, str], tuple[float, float, float]],
+) -> tuple[float, float, float]:
+    key = (model_id, start, end)
+    if key in cache:
+        return cache[key]
+    if model_id == "markowitz-classic":
+        vals = spy_sharpe_triplet_for_period(
+            start, end, CLASSIC_RF_ANNUAL, periods_per_year=252, use_log_returns=True
+        )
+    else:
+        benchmark_rf = rf_annual_from_irx(start, end)
+        vals = spy_sharpe_triplet_for_period(
+            start, end, benchmark_rf, periods_per_year=12, use_log_returns=False, min_train=24
+        )
+    cache[key] = vals
+    return vals
+
+
+def _market_sharpes_from_comparison_levels(
+    result: dict[str, Any], rf_annual: float = 0.0
+) -> Optional[tuple[float, float, float]]:
+    comp = result.get("comparisonData")
+    if not isinstance(comp, list) or len(comp) < 3:
+        return None
+
+    df = pd.DataFrame(comp)
+    if not {"date", "market"}.issubset(df.columns):
+        return None
+    try:
+        df["date"] = pd.to_datetime(df["date"])
+    except Exception:
+        return None
+    df = df.dropna(subset=["date", "market"]).sort_values("date")
+    if len(df) < 3:
+        return None
+
+    periods_per_year = _infer_periods_per_year(list(df["date"]))
+    market = pd.Series(df["market"].astype(float).values, index=df["date"])
+
+    def _slice(series: pd.Series, start: Optional[str], end: Optional[str]) -> pd.Series:
+        out = series
+        if start:
+            out = out[out.index >= pd.to_datetime(start)]
+        if end:
+            out = out[out.index <= pd.to_datetime(end)]
+        return out
+
+    train_mkt = _slice(market, result.get("trainPeriodStart"), result.get("trainPeriodEnd"))
+    test_mkt = _slice(market, result.get("testPeriodStart"), result.get("testPeriodEnd"))
+    train_target = train_mkt if len(train_mkt) >= 3 else market
+    test_target = test_mkt if len(test_mkt) >= 3 else market
+    return (
+        _annualized_sharpe_from_levels(train_target, periods_per_year, rf_annual),
+        _annualized_sharpe_from_levels(test_target, periods_per_year, rf_annual),
+        _annualized_sharpe_from_levels(market, periods_per_year, rf_annual),
+    )
+
+
+def _apply_market_sharpes(result: dict[str, Any], sharpes: tuple[float, float, float]) -> bool:
+    changed = False
+    for key, value in zip(
+        ("marketSharpe", "marketBacktestSharpe", "marketTotalSharpe"),
+        sharpes,
+    ):
+        if result.get(key) != value:
+            result[key] = value
+            changed = True
+    return changed
+
+
+def _migrate_market_sharpes_in_result(
+    result: dict[str, Any],
+    entry: dict[str, Any],
+    cache: dict[tuple[str, str, str], tuple[float, float, float]],
+) -> bool:
+    if not isinstance(result, dict):
+        return False
+    model_id = str(entry.get("modelId") or "")
+    if model_id == "markowitz-crypto-ff3":
+        sharpes = _market_sharpes_from_comparison_levels(result, CRYPTO_RF_ANNUAL)
+    else:
+        start, end = _infer_simulation_period(entry, result)
+        if not start or not end:
+            return False
+        sharpes = _market_sharpes_for_stock_model(model_id, start, end, cache)
+    if sharpes is None:
+        return False
+    return _apply_market_sharpes(result, sharpes)
+
+
+def _migrate_entry_market_sharpes(
+    entry: dict[str, Any],
+    cache: dict[tuple[str, str, str], tuple[float, float, float]],
+) -> bool:
+    if entry.get("marketSharpeVersion", 0) >= MARKET_SHARPE_VERSION:
+        return False
+
+    changed = False
+    for key in ("result", "classicResult"):
+        payload = entry.get(key)
+        if isinstance(payload, dict):
+            changed = _migrate_market_sharpes_in_result(payload, entry, cache) or changed
+
+    comparison_payload = entry.get("comparisonData")
+    if isinstance(comparison_payload, dict):
+        for key in ("monteCarlo", "bestGradient"):
+            payload = comparison_payload.get(key)
+            if isinstance(payload, dict):
+                changed = _migrate_market_sharpes_in_result(payload, entry, cache) or changed
+
+    entry["marketSharpeVersion"] = MARKET_SHARPE_VERSION
+    return True
 
 
 def _backfill_sharpes_from_comparison(result: dict[str, Any]) -> bool:
@@ -233,6 +377,7 @@ def _read_history() -> list:
         return []
     # Migration douce: historique sans tag → libellé neutre (gris côté UI).
     dirty = False
+    market_sharpe_cache: dict[tuple[str, str, str], tuple[float, float, float]] = {}
     for entry in entries:
         if not isinstance(entry, dict):
             continue
@@ -241,6 +386,8 @@ def _read_history() -> list:
             dirty = True
         elif entry.get("personTag") == "test système simulation":
             entry["personTag"] = "Simulation de Test"
+            dirty = True
+        if _migrate_entry_market_sharpes(entry, market_sharpe_cache):
             dirty = True
         if isinstance(entry.get("result"), dict):
             dirty = _backfill_sharpes_from_comparison(entry["result"]) or dirty
