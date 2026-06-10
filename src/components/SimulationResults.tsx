@@ -28,12 +28,9 @@ export const FACTOR_COLORS: Record<string, string> = {
   RMW:         "#10b981",
   CMA:         "#ef4444",
   UMD:         "#06b6d4",
-  HY_SPREAD:   "#f97316",
-  TERM_SPREAD: "#a855f7",
-  VIX:         "#ec4899",
 };
 
-export const ALL_FACTORS = ["Mkt-RF", "SMB", "HML", "RMW", "CMA", "UMD", "HY_SPREAD", "TERM_SPREAD", "VIX"];
+export const ALL_FACTORS = ["Mkt-RF", "SMB", "HML", "RMW", "CMA", "UMD"];
 
 const SENTIMENT: Record<string, { dot: string; label: string }> = {
   positif: { dot: "bg-emerald-400", label: "Positif" },

@@ -34,8 +34,8 @@ SELECTOR_MAX_RETRIES = 1
 # --- Fenêtre de news ---
 NEWS_WINDOW_MONTHS = 3
 
-# --- Facteurs (FF5 + Momentum + Macro FRED) ---
-ALL_FACTORS = ["Mkt-RF", "SMB", "HML", "RMW", "CMA", "UMD", "HY_SPREAD", "TERM_SPREAD", "VIX"]
+# --- Facteurs (FF5 + Momentum) ---
+ALL_FACTORS = ["Mkt-RF", "SMB", "HML", "RMW", "CMA", "UMD"]
 MIN_FACTORS_REQUIRED = 1
 
 # --- Cache ---

@@ -22,7 +22,6 @@ from gestion.ols_with_stats import ols_factor_regression
 from gestion.dynamic.llm_news_fetcher import fetch_news
 from gestion.dynamic.llm_factor_selector import select_factors, get_all_prompt_examples, reset_prompt_log, FactorMask
 from gestion.dynamic.llm_config import ALL_FACTORS
-from gestion.dynamic.fred_loader import load_fred_factors
 
 logger = logging.getLogger(__name__)
 
@@ -180,7 +179,7 @@ def _step(
     rf_train = train_ff["RF"]
 
     # Exclure les facteurs sans données suffisantes dans la fenêtre d'entraînement
-    # (cas des variables FRED absentes ou NaN en début de série)
+    # (NaN en début de série ou colonnes absentes)
     available_factors = [
         f for f in global_factors
         if f in train_ff.columns and train_ff[f].notna().sum() >= max(len(global_factors) + 2, 5)
@@ -301,16 +300,6 @@ def run(
     except Exception as e:
         logger.warning("Momentum (UMD) indisponible : %s — colonne absente.", e)
         ff5["UMD"] = float("nan")
-
-    _emit("status", step="fred", message="Chargement des données macro (FRED)…")
-    # Ajout des variables macro FRED (HY_SPREAD, TERM_SPREAD, VIX)
-    try:
-        fred = load_fred_factors(start, end)
-        ff5 = ff5.join(fred, how="left")
-    except Exception as e:
-        logger.warning("Facteurs FRED indisponibles : %s — colonnes absentes.", e)
-        for col in ("HY_SPREAD", "TERM_SPREAD", "VIX"):
-            ff5[col] = float("nan")
 
     monthly_ret = _monthly_returns(prices)
     monthly_ret.index = monthly_ret.index.to_period("M")

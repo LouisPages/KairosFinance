@@ -8,6 +8,7 @@ sys.path.insert(1, str(_root / "gestion"))
 
 import json
 import os
+import re
 import time
 import asyncio
 import threading
@@ -117,6 +118,112 @@ def _backfill_sharpes_from_comparison(result: dict[str, Any]) -> bool:
     return changed
 
 
+_REMOVED_LLM_FACTORS = frozenset({"HY_SPREAD", "TERM_SPREAD", "VIX"})
+
+
+def _strip_removed_factors_from_dict(d: dict) -> bool:
+    changed = False
+    for factor in _REMOVED_LLM_FACTORS:
+        if factor in d:
+            del d[factor]
+            changed = True
+    return changed
+
+
+def _clean_explication_text(text: str) -> str:
+    if not text:
+        return text
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    kept: list[str] = []
+    for sentence in sentences:
+        if any(factor in sentence for factor in _REMOVED_LLM_FACTORS):
+            continue
+        if re.search(
+            r"\b(VIX|spread de crédit|spread crédit|pente de la courbe|volatilité implicite)\b",
+            sentence,
+            flags=re.IGNORECASE,
+        ):
+            continue
+        kept.append(sentence)
+    return " ".join(kept).strip()
+
+
+def _strip_removed_factors_from_prompt(text: str) -> str:
+    if not text:
+        return text
+    cleaned = text
+    for factor in _REMOVED_LLM_FACTORS:
+        cleaned = re.sub(
+            rf"-\s*{re.escape(factor)}\s*:.*?(?=\n- |\n\nRéponds|\Z)",
+            "",
+            cleaned,
+            flags=re.DOTALL,
+        )
+        cleaned = re.sub(rf',?\s*"{re.escape(factor)}"\s*:\s*_', "", cleaned)
+        cleaned = re.sub(
+            rf'"{re.escape(factor)}"\s*:\s*(true|false)\s*,?\s*',
+            "",
+            cleaned,
+            flags=re.IGNORECASE,
+        )
+    cleaned = cleaned.replace("9 clés", "6 clés")
+    try:
+        obj = json.loads(cleaned)
+    except json.JSONDecodeError:
+        return cleaned
+    if not isinstance(obj, dict):
+        return cleaned
+    changed = False
+    for factor in _REMOVED_LLM_FACTORS:
+        if factor in obj:
+            del obj[factor]
+            changed = True
+    expl = obj.get("explication")
+    if isinstance(expl, str):
+        cleaned_expl = _clean_explication_text(expl)
+        if cleaned_expl != expl:
+            obj["explication"] = cleaned_expl
+            changed = True
+    return json.dumps(obj, ensure_ascii=False) if changed else cleaned
+
+
+def _sanitize_llm_result(llm_result: dict) -> bool:
+    if not isinstance(llm_result, dict):
+        return False
+    changed = False
+
+    for month in llm_result.get("monthlyHistory") or []:
+        if not isinstance(month, dict):
+            continue
+        selected = month.get("selectedFactors")
+        if isinstance(selected, dict):
+            for ticker, mask in selected.items():
+                if isinstance(mask, dict) and _strip_removed_factors_from_dict(mask):
+                    changed = True
+        factor_tests = month.get("factor_tests")
+        if isinstance(factor_tests, dict):
+            for ticker_data in factor_tests.values():
+                if not isinstance(ticker_data, dict):
+                    continue
+                factor_stats = ticker_data.get("factor_stats")
+                if isinstance(factor_stats, dict) and _strip_removed_factors_from_dict(factor_stats):
+                    changed = True
+
+    for example in llm_result.get("promptExamples") or []:
+        if not isinstance(example, dict):
+            continue
+        for field in ("system", "user", "response"):
+            raw = example.get(field)
+            if not isinstance(raw, str):
+                continue
+            cleaned = _strip_removed_factors_from_prompt(raw)
+            if cleaned != raw:
+                example[field] = cleaned
+                changed = True
+
+    return changed
+
+
 def _read_history() -> list:
     if not HISTORY_FILE.exists():
         return []
@@ -147,6 +254,9 @@ def _read_history() -> list:
                 dirty = _backfill_sharpes_from_comparison(mc) or dirty
             if isinstance(bg, dict):
                 dirty = _backfill_sharpes_from_comparison(bg) or dirty
+        llm_result = entry.get("llmResult")
+        if isinstance(llm_result, dict):
+            dirty = _sanitize_llm_result(llm_result) or dirty
     if dirty:
         _write_history(entries)
     return entries

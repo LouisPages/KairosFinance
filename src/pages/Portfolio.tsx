@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, TrendingUp, Search, X, BarChart3, Activity, Newspaper, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 import {
   fetchStocks,
@@ -17,9 +16,6 @@ import { loadSavedSymbols, saveSymbols, loadSavedCryptoSymbols, saveCryptoSymbol
 import type { StockItem, NewsArticle, CryptoListItem } from "@/lib/api";
 import { useAppMode } from "@/context/AppModeContext";
 
-const indices = ["S&P 500", "NASDAQ", "DOW JONES"] as const;
-const enabledIndex = "S&P 500";
-
 const endDate = new Date();
 const startDate = new Date("2005-01-01");
 const cryptoChartStartDefault = "2015-01-01";
@@ -30,7 +26,6 @@ function PortfolioStocks() {
   const [error, setError] = useState<string | null>(null);
   const [selectedSymbols, setSelectedSymbols] = useState<string[]>(loadSavedSymbols);
   const [selectedStock, setSelectedStock] = useState<StockItem | null>(null);
-  const [activeIndex, setActiveIndex] = useState<string>(enabledIndex);
   const [search, setSearch] = useState("");
   const [chartStart, setChartStart] = useState(startDate.toISOString().slice(0, 10));
   const [chartEnd, setChartEnd] = useState(endDate.toISOString().slice(0, 10));
@@ -115,14 +110,21 @@ function PortfolioStocks() {
   };
 
   const displayStocks = useMemo(() => {
+    const q = search.toLowerCase();
     return stocks.filter(
       (s) =>
-        s.index === activeIndex &&
-        (search === "" ||
-          s.symbol.toLowerCase().includes(search.toLowerCase()) ||
-          s.name.toLowerCase().includes(search.toLowerCase()))
+        s.index === "S&P 500" &&
+        (q === "" || s.symbol.toLowerCase().includes(q) || s.name.toLowerCase().includes(q))
     );
-  }, [stocks, activeIndex, search]);
+  }, [stocks, search]);
+
+  const selectAllDisplayed = () => {
+    const symbols = displayStocks.map((s) => s.symbol);
+    setSelectedSymbols((prev) => Array.from(new Set([...prev, ...symbols])));
+  };
+
+  const allDisplayedSelected =
+    displayStocks.length > 0 && displayStocks.every((s) => selectedSymbols.includes(s.symbol));
 
   const lastPrice = chartData.length ? chartData[chartData.length - 1]?.price : null;
   const firstPrice = chartData.length ? chartData[0]?.price : null;
@@ -168,21 +170,8 @@ function PortfolioStocks() {
 
       <div className="grid gap-6 min-h-0 flex-1" style={{ gridTemplateColumns: "1fr 3fr" }}>
         <div className="flex flex-col min-h-0">
-          <Tabs value={activeIndex} onValueChange={setActiveIndex} className="flex flex-col min-h-0 flex-1">
-            <TabsList className="mb-3 w-full shrink-0">
-              {indices.map((idx) => (
-                <TabsTrigger
-                  key={idx}
-                  value={idx}
-                  disabled={idx !== enabledIndex}
-                  className={`text-xs font-semibold flex-1 ${idx !== enabledIndex ? "cursor-not-allowed opacity-70" : ""}`}
-                >
-                  {idx}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-
-            <div className="relative mb-3 shrink-0">
+          <div className="flex gap-2 mb-3 shrink-0">
+            <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
               <Input
                 placeholder="Rechercher…"
@@ -191,50 +180,58 @@ function PortfolioStocks() {
                 className="pl-9 h-9 text-xs"
               />
             </div>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              className="h-9 shrink-0 text-xs font-semibold"
+              onClick={selectAllDisplayed}
+              disabled={loading || displayStocks.length === 0 || allDisplayedSelected}
+            >
+              Tout sélectionner
+            </Button>
+          </div>
 
-            {indices.map((idx) => (
-              <TabsContent key={idx} value={idx} className="space-y-1.5 overflow-y-auto pr-1 min-h-0 flex-1">
-                {loading ? (
-                  <p className="text-xs text-muted-foreground">Chargement…</p>
-                ) : error ? (
-                  <p className="text-xs text-destructive">{error}</p>
-                ) : (
-                  displayStocks.map((stock) => {
-                    const isSelected = selectedSymbols.includes(stock.symbol);
-                    return (
-                      <div
-                        key={stock.symbol}
-                        className={`rounded-xl bg-card flex cursor-pointer items-center justify-between p-3 transition-colors border ${
-                          isSelected ? "border-primary" : "border-border hover:shadow-sm"
-                        } ${selectedStock?.symbol === stock.symbol ? "bg-muted/50" : ""}`}
-                        onClick={() => setSelectedStock(stock)}
+          <div className="space-y-1.5 overflow-y-auto pr-1 min-h-0 flex-1">
+            {loading ? (
+              <p className="text-xs text-muted-foreground">Chargement…</p>
+            ) : error ? (
+              <p className="text-xs text-destructive">{error}</p>
+            ) : (
+              displayStocks.map((stock) => {
+                const isSelected = selectedSymbols.includes(stock.symbol);
+                return (
+                  <div
+                    key={stock.symbol}
+                    className={`rounded-xl bg-card flex cursor-pointer items-center justify-between p-3 transition-colors border ${
+                      isSelected ? "border-primary" : "border-border hover:shadow-sm"
+                    } ${selectedStock?.symbol === stock.symbol ? "bg-muted/50" : ""}`}
+                    onClick={() => setSelectedStock(stock)}
+                  >
+                    <div className="min-w-0">
+                      <span className="font-display text-xs font-bold text-foreground">{stock.symbol}</span>
+                      <p className="truncate text-[11px] text-muted-foreground">{stock.name}</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleStock(stock.symbol);
+                        }}
+                        className={`rounded-md px-2 py-1 text-[10px] font-semibold transition-colors ${
+                          isSelected
+                            ? "bg-primary text-primary-foreground"
+                            : "border border-input bg-background text-foreground hover:bg-muted"
+                        }`}
                       >
-                        <div className="min-w-0">
-                          <span className="font-display text-xs font-bold text-foreground">{stock.symbol}</span>
-                          <p className="truncate text-[11px] text-muted-foreground">{stock.name}</p>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              toggleStock(stock.symbol);
-                            }}
-                            className={`rounded-md px-2 py-1 text-[10px] font-semibold transition-colors ${
-                              isSelected
-                                ? "bg-primary text-primary-foreground"
-                                : "border border-input bg-background text-foreground hover:bg-muted"
-                            }`}
-                          >
-                            {isSelected ? "✓" : "+"}
-                          </button>
-                        </div>
-                      </div>
-                    );
-                  })
-                )}
-              </TabsContent>
-            ))}
-          </Tabs>
+                        {isSelected ? "✓" : "+"}
+                      </button>
+                    </div>
+                  </div>
+                );
+              })
+            )}
+          </div>
 
           <div className="glass-card mt-3 p-4 shrink-0">
             <h3 className="font-display text-xs font-bold text-foreground mb-2">Composition</h3>
@@ -511,6 +508,14 @@ function PortfolioCrypto() {
     );
   }, [cryptos, search]);
 
+  const selectAllDisplayed = () => {
+    const symbols = displayCryptos.map((c) => c.symbol);
+    setSelectedSymbols((prev) => Array.from(new Set([...prev, ...symbols])));
+  };
+
+  const allDisplayedSelected =
+    displayCryptos.length > 0 && displayCryptos.every((c) => selectedSymbols.includes(c.symbol));
+
   const chartData = useMemo(() => historyData, [historyData]);
   const lastPrice = chartData.length ? chartData[chartData.length - 1]?.price : null;
   const firstPrice = chartData.length ? chartData[0]?.price : null;
@@ -565,14 +570,26 @@ function PortfolioCrypto() {
 
       <div className="grid gap-6 min-h-0 flex-1" style={{ gridTemplateColumns: "1fr 3fr" }}>
         <div className="flex flex-col min-h-0">
-          <div className="relative mb-3 shrink-0">
-            <Search className="absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              placeholder="Rechercher une crypto…"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="pl-9 h-9 text-xs"
-            />
+          <div className="flex gap-2 mb-3 shrink-0">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                placeholder="Rechercher une crypto…"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="pl-9 h-9 text-xs"
+              />
+            </div>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              className="h-9 shrink-0 text-xs font-semibold"
+              onClick={selectAllDisplayed}
+              disabled={loading || displayCryptos.length === 0 || allDisplayedSelected}
+            >
+              Tout sélectionner
+            </Button>
           </div>
 
           <div className="space-y-1.5 overflow-y-auto pr-1 min-h-0 flex-1">

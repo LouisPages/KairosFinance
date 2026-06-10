@@ -38,7 +38,7 @@ FactorMask = dict[str, bool]
 
 _FALLBACK_MASK: FactorMask = {
     "Mkt-RF": True, "SMB": False, "HML": False, "RMW": False, "CMA": False,
-    "UMD": False, "HY_SPREAD": False, "TERM_SPREAD": False, "VIX": False,
+    "UMD": False,
 }
 
 
@@ -66,20 +66,10 @@ Définitions des facteurs :
                de surperformer à 1-12 mois). Pertinent si la tendance du titre est claire \
                (hausse ou baisse soutenue récente). Non pertinent si le titre est en retournement \
                ou en phase de consolidation sans tendance.
-- HY_SPREAD : variation mensuelle du spread crédit HY vs IG. Pertinent si l'environnement \
-               de crédit est sous tension ou se détend fortement (stress financier, resserrement \
-               monétaire, récession, rally obligataire). Non pertinent en période calme.
-- TERM_SPREAD: variation mensuelle de la pente de la courbe des taux (10Y - 3M). Pertinent \
-               si la politique monétaire ou les anticipations de croissance évoluent fortement \
-               ce mois (hausse/baisse de taux, inversion/normalisation de la courbe). \
-               Non pertinent si la courbe est stable.
-- VIX       : variation mensuelle de la volatilité implicite (indice VIX). Pertinent si \
-               l'aversion au risque change brutalement (choc de marché, crise, rebond après \
-               sell-off). Non pertinent en période de volatilité stable et faible.
 
 
-Réponds UNIQUEMENT avec ce JSON compact (9 clés, valeurs booléennes true/false) :
-{{"Mkt-RF": true, "SMB": _, "HML": _, "RMW": _, "CMA": _, "UMD": _, "HY_SPREAD": _, "TERM_SPREAD": _, "VIX": _, "explication": "<string>"}}
+Réponds UNIQUEMENT avec ce JSON compact (6 clés, valeurs booléennes true/false) :
+{{"Mkt-RF": true, "SMB": _, "HML": _, "RMW": _, "CMA": _, "UMD": _, "explication": "<string>"}}
 
 IMPORTANT : LE FACTEUR Mkt-RF DOIT TOUJOURS VALOIR TRUE, TU DOIS METTRE AU MOINS 2 AUTRES FACTEURS à TRUE ET TU DOIS AJOUTER UNE EXPLICATION DE TON CHOIX"""
 
