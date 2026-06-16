@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, TrendingUp, Search, X, BarChart3, Activity, Newspaper, ExternalLink } from "lucide-react";
+import { ArrowRight, TrendingUp, Search, X, BarChart3, Activity, Newspaper, ExternalLink, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
@@ -107,6 +107,10 @@ function PortfolioStocks() {
 
   const removeStock = (symbol: string) => {
     setSelectedSymbols((prev) => prev.filter((s) => s !== symbol));
+  };
+
+  const clearPortfolio = () => {
+    setSelectedSymbols([]);
   };
 
   const displayStocks = useMemo(() => {
@@ -234,7 +238,19 @@ function PortfolioStocks() {
           </div>
 
           <div className="glass-card mt-3 p-4 shrink-0">
-            <h3 className="font-display text-xs font-bold text-foreground mb-2">Composition</h3>
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="font-display text-xs font-bold text-foreground">Composition</h3>
+              {selectedSymbols.length > 0 && (
+                <button
+                  type="button"
+                  onClick={clearPortfolio}
+                  className="rounded-md p-1 text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
+                  title="Vider le portefeuille"
+                >
+                  <Trash2 className="h-3.5 w-3.5" />
+                </button>
+              )}
+            </div>
             {selectedSymbols.length === 0 ? (
               <p className="text-[11px] text-muted-foreground">Aucune action sélectionnée</p>
             ) : (
@@ -501,6 +517,10 @@ function PortfolioCrypto() {
     setSelectedSymbols((prev) => prev.filter((s) => s !== symbol));
   };
 
+  const clearPortfolio = () => {
+    setSelectedSymbols([]);
+  };
+
   const displayCryptos = useMemo(() => {
     const q = search.toLowerCase();
     return cryptos.filter(
@@ -632,7 +652,19 @@ function PortfolioCrypto() {
           </div>
 
           <div className="glass-card mt-3 p-4 shrink-0">
-            <h3 className="font-display text-xs font-bold text-foreground mb-2">Composition</h3>
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="font-display text-xs font-bold text-foreground">Composition</h3>
+              {selectedSymbols.length > 0 && (
+                <button
+                  type="button"
+                  onClick={clearPortfolio}
+                  className="rounded-md p-1 text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
+                  title="Vider le portefeuille"
+                >
+                  <Trash2 className="h-3.5 w-3.5" />
+                </button>
+              )}
+            </div>
             {selectedSymbols.length === 0 ? (
               <p className="text-[11px] text-muted-foreground">Aucune crypto sélectionnée</p>
             ) : (
