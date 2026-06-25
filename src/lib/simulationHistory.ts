@@ -1,4 +1,5 @@
 import type { SimulateResult, LlmSimulateResult } from "./api";
+import { SAMPLE_HISTORY_ENTRIES } from "./sampleSimulationHistory";
 
 /** Données de comparaison Monte-Carlo vs Gradient (sauvegardées en historique). */
 export interface ComparisonPayload {
@@ -49,13 +50,16 @@ export interface SimulationEntry {
 }
 
 export async function loadHistory(): Promise<SimulationEntry[]> {
+  const shouldUseSamples = import.meta.env.PROD;
   try {
     const res = await fetch(`${API_BASE}/api/history/list`);
-    if (!res.ok) return [];
+    if (!res.ok) return shouldUseSamples ? SAMPLE_HISTORY_ENTRIES : [];
     const data = await res.json();
-    return Array.isArray(data) ? data : [];
+    if (!Array.isArray(data)) return shouldUseSamples ? SAMPLE_HISTORY_ENTRIES : [];
+    if (data.length === 0) return shouldUseSamples ? SAMPLE_HISTORY_ENTRIES : [];
+    return data;
   } catch {
-    return [];
+    return shouldUseSamples ? SAMPLE_HISTORY_ENTRIES : [];
   }
 }
 

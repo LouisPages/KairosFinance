@@ -1,0 +1,181 @@
+import type { LlmSimulateResult, SimulateResult } from "./api";
+import type { SimulationEntry } from "./simulationHistory";
+
+function makeClassicResult(weights: Record<string, number>, shift = 0): SimulateResult {
+  return {
+    weights,
+    sharpe: 1.1 + shift,
+    expectedReturn: 11.5 + shift * 2,
+    volatility: 14.2 + shift,
+    maxDrawdown: 10.5 + shift,
+    backtestReturn: 7.8 + shift * 1.5,
+    backtestSharpe: 0.9 + shift * 0.2,
+    marketSharpe: 0.6,
+    marketBacktestSharpe: 0.45,
+    marketTotalSharpe: 0.52,
+    trainPeriodStart: "2020-01-01",
+    trainPeriodEnd: "2023-12-31",
+    testPeriodStart: "2024-01-01",
+    testPeriodEnd: "2024-12-31",
+    comparisonData: [
+      { date: "2024-01-01", portfolio: 100, market: 100 },
+      { date: "2024-04-01", portfolio: 103 + shift * 2, market: 101 },
+      { date: "2024-07-01", portfolio: 108 + shift * 2, market: 103 },
+      { date: "2024-10-01", portfolio: 112 + shift * 2, market: 104 },
+      { date: "2024-12-01", portfolio: 116 + shift * 2, market: 106 },
+    ],
+    efficientFrontier: [
+      { volatility: 10.8, expectedReturn: 7.1 },
+      { volatility: 12.2, expectedReturn: 8.4 },
+      { volatility: 13.8, expectedReturn: 9.8 },
+      { volatility: 15.3, expectedReturn: 11.1 },
+    ],
+  };
+}
+
+function makeLlmResult(): LlmSimulateResult {
+  return {
+    totalReturn: 18.4,
+    maxDrawdown: 8.9,
+    initialValue: 10000,
+    finalValue: 11840,
+    numMonths: 4,
+    trainPeriodStart: "2020-01-01",
+    trainPeriodEnd: "2023-12-31",
+    testPeriodStart: "2024-01",
+    testPeriodEnd: "2024-12",
+    comparisonData: [
+      { date: "2024-01", portfolio: 10000, market: 100 },
+      { date: "2024-04", portfolio: 10480, market: 102 },
+      { date: "2024-07", portfolio: 11110, market: 104 },
+      { date: "2024-10", portfolio: 11490, market: 105 },
+      { date: "2024-12", portfolio: 11840, market: 106 },
+    ],
+    monthlyHistory: [
+      {
+        month: "2024-09",
+        weights: { AAPL: 0.4, MSFT: 0.35, NVDA: 0.25 },
+        selectedFactors: {
+          AAPL: { "Mkt-RF": true, SMB: true, HML: false, RMW: true, CMA: true, UMD: true },
+          MSFT: { "Mkt-RF": true, SMB: true, HML: false, RMW: true, CMA: true, UMD: true },
+          NVDA: { "Mkt-RF": true, SMB: true, HML: false, RMW: true, CMA: true, UMD: true },
+        },
+        newsSummaries: {
+          AAPL: { summary: "Demande soutenue sur les services et stabilité des marges.", sentiment: "positif" },
+          MSFT: { summary: "Croissance cloud robuste et guidance favorable.", sentiment: "positif" },
+          NVDA: { summary: "Cycle IA toujours porteur, valorisation élevée mais momentum fort.", sentiment: "neutre" },
+        },
+        sharpe: 1.26,
+        expectedReturn: 12.9,
+        volatility: 10.1,
+      },
+    ],
+    promptExamples: [
+      {
+        ticker: "AAPL",
+        month: "2024-09",
+        provider: "mistral",
+        system: "Tu es un analyste quantitatif.",
+        user: "Sélectionne les facteurs pertinents pour AAPL.",
+        response: "{\"Mkt-RF\": true, \"SMB\": true, \"HML\": false, \"RMW\": true, \"CMA\": true, \"UMD\": true}",
+      },
+    ],
+  };
+}
+
+const EXAMPLE_BASE_DATE = new Date("2025-01-01T09:00:00.000Z").getTime();
+
+function entryDate(offsetDays: number): string {
+  return new Date(EXAMPLE_BASE_DATE + offsetDays * 24 * 60 * 60 * 1000).toISOString();
+}
+
+export const SAMPLE_HISTORY_ENTRIES: SimulationEntry[] = [
+  {
+    id: "sample-markowitz-classic",
+    date: entryDate(0),
+    modelId: "markowitz-classic",
+    symbols: ["AAPL", "MSFT", "NVDA"],
+    result: makeClassicResult({ AAPL: 0.4, MSFT: 0.35, NVDA: 0.25 }, 0),
+    llmResult: null,
+    classicResult: null,
+    description: "Exemple Render - Markowitz classique.",
+    personTag: "Simulation de Test",
+    observedInterpretation: "",
+    assetMode: "actions",
+    simulationStartDate: "2020-01-01",
+    simulationEndDate: "2024-12-31",
+  },
+  {
+    id: "sample-markowitz-1factor",
+    date: entryDate(1),
+    modelId: "markowitz-1factor",
+    symbols: ["AAPL", "MSFT", "JNJ"],
+    result: makeClassicResult({ AAPL: 0.33, MSFT: 0.37, JNJ: 0.3 }, 0.1),
+    llmResult: null,
+    classicResult: null,
+    description: "Exemple Render - CAPM.",
+    personTag: "Simulation de Test",
+    observedInterpretation: "",
+    assetMode: "actions",
+    simulationStartDate: "2020-01-01",
+    simulationEndDate: "2024-12-31",
+  },
+  {
+    id: "sample-markowitz-3factors",
+    date: entryDate(2),
+    modelId: "markowitz-3factors",
+    symbols: ["AAPL", "MSFT", "PG"],
+    result: makeClassicResult({ AAPL: 0.36, MSFT: 0.29, PG: 0.35 }, 0.18),
+    llmResult: null,
+    classicResult: null,
+    description: "Exemple Render - Fama-French 3 facteurs.",
+    personTag: "Simulation de Test",
+    observedInterpretation: "",
+    assetMode: "actions",
+    simulationStartDate: "2020-01-01",
+    simulationEndDate: "2024-12-31",
+  },
+  {
+    id: "sample-markowitz-5factors",
+    date: entryDate(3),
+    modelId: "markowitz-5factors",
+    symbols: ["AAPL", "UNH", "COST"],
+    result: makeClassicResult({ AAPL: 0.38, UNH: 0.31, COST: 0.31 }, 0.24),
+    llmResult: null,
+    classicResult: null,
+    description: "Exemple Render - Fama-French 5 facteurs.",
+    personTag: "Simulation de Test",
+    observedInterpretation: "",
+    assetMode: "actions",
+    simulationStartDate: "2020-01-01",
+    simulationEndDate: "2024-12-31",
+  },
+  {
+    id: "sample-markowitz-llm",
+    date: entryDate(4),
+    modelId: "markowitz-llm",
+    symbols: ["AAPL", "MSFT", "NVDA"],
+    result: null,
+    llmResult: makeLlmResult(),
+    classicResult: makeClassicResult({ AAPL: 0.35, MSFT: 0.35, NVDA: 0.3 }, 0.12),
+    description: "Exemple Render - sélection dynamique des facteurs (LLM).",
+    personTag: "Simulation de Test",
+    observedInterpretation: "",
+    assetMode: "actions",
+    simulationStartDate: "2020-01-01",
+    simulationEndDate: "2024-12-31",
+  },
+  {
+    id: "sample-markowitz-crypto-ff3",
+    date: entryDate(5),
+    modelId: "markowitz-crypto-ff3",
+    symbols: ["BTC", "ETH", "SOL"],
+    result: makeClassicResult({ BTC: 0.5, ETH: 0.3, SOL: 0.2 }, 0.32),
+    llmResult: null,
+    classicResult: null,
+    description: "Exemple Render - modèle crypto 3 facteurs.",
+    personTag: "Simulation de Test",
+    observedInterpretation: "",
+    assetMode: "crypto",
+  },
+];
