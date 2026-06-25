@@ -27,6 +27,7 @@ from gestion.yahoo_prices import yf_adj_close_wide
 from gestion.market_metrics import rf_annual_from_irx, spy_sharpe_triplet_for_period
 
 HISTORY_FILE = Path(__file__).parent / "simulation_history.json"
+HISTORY_SAMPLES_FILE = Path(__file__).parent / "simulation_history_samples.json"
 MARKET_SHARPE_VERSION = 2
 CRYPTO_RF_ANNUAL = 0.04
 CLASSIC_RF_ANNUAL = 0.03
@@ -435,6 +436,32 @@ def _pick_one_history_entry_per_model(entries: list[dict[str, Any]]) -> list[dic
     return [by_model[m] for m in _HISTORY_SAMPLE_MODEL_IDS if m in by_model]
 
 
+def _read_bundled_samples() -> list[dict[str, Any]]:
+    """Exemples embarqués (une entrée par modèle) pour déploiements sans historique persistant."""
+    if not HISTORY_SAMPLES_FILE.is_file():
+        return []
+    try:
+        with open(HISTORY_SAMPLES_FILE, "r", encoding="utf-8") as f:
+            entries = json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return []
+    if not isinstance(entries, list):
+        return []
+    return [e for e in entries if isinstance(e, dict)]
+
+
+def _demo_history_entries() -> list[dict[str, Any]]:
+    """Historique live, ou exemples embarqués si vide (Render / premier démarrage)."""
+    live = _read_history()
+    picked = _pick_one_history_entry_per_model(live)
+    if picked:
+        return picked
+    bundled = _read_bundled_samples()
+    if bundled:
+        return bundled
+    return _pick_one_history_entry_per_model(live)
+
+
 def _cors_allow_origins() -> list[str]:
     origins = [
         "http://localhost:5173",
@@ -644,14 +671,16 @@ class AnalysisUpdate(BaseModel):
 @app.get("/api/history/list")
 def history_list():
     with _history_lock:
-        return _read_history()
+        live = _read_history()
+        if live:
+            return live
+        return _read_bundled_samples()
 
 
 @app.get("/api/history/samples")
 def history_samples():
     with _history_lock:
-        entries = _read_history()
-    return _pick_one_history_entry_per_model(entries)
+        return _demo_history_entries()
 
 
 @app.post("/api/history/save")
