@@ -1,5 +1,4 @@
 import type { SimulateResult, LlmSimulateResult } from "./api";
-import { SAMPLE_HISTORY_ENTRIES } from "./sampleSimulationHistory";
 
 /** Données de comparaison Monte-Carlo vs Gradient (sauvegardées en historique). */
 export interface ComparisonPayload {
@@ -53,13 +52,32 @@ export async function loadHistory(): Promise<SimulationEntry[]> {
   const shouldUseSamples = import.meta.env.PROD;
   try {
     const res = await fetch(`${API_BASE}/api/history/list`);
-    if (!res.ok) return shouldUseSamples ? SAMPLE_HISTORY_ENTRIES : [];
+    if (!res.ok) {
+      if (!shouldUseSamples) return [];
+      const samplesRes = await fetch(`${API_BASE}/api/history/samples`);
+      if (!samplesRes.ok) return [];
+      const samples = await samplesRes.json();
+      return Array.isArray(samples) ? samples : [];
+    }
     const data = await res.json();
-    if (!Array.isArray(data)) return shouldUseSamples ? SAMPLE_HISTORY_ENTRIES : [];
-    if (data.length === 0) return shouldUseSamples ? SAMPLE_HISTORY_ENTRIES : [];
+    if (!Array.isArray(data)) return [];
+    if (data.length === 0 && shouldUseSamples) {
+      const samplesRes = await fetch(`${API_BASE}/api/history/samples`);
+      if (!samplesRes.ok) return [];
+      const samples = await samplesRes.json();
+      return Array.isArray(samples) ? samples : [];
+    }
     return data;
   } catch {
-    return shouldUseSamples ? SAMPLE_HISTORY_ENTRIES : [];
+    if (!shouldUseSamples) return [];
+    try {
+      const samplesRes = await fetch(`${API_BASE}/api/history/samples`);
+      if (!samplesRes.ok) return [];
+      const samples = await samplesRes.json();
+      return Array.isArray(samples) ? samples : [];
+    } catch {
+      return [];
+    }
   }
 }
 

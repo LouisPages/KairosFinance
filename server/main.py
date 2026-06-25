@@ -31,6 +31,14 @@ MARKET_SHARPE_VERSION = 2
 CRYPTO_RF_ANNUAL = 0.04
 CLASSIC_RF_ANNUAL = 0.03
 _history_lock = threading.Lock()
+_HISTORY_SAMPLE_MODEL_IDS = (
+    "markowitz-classic",
+    "markowitz-1factor",
+    "markowitz-3factors",
+    "markowitz-5factors",
+    "markowitz-llm",
+    "markowitz-crypto-ff3",
+)
 
 # Cache bornes simulation (actions) : évite double appel React StrictMode + répétitions navigation
 _sim_bounds_cache: dict[tuple[str, ...], tuple[float, dict[str, Optional[str]]]] = {}
@@ -414,6 +422,19 @@ def _write_history(entries: list) -> None:
         json.dump(entries, f, ensure_ascii=False, indent=2)
 
 
+def _pick_one_history_entry_per_model(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    by_model: dict[str, dict[str, Any]] = {}
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        model_id = str(entry.get("modelId") or "")
+        if model_id and model_id not in by_model:
+            by_model[model_id] = entry
+            if len(by_model) >= len(_HISTORY_SAMPLE_MODEL_IDS):
+                break
+    return [by_model[m] for m in _HISTORY_SAMPLE_MODEL_IDS if m in by_model]
+
+
 def _cors_allow_origins() -> list[str]:
     origins = [
         "http://localhost:5173",
@@ -624,6 +645,13 @@ class AnalysisUpdate(BaseModel):
 def history_list():
     with _history_lock:
         return _read_history()
+
+
+@app.get("/api/history/samples")
+def history_samples():
+    with _history_lock:
+        entries = _read_history()
+    return _pick_one_history_entry_per_model(entries)
 
 
 @app.post("/api/history/save")
